@@ -1,4 +1,3 @@
-/************************ Spear ************************/
 module Base {
     recipe Downgrade Sterilized Rag To Ripped Sheet
     {

@@ -1,0 +1,5 @@
+name=Spears: Twine and Leather Bindings for More Pole Weapons
+id=TieOnSpearheads_MP
+description=Make long pole weapons using twine and leather strips
+poster=poster.png
+require=TieOnSpearheads,MorePoleWeapons

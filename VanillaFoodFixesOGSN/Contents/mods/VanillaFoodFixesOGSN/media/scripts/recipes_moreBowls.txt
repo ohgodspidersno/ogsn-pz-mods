@@ -1,26 +1,75 @@
 module Base
 {
-    recipe Make 2 Bowls of Stew
+    recipe Make 2 Bowls of Stir Fry
     {
-       PotOfStew,
+       PanFriedVegetables,
        Bowl=2,
 
-       Result:StewBowl=2,
-       OnCreate:MakeBowlOfStew2_OnCreate,
+       Result:StirFryBowl=2,
+       OnCreate:MakeBowlOfStirFry2_OnCreate,
        Time:80.0,
        Category:Cooking,
        OnGiveXP:NoXP_OnGiveXP,
     }
 
-    recipe Make 4 Bowls of Stew
+    recipe Make 4 Bowls of Stir Fry
     {
-       PotOfStew,
+       PanFriedVegetables,
        Bowl=4,
 
-       Result:StewBowl=4,
-       OnCreate:MakeBowlOfStew4_OnCreate,
+       Result:StirFryBowl=4,
+       OnCreate:MakeBowlOfStirFry4_OnCreate,
        Time:80.0,
        Category:Cooking,
        OnGiveXP:NoXP_OnGiveXP,
     }
+
+    recipe Make 2 Bowls of Stir Fry
+    {
+       GridlePanFriedVegetables,
+       Bowl=2,
+
+       Result:StirFryBowl=2,
+       OnCreate:MakeBowlOfStirFryGridle2_OnCreate,
+       Time:80.0,
+       Category:Cooking,
+       OnGiveXP:NoXP_OnGiveXP,
+    }
+
+    recipe Make 4 Bowls of Stir Fry
+    {
+       GridlePanFriedVegetables,
+       Bowl=4,
+
+       Result:StirFryBowl=4,
+       OnCreate:MakeBowlOfStirFryGridle4_OnCreate,
+       Time:80.0,
+       Category:Cooking,
+       OnGiveXP:NoXP_OnGiveXP,
+    }
+
+    recipe Make 2 Bowls of Roasted Vegetables
+    {
+       PanFriedVegetables2,
+       Bowl=2,
+
+       Result:RoastedVegetablesBowl=2,
+       OnCreate:MakeBowlOfRoastedVegetables2_OnCreate,
+       Time:80.0,
+       Category:Cooking,
+       OnGiveXP:NoXP_OnGiveXP,
+    }
+
+    recipe Make 4 Bowls of Roasted Vegetables
+    {
+       PanFriedVegetables2,
+       Bowl=4,
+
+       Result:RoastedVegetablesBowl=4,
+       OnCreate:MakeBowlOfRoastedVegetables4_OnCreate,
+       Time:80.0,
+       Category:Cooking,
+       OnGiveXP:NoXP_OnGiveXP,
+    }
+
 }

@@ -1,0 +1,377 @@
+module TieOnSpearheads
+{
+	requires
+	{
+		MorePoleWeapons
+	}
+
+  imports
+	{
+		MorePoleWeapons
+	}
+
+  recipe Affix Screwdriver to Long Spear
+  {
+      Screwdriver,
+      MorePoleWeapons.LongSpear,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearScrewdriver,
+      Time:100.0,
+      Category:Survivalist,
+  }
+
+  recipe Affix Screwdriver to Long Spear
+  {
+      Screwdriver,
+      MorePoleWeapons.LongSpear,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearScrewdriver,
+      Time:100.0,
+      Category:Survivalist,
+  }
+
+  recipe Affix Ice Pick to Long Spear
+  {
+      IcePick,
+      MorePoleWeapons.LongSpear,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearIcePick,
+      Time:100.0,
+      Category:Survivalist,
+  }
+
+  recipe Affix Ice Pick to Long Spear
+  {
+      IcePick,
+      MorePoleWeapons.LongSpear,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearIcePick,
+      Time:100.0,
+      Category:Survivalist,
+  }
+
+  recipe Attach Spearhead to Spear
+  {
+      MorePoleWeapons.ShovelSpear,
+      SpearCrafted,
+      Twine=2,
+
+      Result:MorePoleWeapons.SpearShovel,
+      Time:200.0,
+  }
+
+  recipe Attach Spearhead to Spear
+  {
+      MorePoleWeapons.ShovelSpear,
+      SpearCrafted,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.SpearShovel,
+      Time:200.0,
+  }
+
+  recipe Attach Spearhead to Spear
+  {
+      MorePoleWeapons.Shovel2Spear,
+      SpearCrafted,
+      Twine=2,
+
+      Result:MorePoleWeapons.SpearShovel2,
+      Time:200.0,
+  }
+
+  recipe Attach Spearhead to Spear
+  {
+      MorePoleWeapons.Shovel2Spear,
+      SpearCrafted,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.SpearShovel2,
+      Time:200.0,
+  }
+
+  recipe Attach Spearhead to Long Spear
+  {
+      MorePoleWeapons.ShovelSpear/MorePoleWeapons.SpearShovel,
+      MorePoleWeapons.LongSpear,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearShovel,
+      Time:200.0,
+  }
+
+  recipe Attach Spearhead to Long Spear
+  {
+      MorePoleWeapons.ShovelSpear/MorePoleWeapons.SpearShovel,
+      MorePoleWeapons.LongSpear,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearShovel,
+      Time:200.0,
+  }
+
+  recipe Attach Spearhead to Long Spear
+  {
+      MorePoleWeapons.Shovel2Spear/MorePoleWeapons.SpearShovel2,
+      MorePoleWeapons.LongSpear,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearShovel2,
+      Time:200.0,
+  }
+
+  recipe Attach Spearhead to Long Spear
+  {
+      MorePoleWeapons.Shovel2Spear/MorePoleWeapons.SpearShovel2,
+      MorePoleWeapons.LongSpear,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearShovel2,
+      Time:200.0,
+  }
+
+  recipe Affix Hunting Knife to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      HuntingKnife,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearHuntingKnifeTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Affix Hunting Knife to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      HuntingKnife,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearHuntingKnifeTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Affix Kitchen Knife to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      KitchenKnife,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearKitchenKnifeTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Affix Kitchen Knife to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      KitchenKnife,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearKitchenKnifeTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Bread Knife to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      BreadKnife,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearBreadKnifeTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Bread Knife to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      BreadKnife,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearBreadKnifeTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Butter Knife to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      ButterKnife,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearButterKnifeTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Butter Knife to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      ButterKnife,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearButterKnifeTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Fork to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      Fork,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearForkTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Fork to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      Fork,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearForkTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Letter Opener to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      LetterOpener,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearLetterOpenerTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Letter Opener to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      LetterOpener,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearLetterOpenerTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Scalpel to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      Scalpel,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearScalpelTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Scalpel to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      Scalpel,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearScalpelTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Spoon to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      Spoon,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearSpoonTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Spoon to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      Spoon,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearSpoonTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Scissors to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      Scissors,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearScissorsTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Scissors to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      Scissors,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearScissorsTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Hand Fork to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      HandFork,
+      Twine=2,
+
+      Result:MorePoleWeapons.LongSpearHandForkTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+  recipe Attach Hand Fork to Long Spear
+  {
+      MorePoleWeapons.LongSpear,
+      HandFork,
+      LeatherStrips=2,
+
+      Result:MorePoleWeapons.LongSpearHandForkTaped,
+      Time:100.0,
+      OnCreate:UpgradeLongSpear_OnCreate,
+      Category:Survivalist,
+  }
+
+}

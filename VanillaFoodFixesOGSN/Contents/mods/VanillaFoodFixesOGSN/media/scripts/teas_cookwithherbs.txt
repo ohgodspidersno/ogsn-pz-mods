@@ -2,7 +2,7 @@ module Base
 {
   item Tea_CommonMallow
   {
-      FluReduction    =   10,
+      FluReduction    =   7,
 
       Weight	=	0.5,
       Type	=	Food,
@@ -22,7 +22,7 @@ module Base
 
   item Tea_LemonGrass
   {
-      ReduceFoodSickness = 20,
+      ReduceFoodSickness = 15,
 
       Weight	=	0.5,
       Type	=	Food,
@@ -42,7 +42,7 @@ module Base
 
   item Tea_BlackSage
   {
-      PainReduction = 14,
+      PainReduction = 10,
 
       Weight	=	0.5,
       Type	=	Food,
@@ -82,9 +82,9 @@ module Base
 
   item Tea_Medicinal
   {
-      ReduceFoodSickness = 25,
-      FluReduction    =   15,
-      PainReduction = 21,
+      FluReduction        =   10,
+      ReduceFoodSickness  =   20,
+      PainReduction       =   14,
 
       Weight	=	0.5,
       Type	=	Food,
@@ -104,9 +104,9 @@ module Base
 
   item Tea_Energizing
   {
-      PainReduction = 21,
-      EnduranceChange	=	3,
-      FatigueChange	=	-20,
+      PainReduction   =  14,
+      EnduranceChange	=	  3,
+      FatigueChange	  =	-20,
 
       Weight	=	0.5,
       Type	=	Food,
@@ -125,33 +125,33 @@ module Base
   }
 
   item Teabag_Medicinal {
+      FluReduction        = 10,
+      ReduceFoodSickness  = 20,
+      PainReduction       = 14,
+
       Weight	=	0.1,
       Type	=	Food,
       HungerChange    =   -5,
       UnhappyChange   =   10,
       ThirstChange    =   10,
       DisplayName	=	Medicinal blend,
-      Icon	=	Teabag,
+      Icon	=	teablend_medicinal,
       FoodType    =   Tea,
-
-      ReduceFoodSickness = 10,
-      FluReduction    =   5,
-      PainReduction = 7,
   }
 
   item Teabag_Energizing {
+      PainReduction   =  14,
+      EnduranceChange	=	  3,
+      FatigueChange	  =	-20,
+
       Weight	=	0.1,
       Type	=	Food,
       HungerChange    =   -5,
       UnhappyChange   =   10,
       ThirstChange    =   10,
       DisplayName	=	Energizing blend,
-      Icon	=	Teabag,
+      Icon	=	teablend_energizing,
       FoodType    =   Tea,
-
-      EnduranceChange	=	2,
-      FatigueChange	=	-15,
-      PainReduction = 7,
   }
 
 }

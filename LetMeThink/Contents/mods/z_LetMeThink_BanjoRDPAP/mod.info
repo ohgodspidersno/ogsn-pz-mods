@@ -1,0 +1,5 @@
+name=Let Me Think - PATCH - Compatibility - Banjo's RDPAP
+id=z_LetMeThink_BanjoRDPAP
+description=Lets "Let Me Think" and "Banjo's Reusable/De-Weaponized Pens & Pencils" work together
+poster=poster.png
+require=LetMeThink,BanjoRDPAP
