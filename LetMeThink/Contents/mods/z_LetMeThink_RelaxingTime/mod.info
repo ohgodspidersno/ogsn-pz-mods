@@ -1,0 +1,5 @@
+name=LetMeThink - Relaxing Time Compatibility Patch
+id=z_LetMeThink_RelaxingTime
+description=Lets "Let Me Think" and "Relaxing Time" work together
+poster=poster.png
+require=LetMeThink,RelaxingTime
