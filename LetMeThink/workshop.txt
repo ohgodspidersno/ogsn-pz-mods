@@ -1,6 +1,6 @@
 version=1
 id=2033451936
 title=Let Me Think - Open Menus and Queue Tasks While Paused
-description=fdd
+description=Allows you to browse menus, right-click on things, and queue tasks even while paused. Your character will begin doing queued actions once you unpause.
 tags=
 visibility=public
