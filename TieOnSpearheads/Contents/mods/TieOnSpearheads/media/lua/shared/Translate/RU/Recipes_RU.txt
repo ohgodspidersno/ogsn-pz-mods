@@ -1,0 +1,37 @@
+Recipes_RU = {
+    recipe_Bind_Bread_Knife_to_Spear_with_Twine   = "Привязать Нож для Хлеба к Копью Бечевкой",
+    recipe_Bind_Butter_Knife_to_Spear_with_Twine  = "Привязать Нож для Масла к Копью Бечевкой",
+    recipe_Bind_Fork_to_Spear_with_Twine          = "Привязать Вилку к Копью Бечевкой",
+    recipe_Bind_Letter_Opener_to_Spear_with_Twine = "Привязать Нож для Писем к Копью Бечевкой",
+    recipe_Bind_Scalpel_to_Spear_with_Twine       = "Привязать Скальпель к Копью Бечевкой",
+    recipe_Bind_Spoon_to_Spear_with_Twine         = "Привязать Ложку к Копью Бечевкой",
+    recipe_Bind_Scissors_to_Spear_with_Twine      = "Привязать Ножницы к Копью Бечевкой",
+    recipe_Bind_Hand_Fork_to_Spear_with_Twine     = "Привязать Садовую Вилку к Копью Бечевкой",
+    recipe_Bind_Screwdriver_to_Spear_with_Twine   = "Привязать Отвертку к Копью Бечевкой",
+    recipe_Bind_Kitchen_Knife_to_Spear_with_Twine = "Привязать Кухонный Нож к Копью Бечевкой",
+    recipe_Bind_Hunting_Knife_to_Spear_with_Twine = "Привязать Охотничий Нож к Копью Бечевкой",
+    recipe_Bind_Machete_to_Spear_with_Twine       = "Привязать Мачете к Копью Бечевкой",
+    recipe_Bind_Ice_Pick_to_Spear_with_Twine      = "Привязать Ледоруб к Копью Бечевкой",
+    recipe_Bind_Chipped_Stone_to_Spear_with_Twine = "Привязать Острый Камень к Копью Бечевкой",
+
+    recipe_Bind_Bread_Knife_to_Spear              = "Привязать Нож для Хлеба к Копью",
+    recipe_Bind_Butter_Knife_to_Spear             = "Привязать Нож для Масла к Копью",
+    recipe_Bind_Fork_to_Spear                     = "Привязать Вилку к Копью",
+    recipe_Bind_Letter_Opener_to_Spear            = "Привязать Нож для Писем к Копью",
+    recipe_Bind_Scalpel_to_Spear                  = "Привязать Скальпель к Копью",
+    recipe_Bind_Spoon_to_Spear                    = "Привязать Ложку к Копью",
+    recipe_Bind_Scissors_to_Spear                 = "Привязать Ножницы к Копью",
+    recipe_Bind_Hand_Fork_to_Spear                = "Привязать Садовую Вилку к Копью",
+    recipe_Bind_Screwdriver_to_Spear              = "Привязать Отвертку к Копью",
+    recipe_Bind_Kitchen_Knife_to_Spear            = "Привязать Кухонный Нож к Копью",
+    recipe_Bind_Hunting_Knife_to_Spear            = "Привязать Охотничий Нож к Копью",
+    recipe_Bind_Machete_to_Spear                  = "Привязать Мачете к Копью",
+    recipe_Bind_Ice_Pick_to_Spear                 = "Привязать Ледоруб к Копью",
+    recipe_Bind_Chipped_Stone_to_Spear            = "Привязать Острый Камень к Копью",
+
+    recipe_Attach_Chipped_Stone_to_Spear          = "Привязать Острый Камень к Копью",
+
+    DisplayNameSpearChippedStone                  = "Копье с Острым Камнем",
+
+
+}

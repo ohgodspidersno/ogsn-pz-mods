@@ -1,0 +1,6 @@
+version=1
+id=2036923155
+title=Desterilize Rags (To Use Them In Other Recipes)
+description=Many recipes call for ripped sheets or dirty rags, but don't let you use sterilized rags. This mod lets you downgrade your sterilized rags so you can use them for other purposes in a pinch.
+tags=
+visibility=public

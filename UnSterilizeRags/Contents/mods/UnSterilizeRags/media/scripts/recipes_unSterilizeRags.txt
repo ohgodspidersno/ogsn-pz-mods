@@ -1,0 +1,12 @@
+/************************ Spear ************************/
+module Base {
+    recipe Downgrade Sterilized Rag To Ripped Sheet
+    {
+        AlcoholRippedSheets,
+
+        Result:RippedSheets,
+        Time:1.0,
+        OnGiveXP:NoXP_OnGiveXP,
+        Category:General,
+    }
+}

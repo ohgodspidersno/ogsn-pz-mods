@@ -1,0 +1,11 @@
+module DistinctNames {
+  imports {
+      Base
+  }
+  item Male_Undies {
+      Type = Clothing,
+      DisplayName = Underwear,
+      ClothingItem = Male_Undies,
+      BodyLocation = UnderwearInner,
+  }
+}

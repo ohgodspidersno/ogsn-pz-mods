@@ -1,0 +1,160 @@
+/************************ Spear ************************/
+module Base {
+    recipe Bind Bread Knife to Spear with Twine
+    {
+        SpearCrafted,
+        BreadKnife,
+        Twine=2,
+
+        Result:SpearBreadKnife,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+
+
+    recipe Bind Butter Knife to Spear with Twine
+    {
+        SpearCrafted,
+        ButterKnife,
+        Twine=2,
+
+        Result:SpearButterKnife,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Fork to Spear with Twine
+    {
+        SpearCrafted,
+        Fork,
+        Twine=2,
+
+        Result:SpearFork,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Letter Opener to Spear with Twine
+    {
+        SpearCrafted,
+        LetterOpener,
+        Twine=2,
+
+        Result:SpearLetterOpener,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Scalpel to Spear with Twine
+    {
+        SpearCrafted,
+        Scalpel,
+        Twine=2,
+
+        Result:SpearScalpel,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Spoon to Spear with Twine
+    {
+        SpearCrafted,
+        Spoon,
+        Twine=2,
+
+        Result:SpearSpoon,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Scissors to Spear with Twine
+    {
+        SpearCrafted,
+        Scissors,
+        Twine=2,
+
+        Result:SpearScissors,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Hand Fork to Spear with Twine
+    {
+        SpearCrafted,
+        HandFork,
+        Twine=2,
+
+        Result:SpearHandFork,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Screwdriver to Spear with Twine
+    {
+        SpearCrafted,
+        Screwdriver,
+        Twine=2,
+
+        Result:SpearScrewdriver,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Kitchen Knife to Spear with Twine
+    {
+        SpearCrafted,
+        KitchenKnife,
+        Twine=2,
+
+        Result:SpearKnife,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Hunting Knife to Spear with Twine
+    {
+        SpearCrafted,
+        HuntingKnife,
+        Twine=2,
+
+        Result:SpearHuntingKnife,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Machete to Spear with Twine
+    {
+        SpearCrafted,
+        Machete,
+        Twine=2,
+
+        Result:SpearMachete,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Ice Pick to Spear with Twine
+    {
+        SpearCrafted,
+        IcePick,
+        Twine=2,
+
+        Result:SpearIcePick,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+}

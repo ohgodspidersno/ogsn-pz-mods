@@ -1,0 +1,18 @@
+UI_EN = {
+  UI_ClothingType_Back = "Backpack",
+  UI_ClothingType_FullHat = "Full Helmet",
+  UI_ClothingType_MaskEyes = "Full Mask",
+  UI_ClothingType_Mask = "Mask",
+  UI_ClothingType_FullTop = "Outer Shell",
+  UI_ClothingType_Dress = "Dress",
+  UI_ClothingType_BeltExtra = "Holster",
+  UI_ClothingType_Underwear = "Swimwear",
+  UI_ClothingType_Legs1 = "Long Johns",
+  UI_ClothingType_Torso1Legs1 = "Union Suit",
+  UI_ClothingType_SweaterHat = "Hoodie",
+  UI_ClothingType_JacketHat = "Hooded Coat",
+  UI_ClothingType_FullSuitHead = "Hazmat Suit",
+  UI_ClothingType_BathRobe = "Bath Robe",
+  UI_ClothingType_Scarf = "Scarf",
+  UI_ClothingType_Tail = "Tail",
+}

@@ -1,0 +1,6 @@
+version=1
+id=2033451936
+title=Let Me Think - Open Menus and Queue Tasks While Paused
+description=fdd
+tags=
+visibility=public

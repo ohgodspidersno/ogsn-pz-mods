@@ -1,0 +1,25 @@
+--- can be added to these AAA foods ----
+BEANS can be added to...
+    AAAHotDog
+    AAAChiliDog
+    AAAToast
+
+HERB can be added to...
+    AAAHotDog
+    AAAChiliDog
+    AAAToast
+
+
+--- AAA Ingredients that can be added to oatmeal ---
+
+OATMEAL can accept
+    AAAVanillaExtract
+
+
+---- Vanilla ingredients affected by AAA------
+Ketchup
+Mustard
+Salt
+Pepper
+
+(these don't affect me)

@@ -1,0 +1,6 @@
+version=1
+id=
+title=Patch: LetMeThink + BanjoRDPAP + RelaxingTimes Compatibility
+description=Necessary for LetMeThink, BanjoRDPAP, and/or RelaxingTimes to work together
+tags=
+visibility=public

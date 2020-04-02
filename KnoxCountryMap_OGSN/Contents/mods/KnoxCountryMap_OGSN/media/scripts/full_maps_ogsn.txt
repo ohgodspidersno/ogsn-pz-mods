@@ -1,0 +1,21 @@
+module Base {
+    item KnoxCountryMap
+    {
+        Type          = Normal,
+        DisplayName	  = Knox Country Map,
+        Icon				  = Map,
+        Weight        = 0.1,
+        Map           = media/ui/LootableMaps/knox_country_map.png,
+        SurvivalGear  = TRUE,
+    }
+
+    item KnoxCountryMapSecret
+    {
+        Type          = Normal,
+        DisplayName	  = Crumpled Map,
+        Icon				  = Map,
+        Weight        = 0.1,
+        Map           = media/ui/LootableMaps/knox_country_map_secret.png,
+        SurvivalGear  = FALSE,
+    }
+}

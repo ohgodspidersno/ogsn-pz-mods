@@ -1,0 +1,15 @@
+module DistinctNames {
+  imports {
+      Base
+  }
+  item LongJohns_Bottoms {
+      Type = Clothing,
+      DisplayName = Long Johns Bottoms,
+      ClothingItem = LongJohns_Bottoms,
+      BodyLocation = Legs1,
+      BloodLocation = Trousers,
+      Icon = TrousersLongjohns,
+      Insulation = 0.3,
+      WindResistance = 0.15,
+  }
+}

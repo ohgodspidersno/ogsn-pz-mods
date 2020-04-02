@@ -1,0 +1,6 @@
+version=1
+id=2036922754
+title=Spears: Twine and Leather Binding, Chipped Stone Spearheads
+description=Attach spearheads using twine or leather strips. Also, use chipped stones as spearheads!
+tags=
+visibility=public

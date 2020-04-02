@@ -1,0 +1,61 @@
+module DistinctNames {
+  imports {
+      Base
+  }
+  item Bikini_TINT {
+      Type = Clothing,
+      DisplayName = Bikini,
+      ClothingItem = Bikini_TINT,
+      BodyLocation = Underwear,
+      Icon = Bikini_White,
+      Weight = 0.2,
+  }
+  item Bikini_Pattern01 {
+      Type = Clothing,
+      DisplayName = Polka Dot Bikini,
+      ClothingItem = Bikini_Pattern01,
+      BodyLocation = Underwear,
+      Icon = Bikini_OrangePolkaDot,
+      Weight = 0.2,
+  }
+  item SwimTrunks_Blue {
+      Type = Clothing,
+      DisplayName = Swim Trunks Blue,
+      ClothingItem = SwimTrunks_Blue,
+      BodyLocation = Underwear,
+      Icon = Swimtrunks_Blue,
+      Weight = 0.1,
+  }
+  item SwimTrunks_Green {
+      Type = Clothing,
+      DisplayName = Swim Trunks Green,
+      ClothingItem = SwimTrunks_Green,
+      BodyLocation = Underwear,
+      Icon = Swimtrunks_Green,
+      Weight = 0.1,
+  }
+  item SwimTrunks_Red {
+      Type = Clothing,
+      DisplayName = Swim Trunks Red,
+      ClothingItem = SwimTrunks_Red,
+      BodyLocation = Underwear,
+      Icon = Swimtrunks_Red,
+      Weight = 0.1,
+  }
+  item SwimTrunks_Yellow {
+      Type = Clothing,
+      DisplayName = Swim Trunks Yellow,
+      ClothingItem = SwimTrunks_Yellow,
+      BodyLocation = Underwear,
+      Icon = Swimtrunks_Yellow,
+      Weight = 0.1,
+  }
+  item Swimsuit_TINT {
+      Type = Clothing,
+      DisplayName = Swimsuit,
+      ClothingItem = Swimsuit_TINT,
+      BodyLocation = Underwear,
+      Icon = Swimsuit_White,
+      Weight = 0.1,
+  }
+}

@@ -1,0 +1,39 @@
+module Base {
+
+    recipe Attach Chipped Stone to Spear
+    {
+        SpearCrafted,
+        SharpedStone,
+        DuctTape=2,
+
+        Result:SpearChippedStone,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Chipped Stone to Spear with Twine
+    {
+        SpearCrafted,
+        SharpedStone,
+        Twine=2,
+
+        Result:SpearChippedStone,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+    recipe Bind Chipped Stone to Spear with Leather
+    {
+        SpearCrafted,
+        SharpedStone,
+        LeatherStrips=2,
+
+        Result:SpearChippedStone,
+        Time:100.0,
+        OnCreate:UpgradeSpear_OnCreate,
+        Category:Survivalist,
+    }
+
+}

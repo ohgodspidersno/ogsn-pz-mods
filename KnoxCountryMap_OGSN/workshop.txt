@@ -1,0 +1,6 @@
+version=1
+id=2042761166
+title=Knox Country Map - Lootable Map Item of Whole Game World
+description=Adds an in-game map of the entire playable area.
+tags=
+visibility=public
