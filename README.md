@@ -3,9 +3,7 @@ Just a big repo for all my mods
 
 Vanilla Food Fixes TODO:
 1. Remoulade in recipes
-3. cook with wine
 4. split roasts and stir fries into bowls
-5. rename roasted vegetables to oven roasts
 6. Tweak herbal tea values
 7. Add spice and condiments to premade burgers, soups, etc.
 
@@ -26,3 +24,12 @@ Weapon/Clothing Fixes:
 3. No alcohol-based molotov cocktails
 4. Can't burn welding mask
 5. Gather gunpowder from ALL bullets (some are missing)
+
+
+Done:
+5. rename roasted vegetables to oven roasts
+2. Remove obsolete items
+    hot cuppa
+    cold cuppa
+    bean bowl
+3. cook with wine
