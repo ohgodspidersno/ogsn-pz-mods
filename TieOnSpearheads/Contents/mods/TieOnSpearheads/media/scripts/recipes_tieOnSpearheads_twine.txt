@@ -1,6 +1,6 @@
 /************************ Spear ************************/
 module Base {
-    recipe Bind Bread Knife to Spear with Twine
+    recipe Attach Bread Knife to Spear
     {
         SpearCrafted,
         BreadKnife,
@@ -14,7 +14,7 @@ module Base {
 
 
 
-    recipe Bind Butter Knife to Spear with Twine
+    recipe Attach Butter Knife to Spear
     {
         SpearCrafted,
         ButterKnife,
@@ -26,7 +26,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Fork to Spear with Twine
+    recipe Attach Fork to Spear
     {
         SpearCrafted,
         Fork,
@@ -38,7 +38,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Letter Opener to Spear with Twine
+    recipe Attach Letter Opener to Spear
     {
         SpearCrafted,
         LetterOpener,
@@ -50,7 +50,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Scalpel to Spear with Twine
+    recipe Attach Scalpel to Spear
     {
         SpearCrafted,
         Scalpel,
@@ -62,7 +62,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Spoon to Spear with Twine
+    recipe Attach Spoon to Spear
     {
         SpearCrafted,
         Spoon,
@@ -74,7 +74,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Scissors to Spear with Twine
+    recipe Attach Scissors to Spear
     {
         SpearCrafted,
         Scissors,
@@ -86,7 +86,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Hand Fork to Spear with Twine
+    recipe Attach Hand Fork to Spear
     {
         SpearCrafted,
         HandFork,
@@ -98,7 +98,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Screwdriver to Spear with Twine
+    recipe Attach Screwdriver to Spear
     {
         SpearCrafted,
         Screwdriver,
@@ -110,7 +110,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Kitchen Knife to Spear with Twine
+    recipe Attach Kitchen Knife to Spear
     {
         SpearCrafted,
         KitchenKnife,
@@ -122,7 +122,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Hunting Knife to Spear with Twine
+    recipe Attach Hunting Knife to Spear
     {
         SpearCrafted,
         HuntingKnife,
@@ -134,7 +134,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Machete to Spear with Twine
+    recipe Attach Machete to Spear
     {
         SpearCrafted,
         Machete,
@@ -146,7 +146,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Bind Ice Pick to Spear with Twine
+    recipe Attach Ice Pick to Spear
     {
         SpearCrafted,
         IcePick,
