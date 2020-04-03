@@ -1,11 +1,10 @@
 Just a big repo for all my mods
 
-
 Vanilla Food Fixes TODO:
-
 4. split roasts and stir fries into bowls
-6. Tweak herbal tea values
 7. Add spice and condiments to premade burgers, soups, etc.
+
+
 
 Spearheads TODO:
 1. See if giving them all the same recipe name improves the experience
@@ -34,3 +33,4 @@ Done:
     bean bowl
 3. cook with wine
 1. Remoulade in recipes
+6. Tweak herbal tea values
