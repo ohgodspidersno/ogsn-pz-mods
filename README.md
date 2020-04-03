@@ -1,7 +1,6 @@
 Just a big repo for all my mods
 
 Vanilla Food Fixes TODO:
-4. split roasts and stir fries into bowls
 7. Add spice and condiments to premade burgers, soups, etc.
 
 
@@ -26,6 +25,7 @@ Weapon/Clothing Fixes:
 
 
 Done:
+4. split roasts and stir fries into bowls
 5. rename roasted vegetables to oven roasts
 2. Remove obsolete items
     hot cuppa
