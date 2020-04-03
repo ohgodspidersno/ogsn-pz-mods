@@ -1,0 +1,5 @@
+id=2036566222
+title=[DEPRECATED] Herbs Rot (now part of Vanilla Food Fixes)
+description=This has been folded into my other, more polished mod, "Vanilla Food Fixes," which provides many more bug fixes and light-weight, common sense improvements to the vanilla food items and recipes.
+description=I will leave this page up temporarily in order to help alleviate confusion.
+visibility=public
