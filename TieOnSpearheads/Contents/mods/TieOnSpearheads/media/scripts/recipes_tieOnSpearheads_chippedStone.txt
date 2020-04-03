@@ -12,7 +12,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Attach Chipped Stone to Spear
+    recipe Bind Chipped Stone to Spear with Twine
     {
         SpearCrafted,
         SharpedStone,
@@ -24,7 +24,7 @@ module Base {
         Category:Survivalist,
     }
 
-    recipe Attach Chipped Stone to Spear
+    recipe Bind Chipped Stone to Spear with Leather
     {
         SpearCrafted,
         SharpedStone,
