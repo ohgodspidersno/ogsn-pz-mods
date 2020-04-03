@@ -2,7 +2,7 @@ Just a big repo for all my mods
 
 
 Vanilla Food Fixes TODO:
-1. Remoulade in recipes
+
 4. split roasts and stir fries into bowls
 6. Tweak herbal tea values
 7. Add spice and condiments to premade burgers, soups, etc.
@@ -33,3 +33,4 @@ Done:
     cold cuppa
     bean bowl
 3. cook with wine
+1. Remoulade in recipes
