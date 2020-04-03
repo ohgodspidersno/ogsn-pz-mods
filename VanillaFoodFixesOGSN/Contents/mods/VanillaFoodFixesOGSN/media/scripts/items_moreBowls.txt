@@ -1,10 +1,10 @@
 module Base
 {
-    item StewBowl
+    item StirFryBowl
       {
           HungerChange	=	-15,
           Type	=	Food,
-          DisplayName	=	Bowl of Stew,
+          DisplayName	=	Bowl of Stir Fry,
           MinutesToCook	=	15,
           Weight	=	1,
           IsCookable	=	TRUE,

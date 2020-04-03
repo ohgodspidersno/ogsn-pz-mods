@@ -1,7 +1,7 @@
 
-function MakeBowlOfStew2_OnCreate(items, result, player)
+function MakeBowlOfStirFry2_OnCreate(items, result, player)
     for i=0,items:size() - 1 do
-        if items:get(i):getType() == "PotOfStew" then
+        if items:get(i):getType() == "PanFriedVegetables" then
             result:setBaseHunger(items:get(i):getBaseHunger() / 2);
             result:setHungChange(items:get(i):getBaseHunger() / 2);
             result:setThirstChange(items:get(i):getThirstChange() / 2);
@@ -14,12 +14,12 @@ function MakeBowlOfStew2_OnCreate(items, result, player)
             result:setTaintedWater(items:get(i):isTaintedWater())
         end
     end
-    player:getInventory():AddItem("Base.Pot");
+    player:getInventory():AddItem("Base.Pan");
 end
 
-function MakeBowlOfStew4_OnCreate(items, result, player)
+function MakeBowlOfStirFry4_OnCreate(items, result, player)
     for i=0,items:size() - 1 do
-        if items:get(i):getType() == "PotOfStew" then
+        if items:get(i):getType() == "PanFriedVegetables" then
             result:setBaseHunger(items:get(i):getBaseHunger() / 4);
             result:setHungChange(items:get(i):getBaseHunger() / 4);
             result:setThirstChange(items:get(i):getThirstChange() / 4);
@@ -32,5 +32,5 @@ function MakeBowlOfStew4_OnCreate(items, result, player)
             result:setTaintedWater(items:get(i):isTaintedWater())
         end
     end
-    player:getInventory():AddItem("Base.Pot");
+    player:getInventory():AddItem("Base.Pan");
 end
