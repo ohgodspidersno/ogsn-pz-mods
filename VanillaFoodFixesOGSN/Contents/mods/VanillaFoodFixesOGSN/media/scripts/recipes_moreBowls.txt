@@ -47,4 +47,29 @@ module Base
        Category:Cooking,
        OnGiveXP:NoXP_OnGiveXP,
     }
+
+    recipe Make 2 Bowls of Roasted Vegetables
+    {
+       PanFriedVegetables2,
+       Bowl=2,
+
+       Result:RoastedVegetablesBowl=2,
+       OnCreate:MakeBowlOfRoastedVegetables2_OnCreate,
+       Time:80.0,
+       Category:Cooking,
+       OnGiveXP:NoXP_OnGiveXP,
+    }
+
+    recipe Make 4 Bowls of Roasted Vegetables
+    {
+       PanFriedVegetables2,
+       Bowl=4,
+
+       Result:RoastedVegetablesBowl=4,
+       OnCreate:MakeBowlOfRoastedVegetables4_OnCreate,
+       Time:80.0,
+       Category:Cooking,
+       OnGiveXP:NoXP_OnGiveXP,
+    }
+
 }

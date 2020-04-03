@@ -20,4 +20,24 @@ module Base
           EatType = 2hand,
       }
 
+      item RoastedVegetablesBowl
+        {
+            HungerChange	=	-15,
+            Type	=	Food,
+            DisplayName	=	Bowl of Roasted Vegetables,
+            MinutesToCook	=	15,
+            Weight	=	1,
+            IsCookable	=	TRUE,
+            DaysFresh	=	2,
+            DaysTotallyRotten	=	4,
+            UnhappyChange	=	-20,
+            MinutesToBurn	=	25,
+            Icon	=	BowlFull,
+            ReplaceOnUse	=	Bowl,
+            BadInMicrowave = true,
+            BadCold = true,
+            StaticModel = Bowl,
+            EatType = 2hand,
+        }
+
 }
