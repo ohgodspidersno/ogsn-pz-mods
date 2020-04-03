@@ -16,4 +16,9 @@ ContextMenu_EN = {
   ItenName_Base.Tea_Ginseng                       =   "Ginseng Tea",
   ItenName_Base.Tea_Medicinal                     =   "Medicinal Tea",
   ItenName_Base.Tea_Energizing                    =   "Energizing Tea",
+  Recipe_Place_Vegetables_in_Roasting_Pan         =   "Prepare oven roast",
+  DisplayName_Roasted_Vegetables                  =   "Oven roast",
+  Recipe_Roasted_Vegetables                       =   "Oven roast",
+  ContextMenu_EvolvedRecipe_Roasted Vegetables    =   "Oven roast",
+  ItemName_Base.PanFriedVegetables2               =   "Oven roast",
 }
