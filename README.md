@@ -1,10 +1,5 @@
 Just a big repo for all my mods
 
-Vanilla Food Fixes TODO:
-7. Add spice and condiments to premade burgers, soups, etc.
-
-
-
 Spearheads TODO:
 1. See if giving them all the same recipe name improves the experience
 
