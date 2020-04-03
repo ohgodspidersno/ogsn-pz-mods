@@ -3,11 +3,6 @@ Just a big repo for all my mods
 
 Vanilla Food Fixes TODO:
 1. Remoulade in recipes
-2. Remove obsolete items
-    hot cuppa
-    cold cuppa
-    bean bowl
-
 3. cook with wine
 4. split roasts and stir fries into bowls
 5. rename roasted vegetables to oven roasts
