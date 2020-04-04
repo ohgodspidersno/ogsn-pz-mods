@@ -135,7 +135,7 @@ module Base
       UnhappyChange   =   10,
       ThirstChange    =   10,
       DisplayName	=	Medicinal blend,
-      Icon	=	Teabag,
+      Icon	=	teablend_medicinal,
       FoodType    =   Tea,
   }
 
@@ -150,7 +150,7 @@ module Base
       UnhappyChange   =   10,
       ThirstChange    =   10,
       DisplayName	=	Energizing blend,
-      Icon	=	Teabag,
+      Icon	=	teablend_energizing,
       FoodType    =   Tea,
   }
 
