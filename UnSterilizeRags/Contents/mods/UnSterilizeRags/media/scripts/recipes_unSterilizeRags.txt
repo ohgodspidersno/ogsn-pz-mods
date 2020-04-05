@@ -1,5 +1,7 @@
-/************************ Spear ************************/
-module Base {
+module UnSterilizedRags {
+    imports {
+      Base
+    }
     recipe Downgrade Sterilized Rag To Ripped Sheet
     {
         AlcoholRippedSheets,
