@@ -1,10 +1,14 @@
-module Base {
+module VanillaFoodFixesOGSN
+{
+    imports {
+        Base
+    }
 
     evolvedrecipe Evolved_CommonMallow
     {
-        BaseItem:Tea_CommonMallow,
+        BaseItem:VanillaFoodFixesOGSN.Tea_CommonMallow,
         MaxItems:3,
-        ResultItem:Tea_CommonMallow,
+        ResultItem:VanillaFoodFixesOGSN.Tea_CommonMallow,
         Cookable:true,
         AddIngredientIfCooked:true,
         Name:Spruce up common mallow tea,
@@ -12,9 +16,9 @@ module Base {
 
     evolvedrecipe Evolved_LemonGrass
     {
-       BaseItem:Tea_LemonGrass,
+       BaseItem:VanillaFoodFixesOGSN.Tea_LemonGrass,
        MaxItems:3,
-       ResultItem:Tea_LemonGrass,
+       ResultItem:VanillaFoodFixesOGSN.Tea_LemonGrass,
        Cookable:true,
        AddIngredientIfCooked:true,
        Name:Spruce up lemon grass tea,
@@ -22,9 +26,9 @@ module Base {
 
     evolvedrecipe Evolved_BlackSage
     {
-       BaseItem:Tea_BlackSage,
+       BaseItem:VanillaFoodFixesOGSN.Tea_BlackSage,
        MaxItems:3,
-       ResultItem:Tea_BlackSage,
+       ResultItem:VanillaFoodFixesOGSN.Tea_BlackSage,
        Cookable:true,
        AddIngredientIfCooked:true,
        Name:Spruce up black sage tea,
@@ -32,9 +36,9 @@ module Base {
 
     evolvedrecipe Evolved_Ginseng
     {
-       BaseItem:Tea_Ginseng,
+       BaseItem:VanillaFoodFixesOGSN.Tea_Ginseng,
        MaxItems:3,
-       ResultItem:Tea_Ginseng,
+       ResultItem:VanillaFoodFixesOGSN.Tea_Ginseng,
        Cookable:true,
        AddIngredientIfCooked:true,
        Name:Spruce up ginseng tea,
@@ -42,9 +46,9 @@ module Base {
 
     evolvedrecipe Evolved_Medicinal
     {
-       BaseItem:Tea_Medicinal,
+       BaseItem:VanillaFoodFixesOGSN.Tea_Medicinal,
        MaxItems:3,
-       ResultItem:Tea_Medicinal,
+       ResultItem:VanillaFoodFixesOGSN.Tea_Medicinal,
        Cookable:true,
        AddIngredientIfCooked:true,
        Name:Spruce up medicinal tea,
@@ -52,9 +56,9 @@ module Base {
 
     evolvedrecipe Evolved_Energizing
     {
-       BaseItem:Tea_Energizing,
+       BaseItem:VanillaFoodFixesOGSN.Tea_Energizing,
        MaxItems:3,
-       ResultItem:Tea_Energizing,
+       ResultItem:VanillaFoodFixesOGSN.Tea_Energizing,
        Cookable:true,
        AddIngredientIfCooked:true,
        Name:Spruce up energizing tea,

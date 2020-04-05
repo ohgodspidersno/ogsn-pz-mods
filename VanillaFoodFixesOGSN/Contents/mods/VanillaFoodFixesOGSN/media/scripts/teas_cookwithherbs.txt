@@ -1,5 +1,8 @@
-module Base
+module VanillaFoodFixesOGSN
 {
+    imports {
+        Base
+    }
   item Tea_CommonMallow
   {
       FluReduction    =   7,
