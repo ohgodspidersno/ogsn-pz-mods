@@ -13,7 +13,7 @@ module Base
         Lipids = 1,
         Calories = 36,
         FoodType = Herbal,
-        EvolvedRecipe = Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Burger:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;VanillaFoodFixesOGSN.Tea_CommonMallow:2;VanillaFoodFixesOGSN.Tea_LemonGrass:2;VanillaFoodFixesOGSN.Tea_BlackSage:2;VanillaFoodFixesOGSN.Tea_Ginseng:2,
+        EvolvedRecipe = Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Burger:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;Tea_CommonMallow:2;Tea_LemonGrass:2;Tea_BlackSage:2;Tea_Ginseng:2,
     }
 
     item WildGarlic
@@ -30,6 +30,6 @@ module Base
         Calories = 0.1,
         Spice = True,
         FoodType = Herbal,
-        EvolvedRecipe = Soup:1;Stew:1;Pie:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1;HotDrink:1;VanillaFoodFixesOGSN.Tea_CommonMallow:1;VanillaFoodFixesOGSN.Tea_LemonGrass:1;VanillaFoodFixesOGSN.Tea_BlackSage:1;VanillaFoodFixesOGSN.Tea_Ginseng:1,
+        EvolvedRecipe = Soup:1;Stew:1;Pie:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1;HotDrink:1;Tea_CommonMallow:1;Tea_LemonGrass:1;Tea_BlackSage:1;Tea_Ginseng:1,
     }
 }
