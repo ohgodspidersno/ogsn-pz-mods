@@ -5,6 +5,11 @@ module MorePoleWeaponsTwineLeather
 		MorePoleWeapons
 	}
 
+  imports
+	{
+		MorePoleWeapons
+	}
+
   recipe Affix Screwdriver to Long Spear
   {
       Screwdriver,
