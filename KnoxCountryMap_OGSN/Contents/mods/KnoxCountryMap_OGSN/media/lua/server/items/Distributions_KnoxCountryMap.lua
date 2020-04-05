@@ -44,8 +44,8 @@ local distributionTable =
 		{
 			items =
 			{
-				"Base.KnoxCountryMap",0.5,
-				"Base.KnoxCountryMapSecret",0.01,
+				"KnoxCountryMapOGSN.KnoxCountryMap",0.5,
+				"KnoxCountryMapOGSN.KnoxCountryMapSecret",0.01,
 			},
 		},
 		crate =
@@ -73,8 +73,8 @@ local distributionTable =
 		{
 			items =
 			{
-				"Base.KnoxCountryMap",0.5,
-				"Base.KnoxCountryMapSecret",0.01,
+				"KnoxCountryMapOGSN.KnoxCountryMap",0.5,
+				"KnoxCountryMapOGSN.KnoxCountryMapSecret",0.01,
 			},
 		},
 		crate =
@@ -162,24 +162,24 @@ local distributionTable =
 		{
 			items =
 			{
-				"Base.KnoxCountryMap",0.1,
-				"Base.KnoxCountryMapSecret",0.005,
+				"KnoxCountryMapOGSN.KnoxCountryMap",0.1,
+				"KnoxCountryMapOGSN.KnoxCountryMapSecret",0.005,
 			},
 		},
 		inventoryfemale =
 		{
 			items =
 			{
-				"Base.KnoxCountryMap",0.2,
-				"Base.KnoxCountryMapSecret",0.01,
+				"KnoxCountryMapOGSN.KnoxCountryMap",0.2,
+				"KnoxCountryMapOGSN.KnoxCountryMapSecret",0.01,
 			},
 		},
 		shelvesmag =
 		{
 			items =
 			{
-				"Base.KnoxCountryMap",0.5,
-				"Base.KnoxCountryMapSecret",0.01,
+				"KnoxCountryMapOGSN.KnoxCountryMap",0.5,
+				"KnoxCountryMapOGSN.KnoxCountryMapSecret",0.01,
 			},
 		},
 		desk =
@@ -234,8 +234,8 @@ local distributionTable =
 		{
 			items =
 			{
-				"Base.KnoxCountryMap",0.01,
-				"Base.KnoxCountryMapSecret",0.005,
+				"KnoxCountryMapOGSN.KnoxCountryMap",0.01,
+				"KnoxCountryMapOGSN.KnoxCountryMapSecret",0.005,
 			},
 		},
 		fridge =
@@ -260,8 +260,8 @@ local distributionTable =
 		{
 			items =
 			{
-				"Base.KnoxCountryMap",0.5,
-				"Base.KnoxCountryMapSecret",0.01,
+				"KnoxCountryMapOGSN.KnoxCountryMap",0.5,
+				"KnoxCountryMapOGSN.KnoxCountryMapSecret",0.01,
 			},
 		},
 		officedrawers =
@@ -295,8 +295,8 @@ local distributionTable =
 		{
 			items =
 			{
-				"Base.KnoxCountryMap",2,
-				"Base.KnoxCountryMapSecret",.01,
+				"KnoxCountryMapOGSN.KnoxCountryMap",2,
+				"KnoxCountryMapOGSN.KnoxCountryMapSecret",.01,
 			},
 		},
 	},
