@@ -1,14 +1,11 @@
-module VanillaFoodFixesOGSN
+module Base
 {
-    imports {
-        Base
-    }
     recipe Make 2 Bowls of Stir Fry
     {
        PanFriedVegetables,
        Bowl=2,
 
-       Result:VanillaFoodFixesOGSN.StirFryBowl=2,
+       Result:StirFryBowl=2,
        OnCreate:MakeBowlOfStirFry2_OnCreate,
        Time:80.0,
        Category:Cooking,
@@ -20,7 +17,7 @@ module VanillaFoodFixesOGSN
        PanFriedVegetables,
        Bowl=4,
 
-       Result:VanillaFoodFixesOGSN.StirFryBowl=4,
+       Result:StirFryBowl=4,
        OnCreate:MakeBowlOfStirFry4_OnCreate,
        Time:80.0,
        Category:Cooking,
@@ -32,7 +29,7 @@ module VanillaFoodFixesOGSN
        GridlePanFriedVegetables,
        Bowl=2,
 
-       Result:VanillaFoodFixesOGSN.StirFryBowl=2,
+       Result:StirFryBowl=2,
        OnCreate:MakeBowlOfStirFryGridle2_OnCreate,
        Time:80.0,
        Category:Cooking,
@@ -44,7 +41,7 @@ module VanillaFoodFixesOGSN
        GridlePanFriedVegetables,
        Bowl=4,
 
-       Result:VanillaFoodFixesOGSN.StirFryBowl=4,
+       Result:StirFryBowl=4,
        OnCreate:MakeBowlOfStirFryGridle4_OnCreate,
        Time:80.0,
        Category:Cooking,
@@ -56,7 +53,7 @@ module VanillaFoodFixesOGSN
        PanFriedVegetables2,
        Bowl=2,
 
-       Result:VanillaFoodFixesOGSN.RoastedVegetablesBowl=2,
+       Result:RoastedVegetablesBowl=2,
        OnCreate:MakeBowlOfRoastedVegetables2_OnCreate,
        Time:80.0,
        Category:Cooking,
@@ -68,7 +65,7 @@ module VanillaFoodFixesOGSN
        PanFriedVegetables2,
        Bowl=4,
 
-       Result:VanillaFoodFixesOGSN.RoastedVegetablesBowl=4,
+       Result:RoastedVegetablesBowl=4,
        OnCreate:MakeBowlOfRoastedVegetables4_OnCreate,
        Time:80.0,
        Category:Cooking,

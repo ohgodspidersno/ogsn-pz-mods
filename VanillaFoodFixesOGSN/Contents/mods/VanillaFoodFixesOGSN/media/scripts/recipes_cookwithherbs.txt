@@ -1,8 +1,5 @@
-module VanillaFoodFixesOGSN
-{
-    imports {
-        Base
-    }
+module Base {
+
     recipe Brew common mallow tea
     {
         destroy WaterMug,
@@ -12,7 +9,7 @@ module VanillaFoodFixesOGSN
         OnGiveXP:Give3CookingXP,
         CanBeDoneFromFloor:true,
         Category:Cooking,
-        Result:VanillaFoodFixesOGSN.Tea_CommonMallow,
+        Result:Tea_CommonMallow,
     }
 
     recipe Brew lemon grass tea
@@ -24,7 +21,7 @@ module VanillaFoodFixesOGSN
         OnGiveXP:Give3CookingXP,
         CanBeDoneFromFloor:true,
         Category:Cooking,
-        Result:VanillaFoodFixesOGSN.Tea_LemonGrass,
+        Result:Tea_LemonGrass,
     }
 
     recipe Brew black sage tea
@@ -36,7 +33,7 @@ module VanillaFoodFixesOGSN
         OnGiveXP:Give3CookingXP,
         CanBeDoneFromFloor:true,
         Category:Cooking,
-        Result:VanillaFoodFixesOGSN.Tea_BlackSage,
+        Result:Tea_BlackSage,
     }
 
     recipe Brew ginseng tea
@@ -48,7 +45,7 @@ module VanillaFoodFixesOGSN
         OnGiveXP:Give3CookingXP,
         CanBeDoneFromFloor:true,
         Category:Cooking,
-        Result:VanillaFoodFixesOGSN.Tea_Ginseng,
+        Result:Tea_Ginseng,
     }
 
 
@@ -63,19 +60,19 @@ module VanillaFoodFixesOGSN
         OnGiveXP:Give3CookingXP,
         CanBeDoneFromFloor:true,
         Category:Cooking,
-        Result:VanillaFoodFixesOGSN.Teabag_Medicinal,
+        Result:Teabag_Medicinal,
     }
 
     recipe Brew medicinal tea
     {
         destroy WaterMug,
-        destroy VanillaFoodFixesOGSN.Teabag_Medicinal,
+        destroy Teabag_Medicinal,
 
         Time:30.0,
         OnGiveXP:Give3CookingXP,
         CanBeDoneFromFloor:true,
         Category:Cooking,
-        Result:VanillaFoodFixesOGSN.Tea_Medicinal,
+        Result:Tea_Medicinal,
     }
 
     recipe Make energizing tea blend
@@ -89,19 +86,19 @@ module VanillaFoodFixesOGSN
         OnGiveXP:Give3CookingXP,
         CanBeDoneFromFloor:true,
         Category:Cooking,
-        Result:VanillaFoodFixesOGSN.Teabag_Energizing,
+        Result:Teabag_Energizing,
     }
 
     recipe Brew energizing tea
     {
         destroy WaterMug,
-        destroy VanillaFoodFixesOGSN.Teabag_Energizing,
+        destroy Teabag_Energizing,
 
         Time:30.0,
         OnGiveXP:Give3CookingXP,
         CanBeDoneFromFloor:true,
         Category:Cooking,
-        Result:VanillaFoodFixesOGSN.Tea_Energizing,
+        Result:Tea_Energizing,
     }
 
 }

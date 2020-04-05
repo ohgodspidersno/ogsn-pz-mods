@@ -1,8 +1,5 @@
-module VanillaFoodFixesOGSN
+module Base
 {
-    imports {
-        Base
-    }
     item StirFryBowl
       {
           HungerChange	=	-15,
