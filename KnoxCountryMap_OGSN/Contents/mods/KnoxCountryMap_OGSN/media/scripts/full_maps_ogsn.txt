@@ -1,4 +1,4 @@
-module KnoxCountryMapOGSN {
+module Base {
     item KnoxCountryMap
     {
         Type          = Normal,
