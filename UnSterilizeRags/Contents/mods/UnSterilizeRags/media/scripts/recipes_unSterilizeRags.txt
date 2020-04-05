@@ -1,7 +1,4 @@
-module UnSterilizedRags {
-    imports {
-      Base
-    }
+module Base {
     recipe Downgrade Sterilized Rag To Ripped Sheet
     {
         AlcoholRippedSheets,
