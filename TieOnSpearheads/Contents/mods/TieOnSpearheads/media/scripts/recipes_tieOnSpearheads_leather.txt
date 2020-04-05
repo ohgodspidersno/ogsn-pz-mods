@@ -1,5 +1,9 @@
 /************************ Spear ************************/
-module Base {
+module TieOnSpearheads {
+    imports {
+        Base
+    }
+
     recipe Bind Bread Knife to Spear
     {
         SpearCrafted,

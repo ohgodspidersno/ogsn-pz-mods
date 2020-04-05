@@ -1,4 +1,8 @@
-module Base {
+module TieOnSpearheads {
+
+      imports {
+          Base
+      }
 
       item SpearChippedStone
       {
