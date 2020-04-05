@@ -1,8 +1,4 @@
-module TieOnSpearheads {
-
-    imports {
-        Base
-    }
+module Base {
 
     recipe Attach Chipped Stone to Spear
     {
@@ -10,7 +6,7 @@ module TieOnSpearheads {
         SharpedStone,
         DuctTape=2,
 
-        Result:TieOnSpearheads.SpearChippedStone,
+        Result:SpearChippedStone,
         Time:100.0,
         OnCreate:UpgradeSpear_OnCreate,
         Category:Survivalist,
@@ -22,19 +18,19 @@ module TieOnSpearheads {
         SharpedStone,
         Twine=2,
 
-        Result:TieOnSpearheads.SpearChippedStone,
+        Result:SpearChippedStone,
         Time:100.0,
         OnCreate:UpgradeSpear_OnCreate,
         Category:Survivalist,
     }
 
-    recipe Bind Chipped Stone to Spear
+    recipe Bind Chipped Stone to Spear with Leather
     {
         SpearCrafted,
         SharpedStone,
         LeatherStrips=2,
 
-        Result:TieOnSpearheads.SpearChippedStone,
+        Result:SpearChippedStone,
         Time:100.0,
         OnCreate:UpgradeSpear_OnCreate,
         Category:Survivalist,
