@@ -28,7 +28,7 @@ module TieOnSpearheads {
         Category:Survivalist,
     }
 
-    recipe Bind Chipped Stone to Spear with Leather
+    recipe Bind Chipped Stone to Spear
     {
         SpearCrafted,
         SharpedStone,
