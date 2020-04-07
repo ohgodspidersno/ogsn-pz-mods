@@ -1,0 +1,36 @@
+module FMJ
+{
+	imports
+	{
+		Base
+	}
+
+/*******************LOCK PICKING*******************/
+	item BobbyPin
+	{
+		Weight = 0.1,
+		Type = Normal,
+		DisplayName = Bobby Pin,
+		Icon = BobbyPin,
+	}
+	item LockPickingMag
+	{
+		Weight = 0.1,
+		Type = Literature,
+		DisplayName = The Burglar Magazine vol. 1,
+		Icon = MagazineBlacksmith1,
+		TeachedRecipes = Lockpicking;Create Bobby Pin,
+		ReplaceOnUse = LockPickingMag,
+		StaticModel = Magazine,
+	}
+	item LockPickingMag2
+	{
+		Weight = 0.1,
+		Type = Literature,
+		DisplayName = The Burglar Magazine vol. 2,
+		Icon = MagazineBlacksmith2,
+		TeachedRecipes = Break Door locks;Break Window locks,
+		ReplaceOnUse = LockPickingMag2,
+		StaticModel = Magazine,
+	}
+}
