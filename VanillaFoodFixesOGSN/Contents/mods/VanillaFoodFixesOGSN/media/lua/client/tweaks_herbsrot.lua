@@ -1,6 +1,5 @@
--- if getActivatedMods():contains("ItemTweakerAPI") then
 require("ItemTweaker_Copy_ogsn");
--- else return end
+
 if getActivatedMods():contains("0_VFF_herbs_never_rot") then
   return end
 
