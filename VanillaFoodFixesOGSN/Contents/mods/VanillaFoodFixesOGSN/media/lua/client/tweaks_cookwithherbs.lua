@@ -41,15 +41,3 @@ if getActivatedMods():contains("AAApoc") then
     TweakItem("Base.LemonGrass","EvolvedRecipe","Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Sandwich:1;Burger:1;Salad:1;FruitSalad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1;AAAHotDog:1;AAAChiliDog:1");
     TweakItem("Base.WildGarlic","EvolvedRecipe","Soup:1;Stew:1;Pie:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1;AAAHotDog:1;AAAChiliDog:1");
 else end
-
-if getActivatedMods():contains("SKLDairyModBeta") then
-    TweakItem("Base.MilkJar","HotDrink:2;Evolved_CommonMallow:2;Evolved_LemonGrass:2;Evolved_BlackSage:2;Evolved_Ginseng:2;Evolved_Energizing:2;Evolved_Medicinal:2");
-    TweakItem("Base.MilkWaterBottle","HotDrink:2;Evolved_CommonMallow:2;Evolved_LemonGrass:2;Evolved_BlackSage:2;Evolved_Ginseng:2;Evolved_Energizing:2;Evolved_Medicinal:2");
-    TweakItem("Base.MilkPopBottle","HotDrink:2;Evolved_CommonMallow:2;Evolved_LemonGrass:2;Evolved_BlackSage:2;Evolved_Ginseng:2;Evolved_Energizing:2;Evolved_Medicinal:2");
-else end
-
-if getActivatedMods():contains("SKLDairyModBeta") and getActivatedMods():contains("WarOnBeans") then
-    TweakItem("Base.MilkJar","EvolvedRecipe","HotDrink:2;Evolved_CommonMallow:2;Evolved_LemonGrass:2;Evolved_BlackSage:2;Evolved_Ginseng:2;Evolved_Energizing:2;Evolved_Medicinal:2;OatmealEvolved:2");
-    TweakItem("Base.MilkWaterBottle","EvolvedRecipe","HotDrink:2;Evolved_CommonMallow:2;Evolved_LemonGrass:2;Evolved_BlackSage:2;Evolved_Ginseng:2;Evolved_Energizing:2;Evolved_Medicinal:2;OatmealEvolved:2");
-    TweakItem("Base.MilkPopBottle","EvolvedRecipe","HotDrink:2;Evolved_CommonMallow:2;Evolved_LemonGrass:2;Evolved_BlackSage:2;Evolved_Ginseng:2;Evolved_Energizing:2;Evolved_Medicinal:2;OatmealEvolved:2");
-else end

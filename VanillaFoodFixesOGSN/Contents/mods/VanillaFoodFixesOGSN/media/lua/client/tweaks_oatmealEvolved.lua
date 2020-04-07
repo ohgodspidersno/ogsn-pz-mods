@@ -27,26 +27,3 @@ TweakItem("Base.Modjeska","EvolvedRecipe","OatmealEvolved:10");
 if getActivatedMods():contains("AAApoc") then
     TweakItem("Base.AAAVanillaExtract","EvolvedRecipe", "Soup:1;Stew:1;Pie:1;Stir fry Griddle Pan:1;Stir fry:1;Burger:1;Salad:1;Roasted Vegetables:1;RicePot:1;RicePan:1;PastaPot:1;PastaPan:1;OatmealEvolved:1");
 else end
-
-if getActivatedMods():contains("SKLDairyModBeta") then
-    TweakItem("Base.MilkJar","EvolvedRecipe","HotDrink:2;OatmealEvolved:2")
-    TweakItem("Base.MilkWaterBottle","EvolvedRecipe","HotDrink:2;OatmealEvolved:2")
-    TweakItem("Base.MilkPopBottle","EvolvedRecipe","HotDrink:2;OatmealEvolved:2")
-else end
-
-if getActivatedMods():contains("SKLDairyModBeta") and getActivatedMods():contains("CookWithHerbs") then
-    TweakItem("Base.MilkJar","EvolvedRecipe","HotDrink:2;Evolved_CommonMallow:2;Evolved_LemonGrass:2;Evolved_BlackSage:2;Evolved_Ginseng:2;Evolved_Energizing:2;Evolved_Medicinal:2;OatmealEvolved:2");
-    TweakItem("Base.MilkWaterBottle","EvolvedRecipe","HotDrink:2;Evolved_CommonMallow:2;Evolved_LemonGrass:2;Evolved_BlackSage:2;Evolved_Ginseng:2;Evolved_Energizing:2;Evolved_Medicinal:2;OatmealEvolved:2");
-    TweakItem("Base.MilkPopBottle","EvolvedRecipe","HotDrink:2;Evolved_CommonMallow:2;Evolved_LemonGrass:2;Evolved_BlackSage:2;Evolved_Ginseng:2;Evolved_Energizing:2;Evolved_Medicinal:2;OatmealEvolved:2");
-else end
---[[
-Foods to add:
-
-AAAVanillaExtract   (conditionally)
-
-
-
-
-
-
-]]--
