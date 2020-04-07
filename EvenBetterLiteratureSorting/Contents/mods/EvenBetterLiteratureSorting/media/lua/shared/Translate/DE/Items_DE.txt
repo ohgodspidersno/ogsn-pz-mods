@@ -1,0 +1,89 @@
+
+Items_DE = {
+
+
+	DisplayName_Carpentry_for_Beginners = " Tischlern Bd.1: F�r Dummies",
+	DisplayName_Carpentry_for_Intermediates = " Tischlern Bd.2: Mittleren",
+	DisplayName_Advanced_Carpentry = " Tischlern Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Carpentry = " Tischlern Bd.4: Experten",
+	DisplayName_Master_Carpentry = " Tischlern Bd.5: Meister",
+
+
+	DisplayName_Cooking_for_Beginners = " Kochen Bd.1: F�r Dummies",
+	DisplayName_Cooking_for_Intermediates = " Kochen Bd.2: Mittleren",
+	DisplayName_Advanced_Cooking = " Kochen Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Cooking = " Kochen Bd.4: Experten",
+	DisplayName_Master_Cooking = " Kochen Bd.5: Meister",
+
+
+	DisplayName_Farming_for_Beginners = " Landwirtschaft Bd.1: F�r Dummies",
+	DisplayName_Farming_for_Intermediates = " Landwirtschaft Bd.2: Mittleren",
+	DisplayName_Advanced_Farming = " Landwirtschaft Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Farming = " Landwirtschaft Bd.4: Experten",
+	DisplayName_Master_Farming = " Landwirtschaft Bd.5: Meister",
+
+
+	DisplayName_Fishing_for_Beginners = " Fischen Bd.1: F�r Dummies",
+	DisplayName_Fishing_for_Intermediates = " Fischen Bd.2: Mittleren",
+	DisplayName_Advanced_Fishing = " Fischen Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Fishing = " Fischen Bd.4: Experten",
+	DisplayName_Master_Fishing = " Fischen Bd.5: Meister",
+
+
+	DisplayName_Trapping_for_Beginners = " Jagen Bd.1: F�r Dummies",
+	DisplayName_Trapping_for_Intermediates = " Jagen Bd.2: Mittleren",
+	DisplayName_Advanced_Trapping = " Jagen Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Trapping = " Jagen Bd.4: Experten",
+	DisplayName_Master_Trapping = " Jagen Bd.5: Meister",
+
+
+	DisplayName_Electricity_for_Beginners = " Elektrotechnik Bd.1: F�r Dummies",
+	DisplayName_Electricity_for_Intermediates = " Elektrotechnik Bd.2: Mittleren",
+	DisplayName_Advanced_Electricity = " Elektrotechnik Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Electricity = " Elektrotechnik Bd.4: Experten",
+	DisplayName_Master_Electricity = " Elektrotechnik Bd.5: Meister",
+
+
+	DisplayName_FirstAid_for_Beginners = " Erste-Hilfe Bd.1: F�r Dummies",
+	DisplayName_FirstAid_for_Intermediates = " Erste-Hilfe Bd.2: Mittleren",
+	DisplayName_Advanced_First_Aid = " Erste-Hilfe Bd.3: Fortgeschrittene",
+	DisplayName_Expert_First_Aid = " Erste-Hilfe Bd.4: Experten",
+	DisplayName_Master_First_Aid = " Erste-Hilfe Bd.5: Meister",
+
+
+	DisplayName_Foraging_for_Beginners = " Nahrungssuche Bd.1: F�r Dummies",
+	DisplayName_Foraging_for_Intermediates = " Nahrungssuche Bd.2: Mittleren",
+	DisplayName_Advanced_Foraging = " Nahrungssuche Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Foraging = " Nahrungssuche Bd.4: Experten",
+	DisplayName_Master_Foraging = " Nahrungssuche Bd.5: Meister",
+
+
+	DisplayName_Metalwork_for_Beginners = " Metallbearbeitung Bd.1: F�r Dummies",
+	DisplayName_Metalwork_for_Intermediates = " Metallbearbeitung Bd.2: Mittleren",
+	DisplayName_Advanced_Metalwork = " Metallbearbeitung Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Metalwork = " Metallbearbeitung Bd.4: Experten",
+	DisplayName_Master_Metalwork = " Metallbearbeitung Bd.5: Meister",
+
+
+	DisplayName_Smithing_for_Beginners = " Schmiedekunst Bd.1: F�r Dummies",
+	DisplayName_Smithing_for_Intermediates = " Schmiedekunst Bd.2: Mittleren",
+	DisplayName_Advanced_Smithing = " Schmiedekunst Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Smithing = " Schmiedekunst Bd.4: Experten",
+	DisplayName_Master_Smithing = " Schmiedekunst Bd.5: Meister",
+
+
+	DisplayName_Mechanics_for_Beginners = " Mechanik Bd.1: F�r Dummies",
+	DisplayName_Mechanics_for_Intermediates = " Mechanik Bd.2: Mittleren",
+	DisplayName_Advanced_Mechanics = " Mechanik Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Mechanics = " Mechanik Bd.4: Experten",
+	DisplayName_Master_Mechanics = " Mechanik Bd.5: Meister",
+
+
+	DisplayName_Tailoring_for_Beginners = " Schneiderei Bd.1: F�r Dummies",
+	DisplayName_Tailoring_for_Intermediates = " Schneiderei Bd.2: Mittleren",
+	DisplayName_Advanced_Tailoring = " Schneiderei Bd.3: Fortgeschrittene",
+	DisplayName_Expert_Tailoring = " Schneiderei Bd.4: Experten",
+	DisplayName_Master_Tailoring = " Schneiderei Bd.5: Meister",
+
+
+}

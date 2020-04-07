@@ -1,0 +1,6 @@
+name=[DEPRECATED] End the War On Beans - now included in "Vanilla Food Fixes"
+id=WarOnBeans
+require=VanillaFoodFixesOGSN
+description=This has been folded into my other, more polished mod, "Vanilla Food Fixes," which provides many more bug fixes and light-weight, common sense improvements to the vanilla food items and recipes. See Steam page for more details.
+description=I will leave this mod on the workshop in order not to break existing save games.
+poster=poster.png

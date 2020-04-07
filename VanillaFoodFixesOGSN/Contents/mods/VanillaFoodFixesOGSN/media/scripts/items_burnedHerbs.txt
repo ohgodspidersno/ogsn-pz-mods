@@ -1,0 +1,185 @@
+module Base
+{
+item CommonMallowBurned
+{
+    UnhappyChange   =   20,
+    BoredomChange   =   20,
+
+    HungerChange    =   -1,
+    Carbohydrates   =   1,
+    Proteins        =   0,
+    Lipids          =   0,
+    Calories        =   6,
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2,
+
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Burned Common Mallow,
+    Icon	=	CommonMallowBurned,
+    Tooltip = Tooltip_Mallow,
+
+    CantBeFrozen    =   True,
+}
+
+item LemonGrassBurned
+{
+    UnhappyChange       =  20,
+    BoredomChange       =  20,
+
+    Spice               = True,
+    FoodType            = Herbal,
+    EvolvedRecipe       = Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Sandwich:1;Burger:1;Salad:1;FruitSalad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1,
+
+    HungerChange	=	-1,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Burned Lemon Grass,
+    Icon	=	LemonGrassBurned,
+    Tooltip = Tooltip_LemonGrass,
+    Carbohydrates = 0,
+    Proteins = 0,
+    Lipids = 0,
+    Calories = 0.1,
+
+    CantBeFrozen    =   True,
+}
+
+item BlackSageBurned
+{
+    PainReduction   =   5,
+    UnhappyChange   =   20,
+    BoredomChange   =   20,
+
+    Spice           =   True,
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1,
+
+    HungerChange	=	-1,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Burned Black Sage,
+    Icon	=	BlackSageBurned,
+    Tooltip = Tooltip_BlackSage,
+    Carbohydrates = 0,
+    Proteins = 0,
+    Lipids = 0,
+    Calories = 0.1,
+
+    CantBeFrozen    =   True,
+}
+
+item GinsengBurned
+{
+    EnduranceChange	=	  1,
+    UnhappyChange   =   20,
+    BoredomChange   =   20,
+
+    Spice           =   True,
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1,
+
+    HungerChange	=	-1,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Burned Ginseng,
+    Icon	=	GinsengBurned,
+    Tooltip = Tooltip_Ginseng,
+    Carbohydrates = 0,
+    Proteins = 0,
+    Lipids = 0,
+    Calories = 0.1,
+
+    CantBeFrozen    =   True,
+}
+
+item RosehipsBurned
+{
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:3;Stew:3;Pie:3;Cake:3;Stir fry:3;Stir fry Griddle Pan:3;Roasted Vegetables:3;Burger:3;Salad:3;PastaPan:3;RicePan:3;PastaPot:3;RicePot:3;HotDrink:3;CommonMallowEvolved:3;LemonGrassEvolved:3;BlackSageEvolved:3;GinsengEvolved:3;EnergizingEvolved:3;MedicinalEvolved:3,
+
+    HungerChange	=	-1,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Burned Rosehips,
+    Icon	=	RosehipsBurned,
+    Carbohydrates   =   1,
+    Proteins        =   0,
+    Lipids          =   0,
+    Calories        =   6,
+
+    CantBeFrozen    =   True,
+}
+
+item GrapeLeavesBurned
+{
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2",
+    HungerChange	=	-1,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Burned Grape Leaves,
+    Icon	=	GrapeLeavesBurned,
+    Carbohydrates   =   1,
+    Proteins        =   0,
+    Lipids          =   0,
+    Calories        =   6,
+
+    CantBeFrozen    =   True,
+}
+
+item VioletsBurned
+{
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;FruitSalad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2",
+
+    HungerChange	=	-1,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Burned Violets,
+    Icon	=	VioletsBurned,
+    Carbohydrates   =   1,
+    Proteins        =   0,
+    Lipids          =   0,
+    Calories        =   6,
+
+    CantBeFrozen    =   True,
+}
+
+item PlantainBurned
+{
+    HungerChange    =   -1,
+    Weight          =   0.1,
+    Type            =   Food,
+    DisplayName     =   Burned Plantain,
+    Icon            =   PlantainPlantagoBurned,
+    Tooltip         =   Tooltip_Plantain,
+    Carbohydrates   =   1,
+    Proteins        =   0,
+    Lipids          =   0,
+    Calories        =   6,
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Burger:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2,
+
+    CantBeFrozen    =   True,
+}
+
+item WildGarlicBurned
+{
+    HungerChange    =   -1,
+    Weight          =   0.1,
+    Type            =   Food,
+    DisplayName     =   Burned Wild Garlic,
+    Icon            =   WildGarlicBurned,
+    Tooltip         =   Tooltip_Garlic,
+    Carbohydrates   =   1,
+    Proteins        =   0,
+    Lipids          =   0,
+    Calories        =   6,
+    Spice           =   True,
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:1;Stew:1;Pie:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1;HotDrink:1;CommonMallowEvolved:1;LemonGrassEvolved:1;BlackSageEvolved:1;GinsengEvolved:1,
+
+    CantBeFrozen    =   True,
+}
+}

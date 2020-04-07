@@ -1,0 +1,18 @@
+UI_EN = {
+UI_trait_nimblefingers = "Locksmith",
+UI_trait_nimblefingersDesc = "Starts with knowledge of picking and breaking locks.<br>Faster lockpicking. Better chances of opening a lock.",
+UI_Text_locklevel_veryeasy = "Very Easy",
+UI_Text_locklevel_easy = "Easy",
+UI_Text_locklevel_medium = "Average",
+UI_Text_locklevel_hard = "Hard",
+UI_Text_locklevel_veryhard = "Very Hard",
+UI_Text_locklevel_willbreak = "Broken",
+UI_Text_brokenLockModal = "You can't pick a broken lock.",
+UI_Text_contextBreakDoorLock = "Break Lock",
+UI_Text_contextPickDoorLock = "Pick Lock",
+UI_Text_contextBreakWindowLock = "Break Lock",
+UI_Text_BobbyStuck = "Damn it! The hairpin is stuck!",
+UI_Text_BobbyBroken = "Damn it! I broke the hairpin!",
+UI_trait_BurglarDesc = "Can hotwire vehicles. Can break and pick locks. Less chance of breaking the latch of a window.",
+UI_profdesc_burglar = "Can hotwire vehicles. Can break and pick locks. Less chance of breaking the latch of a window.",
+}

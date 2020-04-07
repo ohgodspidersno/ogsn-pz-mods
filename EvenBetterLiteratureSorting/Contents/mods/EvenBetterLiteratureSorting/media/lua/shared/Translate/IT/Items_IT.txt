@@ -1,0 +1,89 @@
+
+Items_IT = {
+
+
+	DisplayName_Carpentry_for_Beginners = " Carpenteria Vol.1: Per negati",
+	DisplayName_Carpentry_for_Intermediates = " Carpenteria Vol.2: Intermedio",
+	DisplayName_Advanced_Carpentry = " Carpenteria Vol.3: Avanzato",
+	DisplayName_Expert_Carpentry = " Carpenteria Vol.4: Esperto",
+	DisplayName_Master_Carpentry = " Carpenteria Vol.5: Maestro",
+
+
+	DisplayName_Cooking_for_Beginners = " Cucina Vol.1: Per negati",
+	DisplayName_Cooking_for_Intermediates = " Cucina Vol.2: Intermedio",
+	DisplayName_Advanced_Cooking = " Cucina Vol.3: Avanzato",
+	DisplayName_Expert_Cooking = " Cucina Vol.4: Esperto",
+	DisplayName_Master_Cooking = " Cucina Vol.5: Maestro",
+
+
+	DisplayName_Farming_for_Beginners = " Coltivazione Vol.1: Per negati",
+	DisplayName_Farming_for_Intermediates = " Coltivazione Vol.2: Intermedio",
+	DisplayName_Advanced_Farming = " Coltivazione Vol.3: Avanzato",
+	DisplayName_Expert_Farming = " Coltivazione Vol.4: Esperto",
+	DisplayName_Master_Farming = " Coltivazione Vol.5: Maestro",
+
+
+	DisplayName_Fishing_for_Beginners = " Pesca Vol.1: Per negati",
+	DisplayName_Fishing_for_Intermediates = " Pesca Vol.2: Intermedio",
+	DisplayName_Advanced_Fishing = " Pesca Vol.3: Avanzato",
+	DisplayName_Expert_Fishing = " Pesca Vol.4: Esperto",
+	DisplayName_Master_Fishing = " Pesca Vol.5: Maestro",
+
+
+	DisplayName_Trapping_for_Beginners = " Trappole Vol.1: Per negati",
+	DisplayName_Trapping_for_Intermediates = " Trappole Vol.2: Intermedio",
+	DisplayName_Advanced_Trapping = " Trappole Vol.3: Avanzato",
+	DisplayName_Expert_Trapping = " Trappole Vol.4: Esperto",
+	DisplayName_Master_Trapping = " Trappole Vol.5: Maestro",
+
+
+	DisplayName_Electricity_for_Beginners = " Elettricit� Vol.1: Per negati",
+	DisplayName_Electricity_for_Intermediates = " Elettricit� Vol.2: Intermedio",
+	DisplayName_Advanced_Electricity = " Elettricit� Vol.3: Avanzato",
+	DisplayName_Expert_Electricity = " Elettricit� Vol.4: Esperto",
+	DisplayName_Master_Electricity = " Elettricit� Vol.5: Maestro",
+
+
+	DisplayName_FirstAid_for_Beginners = " Pronto soccorso Vol.1: Per negati",
+	DisplayName_FirstAid_for_Intermediates = " Pronto soccorso Vol.2: Intermedio",
+	DisplayName_Advanced_First_Aid = " Pronto soccorso Vol.3: Avanzato",
+	DisplayName_Expert_First_Aid = " Pronto soccorso Vol.4: Esperto",
+	DisplayName_Master_First_Aid = " Pronto soccorso Vol.5: Maestro",
+
+
+	DisplayName_Foraging_for_Beginners = " Foraggio Vol.1: Per negati",
+	DisplayName_Foraging_for_Intermediates = " Foraggio Vol.2: Intermedio",
+	DisplayName_Advanced_Foraging = " Foraggio Vol.3: Avanzato",
+	DisplayName_Expert_Foraging = " Foraggio Vol.4: Esperto",
+	DisplayName_Master_Foraging = " Foraggio Vol.5: Maestro",
+
+
+	DisplayName_Metalwork_for_Beginners = " Lavorazione del metallo Vol.1: Per negati",
+	DisplayName_Metalwork_for_Intermediates = " Lavorazione del metallo Vol.2: Intermedio",
+	DisplayName_Advanced_Metalwork = " Lavorazione del metallo Vol.3: Avanzato",
+	DisplayName_Expert_Metalwork = " Lavorazione del metallo Vol.4: Esperto",
+	DisplayName_Master_Metalwork = " Lavorazione del metallo Vol.5: Maestro",
+
+
+	DisplayName_Smithing_for_Beginners = " Fucina Vol.1: Per negati",
+	DisplayName_Smithing_for_Intermediates = " Fucina Vol.2: Intermedio",
+	DisplayName_Advanced_Smithing = " Fucina Vol.3: Avanzato",
+	DisplayName_Expert_Smithing = " Fucina Vol.4: Esperto",
+	DisplayName_Master_Smithing = " Fucina Vol.5: Maestro",
+
+
+	DisplayName_Mechanics_for_Beginners = " Meccanica Vol.1: Per negati",
+	DisplayName_Mechanics_for_Intermediates = " Meccanica Vol.2: Intermedio",
+	DisplayName_Advanced_Mechanics = " Meccanica Vol.3: Avanzato",
+	DisplayName_Expert_Mechanics = " Meccanica Vol.4: Esperto",
+	DisplayName_Master_Mechanics = " Meccanica Vol.5: Maestro",
+
+
+	DisplayName_Tailoring_for_Beginners = " Sartoria Vol.1: Per negati",
+	DisplayName_Tailoring_for_Intermediates = " Sartoria Vol.2: Intermedio",
+	DisplayName_Advanced_Tailoring = " Sartoria Vol.3: Avanzato",
+	DisplayName_Expert_Tailoring = " Sartoria Vol.4: Esperto",
+	DisplayName_Master_Tailoring = " Sartoria Vol.5: Maestro",
+
+
+}

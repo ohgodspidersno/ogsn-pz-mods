@@ -1,0 +1,219 @@
+module Base
+{
+item CommonMallowDried
+{
+    FluReduction    =   2,
+    UnhappyChange   =   0,
+
+    HungerChange    =   -2,
+    Carbohydrates   =   6,
+    Proteins        =   2,
+    Lipids          =   1,
+    Calories        =   36,
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2,
+
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Dried Common Mallow,
+    Icon	=	CommonMallowDried,
+    Tooltip = Tooltip_Mallow,
+
+    IsCookable      =   True,
+    CantBeFrozen    =   True,
+    MinutesToCook   =   0,
+    MinutesToBurn	  =   30,
+    ReplaceOnBurned =   CommonMallowBurned,
+}
+
+item LemonGrassDried
+{
+    ReduceFoodSickness  =  5,
+    UnhappyChange       =  0,
+
+    Spice               = True,
+    FoodType            = Herbal,
+    EvolvedRecipe       = Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Sandwich:1;Burger:1;Salad:1;FruitSalad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1,
+
+    HungerChange	=	-1,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Dried Lemon Grass,
+    Icon	=	LemonGrassDried,
+    Tooltip = Tooltip_LemonGrass,
+    Carbohydrates = 0,
+    Proteins = 0,
+    Lipids = 0,
+    Calories = 0.1,
+
+    IsCookable      =   True,
+    CantBeFrozen    =   True,
+    MinutesToCook   =   0,
+    MinutesToBurn	  =   30,
+    ReplaceOnBurned =   LemonGrassBurned,
+}
+
+item BlackSageDried
+{
+    PainReduction   =   5,
+    UnhappyChange   =   0,
+
+    Spice           =   True,
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1,
+
+    HungerChange	=	-1,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Dried Black Sage,
+    Icon	=	BlackSageDried,
+    Tooltip = Tooltip_BlackSage,
+    Carbohydrates = 0,
+    Proteins = 0,
+    Lipids = 0,
+    Calories = 0.1,
+
+    IsCookable      =   True,
+    CantBeFrozen    =   True,
+    MinutesToCook   =   0,
+    MinutesToBurn	  =   30,
+    ReplaceOnBurned =   BlackSageBurned,
+}
+
+item GinsengDried
+{
+    EnduranceChange	=	  1,
+    UnhappyChange   =   0,
+
+    Spice           =   True,
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1,
+
+    HungerChange	=	-1,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Dried Ginseng,
+    Icon	=	GinsengDried,
+    Tooltip = Tooltip_Ginseng,
+    Carbohydrates = 0,
+    Proteins = 0,
+    Lipids = 0,
+    Calories = 0.1,
+
+    IsCookable      =   True,
+    CantBeFrozen    =   True,
+    MinutesToCook   =   0,
+    MinutesToBurn	  =   30,
+    ReplaceOnBurned =   GinsengBurned,
+}
+
+item RosehipsDried
+{
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:3;Stew:3;Pie:3;Cake:3;Stir fry:3;Stir fry Griddle Pan:3;Roasted Vegetables:3;Burger:3;Salad:3;PastaPan:3;RicePan:3;PastaPot:3;RicePot:3;HotDrink:3;CommonMallowEvolved:3;LemonGrassEvolved:3;BlackSageEvolved:3;GinsengEvolved:3;EnergizingEvolved:3;MedicinalEvolved:3,
+
+    HungerChange	=	-6,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Dried Rosehips,
+    Icon	=	RosehipsDried,
+    Carbohydrates = 19,
+    Proteins = 2,
+    Lipids = 0,
+    Calories = 81,
+
+    IsCookable      =   True,
+    CantBeFrozen    =   True,
+    MinutesToCook   =   0,
+    MinutesToBurn	  =   30,
+    ReplaceOnBurned =   RosehipsBurned,
+}
+
+item GrapeLeavesDried
+{
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2",
+    HungerChange	=	-4,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Dried Grape Leaves,
+    Icon	=	GrapeLeavesDried,
+    Carbohydrates = 11,
+    Proteins = 4,
+    Lipids = 2,
+    Calories = 73,
+
+    IsCookable      =   True,
+    CantBeFrozen    =   True,
+    MinutesToCook   =   0,
+    MinutesToBurn	  =   30,
+    ReplaceOnBurned =   GrapeLeavesBurned,
+}
+
+item VioletsDried
+{
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;FruitSalad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2",
+
+    HungerChange	=	-2,
+    Weight	=	0.1,
+    Type	=	Food,
+    DisplayName	=	Dried Violets,
+    Icon	=	VioletsDried,
+    Carbohydrates = 7,
+    Proteins = 1,
+    Lipids = 0,
+    Calories = 27,
+
+    IsCookable      =   True,
+    CantBeFrozen    =   True,
+    MinutesToCook   =   0,
+    MinutesToBurn	  =   30,
+    ReplaceOnBurned =   VioletsBurned,
+}
+
+item PlantainDried
+{
+    HungerChange    =   -2,
+    Weight          =   0.1,
+    Type            =   Food,
+    DisplayName     =   Dried Plantain,
+    Icon            =   PlantainPlantagoDried,
+    Tooltip         =   Tooltip_Plantain,
+    Carbohydrates   =   6,
+    Proteins        =   2,
+    Lipids          =   1,
+    Calories        =   55,
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Burger:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2,
+
+    IsCookable      =   True,
+    CantBeFrozen    =   True,
+    MinutesToCook   =   0,
+    MinutesToBurn	  =   30,
+    ReplaceOnBurned =   PlantainBurned,
+}
+
+item WildGarlicDried
+{
+    HungerChange    =   -1,
+    Weight          =   0.1,
+    Type            =   Food,
+    DisplayName     =   Dried Wild Garlic,
+    Icon            =   WildGarlicDried,
+    Tooltip         =   Tooltip_Garlic,
+    Proteins        =   1,
+    Carbohydrates   =   2,
+    Lipids          =   0,
+    Calories        =   16,
+    Spice           =   True,
+    FoodType        =   Herbal,
+    EvolvedRecipe   =   Soup:1;Stew:1;Pie:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1;HotDrink:1;CommonMallowEvolved:1;LemonGrassEvolved:1;BlackSageEvolved:1;GinsengEvolved:1,
+
+    IsCookable      =   True,
+    CantBeFrozen    =   True,
+    MinutesToCook   =   0,
+    MinutesToBurn	  =   30,
+    ReplaceOnBurned =   WildGarlicBurned,
+}
+}

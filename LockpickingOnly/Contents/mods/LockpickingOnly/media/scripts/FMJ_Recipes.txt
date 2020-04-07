@@ -1,0 +1,17 @@
+module FMJ
+{
+	imports
+	{
+		Base
+	}
+	recipe Create Hairpin
+	{
+		keep KitchenKnife/HuntingKnife/Scissors,
+		Paperclip/Wire= 1,
+		Result: BobbyPin= 1,
+		Time: 50.0,
+		Category: Survivalist,
+		OnCreate: putInBox_OnCreate,
+		NeedToBeLearn: true,
+	}
+}

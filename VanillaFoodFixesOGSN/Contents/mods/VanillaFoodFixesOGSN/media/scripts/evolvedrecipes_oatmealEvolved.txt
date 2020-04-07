@@ -1,0 +1,11 @@
+module Base
+{
+      evolvedrecipe OatmealEvolved
+      {
+        BaseItem:Oatmeal,
+        MaxItems:6,
+        ResultItem:Oatmeal,
+        Cookable:false,
+        Name:Spruce Up Oatmeal,
+      }
+}

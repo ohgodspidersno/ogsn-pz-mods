@@ -1,11 +1,4 @@
--- if getActivatedMods():contains("ItemTweakerAPI") then
 require("ItemTweaker_Copy_ogsn");
--- else return end
-
--- TweakItem("Base.Needle","Icon", "Worm");
--- TweakItem("Base.Needle","Tooltip", "Wearable: Waist");
--- TweakItem("Base.Needle","DisplayCategory", "Repair");
-
 
 TweakItem("Base.PastaPan","DaysFresh","2");
 TweakItem("Base.PastaPan","DaysTotallyRotten","4");

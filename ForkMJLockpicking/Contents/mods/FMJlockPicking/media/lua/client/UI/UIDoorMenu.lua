@@ -56,7 +56,7 @@ local function pickLock(worldObjects, door, player)
 
     -- If the lock is broken, we display a modal and end the function here.
     if modData.lockLevel == 6 then
-        luautils.okModal(FMJ_Text.brokenLockModal, true);
+        luautils.okModal(FMJlockPicking_Text.brokenLockModal, true);
         return;
     end
 
@@ -125,10 +125,10 @@ local function createMenuEntries(player, context, worldObjects)
     if inventory:contains("Crowbar") then
         local primItem = inventory:FindAndReturn("Crowbar");
 
-        if not primItem or primItem:getCondition() <= 0 or not player:getKnownRecipes():contains("Break Door locks") then
-            print("No Break Door locks or valid crowbar");
+        if not primItem or primItem:getCondition() <= 0 or not player:getKnownRecipes():contains("Break Door Locks") then
+            print("No Break Door Locks or valid crowbar");
         else
-            context:addOption(FMJ_Text.contextBreakDoorLock .. " (" .. FMJ_Text.lockLevels[modData.lockLevel] .. ")", worldObjects, breakLock, door, player);
+            context:addOption(FMJlockPicking_Text.contextBreakDoorLock .. " (" .. FMJlockPicking_Text.lockLevels[modData.lockLevel] .. ")", worldObjects, breakLock, door, player);
         end
     end
 
@@ -140,7 +140,7 @@ local function createMenuEntries(player, context, worldObjects)
         if not primItem or primItem:getCondition() <= 0 or not scndItem or scndItem:getCondition() <= 0 or not player:getKnownRecipes():contains("Lockpicking") then
             print("No Lockpicking or valid screwdriver / bobby pin");
         else
-            context:addOption(FMJ_Text.contextPickDoorLock .. " (" .. FMJ_Text.lockLevels[modData.lockLevel] .. ")", worldObjects, pickLock, door, player);
+            context:addOption(FMJlockPicking_Text.contextPickDoorLock .. " (" .. FMJlockPicking_Text.lockLevels[modData.lockLevel] .. ")", worldObjects, pickLock, door, player);
         end
     end
 end

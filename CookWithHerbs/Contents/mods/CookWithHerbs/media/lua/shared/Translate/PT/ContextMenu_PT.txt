@@ -1,0 +1,3 @@
+ContextMenu_PT = {
+  ContextMenu_FoodType_Herbal = "Ervas",
+}

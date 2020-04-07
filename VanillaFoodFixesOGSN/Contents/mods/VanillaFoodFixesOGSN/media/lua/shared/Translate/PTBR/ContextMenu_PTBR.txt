@@ -1,18 +1,4 @@
 ContextMenu_PTBR = {
   ContextMenu_FoodType_Herbal = "Ervas",
   ContextMenu_EvolvedRecipe_OatmealEvolved = "Aveia",
-  ItemName_Base.StirFryBowl                       =   "Bowl of Stir Fry",
-  ItemName_Base.OvenRoastBowl                     =   "Bowl of Oven Roast",
-  ContextMenu_EvolvedRecipe_Evolved_CommonMallow  =   "Tea",
-  ContextMenu_EvolvedRecipe_Evolved_LemonGrass    =   "Tea",
-  ContextMenu_EvolvedRecipe_Evolved_BlackSage     =   "Tea",
-  ContextMenu_EvolvedRecipe_Evolved_Ginseng       =   "Tea",
-  ContextMenu_EvolvedRecipe_Evolved_Medicinal     =   "Tea",
-  ContextMenu_EvolvedRecipe_Evolved_Energizing    =   "Tea",
-  ItenName_Base.Tea_CommonMallow                  =   "CommonMallow Tea",
-  ItenName_Base.Tea_LemonGrass                    =   "LemonGrass Tea",
-  ItenName_Base.Tea_BlackSage                     =   "BlackSage Tea",
-  ItenName_Base.Tea_Ginseng                       =   "Ginseng Tea",
-  ItenName_Base.Tea_Medicinal                     =   "Medicinal Tea",
-  ItenName_Base.Tea_Energizing                    =   "Energizing Tea",
 }

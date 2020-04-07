@@ -1,0 +1,104 @@
+module Base {
+
+    recipe Brew common mallow tea
+    {
+        destroy WaterMug,
+        destroy CommonMallow,
+
+        Time:30.0,
+        OnGiveXP:Give3CookingXP,
+        CanBeDoneFromFloor:true,
+        Category:Cooking,
+        Result:Tea_CommonMallow,
+    }
+
+    recipe Brew lemon grass tea
+    {
+        destroy WaterMug,
+        destroy LemonGrass,
+
+        Time:30.0,
+        OnGiveXP:Give3CookingXP,
+        CanBeDoneFromFloor:true,
+        Category:Cooking,
+        Result:Tea_LemonGrass,
+    }
+
+    recipe Brew black sage tea
+    {
+        destroy WaterMug,
+        destroy BlackSage,
+
+        Time:30.0,
+        OnGiveXP:Give3CookingXP,
+        CanBeDoneFromFloor:true,
+        Category:Cooking,
+        Result:Tea_BlackSage,
+    }
+
+    recipe Brew ginseng tea
+    {
+        destroy WaterMug,
+        destroy Ginseng,
+
+        Time:30.0,
+        OnGiveXP:Give3CookingXP,
+        CanBeDoneFromFloor:true,
+        Category:Cooking,
+        Result:Tea_Ginseng,
+    }
+
+
+    recipe Make medicinal tea blend
+    {
+        keep MortarPestle,
+        destroy CommonMallow,
+        destroy LemonGrass,
+        destroy BlackSage,
+
+        Time:30.0,
+        OnGiveXP:Give3CookingXP,
+        CanBeDoneFromFloor:true,
+        Category:Cooking,
+        Result:Teabag_Medicinal,
+    }
+
+    recipe Brew medicinal tea
+    {
+        destroy WaterMug,
+        destroy Teabag_Medicinal,
+
+        Time:30.0,
+        OnGiveXP:Give3CookingXP,
+        CanBeDoneFromFloor:true,
+        Category:Cooking,
+        Result:Tea_Medicinal,
+    }
+
+    recipe Make energizing tea blend
+    {
+        keep MortarPestle,
+        destroy Teabag2,
+        destroy Ginseng,
+        destroy BlackSage,
+
+        Time:30.0,
+        OnGiveXP:Give3CookingXP,
+        CanBeDoneFromFloor:true,
+        Category:Cooking,
+        Result:Teabag_Energizing,
+    }
+
+    recipe Brew energizing tea
+    {
+        destroy WaterMug,
+        destroy Teabag_Energizing,
+
+        Time:30.0,
+        OnGiveXP:Give3CookingXP,
+        CanBeDoneFromFloor:true,
+        Category:Cooking,
+        Result:Tea_Energizing,
+    }
+
+}

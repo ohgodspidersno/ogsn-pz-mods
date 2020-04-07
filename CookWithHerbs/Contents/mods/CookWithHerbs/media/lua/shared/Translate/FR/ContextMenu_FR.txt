@@ -1,0 +1,3 @@
+ContextMenu_FR = {
+  ContextMenu_FoodType_Herbal = "Herbe",
+}

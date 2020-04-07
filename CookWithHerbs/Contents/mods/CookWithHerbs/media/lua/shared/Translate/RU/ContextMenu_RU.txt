@@ -1,0 +1,3 @@
+ContextMenu_RU = {
+  ContextMenu_FoodType_Herbal = "травяной",
+}

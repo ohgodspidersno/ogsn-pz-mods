@@ -1,0 +1,96 @@
+
+Items_EN = {
+
+
+	DisplayName_Carpentry_for_Beginners = " Carpentry Vol.1: For Dummies",
+	DisplayName_Carpentry_for_Intermediates = " Carpentry Vol.2: Intermediate",
+	DisplayName_Advanced_Carpentry = " Carpentry Vol.3: Advanced",
+	DisplayName_Expert_Carpentry = " Carpentry Vol.4: Expert",
+	DisplayName_Master_Carpentry = " Carpentry Vol.5: Master",
+
+
+	DisplayName_Cooking_for_Beginners = " Cooking Vol.1: For Dummies",
+	DisplayName_Cooking_for_Intermediates = " Cooking Vol.2: Intermediate",
+	DisplayName_Advanced_Cooking = " Cooking Vol.3: Advanced",
+	DisplayName_Expert_Cooking = " Cooking Vol.4: Expert",
+	DisplayName_Master_Cooking = " Cooking Vol.5: Master",
+
+
+	DisplayName_Farming_for_Beginners = " Farming Vol.1: For Dummies",
+	DisplayName_Farming_for_Intermediates = " Farming Vol.2: Intermediate",
+	DisplayName_Advanced_Farming = " Farming Vol.3: Advanced",
+	DisplayName_Expert_Farming = " Farming Vol.4: Expert",
+	DisplayName_Master_Farming = " Farming Vol.5: Master",
+
+
+	DisplayName_Fishing_for_Beginners = " Fishing Vol.1: For Dummies",
+	DisplayName_Fishing_for_Intermediates = " Fishing Vol.2: Intermediate",
+	DisplayName_Advanced_Fishing = " Fishing Vol.3: Advanced",
+	DisplayName_Expert_Fishing = " Fishing Vol.4: Expert",
+	DisplayName_Master_Fishing = " Fishing Vol.5: Master",
+
+
+	DisplayName_Trapping_for_Beginners = " Trapping Vol.1: For Dummies",
+	DisplayName_Trapping_for_Intermediates = " Trapping Vol.2: Intermediate",
+	DisplayName_Advanced_Trapping = " Trapping Vol.3: Advanced",
+	DisplayName_Expert_Trapping = " Trapping Vol.4: Expert",
+	DisplayName_Master_Trapping = " Trapping Vol.5: Master",
+
+
+	DisplayName_Electricity_for_Beginners = " Electricity Vol.1: For Dummies",
+	DisplayName_Electricity_for_Intermediates = " Electricity Vol.2: Intermediate",
+	DisplayName_Advanced_Electricity = " Electricity Vol.3: Advanced",
+	DisplayName_Expert_Electricity = " Electricity Vol.4: Expert",
+	DisplayName_Master_Electricity = " Electricity Vol.5: Master",
+
+
+	DisplayName_First_Aid_for_Beginners = " FirstAid Vol.1: For Dummies",
+	DisplayName_First_Aid_for_Intermediates = " FirstAid Vol.2: Intermediate",
+	DisplayName_Advanced_First_Aid = " FirstAid Vol.3: Advanced",
+	DisplayName_Expert_First_Aid = " FirstAid Vol.4: Expert",
+	DisplayName_Master_First_Aid = " FirstAid Vol.5: Master",
+
+
+	DisplayName_Foraging_for_Beginners = " Foraging Vol.1: For Dummies",
+	DisplayName_Foraging_for_Intermediates = " Foraging Vol.2: Intermediate",
+	DisplayName_Advanced_Foraging = " Foraging Vol.3: Advanced",
+	DisplayName_Expert_Foraging = " Foraging Vol.4: Expert",
+	DisplayName_Master_Foraging = " Foraging Vol.5: Master",
+
+
+	DisplayName_Metalwork_for_Beginners = " Metalwork Vol.1: For Dummies",
+	DisplayName_Metalwork_for_Intermediates = " Metalwork Vol.2: Intermediate",
+	DisplayName_Advanced_Metalwork = " Metalwork Vol.3: Advanced",
+	DisplayName_Expert_Metalwork = " Metalwork Vol.4: Expert",
+	DisplayName_Master_Metalwork = " Metalwork Vol.5: Master",
+
+
+	DisplayName_Smithing_for_Beginners = " Smithing Vol.1: For Dummies",
+	DisplayName_Smithing_for_Intermediates = " Smithing Vol.2: Intermediate",
+	DisplayName_Advanced_Smithing = " Smithing Vol.3: Advanced",
+	DisplayName_Expert_Smithing = " Smithing Vol.4: Expert",
+	DisplayName_Master_Smithing = " Smithing Vol.5: Master",
+
+
+	DisplayName_Mechanics_for_Beginners = " Mechanics Vol.1: For Dummies",
+	DisplayName_Mechanics_for_Intermediates = " Mechanics Vol.2: Intermediate",
+	DisplayName_Advanced_Mechanics = " Mechanics Vol.3: Advanced",
+	DisplayName_Expert_Mechanics = " Mechanics Vol.4: Expert",
+	DisplayName_Master_Mechanics = " Mechanics Vol.5: Master",
+
+
+	DisplayName_Tailoring_for_Beginners = " Tailoring Vol.1: For Dummies",
+	DisplayName_Tailoring_for_Intermediates = " Tailoring Vol.2: Intermediate",
+	DisplayName_Advanced_Tailoring = " Tailoring Vol.3: Advanced",
+	DisplayName_Expert_Tailoring = " Tailoring Vol.4: Expert",
+	DisplayName_Master_Tailoring = " Tailoring Vol.5: Master",
+
+
+	DisplayName_March_Ridge_Map = "Map of March Ridge",
+	DisplayName_Muldraugh_Map = "Map of Muldraugh",
+	DisplayName_Rosewood_Map = "Map of Rosewood",
+	DisplayName_Westpoint_Map = "Map of Westpoint",
+	DisplayName_Riverside_Map = "Map of Riverside",
+
+
+}
