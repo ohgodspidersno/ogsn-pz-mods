@@ -1,0 +1,10 @@
+UI_EN = {
+UI_trait_forager = "Forager",
+UI_trait_foragerdesc = "+2 Foraging<br>+1 Farming",
+UI_trait_archer = "Archer",
+UI_trait_archerdesc = "+1 Aiming<br>+2 Reloading"
+UI_trait_flexible = "Flexible",
+UI_trait_flexibledesc = "+1 Nimble",
+UI_trait_bookworm = "Bookworm",
+UI_trait_bookwormdesc = "You read much faster than usual. Walking does not interrupt the reading process.",
+}
