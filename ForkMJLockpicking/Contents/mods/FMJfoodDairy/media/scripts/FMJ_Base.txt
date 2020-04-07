@@ -1,0 +1,52 @@
+module Base
+{
+
+/***************FOOD******************/
+	item WildGarlic
+	{
+		
+		Type = Food,
+		DisplayName = Wild Garlic,
+		Icon = WildGarlic,
+		Weight = 0.1,
+		Tooltip = Tooltip_Garlic,
+		UnhappyChange = 10,
+		HungerChange = -8,
+		ReduceInfectionPower = 4,
+		Spice = true,
+		EvolvedRecipe = Soup:3;Pie:1;Stir fry:3;Stir fry Griddle Pan:3;Burger:1;Salad:2;Roasted Vegetables:3;RicePot:3;RicePan:3;PastaPot:3;PastaPan:3,
+		Carbohydrates = 9,
+		Proteins = 4.2,
+		Lipids = 0.3,
+		Calories = 88,
+		CantBeFrozen = true,
+	}
+	item Yoghurt
+    {
+        Type = Food,
+        DisplayName = Yogurt,
+        Icon = Yoghurt,
+        Weight = 0.3,
+        HungerChange = -10,
+        DaysFresh = 10,
+        DaysTotallyRotten = 15,
+		EvolvedRecipe = FruitSalad:2;Salad:2,
+		Spice = true,
+        Carbohydrates = 1,
+        Proteins = 5,
+        Lipids = 1,
+        Calories = 30,
+        Packaged = true,
+    }
+/***************LITERATURE******************/
+	item HuntingMag1
+    {
+        Weight=	0.1,
+        Type=	Literature,
+        DisplayName= The Hunter Magazine Vol. 1,
+        Icon= MagazineHunting,
+        TeachedRecipes= Make Snare Trap;Make Mouse Trap,
+        ReplaceOnUse= HuntingMag1,
+        StaticModel= Magazine,
+    }
+}
