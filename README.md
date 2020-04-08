@@ -11,19 +11,21 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 1. Ensure somehow that rotten stuff can't be preserved. Might require an oncreate() lua function.
 1. Add rotten/preserved graphics
 
-
 ###Knox Country World Map
 1. Fix placement of the word "Knox Country" by moving it up slightly
+1. Might be missing some turn-offs on highway north of Rosewood. Section of road immediately north of Rosewood has something weird going on
 1. What is currently labeled Dixie is actually Ekron
 1. Dixie is the large trailer park on the highway connecting Muldraugh and West Point. https://map.projectzomboid.com/#0.6304564646133799,0.2999223937989078,66.24737266949232
 1. OTR Area should appear only if OTR mod is enabled
 1. Differentiate between highways and main roads more clearly. Might need to take some zoomed-in screen shots and tile them.
+  1. Might do to add train tracks, as well
 1. Muldraugh warehouses should be industrial
 https://map.projectzomboid.com/#0.457976207501108,0.3120629324402581,79.4968472033908
 1. Rosewood prison should be industrial, not residential
 1. Missing a gas station icon on the north of Dixie (not sure if they mean actual Dixie or Ekron
 1. Missing gas station on NW edge of map
 1. Add somewhat crumpled paper effect to normal version of map
+1. Consider multi-language support, at least for non-Roman languages
 1. Make secret version of map only appear in some places, but at a higher rate
     1. Small chance in police cars
     1. Slightly higher chance in forest ranger cars
