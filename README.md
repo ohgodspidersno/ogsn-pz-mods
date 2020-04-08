@@ -35,7 +35,6 @@ https://map.projectzomboid.com/#0.457976207501108,0.3120629324402581,79.49684720
     1. Guaranteed in Military vehicles if those mods are loaded
 
 ###Fork MJ Lockpicking
-1. Fix the console log error that happens on a certain line in loot distribution
 1. If Metal Anger doesn't want to use this on his workshop page, change the poster graphic and font
 
 ##Ideas for New Mods
