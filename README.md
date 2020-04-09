@@ -34,11 +34,20 @@ https://map.projectzomboid.com/#0.457976207501108,0.3120629324402581,79.49684720
     1. Guaranteed in Mystery Machine if that mod is loaded
     1. Guaranteed in Military vehicles if those mods are loaded
 
+###More Map Symbols
+1. Car
+1. Loot bag
+1. Gun
+1. Different circles
+
 ###Fork MJ Lockpicking
 1. If Metal Anger doesn't want to use this on his workshop page, change the poster graphic and font
 
 ##Ideas for New Mods
 Might pursue these...
+
+###Use Metalworking to Turn Barrels Into Rain Collectors
+1. Oil Barrel or Garbage Can + Metal Sheet = Rain Collector
 
 ###Rename More Things
 1. Lighters
@@ -49,6 +58,8 @@ Might pursue these...
 1. Shouldn't be able to burn inflammable clothes like welding masks and helmets
 1. Gather gunpowder from .38 ammo (and any others that are missing)
 1. A single bullet shouldn't weigh something like 50% as much as a box containing 24 bullets.
+1. Sport batteries spawning inside standard cars
+1. Maps should be flammable
 
 ###Even Better Literature Sorting
 1. Same as Book Collection for the most part
