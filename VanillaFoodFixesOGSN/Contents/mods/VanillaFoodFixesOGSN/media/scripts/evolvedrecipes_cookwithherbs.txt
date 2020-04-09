@@ -7,7 +7,7 @@ module Base {
         ResultItem:Tea_CommonMallow,
         Cookable:true,
         AddIngredientIfCooked:true,
-        Name:Spruce up common mallow tea,
+        Name:Spruce Up Energizing Tea,
     }
 
     evolvedrecipe Evolved_LemonGrass
@@ -17,7 +17,7 @@ module Base {
        ResultItem:Tea_LemonGrass,
        Cookable:true,
        AddIngredientIfCooked:true,
-       Name:Spruce up lemon grass tea,
+       Name:Spruce Up Energizing Tea,
     }
 
     evolvedrecipe Evolved_BlackSage
@@ -27,7 +27,7 @@ module Base {
        ResultItem:Tea_BlackSage,
        Cookable:true,
        AddIngredientIfCooked:true,
-       Name:Spruce up black sage tea,
+       Name:Spruce Up Energizing Tea,
     }
 
     evolvedrecipe Evolved_Ginseng
@@ -37,7 +37,7 @@ module Base {
        ResultItem:Tea_Ginseng,
        Cookable:true,
        AddIngredientIfCooked:true,
-       Name:Spruce up ginseng tea,
+       Name:Spruce Up Energizing Tea,
     }
 
     evolvedrecipe Evolved_Medicinal
@@ -47,7 +47,7 @@ module Base {
        ResultItem:Tea_Medicinal,
        Cookable:true,
        AddIngredientIfCooked:true,
-       Name:Spruce up medicinal tea,
+       Name:Spruce Up Energizing Tea,
     }
 
     evolvedrecipe Evolved_Energizing
@@ -57,6 +57,6 @@ module Base {
        ResultItem:Tea_Energizing,
        Cookable:true,
        AddIngredientIfCooked:true,
-       Name:Spruce up energizing tea,
+       Name:Spruce Up Energizing Tea,
     }
 }

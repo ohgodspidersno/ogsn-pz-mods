@@ -6,6 +6,6 @@ module Base
         MaxItems:6,
         ResultItem:Oatmeal,
         Cookable:false,
-        Name:Spruce up oatmeal,
+        Name:Spruce Up Oatmeal,
       }
 }

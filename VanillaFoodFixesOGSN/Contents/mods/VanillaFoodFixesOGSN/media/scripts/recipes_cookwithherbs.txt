@@ -1,6 +1,6 @@
 module Base {
 
-    recipe Brew common mallow tea
+    recipe Make Medicinal Tea Blend
     {
         destroy WaterMug,
         destroy CommonMallow,
@@ -12,7 +12,7 @@ module Base {
         Result:Tea_CommonMallow,
     }
 
-    recipe Brew lemon grass tea
+    recipe Make Medicinal Tea Blend
     {
         destroy WaterMug,
         destroy LemonGrass,
@@ -24,7 +24,7 @@ module Base {
         Result:Tea_LemonGrass,
     }
 
-    recipe Brew black sage tea
+    recipe Make Medicinal Tea Blend
     {
         destroy WaterMug,
         destroy BlackSage,
@@ -36,7 +36,7 @@ module Base {
         Result:Tea_BlackSage,
     }
 
-    recipe Brew ginseng tea
+    recipe Make Medicinal Tea Blend
     {
         destroy WaterMug,
         destroy Ginseng,
@@ -49,7 +49,7 @@ module Base {
     }
 
 
-    recipe Make medicinal tea blend
+    recipe Make Medicinal Tea Blend
     {
         keep MortarPestle,
         destroy CommonMallow,
@@ -63,7 +63,7 @@ module Base {
         Result:Teabag_Medicinal,
     }
 
-    recipe Brew medicinal tea
+    recipe Make Medicinal Tea Blend
     {
         destroy WaterMug,
         destroy Teabag_Medicinal,
@@ -75,7 +75,7 @@ module Base {
         Result:Tea_Medicinal,
     }
 
-    recipe Make energizing tea blend
+    recipe Make Medicinal Tea Blend
     {
         keep MortarPestle,
         destroy Teabag2,
@@ -89,7 +89,7 @@ module Base {
         Result:Teabag_Energizing,
     }
 
-    recipe Brew energizing tea
+    recipe Make Medicinal Tea Blend
     {
         destroy WaterMug,
         destroy Teabag_Energizing,
