@@ -1,6 +1,6 @@
 require("ItemTweaker_Copy_ogsn");
 
-if getActivatedMods():contains("0_VFF_herbs_never_rot") then
+if getActivatedMods():contains("VFFherbsNeverRot") then
   return end
 
 TweakItem("Base.CommonMallow","DaysFresh","7");
