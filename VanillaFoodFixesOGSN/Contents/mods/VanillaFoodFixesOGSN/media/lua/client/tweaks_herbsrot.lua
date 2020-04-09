@@ -19,9 +19,7 @@ TweakItem("Base.Rosehips","DaysTotallyRotten","30");
 TweakItem("Base.GrapeLeaves","DaysTotallyRotten","30");
 TweakItem("Base.Violets","DaysTotallyRotten","30");
 
-if getActivatedMods():contains("CookWithHerbs") then
-    TweakItem("Base.Plantain","DaysFresh","7");
-    TweakItem("Base.WildGarlic","DaysFresh","7");
-    TweakItem("Base.Plantain","DaysTotallyRotten","30");
-    TweakItem("Base.WildGarlic","DaysTotallyRotten","30");
-else return end
+TweakItem("Base.Plantain","DaysFresh","7");
+TweakItem("Base.WildGarlic","DaysFresh","7");
+TweakItem("Base.Plantain","DaysTotallyRotten","30");
+TweakItem("Base.WildGarlic","DaysTotallyRotten","30");
