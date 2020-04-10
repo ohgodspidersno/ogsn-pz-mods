@@ -9,7 +9,7 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 ###Vanilla Food Fixes
 1. Add a way to preserve herbs by drying them
 1. Ensure somehow that rotten stuff can't be preserved. Might require an oncreate() lua function.
-1. Add rotten/preserved graphics
+1. Add rotten/preserved/burned graphics
 
 ###Knox Country World Map
 1. Fix placement of the word "Knox Country" by moving it up slightly
@@ -34,17 +34,17 @@ https://map.projectzomboid.com/#0.457976207501108,0.3120629324402581,79.49684720
     1. Guaranteed in Mystery Machine if that mod is loaded
     1. Guaranteed in Military vehicles if those mods are loaded
 
-###More Map Symbols
-1. Car
-1. Loot bag
-1. Gun
-1. Different circles
-
 ###Fork MJ Lockpicking
 1. If Metal Anger doesn't want to use this on his workshop page, change the poster graphic and font
 
 ##Ideas for New Mods
 Might pursue these...
+
+###More Map Symbols
+1. Car
+1. Loot bag
+1. Gun
+1. Different circles
 
 ###Use Metalworking to Turn Barrels Into Rain Collectors
 1. Oil Barrel or Garbage Can + Metal Sheet = Rain Collector
@@ -60,6 +60,7 @@ Might pursue these...
 1. A single bullet shouldn't weigh something like 50% as much as a box containing 24 bullets.
 1. Sport batteries spawning inside standard cars
 1. Maps should be flammable
+1. Once bags appear when held on off-hand, make duffel bags better, but unequippable on back
 
 ###Even Better Literature Sorting
 1. Same as Book Collection for the most part
