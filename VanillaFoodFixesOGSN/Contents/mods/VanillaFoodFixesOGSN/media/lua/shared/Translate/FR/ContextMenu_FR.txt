@@ -2,7 +2,7 @@ ContextMenu_FR = {
   ContextMenu_FoodType_Herbal = "Herbe",
   ContextMenu_EvolvedRecipe_OatmealEvolved = "Flocons d'avoine",
   ItemName_Base.StirFryBowl                       =   "Bowl of Stir Fry",
-  ItemName_Base.OvenRoastBowl                     =   "Bowl of Oven Roast",
+  
   ContextMenu_EvolvedRecipe_CommonMallowEvolved  =   "Tea",
   ContextMenu_EvolvedRecipe_LemonGrassEvolved    =   "Tea",
   ContextMenu_EvolvedRecipe_BlackSageEvolved     =   "Tea",

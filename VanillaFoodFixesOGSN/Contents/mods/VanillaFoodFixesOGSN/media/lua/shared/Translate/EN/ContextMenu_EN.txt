@@ -1,11 +1,10 @@
 ContextMenu_EN = {
   ContextMenu_FoodType_Herbal = "Herbal",
   ContextMenu_EvolvedRecipe_OatmealEvolved = "Oatmeal",
-  ContextMenu_EvolvedRecipe_Evolved_CommonMallow  =   "Tea",
-  ContextMenu_EvolvedRecipe_Evolved_LemonGrass    =   "Tea",
-  ContextMenu_EvolvedRecipe_Evolved_BlackSage     =   "Tea",
-  ContextMenu_EvolvedRecipe_Evolved_Ginseng       =   "Tea",
-  ContextMenu_EvolvedRecipe_Evolved_Medicinal     =   "Tea",
-  ContextMenu_EvolvedRecipe_Evolved_Energizing    =   "Tea",
-  ContextMenu_EvolvedRecipe_Roasted Vegetables    =   "Oven roast",
+  ContextMenu_EvolvedRecipe_CommonMallowEvolved  =   "Tea",
+  ContextMenu_EvolvedRecipe_LemonGrassEvolved    =   "Tea",
+  ContextMenu_EvolvedRecipe_BlackSageEvolved     =   "Tea",
+  ContextMenu_EvolvedRecipe_GinsengEvolved       =   "Tea",
+  ContextMenu_EvolvedRecipe_MedicinalEvolved     =   "Tea",
+  ContextMenu_EvolvedRecipe_EnergizingEvolved    =   "Tea",
 }

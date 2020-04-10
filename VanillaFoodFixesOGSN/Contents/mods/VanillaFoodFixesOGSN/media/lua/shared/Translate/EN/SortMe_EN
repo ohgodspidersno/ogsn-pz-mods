@@ -1,7 +1,7 @@
 
 DisplayName_Plantain = "Plantain Leaves",
 ItemName_Base.StirFryBowl                       =   "Bowl of Stir Fry",
-ItemName_Base.OvenRoastBowl                     =   "Bowl of Oven Roast",
+
 ItemName_Base.Tea_CommonMallow                  =   "Common Mallow Tea",
 ItemName_Base.Tea_LemonGrass                    =   "Lemon Grass Tea",
 ItemName_Base.Tea_BlackSage                     =   "Black Sage Tea",
