@@ -1,0 +1,4 @@
+ContextMenu_EE = {
+  ContextMenu_FoodType_Herbal = "Herbal",
+  DisplayName_Plantain = "Plantain Leaves",
+}
