@@ -22,3 +22,8 @@ DisplayName	=	Bowl of Roasted Vegetables
 recipe Make 2 Bowls of Roasted Vegetables
 recipe Make 4 Bowls of Roasted Vegetables
 RoastedVegetablesBowl
+
+
+Tooltip_food_Uncooked
+Tooltip_food_Cooked
+Tooltip_food_Burnt
