@@ -1,5 +1,5 @@
 require('NPCs/MainCreationMethods');
-debug = true
+local debug = false
 if debug then
 	Events.OnNewGame.Add(
 		function(player, square)
