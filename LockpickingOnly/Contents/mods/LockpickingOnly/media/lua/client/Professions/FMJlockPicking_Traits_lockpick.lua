@@ -1,5 +1,7 @@
 require('NPCs/MainCreationMethods');
 
+start_items = false -- set true makes characters with nimble fingers trait start with bobby pins. Ordinarily this only occurs if the player also has profesional items on start mod
+debug = true
 local function initTraits()
 
 	local nimblefingers = TraitFactory.addTrait("nimblefingers", getText("UI_trait_nimblefingers"), 0, getText("UI_trait_nimblefingersdesc"), true);
@@ -9,7 +11,23 @@ end
 
 Events.OnGameBoot.Add(initTraits);
 
-if getActivatedMods():contains("oka_oiosb41") then
+if debug then
+	Events.OnNewGame.Add(
+		function(player, square)
+			player:getInventory():AddItem("FMJ.LockPickingMag")
+			player:getInventory():AddItem("FMJ.LockPickingMag2")
+			player:getInventory():AddItem("Base.Crowbar")
+			player:getInventory():AddItem("Base.Screwdriver")
+			player:getInventory():AddItem("FMJ.BobbyPin")
+			player:getInventory():AddItem("FMJ.BobbyPin")
+			player:getInventory():AddItem("FMJ.BobbyPin")
+			player:getInventory():AddItem("FMJ.BobbyPin")
+			player:getInventory():AddItem("FMJ.BobbyPin")
+		end
+	)
+end
+
+if getActivatedMods():contains("oka_oiosb41") or start_items then -- checks if Profesional Items on Spawn mod is installed
 	Events.OnNewGame.Add(
 		function(player, square)
 			if player:HasTrait("nimblefingers") then
