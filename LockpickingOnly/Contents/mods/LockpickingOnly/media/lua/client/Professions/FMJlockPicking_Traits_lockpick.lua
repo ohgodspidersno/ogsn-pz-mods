@@ -3,13 +3,13 @@ require('NPCs/MainCreationMethods');
 start_items = false -- set true makes characters with nimble fingers trait start with bobby pins. Ordinarily this only occurs if the player also has profesional items on start mod
 debug = false
 local function initTraits()
-	local nimblefingers = TraitFactory.addTrait("nimblefingers", getText("UI_trait_nimblefingers"), 0, getText("UI_trait_nimblefingersdesc"), true);
+	local nimblefingers = TraitFactory.addTrait("nimblefingers", getText("UI_trait_nimblefingers"), 0, getText("UI_trait_nimblefingersDesc"), true);
 	nimblefingers:getFreeRecipes():add("Lockpicking");
 	nimblefingers:getFreeRecipes():add("Create Bobby Pin");
 	nimblefingers:getFreeRecipes():add("Break Door locks");
 	nimblefingers:getFreeRecipes():add("Break Window locks");
 
-	local nimblefingers2 = TraitFactory.addTrait("nimblefingers2", getText("UI_trait_nimblefingers"), 3, getText("UI_trait_nimblefingersdesc"), false, false);
+	local nimblefingers2 = TraitFactory.addTrait("nimblefingers2", getText("UI_trait_nimblefingers"), 3, getText("UI_trait_nimblefingersDesc"), false, false);
 	nimblefingers2:getFreeRecipes():add("Lockpicking");
 	nimblefingers2:getFreeRecipes():add("Create Bobby Pin");
 	nimblefingers2:getFreeRecipes():add("Break Door locks");
