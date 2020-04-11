@@ -5,7 +5,7 @@ local BURGLAR_ID = 'burglar';
 local function initProfessions()
     local burglar = ProfessionFactory.getProfession(BURGLAR_ID);
 		burglar:getFreeRecipes():add("Lockpicking");
-		burglar:getFreeRecipes():add("Create Bobby Pin");
+		burglar:getFreeRecipes():add("Create Hairpin");
 		burglar:getFreeRecipes():add("Break Door Locks");
 		burglar:getFreeRecipes():add("Break Window Locks");
     -- -- burglar:addFreeTrait("nimblefingers");

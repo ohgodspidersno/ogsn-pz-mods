@@ -11,10 +11,10 @@ description=
 description=[h2]Learn how to pick and destroy locks from magazines. Or choose the locksmith trait or burglar profession.[/h2]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652748155/F7BD2DFE5E2B44DEAFD9C5CD33F4A2F9D2854ACF/[/img]
 description=
-description=[h2]Find Bobby Pins or Craft Your Own From Wire[/h2]
+description=[h2]Find Hairpins or Craft Your Own From Wire[/h2]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652862449/8E3D15B5B3DB64385F18E4B99886F553D4279FB0/[/img]
 description=
-description=[h2]Pick Locks with Bobby Pins. Failure Jams the Lock.[/h2]
+description=[h2]Pick Locks with Hairpins. Failure Jams the Lock.[/h2]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652890614/9205171283437810AF86927ABB9DFFD8226680B3/[/img]
 description=
 description=[h2]Destroy Locks with Crowbar[/h2]

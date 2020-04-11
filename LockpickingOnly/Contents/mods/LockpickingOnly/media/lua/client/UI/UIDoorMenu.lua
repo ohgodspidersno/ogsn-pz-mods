@@ -138,7 +138,7 @@ local function createMenuEntries(player, context, worldObjects)
         local scndItem = inventory:FindAndReturn("BobbyPin");
 
         if not primItem or primItem:getCondition() <= 0 or not scndItem or scndItem:getCondition() <= 0 or not player:getKnownRecipes():contains("Lockpicking") then
-            print("No Lockpicking or valid screwdriver / bobby pin");
+            print("No Lockpicking or valid screwdriver / hairpin");
         else
             context:addOption(FMJlockPicking_Text.contextPickDoorLock .. " (" .. FMJlockPicking_Text.lockLevels[modData.lockLevel] .. ")", worldObjects, pickLock, door, player);
         end

@@ -61,7 +61,7 @@ function TAPickDoorLock:isValid()
     local prim = player:getPrimaryHandItem():getName();
     local scnd = player:getSecondaryHandItem():getName();
 
-    return prim == Translator.getDisplayItemName("Screwdriver") and scnd == Translator.getDisplayItemName("Bobby Pin");
+    return prim == Translator.getDisplayItemName("Screwdriver") and scnd == Translator.getDisplayItemName("Hairpin");
 end
 ---
 -- Starts the Timed Action.

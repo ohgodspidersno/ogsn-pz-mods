@@ -4,7 +4,7 @@ module FMJ
 	{
 		Base
 	}
-	recipe Create Bobby Pin
+	recipe Create Hairpin
 	{
 		keep KitchenKnife/HuntingKnife/Scissors,
 		Paperclip/Wire= 1,

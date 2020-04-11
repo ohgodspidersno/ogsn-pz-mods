@@ -10,7 +10,7 @@ module FMJ
 	{
 		Weight = 0.1,
 		Type = Normal,
-		DisplayName = Bobby Pin,
+		DisplayName = Hairpin,
 		Icon = BobbyPin,
 	}
 	item LockPickingMag
@@ -19,7 +19,7 @@ module FMJ
 		Type = Literature,
 		DisplayName = Lockpicking Handbook vol. 1,
 		Icon = MagazineBlacksmith1,
-		TeachedRecipes = Lockpicking;Create Bobby Pin,
+		TeachedRecipes = Lockpicking;Create Hairpin,
 		ReplaceOnUse = LockPickingMag,
 		StaticModel = Magazine,
 	}
