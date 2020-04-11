@@ -1,6 +1,6 @@
 UI_EN = {
 UI_trait_nimblefingers = "Nimble Fingers",
-UI_trait_nimblefingersdesc = "Years of experience with opening all kinds of locks.<br>Faster lockpicking. Better chances of opening a lock.",
+UI_trait_nimblefingersDesc = "Years of experience with opening all kinds of locks.<br>Faster lockpicking. Better chances of opening a lock.",
 UI_Text_locklevel_veryeasy = "Very Easy",
 UI_Text_locklevel_easy = "Easy",
 UI_Text_locklevel_medium = "Average",
