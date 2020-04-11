@@ -17,7 +17,7 @@ module FMJ
 	{
 		Weight = 0.1,
 		Type = Literature,
-		DisplayName = The Burglar Magazine vol. 1,
+		DisplayName = Lockpicking Handbook vol. 1,
 		Icon = MagazineBlacksmith1,
 		TeachedRecipes = Lockpicking;Create Bobby Pin,
 		ReplaceOnUse = LockPickingMag,
@@ -27,9 +27,9 @@ module FMJ
 	{
 		Weight = 0.1,
 		Type = Literature,
-		DisplayName = The Burglar Magazine vol. 2,
+		DisplayName = Lockpicking Handbook vol. 2,
 		Icon = MagazineBlacksmith2,
-		TeachedRecipes = Break Door locks;Break Window locks,
+		TeachedRecipes = Break Door Locks;Break Window Locks,
 		ReplaceOnUse = LockPickingMag2,
 		StaticModel = Magazine,
 	}

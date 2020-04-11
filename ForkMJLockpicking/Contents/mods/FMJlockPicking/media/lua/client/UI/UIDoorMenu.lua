@@ -125,8 +125,8 @@ local function createMenuEntries(player, context, worldObjects)
     if inventory:contains("Crowbar") then
         local primItem = inventory:FindAndReturn("Crowbar");
 
-        if not primItem or primItem:getCondition() <= 0 or not player:getKnownRecipes():contains("Break Door locks") then
-            print("No Break Door locks or valid crowbar");
+        if not primItem or primItem:getCondition() <= 0 or not player:getKnownRecipes():contains("Break Door Locks") then
+            print("No Break Door Locks or valid crowbar");
         else
             context:addOption(FMJlockPicking_Text.contextBreakDoorLock .. " (" .. FMJlockPicking_Text.lockLevels[modData.lockLevel] .. ")", worldObjects, breakLock, door, player);
         end
