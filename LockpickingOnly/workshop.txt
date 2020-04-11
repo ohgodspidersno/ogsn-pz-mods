@@ -4,10 +4,7 @@ title=Lockpicking! Just. Lockpicking. [41+]
 description=[h1]Description[/h1]
 description=Adds skills traits and items related to lockpicking.
 description=
-description=For people like me who want lockpicking but don't like that the other lockpicking mod on the workshop also includes many other unrelated and overpowered changes.
-description=
 description=[h1]Instructions[/h1]
-description=
 description=[h2]Learn how to pick and destroy locks from magazines. Or choose the locksmith trait or burglar profession.[/h2]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652748155/F7BD2DFE5E2B44DEAFD9C5CD33F4A2F9D2854ACF/[/img]
 description=
@@ -19,4 +16,5 @@ description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652890614
 description=
 description=[h2]Destroy Locks with Crowbar[/h2]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652938062/BF50C1435A62481AF3A4059F30F032BFF5C9853E/[/img]
+tags=
 visibility=public
