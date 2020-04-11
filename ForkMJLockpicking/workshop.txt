@@ -1,0 +1,12 @@
+version=1
+id=2056269054
+title=Fork MJ's Lockpicking
+description=MeTaL AnGeR has a mod called FMJ's Lockpicking that includes a bunch of old FMJ mods that he updated for IWBUMS.
+description=It includes Lockpicking, but it also has a bunch of other unrelated stuff, some of which is pretty overpowered.
+description=
+description=I just took that mod and subdivided it into five different sub-mods so that you can pick and choose which ones you want.
+description=
+description=I've offered to let him put this up on his workshop page but he has not responded so I figured I might as well put it up on mine.
+description=MeTaL AnGeR if you're reading this, please feel free to download this mod and put it up on your page, after which I'll remove this copy.
+tags=
+visibility=private

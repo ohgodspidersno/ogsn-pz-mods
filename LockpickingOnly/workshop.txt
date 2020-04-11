@@ -1,0 +1,10 @@
+version=1
+id=2056238799
+title=Lockpicking! Just. Lockpicking.
+description=Adds skills traits and items related to lockpicking.
+description=
+description=For people like me who want lockpicking but don't like that the other lockpicking mod on the workshop also includes many other unrelated and overpowered changes.
+description=
+description=Original lockpicking mod by FMJ, updated to version 41 by MeTaL AnGeR. Bug fixes and streamlining by me, Oh God Spiders No.
+tags=
+visibility=public
