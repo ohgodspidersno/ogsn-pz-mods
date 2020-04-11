@@ -3,7 +3,7 @@ require('NPCs/MainCreationMethods');
 local function initTraits()
 
 	local nimblefingers = TraitFactory.addTrait("nimblefingers", getText("UI_trait_nimblefingers"), 0, getText("UI_trait_nimblefingersdesc"), true);
-	local nimblefingers = TraitFactory.addTrait("nimblefingers2", getText("UI_trait_nimblefingers"), 3, getText("UI_trait_nimblefingersdesc"), false, false);
+	local nimblefingers2 = TraitFactory.addTrait("nimblefingers2", getText("UI_trait_nimblefingers"), 3, getText("UI_trait_nimblefingersdesc"), false, false);
 		TraitFactory.setMutualExclusive("nimblefingers", "nimblefingers2");
 
 Events.OnGameBoot.Add(initTraits);
