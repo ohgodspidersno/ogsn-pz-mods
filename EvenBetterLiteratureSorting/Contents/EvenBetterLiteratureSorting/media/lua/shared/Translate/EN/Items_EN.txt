@@ -86,4 +86,11 @@ Items_EN = {
 	DisplayName_Master_Tailoring = " Tailoring Vol.5: Master",
 
 
+	DisplayName_March_Ridge_Map = "Map of March Ridge",
+	DisplayName_Muldraugh_Map = "Map of Muldraugh",
+	DisplayName_Rosewood_Map = "Map of Rosewood",
+	DisplayName_Westpoint_Map = "Map of Westpoint",
+	DisplayName_Riverside_Map = "Map of Riverside",
+
+
 }
