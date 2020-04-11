@@ -1,0 +1,89 @@
+
+Items_ES = {
+
+
+	DisplayName_Carpentry_for_Beginners = " Carpinter�a Vol.1: Para dummies",
+	DisplayName_Carpentry_for_Intermediates = " Carpinter�a Vol.2: Intermedio",
+	DisplayName_Advanced_Carpentry = " Carpinter�a Vol.3: Avanzado",
+	DisplayName_Expert_Carpentry = " Carpinter�a Vol.4: Experto",
+	DisplayName_Master_Carpentry = " Carpinter�a Vol.5: Maestro",
+
+
+	DisplayName_Cooking_for_Beginners = " Cocina Vol.1: Para dummies",
+	DisplayName_Cooking_for_Intermediates = " Cocina Vol.2: Intermedio",
+	DisplayName_Advanced_Cooking = " Cocina Vol.3: Avanzado",
+	DisplayName_Expert_Cooking = " Cocina Vol.4: Experto",
+	DisplayName_Master_Cooking = " Cocina Vol.5: Maestro",
+
+
+	DisplayName_Farming_for_Beginners = " Agricultura Vol.1: Para dummies",
+	DisplayName_Farming_for_Intermediates = " Agricultura Vol.2: Intermedio",
+	DisplayName_Advanced_Farming = " Agricultura Vol.3: Avanzado",
+	DisplayName_Expert_Farming = " Agricultura Vol.4: Experto",
+	DisplayName_Master_Farming = " Agricultura Vol.5: Maestro",
+
+
+	DisplayName_Fishing_for_Beginners = " Pesca Vol.1: Para dummies",
+	DisplayName_Fishing_for_Intermediates = " Pesca Vol.2: Intermedio",
+	DisplayName_Advanced_Fishing = " Pesca Vol.3: Avanzado",
+	DisplayName_Expert_Fishing = " Pesca Vol.4: Experto",
+	DisplayName_Master_Fishing = " Pesca Vol.5: Maestro",
+
+
+	DisplayName_Trapping_for_Beginners = " Trampas Vol.1: Para dummies",
+	DisplayName_Trapping_for_Intermediates = " Trampas Vol.2: Intermedio",
+	DisplayName_Advanced_Trapping = " Trampas Vol.3: Avanzado",
+	DisplayName_Expert_Trapping = " Trampas Vol.4: Experto",
+	DisplayName_Master_Trapping = " Trampas Vol.5: Maestro",
+
+
+	DisplayName_Electricity_for_Beginners = " Electricidad Vol.1: Para dummies",
+	DisplayName_Electricity_for_Intermediates = " Electricidad Vol.2: Intermedio",
+	DisplayName_Advanced_Electricity = " Electricidad Vol.3: Avanzado",
+	DisplayName_Expert_Electricity = " Electricidad Vol.4: Experto",
+	DisplayName_Master_Electricity = " Electricidad Vol.5: Maestro",
+
+
+	DisplayName_FirstAid_for_Beginners = " Primeros auxilios Vol.1: Para dummies",
+	DisplayName_FirstAid_for_Intermediates = " Primeros auxilios Vol.2: Intermedio",
+	DisplayName_Advanced_First_Aid = " Primeros auxilios Vol.3: Avanzado",
+	DisplayName_Expert_First_Aid = " Primeros auxilios Vol.4: Experto",
+	DisplayName_Master_First_Aid = " Primeros auxilios Vol.5: Maestro",
+
+
+	DisplayName_Foraging_for_Beginners = " Rebuscar Vol.1: Para dummies",
+	DisplayName_Foraging_for_Intermediates = " Rebuscar Vol.2: Intermedio",
+	DisplayName_Advanced_Foraging = " Rebuscar Vol.3: Avanzado",
+	DisplayName_Expert_Foraging = " Rebuscar Vol.4: Experto",
+	DisplayName_Master_Foraging = " Rebuscar Vol.5: Maestro",
+
+
+	DisplayName_Metalwork_for_Beginners = " Metalister�a Vol.1: Para dummies",
+	DisplayName_Metalwork_for_Intermediates = " Metalister�a Vol.2: Intermedio",
+	DisplayName_Advanced_Metalwork = " Metalister�a Vol.3: Avanzado",
+	DisplayName_Expert_Metalwork = " Metalister�a Vol.4: Experto",
+	DisplayName_Master_Metalwork = " Metalister�a Vol.5: Maestro",
+
+
+	DisplayName_Smithing_for_Beginners = " Herrer�a Vol.1: Para dummies",
+	DisplayName_Smithing_for_Intermediates = " Herrer�a Vol.2: Intermedio",
+	DisplayName_Advanced_Smithing = " Herrer�a Vol.3: Avanzado",
+	DisplayName_Expert_Smithing = " Herrer�a Vol.4: Experto",
+	DisplayName_Master_Smithing = " Herrer�a Vol.5: Maestro",
+
+
+	DisplayName_Mechanics_for_Beginners = " Mec�nica Vol.1: Para dummies",
+	DisplayName_Mechanics_for_Intermediates = " Mec�nica Vol.2: Intermedio",
+	DisplayName_Advanced_Mechanics = " Mec�nica Vol.3: Avanzado",
+	DisplayName_Expert_Mechanics = " Mec�nica Vol.4: Experto",
+	DisplayName_Master_Mechanics = " Mec�nica Vol.5: Maestro",
+
+
+	DisplayName_Tailoring_for_Beginners = " Sastrer�a Vol.1: Para dummies",
+	DisplayName_Tailoring_for_Intermediates = " Sastrer�a Vol.2: Intermedio",
+	DisplayName_Advanced_Tailoring = " Sastrer�a Vol.3: Avanzado",
+	DisplayName_Expert_Tailoring = " Sastrer�a Vol.4: Experto",
+	DisplayName_Master_Tailoring = " Sastrer�a Vol.5: Maestro",
+
+
+}

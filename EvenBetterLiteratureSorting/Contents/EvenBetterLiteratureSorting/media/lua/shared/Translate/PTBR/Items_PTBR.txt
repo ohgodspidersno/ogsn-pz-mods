@@ -1,0 +1,89 @@
+
+Items_PTBR = {
+
+
+	DisplayName_Carpentry_for_Beginners = " Carpintaria Vol.1: Para Leigos",
+	DisplayName_Carpentry_for_Intermediates = " Carpintaria Vol.2: Interm�dio",
+	DisplayName_Advanced_Carpentry = " Carpintaria Vol.3: Avan�ado",
+	DisplayName_Expert_Carpentry = " Carpintaria Vol.4: Perito",
+	DisplayName_Master_Carpentry = " Carpintaria Vol.5: Mestre",
+
+
+	DisplayName_Cooking_for_Beginners = " Culin�ria Vol.1: Para Leigos",
+	DisplayName_Cooking_for_Intermediates = " Culin�ria Vol.2: Interm�dio",
+	DisplayName_Advanced_Cooking = " Culin�ria Vol.3: Avan�ado",
+	DisplayName_Expert_Cooking = " Culin�ria Vol.4: Perito",
+	DisplayName_Master_Cooking = " Culin�ria Vol.5: Mestre",
+
+
+	DisplayName_Farming_for_Beginners = " Agricultura Vol.1: Para Leigos",
+	DisplayName_Farming_for_Intermediates = " Agricultura Vol.2: Interm�dio",
+	DisplayName_Advanced_Farming = " Agricultura Vol.3: Avan�ado",
+	DisplayName_Expert_Farming = " Agricultura Vol.4: Perito",
+	DisplayName_Master_Farming = " Agricultura Vol.5: Mestre",
+
+
+	DisplayName_Fishing_for_Beginners = " Pesca Vol.1: Para Leigos",
+	DisplayName_Fishing_for_Intermediates = " Pesca Vol.2: Interm�dio",
+	DisplayName_Advanced_Fishing = " Pesca Vol.3: Avan�ado",
+	DisplayName_Expert_Fishing = " Pesca Vol.4: Perito",
+	DisplayName_Master_Fishing = " Pesca Vol.5: Mestre",
+
+
+	DisplayName_Trapping_for_Beginners = " Captura Vol.1: Para Leigos",
+	DisplayName_Trapping_for_Intermediates = " Captura Vol.2: Interm�dio",
+	DisplayName_Advanced_Trapping = " Captura Vol.3: Avan�ado",
+	DisplayName_Expert_Trapping = " Captura Vol.4: Perito",
+	DisplayName_Master_Trapping = " Captura Vol.5: Mestre",
+
+
+	DisplayName_Electricity_for_Beginners = " Eletricidade Vol.1: Para Leigos",
+	DisplayName_Electricity_for_Intermediates = " Eletricidade Vol.2: Interm�dio",
+	DisplayName_Advanced_Electricity = " Eletricidade Vol.3: Avan�ado",
+	DisplayName_Expert_Electricity = " Eletricidade Vol.4: Perito",
+	DisplayName_Master_Electricity = " Eletricidade Vol.5: Mestre",
+
+
+	DisplayName_FirstAid_for_Beginners = " Primeiros socorros Vol.1: Para Leigos",
+	DisplayName_FirstAid_for_Intermediates = " Primeiros socorros Vol.2: Interm�dio",
+	DisplayName_Advanced_First_Aid = " Primeiros socorros Vol.3: Avan�ado",
+	DisplayName_Expert_First_Aid = " Primeiros socorros Vol.4: Perito",
+	DisplayName_Master_First_Aid = " Primeiros socorros Vol.5: Mestre",
+
+
+	DisplayName_Foraging_for_Beginners = " Procurar alimentos Vol.1: Para Leigos",
+	DisplayName_Foraging_for_Intermediates = " Procurar alimentos Vol.2: Interm�dio",
+	DisplayName_Advanced_Foraging = " Procurar alimentos Vol.3: Avan�ado",
+	DisplayName_Expert_Foraging = " Procurar alimentos Vol.4: Perito",
+	DisplayName_Master_Foraging = " Procurar alimentos Vol.5: Mestre",
+
+
+	DisplayName_Metalwork_for_Beginners = " Trabalho em metal Vol.1: Para Leigos",
+	DisplayName_Metalwork_for_Intermediates = " Trabalho em metal Vol.2: Interm�dio",
+	DisplayName_Advanced_Metalwork = " Trabalho em metal Vol.3: Avan�ado",
+	DisplayName_Expert_Metalwork = " Trabalho em metal Vol.4: Perito",
+	DisplayName_Master_Metalwork = " Trabalho em metal Vol.5: Mestre",
+
+
+	DisplayName_Smithing_for_Beginners = " Forja Vol.1: Para Leigos",
+	DisplayName_Smithing_for_Intermediates = " Forja Vol.2: Interm�dio",
+	DisplayName_Advanced_Smithing = " Forja Vol.3: Avan�ado",
+	DisplayName_Expert_Smithing = " Forja Vol.4: Perito",
+	DisplayName_Master_Smithing = " Forja Vol.5: Mestre",
+
+
+	DisplayName_Mechanics_for_Beginners = " Mec�nica Vol.1: Para Leigos",
+	DisplayName_Mechanics_for_Intermediates = " Mec�nica Vol.2: Interm�dio",
+	DisplayName_Advanced_Mechanics = " Mec�nica Vol.3: Avan�ado",
+	DisplayName_Expert_Mechanics = " Mec�nica Vol.4: Perito",
+	DisplayName_Master_Mechanics = " Mec�nica Vol.5: Mestre",
+
+
+	DisplayName_Tailoring_for_Beginners = " Alfaiataria Vol.1: Para Leigos",
+	DisplayName_Tailoring_for_Intermediates = " Alfaiataria Vol.2: Interm�dio",
+	DisplayName_Advanced_Tailoring = " Alfaiataria Vol.3: Avan�ado",
+	DisplayName_Expert_Tailoring = " Alfaiataria Vol.4: Perito",
+	DisplayName_Master_Tailoring = " Alfaiataria Vol.5: Mestre",
+
+
+}
