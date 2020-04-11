@@ -78,7 +78,7 @@ local function createMenuEntries(player, context, worldobjects)
         if not prim or prim:getCondition() <= 0 or not player:getKnownRecipes():contains("Break Window locks") then
             print("No Break Window locks or valid crowbar");
         else
-            context:addOption(FMJ_Text.contextBreakWindowLock, worldobjects, forceWindow, window, player);
+            context:addOption(FMJlockPicking_Text.contextBreakWindowLock, worldobjects, forceWindow, window, player);
         end
     end
 end
