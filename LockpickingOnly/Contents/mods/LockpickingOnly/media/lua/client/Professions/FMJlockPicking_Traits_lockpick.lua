@@ -1,7 +1,7 @@
 require('NPCs/MainCreationMethods');
 
 start_items = false -- set true makes characters with nimble fingers trait start with bobby pins. Ordinarily this only occurs if the player also has profesional items on start mod
-debug = true
+debug = false
 local function initTraits()
 
 	local nimblefingers = TraitFactory.addTrait("nimblefingers", getText("UI_trait_nimblefingers"), 0, getText("UI_trait_nimblefingersdesc"), true);
