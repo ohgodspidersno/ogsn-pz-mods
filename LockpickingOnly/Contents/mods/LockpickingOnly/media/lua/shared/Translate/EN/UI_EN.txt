@@ -11,6 +11,8 @@ UI_Text_brokenLockModal = "You can't pick a broken lock.",
 UI_Text_contextBreakDoorLock = "Break Lock",
 UI_Text_contextPickDoorLock = "Pick Lock",
 UI_Text_contextBreakWindowLock = "Break Lock",
-UI_Text_BobbyStuck = "Damn it! The bobby pin is stuck!"
-UI_Text_BobbyBroken = "Damn it! I broke the bobby pin!"
+UI_Text_BobbyStuck = "Damn it! The bobby pin is stuck!",
+UI_Text_BobbyBroken = "Damn it! I broke the bobby pin!",
+UI_trait_BurglarDesc = "Can hotwire vehicles, force locks, and pick locks. Less chance of breaking the latch of a window.",
+UI_profdesc_burglar = "Can hotwire vehicles, force locks, and pick locks. Less chance of breaking the latch of a window.",
 }
