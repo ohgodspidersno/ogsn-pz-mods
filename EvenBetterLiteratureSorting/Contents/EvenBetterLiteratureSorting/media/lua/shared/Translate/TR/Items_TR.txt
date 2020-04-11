@@ -1,0 +1,8 @@
+Items_TR {
+DisplayName_Map = "Harita",
+DisplayName_March_Ridge_Map = "Harita March Ridge'in",
+DisplayName_Muldraugh_Map = "Harita Muldraugh'un",
+DisplayName_Rosewood_Map = "Harita Rosewood'un",
+DisplayName_Westpoint_Map = "Harita West Point'in",
+DisplayName_Riverside_Map = "Harita Riverside'�n",
+}
