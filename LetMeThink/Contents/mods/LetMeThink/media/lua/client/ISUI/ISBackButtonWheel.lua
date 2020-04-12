@@ -28,8 +28,8 @@ function ISBackButtonWheel:addCommands()
 
 	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
 
-	self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
-	self:addSlice(getText("IGUI_BackButton_Crafting"), getTexture("media/ui/Carpentry_On.png"), self.onCommand, self, "Crafting")
+		self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
+		self:addSlice(getText("IGUI_BackButton_Crafting"), getTexture("media/ui/Carpentry_On.png"), self.onCommand, self, "Crafting")
 
 	if getCore():isZoomEnabled() and not getCore():getAutoZoom(self.playerNum) then
 		self:addSlice(getText("IGUI_BackButton_Zoom", getCore():getNextZoom(self.playerNum, -1) * 100), getTexture("media/ui/ZoomIn.png"), self.onCommand, self, "ZoomMinus")
@@ -62,9 +62,9 @@ function ISBackButtonWheel:addCommands()
 		self:addSlice(getText("IGUI_BackButton_Zoom", getCore():getNextZoom(self.playerNum, 1) * 100), getTexture("media/ui/ZoomOut.png"), self.onCommand, self, "ZoomPlus")
 	end
 
-	if not playerObj:getVehicle() then
-		self:addSlice(getText("IGUI_BackButton_Movable"), getTexture("media/ui/Furniture_Off2.png"), self.onCommand, self, "MoveFurniture")
-	end
+		if not playerObj:getVehicle() then
+			self:addSlice(getText("IGUI_BackButton_Movable"), getTexture("media/ui/Furniture_Off2.png"), self.onCommand, self, "MoveFurniture")
+		end
 end
 
 function ISBackButtonWheel:onGainJoypadFocus(joypadData)

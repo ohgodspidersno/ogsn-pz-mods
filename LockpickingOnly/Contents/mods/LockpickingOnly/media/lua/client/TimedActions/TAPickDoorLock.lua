@@ -22,22 +22,24 @@ local BASE_CHANCE = 8;
 -- The higher the chance value, the higher is the chance of success.
 -- @param - The player trying to break the lock.
 -- @param - The lock difficulty.
+-- Chance to pick affected by: Lightfoot, Hearing, Lucky, Panic, nibmlefingers
 --
 local function calculateChance(player, lockLevel)
     local chance = math.floor((BASE_CHANCE + player:getPerkLevel(Perks.Lightfoot)) - lockLevel);
 
     -- Calculate the panic modifier. Panic in PZ is stored as a float ranging
     -- from 0 to 100. We devide it by ten and then round it to have a "integer".
-    local panicModifier = math.floor((player:getStats():getPanic() / 10) + 0.5);
+    local panic = player:getStats():getPanic()
+    local panicModifier = math.floor((panic / 10) + 0.5);
     chance = chance - panicModifier;
 
     if player:HasTrait('nimblefingers') or (player:HasTrait('nimblefingers2')) then
         chance = chance + 4;
     end
     if player:HasTrait('KeenHearing') then
-        chance = chance + 2;
-    elseif player:HasTrait('HardOfHearing') then
-        chance = chance - 2;
+        chance = chance + 3;
+    -- elseif player:HasTrait('HardOfHearing') then
+    --     chance = chance - 2;
     end
     if player:HasTrait('Lucky') then
         chance = chance + 3;
@@ -98,7 +100,7 @@ function TAPickDoorLock:perform()
         getSoundManager():PlayWorldSound("unlockDoor", door:getSquare(), 0, 6, 1, true);
 		player:getXp():AddXP(Perks.Lightfoot, 2);
 	end
-	
+
 	if ZombRand(chance) == 0 then
 		player:Say(getText("UI_Text_BobbyStuck"));
         player:setSecondaryHandItem(nil); -- Remove Item from hand.
@@ -121,7 +123,7 @@ function TAPickDoorLock:stop()
     if self.sound then
         self.sound:stop();
     end
-	
+
     luautils.equipItems(self.character, self.storedPrim, self.storedScnd);
     ISBaseTimedAction.stop(self);
 end

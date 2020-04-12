@@ -1,0 +1,18 @@
+/* Recipe_Craft_Sheet_Rope = "Craft Sheet Rope", */
+Recipes_EN = {
+Recipe_Roasted_Vegetables = "Prepare Oven Roast"
+Recipe_Create_Medicinal_Tea_Blend = "Create Medicinal Tea Blend",
+Recipe_Create_Energizing_Tea_Blend = "Create Energizing Tea Blend",
+Recipe_Brew_Cup_of_Common_Mallow_Tea = "Brew Cup of Common Mallow Tea",
+Recipe_Brew_Cup_of_Lemon_Grass_Tea = "Brew Cup of Lemon Grass Tea",
+Recipe_Brew_Cup_of_Black_Sage_Tea = "Brew Cup of Black Sage Tea",
+Recipe_Brew_Cup_of_Ginseng_Tea = "Brew Cup of Ginseng Tea",
+Recipe_Brew_Cup_of_Medicinal_Blended_Tea = "Brew Cup of Medicinal Blended Tea",
+Recipe_Brew_Cup_of_Energizing_Blended_Tea = "Brew Cup of Energizing Blended Tea",
+Recipe_Make_2_Bowls_of_Stir_Fry = "Make 2 Bowls of Stir Fry",
+Recipe_Make_4_Bowls_of_Stir_Fry = "Make 4 Bowls of Stir Fry",
+Recipe_Make_2_Bowls_of_Stir_Fry = "Make 2 Bowls of Stir Fry",
+Recipe_Make_4_Bowls_of_Stir_Fry = "Make 4 Bowls of Stir Fry",
+Recipe_Make_2_Bowls_of_Roasted_Vegetables = "Make 2 Bowls of Oven Roast",
+Recipe_Make_4_Bowls_of_Roasted_Vegetables = "Make 4 Bowls of Oven Roast",
+}

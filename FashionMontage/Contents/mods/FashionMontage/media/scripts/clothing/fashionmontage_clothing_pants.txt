@@ -325,7 +325,7 @@ module DistinctNames {
   }
   item Shorts_CamoGreenLong {
       Type = Clothing,
-      DisplayName = Shorts - Army Camo Forest,
+      DisplayName = Shorts - Army Camo,
       ClothingItem = Shorts_CamoGreenLong,
       BodyLocation = Pants,
       Icon = TrousersCamoGreen,

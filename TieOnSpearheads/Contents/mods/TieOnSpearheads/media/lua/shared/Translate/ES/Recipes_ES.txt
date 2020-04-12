@@ -31,5 +31,4 @@ Recipes_ES = {
 
   recipe_Attach_Chipped_Stone_to_Spear          =    "Añadir piedra afilada a lanza",
 
-  DisplayNameSpearChippedStone                  =    "Lanza con piedra afilada",
 }

@@ -791,7 +791,15 @@ function ISButtonPrompt:getBestXButtonAction(dir)
         return;
     end
 
-    if getSpecificPlayer(self.player):getVehicle() then return end
+    local playerObj = getSpecificPlayer(self.player)
+    local vehicle = playerObj:getVehicle()
+    if vehicle then
+        if vehicle:isDriver(playerObj) then
+            self:setXPrompt(getText("IGUI_Controller_CruiseControl"), ISVehicleRegulator.onJoypadPressX, JoypadState[self.player+1])
+        end
+        return
+    end
+
     if getSpecificPlayer(self.player):isAsleep() then return end
 
     -- The context-menu code is far too slow to be called every frame.

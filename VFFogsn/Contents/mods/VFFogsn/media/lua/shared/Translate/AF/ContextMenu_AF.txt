@@ -1,0 +1,4 @@
+ContextMenu_AF = {
+  ContextMenu_FoodType_Herbal = "Plante",
+  ContextMenu_EvolvedRecipe_OatmealEvolved = "Hawermeel",
+}

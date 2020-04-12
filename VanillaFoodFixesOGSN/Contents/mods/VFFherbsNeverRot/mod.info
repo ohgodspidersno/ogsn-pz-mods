@@ -1,3 +1,6 @@
-name=Vanilla Food Fixes - OPTIONAL - Foraged herbs never rot
+name=[DEPRECATED] - VFF Beta No-Rot Patch - Please download "Vanilla Food Fixes 1.0"
 id=VFFherbsNeverRot
-description=This optional patch makes it so foraged herbs never go bad, which is how it is in the vanilla game.
+description=Please upgrade to Vanilla Food Fixes version 1.0
+description=See steam page for link
+require=VFFogsn
+poster=poster.png

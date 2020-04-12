@@ -1,6 +1,20 @@
 version=1
-title=Skill-boosting TV shows now work even when fast forwarding
-description=
 id=1954803538
+title=Television XP works even when game is running in fast-forward [41.34+]
+description=In the normal game, you cannot get XP points from the television if the game is running in fast-forward. You only get XP points if the game is running slow.
+description=
+description=Now you get points even when you have the game in fast-forward.
+description=
+description=[h1]How It Works[/h1]
+description=It does this by granting all of the experience in one tick, instead of several ticks throughout the program, which is the simplest and most effective way to side-step this bug that I was able to come up with. Unfortunately the true source of the bug is very deeply rooted in the code and I cannot feasibly fix it directly.
+description=
+description=In other words, this mod is not the perfect solution, but it [i]does work perfectly[/i].
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
 tags=
 visibility=public

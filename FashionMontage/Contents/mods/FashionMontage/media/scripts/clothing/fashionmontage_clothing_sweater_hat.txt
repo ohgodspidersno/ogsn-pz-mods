@@ -8,7 +8,7 @@ module DistinctNames
       Type = Clothing,
       DisplayName = Hoodie,
       ClothingItem = HoodieUP_WhiteTINT,
-      ClothingItemExtra = HoodieDOWN_WhiteTINT,
+      ClothingItemExtra = DistinctNames.HoodieDOWN_WhiteTINT,
       ClothingItemExtraOption = DownHoodie,
       BodyLocation = SweaterHat,
       BloodLocation = Jumper;FullHelmet,
@@ -16,22 +16,6 @@ module DistinctNames
       ScratchDefense = 10,
       Insulation = 0.55,
       WindResistance = 0.2,
-      FabricType = Cotton,
-  }
-  item HoodieDOWN_WhiteTINT
-  {
-      Type = Clothing,
-      DisplayName = Hoodie,
-      ClothingItem = HoodieDOWN_WhiteTINT,
-      ClothingItemExtra = HoodieUP_WhiteTINT,
-      ClothingItemExtraOption = UpHoodie,
-      BodyLocation = Sweater,
-      BloodLocation = Jumper,
-      Icon = HoodieWhite,
-      ScratchDefense = 10,
-      NeckProtectionModifier = 0.5,
-      Insulation = 0.6,
-      WindResistance = 0.25,
       FabricType = Cotton,
   }
 }

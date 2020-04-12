@@ -1,0 +1,3 @@
+Items_PT = {
+  DisplayNameSpearChippedStone = "Lança com pedra lascada",
+}

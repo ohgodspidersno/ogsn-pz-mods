@@ -8,7 +8,7 @@ module FMJ
 /*******************LOCK PICKING*******************/
 	item BobbyPin
 	{
-		Weight = 0.1,
+		Weight = 0.005,
 		Type = Normal,
 		DisplayName = Hairpin,
 		Icon = BobbyPin,
@@ -18,7 +18,7 @@ module FMJ
 	{
 		Weight = 0.1,
 		Type = Literature,
-		DisplayName = Lockpicking Handbook vol. 1,
+		DisplayName = Locksmith's Handbook Vol. 1,
 		Icon = MagazineBlacksmith1,
 		TeachedRecipes = Lockpicking;Create Hairpin,
 		ReplaceOnUse = LockPickingMag,
@@ -29,7 +29,7 @@ module FMJ
 	{
 		Weight = 0.1,
 		Type = Literature,
-		DisplayName = Lockpicking Handbook vol. 2,
+		DisplayName = Locksmith's Handbook Vol. 2,
 		Icon = MagazineBlacksmith2,
 		TeachedRecipes = Break Door Locks;Break Window Locks,
 		ReplaceOnUse = LockPickingMag2,

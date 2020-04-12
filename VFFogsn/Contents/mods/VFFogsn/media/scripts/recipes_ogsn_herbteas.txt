@@ -1,0 +1,74 @@
+module Base {
+  recipe Brew Cup of Common Mallow Tea
+  {
+      destroy WaterMug,
+      destroy CommonMallow/CommonMallowDried,
+
+      Time:30.0,
+      OnGiveXP:Give1CookingXP,
+      CanBeDoneFromFloor:true,
+      Category:Cooking,
+      Result:Tea_CommonMallow,
+      OnCreate:MakeCupHerbalTeaOGSN,
+  }
+  recipe Brew Cup of Lemon Grass Tea
+  {
+      destroy WaterMug,
+      destroy LemonGrass/LemonGrassDried,
+
+      Time:30.0,
+      OnGiveXP:Give1CookingXP,
+      CanBeDoneFromFloor:true,
+      Category:Cooking,
+      Result:Tea_LemonGrass,
+      OnCreate:MakeCupHerbalTeaOGSN,
+  }
+  recipe Brew Cup of Black Sage Tea
+  {
+      destroy WaterMug,
+      destroy BlackSage/BlackSageDried,
+
+      Time:30.0,
+      OnGiveXP:Give1CookingXP,
+      CanBeDoneFromFloor:true,
+      Category:Cooking,
+      Result:Tea_BlackSage,
+      OnCreate:MakeCupHerbalTeaOGSN,
+  }
+  recipe Brew Cup of Ginseng Tea
+  {
+      destroy WaterMug,
+      destroy Ginseng/GinsengDried,
+
+      Time:30.0,
+      OnGiveXP:Give1CookingXP,
+      CanBeDoneFromFloor:true,
+      Category:Cooking,
+      Result:Tea_Ginseng,
+      OnCreate:MakeCupHerbalTeaOGSN,
+  }
+  recipe Brew Cup of Medicinal Blended Tea
+  {
+      destroy WaterMug,
+      destroy Teabag_Medicinal/Teabag_MedicinalDried,
+
+      Time:30.0,
+      OnGiveXP:Give1CookingXP,
+      CanBeDoneFromFloor:true,
+      Category:Cooking,
+      Result:Tea_Medicinal,
+      OnCreate:MakeCupHerbalTeaOGSN,
+  }
+  recipe Brew Cup of Energizing Blended Tea
+  {
+      destroy WaterMug,
+      destroy Teabag_Energizing/Teabag_EnergizingDried,
+
+      Time:30.0,
+      OnGiveXP:Give1CookingXP,
+      CanBeDoneFromFloor:true,
+      Category:Cooking,
+      Result:Tea_Energizing,
+      OnCreate:MakeCupHerbalTeaOGSN,
+  }
+}

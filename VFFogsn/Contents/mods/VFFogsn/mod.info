@@ -1,0 +1,14 @@
+name=Vanilla Food Fixes
+id=VFFogsn
+description=This mod includes many common sense fixes to vanilla foods.
+description=
+description=Stir fries and roast vegetables can now be transferred into bowls, rather than needing to be kept in the pan forever.
+description=Beans are now a happy food and can be used in many recipes.
+description=Pasta and rice dishes now eventually spoil, just like any other dish. This does NOT include dry rice and pasta, those are still shelf stable.
+description=Oatmeal can now be spruced up with milk, honey, fruits, and nuts.
+description=You can now use wine and whiskey as ingredients in some cooking recipes.
+description=Herbs can be used as spices or ingredients in recipes, as well as used to brew herbal teas that are slightly more potent than their components.
+description=Herbs eventually go bad. If you don't like this change, there is an optional submodule right below this one that will make them last forever.
+description=
+description=Fully compatible and synergistic with the mods "All American Apocalypse" and "Craftable Dairy Foods" and the food changes from "FMJ Lockpicking".
+poster=poster.png

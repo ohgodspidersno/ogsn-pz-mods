@@ -1,0 +1,29 @@
+module Base
+{
+  recipe Create Medicinal Tea Blend
+  {
+    keep MortarPestle,
+    destroy CommonMallow/CommonMallowDried,
+    destroy LemonGrass/LemonGrassDried,
+    destroy BlackSage/BlackSageDried,
+
+    Time:30.0,
+    CanBeDoneFromFloor:true,
+    Category:Cooking,
+    Result:Teabag_Medicinal,
+    OnCreate:MakeHerbalBlendOGSN,
+  }
+  recipe Create Energizing Tea Blend
+  {
+    keep MortarPestle,
+    destroy Teabag2,
+    destroy Ginseng/GinsengDried,
+    destroy BlackSage/BlackSageDried,
+
+    Time:30.0,
+    CanBeDoneFromFloor:true,
+    Category:Cooking,
+    Result:Teabag_Energizing,
+    OnCreate:MakeHerbalBlendOGSN,
+  }
+}

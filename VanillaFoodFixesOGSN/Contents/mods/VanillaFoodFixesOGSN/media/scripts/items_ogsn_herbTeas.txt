@@ -1,0 +1,144 @@
+module Base
+{
+  item Tea_CommonMallow
+  {
+    FluReduction = 7,
+
+    Weight = 0.5,
+    Type = Food,
+    DisplayName = Common Mallow Tea,
+    Icon = MugFulll,
+    Tooltip = Tooltip_Tea_CommonMallow,
+    IsCookable = true,
+    MinutesToCook = 10,
+    MinutesToBurn = 50,
+    UnhappyChange = 5,
+    ThirstChange = -20,
+    ReplaceOnUse = Mugl,
+    CustomContextMenu = Drink,
+    CustomEatSound = DrinkingFromBottle,
+    GoodHot = true,
+    EvolvedRecipeName = Tea,
+    DaysFresh = 3,
+    DaysTotallyRotten = 3,
+  }
+
+  item Tea_LemonGrass
+  {
+    ReduceFoodSickness = 15,
+
+    Weight = 0.5,
+    Type = Food,
+    DisplayName = Lemon Grass Tea,
+    Icon = MugFulll,
+    Tooltip = Tooltip_Tea_LemonGrass,
+    IsCookable = true,
+    MinutesToCook = 10,
+    MinutesToBurn = 50,
+    UnhappyChange = 5,
+    ThirstChange = -20,
+    ReplaceOnUse = Mugl,
+    CustomContextMenu = Drink,
+    CustomEatSound = DrinkingFromBottle,
+    GoodHot = true,
+    EvolvedRecipeName = Tea,
+    DaysFresh = 3,
+    DaysTotallyRotten = 3,
+  }
+
+  item Tea_BlackSage
+  {
+    PainReduction = 10,
+
+    Weight = 0.5,
+    Type = Food,
+    DisplayName = Black Sage Tea,
+    Icon = MugFulll,
+    Tooltip = Tooltip_Tea_BlackSage,
+    IsCookable = true,
+    MinutesToCook = 10,
+    MinutesToBurn = 50,
+    UnhappyChange = 5,
+    ThirstChange = -20,
+    ReplaceOnUse = Mugl,
+    CustomContextMenu = Drink,
+    CustomEatSound = DrinkingFromBottle,
+    GoodHot = true,
+    EvolvedRecipeName = Tea,
+    DaysFresh = 3,
+    DaysTotallyRotten = 3,
+  }
+
+  item Tea_Ginseng
+  {
+    EnduranceChange = 2,
+
+    Weight = 0.5,
+    Type = Food,
+    DisplayName = Ginseng Tea,
+    Icon = MugFulll,
+    Tooltip = Tooltip_Tea_Ginseng,
+    IsCookable = true,
+    MinutesToCook = 10,
+    MinutesToBurn = 50,
+    UnhappyChange = 5,
+    ThirstChange = -20,
+    ReplaceOnUse = Mugl,
+    CustomContextMenu = Drink,
+    CustomEatSound = DrinkingFromBottle,
+    GoodHot = true,
+    EvolvedRecipeName = Tea,
+    DaysFresh = 3,
+    DaysTotallyRotten = 3,
+  }
+
+  item Tea_Medicinal
+  {
+    FluReduction = 10,
+    ReduceFoodSickness = 20,
+    PainReduction = 14,
+
+    Weight = 0.5,
+    Type = Food,
+    DisplayName = Medicinal Tea,
+    Icon = MugFulll,
+    Tooltip = Tooltip_Tea_Medicinal,
+    IsCookable = true,
+    MinutesToCook = 10,
+    MinutesToBurn = 50,
+    UnhappyChange = 5,
+    ThirstChange = -20,
+    ReplaceOnUse = Mugl,
+    CustomContextMenu = Drink,
+    CustomEatSound = DrinkingFromBottle,
+    GoodHot = true,
+    EvolvedRecipeName = Tea,
+    DaysFresh = 3,
+    DaysTotallyRotten = 3,
+  }
+
+  item Tea_Energizing
+  {
+    PainReduction = 14,
+    EnduranceChange = 3,
+    FatigueChange	 = -20,
+
+    Weight = 0.5,
+    Type = Food,
+    DisplayName = Energizing Tea,
+    Icon = MugFulll,
+    Tooltip = Tooltip_Tea_Energizing,
+    IsCookable = true,
+    MinutesToCook = 10,
+    MinutesToBurn = 50,
+    UnhappyChange = 5,
+    ThirstChange = -20,
+    ReplaceOnUse = Mugl,
+    CustomContextMenu = Drink,
+    CustomEatSound = DrinkingFromBottle,
+    GoodHot = true,
+    EvolvedRecipeName = Tea,
+    DaysFresh = 3,
+    DaysTotallyRotten = 3,
+  }
+}

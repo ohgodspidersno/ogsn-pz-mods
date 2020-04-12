@@ -1,0 +1,3 @@
+Items_KO = {
+  DisplayNameSpearChippedStone = "돌창",
+}

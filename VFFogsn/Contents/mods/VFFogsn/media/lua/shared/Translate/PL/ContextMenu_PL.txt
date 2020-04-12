@@ -1,0 +1,4 @@
+ContextMenu_PL = {
+  ContextMenu_FoodType_Herbal = "Zielarski",
+  ContextMenu_EvolvedRecipe_OatmealEvolved = "Owsianka",
+}

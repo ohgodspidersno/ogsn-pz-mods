@@ -1,0 +1,12 @@
+ContextMenu_ES = {
+	ContextMenu_Fuel_Barrel			= "Barril Para Gasolina",
+	ContextMenu_ConnectBarrel		= "Conectar con Barril",
+	ContextMenu_PickUpBarrel		= "Levantar Barril",
+	ContextMenu_PlaceFuelBarrel		= "Colocar Barril",
+	ContextMenu_VehicleTakeFuelToBarrel	= "Verter Gasolina al Barril",
+	ContextMenu_VehicleRefuelFromBarrel	= "Llenar del Barril",
+	ContextMenu_TakeGasoline		= "Rellenando",
+	ContextMenu_AddGasoline			= "Vertido",
+	ContextMenu_PourOut				= "Verter",
+	ContextMenu_MakeMolotov			= "Crear Coctel Molotov",
+}

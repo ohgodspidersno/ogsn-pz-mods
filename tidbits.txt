@@ -1,0 +1,118 @@
+A document to contain little bits of helpful information
+------------------------------
+UTF-8 Whitespaces: (these might be different widths, and/or won't be erased automatically)
+
+Horizontal Tab: >	<
+No-Break Space: > <
+En quad: > <
+Em Quad: > <
+En Space: > <
+Em Space: > <
+Thick Space: > <
+Mid Space: > <
+Sixth Space: > <
+Figure Space: > <
+Punctuation Space: > <
+Thin Space: > <
+Hair Space: > <
+Narrow No-Break Space: > <
+Medium Mathematical Space: > <
+Ideographic Space: >　<
+
+--------------------
+
+A tea kettle contains as much water as 15 mugs
+
+--------------------
+
+File encodings for each language (allegedly)
+
+English (EN), Chinese (CN), Estonian (EE), Japanese (JP) – UTF-8
+Afrikaans (AF), Arabic (AR), Danish (DA), German (DE), Spanish (ES), French (FR), Hungarian (HU), Italian (IT), Dutch (NL), Norwegian (NO), Portuguese (PT), Brazilian Portuguese (PTBR), Thai (TH) – Windows 1252
+Chinese (CH) – Big-5
+Czech (CH), Polish (PL) – Windows-1250
+Russian (RU) – Windows-1251
+Korean (KO) - UTF-16 LE
+
+--------------------
+
+PZ Languages
+
+AF  : Afrikaans     : Afrikaans
+CN  : Chinese (S)   : 中文 - 简体
+CH  : Chinese (T)   : 中文 - 繁體
+CS  : Czech         : čeština
+DA  : Danish        : Danish
+NL  : Dutch         : Dansk
+EN  : English       : English
+EE  : Estonian      : Eestlane
+FR  : French        : Français
+DE  : German        : Deutsch
+HU  : Hungarian     : हंगेरी
+IT  : Italian       : Italiano
+JP  : Japanese      : 日本語
+KO  : Korean        : 한국어
+NO  : Norwegian     : Norsk
+PL  : Polish        : Perski
+PT  : Portuguese    : Português
+PTBR: Portuguese BR : Português BR
+RU  : Russian       : Pусский
+ES  : Spanish       : Español
+TH  : Thai          : ไทย
+TR  : Turkish       : Türk
+
+--------------------
+
+Non-PZ Languages
+|   : Arabic        : عربى
+|   : Bulgarian     : български
+|   : Catalan       : Català
+|   : Cantonese     : 广东话
+|   : Croatian      : Hrvatski
+|   : Filipino      : Pilipino
+|   : Finnish       : Suomalainen
+|   : Kävi koulua   : Kävi
+|   : Greek         : Ελληνικά
+|   : Hebrew        : עברית
+|   : Hindi         : हिन्दी
+|   : Icelandic     : Íslensku
+|   : Latvian       : Latvietis
+|   : Lithuanian    : Lietuvis
+|   : Malay         : Melayu
+|   : Maltese       : Malti
+|   : Persian       : فارسی
+|   : Romanian      : Românesc
+|   : Serbian       : Српски
+|   : Slovak        : Slovenský
+|   : Slovenian     : Slovenščina
+|   : Swahili       : Kiswahili
+|   : Swedish       : Svenska
+|   : Ukrainian     : Українська
+|   : Vietnamese    : Việt không
+|   : Welsh         : Cymraeg
+
+-----
+
+aborted attempt to detect user's language from client lua:
+
+require "ISUI/ISPanelJoypad"
+require "ISUI/ISButton"
+require "ISUI/ISControllerTestPanel"
+require "ISUI/ISVolumeControl"
+
+require "defines"
+
+MainOptions = ISPanelJoypad:derive("MainOptions");
+
+MainOptions.keys = {};
+MainOptions.keyText = {};
+MainOptions.setKeybindDialog = nil;
+MainOptions.keyBindingLength = 0;
+
+local GameOption = ISBaseObject:derive("GameOption")
+local GameOptions = ISBaseObject:derive("GameOptions")
+-- -- -- -- --
+-- local resolution = self.gameOptions:get('resolution')
+local language = GameOptions:get('language')
+print("language:")
+print(language)

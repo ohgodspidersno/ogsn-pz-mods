@@ -1,6 +1,30 @@
 version=1
 id=2042761166
 title=Knox Country Map - Lootable Map Item of Whole Game World
-description=Adds an in-game map of the entire playable area.
+description=[h1]Update[/h1]
+description=I've fixed several inaccuracies, added missing gas stations, and differentiated major and minor roads.
+description=I've also made it so that the city over the river will only appear on the map if you have the 'Over the River' mod enabled.
+description=Also some aesthetic improvements and tweaks.
+description=
+description=[h1]There's No Shame In Asking for Directions[/h1]
+description=But given that it's the apocalypse it'd probably be safer to check a map
+description=
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[h1]FAQs[/h1]
+description=[b][u]Q: You misspelled 'County"[/u][/b]
+description=
+description=A: It's actually called Knox Country in the game! I thought it was County, too, until the good folks on the Discord channel corrected me. There is a real life Knox County in Kentucky but it's in a  totally different part of the state.
+description=
+description=The game area most closely aligns with the real life counties of Meade, Hardin, Bullitt, and Breckenridge.
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
 tags=
 visibility=public

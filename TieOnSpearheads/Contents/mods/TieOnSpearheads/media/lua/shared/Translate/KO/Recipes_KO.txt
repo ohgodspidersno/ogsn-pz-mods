@@ -27,5 +27,4 @@ Recipes_KO = {
     recipe_Bind_Machete_to_Spear = "창에 마체테 묶기",
     recipe_Bind_Ice_Pick_to_Spear = "창에 얼음송곳 묶기",
     recipe_Bind_Chipped_Stone_to_Spear = "창에 깨트린 돌 묶기",
-    DisplayNameSpearChippedStone = "돌창",
 }

@@ -1,0 +1,6 @@
+name=Fuel Barrel Test(v40.x)
+poster=poster.png
+id=FuelBarrel(v40.x)
+description=Fuel Barrel
+tiledef=TRPack 7401
+pack=trpack

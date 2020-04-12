@@ -1,0 +1,3 @@
+ItemName_KO = {
+  ItemName_Base.SpearChippedStone = "돌창",
+}

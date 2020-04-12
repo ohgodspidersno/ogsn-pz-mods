@@ -1,0 +1,6 @@
+/** Italian translation provided by steam user Ooijennnnnn **/
+ItemName_IT = {
+ItemName_FMJ.BobbyPin = "Forcina",
+ItemName_FMJ.LockPickingMag = "Manuale del Fabbro Vol. 1",
+ItemName_FMJ.LockPickingMag2 = "Manuale del Fabbro Vol. 2",
+}
