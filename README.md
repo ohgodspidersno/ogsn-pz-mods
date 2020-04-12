@@ -34,11 +34,15 @@ https://map.projectzomboid.com/#0.457976207501108,0.3120629324402581,79.49684720
     1. Guaranteed in Mystery Machine if that mod is loaded
     1. Guaranteed in Military vehicles if those mods are loaded
 
-###Fork MJ Lockpicking
-1. If Metal Anger doesn't want to use this on his workshop page, change the poster graphic and font
+###Lockpicking
+1. Add car lockpicking
 
 ##Ideas for New Mods
 Might pursue these...
+
+###Walk While Reading
+1. Base it on bookworm trait
+1. Make it possible without a trait, but make it severely limit your sight and hearing radius
 
 ###More Map Symbols
 1. Car
@@ -86,8 +90,8 @@ Hard of hearing should lower your hearing range, obviously, but it doesn't need 
 ###Fashion Montage
 Pick whatever clothing you want at character gen
 
-###Fork-MJ Lockpicking
-Fork of FMJ's Lockpicking, but you aren't forced to use all the other unrelated mods in order to get the lockpicking
+###Lockpicking! Just. Lockpicking.
+Fork of FMJ's Lockpicking, but you aren't forced to use all the other unrelated mods in order to get the lockpicking. Plus bugfixes and balance improvements.
 
 ###Knox Country World Map
 Adds an in-game map item of the whole game world. It's like the other street atlases you find scattered around the game.
