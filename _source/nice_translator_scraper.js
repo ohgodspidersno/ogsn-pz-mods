@@ -75,7 +75,7 @@ function copyAllTranslations() {
     pz_p.innerHTML += "<br><br><br>"
 
     // all_p.innerHTML=translation
-    // maindiv.innerHTML = ""
+    maindiv.innerHTML = ""
     maindiv.innerHTML += "<h1>All Translations Unlabeled</h1><br>"
     maindiv.appendChild(all_p);
 
