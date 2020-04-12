@@ -1,8 +1,10 @@
 require("ItemTweaker_Copy_ogsn");
 
+-- If they've activatated the herbs never rot optional submod, then it stops here
 if getActivatedMods():contains("VFFherbsNeverRot") then
   return end
 
+-- Otherwise it gives them rottable attributes
 TweakItem("Base.CommonMallow","DaysFresh","7");
 TweakItem("Base.LemonGrass","DaysFresh","7");
 TweakItem("Base.BlackSage","DaysFresh","7");
