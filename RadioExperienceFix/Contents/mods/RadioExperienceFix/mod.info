@@ -1,4 +1,4 @@
-name=Skill-boosting TV shows now work even when fast forwarding
+name=Television XP works even when game is running in fast-forward [41.34+]
 id=RadioExperienceFix
 description=This mod makes each TV show distributes all of its experience points in a single tick so that you do not have to sit through the entire program at normal speed to earn all of the XP.
 poster=poster.png
