@@ -1,6 +1,61 @@
 version=1
 id=2036922754
 title=Spears: Twine and Leather Binding, Chipped Stone Spearheads
-description=Attach spearheads using twine or leather strips. Also, use chipped stones as spearheads!
+description=[h1]More Pole Weapons Patch[/h1]
+description=I just added an optional patch for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1895522524&searchtext=more+pole+weapons]More Pole Weapons[/url]. All of the new recipes in that mod that require glue or duct tape now have twine and leather strip alternates. I did not create any new art assets for this, so the twine/leather versions will look the same as the original ones.
+description=
+description=I did not add any new chipped stone versions of any new pole weapons. It would take too much time to test and add the new translation files, plus I'd hate to mar the really nicely complete artwork that More Pole Weapons provides. However, I'm sure you won't notice, there are A LOT of other really nice spearhead options you can go with :)
+description=
+description=
+description=[h1]Because Cavemen Didn't Have Duct Tape[/h1]
+description=You can now also attach spearheads using leather or twine.
+description=
+description=[h1]Help Me Translate[/h1]
+description=I will add language support for your language if you send me a translation. Please translate the phrases on the right. Do not change the left side.
+description=
+description=[code]
+description=recipe_Bind_Bread_Knife_to_Spear_with_Twine   =    "Bind Bread Knife to Spear with Twine",
+description=recipe_Bind_Butter_Knife_to_Spear_with_Twine  =    "Bind Butter Knife to Spear with Twine",
+description=recipe_Bind_Fork_to_Spear_with_Twine          =    "Bind Fork to Spear with Twine",
+description=recipe_Bind_Letter_Opener_to_Spear_with_Twine =    "Bind Letter Opener to Spear with Twine",
+description=recipe_Bind_Scalpel_to_Spear_with_Twine       =    "Bind Scalpel to Spear with Twine",
+description=recipe_Bind_Spoon_to_Spear_with_Twine         =    "Bind Spoon to Spear with Twine",
+description=recipe_Bind_Scissors_to_Spear_with_Twine      =    "Bind Scissors to Spear with Twine",
+description=recipe_Bind_Hand_Fork_to_Spear_with_Twine     =    "Bind Hand Fork to Spear with Twine",
+description=recipe_Bind_Screwdriver_to_Spear_with_Twine   =    "Bind Screwdriver to Spear with Twine",
+description=recipe_Bind_Kitchen_Knife_to_Spear_with_Twine =    "Bind Kitchen Knife to Spear with Twine",
+description=recipe_Bind_Hunting_Knife_to_Spear_with_Twine =    "Bind Hunting Knife to Spear with Twine",
+description=recipe_Bind_Machete_to_Spear_with_Twine       =    "Bind Machete to Spear with Twine",
+description=recipe_Bind_Ice_Pick_to_Spear_with_Twine      =    "Bind Ice Pick to Spear with Twine",
+description=recipe Bind_Chipped_Stone_to_Spear_with_Twine =    "Bind chipped stone to spear with twine",
+description=
+description=recipe_Bind_Bread_Knife_to_Spear              =    "Bind Bread Knife to Spear",
+description=recipe_Bind_Butter_Knife_to_Spear             =    "Bind Butter Knife to Spear",
+description=recipe_Bind_Fork_to_Spear                     =    "Bind Fork to Spear",
+description=recipe_Bind_Letter_Opener_to_Spear            =    "Bind Letter Opener to Spear",
+description=recipe_Bind_Scalpel_to_Spear                  =    "Bind Scalpel to Spear",
+description=recipe_Bind_Spoon_to_Spear                    =    "Bind Spoon to Spear",
+description=recipe_Bind_Scissors_to_Spear                 =    "Bind Scissors to Spear",
+description=recipe_Bind_Hand_Fork_to_Spear                =    "Bind Hand Fork to Spear",
+description=recipe_Bind_Screwdriver_to_Spear              =    "Bind Screwdriver to Spear",
+description=recipe_Bind_Kitchen_Knife_to_Spear            =    "Bind Kitchen Knife to Spear",
+description=recipe_Bind_Hunting_Knife_to_Spear            =    "Bind Hunting Knife to Spear",
+description=recipe_Bind_Machete_to_Spear                  =    "Bind Machete to Spear",
+description=recipe_Bind_Ice_Pick_to_Spear                 =    "Bind Ice Pick to Spear",
+description=recipe Bind_Chipped_Stone_to_Spear            =    "Bind chipped stone to spear",
+description=
+description=DisplayNameSpearChippedStone                  =    "Spear with chipped stone",
+description=[/code]
+description=
+description=[h2]The mod currently supports[/h2]
+description=[list]
+description=[*]Español
+description=[*]Portugues
+description=[*]Русский
+description=[*]한국어
+description=[/list]
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=Fake internet points are easy to give, totally free, and I enjoy them immensely!
 tags=
 visibility=public
