@@ -16,5 +16,12 @@ description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652890614
 description=
 description=[h2]Destroy Locks with Crowbar[/h2]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652938062/BF50C1435A62481AF3A4059F30F032BFF5C9853E/[/img]
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img]https://i.imgur.com/jEczML7.png[/img]
 tags=
 visibility=public
