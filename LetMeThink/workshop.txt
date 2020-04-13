@@ -1,10 +1,6 @@
 version=1
 id=2033451936
-visibility=public
-tags=
-
 title=Let Me Think - Open Menus and Queue Tasks While Paused [41.34+]
-
 description=[h1]Description[/h1]
 description=Project Zomboid isn't a fast-paced shooter or a precision platformer. You should be allowed some time to open menus and queue up tasks for your character while the game is paused.
 description=
@@ -31,3 +27,5 @@ description=
 description=[h1]If you enjoy this mod please like and favorite[/h1]
 description=Fake internet points are easy to give, totally free, and I enjoy them immensely!
 description=[img]https://i.imgur.com/p7Fv1Z6.gif[/img]
+tags=
+visibility=public

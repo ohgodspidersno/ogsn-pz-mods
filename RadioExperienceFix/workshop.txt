@@ -1,4 +1,5 @@
 version=1
+id=1954803538
 title=Television XP works even when game is running in fast-forward [41.34+]
 description=In the normal game, you cannot get XP points from the television if the game is running in fast-forward. You only get XP points if the game is running slow.
 description=
@@ -13,6 +14,5 @@ description=[h1]If you enjoy this mod please like and favorite[/h1]
 description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
 description=
 description=[img]https://i.imgur.com/p7Fv1Z6.gif[/img]
-id=1954803538
 tags=
 visibility=public
