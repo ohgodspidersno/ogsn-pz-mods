@@ -11,7 +11,7 @@ description=Pretty straightforward, this mod simply adds every vanilla clothing 
 description=
 description=[h1]Important Notes[/h1]
 description=[list]
-description=[*] This is for the beta branch (IWBUMS). Tested on version 41.31.
+description=[*] This is for the beta branch (IWBUMS). Tested on version 41.33.
 description=[*] Clothing from other mods will still be in the game and will work fine. However, they will not be selectable at the start of the game
 description=[*] Definitely compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1908499360&searchtext=professional]Occupational Items On Spawn[/url]
 description=[*] Should be compatible with most other mods, including mods that add new professions. Please let me know if you find any incompatibilities.
