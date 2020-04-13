@@ -61,4 +61,7 @@ description=Bu öğenin amacı varsayılan oyunda tüm çeviri hatalarını düz
 description=
 description=[h1]ไทย[/h1]
 description=Nod yr eitem hon yw i drwsio'r holl wallau cyfieithu yn y gêm ddiofyn
+description=
+description=[img]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=[img]https://i.imgur.com/jEczML7.png[/img]
 vsibility=hidden
