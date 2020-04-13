@@ -20,6 +20,7 @@ description=A: It's actually called Knox Country in the game! I thought it was C
 description=
 description=The game area most closely aligns with the real life counties of Meade, Hardin, Bullitt, and Breckenridge.
 description=
+description=[img]https://i.imgur.com/fXv1CBZ.png[/img]
 description=[img]https://i.imgur.com/p7Fv1Z6.gif[/img]
 tags=
 visibility=public
