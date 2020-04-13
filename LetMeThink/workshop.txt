@@ -1,6 +1,33 @@
 version=1
 id=2033451936
-title=Let Me Think - Open Menus and Queue Tasks While Paused
-description=Allows you to browse menus, right-click on things, and queue tasks even while paused. Your character will begin doing queued actions once you unpause.
-tags=
 visibility=public
+tags=
+
+title=Let Me Think - Open Menus and Queue Tasks While Paused [41.34+]
+
+description=[h1]Description[/h1]
+description=Project Zomboid isn't a fast-paced shooter or a precision platformer. You should be allowed some time to open menus and queue up tasks for your character while the game is paused.
+description=
+description=This mod makes it so that most right-click context menus now work even when the game is paused.
+description=
+description=[h1]Important - What This Mod Does, and What It Doesn't Do[/h1]
+description=To clarify, this does not let your character actually /do/ anything while the game is paused. It just lets you add tasks to the queue. Your character won't actually start doing them until you unpause.
+description=
+description=Like in /The Sims/, or /Rimworld/
+description=
+description=[h1]Troubleshooting[/h1]
+description=[olist]
+description=[*]Check to make sure you are playing version 41. If you are not sure, then you probably aren't.
+description=[*]If it still does not work, please post your modlist in the bugs discussion or in the comments. You can find your modlist here:
+description=[/olist]
+description=[code]
+description=PC Location:
+description=C:\users\your_login_name_here\zomboid\mods\default.txt
+description=
+description=Mac Location:
+description=/Users/your_login_name_here/Zomboid/mods/default.txt
+description=[/code]
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=Fake internet points are easy to give, totally free, and I enjoy them immensely!
+description=[img]https://i.imgur.com/p7Fv1Z6.gif[/img]
