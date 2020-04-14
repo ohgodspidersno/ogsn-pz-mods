@@ -23,6 +23,9 @@ local NOISE_FAILURE = 20;
 -- This function modifies the chance of breaking the lock successfully.
 -- The higher the chance value, the higher is the chance of success.
 -- @param - The player trying to break the lock.
+-- Chance to destroy lock affected by:
+--    Perks:
+--    Traits: nimblefingers, lucky
 --
 local function calculateChance(player)
     local chance = BASE_CHANCE;
@@ -40,7 +43,8 @@ end
 ---
 -- This function calculates a noise modifer based on the player's traits.
 -- @param - The player trying to break the lock.
---
+-- Sound volume lock affected by:
+--    Traits: nimblefingers, noiseiness
 local function calculateNoiseModifier(player)
     local noiseModifier = 0;
     if player:HasTrait('nimblefingers') or (player:HasTrait('nimblefingers2')) then

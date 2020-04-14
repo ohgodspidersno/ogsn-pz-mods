@@ -22,6 +22,10 @@ local BASE_CHANCE = 8;
 -- The higher the chance value, the higher is the chance of success.
 -- @param - The player trying to break the lock.
 -- @param - The lock difficulty.
+-- Chance to pick  affected by:
+--    Perks: Lightfoot
+--    Traits: Hearing, Lucky
+--    Status: Panic
 --
 local function calculateChance(player, lockLevel)
     local chance = math.floor((BASE_CHANCE + player:getPerkLevel(Perks.Lightfoot)) - lockLevel);
@@ -98,7 +102,7 @@ function TAPickDoorLock:perform()
         getSoundManager():PlayWorldSound("unlockDoor", door:getSquare(), 0, 6, 1, true);
 		player:getXp():AddXP(Perks.Lightfoot, 2);
 	end
-	
+
 	if ZombRand(chance) == 0 then
 		player:Say(getText("UI_Text_BobbyStuck"));
         player:setSecondaryHandItem(nil); -- Remove Item from hand.
@@ -121,7 +125,7 @@ function TAPickDoorLock:stop()
     if self.sound then
         self.sound:stop();
     end
-	
+
     luautils.equipItems(self.character, self.storedPrim, self.storedScnd);
     ISBaseTimedAction.stop(self);
 end
