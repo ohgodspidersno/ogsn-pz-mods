@@ -2,16 +2,19 @@ module DistinctNames {
   imports {
       Base
   }
-  item Hat_Bandana {
-      Type = Clothing,
-      DisplayName = Bandana,
-      ClothingItem = Hat_Bandana,
-      BodyLocation = Hat,
-      IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
-      CanHaveHoles = false,
-      ChanceToFall = 5,
-      Insulation = 0.10,
-  }
+  item Hat_Bandana
+	{
+		Type = Clothing,
+		DisplayName = Bandana (Head),
+		ClothingItem = Hat_Bandana,
+		BodyLocation = Hat,
+		IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
+		ClothingItemExtra = Hat_BandanaTied,
+    ClothingItemExtraOption = TieBandana,
+		CanHaveHoles = false,
+		ChanceToFall = 5,
+		Insulation = 0.10,
+	}
   item Hat_BaseballCap {
       Type = Clothing,
       DisplayName = Baseball Cap,
