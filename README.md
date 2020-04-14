@@ -40,9 +40,15 @@ https://map.projectzomboid.com/#0.457976207501108,0.3120629324402581,79.49684720
 ##Ideas for New Mods
 Might pursue these...
 
+###Mental State Affects Reading Speed
+1. Make reading speed be affected by panic, exhaustion, fatigue, hunger, illness, etc.
+
+###Pass Out if Too Tired
+1. Once your exhaustion hits absolute zero, and you are not panicking, there is a small chance every tick that you might fall asleep against your will.
+
 ###Walk While Reading
 1. Base it on bookworm trait
-1. Make it possible without a trait, but make it severely limit your sight and hearing radius
+1. Make it possible without a trait, but make it severely limit your sight and hearing radius, and you don't read at full speed either.
 
 ###More Map Symbols
 1. Car
