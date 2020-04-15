@@ -174,6 +174,26 @@ module DistinctNames {
       WaterResistance = 0.25,
       Weight = 2,
   }
+  item Jacket_PaddedDOWN
+  {
+      Type = Clothing,
+      DisplayName = Padded Jacket,
+      ClothingItem = Jacket_PaddedDOWN,
+      BodyLocation = Jacket,
+      Icon = JacketPadded_White,
+      BloodLocation = Jacket,
+      RunSpeedModifier = 0.89,
+      CombatSpeedModifier = 0.96,
+      ClothingItemExtra = DistinctNames.Jacket_Padded,
+      ClothingItemExtraOption = UpHoodie,
+      BiteDefense = 10,
+      ScratchDefense = 20,
+      NeckProtectionModifier = 0.5,
+      Insulation = 1.0,
+      WindResistance = 1.0,
+      WaterResistance = 0.60,
+      Weight = 3,
+  }
   item Jacket_Ranger {
       Type = Clothing,
       DisplayName = Park Ranger Jacket,
@@ -209,6 +229,46 @@ module DistinctNames {
       FabricType = Cotton,
       WaterResistance = 0.25,
       Weight = 2,
+  }
+  item PonchoGreenDOWN
+  {
+      Type = Clothing,
+      DisplayName = Poncho - Green,
+      ClothingItem = PonchoGreenDOWN,
+      BodyLocation = Jacket,
+      Icon = HoodieWhite,
+      ColorRed = 69,
+      ColorGreen = 98,
+      ColorBlue = 36,
+      BloodLocation = Shirt;FullHelmet;Trousers,
+      RunSpeedModifier = 0.9,
+      ClothingItemExtra = DistinctNames.PonchoGreen,
+      ClothingItemExtraOption = UpHoodie,
+      ScratchDefense = 10,
+      NeckProtectionModifier = 0.5,
+      Insulation = 0.15,
+      WindResistance = 0.8,
+      WaterResistance = 1.0,
+  }
+
+  item PonchoYellowDOWN
+  {
+      Type = Clothing,
+      DisplayName = Poncho - Yellow,
+      ClothingItem = PonchoYellowDOWN,
+      BodyLocation = Jacket,
+      Icon = HoodieWhite,
+      ColorRed = 228,
+      ColorGreen = 195,
+      ColorBlue = 88,
+      BloodLocation = Trousers;Shirt,
+      RunSpeedModifier = 0.9,
+      ClothingItemExtra = DistinctNames.PonchoYellow,
+      ClothingItemExtraOption = UpHoodie,
+      NeckProtectionModifier = 0.5,
+      Insulation = 0.15,
+      WindResistance = 0.8,
+      WaterResistance = 1.0,
   }
   item JacketLong_Santa {
       Type = Clothing,
@@ -288,65 +348,5 @@ module DistinctNames {
       WindResistance = 0.5,
       FabricType = Cotton,
   }
-  item Jacket_PaddedDOWN
-  {
-      Type = Clothing,
-      DisplayName = Padded Jacket,
-      ClothingItem = Jacket_PaddedDOWN,
-      BodyLocation = Jacket,
-      Icon = JacketPadded_White,
-      BloodLocation = Jacket,
-      RunSpeedModifier = 0.89,
-      CombatSpeedModifier = 0.96,
-      ClothingItemExtra = DistinctNames.Jacket_Padded,
-      ClothingItemExtraOption = UpHoodie,
-      BiteDefense = 10,
-      ScratchDefense = 20,
-      NeckProtectionModifier = 0.5,
-      Insulation = 1.0,
-      WindResistance = 1.0,
-      WaterResistance = 0.60,
-      Weight = 3,
-  }
 
-  item PonchoGreenDOWN
-  {
-      Type = Clothing,
-      DisplayName = Poncho - Green,
-      ClothingItem = PonchoGreenDOWN,
-      BodyLocation = Jacket,
-      Icon = HoodieWhite,
-      ColorRed = 69,
-      ColorGreen = 98,
-      ColorBlue = 36,
-      BloodLocation = Shirt;FullHelmet;Trousers,
-      RunSpeedModifier = 0.9,
-      ClothingItemExtra = DistinctNames.PonchoGreen,
-      ClothingItemExtraOption = UpHoodie,
-      ScratchDefense = 10,
-      NeckProtectionModifier = 0.5,
-      Insulation = 0.15,
-      WindResistance = 0.8,
-      WaterResistance = 1.0,
-  }
-
-  item PonchoYellowDOWN
-  {
-      Type = Clothing,
-      DisplayName = Poncho - Yellow,
-      ClothingItem = PonchoYellowDOWN,
-      BodyLocation = Jacket,
-      Icon = HoodieWhite,
-      ColorRed = 228,
-      ColorGreen = 195,
-      ColorBlue = 88,
-      BloodLocation = Trousers;Shirt,
-      RunSpeedModifier = 0.9,
-      ClothingItemExtra = DistinctNames.PonchoYellow,
-      ClothingItemExtraOption = UpHoodie,
-      NeckProtectionModifier = 0.5,
-      Insulation = 0.15,
-      WindResistance = 0.8,
-      WaterResistance = 1.0,
-  }
 }
