@@ -30,13 +30,13 @@ ItemName_Base.EngineerMagazine1 =	"Engineer Magazine Vol. 1",
 ItemName_Base.EngineerMagazine2 =	"Engineer Magazine Vol. 2",
 
 
-Book = "  Book",
-Notebook = "  Empty Notebook",
-Doodle = "  Doodle",
-Journal = "  Journal",
-Magazine = "  Magazine",
-Newspaper = "  Newspaper",
-SheetPaper2 = "  Sheet of Paper",
-ComicBook = "  Comic Book",
+Book = "&nbsp&nbspBook",
+Notebook = "&nbsp&nbspEmpty Notebook",
+Doodle = "&nbsp&nbspDoodle",
+Journal = "&nbsp&nbspJournal",
+Magazine = "&nbsp&nbspMagazine",
+Newspaper = "&nbsp&nbspNewspaper",
+SheetPaper2 = "&nbsp&nbspSheet of Paper",
+ComicBook = "&nbsp&nbspComic Book",
 
 }
