@@ -58,7 +58,7 @@ module DistinctNames {
       DisplayName = Bandana (Face),
       ClothingItem = Hat_BandanaMask,
       BodyLocation = Mask,
-      ClothingItemExtra = Hat_BandanaTiedWhite,
+      ClothingItemExtra = DistinctNames.Hat_BandanaTiedWhite,
       ClothingItemExtraOption = TieBandana,
       Icon = Handkerchief,
       CanHaveHoles = false,
