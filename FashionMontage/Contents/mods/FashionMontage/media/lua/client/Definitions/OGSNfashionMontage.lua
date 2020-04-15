@@ -392,9 +392,9 @@ ClothingSelectionDefinitions.default.Male.Neck = {chance = 0, items = listNeck}
 ClothingSelectionDefinitions.default.Male.Hands = {chance = 0, items = listHands}
 ClothingSelectionDefinitions.default.Male.Legs1 = {chance = 0, items = listLegs1}
 ClothingSelectionDefinitions.default.Male.Sweater = {chance = 30, items = listSweater}
-ClothingSelectionDefinitions.default.Male.SweaterHat = {chance = 0, items = listSweaterHat}
+-- ClothingSelectionDefinitions.default.Male.SweaterHat = {chance = 0, items = listSweaterHat}
 ClothingSelectionDefinitions.default.Male.Jacket = {chance = 30, items = listJacket}
-ClothingSelectionDefinitions.default.Male.JacketHat = {chance = 0, items = listJacketHat}
+-- ClothingSelectionDefinitions.default.Male.JacketHat = {chance = 0, items = listJacketHat}
 ClothingSelectionDefinitions.default.Male.FullSuit = {chance = 0, items = listFullSuit}
 ClothingSelectionDefinitions.default.Male.FullSuitHead = {chance = 0, items = listFullSuitHead}
 ClothingSelectionDefinitions.default.Male.FullTop = {chance = 0, items = listFullTop}
@@ -424,9 +424,9 @@ ClothingSelectionDefinitions.default.Female.Neck = {chance = 0, items = listNeck
 ClothingSelectionDefinitions.default.Female.Hands = {chance = 0, items = listHands}
 ClothingSelectionDefinitions.default.Female.Legs1 = {chance = 0, items = listLegs1}
 ClothingSelectionDefinitions.default.Female.Sweater = {chance = 30, items = listSweater}
-ClothingSelectionDefinitions.default.Female.SweaterHat = {chance = 0, items = listSweaterHat}
+-- ClothingSelectionDefinitions.default.Female.SweaterHat = {chance = 0, items = listSweaterHat}
 ClothingSelectionDefinitions.default.Female.Jacket = {chance = 30, items = listJacket}
-ClothingSelectionDefinitions.default.Female.JacketHat = {chance = 0, items = listJacketHat}
+-- ClothingSelectionDefinitions.default.Female.JacketHat = {chance = 0, items = listJacketHat}
 ClothingSelectionDefinitions.default.Female.FullSuit = {chance = 0, items = listFullSuit}
 ClothingSelectionDefinitions.default.Female.FullSuitHead = {chance = 0, items = listFullSuitHead}
 ClothingSelectionDefinitions.default.Female.FullTop = {chance = 0, items = listFullTop}
