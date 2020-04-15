@@ -280,6 +280,7 @@ local listLegs1 = {
 local listSweater = {
   "DistinctNames.Jumper_DiamondPatternTINT",
   "DistinctNames.Jumper_TankTopDiamondTINT",
+  "DistinctNames.HoodieDOWN_WhiteTINT",
   "DistinctNames.Jumper_PoloNeck",
   "DistinctNames.Jumper_RoundNeck",
   "DistinctNames.Jumper_VNeck",
