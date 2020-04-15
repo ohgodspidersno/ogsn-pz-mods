@@ -2,6 +2,8 @@
 
 local listHat = {
   "DistinctNames.Hat_Bandana",
+  "DistinctNames.Hat_BandanaTied",
+  -- "DistinctNames.Hat_BandanaTiedWhite",
   "DistinctNames.Hat_BaseballCap",
   "DistinctNames.Hat_BaseballCap_Reverse",
   "DistinctNames.Hat_BaseballCapBlue",
@@ -228,6 +230,7 @@ local listBeltExtra = {
 local listMask = {
   "DistinctNames.Hat_BalaclavaFull",
   "DistinctNames.Hat_BalaclavaFace",
+  "DistinctNames.Hat_BandanaMask",
   "DistinctNames.Hat_DustMask",
   "DistinctNames.Hat_SurgicalMask_Blue",
   "DistinctNames.Hat_SurgicalMask_Green",
