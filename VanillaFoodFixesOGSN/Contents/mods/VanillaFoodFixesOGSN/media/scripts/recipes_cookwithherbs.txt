@@ -3,7 +3,7 @@ module Base {
     recipe Brew Cup of Common Mallow Tea
     {
         destroy WaterMug,
-        destroy CommonMallow,
+        destroy CommonMallow/CommonMallowDried,
 
         Time:30.0,
         OnGiveXP:Give3CookingXP,
@@ -15,7 +15,7 @@ module Base {
     recipe Brew Cup of Lemon Grass Tea
     {
         destroy WaterMug,
-        destroy LemonGrass,
+        destroy LemonGrass/LemonGrassDried,
 
         Time:30.0,
         OnGiveXP:Give3CookingXP,
@@ -27,7 +27,7 @@ module Base {
     recipe Brew Cup of Black Sage Tea
     {
         destroy WaterMug,
-        destroy BlackSage,
+        destroy BlackSage/BlackSageDried,
 
         Time:30.0,
         OnGiveXP:Give3CookingXP,
@@ -39,7 +39,7 @@ module Base {
     recipe Brew Cup of Ginseng Tea
     {
         destroy WaterMug,
-        destroy Ginseng,
+        destroy Ginseng/GinsengDried,
 
         Time:30.0,
         OnGiveXP:Give3CookingXP,
@@ -75,9 +75,9 @@ module Base {
     recipe Create Medicinal Tea Blend
     {
         keep MortarPestle,
-        destroy CommonMallow,
-        destroy LemonGrass,
-        destroy BlackSage,
+        destroy CommonMallow/CommonMallowDried,
+        destroy LemonGrass/LemonGrassDried,
+        destroy BlackSage/BlackSageDried,
 
         Time:30.0,
         OnGiveXP:Give3CookingXP,
@@ -90,8 +90,8 @@ module Base {
     {
         keep MortarPestle,
         destroy Teabag2,
-        destroy Ginseng,
-        destroy BlackSage,
+        destroy Ginseng/GinsengDried,
+        destroy BlackSage/BlackSageDried,
 
         Time:30.0,
         OnGiveXP:Give3CookingXP,
