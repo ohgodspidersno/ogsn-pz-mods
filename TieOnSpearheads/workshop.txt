@@ -4,7 +4,7 @@ title=Spears: Twine and Leather Binding, Chipped Stone Spearheads
 description=[h1]More Pole Weapons Patch[/h1]
 description=I just added an optional patch for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1895522524&searchtext=more+pole+weapons]More Pole Weapons[/url]. All of the new recipes in that mod that require glue or duct tape now have twine and leather strip alternates. I did not create any new art assets for this, so the twine/leather versions will look the same as the original ones.
 description=
-description=I did not add any new chipped stone versions of any new pole weapons. It would take too much time to test and add the new translation files, plus I'd hate to mar the really nicely complete artwork that More Pole Weapons provides. However, I'm sure you won't notice, there are A LOT of other really nice spearhead options you can go with :)
+description=I did not add any new chipped stone versions of any new pole weapons. It would take too much time to test and add the new translation files, plus I'd hate to mar the really nicely complete artwork that More Pole Weapons provides. However, I'm sure you won't notice, because there are A LOT of other really nice spearhead options you can go with :)
 description=
 description=
 description=[h1]Because Cavemen Didn't Have Duct Tape[/h1]
