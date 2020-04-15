@@ -22,10 +22,7 @@ local BASE_CHANCE = 8;
 -- The higher the chance value, the higher is the chance of success.
 -- @param - The player trying to break the lock.
 -- @param - The lock difficulty.
--- Chance to pick  affected by:
---    Perks: Lightfoot
---    Traits: Hearing, Lucky
---    Status: Panic
+-- Chance to pick affected by: Lightfoot, Hearing, Lucky, Panic, nibmlefingers
 --
 local function calculateChance(player, lockLevel)
     local chance = math.floor((BASE_CHANCE + player:getPerkLevel(Perks.Lightfoot)) - lockLevel);
