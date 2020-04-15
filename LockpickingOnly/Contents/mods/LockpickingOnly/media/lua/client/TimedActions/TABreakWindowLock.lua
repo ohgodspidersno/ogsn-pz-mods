@@ -54,6 +54,7 @@ end
 -- @param - The player trying to break the lock.
 -- Sound of destroying lock lock affected by: nimblefingers, noiseiness, panic
 local function calculateNoiseModifier(player)
+    local panic = player:getStats():getPanic()
     local panicModifier = math.floor((panic/28)) -- ranges from 0 to 3
     local noiseModifier = panicModifier;
     if player:HasTrait('nimblefingers') or (player:HasTrait('nimblefingers2')) then
