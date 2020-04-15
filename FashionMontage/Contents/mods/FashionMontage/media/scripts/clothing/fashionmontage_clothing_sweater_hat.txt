@@ -18,20 +18,4 @@ module DistinctNames
       WindResistance = 0.2,
       FabricType = Cotton,
   }
-  item HoodieDOWN_WhiteTINT
-  {
-      Type = Clothing,
-      DisplayName = Hoodie,
-      ClothingItem = HoodieDOWN_WhiteTINT,
-      ClothingItemExtra = DistinctNames.HoodieUP_WhiteTINT,
-      ClothingItemExtraOption = UpHoodie,
-      BodyLocation = Sweater,
-      BloodLocation = Jumper,
-      Icon = HoodieWhite,
-      ScratchDefense = 10,
-      NeckProtectionModifier = 0.5,
-      Insulation = 0.6,
-      WindResistance = 0.25,
-      FabricType = Cotton,
-  }
 }
