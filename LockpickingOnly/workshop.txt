@@ -22,8 +22,8 @@ description=[h2]Destroy Locks with Crowbar[/h2]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652938062/BF50C1435A62481AF3A4059F30F032BFF5C9853E/[/img]
 description=
 description=[h2]Traits and Panic Affect Success, Time, and Noise[/h2]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018319285124870709/43C82AF0FE8E2F72507BAB2D9C34F27256319001/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018319285124871106/F155E2CF578A79AD0056697238011F4E44EF1EA4/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018319285125534173/8823593961342108341FFEF506508EB4CCFD019F/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018319285125534572/58972FA9858DFCCF7329325676B91E08434D1347/[/img]
 description=
 description=[h1]If you enjoy this mod please like and favorite[/h1]
 description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
