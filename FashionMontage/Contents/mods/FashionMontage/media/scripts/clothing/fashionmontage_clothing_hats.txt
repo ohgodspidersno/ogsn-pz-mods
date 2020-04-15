@@ -3,18 +3,44 @@ module DistinctNames {
       Base
   }
   item Hat_Bandana
-	{
-		Type = Clothing,
-		DisplayName = Bandana (Head),
-		ClothingItem = Hat_Bandana,
-		BodyLocation = Hat,
-		IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
-		ClothingItemExtra = Hat_BandanaTied,
-    ClothingItemExtraOption = TieBandana,
-		CanHaveHoles = false,
-		ChanceToFall = 5,
-		Insulation = 0.10,
-	}
+  {
+      Type = Clothing,
+      DisplayName = Bandana,
+      ClothingItem = Hat_Bandana,
+      BodyLocation = Hat,
+      IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
+      ClothingItemExtra = Hat_BandanaTied,
+      ClothingItemExtraOption = TieBandana,
+      CanHaveHoles = false,
+      ChanceToFall = 5,
+      Insulation = 0.10,
+  }
+  item Hat_BandanaTied
+  {
+      Type = Clothing,
+      DisplayName = Bandana (Tied),
+      ClothingItem = Hat_BandanaTied,
+      BodyLocation = Hat,
+      IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
+      ClothingItemExtra = Hat_Bandana,
+      ClothingItemExtraOption = UntieBandana,
+      CanHaveHoles = false,
+      ChanceToFall = 5,
+      Insulation = 0.10,
+  }
+  item Hat_BandanaTiedWhite
+  {
+      Type = Clothing,
+      DisplayName = Bandana - Plain (Tied),
+      ClothingItem = Hat_BandanaTiedTINT,
+      BodyLocation = Hat,
+      ClothingItemExtra = Hat_BandanaMask,
+      ClothingItemExtraOption = UntieBandana,
+      Icon = RamboBandanna,
+      CanHaveHoles = false,
+      ChanceToFall = 5,
+      Insulation = 0.10,
+  }
   item Hat_BaseballCap {
       Type = Clothing,
       DisplayName = Baseball Cap,

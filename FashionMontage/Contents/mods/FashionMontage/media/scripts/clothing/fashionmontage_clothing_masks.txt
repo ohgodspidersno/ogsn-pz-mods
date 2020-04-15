@@ -52,4 +52,17 @@ module DistinctNames {
       Icon = SurgicalMaskGreen,
       CanHaveHoles = false,
   }
+  item Hat_BandanaMask
+  {
+      Type = Clothing,
+      DisplayName = Bandana (Face),
+      ClothingItem = Hat_BandanaMask,
+      BodyLocation = Mask,
+      ClothingItemExtra = Hat_BandanaTiedWhite,
+      ClothingItemExtraOption = TieBandana,
+      Icon = Handkerchief,
+      CanHaveHoles = false,
+      ChanceToFall = 5,
+      Insulation = 0.10,
+  }
 }
