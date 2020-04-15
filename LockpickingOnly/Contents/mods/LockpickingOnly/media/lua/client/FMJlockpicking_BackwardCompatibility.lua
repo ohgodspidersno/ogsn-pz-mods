@@ -1,6 +1,6 @@
 -- This will give burglars in old saved games the recipes
-local function GiveTraitsToExistingBurglars() = function(playerObj, playerSquare)
-    local learned_recipes = playerObj:getKnownRecipes()
+local function GiveTraitsToExistingBurglars(playerObj, playerSquare)
+    local learned_recipes = playerObj:getKnownRecipes();
     if playerObj:getTraits():contains('Burglar') then
         if not learned_recipes:contains("Lockpicking") then
             learned_recipes:add("Lockpicking");
