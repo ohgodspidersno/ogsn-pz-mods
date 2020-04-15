@@ -13,14 +13,16 @@ item CommonMallowRotten
     FoodType        =   Herbal,
     EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2,
 
+    DaysTotallyRotten = 0.0001,
+    MinutesToCook = 60,
+    MinutesToBurn = 30,
     Weight	=	0.1,
     Type	=	Food,
     DisplayName	=	Rotten Common Mallow,
     Icon	=	CommonMallowRotten,
     Tooltip = Tooltip_Mallow,
-    IsCookable	=	False,
-		DangerousUncooked	=	TRUE,
-    CantBeFrozen    =   True,
+    IsCookable = True,
+    CantBeFrozen    =   False,
 }
 
 item LemonGrassRotten
@@ -33,6 +35,9 @@ item LemonGrassRotten
     EvolvedRecipe       = Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Sandwich:1;Burger:1;Salad:1;FruitSalad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1,
 
     HungerChange	=	-1,
+    DaysTotallyRotten = 0.0001,
+    MinutesToCook = 60,
+    MinutesToBurn = 30,
     Weight	=	0.1,
     Type	=	Food,
     DisplayName	=	Rotten Lemon Grass,
@@ -42,9 +47,8 @@ item LemonGrassRotten
     Proteins = 0,
     Lipids = 0,
     Calories = 0.1,
-    IsCookable	=	False,
-		DangerousUncooked	=	TRUE,
-    CantBeFrozen    =   True,
+    IsCookable = True,
+    CantBeFrozen    =   False,
 }
 
 item BlackSageRotten
@@ -58,6 +62,9 @@ item BlackSageRotten
     EvolvedRecipe   =   Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1,
 
     HungerChange	=	-1,
+    DaysTotallyRotten = 0.0001,
+    MinutesToCook = 60,
+    MinutesToBurn = 30,
     Weight	=	0.1,
     Type	=	Food,
     DisplayName	=	Rotten Black Sage,
@@ -67,9 +74,8 @@ item BlackSageRotten
     Proteins = 0,
     Lipids = 0,
     Calories = 0.1,
-    IsCookable	=	False,
-		DangerousUncooked	=	TRUE,
-    CantBeFrozen    =   True,
+    IsCookable = True,
+    CantBeFrozen    =   False,
 }
 
 item GinsengRotten
@@ -83,6 +89,9 @@ item GinsengRotten
     EvolvedRecipe   =   Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1,
 
     HungerChange	=	-1,
+    DaysTotallyRotten = 0.0001,
+    MinutesToCook = 60,
+    MinutesToBurn = 30,
     Weight	=	0.1,
     Type	=	Food,
     DisplayName	=	Rotten Ginseng,
@@ -92,9 +101,8 @@ item GinsengRotten
     Proteins = 0,
     Lipids = 0,
     Calories = 0.1,
-    IsCookable	=	False,
-		DangerousUncooked	=	TRUE,
-    CantBeFrozen    =   True,
+    IsCookable = True,
+    CantBeFrozen    =   False,
 }
 
 item RosehipsRotten
@@ -103,6 +111,9 @@ item RosehipsRotten
     EvolvedRecipe   =   Soup:3;Stew:3;Pie:3;Cake:3;Stir fry:3;Stir fry Griddle Pan:3;Roasted Vegetables:3;Burger:3;Salad:3;PastaPan:3;RicePan:3;PastaPot:3;RicePot:3;HotDrink:3;CommonMallowEvolved:3;LemonGrassEvolved:3;BlackSageEvolved:3;GinsengEvolved:3;EnergizingEvolved:3;MedicinalEvolved:3,
 
     HungerChange	=	-1,
+    DaysTotallyRotten = 0.0001,
+    MinutesToCook = 60,
+    MinutesToBurn = 30,
     Weight	=	0.1,
     Type	=	Food,
     DisplayName	=	Rotten Rosehips,
@@ -111,9 +122,8 @@ item RosehipsRotten
     Proteins        =   0,
     Lipids          =   0,
     Calories        =   6,
-    IsCookable	=	False,
-		DangerousUncooked	=	TRUE,
-    CantBeFrozen    =   True,
+    IsCookable = True,
+    CantBeFrozen    =   False,
 }
 
 item GrapeLeavesRotten
@@ -121,6 +131,9 @@ item GrapeLeavesRotten
     FoodType        =   Herbal,
     EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2",
     HungerChange	=	-1,
+    DaysTotallyRotten = 0.0001,
+    MinutesToCook = 60,
+    MinutesToBurn = 30,
     Weight	=	0.1,
     Type	=	Food,
     DisplayName	=	Rotten Grape Leaves,
@@ -129,9 +142,8 @@ item GrapeLeavesRotten
     Proteins        =   0,
     Lipids          =   0,
     Calories        =   6,
-    IsCookable	=	False,
-		DangerousUncooked	=	TRUE,
-    CantBeFrozen    =   True,
+    IsCookable = True,
+    CantBeFrozen    =   False,
 }
 
 item VioletsRotten
@@ -140,6 +152,9 @@ item VioletsRotten
     EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;FruitSalad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2",
 
     HungerChange	=	-1,
+    DaysTotallyRotten = 0.0001,
+    MinutesToCook = 60,
+    MinutesToBurn = 30,
     Weight	=	0.1,
     Type	=	Food,
     DisplayName	=	Rotten Violets,
@@ -148,9 +163,8 @@ item VioletsRotten
     Proteins        =   0,
     Lipids          =   0,
     Calories        =   6,
-    IsCookable	=	False,
-		DangerousUncooked	=	TRUE,
-    CantBeFrozen    =   True,
+    IsCookable = True,
+    CantBeFrozen    =   False,
 }
 
 item PlantainRotten
@@ -167,9 +181,8 @@ item PlantainRotten
     Calories        =   6,
     FoodType        =   Herbal,
     EvolvedRecipe   =   Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Burger:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2,
-    IsCookable	=	False,
-		DangerousUncooked	=	TRUE,
-    CantBeFrozen    =   True,
+    IsCookable = True,
+    CantBeFrozen    =   False,
 }
 
 item WildGarlicRotten
@@ -187,8 +200,7 @@ item WildGarlicRotten
     Spice           =   True,
     FoodType        =   Herbal,
     EvolvedRecipe   =   Soup:1;Stew:1;Pie:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1;HotDrink:1;CommonMallowEvolved:1;LemonGrassEvolved:1;BlackSageEvolved:1;GinsengEvolved:1,
-    IsCookable	=	False,
-		DangerousUncooked	=	TRUE,
-    CantBeFrozen    =   True,
+    IsCookable = True,
+    CantBeFrozen    =   False,
 }
 }
