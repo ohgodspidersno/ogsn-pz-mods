@@ -25,6 +25,7 @@ local NOISE_FAILURE = 35;
 -- @param - The player trying to break the lock.
 -- Chance to destroy lock affected by: panic, nimblefingers, lucky
 local function calculateChance(player)
+    local panic = player:getStats():getPanic()
     local panicModifier = math.floor((panic/28)) -- ranges from 0 to 3
     local chance = BASE_CHANCE-panicModifier;
     if player:HasTrait('nimblefingers') or (player:HasTrait('nimblefingers2')) then
@@ -35,6 +36,9 @@ local function calculateChance(player)
     elseif player:HasTrait('Unlucky') then
         chance = chance - 4;
     end
+    if chance < 0 then
+      chance = 0
+    end
     return chance;
 end
 
@@ -43,6 +47,7 @@ end
 -- @param - The player trying to break the lock.
 -- Sound of destroying lock affected by: nimblefingers, noiseiness, panic
 local function calculateNoiseModifier(player)
+  local panic = player:getStats():getPanic()
   local panicModifier = math.floor((panic/28)) -- ranges from 0 to 3
   local noiseModifier = panicModifier;
     if player:HasTrait('nimblefingers') or (player:HasTrait('nimblefingers2')) then

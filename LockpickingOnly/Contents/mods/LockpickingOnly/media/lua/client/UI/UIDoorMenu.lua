@@ -24,7 +24,7 @@ end
 -- @param worldObjects - List of all clicked items.
 -- @param door - The door to open.
 -- @param player - The active player.
--- Destroy lock time based on: Panic, nimblefingers, Athletic, Handy, Strong, Stout, Fit, Out of Shape, Feeble, Weak, Asthmatic, Unfit
+-- Destroy lock time affected by: Panic, nimblefingers, Athletic, Handy, Strong, Stout, Fit, Out of Shape, Feeble, Weak, Asthmatic, Unfit
 local function breakLock(worldObjects, door, player)
     local modData = door:getModData();
     local panic = player:getStats():getPanic()
@@ -86,6 +86,7 @@ end
 --
 local function pickLock(worldObjects, door, player)
     local modData = door:getModData();
+    local panic = player:getStats():getPanic()
     local panicModifier = math.floor((panic/25)+1) -- ranges from 1 to 5
 
     -- If the lock is broken, we display a modal and end the function here.

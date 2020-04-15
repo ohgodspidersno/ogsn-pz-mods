@@ -26,8 +26,13 @@ local NOISE_FAILURE = 20;
 -- Chance to destroy lock affected by: panic, nimblefingers, lucky
 --
 local function calculateChance(player)
-    local panicModifier = math.floor((panic/28)) -- ranges from 0 to 3
+    local panic = player:getStats():getPanic()
+    local panicModifier = math.floor((panic/33)) -- ranges from 0 to 2 (or 3 if at absolute max)
+    print("panicModifier:")
+    print(panicModifier)
     local chance = BASE_CHANCE-panicModifier;
+    print("chance:")
+    print(chance)
     if player:HasTrait('nimblefingers') or (player:HasTrait('nimblefingers2')) then
         chance = chance + 1;
     end
@@ -35,6 +40,11 @@ local function calculateChance(player)
         chance = chance + 2;
     elseif player:HasTrait('Unlucky') then
         chance = chance - 2;
+    end
+    print('final chance')
+    print(chance)
+    if chance<0 then
+      chance = 0
     end
     return chance;
 end
