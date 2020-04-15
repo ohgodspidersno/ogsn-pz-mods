@@ -1,0 +1,18 @@
+UI_ES = {
+  UI_trait_nimblefingers = "Cerrajero",
+  UI_trait_nimblefingersDesc = "Empiezas con conocimientos sobre como forzar y romper cerraduras. Fuerzas cerraduras más rápido. Más chances de forzar cerraduras.",
+  UI_Text_locklevel_veryeasy = "Muy fácil",
+  UI_Text_locklevel_easy = "Fácil",
+  UI_Text_locklevel_medium = "Promedio",
+  UI_Text_locklevel_hard = "Dificil",
+  UI_Text_locklevel_veryhard = "Muy Dificil",
+  UI_Text_locklevel_willbreak = "Roto",
+  UI_Text_brokenLockModal = "No puedes forzar una cerradura rota.",
+  UI_Text_contextBreakDoorLock = "Romper cerradura",
+  UI_Text_contextPickDoorLock = "Forzar cerradura",
+  UI_Text_contextBreakWindowLock = "Romper cerradura",
+  UI_Text_BobbyStuck = "Maldición! La horquilla se ah atascado!",
+  UI_Text_BobbyBroken = "Maldición! Se me rompió la horquilla!",
+  UI_trait_BurglarDesc = "Puedes hacerle un puente al vehículo. Puedes romper y forzar cerraduras. Menos chances de romper el pestillo de una ventana.",
+  UI_profdesc_burglar = " Puedes hacerle un puente al vehículo. Puedes romper y forzar cerraduras. Menos chances de romper el pestillo de una ventana.",
+}

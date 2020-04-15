@@ -1,0 +1,7 @@
+Tooltip_ES {
+  Tooltip_BobbyPin_FMJ = "Una horquilla y destornillador pueden ser usados para forzar una cerradura, si tienes la habilidad de cerrajeria",
+  Tooltip_LockPickingMag_FMJ = "Enseña a forzar cerraduras usando una horquilla y un destornillador",
+  Tooltip_LockPickingMag2_FMJ = "Enseña a destruir cerraduras con una palanca",
+  Tooltip_Screwdriver_FMJ = " Un destornillador y horquilla pueden ser usados para forzar una cerradura, si tienes habilidad en cerrajería",
+  Tooltip_Crowbar_FMJ = "Puede ser usado para romper cerraduras, si tienes habilidad en cerrajería ",
+}

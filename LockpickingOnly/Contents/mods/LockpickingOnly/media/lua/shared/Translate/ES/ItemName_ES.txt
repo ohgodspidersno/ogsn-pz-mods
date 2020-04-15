@@ -1,0 +1,5 @@
+ItemName_ES {
+  ItemName_FMJ.BobbyPin           = "Horquilla",
+  ItemName_FMJ.LockPickingMag     = "Manual de cerrajería, Vol. 1",
+  ItemName_FMJ.LockPickingMag2    = "Manual de cerrajería, Vol. 2",
+}
