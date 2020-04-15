@@ -1,0 +1,5 @@
+-- If we go this route, do this:
+-- Normal Herbs OnCook make dried versions that are already "cooked"
+-- Normal Herbs OnRotten make rotten versions that are already "rotten"
+-- Dried herbs OnBurn make burnt version that are already "burnt"
+-- Remember to change translations so that (cooked) does not appear on dried herbs
