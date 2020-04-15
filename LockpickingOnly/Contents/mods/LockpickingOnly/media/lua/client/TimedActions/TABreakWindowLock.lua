@@ -27,7 +27,7 @@ local NOISE_FAILURE = 20;
 --
 local function calculateChance(player)
     local panic = player:getStats():getPanic()
-    local panicModifier = math.floor((panic/33)) -- ranges from 0 to 2 (or 3 if at absolute max)
+    local panicModifier = math.floor((panic/33)) -- ranges from 0 to 2
     print("panicModifier:")
     print(panicModifier)
     local chance = BASE_CHANCE-panicModifier;
