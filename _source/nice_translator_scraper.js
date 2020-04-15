@@ -81,21 +81,22 @@ function copyAllTranslations() {
     pz_p.innerHTML += "<br><br><br>"
 
     // all_p.innerHTML=translation
-    maindiv.innerHTML = ""
-    maindiv.innerHTML += "<h1>All Translations Unlabeled</h1><br>"
-    maindiv.appendChild(all_p);
 
+    maindiv.innerHTML = ""
+    // maindiv.innerHTML += "<h1>All Translations Unlabeled</h1><br>"
+    // maindiv.appendChild(all_p);
+    //
     maindiv.innerHTML += "<h1>Steam Language Translations Fully Labeled</h1><br>"
     maindiv.appendChild(steam_full_p);
+    //
+    // maindiv.innerHTML += "<h1>Steam Language Translations Native Labeled</h1><br>"
+    // maindiv.appendChild(steam_native_p);
+    //
+    // maindiv.innerHTML += "<h1>Steam Language Translations UnLabeled</h1><br>"
+    // maindiv.appendChild(steam_none_p);
 
-    maindiv.innerHTML += "<h1>Steam Language Translations Native Labeled</h1><br>"
-    maindiv.appendChild(steam_native_p);
-
-    maindiv.innerHTML += "<h1>Steam Language Translations UnLabeled</h1><br>"
-    maindiv.appendChild(steam_none_p);
-
-    maindiv.innerHTML += "<h1>PZ Translations with Abbreviations</h1><br>"
-    maindiv.appendChild(pz_p);
+    // maindiv.innerHTML += "<h1>PZ Translations with Abbreviations</h1><br>"
+    // maindiv.appendChild(pz_p);
 
     // var copyText = document.getElementById('maindiv').innerhHTML;
     // copyText.select();
