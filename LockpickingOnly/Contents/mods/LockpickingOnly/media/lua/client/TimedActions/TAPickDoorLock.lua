@@ -36,10 +36,10 @@ local function calculateChance(player, lockLevel)
         chance = chance + 4;
     end
     if player:HasTrait('KeenHearing') then
-        chance = chance + 2;
-    elseif player:HasTrait('HardOfHearing') then
-        chance = chance - 2;
-    end
+        chance = chance + 3;
+    -- elseif player:HasTrait('HardOfHearing') then
+    --     chance = chance - 2;
+    -- end
     if player:HasTrait('Lucky') then
         chance = chance + 3;
     elseif player:HasTrait('Unlucky') then
