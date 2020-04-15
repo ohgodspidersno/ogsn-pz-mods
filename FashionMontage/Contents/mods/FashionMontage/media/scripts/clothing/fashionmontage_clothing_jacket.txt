@@ -174,8 +174,7 @@ module DistinctNames {
       WaterResistance = 0.25,
       Weight = 2,
   }
-  item Jacket_PaddedDOWN
-  {
+  item Jacket_PaddedDOWN {
       Type = Clothing,
       DisplayName = Padded Jacket,
       ClothingItem = Jacket_PaddedDOWN,
@@ -230,8 +229,7 @@ module DistinctNames {
       WaterResistance = 0.25,
       Weight = 2,
   }
-  item PonchoGreenDOWN
-  {
+  item PonchoGreenDOWN {
       Type = Clothing,
       DisplayName = Poncho - Green,
       ClothingItem = PonchoGreenDOWN,
@@ -251,8 +249,7 @@ module DistinctNames {
       WaterResistance = 1.0,
   }
 
-  item PonchoYellowDOWN
-  {
+  item PonchoYellowDOWN {
       Type = Clothing,
       DisplayName = Poncho - Yellow,
       ClothingItem = PonchoYellowDOWN,
