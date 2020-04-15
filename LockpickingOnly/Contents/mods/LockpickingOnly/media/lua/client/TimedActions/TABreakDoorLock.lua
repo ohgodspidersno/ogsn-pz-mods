@@ -27,7 +27,8 @@ local NOISE_FAILURE = 35;
 --    Perks:
 --    Traits: nimblefingers, lucky
 local function calculateChance(player)
-    local chance = BASE_CHANCE;
+    local panicModifier = math.floor((panic/28)) -- ranges from 0 to 3
+    local chance = BASE_CHANCE-panicModifier;
     if player:HasTrait('nimblefingers') or (player:HasTrait('nimblefingers2')) then
         chance = chance + 2;
     end
@@ -42,14 +43,11 @@ end
 ---
 -- This function calculates a noise modifer based on the player's traits.
 -- @param - The player trying to break the lock.
--- Sound volume lock affected by:
---    Traits: nimblefingers, noiseiness
+-- Sound affected by: nimblefingers, noiseiness, panic
 local function calculateNoiseModifier(player)
-    local noiseModifier = 0;
+  local panicModifier = math.floor((panic/28)) -- ranges from 0 to 3
+  local noiseModifier = panicModifier;
     if player:HasTrait('nimblefingers') or (player:HasTrait('nimblefingers2')) then
-        noiseModifier = noiseModifier - 3;
-    end
-    if player:HasTrait('nimblefingers2') then
         noiseModifier = noiseModifier - 3;
     end
     if player:HasTrait('Clumsy') then

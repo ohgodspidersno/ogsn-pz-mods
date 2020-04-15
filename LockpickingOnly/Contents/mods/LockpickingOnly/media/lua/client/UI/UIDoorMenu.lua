@@ -27,15 +27,48 @@ end
 --
 local function breakLock(worldObjects, door, player)
     local modData = door:getModData();
-    local time = 150 + (modData.lockLevel + 1) * 10;
+    local panic = player:getStats():getPanic()
+    local panicModifier = math.floor((panic/40)+1) -- ranges from 1 to 3
+    local time = 150 + (modData.lockLevel + 1) * 10 * panicModifier;
 
     -- Traits affect the length of the lockbreaking.
+    -- Niblefingers starts by cutting the base in half
     if player:HasTrait("nimblefingers") then
-        time = 80;
-    elseif player:HasTrait("Strong") or player:HasTrait("Handy") then
-        time = time - ZombRand(50);
-    elseif player:HasTrait("Weak") or player:HasTrait("Asthmatic") then
-        time = time + ZombRand(150);
+        time = time/2;
+    end
+    -- GREAT traits:  Athletic, Handy, Strong
+    if player:HasTrait("Athletic") then
+        time = time - ZombRand(25);
+    end
+    if player:HasTrait("Handy") then
+        time = time - ZombRand(25);
+    end
+    if player:HasTrait("Strong") then
+        time = time - ZombRand(25);
+    end
+    -- GOOD traits: Stout, Fit
+    if player:HasTrait("Stout") then
+        time = time - ZombRand(15);
+    end
+    if player:HasTrait("Fit") then
+        time = time - ZombRand(15);
+    end
+    -- BAD traits: Out of Shape, Feeble
+    if player:HasTrait("Out of Shape") then
+      time = time + ZombRand(15);
+    end
+    if player:HasTrait("Feeble") then
+      time = time + ZombRand(15);
+    end
+    -- AWFUL traits: Weak, Asthmatic, Unfit
+    if player:HasTrait("Weak") then
+        time = time + ZombRand(25);
+    end
+    if player:HasTrait("Asthmatic") then
+        time = time + ZombRand(25);
+    end
+    if player:HasTrait("Unfit") then
+        time = time + ZombRand(25);
     end
 
     -- Walk to the door and start the Timed Action.
@@ -53,6 +86,7 @@ end
 --
 local function pickLock(worldObjects, door, player)
     local modData = door:getModData();
+    local panicModifier = math.floor((panic/25)+1) -- ranges from 1 to 5
 
     -- If the lock is broken, we display a modal and end the function here.
     if modData.lockLevel == 6 then
@@ -60,19 +94,20 @@ local function pickLock(worldObjects, door, player)
         return;
     end
 
-    local time = 250 + (modData.lockLevel + 1) * 10 + ZombRand(75);
+    local time = (250 + (modData.lockLevel + 1) * 10 + ZombRand(75))*panicModifier;
 
     -- Traits affect the length of the lockpicking.
     if player:HasTrait("nimblefingers") or (player:HasTrait("nimblefingers2")) then
-        time = time - 50 - ZombRand(50);
-    elseif player:HasTrait("Handy") then
+        time = time - 50;
+    end
+    if player:HasTrait("Handy") then
         time = time - ZombRand(50);
     end
-	
+
     if luautils.walkAdjWindowOrDoor(player, door:getSquare(), door) then
         -- Walk to the door and start the Timed Action.
         local primItem, scndItem = luautils.equipItems(player, "Screwdriver", "BobbyPin");
-		
+
         ISTimedActionQueue.add(TAPickDoorLock:new(player, door, time, primItem, scndItem));
     end
 end
