@@ -17,17 +17,23 @@ function copyAllTranslations() {
     pz_translations_arr = []
     for (i = 0; i < x.length; i++) {
       var tr = x.item(i).innerHTML;
+      console.log(tr)
       var lang_eng  = nicetranslator_languages_arr[i]
       var lang_nat  = language_names[lang_eng]
       var lang_abbr = pz_abbrevs[lang_eng]
+      console.log("i think this is "+lang_eng);
       all_translations_arr.push(tr)
 
       if (steam_languages.includes(lang_eng)) {
+        console.log("I think "+lang_eng+"is a steam language")
+        console.log("I think "+tr+"is in "+lang_eng);
         steam_translations_arr_full_labels.push("[h1]"+lang_nat+" ("+lang_eng+")[/h1]<br>"+tr)
         steam_translations_arr_native_labels.push("[h1]"+lang_nat+"[/h1]<br>"+tr)
         steam_translations_arr_no_labels.push(tr)
       }
       if (lang_eng in pz_abbrevs) {
+        console.log("I think "+lang_eng+"is a PZ language")
+        console.log("I think "+tr+"is in "+lang_eng);
         pz_translations_arr.push(lang_abbr+" ("+lang_eng+")<br>"+tr)
       }
     }
@@ -96,57 +102,27 @@ function copyAllTranslations() {
     // document.execCommand('copy');
 }
 
+
 nicetranslator_languages_arr = [
-    "Afrikaans",
-    "Arabic",
-    "Bulgarian",
-    "Catalan",
-    "Cantonese",
-    "Chinese (Simplified)",
-    "Chinese (Traditional)",
-    "Croatian",
-    "Czech",
-    "Danish",
-    "Dutch",
-    "English",
-    "Estonian",
-    "Filipino",
-    "Finnish",
-    "Kävi koulua",
-    "French",
-    "German",
-    "Greek",
-    "Hebrew",
-    "Hindi",
-    "Hungarian",
-    "Icelandic",
-    "Italian",
-    "Japanese",
-    "Korean",
-    "Latvian",
-    "Lithuanian",
-    "Malay",
-    "Maltese",
-    "Norwegian",
-    "Persian",
-    "Polish",
-    "Portuguese",
-    "Portuguese - Brazil",
-    "Romanian",
-    "Russian",
-    "Serbian",
-    "Slovak",
-    "Slovenian",
-    "Spanish",
-    "Spanish - Spain",
-    "Spanish - Latin America",
-    "Swahili",
-    "Swedish",
-    "Thai",
-    "Turkish",
-    "Ukrainian",
-    "Vietnamese",
-    "Welsh",
+  "Chinese (Simplified)",
+  "Chinese (Traditional)",
+  "Czech",
+  "Danish",
+  "Dutch",
+  "French",
+  "German",
+  "Hungarian",
+  "Italian",
+  "Japanese",
+  "Korean",
+  "Norwegian",
+  "Polish",
+  "Portuguese",
+  "Romanian",
+  "Russian",
+  "Spanish",
+  "Thai",
+  "Turkish",
 ]
 
 language_names = {
@@ -184,15 +160,12 @@ language_names = {
     "Persian" : "فارسی",
     "Polish" :  "Perski",
     "Portuguese" :  "Português",
-    "Portuguese - Brazil" :  "Português - Brazil",
     "Romanian" :  "Românesc",
     "Russian" : "Pусский",
     "Serbian" : "Српски",
     "Slovak" :  "Slovenský",
     "Slovenian" : "Slovenščina",
     "Spanish" : "Español",
-    "Spanish - Spain" : "Español - España",
-    "Spanish - Latin America" : "Español - America Latina",
     "Swahili" : "Kiswahili",
     "Swedish" : "Svenska",
     "Thai" :  "ไทย",
@@ -204,7 +177,6 @@ language_names = {
 
 pz_abbrevs = {
     'Afrikaans' : 'AF',
-    'Spanish - Latin America' : 'AR',
     'Chinese (Traditional)' : 'CH',
     'Chinese (Simplified)' : 'CN',
     'Czech' : 'CS',
@@ -212,7 +184,7 @@ pz_abbrevs = {
     'German' : 'DE',
     'English' : 'EN',
     'English - Other' : 'EE',
-    'Spanish - Spain' : 'ES',
+    'Spanish' : 'ES',
     'French' : 'FR',
     'Hungarian' : 'HU',
     'Italian' : 'IT',
@@ -222,7 +194,6 @@ pz_abbrevs = {
     'Norwegian' : 'NO',
     'Polish' : 'PL',
     'Portuguese' : 'PT',
-    'Portuguese - Brazil' : 'PTBR',
     'Russian' : 'RU',
     'Thai' : 'TH',
     'Turkish' : 'TR',
@@ -238,9 +209,8 @@ steam_languages = [
     "Czech",
     "Danish",
     "German",
-    "English",
-    "Spanish - Spain",
-    "Spanish - Latin America",
+    // "English",
+    "Spanish",
     // "Greek",      // not in game though
     "French",
     "Italian",
@@ -249,7 +219,6 @@ steam_languages = [
     "Norwegian",
     "Polish",
     "Portuguese",
-    "Portuguese - Brazil",
     "Romanian",
     "Russian",
     // "Finnish",    // not in game though
@@ -260,3 +229,53 @@ steam_languages = [
 ]
 
 copyAllTranslations()
+
+
+// Full list of possible nicetranslator languages:
+// "Afrikaans",
+// "Arabic",
+// "Bulgarian",
+// "Catalan",
+// "Cantonese",
+// "Chinese (Simplified)",
+// "Chinese (Traditional)",
+// "Croatian",
+// "Czech",
+// "Danish",
+// "Dutch",
+// "English",
+// "Estonian",
+// "Filipino",
+// "Finnish",
+// "Kävi koulua",
+// "French",
+// "German",
+// "Greek",
+// "Hebrew",
+// "Hindi",
+// "Hungarian",
+// "Icelandic",
+// "Italian",
+// "Japanese",
+// "Korean",
+// "Latvian",
+// "Lithuanian",
+// "Malay",
+// "Maltese",
+// "Norwegian",
+// "Persian",
+// "Polish",
+// "Portuguese",
+// "Romanian",
+// "Russian",
+// "Serbian",
+// "Slovak",
+// "Slovenian",
+// "Spanish",
+// "Swahili",
+// "Swedish",
+// "Thai",
+// "Turkish",
+// "Ukrainian",
+// "Vietnamese",
+// "Welsh",
