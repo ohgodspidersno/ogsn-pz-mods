@@ -1,16 +1,17 @@
 -- Note: ISCraftAction:perform() in the vanilla code is a good reference
 function MakeCupHerbalTeaOGSN(items, result, player)
+  print('starting MakeCupHerbalTeaOGSN')
   local rotten = false
   local burnt = false
   local fresh = true
   local oldest = 0
 
   for i = 0, items:size() - 1 do
+    print('in loop. i =')
+    print(i)
     local item = items:get(i)
     local type = item:getStringItemType();
-    if type ~= "Food" then
-      break
-    end
+    if type ~= "Food" then goto continue end
     if not item:isFresh() then
       fresh = false
     end
@@ -38,6 +39,7 @@ function MakeCupHerbalTeaOGSN(items, result, player)
       result:setEnduranceChange(0)
       result:setFatigueChange(0)
     end
+    ::continue::
   end
 end
 
@@ -68,20 +70,28 @@ function CookRawHerbOGSN(herb)
 end
 
 function MakeHerbalBlendOGSN(items, result, player)
+  print('starting MakeHerbalBlendOGSN')
   local freshness = true
   local rotten = false
   local burnt = false
   local oldest = 0
   for i = 0, items:size() - 1 do
+    print('in loop. i =')
+    print(i)
     local item = items:get(i)
-    local type = item:getStringItemType();
-    if type ~= "Food" then
-      break
-    end
+    local string_type = item:getStringItemType();
+    local type = item:getType()
+    if type ~= "Food" then goto continue end
     -- local ingredient = item
     if not item:isFresh() then
       freshness = false
     end
+
+    if type == "CommonMallowDried" or type == "LemonGrassDried" or type == "BlackSageDried" or type == "GinsengDried" or type == "RosehipsDried" or type == "GrapeLeavesDried" or type == "VioletsDried" then
+      print('One of the ingredients is dried')
+      freshness = false
+    end
+
     if item:isRotten() then
       rotten = true
       freshness = false
@@ -96,6 +106,8 @@ function MakeHerbalBlendOGSN(items, result, player)
       print(oldest)
     end
     -- pass on the freshness, burnt, rotten status, and oldest age to the result
+    print('finished with loop. freshness is now:')
+    print(freshness)
     result:setCooked(true)
     result:setFresh(freshness)
     result:setRotten(rotten)
@@ -109,5 +121,6 @@ function MakeHerbalBlendOGSN(items, result, player)
       result:setEnduranceChange(0)
       result:setFatigueChange(0)
     end
+    ::continue::
   end
 end
