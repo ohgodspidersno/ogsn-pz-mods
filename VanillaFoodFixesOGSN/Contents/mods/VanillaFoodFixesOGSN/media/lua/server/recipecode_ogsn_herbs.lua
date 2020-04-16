@@ -29,7 +29,7 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     end
   end
   -- pass on the burnt, rotten status, and oldest age to the result
-  result:setFresh(fresh)
+  result:isFresh(fresh)
   result:setRotten(rotten)
   result:setBurnt(burnt)
   result:setAge(oldest)
@@ -71,7 +71,7 @@ end
 
 function MakeHerbalBlendOGSN(items, result, player)
   print('starting MakeHerbalBlendOGSN')
-  local freshness = true
+  local fresh = true
   local rotten = false
   local burnt = false
   local oldest = 0
@@ -83,21 +83,21 @@ function MakeHerbalBlendOGSN(items, result, player)
     local type = item:getType()
     if string_type == "Food" then
         if not item:isFresh() then
-          freshness = false
+          fresh = false
         end
 
         if type == "CommonMallowDried" or type == "LemonGrassDried" or type == "BlackSageDried" or type == "GinsengDried" or type == "RosehipsDried" or type == "GrapeLeavesDried" or type == "VioletsDried" then
           print('One of the ingredients is dried')
-          freshness = false
+          fresh = false
         end
 
         if item:isRotten() then
           rotten = true
-          freshness = false
+          fresh = false
         end
         if item:isBurnt() then
           burnt = true
-          freshness = false
+          fresh = false
         end
         if item:getAge() > oldest then
           oldest = item:getAge()
@@ -106,11 +106,11 @@ function MakeHerbalBlendOGSN(items, result, player)
         end
     end
   end
-  -- pass on the freshness, burnt, rotten status, and oldest age to the result
-  print('finished with loop. freshness is now:')
-  print(freshness)
+  -- pass on the fresh, burnt, rotten status, and oldest age to the result
+  print('finished with loop. fresh is now:')
+  print(fresh)
   result:setCooked(true)
-  result:setFresh(freshness)
+  result:isFresh(fresh)
   result:setRotten(rotten)
   result:setBurnt(burnt)
   result:setAge(oldest)
