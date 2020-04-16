@@ -111,17 +111,18 @@ function MakeHerbalBlendOGSN(items, result, player)
   -- freshness is only determined recursively by item's age
   result:setCooked(true)
   if not fresh then
-    if oldest > days_fresh then -- if one of the ingredients was very old, then we make it that old
-      result:setAge(oldest)
-    else
-      result:setAge(days_fresh+1) -- otherwise make it just a little stale
-    end
+      if oldest > days_fresh then -- if one of the ingredients was very old, then we make it that old
+        result:setAge(oldest)
+      else
+        result:setAge(days_fresh+1) -- otherwise make it just a little stale
+      end
   else
-    result:setAge(oldest) -- if it is fresh just set it to the age
+      result:setAge(oldest) -- if it is fresh just set it to the age
   end
   result:setRotten(rotten)  -- first mark it rotten if appropriate
   if rotten and days_rotten > oldest then -- if it's rotten but somehow its age is still 'stale'or 'fresh'
-    result:setAge(days_rotten) -- 'then just set its age to be a little rotten
+      result:setAge(days_rotten) -- 'then just set its age to be a little rotten
+  end
   result:setBurnt(burnt)
 
   -- if it was burnt or rotten strip it of any positive effects
