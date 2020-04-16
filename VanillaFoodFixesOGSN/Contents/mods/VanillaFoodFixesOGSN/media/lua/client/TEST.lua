@@ -97,6 +97,7 @@ Events.OnNewGame.Add(
     player:getInventory():AddItems("Base.Bowl",5)
     player:getInventory():AddItems("Base.Mug",5)
     player:getInventory():AddItems("Base.Kettle",2)
+		player:getInventory():AddItems("Base.MortarPestle",2)
 	end
 )
 
