@@ -10,6 +10,7 @@ module Base {
         CanBeDoneFromFloor:true,
         Category:Cooking,
         Result:Tea_CommonMallow,
+        OnCreate:MakeCupHerbalTeaOGSN,
     }
 
     recipe Brew Cup of Lemon Grass Tea
@@ -22,6 +23,7 @@ module Base {
         CanBeDoneFromFloor:true,
         Category:Cooking,
         Result:Tea_LemonGrass,
+        OnCreate:MakeCupHerbalTeaOGSN,
     }
 
     recipe Brew Cup of Black Sage Tea
@@ -34,6 +36,7 @@ module Base {
         CanBeDoneFromFloor:true,
         Category:Cooking,
         Result:Tea_BlackSage,
+        OnCreate:MakeCupHerbalTeaOGSN,
     }
 
     recipe Brew Cup of Ginseng Tea
@@ -46,6 +49,7 @@ module Base {
         CanBeDoneFromFloor:true,
         Category:Cooking,
         Result:Tea_Ginseng,
+        OnCreate:MakeCupHerbalTeaOGSN,
     }
 
     recipe Brew Cup of Medicinal Blended Tea
@@ -58,6 +62,7 @@ module Base {
         CanBeDoneFromFloor:true,
         Category:Cooking,
         Result:Tea_Medicinal,
+        OnCreate:MakeCupHerbalTeaOGSN,
     }
 
     recipe Brew Cup of Energizing Blended Tea
@@ -70,6 +75,7 @@ module Base {
         CanBeDoneFromFloor:true,
         Category:Cooking,
         Result:Tea_Energizing,
+        OnCreate:MakeCupHerbalTeaOGSN,
     }
 
     recipe Create Medicinal Tea Blend
@@ -84,6 +90,7 @@ module Base {
         CanBeDoneFromFloor:true,
         Category:Cooking,
         Result:Teabag_Medicinal,
+        OnCreate:MakeHerbalBlendOGSN,
     }
 
     recipe Create Energizing Tea Blend
@@ -98,6 +105,7 @@ module Base {
         CanBeDoneFromFloor:true,
         Category:Cooking,
         Result:Teabag_Energizing,
+        OnCreate:MakeHerbalBlendOGSN,
     }
 
 }
