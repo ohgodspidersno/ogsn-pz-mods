@@ -1,18 +1,11 @@
 -- Note: ISCraftAction:perform() in the vanilla code is a good reference
 
 
--- MakeCupHerbalTeaOGSN
--- pass on the burned, rotten status of the herb/blend
--- if it was burned or rotten strip it of any positive effects
---
---
--- CookRawHerbOGSN
 function MakeCupHerbalTeaOGSN(items, result, player)
--- pass on the burnt, rotten status of the herb/blend
--- if it was burnt or rotten strip it of any positive effects
   local rotten = false
   local burnt = false
   local oldest = 0
+  -- determine if any ingredients were rotten or burnt, and the age of the oldest ingredient
   for i=0, items:size() -1 do
     local ingredient = items:get(i)
     if ingredient:isRotten() then
@@ -24,9 +17,11 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     if ingredient:getAge() > oldest then
       oldest = ingredient:getAge()
     end
+    -- pass on the burnt, rotten status, and oldest age to the result
     result:setRotten(rotten)
     result:setBurnt(burnt)
     result:setAge(oldest)
+    -- if it was burnt or rotten strip it of any positive effects
     if rotten or burnt then
       result:setFluReduction(0)
       result:setReduceFoodSickness(0)
@@ -36,9 +31,25 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     end
   end
 end
+
+function CookRawHerbOGSN(herb)
 -- if it was rotten, just let it keep cooking like a normal piece of rotten food
--- if it was not rotten, replace it with the dried version
---
--- MakeHerbalBlendOGSN
--- if any of the ingredients were rotten and/or burned, make it rotten and/or burned
+  if herb:isRotten() then return end
+  -- if it was not rotten, replace it with the dried version
+  if herb:getType() == CommonMallow then
+    result:setType(CommonMallowDried)
+  else if herb:getType() == LemonGrass then
+    result:setType(LemonGrassDried)
+  else if herb:getType() == BlackSage then
+    result:setType(BlackSageDried)
+  else if herb:getType() == Ginseng then
+    result:setType(GinsengDried)
+  else if herb:getType() == Rosehips then
+    result:setType(RosehipsDried)
+  else if herb:getType() == GrapeLeaves then
+    result:setType(GrapeLeavesDried)
+  else if herb:getType() == Violets then
+    result:setType(VioletsDried)
+  end
+end
 -- if all of the ingredients were fresh, make it fresh
