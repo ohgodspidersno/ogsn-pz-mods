@@ -11,22 +11,22 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     print(i)
     local item = items:get(i)
     local type = item:getStringItemType();
-    if type ~= "Food" then goto continue end
-    if not item:isFresh() then
-      fresh = false
+    if type == "Food" then
+        if not item:isFresh() then
+          fresh = false
+        end
+        if item:isRotten() then
+          rotten = true
+          fresh = false
+        end
+        if item:isBurnt() then
+          burnt = true
+          fresh = false
+        end
+        if item:getAge() > oldest then
+          oldest = ingredient:getAge()
+        end
     end
-    if item:isRotten() then
-      rotten = true
-      fresh = false
-    end
-    if item:isBurnt() then
-      burnt = true
-      fresh = false
-    end
-    if item:getAge() > oldest then
-      oldest = ingredient:getAge()
-    end
-    ::continue::
   end
   -- pass on the burnt, rotten status, and oldest age to the result
   result:setFresh(fresh)
@@ -81,31 +81,30 @@ function MakeHerbalBlendOGSN(items, result, player)
     local item = items:get(i)
     local string_type = item:getStringItemType();
     local type = item:getType()
-    if type ~= "Food" then goto continue end
-    -- local ingredient = item
-    if not item:isFresh() then
-      freshness = false
-    end
+    if type == "Food" then
+        if not item:isFresh() then
+          freshness = false
+        end
 
-    if type == "CommonMallowDried" or type == "LemonGrassDried" or type == "BlackSageDried" or type == "GinsengDried" or type == "RosehipsDried" or type == "GrapeLeavesDried" or type == "VioletsDried" then
-      print('One of the ingredients is dried')
-      freshness = false
-    end
+        if type == "CommonMallowDried" or type == "LemonGrassDried" or type == "BlackSageDried" or type == "GinsengDried" or type == "RosehipsDried" or type == "GrapeLeavesDried" or type == "VioletsDried" then
+          print('One of the ingredients is dried')
+          freshness = false
+        end
 
-    if item:isRotten() then
-      rotten = true
-      freshness = false
+        if item:isRotten() then
+          rotten = true
+          freshness = false
+        end
+        if item:isBurnt() then
+          burnt = true
+          freshness = false
+        end
+        if ingredient:getAge() > oldest then
+          oldest = ingredient:getAge()
+          print('age of oldest ingredient:')
+          print(oldest)
+        end
     end
-    if item:isBurnt() then
-      burnt = true
-      freshness = false
-    end
-    if ingredient:getAge() > oldest then
-      oldest = ingredient:getAge()
-      print('age of oldest ingredient:')
-      print(oldest)
-    end
-    ::continue::
   end
   -- pass on the freshness, burnt, rotten status, and oldest age to the result
   print('finished with loop. freshness is now:')
