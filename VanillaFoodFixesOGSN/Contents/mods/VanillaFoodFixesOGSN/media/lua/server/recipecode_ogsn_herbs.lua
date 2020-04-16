@@ -68,10 +68,9 @@ function MakeHerbalBlendOGSN(items, result, player)
   local rotten = false
   local burnt = false
   local oldest = 0
-  local item = items:get(i)
-  local type = item:getStringItemType();
-
   for i = 0, items:size() - 1 do
+    local item = items:get(i)
+    local type = item:getStringItemType();
     if type ~= "Food" then
       break
     end
