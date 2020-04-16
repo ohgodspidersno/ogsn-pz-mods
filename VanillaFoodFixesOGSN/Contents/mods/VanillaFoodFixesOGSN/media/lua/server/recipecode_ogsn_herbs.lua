@@ -2,6 +2,7 @@
 function MakeCupHerbalTeaOGSN(items, result, player)
   local rotten = false
   local burnt = false
+  local fresh = true
   local oldest = 0
 
   for i = 0, items:size() - 1 do
@@ -10,19 +11,22 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     if type ~= "Food" then
       break
     end
-    -- print(item)
-    -- print(item:Rotten())
-    -- print(item:rotten())
-    if item:Rotten() then
-      rotten = true
+    if not item:isFresh() then
+      fresh = false
     end
-    if item:Burnt() then
+    if item:isRotten() then
+      rotten = true
+      fresh = false
+    end
+    if item:isBurnt() then
       burnt = true
+      fresh = false
     end
     if item:getAge() > oldest then
       oldest = ingredient:getAge()
     end
     -- pass on the burnt, rotten status, and oldest age to the result
+    result:setFresh(fresh)
     result:setRotten(rotten)
     result:setBurnt(burnt)
     result:setAge(oldest)
