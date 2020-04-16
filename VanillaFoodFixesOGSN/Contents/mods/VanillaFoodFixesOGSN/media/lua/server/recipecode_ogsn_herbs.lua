@@ -120,7 +120,7 @@ function MakeHerbalBlendOGSN(items, result, player)
     result:setAge(oldest) -- if it is fresh just set it to the age
   end
   result:setRotten(rotten)  -- first mark it rotten if appropriate
-  if rotten and days_rotten > oldest: -- if it's rotten but somehow its age is still 'stale'or 'fresh'
+  if rotten and days_rotten > oldest then -- if it's rotten but somehow its age is still 'stale'or 'fresh'
     result:setAge(days_rotten) -- 'then just set its age to be a little rotten
   result:setBurnt(burnt)
 
