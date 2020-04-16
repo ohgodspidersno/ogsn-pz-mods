@@ -1,8 +1,7 @@
 require('NPCs/MainCreationMethods');
 Events.OnNewGame.Add(
 	function(player, square)
-    -- Mod foods
-		player:setGhostMode(true)
+    -- This mod's foods
 		player:getInventory():AddItem("cheatmenu.CMInfiniteCarryweight");
     player:getInventory():AddItems("FMJ.LockPickingMag",10)
     player:getInventory():AddItems("farming.RemouladeFull",10)
@@ -13,10 +12,6 @@ Events.OnNewGame.Add(
     player:getInventory():AddItems("Base.MilkJar",10)
     player:getInventory():AddItems("Base.MilkWaterBottle",10)
     player:getInventory():AddItems("Base.MilkPopBottle",10)
-    -- player:getInventory():AddItems("FMJ.MilkJar",10)
-    -- player:getInventory():AddItems("FMJ.MilkWaterBottle",10)
-    -- player:getInventory():AddItems("FMJ.MilkPopBottle",10)
-    -- player:getInventory():AddItems("Base.AAAVanillaExtract",10)
     player:getInventory():AddItems("Base.Lemon",10)
     player:getInventory():AddItems("Base.BerryBlack",10)
     player:getInventory():AddItems("Base.BerryBlue",10)
@@ -78,7 +73,21 @@ Events.OnNewGame.Add(
     player:getInventory():AddItems("Base.Tea_Energizing",10)
     player:getInventory():AddItems("Base.Teabag_Medicinal",10)
     player:getInventory():AddItems("Base.Teabag_Energizing",10)
-    -- Cooking stuff
+		-- Compatible mods' food
+		if getActivatedMods():contains("SKLDairyModBeta") then
+			player:getInventory():AddItems("Base.MilkJar",10)
+	    player:getInventory():AddItems("Base.MilkWaterBottle",10)
+	    player:getInventory():AddItems("Base.MilkPopBottle",10)
+		end
+		if getActivatedMods():contains("FMJ") or getActivatedMods():contains("FMJfoodDairy") then
+			player:getInventory():AddItems("FMJ.MilkJar",10)
+	    player:getInventory():AddItems("FMJ.MilkWaterBottle",10)
+	    player:getInventory():AddItems("FMJ.MilkPopBottle",10)
+		end
+		if getActivatedMods():contains("AAApoc") then
+	    player:getInventory():AddItems("Base.AAAVanillaExtract",10)
+		end
+    -- Cooking utensils
     player:getInventory():AddItems("Base.Teabag2",10)
     player:getInventory():AddItems("Base.Mugfull",10)
     player:getInventory():AddItems("Base.Pan",2)
@@ -88,5 +97,11 @@ Events.OnNewGame.Add(
     player:getInventory():AddItems("Base.Bowl",5)
     player:getInventory():AddItems("Base.Mug",5)
     player:getInventory():AddItems("Base.Kettle",2)
+	end
+)
+
+Events.OnGameStart.Add(
+	function(player, square)
+		player:setGhostMode(true)
 	end
 )
