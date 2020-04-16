@@ -89,13 +89,14 @@ Events.OnNewGame.Add(
 		end
     -- Cooking utensils
     player:getInventory():AddItems("Base.Teabag2",10)
-    player:getInventory():AddItems("Base.Mugfull",10)
+    -- player:getInventory():AddItems("Base.Mugfull",10)
     player:getInventory():AddItems("Base.Pan",2)
     player:getInventory():AddItems("Base.GridlePan",2)
     player:getInventory():AddItems("Base.Pot",2)
     player:getInventory():AddItems("Base.Saucepan",2)
     player:getInventory():AddItems("Base.Bowl",5)
-    player:getInventory():AddItems("Base.Mug",5)
+    player:getInventory():AddItems("Base.Mugl",5)
+		player:getInventory():AddItems("Base.WaterMug",5)
     player:getInventory():AddItems("Base.Kettle",2)
 		player:getInventory():AddItems("Base.MortarPestle",2)
 	end
