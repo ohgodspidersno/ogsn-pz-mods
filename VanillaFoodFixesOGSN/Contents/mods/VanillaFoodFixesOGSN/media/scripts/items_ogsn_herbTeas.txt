@@ -9,7 +9,6 @@ module Base
       DisplayName	=	Common Mallow Tea,
       Icon	=	MugFulll,
       IsCookable	=	    true,
-      MinutesToBurn   =   50,
       MinutesToCook   =   10,
       UnhappyChange   =   5,
       ThirstChange    =   -20,
@@ -18,6 +17,8 @@ module Base
       CustomEatSound = DrinkingFromBottle,
       GoodHot = true,
       EvolvedRecipeName = Tea,
+      DaysFresh = 3,
+      DaysTotallyRotten = 3,
   }
 
   item Tea_LemonGrass
@@ -29,7 +30,6 @@ module Base
       DisplayName	=	Lemon Grass Tea,
       Icon	=	MugFulll,
       IsCookable	=	    true,
-      MinutesToBurn   =   50,
       MinutesToCook   =   10,
       UnhappyChange   =   5,
       ThirstChange    =   -20,
@@ -38,6 +38,8 @@ module Base
       CustomEatSound = DrinkingFromBottle,
       GoodHot = true,
       EvolvedRecipeName = Tea,
+      DaysFresh = 3,
+      DaysTotallyRotten = 3,
   }
 
   item Tea_BlackSage
@@ -49,7 +51,6 @@ module Base
       DisplayName	=	Black Sage Tea,
       Icon	=	MugFulll,
       IsCookable	=	    true,
-      MinutesToBurn   =   50,
       MinutesToCook   =   10,
       UnhappyChange   =   5,
       ThirstChange    =   -20,
@@ -58,6 +59,8 @@ module Base
       CustomEatSound = DrinkingFromBottle,
       GoodHot = true,
       EvolvedRecipeName = Tea,
+      DaysFresh = 3,
+      DaysTotallyRotten = 3,
   }
 
   item Tea_Ginseng
@@ -69,7 +72,6 @@ module Base
       DisplayName	=	Ginseng Tea,
       Icon	=	MugFulll,
       IsCookable	=	    true,
-      MinutesToBurn   =   50,
       MinutesToCook   =   10,
       UnhappyChange   =   5,
       ThirstChange    =   -20,
@@ -78,6 +80,8 @@ module Base
       CustomEatSound = DrinkingFromBottle,
       GoodHot = true,
       EvolvedRecipeName = Tea,
+      DaysFresh = 3,
+      DaysTotallyRotten = 3,
   }
 
   item Tea_Medicinal
@@ -91,7 +95,6 @@ module Base
       DisplayName	=	Medicinal Tea,
       Icon	=	MugFulll,
       IsCookable	=	    true,
-      MinutesToBurn   =   50,
       MinutesToCook   =   10,
       UnhappyChange   =   5,
       ThirstChange    =   -20,
@@ -100,6 +103,8 @@ module Base
       CustomEatSound = DrinkingFromBottle,
       GoodHot = true,
       EvolvedRecipeName = Tea,
+      DaysFresh = 3,
+      DaysTotallyRotten = 3,
   }
 
   item Tea_Energizing
@@ -113,7 +118,6 @@ module Base
       DisplayName	=	Energizing Tea,
       Icon	=	MugFulll,
       IsCookable	=	    true,
-      MinutesToBurn   =   50,
       MinutesToCook   =   10,
       UnhappyChange   =   5,
       ThirstChange    =   -20,
@@ -122,6 +126,8 @@ module Base
       CustomEatSound = DrinkingFromBottle,
       GoodHot = true,
       EvolvedRecipeName = Tea,
+      DaysFresh = 3,
+      DaysTotallyRotten = 3,
   }
 
   item Teabag_Medicinal {
@@ -137,6 +143,9 @@ module Base
       DisplayName	=	Medicinal Blend,
       Icon	=	teablend_medicinal,
       FoodType    =   Tea,
+      IsCookable = false,
+      DaysFresh = 7,
+      DaysTotallyRotten = 30,
   }
 
   item Teabag_Energizing {
@@ -152,6 +161,9 @@ module Base
       DisplayName	=	Energizing Blend,
       Icon	=	teablend_energizing,
       FoodType    =   Tea,
+      IsCookable = false,
+      DaysFresh = 7,
+      DaysTotallyRotten = 30,
   }
 
 }
