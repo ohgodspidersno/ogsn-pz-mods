@@ -63,7 +63,10 @@ function CookRawHerbOGSN(herb)
 
   local driedType
   local oven = herb:getContainer();
-
+  print('oven')
+  print(oven)
+  print('oven:getItems()')
+  print(oven:getItems())
   -- if it was not rotten, replace it with the dried version, already cooked
   if herb:getType() == "CommonMallow" then driedType = "Base.CommonMallowDried"
   elseif herb:getType() == "LemonGrass" then driedType = "Base.LemonGrassDried"
@@ -76,7 +79,9 @@ function CookRawHerbOGSN(herb)
 
   local driedHerb = InventoryItemFactory.CreateItem(driedType);
   driedHerb:setCooked(true)
-  oven:RemoveItem(herb)
+  -- oven:getItems():removeItem(herb)
+  -- oven:removeItem(herb)
+  oven:Remove(herb)
   oven:AddItem(driedHerb)
 end
 
