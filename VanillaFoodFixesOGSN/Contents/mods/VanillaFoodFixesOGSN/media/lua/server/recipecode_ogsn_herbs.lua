@@ -60,24 +60,24 @@ function CookRawHerbOGSN(herb)
   if herb:isRotten() then
     herb:setCooked(true)
   return end
+
+  local driedType
+  local oven = herb:getContainer();
+
   -- if it was not rotten, replace it with the dried version, already cooked
-  if herb:getType() == "CommonMallow" then
-    herb:setType("CommonMallowDried")
-  elseif herb:getType() == "LemonGrass" then
-    herb:setType("LemonGrassDried")
-  elseif herb:getType() == "BlackSage" then
-    herb:setType("BlackSageDried")
-  elseif herb:getType() == "Ginseng" then
-    herb:setType("GinsengDried")
-  elseif herb:getType() == "Rosehips" then
-    herb:setType("RosehipsDried")
-  elseif herb:getType() == "GrapeLeaves" then
-    herb:setType("GrapeLeavesDried")
-  elseif herb:getType() == "Violets" then
-    herb:setType("VioletsDried")
+  if herb:getType() == "CommonMallow" then driedType = "Base.DriedCommonMallow"
+  elseif herb:getType() == "LemonGrass" then driedType = "Base.DriedLemonGrass"
+  elseif herb:getType() == "BlackSage" then driedType = "Base.DriedBlackSage"
+  elseif herb:getType() == "Ginseng" then driedType = "Base.DriedGinseng"
+  elseif herb:getType() == "Rosehips" then driedType = "Base.DriedRosehips"
+  elseif herb:getType() == "GrapeLeaves" then driedType = "Base.DriedGrapeLeaves"
+  elseif herb:getType() == "Violets" then driedType = "Base.DriedViolets"
   end
-  herb:setCooked(true)
-  print(herb:getType())
+
+  local driedHerb = InventoryItemFactory.CreateItem(driedType);
+  driedHerb.setCooked(true)
+  oven.RemoveItem(herb)
+  oven.AddItem(driedHerb)
 end
 
 function MakeHerbalBlendOGSN(items, result, player)
