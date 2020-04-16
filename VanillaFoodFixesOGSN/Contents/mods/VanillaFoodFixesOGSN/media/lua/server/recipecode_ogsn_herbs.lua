@@ -57,27 +57,27 @@ function CookRawHerbOGSN(herb)
   print(herb)
   print(herb:getType())
   -- if it was rotten, just let it keep cooking like a normal piece of rotten food
-  if herb:isRotten() then return end
+  if herb:isRotten() then
+    herb:setCooked(true)
+  return end
   -- if it was not rotten, replace it with the dried version, already cooked
-  herb:setCooked(true)
-  if herb:getType() == CommonMallow then
-    result:setType(CommonMallowDried)
-  elseif herb:getType() == LemonGrass then
-    result:setType(LemonGrassDried)
-  elseif herb:getType() == BlackSage then
-    result:setType(BlackSageDried)
-  elseif herb:getType() == Ginseng then
-    result:setType(GinsengDried)
-  elseif herb:getType() == Rosehips then
-    result:setType(RosehipsDried)
-  elseif herb:getType() == GrapeLeaves then
-    result:setType(GrapeLeavesDried)
-  elseif herb:getType() == Violets then
-    result:setType(VioletsDried)
+  if herb:getType() == "CommonMallow" then
+    herb:setType("CommonMallowDried")
+  elseif herb:getType() == "LemonGrass" then
+    herb:setType("LemonGrassDried")
+  elseif herb:getType() == "BlackSage" then
+    herb:setType("BlackSageDried")
+  elseif herb:getType() == "Ginseng" then
+    herb:setType("GinsengDried")
+  elseif herb:getType() == "Rosehips" then
+    herb:setType("RosehipsDried")
+  elseif herb:getType() == "GrapeLeaves" then
+    herb:setType("GrapeLeavesDried")
+  elseif herb:getType() == "Violets" then
+    herb:setType("VioletsDried")
   end
-  print("result")
-  print(result)
-  print(result:getType())
+  herb:setCooked(true)
+  print(herb:getType())
 end
 
 function MakeHerbalBlendOGSN(items, result, player)
