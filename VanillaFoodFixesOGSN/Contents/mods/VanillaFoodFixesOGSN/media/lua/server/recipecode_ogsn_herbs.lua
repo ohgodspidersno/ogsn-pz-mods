@@ -29,7 +29,6 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     end
   end
   -- pass on the burnt, rotten status, and oldest age to the result
-  result:isFresh(fresh)
   result:setRotten(rotten)
   result:setBurnt(burnt)
   result:setAge(oldest)
@@ -75,6 +74,8 @@ function MakeHerbalBlendOGSN(items, result, player)
   local rotten = false
   local burnt = false
   local oldest = 0
+  local days_fresh = result:getOffAge()
+  local days_rotten = result:gettOffAgeMax()
   for i = 0, items:size() - 1 do
     print('in loop. i =')
     print(i)
@@ -99,7 +100,7 @@ function MakeHerbalBlendOGSN(items, result, player)
           burnt = true
           fresh = false
         end
-        if item:getAge() > oldest then
+        if item:getAge() > oldest and type ~= "Teabag2" then -- not sure if teabag2 has an age but I don't want it to mess it up if it does
           oldest = item:getAge()
           print('age of oldest ingredient:')
           print(oldest)
@@ -107,13 +108,22 @@ function MakeHerbalBlendOGSN(items, result, player)
     end
   end
   -- pass on the fresh, burnt, rotten status, and oldest age to the result
-  print('finished with loop. fresh is now:')
-  print(fresh)
+  -- freshness is only determined recursively by item's age
   result:setCooked(true)
-  result:isFresh(fresh)
-  result:setRotten(rotten)
+  if not fresh then
+    if oldest > days_fresh then -- if one of the ingredients was very old, then we make it that old
+      result:setAge(oldest)
+    else
+      result:setAge(days_fresh+1) -- otherwise make it just a little stale
+    end
+  else
+    result:setAge(oldest) -- if it is fresh just set it to the age
+  end
+  result:setRotten(rotten)  -- first mark it rotten if appropriate
+  if rotten and days_rotten > oldest: -- if it's rotten but somehow its age is still 'stale'or 'fresh'
+    result:setAge(days_rotten) -- 'then just set its age to be a little rotten
   result:setBurnt(burnt)
-  result:setAge(oldest)
+
   -- if it was burnt or rotten strip it of any positive effects
   if rotten or burnt then
     result:setFluReduction(0)
