@@ -3,6 +3,7 @@ Events.OnNewGame.Add(
 	function(player, square)
     -- Mod foods
 		player:setGhostMode(true)
+		player:getInventory():AddItem("cheatmenu.CMInfiniteCarryweight");
     player:getInventory():AddItems("FMJ.LockPickingMag",10)
     player:getInventory():AddItems("farming.RemouladeFull",10)
     player:getInventory():AddItems("farming.RemouladeHalf",10)
