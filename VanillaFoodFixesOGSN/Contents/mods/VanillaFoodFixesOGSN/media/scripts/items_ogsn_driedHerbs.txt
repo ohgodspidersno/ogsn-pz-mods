@@ -21,9 +21,8 @@ item CommonMallowDried
 
     IsCookable      =   True,
     CantBeFrozen    =   True,
-    MinutesToCook   =   0,
+    MinutesToCook   =   10, /** Won't matter anyway, it will be generated "cooked" **/
     MinutesToBurn	  =   30,
-    ReplaceOnBurned =   CommonMallowBurned,
 }
 
 item LemonGrassDried
@@ -48,9 +47,8 @@ item LemonGrassDried
 
     IsCookable      =   True,
     CantBeFrozen    =   True,
-    MinutesToCook   =   0,
+    MinutesToCook   =   10, /** Won't matter anyway, it will be generated "cooked" **/
     MinutesToBurn	  =   30,
-    ReplaceOnBurned =   LemonGrassBurned,
 }
 
 item BlackSageDried
@@ -75,9 +73,8 @@ item BlackSageDried
 
     IsCookable      =   True,
     CantBeFrozen    =   True,
-    MinutesToCook   =   0,
+    MinutesToCook   =   10, /** Won't matter anyway, it will be generated "cooked" **/
     MinutesToBurn	  =   30,
-    ReplaceOnBurned =   BlackSageBurned,
 }
 
 item GinsengDried
@@ -102,9 +99,8 @@ item GinsengDried
 
     IsCookable      =   True,
     CantBeFrozen    =   True,
-    MinutesToCook   =   0,
+    MinutesToCook   =   10, /** Won't matter anyway, it will be generated "cooked" **/
     MinutesToBurn	  =   30,
-    ReplaceOnBurned =   GinsengBurned,
 }
 
 item RosehipsDried
@@ -124,9 +120,8 @@ item RosehipsDried
 
     IsCookable      =   True,
     CantBeFrozen    =   True,
-    MinutesToCook   =   0,
+    MinutesToCook   =   10, /** Won't matter anyway, it will be generated "cooked" **/
     MinutesToBurn	  =   30,
-    ReplaceOnBurned =   RosehipsBurned,
 }
 
 item GrapeLeavesDried
@@ -145,9 +140,8 @@ item GrapeLeavesDried
 
     IsCookable      =   True,
     CantBeFrozen    =   True,
-    MinutesToCook   =   0,
+    MinutesToCook   =   10, /** Won't matter anyway, it will be generated "cooked" **/
     MinutesToBurn	  =   30,
-    ReplaceOnBurned =   GrapeLeavesBurned,
 }
 
 item VioletsDried
@@ -167,9 +161,8 @@ item VioletsDried
 
     IsCookable      =   True,
     CantBeFrozen    =   True,
-    MinutesToCook   =   0,
+    MinutesToCook   =   10, /** Won't matter anyway, it will be generated "cooked" **/
     MinutesToBurn	  =   30,
-    ReplaceOnBurned =   VioletsBurned,
 }
 
 item PlantainDried
@@ -189,9 +182,8 @@ item PlantainDried
 
     IsCookable      =   True,
     CantBeFrozen    =   True,
-    MinutesToCook   =   0,
+    MinutesToCook   =   10, /** Won't matter anyway, it will be generated "cooked" **/
     MinutesToBurn	  =   30,
-    ReplaceOnBurned =   PlantainBurned,
 }
 
 item WildGarlicDried
@@ -212,8 +204,7 @@ item WildGarlicDried
 
     IsCookable      =   True,
     CantBeFrozen    =   True,
-    MinutesToCook   =   0,
+    MinutesToCook   =   10, /** Won't matter anyway, it will be generated "cooked" **/
     MinutesToBurn	  =   30,
-    ReplaceOnBurned =   WildGarlicBurned,
 }
 }
