@@ -96,6 +96,7 @@ function MakeHerbalBlendOGSN(items, result, player)
       print(oldest)
     end
     -- pass on the freshness, burnt, rotten status, and oldest age to the result
+    result:setCooked(true)
     result:setFresh(freshness)
     result:setRotten(rotten)
     result:setBurnt(burnt)
