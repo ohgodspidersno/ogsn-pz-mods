@@ -52,4 +52,43 @@ function CookRawHerbOGSN(herb)
     result:setType(VioletsDried)
   end
 end
--- if all of the ingredients were fresh, make it fresh
+
+function MakeHerbalBlendOGSN(items, result, player)
+  local fresh = true
+  local rotten = false
+  local burnt = false
+  local oldest = 0
+  for i=0, items:size() -1 do
+      local ingredient = items:get(i)
+      if not ingredient:isFresh() then
+        fresh = false
+      end
+      if ingredient:isRotten() then
+        rotten = true
+        fresh = false
+      end
+      if ingredient:isBurnt() then
+        burnt = true
+        fresh = false
+      end
+      if ingredient:getAge() > oldest then
+        oldest = ingredient:getAge()
+      end
+      -- pass on the fresh, burnt, rotten status, and oldest age to the result
+      if fresh then
+        result:setFresh(true)
+      else
+        result:setRotten(rotten)
+        result:setBurnt(burnt)
+      end
+      result:setAge(oldest)
+      -- if it was burnt or rotten strip it of any positive effects
+      if rotten or burnt then
+        result:setFluReduction(0)
+        result:setReduceFoodSickness(0)
+        result:setPainReduction(0)
+        result:setEnduranceChange(0)
+        result:setFatigueChange(0)
+      end
+  end
+end
