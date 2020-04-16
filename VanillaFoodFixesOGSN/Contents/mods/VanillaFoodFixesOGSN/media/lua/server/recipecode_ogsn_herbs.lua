@@ -26,20 +26,20 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     if item:getAge() > oldest then
       oldest = ingredient:getAge()
     end
-    -- pass on the burnt, rotten status, and oldest age to the result
-    result:setFresh(fresh)
-    result:setRotten(rotten)
-    result:setBurnt(burnt)
-    result:setAge(oldest)
-    -- if it was burnt or rotten strip it of any positive effects
-    if rotten or burnt then
-      result:setFluReduction(0)
-      result:setReduceFoodSickness(0)
-      result:setPainReduction(0)
-      result:setEnduranceChange(0)
-      result:setFatigueChange(0)
-    end
     ::continue::
+  end
+  -- pass on the burnt, rotten status, and oldest age to the result
+  result:setFresh(fresh)
+  result:setRotten(rotten)
+  result:setBurnt(burnt)
+  result:setAge(oldest)
+  -- if it was burnt or rotten strip it of any positive effects
+  if rotten or burnt then
+    result:setFluReduction(0)
+    result:setReduceFoodSickness(0)
+    result:setPainReduction(0)
+    result:setEnduranceChange(0)
+    result:setFatigueChange(0)
   end
 end
 
@@ -105,22 +105,22 @@ function MakeHerbalBlendOGSN(items, result, player)
       print('age of oldest ingredient:')
       print(oldest)
     end
-    -- pass on the freshness, burnt, rotten status, and oldest age to the result
-    print('finished with loop. freshness is now:')
-    print(freshness)
-    result:setCooked(true)
-    result:setFresh(freshness)
-    result:setRotten(rotten)
-    result:setBurnt(burnt)
-    result:setAge(oldest)
-    -- if it was burnt or rotten strip it of any positive effects
-    if rotten or burnt then
-      result:setFluReduction(0)
-      result:setReduceFoodSickness(0)
-      result:setPainReduction(0)
-      result:setEnduranceChange(0)
-      result:setFatigueChange(0)
-    end
     ::continue::
+  end
+  -- pass on the freshness, burnt, rotten status, and oldest age to the result
+  print('finished with loop. freshness is now:')
+  print(freshness)
+  result:setCooked(true)
+  result:setFresh(freshness)
+  result:setRotten(rotten)
+  result:setBurnt(burnt)
+  result:setAge(oldest)
+  -- if it was burnt or rotten strip it of any positive effects
+  if rotten or burnt then
+    result:setFluReduction(0)
+    result:setReduceFoodSickness(0)
+    result:setPainReduction(0)
+    result:setEnduranceChange(0)
+    result:setFatigueChange(0)
   end
 end
