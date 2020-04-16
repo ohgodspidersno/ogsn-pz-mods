@@ -76,8 +76,8 @@ function CookRawHerbOGSN(herb)
 
   local driedHerb = InventoryItemFactory.CreateItem(driedType);
   driedHerb:setCooked(true)
-  oven.RemoveItem(herb)
-  oven.AddItem(driedHerb)
+  oven:RemoveItem(herb)
+  oven:AddItem(driedHerb)
 end
 
 function MakeHerbalBlendOGSN(items, result, player)
