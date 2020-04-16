@@ -75,7 +75,7 @@ function CookRawHerbOGSN(herb)
   end
 
   local driedHerb = InventoryItemFactory.CreateItem(driedType);
-  driedHerb.setCooked(true)
+  driedHerb:setCooked(true)
   oven.RemoveItem(herb)
   oven.AddItem(driedHerb)
 end
