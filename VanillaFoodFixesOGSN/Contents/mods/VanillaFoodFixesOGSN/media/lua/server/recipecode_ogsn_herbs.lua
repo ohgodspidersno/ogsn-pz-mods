@@ -38,17 +38,17 @@ function CookRawHerbOGSN(herb)
   -- if it was not rotten, replace it with the dried version
   if herb:getType() == CommonMallow then
     result:setType(CommonMallowDried)
-  else if herb:getType() == LemonGrass then
+  elseif herb:getType() == LemonGrass then
     result:setType(LemonGrassDried)
-  else if herb:getType() == BlackSage then
+  elseif herb:getType() == BlackSage then
     result:setType(BlackSageDried)
-  else if herb:getType() == Ginseng then
+  elseif herb:getType() == Ginseng then
     result:setType(GinsengDried)
-  else if herb:getType() == Rosehips then
+  elseif herb:getType() == Rosehips then
     result:setType(RosehipsDried)
-  else if herb:getType() == GrapeLeaves then
+  elseif herb:getType() == GrapeLeaves then
     result:setType(GrapeLeavesDried)
-  else if herb:getType() == Violets then
+  elseif herb:getType() == Violets then
     result:setType(VioletsDried)
   end
   function MakeHerbalBlendOGSN(items, result, player)
