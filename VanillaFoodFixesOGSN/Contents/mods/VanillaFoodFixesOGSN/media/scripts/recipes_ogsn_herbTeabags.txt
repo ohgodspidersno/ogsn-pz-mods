@@ -8,7 +8,6 @@ module Base
     destroy BlackSage/BlackSageDried,
 
     Time:30.0,
-    OnGiveXP:Give1CookingXP,
     CanBeDoneFromFloor:true,
     Category:Cooking,
     Result:Teabag_Medicinal,
@@ -22,7 +21,6 @@ module Base
     destroy BlackSage/BlackSageDried,
 
     Time:30.0,
-    OnGiveXP:Give1CookingXP,
     CanBeDoneFromFloor:true,
     Category:Cooking,
     Result:Teabag_Energizing,
