@@ -100,8 +100,10 @@ Events.OnNewGame.Add(
 	end
 )
 
-Events.OnGameStart.Add(
-	function(player, square)
-		player:setGhostMode(true)
-	end
-)
+local function GhostMode()
+	local player = getSpecificPlayer(0)
+	player:setGhostMode(true)
+	player:setInvincible(true)
+end
+
+Events.OnGameStart.Add(GhostMode);
