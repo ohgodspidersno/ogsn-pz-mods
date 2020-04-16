@@ -1,0 +1,27 @@
+module TRPack
+{
+	imports
+    {
+        Base,
+    }
+	
+	item BarrelEmpty
+	{
+		Weight		= 5,
+		Type		= Normal,
+		DisplayName	= Empty Barrel,
+		Icon		= GasBarrel,
+		MetalValue 	= 15,
+	}
+	
+	item PetrolBarrel
+	{
+		Weight			=	45,
+		Type			=	Drainable,
+		UseWhileEquipped=	FALSE,
+		UseDelta		=	0.015625,
+		DisplayName		=	Gas Barrel,
+		Icon			=	GasBarrel,
+		ReplaceOnDeplete=	BarrelEmpty,
+	}
+}
