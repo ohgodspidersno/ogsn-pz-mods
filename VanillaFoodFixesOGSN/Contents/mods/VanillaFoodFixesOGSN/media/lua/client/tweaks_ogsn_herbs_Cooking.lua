@@ -14,61 +14,60 @@ TweakItem("Base.CommonMallow","Calories", "36");
 TweakItem("Base.CommonMallow","FoodType", "Herbal");
 TweakItem("Base.CommonMallow","EvolvedRecipe", "Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2");
 TweakItem("Base.CommonMallow","IsCookable","True");
-TweakItem("Base.CommonMallow","MinutesToCook","60");
-TweakItem("Base.CommonMallow","ReplaceOnCooked","Base.CommonMallowDried");
-TweakItem("Base.CommonMallow","ReplaceOnRotten","Base.CommonMallowRotten");
-
+TweakItem("Base.CommonMallow","MinutesToCook","120");
+TweakItem("Base.CommonMallow","MinutesToBurn","30");
+TweakItem("Base.CommonMallow","OnCook","CookRawHerbOGSN");
 
 TweakItem("Base.LemonGrass","Spice","True");
 TweakItem("Base.LemonGrass","FoodType","Herbal");
 TweakItem("Base.LemonGrass","EvolvedRecipe","Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Sandwich:1;Burger:1;Salad:1;FruitSalad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1");
 TweakItem("Base.LemonGrass","IsCookable","True");
-TweakItem("Base.LemonGrass","MinutesToCook","60");
-TweakItem("Base.LemonGrass","ReplaceOnCooked","Base.LemonGrassDried");
-TweakItem("Base.LemonGrass","ReplaceOnRotten","Base.LemonGrassRotten");
+TweakItem("Base.LemonGrass","MinutesToCook","120");
+TweakItem("Base.LemonGrass","MinutesToBurn","30");
+TweakItem("Base.LemonGrass","OnCook","CookRawHerbOGSN");
 
 
 TweakItem("Base.BlackSage","Spice","True");
 TweakItem("Base.BlackSage","FoodType","Herbal");
 TweakItem("Base.BlackSage","EvolvedRecipe","Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1");
 TweakItem("Base.BlackSage","IsCookable","True");
-TweakItem("Base.BlackSage","MinutesToCook","60");
-TweakItem("Base.BlackSage","ReplaceOnCooked","Base.BlackSageDried");
-TweakItem("Base.BlackSage","ReplaceOnRotten","Base.BlackSageRotten");
+TweakItem("Base.BlackSage","MinutesToCook","120");
+TweakItem("Base.BlackSage","MinutesToBurn","30");
+TweakItem("Base.BlackSage","OnCook","CookRawHerbOGSN");
 
 
 TweakItem("Base.Ginseng","Spice","True");
 TweakItem("Base.Ginseng","FoodType","Herbal")
 TweakItem("Base.Ginseng","EvolvedRecipe","Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1")
 TweakItem("Base.Ginseng","IsCookable","True");
-TweakItem("Base.Ginseng","MinutesToCook","60");
-TweakItem("Base.Ginseng","ReplaceOnCooked","Base.GinsengDried");
-TweakItem("Base.Ginseng","ReplaceOnRotten","Base.GinsengRotten");
+TweakItem("Base.Ginseng","MinutesToCook","120");
+TweakItem("Base.Ginseng","MinutesToBurn","30");
+TweakItem("Base.Ginseng","OnCook","CookRawHerbOGSN");
 
 
 -- FOOD HERBS
 TweakItem("Base.Rosehips","FoodType","Herbal");
 TweakItem("Base.Rosehips","EvolvedRecipe","Soup:3;Stew:3;Pie:3;Cake:3;Stir fry:3;Stir fry Griddle Pan:3;Roasted Vegetables:3;Burger:3;Salad:3;PastaPan:3;RicePan:3;PastaPot:3;RicePot:3;HotDrink:3;CommonMallowEvolved:3;LemonGrassEvolved:3;BlackSageEvolved:3;GinsengEvolved:3;EnergizingEvolved:3;MedicinalEvolved:3");
 TweakItem("Base.Rosehips","IsCookable","True");
-TweakItem("Base.Rosehips","MinutesToCook","60");
-TweakItem("Base.Rosehips","ReplaceOnCooked","Base.RosehipsDried");
-TweakItem("Base.Rosehips","ReplaceOnRotten","Base.RosehipsRotten");
+TweakItem("Base.Rosehips","MinutesToCook","120");
+TweakItem("Base.Rosehips","MinutesToBurn","30");
+TweakItem("Base.Rosehips","OnCook","CookRawHerbOGSN");
 
 
 TweakItem("Base.GrapeLeaves","FoodType","Herbal")
 TweakItem("Base.GrapeLeaves","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2")
 TweakItem("Base.GrapeLeaves","IsCookable","True");
-TweakItem("Base.GrapeLeaves","MinutesToCook","60");
-TweakItem("Base.GrapeLeaves","ReplaceOnCooked","Base.GrapeLeavesDried");
-TweakItem("Base.GrapeLeaves","ReplaceOnRotten","Base.GrapeLeavesRotten");
+TweakItem("Base.GrapeLeaves","MinutesToCook","120");
+TweakItem("Base.GrapeLeaves","MinutesToBurn","30");
+TweakItem("Base.GrapeLeaves","OnCook","CookRawHerbOGSN");
 
 
 TweakItem("Base.Violets","FoodType","Herbal")
 TweakItem("Base.Violets","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;FruitSalad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2")
 TweakItem("Base.Violets","IsCookable","True");
-TweakItem("Base.Violets","MinutesToCook","60");
-TweakItem("Base.Violets","ReplaceOnCooked","Base.VioletsDried");
-TweakItem("Base.Violets","ReplaceOnRotten","Base.VioletsRotten");
+TweakItem("Base.Violets","MinutesToCook","120");
+TweakItem("Base.Violets","MinutesToBurn","30");
+TweakItem("Base.Violets","OnCook","CookRawHerbOGSN");
 
 -- COMPATIBILITY WITH OTHER FOOD MODS
 if getActivatedMods():contains("AAApoc") then
