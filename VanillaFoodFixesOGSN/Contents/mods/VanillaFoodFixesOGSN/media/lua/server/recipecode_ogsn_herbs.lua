@@ -65,13 +65,13 @@ function CookRawHerbOGSN(herb)
   local oven = herb:getContainer();
 
   -- if it was not rotten, replace it with the dried version, already cooked
-  if herb:getType() == "CommonMallow" then driedType = "Base.DriedCommonMallow"
-  elseif herb:getType() == "LemonGrass" then driedType = "Base.DriedLemonGrass"
-  elseif herb:getType() == "BlackSage" then driedType = "Base.DriedBlackSage"
-  elseif herb:getType() == "Ginseng" then driedType = "Base.DriedGinseng"
-  elseif herb:getType() == "Rosehips" then driedType = "Base.DriedRosehips"
-  elseif herb:getType() == "GrapeLeaves" then driedType = "Base.DriedGrapeLeaves"
-  elseif herb:getType() == "Violets" then driedType = "Base.DriedViolets"
+  if herb:getType() == "CommonMallow" then driedType = "Base.CommonMallowDried"
+  elseif herb:getType() == "LemonGrass" then driedType = "Base.LemonGrassDried"
+  elseif herb:getType() == "BlackSage" then driedType = "Base.BlackSageDried"
+  elseif herb:getType() == "Ginseng" then driedType = "Base.GinsengDried"
+  elseif herb:getType() == "Rosehips" then driedType = "Base.RosehipsDried"
+  elseif herb:getType() == "GrapeLeaves" then driedType = "Base.GrapeLeavesDried"
+  elseif herb:getType() == "Violets" then driedType = "Base.VioletsDried"
   end
 
   local driedHerb = InventoryItemFactory.CreateItem(driedType);
