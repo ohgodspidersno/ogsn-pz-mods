@@ -1,0 +1,39 @@
+module Base
+{
+  item Teabag_Medicinal
+  {
+      FluReduction = 10,
+      ReduceFoodSickness = 20,
+      PainReduction = 14,
+
+      Weight = 0.1,
+      Type = Food,
+      HungerChange = -5,
+      UnhappyChange = 10,
+      ThirstChange = 10,
+      DisplayName = Medicinal Blend,
+      Icon = teablend_medicinal,
+      FoodType = Tea,
+      IsCookable = false,
+      DaysFresh = 7,
+      DaysTotallyRotten = 30,
+  }
+  item Teabag_Energizing
+  {
+      PainReduction = 14,
+      EnduranceChange = 3,
+      FatigueChange = -20,
+
+      Weight = 0.1,
+      Type = Food,
+      HungerChange = -5,
+      UnhappyChange = 10,
+      ThirstChange = 10,
+      DisplayName = Energizing Blend,
+      Icon = teablend_energizing,
+      FoodType = Tea,
+      IsCookable = false,
+      DaysFresh = 7,
+      DaysTotallyRotten = 30,
+  }
+}
