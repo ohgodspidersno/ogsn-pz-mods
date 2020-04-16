@@ -35,7 +35,8 @@ end
 function CookRawHerbOGSN(herb)
   -- if it was rotten, just let it keep cooking like a normal piece of rotten food
   if herb:isRotten() then return end
-  -- if it was not rotten, replace it with the dried version
+  -- if it was not rotten, replace it with the dried version, already cooked
+  herb:setCooked(true)
   if herb:getType() == CommonMallow then
     result:setType(CommonMallowDried)
   elseif herb:getType() == LemonGrass then
