@@ -1,20 +1,25 @@
 -- Note: ISCraftAction:perform() in the vanilla code is a good reference
-
-
 function MakeCupHerbalTeaOGSN(items, result, player)
   local rotten = false
   local burnt = false
   local oldest = 0
-  -- determine if any ingredients were rotten or burnt, and the age of the oldest ingredient
+
   for i = 0, items:size() - 1 do
-    local ingredient = items:get(i)
-    if ingredient:isRotten() then
+    local item = items:get(i)
+    local type = item:getStringItemType();
+    if type ~= "Food" then
+      break
+    end
+    -- print(item)
+    -- print(item:Rotten())
+    -- print(item:rotten())
+    if item:Rotten() then
       rotten = true
     end
-    if ingredient:isBurnt() then
+    if item:Burnt() then
       burnt = true
     end
-    if ingredient:getAge() > oldest then
+    if item:getAge() > oldest then
       oldest = ingredient:getAge()
     end
     -- pass on the burnt, rotten status, and oldest age to the result
@@ -59,28 +64,36 @@ function CookRawHerbOGSN(herb)
 end
 
 function MakeHerbalBlendOGSN(items, result, player)
-  local fresh = true
+  local freshness = true
   local rotten = false
   local burnt = false
   local oldest = 0
+  local item = items:get(i)
+  local type = item:getStringItemType();
+
   for i = 0, items:size() - 1 do
-    local ingredient = items:get(i)
-    if not ingredient:isFresh() then
-      fresh = false
+    if type ~= "Food" then
+      break
     end
-    if ingredient:isRotten() then
+    -- local ingredient = item
+    if not item:isFresh() then
+      freshness = false
+    end
+    if item:isRotten() then
       rotten = true
-      fresh = false
+      freshness = false
     end
-    if ingredient:isBurnt() then
+    if item:isBurnt() then
       burnt = true
-      fresh = false
+      freshness = false
     end
     if ingredient:getAge() > oldest then
       oldest = ingredient:getAge()
+      print('age of oldest ingredient:')
+      print(oldest)
     end
-    -- pass on the fresh, burnt, rotten status, and oldest age to the result
-    result:setFresh(fresh)
+    -- pass on the freshness, burnt, rotten status, and oldest age to the result
+    result:setFresh(freshness)
     result:setRotten(rotten)
     result:setBurnt(burnt)
     result:setAge(oldest)
