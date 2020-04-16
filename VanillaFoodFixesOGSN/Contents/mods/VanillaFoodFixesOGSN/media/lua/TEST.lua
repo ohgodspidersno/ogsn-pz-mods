@@ -11,10 +11,10 @@ Events.OnNewGame.Add(
     player:getInventory():AddItems("Base.MilkJar",10)
     player:getInventory():AddItems("Base.MilkWaterBottle",10)
     player:getInventory():AddItems("Base.MilkPopBottle",10)
-    player:getInventory():AddItems("FMJ.MilkJar",10)
-    player:getInventory():AddItems("FMJ.MilkWaterBottle",10)
-    player:getInventory():AddItems("FMJ.MilkPopBottle",10)
-    player:getInventory():AddItems("Base.AAAVanillaExtract",10)
+    -- player:getInventory():AddItems("FMJ.MilkJar",10)
+    -- player:getInventory():AddItems("FMJ.MilkWaterBottle",10)
+    -- player:getInventory():AddItems("FMJ.MilkPopBottle",10)
+    -- player:getInventory():AddItems("Base.AAAVanillaExtract",10)
     player:getInventory():AddItems("Base.Lemon",10)
     player:getInventory():AddItems("Base.BerryBlack",10)
     player:getInventory():AddItems("Base.BerryBlue",10)
@@ -86,6 +86,5 @@ Events.OnNewGame.Add(
     player:getInventory():AddItems("Base.Bowl",5)
     player:getInventory():AddItems("Base.Mug",5)
     player:getInventory():AddItems("Base.Kettle",2)
-    TinOpener
 	end
 )
