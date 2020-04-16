@@ -1,4 +1,4 @@
 ContextMenu_CS = {
 	ContextMenu_EvolvedRecipe_OatmealEvolved = "Ovesné vločky",
-	ContextMenu_FoodType_Herbal =	"Bylinný",
+	ContextMenu_FoodType_Herbal = "Bylinný",
 }

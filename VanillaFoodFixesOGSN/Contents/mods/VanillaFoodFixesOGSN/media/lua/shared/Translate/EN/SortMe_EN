@@ -1,23 +1,23 @@
 
 DisplayName_Plantain = "Plantain Leaves",
-ItemName_Base.StirFryBowl                       =   "Bowl of Stir Fry",
+ItemName_Base.StirFryBowl = "Bowl of Stir Fry",
 
-ItemName_Base.Tea_CommonMallow                  =   "Common Mallow Tea",
-ItemName_Base.Tea_LemonGrass                    =   "Lemon Grass Tea",
-ItemName_Base.Tea_BlackSage                     =   "Black Sage Tea",
-ItemName_Base.Tea_Ginseng                       =   "Ginseng Tea",
-ItemName_Base.Tea_Medicinal                     =   "Medicinal Tea",
-ItemName_Base.Tea_Energizing                    =   "Energizing Tea",
-Recipe_Place_Vegetables_in_Roasting_Pan         =   "Prepare oven roast",
-DisplayName_Roasted_Vegetables                  =   "Oven roast",
-Recipe_Roasted_Vegetables                       =   "Oven roast",
-ItemName_Base.PanFriedVegetables2               =   "Oven roast",
+ItemName_Base.Tea_CommonMallow = "Common Mallow Tea",
+ItemName_Base.Tea_LemonGrass = "Lemon Grass Tea",
+ItemName_Base.Tea_BlackSage = "Black Sage Tea",
+ItemName_Base.Tea_Ginseng = "Ginseng Tea",
+ItemName_Base.Tea_Medicinal = "Medicinal Tea",
+ItemName_Base.Tea_Energizing = "Energizing Tea",
+Recipe_Place_Vegetables_in_Roasting_Pan = "Prepare oven roast",
+DisplayName_Roasted_Vegetables = "Oven roast",
+Recipe_Roasted_Vegetables = "Oven roast",
+ItemName_Base.PanFriedVegetables2 = "Oven roast",
 
 item StirFryBowl
 item RoastedVegetablesBowl
 
-DisplayName	=	Bowl of Stir Fry
-DisplayName	=	Bowl of Roasted Vegetables
+DisplayName = Bowl of Stir Fry
+DisplayName = Bowl of Roasted Vegetables
 
 recipe Make 2 Bowls of Roasted Vegetables
 recipe Make 4 Bowls of Roasted Vegetables
