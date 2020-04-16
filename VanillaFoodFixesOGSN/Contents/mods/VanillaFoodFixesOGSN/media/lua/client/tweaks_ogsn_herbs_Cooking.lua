@@ -16,7 +16,7 @@ TweakItem("Base.CommonMallow","EvolvedRecipe", "Soup:2;Stew:2;Pie:2;Stir fry:2;S
 TweakItem("Base.CommonMallow","IsCookable","True");
 TweakItem("Base.CommonMallow","MinutesToCook","120");
 TweakItem("Base.CommonMallow","MinutesToBurn","30");
-TweakItem("Base.CommonMallow","OnCook","CookRawHerbOGSN");
+TweakItem("Base.CommonMallow","OnCooked","CookRawHerbOGSN");
 
 TweakItem("Base.LemonGrass","Spice","True");
 TweakItem("Base.LemonGrass","FoodType","Herbal");
@@ -24,7 +24,7 @@ TweakItem("Base.LemonGrass","EvolvedRecipe","Soup:1;Stew:1;Pie:1;Cake:1;Stir fry
 TweakItem("Base.LemonGrass","IsCookable","True");
 TweakItem("Base.LemonGrass","MinutesToCook","120");
 TweakItem("Base.LemonGrass","MinutesToBurn","30");
-TweakItem("Base.LemonGrass","OnCook","CookRawHerbOGSN");
+TweakItem("Base.LemonGrass","OnCooked","CookRawHerbOGSN");
 
 
 TweakItem("Base.BlackSage","Spice","True");
@@ -33,7 +33,7 @@ TweakItem("Base.BlackSage","EvolvedRecipe","Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:
 TweakItem("Base.BlackSage","IsCookable","True");
 TweakItem("Base.BlackSage","MinutesToCook","120");
 TweakItem("Base.BlackSage","MinutesToBurn","30");
-TweakItem("Base.BlackSage","OnCook","CookRawHerbOGSN");
+TweakItem("Base.BlackSage","OnCooked","CookRawHerbOGSN");
 
 
 TweakItem("Base.Ginseng","Spice","True");
@@ -42,7 +42,7 @@ TweakItem("Base.Ginseng","EvolvedRecipe","Soup:1;Stew:1;Pie:1;Cake:1;Stir fry:1;
 TweakItem("Base.Ginseng","IsCookable","True");
 TweakItem("Base.Ginseng","MinutesToCook","120");
 TweakItem("Base.Ginseng","MinutesToBurn","30");
-TweakItem("Base.Ginseng","OnCook","CookRawHerbOGSN");
+TweakItem("Base.Ginseng","OnCooked","CookRawHerbOGSN");
 
 
 -- FOOD HERBS
@@ -51,7 +51,7 @@ TweakItem("Base.Rosehips","EvolvedRecipe","Soup:3;Stew:3;Pie:3;Cake:3;Stir fry:3
 TweakItem("Base.Rosehips","IsCookable","True");
 TweakItem("Base.Rosehips","MinutesToCook","120");
 TweakItem("Base.Rosehips","MinutesToBurn","30");
-TweakItem("Base.Rosehips","OnCook","CookRawHerbOGSN");
+TweakItem("Base.Rosehips","OnCooked","CookRawHerbOGSN");
 
 
 TweakItem("Base.GrapeLeaves","FoodType","Herbal")
@@ -59,7 +59,7 @@ TweakItem("Base.GrapeLeaves","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Stir fry:2;Sti
 TweakItem("Base.GrapeLeaves","IsCookable","True");
 TweakItem("Base.GrapeLeaves","MinutesToCook","120");
 TweakItem("Base.GrapeLeaves","MinutesToBurn","30");
-TweakItem("Base.GrapeLeaves","OnCook","CookRawHerbOGSN");
+TweakItem("Base.GrapeLeaves","OnCooked","CookRawHerbOGSN");
 
 
 TweakItem("Base.Violets","FoodType","Herbal")
@@ -67,7 +67,7 @@ TweakItem("Base.Violets","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;
 TweakItem("Base.Violets","IsCookable","True");
 TweakItem("Base.Violets","MinutesToCook","120");
 TweakItem("Base.Violets","MinutesToBurn","30");
-TweakItem("Base.Violets","OnCook","CookRawHerbOGSN");
+TweakItem("Base.Violets","OnCooked","CookRawHerbOGSN");
 
 -- COMPATIBILITY WITH OTHER FOOD MODS
 if getActivatedMods():contains("AAApoc") then
