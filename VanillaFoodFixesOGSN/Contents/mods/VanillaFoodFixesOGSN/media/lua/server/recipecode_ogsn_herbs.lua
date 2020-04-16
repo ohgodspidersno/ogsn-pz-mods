@@ -15,9 +15,9 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     local ingredient = items:get(i)
     print("ingredient")
     print(ingredient)
-    print(print(ingredient:isRotten())
-    print(print(ingredient:isBurnt())
-    print(print(ingredient:getAge())
+    print(ingredient:isRotten())
+    print(ingredient:isBurnt())
+    print(ingredient:getAge())
     if ingredient:isRotten() then
       rotten = true
     end
