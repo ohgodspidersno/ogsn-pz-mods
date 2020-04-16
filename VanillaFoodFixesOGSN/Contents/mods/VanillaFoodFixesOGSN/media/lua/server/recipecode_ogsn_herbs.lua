@@ -75,7 +75,7 @@ function MakeHerbalBlendOGSN(items, result, player)
   local burnt = false
   local oldest = 0
   local days_fresh = result:getOffAge()
-  local days_rotten = result:gettOffAgeMax()
+  local days_rotten = result:getOffAgeMax()
   for i = 0, items:size() - 1 do
     print('in loop. i =')
     print(i)
