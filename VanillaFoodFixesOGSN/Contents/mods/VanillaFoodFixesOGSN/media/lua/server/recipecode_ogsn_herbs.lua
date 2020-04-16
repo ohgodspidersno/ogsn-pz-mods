@@ -6,7 +6,7 @@ function MakeCupHerbalTeaOGSN(items, result, player)
   local burnt = false
   local oldest = 0
   -- determine if any ingredients were rotten or burnt, and the age of the oldest ingredient
-  for i=0, items:size() -1 do
+  for i = 0, items:size() - 1 do
     local ingredient = items:get(i)
     if ingredient:isRotten() then
       rotten = true
@@ -33,7 +33,7 @@ function MakeCupHerbalTeaOGSN(items, result, player)
 end
 
 function CookRawHerbOGSN(herb)
--- if it was rotten, just let it keep cooking like a normal piece of rotten food
+  -- if it was rotten, just let it keep cooking like a normal piece of rotten food
   if herb:isRotten() then return end
   -- if it was not rotten, replace it with the dried version
   if herb:getType() == CommonMallow then
@@ -51,14 +51,12 @@ function CookRawHerbOGSN(herb)
   else if herb:getType() == Violets then
     result:setType(VioletsDried)
   end
-end
-
-function MakeHerbalBlendOGSN(items, result, player)
-  local fresh = true
-  local rotten = false
-  local burnt = false
-  local oldest = 0
-  for i=0, items:size() -1 do
+  function MakeHerbalBlendOGSN(items, result, player)
+    local fresh = true
+    local rotten = false
+    local burnt = false
+    local oldest = 0
+    for i = 0, items:size() - 1 do
       local ingredient = items:get(i)
       if not ingredient:isFresh() then
         fresh = false
@@ -90,5 +88,6 @@ function MakeHerbalBlendOGSN(items, result, player)
         result:setEnduranceChange(0)
         result:setFatigueChange(0)
       end
+    end
   end
 end
