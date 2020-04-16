@@ -11,7 +11,7 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     print(i)
     local item = items:get(i)
     local type = item:getStringItemType();
-    if type == "Food" then
+    if string_type == "Food" then
         if not item:isFresh() then
           fresh = false
         end
@@ -81,7 +81,7 @@ function MakeHerbalBlendOGSN(items, result, player)
     local item = items:get(i)
     local string_type = item:getStringItemType();
     local type = item:getType()
-    if type == "Food" then
+    if string_type == "Food" then
         if not item:isFresh() then
           freshness = false
         end
