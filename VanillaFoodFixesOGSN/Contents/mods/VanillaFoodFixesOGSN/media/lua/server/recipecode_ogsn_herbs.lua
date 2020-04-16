@@ -24,7 +24,7 @@ function MakeCupHerbalTeaOGSN(items, result, player)
           fresh = false
         end
         if item:getAge() > oldest then
-          oldest = ingredient:getAge()
+          oldest = item:getAge()
         end
     end
   end
@@ -99,8 +99,8 @@ function MakeHerbalBlendOGSN(items, result, player)
           burnt = true
           freshness = false
         end
-        if ingredient:getAge() > oldest then
-          oldest = ingredient:getAge()
+        if item:getAge() > oldest then
+          oldest = item:getAge()
           print('age of oldest ingredient:')
           print(oldest)
         end
