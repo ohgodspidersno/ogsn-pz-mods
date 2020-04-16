@@ -1,6 +1,12 @@
 // This scrapes the translations from nicetranslator.com and adds them at the bottom of the page
 // in several formats that are fairly useful for easy copy-pasting
 // IMPORTANT: You MUST first have all languages selected or else it won't work properly and you'll get mislabeled translations and possibly errors.
+// English (EN), Chinese (CN), Estonian (EE), Japanese (JP) – UTF-8
+//
+// Afrikaans (AF), Arabic (AR), Danish (DA), German (DE), Spanish (ES), French (FR), Hungarian (HU), Italian (IT), Dutch (NL), Norwegian (NO), Portuguese (PT), Brazilian Portuguese (PTBR), Thai (TH) – Windows 1252
+// Chinese (CH) – Big-5
+// Czech (CH), Polish (PL) – Windows-1250
+// Russian (RU) – Windows-1251
 
 var all_translations_arr = []
 var steam_translations_arr_full_labels = []
