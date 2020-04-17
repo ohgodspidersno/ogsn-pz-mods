@@ -190,7 +190,7 @@ pz_abbrevs = {
     'Danish' : 'DA',
     'German' : 'DE',
     'English' : 'EN',
-    'English - Other' : 'EE',
+    'Estonian' : 'EE',
     'Spanish' : 'ES',
     'French' : 'FR',
     'Hungarian' : 'HU',
