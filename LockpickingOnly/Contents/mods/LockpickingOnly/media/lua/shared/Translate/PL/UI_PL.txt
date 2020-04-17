@@ -1,0 +1,19 @@
+/** Polish Translation provide by steam user ralphienator **/
+UI_PL = {
+UI_trait_nimblefingers = "Ślusarz",
+UI_trait_nimblefingersDesc = "Zaczyna z wiedzą o otwieraniu i wyłamywaniu zamków. Szybsze otwieranie zamków. Większa szansa na otwarcie zamka",
+UI_Text_locklevel_veryeasy = "Bardzo łatwy",
+UI_Text_locklevel_easy = "Łatwy",
+UI_Text_locklevel_medium = "Przeciętny",
+UI_Text_locklevel_hard = "Trudny",
+UI_Text_locklevel_veryhard = "Bardzo Trudny",
+UI_Text_locklevel_willbreak = "Zepsuty",
+UI_Text_brokenLockModal = "Nie możesz otworzyć zepsutego zamka.",
+UI_Text_contextBreakDoorLock = "Wyłam Zamek",
+UI_Text_contextPickDoorLock = "Otwórz Zamek",
+UI_Text_contextBreakWindowLock = "Break Lock",
+UI_Text_BobbyStuck = "Cholera! Spinka się zablokowała!",
+UI_Text_BobbyBroken = "Cholera! Spinka się złamała!",
+UI_trait_BurglarDesc = "Może odpalać samochody bez klucza. Może wyłamywać i otwierać zamki. Mniejsza szansa na zepsucie zasuwy okna.",
+UI_profdesc_burglar = "Może odpalać samochody bez klucza. Może wyłamywać i otwierać zamki. Mniejsza szansa na zepsucie zasuwy okna.",
+}
