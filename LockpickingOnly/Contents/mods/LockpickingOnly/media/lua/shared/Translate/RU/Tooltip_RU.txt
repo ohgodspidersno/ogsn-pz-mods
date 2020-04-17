@@ -1,5 +1,5 @@
 /* Russian translation provided by Steam player, York */
-Tooltip_RU {
+Tooltip_RU = {
   Tooltip_BobbyPin_FMJ = "ќтмычки и отвЄртки можно использовать дл€ взлома замков, если у вас есть навыки.",
   Tooltip_LockPickingMag_FMJ = "”чит взламывать замки отмычками и отвертками, делать отмычки из проволоки.",
   Tooltip_LockPickingMag2_FMJ = "”чит ломать замки использу€ лом.",
