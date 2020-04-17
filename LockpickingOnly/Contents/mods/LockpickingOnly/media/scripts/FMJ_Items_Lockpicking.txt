@@ -8,7 +8,7 @@ module FMJ
 /*******************LOCK PICKING*******************/
 	item BobbyPin
 	{
-		Weight = 0.1,
+		Weight = 0.005,
 		Type = Normal,
 		DisplayName = Hairpin,
 		Icon = BobbyPin,
