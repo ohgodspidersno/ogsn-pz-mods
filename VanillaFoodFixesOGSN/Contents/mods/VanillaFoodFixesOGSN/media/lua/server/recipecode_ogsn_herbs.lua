@@ -40,6 +40,8 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     result:setEnduranceChange(0)
     result:setFatigueChange(0)
   end
+  result:setName('balaag')
+  result:setTooltip('a thing')
 end
 
 function CookRawHerbOGSN(herb)
@@ -64,6 +66,8 @@ function CookRawHerbOGSN(herb)
 
   local driedHerb = InventoryItemFactory.CreateItem(driedType);
   driedHerb:setCooked(true)
+  driedHerb:setName('balaag')
+  driedHerb:setTooltip('a thing')
   -- oven:getItems():removeItem(herb)
   -- oven:removeItem(herb)
   oven:Remove(herb)
@@ -135,4 +139,6 @@ function MakeHerbalBlendOGSN(items, result, player)
     result:setEnduranceChange(0)
     result:setFatigueChange(0)
   end
+  result:setName('balaag')
+  result:setTooltip('a thing')
 end
