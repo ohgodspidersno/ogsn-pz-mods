@@ -1,8 +1,0 @@
-/** Polish Translation provide by steam user ralphienator **/
-Tooltip_PL = {
-Tooltip_BobbyPin_FMJ = "Jeśli masz umiejętność ślusarstwa, możesz użyć spinki do włosów i śrubokręta, by otwierać zamki.",
-Tooltip_LockPickingMag_FMJ = "Naucz się otwierania zamków używając spinki do włosów i śrubokręta oraz jak stworzyć spinki do włosów z drutu.",
-Tooltip_LockPickingMag2_FMJ = "Naucz się niszczyć zamki używając łomu.",
-Tooltip_Screwdriver_FMJ = "Jeśli masz zdolności ślusarskie, możesz użyć spinki do włosów i śrubokręta, by otwierać zamki",
-Tooltip_Crowbar_FMJ = "Może być użyty do niszczenia zamków, jeśli masz umiejętność ślusarstwa.",
-}

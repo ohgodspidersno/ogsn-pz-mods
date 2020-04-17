@@ -1,6 +1,0 @@
-/** Polish Translation provide by steam user ralphienator **/
-ItemName_PL = {
-ItemName_FMJ.BobbyPin = "Spinka do włosów",
-ItemName_FMJ.LockPickingMag = "Podręcznik Ślusarstwa, Tom I",
-ItemName_FMJ.LockPickingMag2 = "Podręcznik Ślusarstwa, Tom II",
-}
