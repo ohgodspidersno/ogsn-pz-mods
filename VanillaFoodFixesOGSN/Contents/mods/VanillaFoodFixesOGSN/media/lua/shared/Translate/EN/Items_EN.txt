@@ -1,4 +1,4 @@
-Items_EN {
+Items_EN = {
   DisplayNameDried_Common_Mallow_(Fresh_Uncooked) = "Dried Common Mallow (Fresh)",
   DisplayNameDried_Lemon_Grass_(Fresh_Uncooked) = "Dried Lemon Grass (Fresh)",
   DisplayNameDried_Black_Sage_(Fresh_Uncooked) = "Dried Black Sage (Fresh)",
