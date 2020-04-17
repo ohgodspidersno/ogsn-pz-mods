@@ -5,3 +5,4 @@ Afrikaans (AF), Arabic (AR), Danish (DA), German (DE), Spanish (ES), French (FR)
 Chinese (CH) – Big-5
 Czech (CH), Polish (PL) – Windows-1250
 Russian (RU) – Windows-1251
+Korean (KO) - UTF-16 LE
