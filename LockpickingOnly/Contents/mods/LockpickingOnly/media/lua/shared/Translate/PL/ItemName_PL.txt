@@ -1,0 +1,6 @@
+/** Translation provided by steam user ralphienator **/
+ItemName_PL = {
+ItemName_FMJ.BobbyPin = "Spinka do w³osów",
+ItemName_FMJ.LockPickingMag = "Podrêcznik Œlusarstwa, Nr 1",
+ItemName_FMJ.LockPickingMag2 = "Podrêcznik Œlusarstwa, Nr 2",
+}
