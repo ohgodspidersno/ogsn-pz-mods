@@ -1,3 +1,4 @@
+/** Spanish translation provided by steam user SilentSword 0Hz **/
 ItemName_ES = {
   ItemName_FMJ.BobbyPin           = "Horquilla",
   ItemName_FMJ.LockPickingMag     = "Manual de cerrajería, Vol. 1",

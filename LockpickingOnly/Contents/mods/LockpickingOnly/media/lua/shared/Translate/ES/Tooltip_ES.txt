@@ -1,3 +1,4 @@
+/** Spanish translation provided by steam user SilentSword 0Hz **/
 Tooltip_ES = {
   Tooltip_BobbyPin_FMJ = "Una horquilla y destornillador pueden ser usados para forzar una cerradura, si tienes la habilidad de cerrajeria",
   Tooltip_LockPickingMag_FMJ = "Enseña a forzar cerraduras usando una horquilla y un destornillador",
