@@ -58,6 +58,8 @@ function CookRawHerbOGSN(herb)
   elseif herb:getType() == "Rosehips" then driedType = "Base.RosehipsDried"
   elseif herb:getType() == "GrapeLeaves" then driedType = "Base.GrapeLeavesDried"
   elseif herb:getType() == "Violets" then driedType = "Base.VioletsDried"
+  elseif herb:getType() == "Plantain" then driedType = "Base.PlantainDried"
+  elseif herb:getType() == "WildGarlic" then driedType = "Base.WildGarlicDried"
   end
 
   local driedHerb = InventoryItemFactory.CreateItem(driedType);
@@ -87,7 +89,7 @@ function MakeHerbalBlendOGSN(items, result, player)
           fresh = false
         end
 
-        if type == "CommonMallowDried" or type == "LemonGrassDried" or type == "BlackSageDried" or type == "GinsengDried" or type == "RosehipsDried" or type == "GrapeLeavesDried" or type == "VioletsDried" then
+        if type == "CommonMallowDried" or type == "LemonGrassDried" or type == "BlackSageDried" or type == "GinsengDried" or type == "RosehipsDried" or type == "GrapeLeavesDried" or type == "VioletsDried" or type == "PlantainDried" or type == "WildGarlicDried" then
           print('One of the ingredients is dried')
           fresh = false
         end
