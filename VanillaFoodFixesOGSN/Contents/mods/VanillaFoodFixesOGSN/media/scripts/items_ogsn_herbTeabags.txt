@@ -2,9 +2,9 @@ module Base
 {
   item Teabag_Medicinal
   {
-      FluReduction = 10,
-      ReduceFoodSickness = 20,
-      PainReduction = 14,
+      FluReduction = 11,
+      ReduceFoodSickness = 21,
+      PainReduction = 15,
 
       Weight = 0.1,
       Type = Food,
@@ -15,17 +15,18 @@ module Base
       Icon = teablend_medicinal,
       Tooltip = Tooltip_Teabag_Medicinal,
       FoodType = Tea,
-      /**IsCookable = true,**/
-      /**MinutesToCook = 0, **/
-      /**MinutesToBurn = 30,**/
+      IsCookable = true,
+      MinutesToCook = 120,
+      /**MinutesToBurn = 150,**/
       DaysFresh = 7,
       DaysTotallyRotten = 30,
+      OnCooked = CookRawHerbOGSN
   }
   item Teabag_Energizing
   {
-      PainReduction = 14,
-      EnduranceChange = 3,
-      FatigueChange = -20,
+      PainReduction = 15,
+      EnduranceChange = 4,
+      FatigueChange = -21,
 
       Weight = 0.1,
       Type = Food,
@@ -36,10 +37,45 @@ module Base
       Icon = teablend_energizing,
       Tooltip = Tooltip_Teabag_Energizing,
       FoodType = Tea,
-      /**IsCookable = true,**/
-      /**MinutesToCook = 0, **/
-      /**MinutesToBurn = 30,**/
+      IsCookable = true,
+      MinutesToCook = 120,
+      /**MinutesToBurn = 150,**/
       DaysFresh = 7,
       DaysTotallyRotten = 30,
+      OnCooked = CookRawHerbOGSN
   }
+
+  item Teabag_MedicinalDried
+  {
+      FluReduction = 9,
+      ReduceFoodSickness = 19,
+      PainReduction = 13,
+
+      Weight = 0.1,
+      Type = Food,
+      HungerChange = -5,
+      UnhappyChange = 15,
+      ThirstChange = 15,
+      DisplayName = Medicinal Blend,
+      Icon = teablend_medicinal_dried,
+      Tooltip = Tooltip_Teabag_Medicinal,
+      FoodType = Tea,
+  }
+  item Teabag_EnergizingDried
+  {
+      PainReduction = 13,
+      EnduranceChange = 3,
+      FatigueChange = -19,
+
+      Weight = 0.1,
+      Type = Food,
+      HungerChange = -5,
+      UnhappyChange = 15,
+      ThirstChange = 15,
+      DisplayName = Energizing Blend,
+      Icon = teablend_energizing_dried,
+      Tooltip = Tooltip_Teabag_Energizing,
+      FoodType = Tea,
+  }
+
 }
