@@ -13,6 +13,7 @@ module Base
       ThirstChange = 10,
       DisplayName = Medicinal Blend,
       Icon = teablend_medicinal,
+      Tooltip = Tooltip_Teabag_Medicinal,
       FoodType = Tea,
       /**IsCookable = true,**/
       /**MinutesToCook = 0, **/
@@ -33,6 +34,7 @@ module Base
       ThirstChange = 10,
       DisplayName = Energizing Blend,
       Icon = teablend_energizing,
+      Tooltip = Tooltip_Teabag_Energizing,
       FoodType = Tea,
       /**IsCookable = true,**/
       /**MinutesToCook = 0, **/
