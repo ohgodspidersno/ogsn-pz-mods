@@ -2,7 +2,7 @@
 function MakeCupHerbalTeaOGSN(items, result, player)
   print('starting MakeCupHerbalTeaOGSN')
   local rotten = false
-  local burnt = false
+  -- local burnt = false
   local fresh = true
   local oldest = 0
 
@@ -19,10 +19,10 @@ function MakeCupHerbalTeaOGSN(items, result, player)
           rotten = true
           fresh = false
         end
-        if item:isBurnt() then
-          burnt = true
-          fresh = false
-        end
+        -- if item:isBurnt() then
+        --   burnt = true
+        --   fresh = false
+        -- end
         if item:getAge() > oldest then
           oldest = item:getAge()
         end
@@ -30,18 +30,16 @@ function MakeCupHerbalTeaOGSN(items, result, player)
   end
   -- pass on the burnt, rotten status, and oldest age to the result
   result:setRotten(rotten)
-  result:setBurnt(burnt)
+  -- result:setBurnt(burnt)
   result:setAge(oldest)
   -- if it was burnt or rotten strip it of any positive effects
-  if rotten or burnt then
+  if rotten then -- OLD: if rotten or burnt then
     result:setFluReduction(0)
     result:setReduceFoodSickness(0)
     result:setPainReduction(0)
     result:setEnduranceChange(0)
     result:setFatigueChange(0)
   end
-  result:setName('balaag')
-  result:setTooltip('a thing')
 end
 
 function CookRawHerbOGSN(herb)
@@ -66,8 +64,6 @@ function CookRawHerbOGSN(herb)
 
   local driedHerb = InventoryItemFactory.CreateItem(driedType);
   driedHerb:setCooked(true)
-  driedHerb:setName('balaag')
-  driedHerb:setTooltip('a thing')
   -- oven:getItems():removeItem(herb)
   -- oven:removeItem(herb)
   oven:Remove(herb)
@@ -78,7 +74,7 @@ function MakeHerbalBlendOGSN(items, result, player)
   print('starting MakeHerbalBlendOGSN')
   local fresh = true
   local rotten = false
-  local burnt = false
+  -- local burnt = false
   local oldest = 0
   local days_fresh = result:getOffAge()
   local days_rotten = result:getOffAgeMax()
@@ -102,10 +98,10 @@ function MakeHerbalBlendOGSN(items, result, player)
           rotten = true
           fresh = false
         end
-        if item:isBurnt() then
-          burnt = true
-          fresh = false
-        end
+        -- if item:isBurnt() then
+        --   burnt = true
+        --   fresh = false
+        -- end
         if item:getAge() > oldest and type ~= "Teabag2" then -- not sure if teabag2 has an age but I don't want it to mess it up if it does
           oldest = item:getAge()
           print('age of oldest ingredient:')
@@ -129,16 +125,14 @@ function MakeHerbalBlendOGSN(items, result, player)
   if rotten and days_rotten > oldest then -- if it's rotten but somehow its age is still 'stale'or 'fresh'
       result:setAge(days_rotten) -- 'then just set its age to be a little rotten
   end
-  result:setBurnt(burnt)
+  -- result:setBurnt(burnt)
 
   -- if it was burnt or rotten strip it of any positive effects
-  if rotten or burnt then
+  if rotten then -- OLD: if rotten or burnt then
     result:setFluReduction(0)
     result:setReduceFoodSickness(0)
     result:setPainReduction(0)
     result:setEnduranceChange(0)
     result:setFatigueChange(0)
   end
-  result:setName('balaag')
-  result:setTooltip('a thing')
 end
