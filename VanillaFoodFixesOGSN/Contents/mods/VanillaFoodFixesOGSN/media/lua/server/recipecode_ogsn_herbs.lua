@@ -10,7 +10,8 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     print('in loop. i =')
     print(i)
     local item = items:get(i)
-    local type = item:getStringItemType();
+    local string_type = item:getStringItemType();
+    local type = item:getType()
     if string_type == "Food" then
         if not item:isFresh() then
           fresh = false
@@ -33,7 +34,7 @@ function MakeCupHerbalTeaOGSN(items, result, player)
   -- result:setBurnt(burnt)
   result:setAge(oldest)
   -- if it was burnt or rotten strip it of any positive effects
-  if rotten then -- OLD: if rotten or burnt then
+  if rotten then -- before this was: 'if rotten or burnt then'
     result:setFluReduction(0)
     result:setReduceFoodSickness(0)
     result:setPainReduction(0)
@@ -76,6 +77,7 @@ function MakeHerbalBlendOGSN(items, result, player)
   print('starting MakeHerbalBlendOGSN')
   local fresh = true
   local rotten = false
+  local dried_counter = 0
   -- local burnt = false
   local oldest = 0
   local days_fresh = result:getOffAge()
@@ -93,6 +95,7 @@ function MakeHerbalBlendOGSN(items, result, player)
 
         if type == "CommonMallowDried" or type == "LemonGrassDried" or type == "BlackSageDried" or type == "GinsengDried" or type == "RosehipsDried" or type == "GrapeLeavesDried" or type == "VioletsDried" or type == "PlantainDried" or type == "WildGarlicDried" then
           print('One of the ingredients is dried')
+          dried_counter += 1
           fresh = false
         end
 
@@ -130,11 +133,17 @@ function MakeHerbalBlendOGSN(items, result, player)
   -- result:setBurnt(burnt)
 
   -- if it was burnt or rotten strip it of any positive effects
-  if rotten then -- OLD: if rotten or burnt then
+  if rotten then -- before this was: 'if rotten or burnt then'
     result:setFluReduction(0)
     result:setReduceFoodSickness(0)
     result:setPainReduction(0)
     result:setEnduranceChange(0)
     result:setFatigueChange(0)
+  elseif dried_counter == 3 then
+    if result:getType() == "Teabag_Medicinal" then
+        result:setType("Teabag_MedicinalDried")
+    elseif result:getType() == "Teabag_Energizing" then
+        result:setType("Teabag_EnergizingDried")
+    end
   end
 end
