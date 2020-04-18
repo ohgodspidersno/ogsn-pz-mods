@@ -5,6 +5,7 @@ description=[h1]Update[/h1]
 description=Burglars in older existing save games will now automatically be granted lockpicking knowledge the first time the game is loaded.
 description=Fixed what appeared to be bugs in lock picking/destroying success calculations. This has changed the difficulty balance.
 description=[u][b]Please let me know if it seems too hard or too easy!![/b][/u]
+description=
 description=[h1]Description[/h1]
 description=Adds skills traits and items related to lockpicking.
 description=
