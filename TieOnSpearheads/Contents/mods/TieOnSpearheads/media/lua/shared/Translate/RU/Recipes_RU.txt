@@ -27,5 +27,4 @@ Recipes_RU = {
   recipe_Bind_Machete_to_Spear = "Прикрепить мачете к копью",
   recipe_Bind_Ice_Pick_to_Spear = "Прикрепить стамеску для льда к копью",
   recipe_Bind_Chipped_Stone_to_Spear = "Прикрепить острый камень к копью",
-  DisplayNameSpearChippedStone = "Копьё с острым камнем",
 }

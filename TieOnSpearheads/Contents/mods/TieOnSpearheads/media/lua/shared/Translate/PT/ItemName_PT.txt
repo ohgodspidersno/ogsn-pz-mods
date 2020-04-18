@@ -1,0 +1,3 @@
+ItemName_PT = {
+  ItemName_Base.SpearChippedStone = "Lança com pedra lascada",
+}

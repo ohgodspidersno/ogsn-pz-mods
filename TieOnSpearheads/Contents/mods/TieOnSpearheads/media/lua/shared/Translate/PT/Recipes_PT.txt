@@ -31,7 +31,4 @@ Recipes_PT = {
     recipe_Bind_Chipped_Stone_to_Spear            =    "Amarrar pedra lascada à lança",
 
     recipe_Attach_Chipped_Stone_to_Spear          =    "Atachar pedra lascada à lança",
-
-    DisplayNameSpearChippedStone                  =    "Lança com pedra lascada",
-
 }
