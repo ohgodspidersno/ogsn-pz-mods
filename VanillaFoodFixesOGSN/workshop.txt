@@ -4,4 +4,4 @@ title=[DEPRECATED] Vanilla Food Fixes BETA (v1.0 is now available)
 description=This is all now in version 1.0, see steam page for download link
 description=I will leave this mod on the workshop in order not to break existing save games.
 tags=
-visibility=hidden
+visibility=private
