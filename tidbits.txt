@@ -1,6 +1,10 @@
 A document to contain little bits of helpful information
 ------------------------------
 
+A tea kettle contains as much water as 15 mugs
+
+--------------------
+
 File encodings for each language (allegedly)
 
 English (EN), Chinese (CN), Estonian (EE), Japanese (JP) – UTF-8
