@@ -24,7 +24,7 @@ module Base
         {
             HungerChange = -15,
             Type = Food,
-            DisplayName = Bowl of Roasted Vegetables,
+            DisplayName = Bowl of Oven Roast,
             MinutesToCook = 15,
             Weight = 1,
             IsCookable = TRUE,
