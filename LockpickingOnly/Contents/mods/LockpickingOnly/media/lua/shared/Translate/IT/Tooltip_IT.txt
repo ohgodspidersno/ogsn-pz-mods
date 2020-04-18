@@ -1,0 +1,8 @@
+/** Italian translation provided by steam user Ooijennnnnn **/
+Tooltip_IT = {
+Tooltip_BobbyPin_FMJ = "Una forcina e un cacciavite possono essere usati per scassinare le serrature, se hai le abilità del fabbro",
+Tooltip_LockPickingMag_FMJ = "Impara a scassinare le serrature usando una forcina e un cacciavite, e a creare forcine usando un cavo",
+Tooltip_LockPickingMag2_FMJ = "Impara a rompere le serrature usando un piede di porco",
+Tooltip_Screwdriver_FMJ = "Un cacciavite e una forcina possono essere usati per scassinare le serrature, se hai le abilità del fabbro",
+Tooltip_Crowbar_FMJ = "Può essere usato per rompere le serrature, se hai le abilità del fabbro",
+}
