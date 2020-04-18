@@ -60,6 +60,8 @@ function CookRawHerbOGSN(herb)
   elseif herb:getType() == "Violets" then driedType = "Base.VioletsDried"
   elseif herb:getType() == "Plantain" then driedType = "Base.PlantainDried"
   elseif herb:getType() == "WildGarlic" then driedType = "Base.WildGarlicDried"
+  elseif herb:getType() == "Teabag_Medicinal" then driedType = "Base.Teabag_MedicinalDried"
+  elseif herb:getType() == "Teabag_Energizing" then driedType = "Base.Teabag_EnergizingDried"
   end
 
   local driedHerb = InventoryItemFactory.CreateItem(driedType);
