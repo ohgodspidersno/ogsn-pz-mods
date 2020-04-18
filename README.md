@@ -7,9 +7,7 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 
 ##TODO List
 ###Vanilla Food Fixes
-1. Add a way to preserve herbs by drying them
-1. Ensure somehow that rotten stuff can't be preserved. Might require an oncreate() lua function.
-1. Add rotten/preserved/burned graphics
+1. Mark public once it seems safe to
 
 ###Knox Country World Map
 1. Might be missing some turn-offs on highway north of Rosewood.
