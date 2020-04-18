@@ -5,20 +5,21 @@ local originalISReadABookUpdate = ISReadABook.update
 
 
 function ISReadABook:update(...)
-	if		SkillBook[self.item:getSkillTrained()]
-		and self.item:getLvlSkillTrained() > (self.character:getPerkLevel(SkillBook[self.item:getSkillTrained()].perk) + 1)
-		and self.item:getNumberOfPages() > 0 then
+	if SkillBook[self.item:getSkillTrained()]
+	and self.item:getLvlSkillTrained() > (self.character:getPerkLevel(SkillBook[self.item:getSkillTrained()].perk) + 1)
+	and self.item:getNumberOfPages() > 0 then
 		local characterMetaTable = getmetatable(self.character)
 		local originalSetAlreadyReadPages = characterMetaTable.__index.setAlreadyReadPages
 		characterMetaTable.__index.setAlreadyReadPages = function(character, fullType, value, ...)
-				if value == 0 then
-					self.pageTimer = 1
-				if		self.pageTimer == 0
-					and value == 0 then
-					value = 1
-				end
-				return originalSetAlreadyReadPages(character, fullType, value, ...)
+			if value == 0 then
+				self.pageTimer = 1
 			end
+			if self.pageTimer == 0
+				and value == 0 then
+				value = 1
+			end
+			return originalSetAlreadyReadPages(character, fullType, value, ...)
+		end
 		local result = originalISReadABookUpdate(self, ...)
 		characterMetaTable.__index.setAlreadyReadPages = originalSetAlreadyReadPages
 		return result
