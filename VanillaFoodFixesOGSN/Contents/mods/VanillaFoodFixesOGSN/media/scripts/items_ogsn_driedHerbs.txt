@@ -118,10 +118,10 @@ item RosehipsDried
     Lipids = 0,
     Calories = 81,
 
-    IsCookable = True,
-    CantBeFrozen = True,
-    MinutesToCook = 0,
-    MinutesToBurn = 30,
+    /**IsCookable = True,**/
+    /**CantBeFrozen = True,**/
+    /**MinutesToCook = 0,**/
+    /**MinutesToBurn = 30,**/
 }
 
 item GrapeLeavesDried
