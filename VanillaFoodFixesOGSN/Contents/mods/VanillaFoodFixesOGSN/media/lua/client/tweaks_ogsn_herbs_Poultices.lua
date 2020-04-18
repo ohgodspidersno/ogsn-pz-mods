@@ -16,6 +16,7 @@ TweakItem("Base.Plantain","CantBeFrozen","False");
 TweakItem("Base.Plantain","MinutesToCook","120");
 TweakItem("Base.Plantain","MinutesToBurn","150");
 TweakItem("Base.Plantain","OnCooked","CookRawHerbOGSN");
+TweakItem("Base.Plantain","IsCookable","True");
 -- WildGarlic
 TweakItem("Base.WildGarlic","HungerChange","-1");
 TweakItem("Base.WildGarlic","Weight","0.1");
@@ -34,3 +35,4 @@ TweakItem("Base.WildGarlic","CantBeFrozen","False");
 TweakItem("Base.WildGarlic","MinutesToCook","120");
 TweakItem("Base.WildGarlic","MinutesToBurn","150");
 TweakItem("Base.WildGarlic","OnCooked","CookRawHerbOGSN");
+TweakItem("Base.WildGarlic","IsCookable","True");
