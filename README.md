@@ -25,15 +25,23 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 ##Ideas for New Mods
 Might pursue these...
 
+###Even Better Literature Sorting
+1. Same as Book Collection for the most part
+1. Add a single space in front of all magazines so they sort second
+1. Remove 'the' from all titles.
+1. Name maps to be "Map of ____" instead of "___ Map" so that they group together.
+1. Be sure to add new magazines from other mods
+1. Will need to load last in order to fix stuff changed by other mods
+
 ###Mental State Affects Reading Speed
 1. Make reading speed be affected by panic, exhaustion, fatigue, hunger, illness, etc.
-
-###Pass Out if Too Tired
-1. Once your exhaustion hits absolute zero, and you are not panicking, there is a small chance every tick that you might fall asleep against your will.
 
 ###Walk While Reading
 1. Base it on bookworm trait
 1. Make it possible without a trait, but make it severely limit your sight and hearing radius, and you don't read at full speed either.
+
+###Pass Out if Too Tired
+1. Once your exhaustion hits absolute zero, and you are not panicking, there is a small chance every tick that you might fall asleep against your will.
 
 ###More Map Symbols
 1. Car
@@ -56,14 +64,6 @@ Might pursue these...
 1. Sport batteries spawning inside standard cars
 1. Maps should be flammable
 1. Once bags appear when held on off-hand, make duffel bags better, but unequippable on back
-
-###Even Better Literature Sorting
-1. Same as Book Collection for the most part
-1. Add a single space in front of all magazines so they sort second
-1. Remove 'the' from all titles.
-1. Name maps to be "Map of ____" instead of "___ Map" so that they group together.
-1. Be sure to add new magazines from other mods
-1. Will need to load last in order to fix stuff changed by other mods
 
 ###That Looks Heavy Better Take Off Our Clothes, Said No One
 Increases the weight reduction of clothing that you're wearing. Wearing shoes and clothing doesn't weigh you down in real life, if anything it increases your carrying capacity.
