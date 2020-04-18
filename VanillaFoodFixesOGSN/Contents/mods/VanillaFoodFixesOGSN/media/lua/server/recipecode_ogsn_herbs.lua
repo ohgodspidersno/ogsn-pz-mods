@@ -45,7 +45,7 @@ end
 function CookRawHerbOGSN(herb)
   -- if it was rotten, just let it keep cooking like a normal piece of rotten food
   if herb:isRotten() then
-    herb:setCooked(true)
+    -- herb:setCooked(true)
   return end
 
   local driedType
@@ -65,7 +65,7 @@ function CookRawHerbOGSN(herb)
   end
 
   local driedHerb = InventoryItemFactory.CreateItem(driedType);
-  driedHerb:setCooked(true)
+  -- driedHerb:setCooked(true)
   -- oven:getItems():removeItem(herb)
   -- oven:removeItem(herb)
   oven:Remove(herb)
@@ -113,7 +113,7 @@ function MakeHerbalBlendOGSN(items, result, player)
   end
   -- pass on the fresh, burnt, rotten status, and oldest age to the result
   -- freshness is only determined recursively by item's age
-  result:setCooked(true)
+  -- result:setCooked(true)
   if not fresh then
       if oldest > days_fresh then -- if one of the ingredients was very old, then we make it that old
         result:setAge(oldest)
