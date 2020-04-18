@@ -1,4 +1,5 @@
-name=Vanilla Food Fixes - OPTIONAL - Foraged herbs never rot
+name=Vanilla Food Fixes - EASY MODE - Foraged herbs never rot
 id=VFFogsn_herbsNoRot
 description=This optional patch makes it so foraged herbs never go bad, which is how it is in the vanilla game.
 require=VFFogsn
+poster=poster.png
