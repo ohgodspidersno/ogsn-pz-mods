@@ -75,3 +75,29 @@ wrong image conversion:
 https://steamuserimages-a.akamaihd.net/ugc/1018318942652862449/8E3D15B5B3DB64385F18E4B99886F553D4279FB0/
 should be
 https://steamuserimages-a.akamaihd.net/ugc/1018319285125097948/0B85E4314C42984E25B17D08A80EFA79874325F7/
+
+-----
+
+aborted attempt to detect user's language from client lua:
+
+require "ISUI/ISPanelJoypad"
+require "ISUI/ISButton"
+require "ISUI/ISControllerTestPanel"
+require "ISUI/ISVolumeControl"
+
+require "defines"
+
+MainOptions = ISPanelJoypad:derive("MainOptions");
+
+MainOptions.keys = {};
+MainOptions.keyText = {};
+MainOptions.setKeybindDialog = nil;
+MainOptions.keyBindingLength = 0;
+
+local GameOption = ISBaseObject:derive("GameOption")
+local GameOptions = ISBaseObject:derive("GameOptions")
+-- -- -- -- --
+-- local resolution = self.gameOptions:get('resolution')
+local language = GameOptions:get('language')
+print("language:")
+print(language)
