@@ -1,9 +1,9 @@
 require("ItemTweaker_Copy_ogsn");
 
 -- VANILLA ITEMS
-TweakItem("Base.Sugar","EvolvedRecipe","HotDrink:1;CommonMallowEvolved:1;LemonGrassEvolved:1;BlackSageEvolved:1;GinsengEvolved:1;EnergizingEvolved:1;MedicinalEvolved:1");
-TweakItem("Base.Milk","EvolvedRecipe","HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2");
-TweakItem("Base.Honey","EvolvedRecipe","HotDrink:5;CommonMallowEvolved:5;LemonGrassEvolved:5;BlackSageEvolved:5;GinsengEvolved:5;EnergizingEvolved:5;MedicinalEvolved:5");
+TweakItem("Base.Sugar","EvolvedRecipe","HotDrink:1;CommonMallowTeaEvolved:1;LemonGrassTeaEvolved:1;BlackSageTeaEvolved:1;GinsengTeaEvolved:1;EnergizingTeaEvolved:1;MedicinalTeaEvolved:1");
+TweakItem("Base.Milk","EvolvedRecipe","HotDrink:2;CommonMallowTeaEvolved:2;LemonGrassTeaEvolved:2;BlackSageTeaEvolved:2;GinsengTeaEvolved:2;EnergizingTeaEvolved:2;MedicinalTeaEvolved:2");
+TweakItem("Base.Honey","EvolvedRecipe","HotDrink:5;CommonMallowTeaEvolved:5;LemonGrassTeaEvolved:5;BlackSageTeaEvolved:5;GinsengTeaEvolved:5;EnergizingTeaEvolved:5;MedicinalTeaEvolved:5");
 
 -- MEDICINAL HERBS
 TweakItem("Base.CommonMallow","HungerChange", "-2");
@@ -51,7 +51,7 @@ TweakItem("Base.Ginseng","OnCooked","CookRawHerbOGSN");
 
 -- FOOD HERBS
 TweakItem("Base.Rosehips","FoodType","Herbal");
-TweakItem("Base.Rosehips","EvolvedRecipe","Soup:3;Stew:3;Pie:3;Cake:3;Stir fry:3;Stir fry Griddle Pan:3;Roasted Vegetables:3;Burger:3;Salad:3;PastaPan:3;RicePan:3;PastaPot:3;RicePot:3;HotDrink:3;CommonMallowEvolved:3;LemonGrassEvolved:3;BlackSageEvolved:3;GinsengEvolved:3;EnergizingEvolved:3;MedicinalEvolved:3");
+TweakItem("Base.Rosehips","EvolvedRecipe","Soup:3;Stew:3;Pie:3;Cake:3;Stir fry:3;Stir fry Griddle Pan:3;Roasted Vegetables:3;Burger:3;Salad:3;PastaPan:3;RicePan:3;PastaPot:3;RicePot:3;HotDrink:3;CommonMallowTeaEvolved:3;LemonGrassTeaEvolved:3;BlackSageTeaEvolved:3;GinsengTeaEvolved:3;EnergizingTeaEvolved:3;MedicinalTeaEvolved:3");
 TweakItem("Base.Rosehips","IsCookable","True");
 TweakItem("Base.Rosehips","MinutesToCook","120");
 TweakItem("Base.Rosehips","MinutesToBurn","150");
@@ -60,7 +60,7 @@ TweakItem("Base.Rosehips","OnCooked","CookRawHerbOGSN");
 
 
 TweakItem("Base.GrapeLeaves","FoodType","Herbal")
-TweakItem("Base.GrapeLeaves","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2")
+TweakItem("Base.GrapeLeaves","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowTeaEvolved:2;LemonGrassTeaEvolved:2;BlackSageTeaEvolved:2;GinsengTeaEvolved:2;EnergizingTeaEvolved:2;MedicinalTeaEvolved:2")
 TweakItem("Base.GrapeLeaves","IsCookable","True");
 TweakItem("Base.GrapeLeaves","MinutesToCook","120");
 TweakItem("Base.GrapeLeaves","MinutesToBurn","150");
@@ -69,7 +69,7 @@ TweakItem("Base.GrapeLeaves","OnCooked","CookRawHerbOGSN");
 
 
 TweakItem("Base.Violets","FoodType","Herbal")
-TweakItem("Base.Violets","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;FruitSalad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowEvolved:2;LemonGrassEvolved:2;BlackSageEvolved:2;GinsengEvolved:2;EnergizingEvolved:2;MedicinalEvolved:2")
+TweakItem("Base.Violets","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;FruitSalad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowTeaEvolved:2;LemonGrassTeaEvolved:2;BlackSageTeaEvolved:2;GinsengTeaEvolved:2;EnergizingTeaEvolved:2;MedicinalTeaEvolved:2")
 TweakItem("Base.Violets","IsCookable","True");
 TweakItem("Base.Violets","MinutesToCook","120");
 TweakItem("Base.Violets","MinutesToBurn","150");

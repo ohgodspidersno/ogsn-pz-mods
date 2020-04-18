@@ -1,6 +1,6 @@
 module Base {
 
-    evolvedrecipe CommonMallowEvolved
+    evolvedrecipe CommonMallowTeaEvolved
     {
         BaseItem:Tea_CommonMallow,
         MaxItems:3,
@@ -10,7 +10,7 @@ module Base {
         Name:Spruce Up Energizing Tea,
     }
 
-    evolvedrecipe LemonGrassEvolved
+    evolvedrecipe LemonGrassTeaEvolved
     {
        BaseItem:Tea_LemonGrass,
        MaxItems:3,
@@ -20,7 +20,7 @@ module Base {
        Name:Spruce Up Energizing Tea,
     }
 
-    evolvedrecipe BlackSageEvolved
+    evolvedrecipe BlackSageTeaEvolved
     {
        BaseItem:Tea_BlackSage,
        MaxItems:3,
@@ -30,7 +30,7 @@ module Base {
        Name:Spruce Up Energizing Tea,
     }
 
-    evolvedrecipe GinsengEvolved
+    evolvedrecipe GinsengTeaEvolved
     {
        BaseItem:Tea_Ginseng,
        MaxItems:3,
@@ -40,7 +40,7 @@ module Base {
        Name:Spruce Up Energizing Tea,
     }
 
-    evolvedrecipe MedicinalEvolved
+    evolvedrecipe MedicinalTeaEvolved
     {
        BaseItem:Tea_Medicinal,
        MaxItems:3,
@@ -50,7 +50,7 @@ module Base {
        Name:Spruce Up Energizing Tea,
     }
 
-    evolvedrecipe EnergizingEvolved
+    evolvedrecipe EnergizingTeaEvolved
     {
        BaseItem:Tea_Energizing,
        MaxItems:3,
