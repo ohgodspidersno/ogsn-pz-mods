@@ -13,7 +13,6 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 
 ###Knox Country World Map
 1. Might be missing some turn-offs on highway north of Rosewood.
-1. Create OTR version of map (code is already complete)
 1. Make secret version of map only appear in some places, but at a higher rate
     1. Small chance in police cars
     1. Slightly higher chance in forest ranger cars
