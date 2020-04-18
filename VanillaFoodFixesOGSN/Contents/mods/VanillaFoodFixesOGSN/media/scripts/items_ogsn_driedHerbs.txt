@@ -19,10 +19,10 @@ item CommonMallowDried
     Icon = CommonMallowDried,
     Tooltip = Tooltip_Mallow,
 
-    IsCookable = True,
-    CantBeFrozen = True,
-    MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
-    MinutesToBurn = 30,
+    /**IsCookable = True,**/
+    /**CantBeFrozen = True,**/
+    /**MinutesToCook = 0,**/
+    /**MinutesToBurn = 30,**/
 }
 
 item LemonGrassDried
@@ -45,10 +45,10 @@ item LemonGrassDried
     Lipids = 0,
     Calories = 0.1,
 
-    IsCookable = True,
-    CantBeFrozen = True,
-    MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
-    MinutesToBurn = 30,
+    /**IsCookable = True,**/
+    /**CantBeFrozen = True,**/
+    /**MinutesToCook = 0,**/
+    /**MinutesToBurn = 30,**/
 }
 
 item BlackSageDried
@@ -71,10 +71,10 @@ item BlackSageDried
     Lipids = 0,
     Calories = 0.1,
 
-    IsCookable = True,
-    CantBeFrozen = True,
-    MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
-    MinutesToBurn = 30,
+    /**IsCookable = True,**/
+    /**CantBeFrozen = True,**/
+    /**MinutesToCook = 0,**/
+    /**MinutesToBurn = 30,**/
 }
 
 item GinsengDried
@@ -97,10 +97,10 @@ item GinsengDried
     Lipids = 0,
     Calories = 0.1,
 
-    IsCookable = True,
-    CantBeFrozen = True,
-    MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
-    MinutesToBurn = 30,
+    /**IsCookable = True,**/
+    /**CantBeFrozen = True,**/
+    /**MinutesToCook = 0,**/
+    /**MinutesToBurn = 30,**/
 }
 
 item RosehipsDried
@@ -120,7 +120,7 @@ item RosehipsDried
 
     IsCookable = True,
     CantBeFrozen = True,
-    MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
+    MinutesToCook = 0,
     MinutesToBurn = 30,
 }
 
@@ -138,10 +138,10 @@ item GrapeLeavesDried
     Lipids = 2,
     Calories = 73,
 
-    IsCookable = True,
-    CantBeFrozen = True,
-    MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
-    MinutesToBurn = 30,
+    /**IsCookable = True,**/
+    /**CantBeFrozen = True,**/
+    /**MinutesToCook = 0,**/
+    /**MinutesToBurn = 30,**/
 }
 
 item VioletsDried
@@ -159,10 +159,10 @@ item VioletsDried
     Lipids = 0,
     Calories = 27,
 
-    IsCookable = True,
-    CantBeFrozen = True,
-    MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
-    MinutesToBurn = 30,
+    /**IsCookable = True,**/
+    /**CantBeFrozen = True,**/
+    /**MinutesToCook = 0,**/
+    /**MinutesToBurn = 30,**/
 }
 
 item PlantainDried
@@ -180,10 +180,10 @@ item PlantainDried
     FoodType = Herbal,
     EvolvedRecipe = Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Burger:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowTeaEvolved:2;LemonGrassTeaEvolved:2;BlackSageTeaEvolved:2;GinsengTeaEvolved:2,
 
-    IsCookable = True,
-    CantBeFrozen = True,
-    MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
-    MinutesToBurn = 30,
+    /**IsCookable = True,**/
+    /**CantBeFrozen = True,**/
+    /**MinutesToCook = 0,**/
+    /**MinutesToBurn = 30,**/
 }
 
 item WildGarlicDried
@@ -202,9 +202,9 @@ item WildGarlicDried
     FoodType = Herbal,
     EvolvedRecipe = Soup:1;Stew:1;Pie:1;Stir fry:1;Stir fry Griddle Pan:1;Roasted Vegetables:1;Burger:1;Salad:1;PastaPan:1;RicePan:1;PastaPot:1;RicePot:1;HotDrink:1;CommonMallowTeaEvolved:1;LemonGrassTeaEvolved:1;BlackSageTeaEvolved:1;GinsengTeaEvolved:1,
 
-    IsCookable = True,
-    CantBeFrozen = True,
-    MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
-    MinutesToBurn = 30,
+    /**IsCookable = True,**/
+    /**CantBeFrozen = True,**/
+    /**MinutesToCook = 0,**/
+    /**MinutesToBurn = 30,**/
 }
 }

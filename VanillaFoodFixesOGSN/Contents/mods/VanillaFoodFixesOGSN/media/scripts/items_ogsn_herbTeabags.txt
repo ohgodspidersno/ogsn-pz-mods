@@ -14,9 +14,9 @@ module Base
       DisplayName = Medicinal Blend,
       Icon = teablend_medicinal,
       FoodType = Tea,
-      IsCookable = true,
-      MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
-      MinutesToBurn = 30,
+      /**IsCookable = true,**/
+      /**MinutesToCook = 0, **/
+      /**MinutesToBurn = 30,**/
       DaysFresh = 7,
       DaysTotallyRotten = 30,
   }
@@ -34,9 +34,9 @@ module Base
       DisplayName = Energizing Blend,
       Icon = teablend_energizing,
       FoodType = Tea,
-      IsCookable = true,
-      MinutesToCook = 0, /** Won't matter anyway, it will be generated "cooked" **/
-      MinutesToBurn = 30,
+      /**IsCookable = true,**/
+      /**MinutesToCook = 0, **/
+      /**MinutesToBurn = 30,**/
       DaysFresh = 7,
       DaysTotallyRotten = 30,
   }
