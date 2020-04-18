@@ -1,0 +1,14 @@
+module Base {
+
+model SpearChippedStone
+{
+  mesh = Weapons/2Handed/SpearChippedStone,
+
+  attachment world
+  {
+    offset = 0.0000 0.3000 0.0000,
+    rotate = 0.0000 0.0000 0.0000,
+  }
+}
+
+}
