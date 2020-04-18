@@ -50,7 +50,7 @@ module Base {
   recipe Brew Cup of Medicinal Blended Tea
   {
       destroy WaterMug,
-      destroy Teabag_Medicinal,
+      destroy Teabag_Medicinal/Teabag_MedicinalDried,
 
       Time:30.0,
       OnGiveXP:Give1CookingXP,
@@ -62,7 +62,7 @@ module Base {
   recipe Brew Cup of Energizing Blended Tea
   {
       destroy WaterMug,
-      destroy Teabag_Energizing,
+      destroy Teabag_Energizing/Teabag_EnergizingDried,
 
       Time:30.0,
       OnGiveXP:Give1CookingXP,
