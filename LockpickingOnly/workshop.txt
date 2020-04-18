@@ -11,26 +11,26 @@ description=Adds skills traits and items related to lockpicking.
 description=
 description=[h1]Instructions[/h1]
 description=[h2]Learn how to pick and destroy locks from magazines. Or choose the locksmith trait or burglar profession.[/h2]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018318942652748155/F7BD2DFE5E2B44DEAFD9C5CD33F4A2F9D2854ACF/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652748155/F7BD2DFE5E2B44DEAFD9C5CD33F4A2F9D2854ACF/[/img]
 description=
 description=[h2]Find Hairpins or Craft Your Own From Wire[/h2]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018319581183321083/6CD4CBBF43B7AFEA055170D33187DEAD7BD59226/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018319581183321083/6CD4CBBF43B7AFEA055170D33187DEAD7BD59226/[/img]
 description=
 description=[h2]Pick Locks with Hairpins. Failure Jams the Lock.[/h2]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018318942652890614/9205171283437810AF86927ABB9DFFD8226680B3/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942652890614/9205171283437810AF86927ABB9DFFD8226680B3/[/img]
 description=
 description=[h2]Destroy Locks with Crowbar[/h2]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018318942656756793/AEFE0879A8BD7509E036618285204A48A89B9124/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018318942656756793/AEFE0879A8BD7509E036618285204A48A89B9124/[/img]
 description=
 description=[h2]Traits and Panic Affect Success, Time, and Noise[/h2]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018319285125534173/8823593961342108341FFEF506508EB4CCFD019F/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018319285125534572/58972FA9858DFCCF7329325676B91E08434D1347/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018319285125534173/8823593961342108341FFEF506508EB4CCFD019F/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018319285125534572/58972FA9858DFCCF7329325676B91E08434D1347/[/img]
 description=
 description=[h1]If you enjoy this mod please like and favorite[/h1]
 description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
 description=
-description=[img]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
-description=[img]https://i.imgur.com/jEczML7.png[/img]
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
 tags=
 visibility=public
