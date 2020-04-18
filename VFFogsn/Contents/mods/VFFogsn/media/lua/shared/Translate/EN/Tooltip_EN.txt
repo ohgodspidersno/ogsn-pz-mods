@@ -11,4 +11,5 @@ Tooltip_EN = {
   Tooltip_Tea_Energizing = "Drink to fight fatigue, drowsiness, and pain.",
   Tooltip_Teabag_Medicinal = "Brew as tea to relieve cold, flu,and food poisoning symptoms.<br>Also provides pain relief.",
   Tooltip_Teabag_Energizing = "Brew as tea to fight fatigue, drowsiness, and pain.",
+  Tooltip_Comfrey = "Inedible. Aids recovery from broken bones when applied as a poultice.",
 }
