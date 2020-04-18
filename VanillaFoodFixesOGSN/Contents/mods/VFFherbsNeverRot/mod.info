@@ -1,5 +1,6 @@
-name=[DEPRECATED] Vanilla Food Fixes Beta no-rot patch (v 1.0 now available)
-id=VFFogsn_herbsNoRot
+name=[DEPRECATED] - VFF Beta No-Rot Patch - Please download "Vanilla Food Fixes 1.0"
+id=VFFherbsNeverRot
 description=Please upgrade to Vanilla Food Fixes version 1.0
 description=See steam page for link
 require=VFFogsn
+poster=poster.png
