@@ -17,7 +17,7 @@ item CommonMallowDried
     Type = Food,
     DisplayName = Dried Common Mallow,
     Icon = CommonMallowDried,
-    Tooltip = Tooltip_Mallow,
+    Tooltip = Tooltip_CommonMallowDried
 
     /**IsCookable = True,**/
     /**CantBeFrozen = True,**/
@@ -39,7 +39,7 @@ item LemonGrassDried
     Type = Food,
     DisplayName = Dried Lemon Grass,
     Icon = LemonGrassDried,
-    Tooltip = Tooltip_LemonGrass,
+    Tooltip = Tooltip_LemonGrassDried
     Carbohydrates = 0,
     Proteins = 0,
     Lipids = 0,
@@ -65,7 +65,7 @@ item BlackSageDried
     Type = Food,
     DisplayName = Dried Black Sage,
     Icon = BlackSageDried,
-    Tooltip = Tooltip_BlackSage,
+    Tooltip = Tooltip_BlackSageDried
     Carbohydrates = 0,
     Proteins = 0,
     Lipids = 0,
@@ -91,7 +91,7 @@ item GinsengDried
     Type = Food,
     DisplayName = Dried Ginseng,
     Icon = GinsengDried,
-    Tooltip = Tooltip_Ginseng,
+    Tooltip = Tooltip_GinsengDried
     Carbohydrates = 0,
     Proteins = 0,
     Lipids = 0,
@@ -172,7 +172,6 @@ item PlantainDried
     Type = Food,
     DisplayName = Dried Plantain,
     Icon = PlantainPlantagoDried,
-    Tooltip = Tooltip_Plantain,
     Carbohydrates = 6,
     Proteins = 2,
     Lipids = 1,
@@ -193,7 +192,6 @@ item WildGarlicDried
     Type = Food,
     DisplayName = Dried Wild Garlic,
     Icon = WildGarlicDried,
-    Tooltip = Tooltip_Garlic,
     Proteins = 1,
     Carbohydrates = 2,
     Lipids = 0,
