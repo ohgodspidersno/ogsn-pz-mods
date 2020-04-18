@@ -95,7 +95,7 @@ function MakeHerbalBlendOGSN(items, result, player)
 
         if type == "CommonMallowDried" or type == "LemonGrassDried" or type == "BlackSageDried" or type == "GinsengDried" or type == "RosehipsDried" or type == "GrapeLeavesDried" or type == "VioletsDried" or type == "PlantainDried" or type == "WildGarlicDried" then
           print('One of the ingredients is dried')
-          dried_counter += 1
+          dried_counter = dried_counter + 1
           fresh = false
         end
 
