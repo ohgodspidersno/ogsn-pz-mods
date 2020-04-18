@@ -1,6 +1,11 @@
 version=1
 id=2042761166
 title=Knox Country Map - Lootable Map Item of Whole Game World
+description=[h1]Update[/h1]
+description=I've fixed several inaccuracies, added missing gas stations, and differentiated major and minor roads.
+description=I've also made it so that the city over the river will only appear on the map if you have the 'Over the River' mod enabled.
+description=Also some aesthetic improvements and tweaks.
+description=
 description=[h1]There's No Shame In Asking for Directions[/h1]
 description=But given that it's the apocalypse it'd probably be safer to check a map
 description=
@@ -9,11 +14,6 @@ description=[h1]If you enjoy this mod please like and favorite[/h1]
 description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
 description=
 description=[h1]FAQs[/h1]
-description=[b][u]Q: What is the area across the river?[/u][/b]
-description=
-description=A: That is a non-vanilla, but popular and semi-canonical map called [url=https://steamcommunity.com/sharedfiles/filedetails/?id=926737806]Over the River[/url]. The in-map game items have the bridge crossed out in red sharpie. I might at some point make different versions of the map that load differently depending on which optional maps you have enabled.
-description=
-description=
 description=[b][u]Q: You misspelled 'County"[/u][/b]
 description=
 description=A: It's actually called Knox Country in the game! I thought it was County, too, until the good folks on the Discord channel corrected me. There is a real life Knox County in Kentucky but it's in a  totally different part of the state.
