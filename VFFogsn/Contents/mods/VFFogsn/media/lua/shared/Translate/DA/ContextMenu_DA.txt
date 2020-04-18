@@ -1,0 +1,4 @@
+ContextMenu_DA = {
+  ContextMenu_FoodType_Herbal = "Urt",
+  ContextMenu_EvolvedRecipe_OatmealEvolved = "Havregrød",
+}

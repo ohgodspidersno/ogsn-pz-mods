@@ -1,0 +1,4 @@
+ContextMenu_RU = {
+  ContextMenu_FoodType_Herbal = "травяной",
+  ContextMenu_EvolvedRecipe_OatmealEvolved = "овсяная каша",
+}

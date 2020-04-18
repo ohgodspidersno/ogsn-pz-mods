@@ -1,0 +1,14 @@
+Tooltip_EN = {
+  Tooltip_CommonMallowDried = "Eat to relieve cold and flu symptoms. Less potent than it was fresh.<br>Brew as tea to restore potency.",
+  Tooltip_LemonGrassDried = "Eat to soothe bouts of food poisoning. Less potent than it was fresh.<br>Brew as tea to restore potency.",
+  Tooltip_BlackSageDried = "Provides mild pain relief. Less potent than it was fresh.<br>Brew as tea to restore potency.",
+  Tooltip_GinsengDried = "Eat to restore endurance. Less potent than it was fresh.<br>Brew as tea to restore potency.",
+  Tooltip_Tea_CommonMallow = "Drink to relieve cold and flu symptoms",
+  Tooltip_Tea_LemonGrass = "Drink to soothe bouts of food poisoning",
+  Tooltip_Tea_BlackSage = "Provides mild pain relief",
+  Tooltip_Tea_Ginseng = "Drink to restore endurance",
+  Tooltip_Tea_Medicinal = "Drink to relieve cold, flu,and food poisoning symptoms.<br>Also provides pain relief.",
+  Tooltip_Tea_Energizing = "Drink to fight fatigue, drowsiness, and pain.",
+  Tooltip_Teabag_Medicinal = "Brew as tea to relieve cold, flu,and food poisoning symptoms.<br>Also provides pain relief.",
+  Tooltip_Teabag_Energizing = "Brew as tea to fight fatigue, drowsiness, and pain.",
+}

@@ -1,0 +1,4 @@
+ContextMenu_PTBR = {
+  ContextMenu_FoodType_Herbal = "Ervas",
+  ContextMenu_EvolvedRecipe_OatmealEvolved = "Aveia",
+}

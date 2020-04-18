@@ -1,0 +1,4 @@
+ContextMenu_TR = {
+  ContextMenu_FoodType_Herbal = "Bitkisel",
+  ContextMenu_EvolvedRecipe_OatmealEvolved = "Yulaf Ezmesi",
+}

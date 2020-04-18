@@ -1,0 +1,62 @@
+module Base {
+
+    evolvedrecipe CommonMallowTeaEvolved
+    {
+        BaseItem:Tea_CommonMallow,
+        MaxItems:3,
+        ResultItem:Tea_CommonMallow,
+        Cookable:true,
+        AddIngredientIfCooked:true,
+        Name:Spruce Up Energizing Tea,
+    }
+
+    evolvedrecipe LemonGrassTeaEvolved
+    {
+       BaseItem:Tea_LemonGrass,
+       MaxItems:3,
+       ResultItem:Tea_LemonGrass,
+       Cookable:true,
+       AddIngredientIfCooked:true,
+       Name:Spruce Up Energizing Tea,
+    }
+
+    evolvedrecipe BlackSageTeaEvolved
+    {
+       BaseItem:Tea_BlackSage,
+       MaxItems:3,
+       ResultItem:Tea_BlackSage,
+       Cookable:true,
+       AddIngredientIfCooked:true,
+       Name:Spruce Up Energizing Tea,
+    }
+
+    evolvedrecipe GinsengTeaEvolved
+    {
+       BaseItem:Tea_Ginseng,
+       MaxItems:3,
+       ResultItem:Tea_Ginseng,
+       Cookable:true,
+       AddIngredientIfCooked:true,
+       Name:Spruce Up Energizing Tea,
+    }
+
+    evolvedrecipe MedicinalTeaEvolved
+    {
+       BaseItem:Tea_Medicinal,
+       MaxItems:3,
+       ResultItem:Tea_Medicinal,
+       Cookable:true,
+       AddIngredientIfCooked:true,
+       Name:Spruce Up Energizing Tea,
+    }
+
+    evolvedrecipe EnergizingTeaEvolved
+    {
+       BaseItem:Tea_Energizing,
+       MaxItems:3,
+       ResultItem:Tea_Energizing,
+       Cookable:true,
+       AddIngredientIfCooked:true,
+       Name:Spruce Up Energizing Tea,
+    }
+}
