@@ -157,6 +157,10 @@ ISHealthPanel.onCheat = function(bodyPart, action, player, otherPlayer)
     if action == "blood" then
         player:addBlood(BloodBodyPartType.FromIndex(BodyPartType.ToIndex(bodyPart:getType())), false, true, false);
     end
+    if action == "removeblood" then
+        player:getVisual():setBlood(BloodBodyPartType.FromIndex(BodyPartType.ToIndex(bodyPart:getType())), 0);
+        player:resetModelNextFrame();
+    end
     if action == "bite" then
         if bodyPart:bitten() then
             bodyPart:SetBitten(false);
@@ -1569,6 +1573,7 @@ function ISHealthPanel:doBodyPartContextMenu(bodyPart, x, y)
             local subMenu = context:getNew(context);
             context:addSubMenu(option, subMenu);
             subMenu:addOption("Add Blood", bodyPart, ISHealthPanel.onCheat, "blood", self.character, self.otherPlayer);
+            subMenu:addOption("Remove Blood", bodyPart, ISHealthPanel.onCheat, "removeblood", self.character, self.otherPlayer);
             subMenu:addOption("Add Hole", bodyPart, ISHealthPanel.onCheat, "hole", self.character, self.otherPlayer);
             subMenu:addOption("Add Patch", bodyPart, ISHealthPanel.onCheat, "patch", self.character, self.otherPlayer);
 --            subMenu:addOption("Add Hole Back", bodyPart, ISHealthPanel.onCheat, "holeback", self.character, self.otherPlayer);
