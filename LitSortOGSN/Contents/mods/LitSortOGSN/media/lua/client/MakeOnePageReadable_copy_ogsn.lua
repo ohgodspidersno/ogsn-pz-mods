@@ -1,9 +1,8 @@
 -- Based on the fantastic "Maek One Page Readable" mod by RH4DB4
 -- https://steamcommunity.com/sharedfiles/filedetails/?id=1928908192&searchtext=read+one+page
 
+-- TimedActions\ISReadABook.lua
 local originalISReadABookUpdate = ISReadABook.update
-
-
 function ISReadABook:update(...)
 	if SkillBook[self.item:getSkillTrained()]
 	and self.item:getLvlSkillTrained() > (self.character:getPerkLevel(SkillBook[self.item:getSkillTrained()].perk) + 1)
@@ -11,12 +10,8 @@ function ISReadABook:update(...)
 		local characterMetaTable = getmetatable(self.character)
 		local originalSetAlreadyReadPages = characterMetaTable.__index.setAlreadyReadPages
 		characterMetaTable.__index.setAlreadyReadPages = function(character, fullType, value, ...)
-			if value == 0 then
-				self.pageTimer = 1
-			end
-			if self.pageTimer == 0
-				and value == 0 then
-				value = 1
+			if self.pageTimer == 0 and value == 0 then
+					value = 1
 			end
 			return originalSetAlreadyReadPages(character, fullType, value, ...)
 		end
