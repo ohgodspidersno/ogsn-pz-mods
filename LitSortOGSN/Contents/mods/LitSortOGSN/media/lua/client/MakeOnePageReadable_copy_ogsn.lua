@@ -13,6 +13,7 @@ function ISReadABook:update(...)
 			-- if self.pageTimer == 0 and value == 0 then
 			if value == 0 then
 					value = 1
+					self.pageTimer = 0
 			end
 			return originalSetAlreadyReadPages(character, fullType, value, ...)
 		end
