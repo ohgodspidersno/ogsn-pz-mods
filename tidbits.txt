@@ -1,6 +1,8 @@
 A document to contain little bits of helpful information
 ------------------------------
 
+Here is a character that is a space that doesn't get ignored: > < (it's between the angle brackets)
+
 A tea kettle contains as much water as 15 mugs
 
 --------------------
