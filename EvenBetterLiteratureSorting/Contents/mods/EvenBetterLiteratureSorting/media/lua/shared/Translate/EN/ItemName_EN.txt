@@ -106,11 +106,11 @@ ItemName_Radio.RadioMag3 = " Guerilla Radio Vol. 3",
 ItemName_FMJ.LockPickingMag = " Locksmith's Manual Vol. 1",
 ItemName_FMJ.LockPickingMag2 = " Locksmith's Manual Vol. 2",
 
-ItemName_Base.FarmingMag1 = " Farming Magazine",
-ItemName_Base.HerbalistMag = " Herbalist's Guide",
-ItemName_Base.ElectronicsMag4 = " How to Use Generators",
-ItemName_Base.NutritionistMag = " Nutritionist's Handbook",
-ItemName_Base.DairyCookingMag = " Good Cooking Magazine",
+ItemName_Base.FarmingMag1 = "  Farming Magazine",
+ItemName_Base.HerbalistMag = "  Herbalist's Guide",
+ItemName_Base.ElectronicsMag4 = "  How to Use Generators",
+ItemName_Base.NutritionistMag = "  Nutritionist's Handbook",
+ItemName_Base.DairyCookingMag = "  Good Cooking Magazine",
 
 /************** ENTERTAINMENT **************/
 ItemName_Base.Book = " Book",
