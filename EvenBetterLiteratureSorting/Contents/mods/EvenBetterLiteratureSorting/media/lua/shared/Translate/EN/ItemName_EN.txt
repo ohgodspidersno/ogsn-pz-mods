@@ -132,4 +132,7 @@ ItemName_filcher.PostcardLocal = "Postcard",
 ItemName_filcher.PostcardOthers = "Postcard",
 ItemName_filcher.RippedPages = "Ripped Pages",
 
+
+ItemName_Base.DairyCookingMag = "Good Cooking Magazine",
+
 }
