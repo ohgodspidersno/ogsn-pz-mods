@@ -118,6 +118,7 @@ ItemName_Base.HerbalistMag = " Herbalist's Guide",
 ItemName_Base.ElectronicsMag4 = " How to Use Generators",
 ItemName_Base.NutritionistMag = " Nutritionist's Handbook",
 ItemName_Base.DairyCookingMag = " Good Cooking Magazine",
+ItemName_FlameTrapMag.FlameTrapMagazine = " Flame Trap Magazine",
 
 /************** ENTERTAINMENT **************/
 ItemName_Base.Book = " Book",
