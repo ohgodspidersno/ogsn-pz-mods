@@ -110,8 +110,8 @@ ItemName_Radio.RadioMag1 = " Guerilla Radio Vol. 1",
 ItemName_Radio.RadioMag2 = " Guerilla Radio Vol. 2",
 ItemName_Radio.RadioMag3 = " Guerilla Radio Vol. 3",
 
-ItemName_FMJ.LockPickingMag = " Locksmith's Manual Vol. 1",
-ItemName_FMJ.LockPickingMag2 = " Locksmith's Manual Vol. 2",
+ItemName_FMJ.LockPickingMag = " Locksmith's Handbook Vol. 1",
+ItemName_FMJ.LockPickingMag2 = " Locksmith's Handbook Vol. 2",
 
 ItemName_Base.FarmingMag1 = " Farming Magazine",
 ItemName_Base.HerbalistMag = " Herbalist's Guide",
