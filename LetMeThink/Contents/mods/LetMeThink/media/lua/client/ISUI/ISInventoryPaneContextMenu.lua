@@ -68,12 +68,14 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     local clothingItemExtra = nil;
     local magazine = nil;
     local bullet = nil;
+    local hairDye = nil;
 
     local playerObj = getSpecificPlayer(player)
 
 	ISInventoryPaneContextMenu.removeToolTip();
 
 	getCell():setDrag(nil, player);
+
 
     local containerList = ISInventoryPaneContextMenu.getContainers(playerObj)
     local testItem = nil;
@@ -106,6 +108,9 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
         end
 		if testItem:getType() == "DishCloth" or testItem:getType() == "BathTowel" and getSpecificPlayer(player):getBodyDamage():getWetness() > 0 then
 			canBeDry = true;
+        end
+        if testItem:isHairDye() then
+            hairDye = testItem;
         end
         if testItem:isBroken() or testItem:getCondition() < testItem:getConditionMax() then
             brokenObject = testItem;
@@ -157,7 +162,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
         if isHandWeapon and isHandWeapon:canBeRemote() then
             remoteControllable = isHandWeapon;
         end
-		if instanceof(testItem, "InventoryContainer") and testItem:canBeEquipped() == "Back" then
+		if instanceof(testItem, "InventoryContainer") and testItem:canBeEquipped() == "Back" and not playerObj:isEquipped(testItem) then
 			canBeEquippedBack = true;
         end
         if instanceof(testItem, "InventoryContainer") then
@@ -703,7 +708,13 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
 	-- dry yourself with a towel
 	if canBeDry then
 		context:addOption(getText("ContextMenu_Dry_myself"), items, ISInventoryPaneContextMenu.onDryMyself, player);
-	end
+    end
+    if hairDye and playerObj:getHumanVisual():getHairModel() and playerObj:getHumanVisual():getHairModel() ~= "Bald" then
+        context:addOption(getText("ContextMenu_DyeHair"), hairDye, ISInventoryPaneContextMenu.onDyeHair, playerObj, false);
+    end
+    if hairDye and playerObj:getHumanVisual():getBeardModel() and playerObj:getHumanVisual():getBeardModel() ~= "" then
+        context:addOption(getText("ContextMenu_DyeBeard"), hairDye, ISInventoryPaneContextMenu.onDyeHair, playerObj, true);
+    end
     if isInPlayerInventory and not unequip and playerObj:getJoypadBind() == -1 and
             not ISInventoryPaneContextMenu.isAllFav(items) and
             not ISInventoryPaneContextMenu.isAllNoDropMoveable(items) then
@@ -817,15 +828,17 @@ ISInventoryPaneContextMenu.doClothingRecipeMenu = function(playerObj, clothing, 
 end
 
 ISInventoryPaneContextMenu.onInspectClothing = function(player, clothing)
-    if not ISInventoryPaneContextMenu.garmentUI then
-        ISInventoryPaneContextMenu.garmentUI = ISGarmentUI:new(500, 500, player, clothing);
-        ISInventoryPaneContextMenu.garmentUI:initialise();
-        ISInventoryPaneContextMenu.garmentUI:addToUIManager();
-    else
+    local playerNum = player:getPlayerNum()
+    if ISGarmentUI.windows[playerNum] then
         ISInventoryPaneContextMenu.garmentUI:close();
-        ISInventoryPaneContextMenu.garmentUI = ISGarmentUI:new(500, 500, player, clothing);
-        ISInventoryPaneContextMenu.garmentUI:initialise();
-        ISInventoryPaneContextMenu.garmentUI:addToUIManager();
+    end
+    local window = ISGarmentUI:new(-1, 500, player, clothing);
+    window:initialise();
+    window:addToUIManager();
+    ISGarmentUI.windows[playerNum] = window
+    if JoypadState.players[playerNum+1] then
+        window.prevFocus = JoypadState.players[playerNum+1].focus
+        setJoypadFocus(playerNum, window)
     end
 end
 
@@ -1520,6 +1533,10 @@ end
 
 ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer, vehiclePart)
     ISTimedActionQueue.add(ISFixAction:new(getSpecificPlayer(player), brokenObject, 60, fixing, fixer, vehiclePart));
+end
+
+ISInventoryPaneContextMenu.onDyeHair = function(hairDye, playerObj, beard)
+    ISTimedActionQueue.add(ISDyeHair:new(playerObj, hairDye, beard, 120));
 end
 
 ISInventoryPaneContextMenu.onDryMyself = function(towels, player)
