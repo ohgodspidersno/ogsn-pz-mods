@@ -4,26 +4,28 @@
 local originalISReadABookUpdate = ISReadABook.update
 
 function ISReadABook:update(...)
-	if self.item:getNumberOfPages() > 0 and
-	SkillBook[self.item:getSkillTrained()] and
-	self.item:getLvlSkillTrained() > self.character:getPerkLevel(SkillBook[self.item:getSkillTrained()].perk) + 1 or self.character:HasTrait("Illiterate") then
-	-- this hits the requirements to burrow down into the 'i can't read this' block
-			self.pageTimer = 0;
-			local txtRandom = ZombRand(3);
-			if txtRandom == 0 then
-					self.character:Say(getText("IGUI_PlayerText_DontGet"));
-			elseif txtRandom == 1 then
-					self.character:Say(getText("IGUI_PlayerText_TooComplicated"));
-			else
-					self.character:Say(getText("IGUI_PlayerText_DontUnderstand"));
-			end
-			if self.item:getNumberOfPages() > 0 then
-					self.character:setAlreadyReadPages(self.item:getFullType(), 1)
-					self:forceStop()
-			end
-	else
-		return originalISReadABookUpdate(self, ...)
+	if self.item:getNumberOfPages() > 0 and SkillBook[self.item:getSkillTrained()] then  -- it's a valid skillbook
+				if self.item:getAlreadyReadPages() == 0 then	-- if the player hasn't read it yet at all...
+						self.character:setAlreadyReadPages(self.item:getFullType(), 1)	-- ... they get the first page for free
+				end
+				if self.item:getLvlSkillTrained() > self.character:getPerkLevel(SkillBook[self.item:getSkillTrained()].perk) + 1 or self.character:HasTrait("Illiterate") then
+				-- this if statement hits the requirements to burrow down into the 'i can't read this' block, so we can replace it
+				-- it's basically the same except I've removed the changes that already happened up to this point
+						self.pageTimer = 0;
+						if txtRandom == 0 then
+								self.character:Say(getText("IGUI_PlayerText_DontGet"));
+						elseif txtRandom == 1 then
+								self.character:Say(getText("IGUI_PlayerText_TooComplicated"));
+						else
+								self.character:Say(getText("IGUI_PlayerText_DontUnderstand"));
+						end
+						self:forceStop()
+				else
+					-- if they can read it, use the original function
+					return originalISReadABookUpdate(self, ...)
+				end
 	end
+	return originalISReadABookUpdate(self, ...) -- it'll probably never get here but just in case, throw it back to the original
 end
 
 --
