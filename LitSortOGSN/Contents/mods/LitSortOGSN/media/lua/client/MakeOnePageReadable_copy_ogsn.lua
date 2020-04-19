@@ -10,7 +10,8 @@ function ISReadABook:update(...)
 		local characterMetaTable = getmetatable(self.character)
 		local originalSetAlreadyReadPages = characterMetaTable.__index.setAlreadyReadPages
 		characterMetaTable.__index.setAlreadyReadPages = function(character, fullType, value, ...)
-			if self.pageTimer == 0 and value == 0 then
+			-- if self.pageTimer == 0 and value == 0 then
+			if value == 0 then
 					value = 1
 			end
 			return originalSetAlreadyReadPages(character, fullType, value, ...)
