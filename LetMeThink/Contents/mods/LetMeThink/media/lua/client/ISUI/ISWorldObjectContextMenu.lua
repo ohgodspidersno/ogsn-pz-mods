@@ -9,6 +9,7 @@ ISWorldObjectContextMenu.clearFetch = function()
 	door = nil;
 	clothingDryer = nil
 	clothingWasher = nil
+	campfire = nil
 	curtain = nil;
     body = nil;
 	item = nil;
@@ -56,6 +57,24 @@ ISWorldObjectContextMenu.clearFetch = function()
 	shovel = nil;
 	building = nil;
     ISWorldObjectContextMenu.fetchSquares = {}
+end
+
+local function timeString(timeInMinutes)
+	local hourStr = getText("IGUI_Gametime_hour")
+	local minuteStr = getText("IGUI_Gametime_minute")
+	local hours = math.floor(timeInMinutes / 60)
+	local minutes = timeInMinutes % 60
+	if hours ~= 1 then hourStr = getText("IGUI_Gametime_hours") end
+	if minutes ~= 1 then minuteStr = getText("IGUI_Gametime_minutes") end
+	local str = ""
+	if hours ~= 0 then
+		str = hours .. ' ' .. hourStr
+	end
+	if str == '' or minutes ~= 0 then
+		if str ~= '' then str = str .. ', ' end
+		str = str .. minutes .. ' ' .. minuteStr
+	end
+	return str
 end
 
 local function predicateNotBroken(item)
@@ -122,6 +141,9 @@ ISWorldObjectContextMenu.fetch = function(v, player, doSquare)
 	end
 	if instanceof(v, "IsoObject") then
 		item = v;
+		if CCampfireSystem.instance:isValidIsoObject(v) then
+			campfire = v
+		end
 	end
 	if instanceof(v, "IsoSurvivor") then
 		survivor = v;
@@ -675,6 +697,19 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
         tooltip.maxLineWidth = 512
         option.toolTip = tooltip
     end
+
+	if campfire and playerObj:DistToSquared(campfire:getX() + 0.5, campfire:getY() + 0.5) < 2 * 2 then
+		if test == true then return true; end
+		local luaCampfire = CCampfireSystem.instance:getLuaObjectOnSquare(campfire:getSquare())
+		local option = context:addOption(getText("ContextMenu_CampfireInfo") , worldobjects, nil)
+		if playerObj:DistToSquared(campfire:getX() + 0.5, campfire:getY() + 0.5) < 2 * 2 then
+			option.toolTip = ISToolTip:new()
+			option.toolTip:initialise()
+			option.toolTip:setVisible(false)
+			option.toolTip:setName(getText("ContextMenu_CampfireInfo"))
+			option.toolTip.description = getText("IGUI_BBQ_FuelAmount", timeString(luaCampfire.fuelAmt))
+		end
+	end
 
 	-- wash clothing/yourself
 	if storeWater then
@@ -2408,8 +2443,8 @@ ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
 	local clothingInventory = playerInv:getItemsFromCategory("Clothing")
 	for i=0, clothingInventory:size() - 1 do
 		local item = clothingInventory:get(i)
-		-- Wasn't able to reproduce the was 'Blooo' bug, don't know the exact cause so here's a fix...
-		if item:getDisplayName() ~= "Bloooo" and (item:hasBlood() or item:isDirty()) then
+		-- Wasn't able to reproduce the wash 'Blooo' bug, don't know the exact cause so here's a fix...
+		if item:getDisplayName() ~= "Blooo" and (item:hasBlood() or item:isDirty()) then
             if washEquipment == false then
                 washEquipment = true
             end
