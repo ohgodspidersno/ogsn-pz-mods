@@ -91,11 +91,6 @@ Non-PZ Languages
 |   : Vietnamese    : Việt không
 |   : Welsh         : Cymraeg
 
-wrong image conversion:
-https://steamuserimages-a.akamaihd.net/ugc/1018318942652862449/8E3D15B5B3DB64385F18E4B99886F553D4279FB0/
-should be
-https://steamuserimages-a.akamaihd.net/ugc/1018319285125097948/0B85E4314C42984E25B17D08A80EFA79874325F7/
-
 -----
 
 aborted attempt to detect user's language from client lua:
