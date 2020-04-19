@@ -131,10 +131,5 @@ ItemName_filcher.Novel = "Novel",
 ItemName_filcher.PostcardLocal = "Postcard",
 ItemName_filcher.PostcardOthers = "Postcard",
 ItemName_filcher.RippedPages = "Ripped Pages",
-ItemName_filcher.Briefcase = "Briefcase",
-ItemName_filcher.GreenPen = "Green Pen",
-ItemName_filcher.SFChessboard = "Chess Board",
-ItemName_filcher.Magic8Ball = "Magic 8-Ball",
-ItemName_filcher.MulticolorPen = "Multicolor Pen",
 
 }
