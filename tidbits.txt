@@ -1,7 +1,25 @@
 A document to contain little bits of helpful information
 ------------------------------
+UTF-8 Whitespaces: (these might be different widths, and/or won't be erased automatically)
 
-Here is a character that is a space that doesn't get ignored: > < (it's between the angle brackets)
+Horizontal Tab: >	<
+No-Break Space: > <
+En quad: > <
+Em Quad: > <
+En Space: > <
+Em Space: > <
+Thick Space: > <
+Mid Space: > <
+Sixth Space: > <
+Figure Space: > <
+Punctuation Space: > <
+Thin Space: > <
+Hair Space: > <
+Narrow No-Break Space: > <
+Medium Mathematical Space: > <
+Ideographic Space: >　<
+
+--------------------
 
 A tea kettle contains as much water as 15 mugs
 
