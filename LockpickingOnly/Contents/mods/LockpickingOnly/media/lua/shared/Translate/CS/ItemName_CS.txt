@@ -1,0 +1,6 @@
+/** Czech translation provided by steam user WaldaGamer **/
+ItemName_CS = {
+ItemName_FMJ.BobbyPin = "Sponka",
+ItemName_FMJ.LockPickingMag = "Zámeènická pøíruèka, Vol. 1",
+ItemName_FMJ.LockPickingMag2 = "Zámeènická pøíruèka, Vol. 2",
+}

@@ -30,8 +30,9 @@ File encodings for each language (allegedly)
 English (EN), Chinese (CN), Estonian (EE), Japanese (JP) – UTF-8
 Afrikaans (AF), Arabic (AR), Danish (DA), German (DE), Spanish (ES), French (FR), Hungarian (HU), Italian (IT), Dutch (NL), Norwegian (NO), Portuguese (PT), Brazilian Portuguese (PTBR), Thai (TH) – Windows 1252
 Chinese (CH) – Big-5
-Czech (CH), Polish (PL) – Windows-1250
+Czech (CS), Polish (PL) – Windows-1250
 Russian (RU) – Windows-1251
+Turkish(TR) - Windows-1254
 Korean (KO) - UTF-16 LE
 
 --------------------

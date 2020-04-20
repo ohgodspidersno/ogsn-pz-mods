@@ -1,0 +1,19 @@
+/** Czech translation provided by steam user Nox **/
+UI_TR = {
+UI_trait_nimblefingers = "Çilingir",
+UI_trait_nimblefingersDesc = "Kilit kýrma ve açma bilgisiyle baþlarsýnýz.Daha hýzlý maymuncukla kilit açma. Daha yüksek kilidi açma þansý.",
+UI_Text_locklevel_veryeasy = "Çok Kolay",
+UI_Text_locklevel_easy = "Kolay",
+UI_Text_locklevel_medium = "Orta",
+UI_Text_locklevel_hard = "Zor",
+UI_Text_locklevel_veryhard = "Çok Zor",
+UI_Text_locklevel_willbreak = "Kýrýlmýþ",
+UI_Text_brokenLockModal = "Kýrýlmýþ bir kilidi maymuncukla açmaya çalýþamazsýnýz",
+UI_Text_contextBreakDoorLock = "Kapý kilidini kýr",
+UI_Text_contextPickDoorLock = "Kapýyý maymuncukla",
+UI_Text_contextBreakWindowLock = "Kilidi Kýr",
+UI_Text_BobbyStuck = "Lanet Olsun! Saç tokasý sýkýþtý!",
+UI_Text_BobbyBroken = "Lanet Olsun! Saç tokasý kýrýldý!",
+UI_trait_BurglarDesc = "Araçlara düz kontak yapabilirsiniz. Kilitleri kýrabilir veya maymuncukla açabilirsiniz. Pencere kilidini kýrma þansý da daha düþük.",
+UI_profdesc_burglar = "Araçlara düz kontak yapabilirsiniz. Kilitleri kýrabilir veya maymuncukla açabilirsiniz. Pencere kilidini kýrma þansý da daha düþük.",
+}

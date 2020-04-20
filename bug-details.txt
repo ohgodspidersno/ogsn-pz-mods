@@ -1,0 +1,37 @@
+https://steamcommunity.com/workshop/filedetails/discussion/2056238799/2264690481984469813/
+lockpicking bug with this modlist:
+
+mods
+{
+	mod = 1904952813,
+	mod = CLH_HobotText41,
+	mod = NecroForge,
+	mod = cheatmenu,
+	mod = ArmoredVests,
+	mod = UNIQUEZ,
+	mod = RealisticArmyZombies,
+	mod = SVGCheaterman,
+	mod = Cheatermanfb41,
+	mod = Silencer,
+	mod = FashionMontage,
+	mod = FRUsedCarsBETA,
+	mod = MilitaryUsedCarSkins,
+	mod = doubletrunk,
+	mod = BulletMagazines,
+	mod = LockpickingOnly,
+	mod = GEARBASIC,
+	mod = GEARCORE,
+	mod = ItemTweakerAPI,
+	mod = chestrig,
+	mod = militarycanteensandflashlights,
+	mod = backpackattachments,
+	mod = NocturnalZombiesFixed,
+	mod = improvedbuildmenu41,
+	mod = Unique Firearm Progression,
+	mod = BanjoItemKitTraits,
+	mod = Arsenal[26]Vehicle[ADD-ON],
+}
+
+maps
+{
+}

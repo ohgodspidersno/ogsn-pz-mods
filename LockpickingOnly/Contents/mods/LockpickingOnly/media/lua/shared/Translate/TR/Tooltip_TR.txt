@@ -1,0 +1,8 @@
+/** Czech translation provided by steam user Nox **/
+Tooltip_TR = {
+Tooltip_BobbyPin_FMJ = "Saç tokasý ve tornavidayla bir kilidi açabilirsiniz, tabi çilingirlik yeteneðiniz varsa",
+Tooltip_LockPickingMag_FMJ = "Kilitleri saç tokasý ve tornavidayla açmayý öðrenin, ve telle nasýl saç tokasý yapýlacaðýný öðrenin",
+Tooltip_LockPickingMag2_FMJ = "Levyeyle kilitleri kýrýp açmayý öðrenin",
+Tooltip_Screwdriver_FMJ = "Tornavida ve saç tokasý kilit açma için kullanýlabilir, tabi çilingirlik yeteneðiniz varsa",
+Tooltip_Crowbar_FMJ = "Kilitleri kýrýp açmak için kullanýlabilir,tabi çilingirlik yeteneðiniz varsa",
+}
