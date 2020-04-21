@@ -1,0 +1,19 @@
+/** Czech translation provided by steam user WaldaGamer **/
+UI_CS = {
+UI_trait_nimblefingers = "Zámeèník",
+UI_trait_nimblefingersDesc = "Zaèni s dovedností odemykání a rozbíjení zámkù.Rychlejší odemykání. Lepší šance na odemèení zámku.",
+UI_Text_locklevel_veryeasy = "Velmi jednoduché",
+UI_Text_locklevel_easy = "Jednoduché",
+UI_Text_locklevel_medium = "Støední",
+UI_Text_locklevel_hard = "Težké",
+UI_Text_locklevel_veryhard = "Velmi tìžké",
+UI_Text_locklevel_willbreak = "Rozbité",
+UI_Text_brokenLockModal = "Nemùžeš odemknout rozbitý zámek.",
+UI_Text_contextBreakDoorLock = "Rozbít zámek",
+UI_Text_contextPickDoorLock = "Odemknout zámek",
+UI_Text_contextBreakWindowLock = "Rozbít zámek",
+UI_Text_BobbyStuck = "Sakra! Sponka se zasekla!",
+UI_Text_BobbyBroken = "Dohajzlu! Rozbil jsem sponku!",
+UI_trait_BurglarDesc = "Mùžeš nastartovat vozidlo bez klíèe. Mùžeš rozbít a odmykat zámky. Nižší šance na rozbití petlice okna.",
+UI_profdesc_burglar = "Mùžeš nastartovat vozidlo bez klíèe. Mùžeš rozbít a odmykat zámky. Nižší šance na rozbití petlice okna.",
+}
