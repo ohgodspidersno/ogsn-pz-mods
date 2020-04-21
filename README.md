@@ -20,6 +20,7 @@ The uploader prevents you from putting .git folders inside your mod folder so it
     1. Guaranteed in Military vehicles if those mods are loaded
 
 ###Lockpicking
+1. Fix bug described here: https://steamcommunity.com/workshop/filedetails/discussion/2056238799/2264690481984469813/
 1. Add car lockpicking
 
 ##Ideas for New Mods
