@@ -90,7 +90,7 @@ ItemName_Base.ElectronicsMag5 = " Electronics Magazine Vol. 4",
 ItemName_Base.EngineerMagazine1 = " Engineer Magazine Vol. 1",
 ItemName_Base.EngineerMagazine2 = " Engineer Magazine Vol. 2",
 ItemName_FlameTrapMag.FlameTrapMagazine = " Engineer Magazine Vol. 3",
-ItemName_Base.FarmingMag1 = " Farming Magazine",
+
 ItemName_Base.CookingMag1 = " Good Cooking Magazine Vol. 1",
 ItemName_Base.CookingMag2 = " Good Cooking Magazine Vol. 2",
 ItemName_Base.DairyCookingMag = " Good Cooking Magazine Vol. 3",
@@ -115,6 +115,7 @@ ItemName_Base.SmithingMag3 = " Smithing Magazine Vol. 3",
 ItemName_Base.SmithingMag4 = " Smithing Magazine Vol. 4",
 
 /************** SKILL MAGS **************/
+ItemName_Base.FarmingMag1 = " Farming Almanac",
 ItemName_Base.HerbalistMag = " Herbalist's Guide",
 ItemName_Base.ElectronicsMag4 = " How to Use Generators",
 ItemName_Base.NutritionistMag = " Nutritionist's Handbook",
