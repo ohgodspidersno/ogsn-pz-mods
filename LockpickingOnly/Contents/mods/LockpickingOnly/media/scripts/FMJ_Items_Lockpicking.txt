@@ -30,9 +30,9 @@ module FMJ
 		Weight = 0.1,
 		Type = Literature,
 		DisplayName = Locksmith's Handbook Vol. 2,
-		Icon = LockPickingMag2,
+		Icon = magazine_Lock_02,
 		TeachedRecipes = Break Door Locks;Break Window Locks,
-		ReplaceOnUse = magazine_Lock_02,
+		ReplaceOnUse = LockPickingMag2,
 		StaticModel = Magazine,
 		Tooltip = Tooltip_LockPickingMag2_FMJ
 	}
