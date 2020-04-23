@@ -141,7 +141,7 @@ language_names = {
     "Chinese (Simplified)" : "中文 - 简体",
     "Chinese (Traditional)" : "中文 - 繁體",
     "Croatian" :  "Hrvatski",
-    "Czech" : "čeština",
+    "Czech" : "Čeština",
     "Danish" :  "Danish",
     "Dutch" : "Dansk",
     "English" : "English",
