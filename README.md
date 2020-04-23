@@ -26,7 +26,9 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 1. Steam art should just be a big zoomed in inventory with everything sorted, and brackets showing the divisions
 1. Put all magazine icons in the magazine section
 1. Make the line being drawn by the pen more circuitous
-
+1. make item tweaker - remember to give each book suite its own sub-mod
+1. consider not mentioning the read one page instantly thing
+1. put the four options in their sub modules
 1. other languages
 1. Be sure to add new magazines from other mods
 1. Credit:
