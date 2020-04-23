@@ -28,9 +28,15 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 1. other languages
 1. Be sure to add new magazines from other mods
 1. Credit:
-    Book by Dmitry Baranovskiy from the Noun Project
+    Book by throwaway icons from the Noun Project
     Map by Ayan Sabbir from the Noun Project
     Book by Vincencio from the Noun Project (notebook)
+    skills by Atif Arshad from the Noun Project
+    magazine by throwaway icons from the Noun Project
+    build by iconfield from the Noun Project
+    body by Adrien Coquet from the Noun Project
+    Enable by Arthur Shlain from the Noun Project
+    Car by Adrien Coquet from the Noun Project
 
 ##Ideas for New Mods
 Might pursue these...
