@@ -1,31 +1,32 @@
 version=1
-id=
-title=Vanilla Food Fixes BETA (but it seems ready)
-description=[h1]Disable These Mods First[/h1]
-description=[olist]
-description=[*]End the War on Beans
-description=[*]Herbs Rot
-description=[*]Pasta and Rice Rot
-description=[*]Cook and Make Tea with Herbs
-description=[/olist]
+id=2072147750
+title=Vanilla Food Fixes 1.0  [41.34+]
+description=[h1]A collection of lightweight, common sense fixes to food items and recipes.[/h1]
 description=
-description=[h1]Features[/h1]
-description=[list]
-description=[*]Split stir fry and roasted vegetables into bowls, like you can with other recipes, instead of having to keep them in the pan forever
-description=[*]Use wine and whiskey in appropriate recipes
-description=[*]Fixes pasta/rice bug. Pasta and rice dishes now eventually spoil, just like any other dish. This does NOT include dry uncooked rice and pasta, which are still shelf stable.
-description=[*]Use foraged herbs as spices and ingredients in recipes
-description=[*]Add milk, nuts, fruits, etc. to oatmeal
-description=[*]Beans are a happy food and can be used in many recipes
-description=[*]Make teas with foraged herbs. These teas amplify their medicinal effects slightly.
-description=[*]Craft tea blends. There are two blends, each with three ingredients. The blended tea combines the effects of its components, and boosts their effects slightly more.
-description=[*]Full compatibility and synergy with the mods "All American Apocalypse" and "Craftable Dairy Foods".
-description=[*]Optional: Makes it so that foraged herbs eventually rot
-description=[/list]
+description=[url=https://steamcommunity.com/workshop/filedetails/discussion/2072147750/2264691117426430081/][u]Don't like pictures? Click here for written description[/u][/url]
 description=
-description=[h1]Planned Features[/h1]
-description=[list]
-description=[*]Create shelf-stable versions of foraged herbs by drying them. This makes them lose a small bit of happiness and potency.
-description=[/list]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791957920/F01077513F3908FBCF6F23CDEA41712E4B8D569E/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791959322/37D96A49406D0FD92A0D3ADB87C7821F3136116F/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153795508137/6B2BDFEDD2C3B15A8AF0D4E0B37FCA6AAABF35D8/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153794978193/DD959583DF1A8F0F99AE9F10E2A52BE68721D694/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153795022394/E06F6F63379A9760F66E210D5FCE7B71C10A45A8/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791958992/6CB04A1147A84835F6A55B932FA82FEEE74264A9/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791960135/ADB9361F6B3F5E3685283AC5332CD88762756373/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791960702/7574F5F9539C53B10C314DA618D0CD8B3120ACF7/[/img]
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
+description=
+description=
+description=[h1]Please Cancel  |  Пожалуйста, отмените  |  请取消  |  キャンセルしてください  |  취소 해주세요  |  Prosím zrušte : [/h1]
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2048755822][img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791169083/27AD5CEE619E1058838D3307FF06588E22079CBE/[/img][/url]
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2036566222][img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791168792/734D2274ECFF157A69FE2DD71F882D7B4281DAC8/[/img][/url]
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2035447891][img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791150457/48F2808018A6123ED9429AB9AE33FD928D834B24/[/img][/url]
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029510281][img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791167035/FA78B1D4BE8F79E6C4ECD7CA50EC4B7BED2E9021/[/img][/url]
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029398775][img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791168507/59E7D362D1317AFAEA68C2437981825130168101/[/img][/url]
 tags=
 visibility=public

@@ -1,0 +1,5 @@
+name=An Exhilaratingly Organized Set of Lemon Books
+id=LitSortOGSN_gold
+require=LitSortOGSN
+description=Replaces the vanilla books with lemon ones.
+poster=gold.png

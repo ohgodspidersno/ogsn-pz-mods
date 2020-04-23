@@ -1,4 +1,0 @@
-ContextMenu_HU = {
-	ContextMenu_EvolvedRecipe_OatmealEvolved = "Zabpehely",
-	ContextMenu_FoodType_Herbal = "Növény",
-}

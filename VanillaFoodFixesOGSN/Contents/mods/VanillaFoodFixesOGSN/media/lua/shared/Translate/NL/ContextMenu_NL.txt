@@ -1,4 +1,0 @@
-ContextMenu_NL = {
-  ContextMenu_FoodType_Herbal = "Kruiden",
-  ContextMenu_EvolvedRecipe_OatmealEvolved = "Havermout",
-}

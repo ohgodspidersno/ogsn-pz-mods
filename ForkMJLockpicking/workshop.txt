@@ -8,5 +8,5 @@ description=I just took that mod and subdivided it into five different sub-mods 
 description=
 description=I've offered to let him put this up on his workshop page but he has not responded so I figured I might as well put it up on mine.
 description=MeTaL AnGeR if you're reading this, please feel free to download this mod and put it up on your page, after which I'll remove this copy.
-tags=
+tags=mod
 visibility=private

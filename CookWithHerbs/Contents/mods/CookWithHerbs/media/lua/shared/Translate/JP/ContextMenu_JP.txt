@@ -1,3 +1,0 @@
-ContextMenu_JP = {
-  ContextMenu_FoodType_Herbal = "草本の"
-}

@@ -71,6 +71,13 @@ local function breakLock(worldObjects, door, player)
         time = time + ZombRand(25);
     end
 
+    if time>500 then
+      time = 500
+    end
+    if time<10 then
+      time = 10
+    end
+
     -- Walk to the door and start the Timed Action.
     if luautils.walkToObject(player, door) then
         local primItem, scndItem = luautils.equipItems(player, "Crowbar");
@@ -103,6 +110,13 @@ local function pickLock(worldObjects, door, player)
     end
     if player:HasTrait("Handy") then
         time = time - ZombRand(50);
+    end
+
+    if time>500 then
+      time = 500
+    end
+    if time<10 then
+      time = 10
     end
 
     if luautils.walkAdjWindowOrDoor(player, door:getSquare(), door) then

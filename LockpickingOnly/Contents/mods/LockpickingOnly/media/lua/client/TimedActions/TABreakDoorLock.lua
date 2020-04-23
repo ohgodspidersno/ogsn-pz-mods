@@ -36,10 +36,8 @@ local function calculateChance(player)
     elseif player:HasTrait('Unlucky') then
         chance = chance - 4;
     end
-    if chance < 0 then
-      chance = 0
-    end
-    return chance;
+
+    return math.max(3, chance);
 end
 
 ---

@@ -1,6 +1,8 @@
 ItemName_EN = {
 
 /************** MAPS **************/
+ItemName_Base.KnoxCountryMap = " Map of Knox Country",
+ItemName_Base.KnoxCountryMapSecret = " Map of Uncertain Provenance",
 ItemName_Base.March_Ridge_Map = " Map of March Ridge",
 ItemName_Base.Muldraugh_Map = " Map of Muldraugh",
 ItemName_Base.Rosewood_Map = " Map of Rosewood",

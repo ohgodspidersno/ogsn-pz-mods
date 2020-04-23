@@ -1,3 +1,0 @@
-ContextMenu_CN = {
-  ContextMenu_FoodType_Herbal = "草药",
-}

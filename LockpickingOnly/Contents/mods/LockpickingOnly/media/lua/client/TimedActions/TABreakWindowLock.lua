@@ -46,7 +46,7 @@ local function calculateChance(player)
     if chance<0 then
       chance = 0
     end
-    return chance;
+    return math.max(chance,3);
 end
 
 ---

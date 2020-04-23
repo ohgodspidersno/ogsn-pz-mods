@@ -3,12 +3,9 @@
 My mods are mostly intended to fix things that seem like old forgotten bugs, or to add new quality-of-life fixes and UI improvements.
 
 ##Pardon the mess
-The uploader prevents you from putting .git folders inside your mod folder so it seemed simpler to just put them all in one repo. It's just me here, so that means I'm not bothering with squashing, branching, or rebasing. I'm just writing that because I want anyone reading this to know that ordinarily I keep my git game tight.
+The Project Zomboid mod uploader prevents you from putting .git folders inside your mod folder so it seemed simpler to just put them all in one repo. It's just me here, so that means I'm not bothering with squashing, branching, or rebasing. I'm just writing that because I want anyone reading this to know that ordinarily I keep my git game tight.
 
 ##TODO List
-###Vanilla Food Fixes
-1. Mark public once it seems safe to
-
 ###Knox Country World Map
 1. Might be missing some turn-offs on highway north of Rosewood.
 1. Make secret version of map only appear in some places, but at a higher rate
@@ -23,20 +20,7 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 1. Add car lockpicking
 
 ###An Exhilaratingly Organized Literature Mod
-1. Steam art should just be a big zoomed in inventory with everything sorted, and brackets showing the divisions
-1. Needs poster art
 1. other languages
-1. Be sure to add new magazines from other mods
-1. Credit:
-    Book by throwaway icons from the Noun Project
-    Map by Ayan Sabbir from the Noun Project
-    Book by Vincencio from the Noun Project (notebook)
-    skills by Atif Arshad from the Noun Project
-    magazine by throwaway icons from the Noun Project
-    build by iconfield from the Noun Project
-    body by Adrien Coquet from the Noun Project
-    Enable by Arthur Shlain from the Noun Project
-    Car by Adrien Coquet from the Noun Project
 
 ##Ideas for New Mods
 Might pursue these...
@@ -96,6 +80,8 @@ The most superlatively clean book organization mod available. For an intoxicatin
 1. Mod also includes dozens of extra unused magazine icons for other modders to utilize in their mods
 1. Native support for several mods
 1. Includes three alternate book art styles
+1. Add some kind of 'chapter heading' at the start of each instruction section
+1. Make the book options take up half as much space, do two per "line"
 
 
 ###Fashion Montage
