@@ -24,7 +24,9 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 
 ###An Exhilaratingly Organized Literature Mod
 1. Steam art should just be a big zoomed in inventory with everything sorted, and brackets showing the divisions
-1. Needs poster art
+1. Put all magazine icons in the magazine section
+1. Make the line being drawn by the pen more circuitous
+
 1. other languages
 1. Be sure to add new magazines from other mods
 1. Credit:
@@ -105,6 +107,8 @@ The most superlatively clean book organization mod available. For an intoxicatin
 1. Mod also includes dozens of extra unused magazine icons for other modders to utilize in their mods
 1. Native support for several mods
 1. Includes three alternate book art styles
+1. Add some kind of 'chapter heading' at the start of each instruction section
+1. Make the book options take up half as much space, do two per "line"
 
 
 ###Fashion Montage
