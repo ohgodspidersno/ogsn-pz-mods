@@ -22,16 +22,15 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 ###Lockpicking
 1. Add car lockpicking
 
+###An Exhilaratingly Organized Literature Mod
+1. Steam art should just be a big zoomed in inventory with everything sorted, and brackets showing the divisions
+1. Needs poster art
+1. other languages
+1. Be sure to add new magazines from other mods
+
 ##Ideas for New Mods
 Might pursue these...
 
-###Even Better Literature Sorting
-1. Same as Book Collection for the most part
-1. Add a single space in front of all magazines so they sort second
-1. Remove 'the' from all titles.
-1. Name maps to be "Map of ____" instead of "___ Map" so that they group together.
-1. Be sure to add new magazines from other mods
-1. Will need to load last in order to fix stuff changed by other mods
 
 ###Mental State Affects Reading Speed
 1. Make reading speed be affected by panic, exhaustion, fatigue, hunger, illness, etc.
@@ -77,6 +76,17 @@ Hard of hearing should lower your hearing range, obviously, but it doesn't need 
 
 
 ##Current List of Mods
+
+###Even Better Literature Sorting
+The most superlatively clean book organization mod available. For an intoxicatingly easy book sorting experience.  
+
+1. All new icons for every magazine and book to improve visual identification
+1. Literature now sorts by sub-category
+1. Maps now float to the top of the 'Items' category
+1. Mod also includes dozens of extra unused magazine icons for other modders to utilize in their mods
+1. Native support for several mods
+1. Includes three alternate book art styles
+
 
 ###Fashion Montage
 Pick whatever clothing you want at character gen
