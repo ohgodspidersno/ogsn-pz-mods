@@ -27,6 +27,10 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 1. Needs poster art
 1. other languages
 1. Be sure to add new magazines from other mods
+1. Credit:
+    Book by Dmitry Baranovskiy from the Noun Project
+    Map by Ayan Sabbir from the Noun Project
+    Book by Vincencio from the Noun Project (notebook)
 
 ##Ideas for New Mods
 Might pursue these...
