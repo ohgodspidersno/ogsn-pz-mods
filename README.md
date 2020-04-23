@@ -37,6 +37,11 @@ The uploader prevents you from putting .git folders inside your mod folder so it
     body by Adrien Coquet from the Noun Project
     Enable by Arthur Shlain from the Noun Project
     Car by Adrien Coquet from the Noun Project
+    magazine by Tim Martin from the Noun Project
+    Chocolate by Hea Poh Lin from the Noun Project
+    gold by Matthias Hartmann from the Noun Project
+    rice by Vectors Point from the Noun Project
+    Diamond by Three Six Five from the Noun Project
 
 ##Ideas for New Mods
 Might pursue these...
