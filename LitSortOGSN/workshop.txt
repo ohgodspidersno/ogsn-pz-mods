@@ -1,0 +1,26 @@
+title=An Exhilaratingly Organized Literature Mod
+description=[b]中文 - 简体 (Chinese (Simplified))[/b]: 立即阅读一页，标记世界上的所有副本
+description=[b]中文 - 繁體 (Chinese (Traditional))[/b]: 立即閱讀一頁,標記世界上的所有副本
+description=[b]Čeština (Czech)[/b]: přečtěte si jednu stránku okamžitě označit všechny kopie na světě
+description=[b]Danish (Danish)[/b]: læse en side med det samme for at markere alle kopier i verden
+description=[b]Dansk (Dutch)[/b]: lees direct één pagina om alle exemplaren ter wereld te markeren
+description=[b]Français (French)[/b]: lire une page instantanément pour marquer toutes les copies dans le monde
+description=[b]Deutsch (German)[/b]: Lesen Sie sofort eine Seite, um alle Kopien der Welt zu markieren
+description=[b]हंगेरी (Hungarian)[/b]: olvassa el egy oldalt azonnal, hogy jelölje meg az összes példányt a világon
+description=[b]Italiano (Italian)[/b]: leggere una pagina istantaneamente per contrassegnare tutte le copie nel mondo
+description=[b]日本語 (Japanese)[/b]: 世界のすべてのコピーをマークするために瞬時に1ページを読む
+description=[b]한국어 (Korean)[/b]: 한 페이지를 즉시 읽고 전 세계의 모든 사본을 표시합니다.
+description=[b]Norsk (Norwegian)[/b]: lese en side umiddelbart for å markere alle kopier i verden
+description=[b]Perski (Polish)[/b]: natychmiast przeczytać jedną stronę, aby zaznaczyć wszystkie kopie na świecie
+description=[b]Português (Portuguese)[/b]: ler uma página instantaneamente para marcar todas as cópias no mundo
+description=[b]Românesc (Romanian)[/b]: citiți instantaneu o pagină pentru a marca toate copiile din lume
+description=[b]Pусский (Russian)[/b]: читать одну страницу мгновенно, чтобы отметить все копии в мире
+description=[b]Español (Spanish)[/b]: leer una página al instante para marcar todas las copias en el mundo
+description=[b]ไทย (Thai)[/b]: อ่านหนึ่งหน้าทันทีเพื่อทําเครื่องหมายสําเนาทั้งหมดในโลก
+description=[b]Türk (Turkish)[/b]: dünyadaki tüm kopyaları işaretlemek için anında bir sayfa okuyun
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
+tags=
+visibility=hidden
