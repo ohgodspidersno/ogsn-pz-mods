@@ -42,6 +42,10 @@ The uploader prevents you from putting .git folders inside your mod folder so it
     gold by Matthias Hartmann from the Noun Project
     rice by Vectors Point from the Noun Project
     Diamond by Three Six Five from the Noun Project
+    confused by Thomas Deckert from the Noun Project
+    Book by Rockicon from the Noun Project
+    Thought Bubble by Herbert Spencer from the Noun Project
+    Box by Nikita Kozin from the Noun Project
 
 ##Ideas for New Mods
 Might pursue these...
