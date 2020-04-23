@@ -123,13 +123,13 @@ ItemName_Base.MechanicMag3 = " Laines Auto Vol. 3: Performance Models",
 
 /************** ENTERTAINMENT **************/
 ItemName_Base.Book = " Book",
-ItemName_Base.Newspaper = " Newspaper",
-ItemName_Base.Magazine = " Magazine",
-ItemName_Base.ComicBook = " Comic Book",
-ItemName_filcher.ColoringBook = " Coloring Book",
-ItemName_filcher.Crosswords = " Crosswords",
 ItemName_Base.Doodle = " Doodle",
+ItemName_filcher.ColoringBook = " Coloring Book",
+ItemName_Base.ComicBook = " Comic Book",
+ItemName_filcher.Crosswords = " Crosswords",
+ItemName_Base.Magazine = " Magazine",
 ItemName_filcher.MagazineX = " Magazine",
+ItemName_Base.Newspaper = " Newspaper",
 ItemName_filcher.NotesJokes = " Notes on Rhyming Jokes",
 ItemName_filcher.Novel = " Novel",
 
