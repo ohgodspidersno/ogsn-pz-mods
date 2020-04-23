@@ -21,6 +21,17 @@ description=[b]Español [/b]: leer una página al instante para marcar todas las
 description=[b]ไทย [/b]: อ่านหนึ่งหน้าทันทีเพื่อทําเครื่องหมายสําเนาทั้งหมดในโลก
 description=[b]Türk [/b]: dünyadaki tüm kopyaları işaretlemek için anında bir sayfa okuyun
 description=
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330900308/40E1122CE4668563C10277348A01979C5A4DD596/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330903376/8B0F63B022FDD4B6C70DEB69C789113607DF2C6E/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330901430/D074DA3A61950794AC26FACAD9AF1EBDD87E605E/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330904684/59A54E95924DB7700159E363AA4C41CCBD4DDA3F/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330900974/B7AB99D3FAB98FAD0A350DB77B03CD3A34026077/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330904317/24B8207A7E1DA109817D70E49BAD3BE1152762C1/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330903015/C00A56DA43F5CE445736F7BFA49BDD1E1E6F4024/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330897501/C6105BFA0D405FBE3F7C63961C08B5D057C9CE6E/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330898303/E1C84B8C7F1C34856FC39EECEA10B097F5489069/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330899789/634C49486138B499DE323F5781FCEE76D936425B/[/img]
+description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330903951/018257C8BA0676F4F3E2F3178203799B7990431F/[/img]
 description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
