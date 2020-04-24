@@ -1,39 +1,23 @@
 version=1
 id=2071347174
 title=An Exhilaratingly Organized Literature Mod
-description=[b]中文 - 简体[/b]: 立即阅读一页，标记世界上的所有副本
-description=[b]中文 - 繁體[/b]: 立即閱讀一頁,標記世界上的所有副本
-description=[b]Čeština [/b]: přečtěte si jednu stránku okamžitě označit všechny kopie na světě
-description=[b]Danish [/b]: læse en side med det samme for at markere alle kopier i verden
-description=[b]Dansk [/b]: lees direct één pagina om alle exemplaren ter wereld te markeren
-description=[b]Français [/b]: lire une page instantanément pour marquer toutes les copies dans le monde
-description=[b]Deutsch [/b]: Lesen Sie sofort eine Seite, um alle Kopien der Welt zu markieren
-description=[b]हंगेरी [/b]: olvassa el egy oldalt azonnal, hogy jelölje meg az összes példányt a világon
-description=[b]Italiano [/b]: leggere una pagina istantaneamente per contrassegnare tutte le copie nel mondo
-description=[b]日本語 [/b]: 世界のすべてのコピーをマークするために瞬時に1ページを読む
-description=[b]한국어 [/b]: 한 페이지를 즉시 읽고 전 세계의 모든 사본을 표시합니다.
-description=[b]Norsk [/b]: lese en side umiddelbart for å markere alle kopier i verden
-description=[b]Perski [/b]: natychmiast przeczytać jedną stronę, aby zaznaczyć wszystkie kopie na świecie
-description=[b]Português [/b]: ler uma página instantaneamente para marcar todas as cópias no mundo
-description=[b]Românesc [/b]: citiți instantaneu o pagină pentru a marca toate copiile din lume
-description=[b]Pусский [/b]: читать одну страницу мгновенно, чтобы отметить все копии в мире
-description=[b]Español [/b]: leer una página al instante para marcar todas las copias en el mundo
-description=[b]ไทย [/b]: อ่านหนึ่งหน้าทันทีเพื่อทําเครื่องหมายสําเนาทั้งหมดในโลก
-description=[b]Türk [/b]: dünyadaki tüm kopyaları işaretlemek için anında bir sayfa okuyun
 description=
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330901430/D074DA3A61950794AC26FACAD9AF1EBDD87E605E/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330903951/018257C8BA0676F4F3E2F3178203799B7990431F/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330903376/8B0F63B022FDD4B6C70DEB69C789113607DF2C6E/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330903951/018257C8BA0676F4F3E2F3178203799B7990431F/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330904684/59A54E95924DB7700159E363AA4C41CCBD4DDA3F/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330900974/B7AB99D3FAB98FAD0A350DB77B03CD3A34026077/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330904317/24B8207A7E1DA109817D70E49BAD3BE1152762C1/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330903015/C00A56DA43F5CE445736F7BFA49BDD1E1E6F4024/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330897501/C6105BFA0D405FBE3F7C63961C08B5D057C9CE6E/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330903951/018257C8BA0676F4F3E2F3178203799B7990431F/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330898303/E1C84B8C7F1C34856FC39EECEA10B097F5489069/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330903951/018257C8BA0676F4F3E2F3178203799B7990431F/[/img]
-description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320033330899789/634C49486138B499DE323F5781FCEE76D936425B/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333626154/4C52EEA69F6463FC779E0D93457940C449A09E03/[/img]
+description=
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
+description=
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333553606/296BD174A6D7AB30EF87A93FEF702450A8A518DD/[/img]
+description=
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
+description=
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333556248/B5918DA8B4EF0342A1F1889AA2542EA0115E5249/[/img]
+description=
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
+description=
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333636987/1D778AC03EA45DC94A30EA23D57F48FE4557ECB4/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333638469/24D411BCB93D9343FBAA44A62C5C3D42122F05EB/[/img]
+description=
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
 description=
 description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
