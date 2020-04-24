@@ -1,7 +1,18 @@
-function ISReadABook:start()
-    if __APROPRIATE___ then
-      self.item:setJobType(getText("ContextMenu_Read") ..' '.. self.item:getName());
-    elseif __TOO_ADVANCED___
+local original_ISReadABookStart = ISReadABook.start
+
+function ISReadABook:start(...)
+    if item:getNumberOfPages() <= 0 then
+        return
+    end
+    local skillBook = SkillBook[item:getSkillTrained()]
+    local level = character:getPerkLevel(skillBook.perk)
+    local appropriate = true
+    if (item:getLvlSkillTrained() > level + 1) then
+      appropriate = false
+    end
+    if appropriate then
+      return original_ISReadABookStart(self, ...)
+    else
       self.item:setJobType(getText("ContextMenu_DogEar") ..' '.. self.item:getName());
     end
     self.item:setJobDelta(0.0);
