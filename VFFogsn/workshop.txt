@@ -1,31 +1,22 @@
 version=1
-id=
-title=Vanilla Food Fixes BETA (but it seems ready)
-description=[h1]Disable These Mods First[/h1]
-description=[olist]
-description=[*]End the War on Beans
-description=[*]Herbs Rot
-description=[*]Pasta and Rice Rot
-description=[*]Cook and Make Tea with Herbs
-description=[/olist]
+id=2072147750
+title=Vanilla Food Fixes 1.0  [41.34+]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033334416376/D9D4111DBD8E56A9E7F797A01FD702DF882CA802/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033334417053/0CB4BCBB8C075A6ED1BAF3DA52FD4C55289039AB/[/img]
 description=
-description=[h1]Features[/h1]
-description=[list]
-description=[*]Split stir fry and roasted vegetables into bowls, like you can with other recipes, instead of having to keep them in the pan forever
-description=[*]Use wine and whiskey in appropriate recipes
-description=[*]Fixes pasta/rice bug. Pasta and rice dishes now eventually spoil, just like any other dish. This does NOT include dry uncooked rice and pasta, which are still shelf stable.
-description=[*]Use foraged herbs as spices and ingredients in recipes
-description=[*]Add milk, nuts, fruits, etc. to oatmeal
-description=[*]Beans are a happy food and can be used in many recipes
-description=[*]Make teas with foraged herbs. These teas amplify their medicinal effects slightly.
-description=[*]Craft tea blends. There are two blends, each with three ingredients. The blended tea combines the effects of its components, and boosts their effects slightly more.
-description=[*]Full compatibility and synergy with the mods "All American Apocalypse" and "Craftable Dairy Foods".
-description=[*]Optional: Makes it so that foraged herbs eventually rot
-description=[/list]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033334416655/94BC874E44F06EF0EADAF3D4E7A343AC0BAA0CED/[/img]
 description=
-description=[h1]Planned Features[/h1]
-description=[list]
-description=[*]Create shelf-stable versions of foraged herbs by drying them. This makes them lose a small bit of happiness and potency.
-description=[/list]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033334470667/CD23AE897A65109F4B78443075D60C238726FD8B/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033334469605/C4E185FA2915A98841A2E78569FB9CDD279C9D21/[/img]
+description=
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033334469988/229AFA056A0F57F91FD9DF6534EE5CA473DCBE41/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033334470370/466744E9D20687497DC7BC68C60CAE0AA4FB6314/[/img]
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
 tags=
 visibility=public
