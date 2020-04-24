@@ -8,6 +8,11 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 ##TODO List
 ###Vanilla Food Fixes
 1. Mark public once it seems safe to
+1. Credits:
+  1. Hour Glass by Nadir Balcikli from the Noun Project
+  1. Fire by AFY Studio from the Noun Project
+
+
 
 ###Knox Country World Map
 1. Might be missing some turn-offs on highway north of Rosewood.
@@ -23,33 +28,8 @@ The uploader prevents you from putting .git folders inside your mod folder so it
 1. Add car lockpicking
 
 ###An Exhilaratingly Organized Literature Mod
-1. Steam art should just be a big zoomed in inventory with everything sorted, and brackets showing the divisions
-1. Put all magazine icons in the magazine section
-1. Make the line being drawn by the pen more circuitous
-1. make item tweaker - remember to give each book suite its own sub-mod
-1. consider not mentioning the read one page instantly thing
-1. put the four options in their sub modules
 1. other languages
-1. Be sure to add new magazines from other mods
-1. Credit:
-    Book by throwaway icons from the Noun Project
-    Map by Ayan Sabbir from the Noun Project
-    Book by Vincencio from the Noun Project (notebook)
-    skills by Atif Arshad from the Noun Project
-    magazine by throwaway icons from the Noun Project
-    build by iconfield from the Noun Project
-    body by Adrien Coquet from the Noun Project
-    Enable by Arthur Shlain from the Noun Project
-    Car by Adrien Coquet from the Noun Project
-    magazine by Tim Martin from the Noun Project
-    Chocolate by Hea Poh Lin from the Noun Project
-    gold by Matthias Hartmann from the Noun Project
-    rice by Vectors Point from the Noun Project
-    Diamond by Three Six Five from the Noun Project
-    confused by Thomas Deckert from the Noun Project
-    Book by Rockicon from the Noun Project
-    Thought Bubble by Herbert Spencer from the Noun Project
-    Box by Nikita Kozin from the Noun Project
+
 
 ##Ideas for New Mods
 Might pursue these...
