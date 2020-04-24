@@ -15,7 +15,7 @@ Figure Space: > <
 Punctuation Space: > <
 Thin Space: > <
 Hair Space: > <
-Narrow No-Break Space: > <
+Nrow No-Break Space: > <
 Medium Mathematical Space: > <
 Ideographic Space: >　<
 
