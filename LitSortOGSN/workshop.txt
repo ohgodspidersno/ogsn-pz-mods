@@ -1,7 +1,7 @@
 version=1
 id=2071347174
 title=An Exhilaratingly Organized Literature Mod
-description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333626154/4C52EEA69F6463FC779E0D93457940C449A09E03/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033334113082/5EFA63C270D507ED64B98AF34C427B2D7C36490B/[/img]
 description=
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
 description=
