@@ -3,17 +3,9 @@
 My mods are mostly intended to fix things that seem like old forgotten bugs, or to add new quality-of-life fixes and UI improvements.
 
 ##Pardon the mess
-The uploader prevents you from putting .git folders inside your mod folder so it seemed simpler to just put them all in one repo. It's just me here, so that means I'm not bothering with squashing, branching, or rebasing. I'm just writing that because I want anyone reading this to know that ordinarily I keep my git game tight.
+The Project Zomboid mod uploader prevents you from putting .git folders inside your mod folder so it seemed simpler to just put them all in one repo. It's just me here, so that means I'm not bothering with squashing, branching, or rebasing. I'm just writing that because I want anyone reading this to know that ordinarily I keep my git game tight.
 
 ##TODO List
-###Vanilla Food Fixes
-1. Mark public once it seems safe to
-1. Credits:
-  1. Hour Glass by Nadir Balcikli from the Noun Project
-  1. Fire by AFY Studio from the Noun Project
-
-
-
 ###Knox Country World Map
 1. Might be missing some turn-offs on highway north of Rosewood.
 1. Make secret version of map only appear in some places, but at a higher rate
