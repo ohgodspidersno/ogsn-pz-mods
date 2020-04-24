@@ -1,0 +1,4 @@
+name=An Exhilaratingly Set of Gold Books
+id=LitSortOGSN_gold
+require=LitSortOGSN
+description=Replaces the vanilla books with gold ones.
