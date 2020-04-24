@@ -2,3 +2,4 @@ name=An Exhilaratingly Set of Chocolate Books
 id=LitSortOGSN_chocolate
 require=LitSortOGSN
 description=Replaces the vanilla books with chocolate ones.
+poster=chocolate.png

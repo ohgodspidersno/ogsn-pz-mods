@@ -2,3 +2,4 @@ name=An Exhilaratingly Set of Diamond Books
 id=LitSortOGSN_diamond
 require=LitSortOGSN
 description=Replaces the vanilla books with diamond ones.
+poster=diamond.png
