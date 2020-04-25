@@ -38,6 +38,7 @@ TweakItem("Base.MechanicMag1","Icon","magazine_Mechanic_01");
 TweakItem("Base.MechanicMag2","Icon","magazine_Mechanic_02");
 TweakItem("Base.MechanicMag3","Icon","magazine_Mechanic_03");
 TweakItem("Base.Journal","Icon","journalBlue");
+TweakItem("Base.Notebook","Weight","0.1");
 -- TweakItem("Base.Book","Icon","________ICONNAME__");
 -- TweakItem("Base.Doodle","Icon","________ICONNAME__");
 -- TweakItem("Base.ComicBook","Icon","________ICONNAME__");
