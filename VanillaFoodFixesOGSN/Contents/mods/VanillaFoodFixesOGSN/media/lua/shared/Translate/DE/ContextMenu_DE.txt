@@ -1,4 +1,0 @@
-ContextMenu_DE = {
-  ContextMenu_FoodType_Herbal = "Kräuter",
-  ContextMenu_EvolvedRecipe_OatmealEvolved = "Haferflocken",
-}

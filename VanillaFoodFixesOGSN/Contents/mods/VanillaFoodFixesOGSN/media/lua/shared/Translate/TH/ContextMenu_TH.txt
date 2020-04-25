@@ -1,4 +1,0 @@
-ContextMenu_TH = {
-  ContextMenu_FoodType_Herbal = "สมุนไพร",
-  ContextMenu_EvolvedRecipe_OatmealEvolved = "ชามข้าวโอ๊ต",
-}

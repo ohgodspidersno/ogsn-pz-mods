@@ -1,3 +1,0 @@
-ContextMenu_ES = {
-  ContextMenu_FoodType_Herbal = "Hierba",
-  ContextMenu_EvolvedRecipe_OatmealEvolved = "Gachas de avena",

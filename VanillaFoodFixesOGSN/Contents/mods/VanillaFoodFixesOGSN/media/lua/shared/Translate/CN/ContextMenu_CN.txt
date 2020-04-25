@@ -1,4 +1,0 @@
-ContextMenu_CN = {
-  ContextMenu_EvolvedRecipe_OatmealEvolved = "燕麦粥",
-  ContextMenu_FoodType_Herbal = "草药",
-}

@@ -1,4 +1,0 @@
-ContextMenu_KO = {
-  ContextMenu_FoodType_Herbal = "약초",
-  ContextMenu_EvolvedRecipe_OatmealEvolved = "오트밀",
-}

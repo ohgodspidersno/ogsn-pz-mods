@@ -1,3 +1,0 @@
-ContextMenu_DE = {
-  ContextMenu_FoodType_Herbal = "Kräuter",
-}

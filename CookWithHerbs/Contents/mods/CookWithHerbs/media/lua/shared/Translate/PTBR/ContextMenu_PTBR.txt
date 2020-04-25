@@ -1,3 +1,0 @@
-ContextMenu_PTBR = {
-  ContextMenu_FoodType_Herbal = "Ervas",
-}
