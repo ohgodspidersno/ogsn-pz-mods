@@ -18,7 +18,7 @@ description=
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
 description=
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320153791677462/140D28164332549A661439021C62A615450BB119/[/img]
-description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320153791676762/1C2A12BE4F735093AF72CBBB9B080317D36A9B1F/[/img]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320153791790613/EC5D48FE83FCE0256367DF29A97BE163C1008D59/[/img]
 description=
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
 description=
