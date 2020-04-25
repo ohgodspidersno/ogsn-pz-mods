@@ -2,6 +2,9 @@ version=1
 id=2072147750
 title=Vanilla Food Fixes 1.0  [41.34+]
 description=[h1]A collection of lightweight, common sense fixes to food items and recipes.[/h1]
+description=
+description=[url=https://steamcommunity.com/workshop/filedetails/discussion/2072147750/2264691117426430081/][u]Don't like pictures? Click here for written description[/u][/url]
+description=
 description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791957920/F01077513F3908FBCF6F23CDEA41712E4B8D569E/[/img]
 description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791959322/37D96A49406D0FD92A0D3ADB87C7821F3136116F/[/img]
 description=[img]https://steamuserimages-a.akamaihd.net/ugc/1018320153795508137/6B2BDFEDD2C3B15A8AF0D4E0B37FCA6AAABF35D8/[/img]
