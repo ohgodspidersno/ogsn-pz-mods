@@ -22,8 +22,6 @@ The Project Zomboid mod uploader prevents you from putting .git folders inside y
 ###An Exhilaratingly Organized Literature Mod
 1. other languages
 
-
-
 ##Ideas for New Mods
 Might pursue these...
 
