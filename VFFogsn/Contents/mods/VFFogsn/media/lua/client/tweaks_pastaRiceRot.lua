@@ -17,3 +17,6 @@ TweakItem("Base.RiceBowl","DaysTotallyRotten","4");
 
 TweakItem("Base.PastaBowl","DaysFresh","2");
 TweakItem("Base.PastaBowl","DaysTotallyRotten","4");
+
+TweakItem("Base.RiceBowl","Icon","RiceBowlOGSN");
+TweakItem("Base.PastaBowl","Icon","PastaBowlOGSN");
