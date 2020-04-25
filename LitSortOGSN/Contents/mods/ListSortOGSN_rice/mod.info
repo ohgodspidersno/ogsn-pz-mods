@@ -1,5 +1,5 @@
-name=An Exhilaratingly Organized Set of Rice Books
+name=An Exhilaratingly Organized Set of Coffee Books
 id=LitSortOGSN_rice
 require=LitSortOGSN
-description=Replaces the vanilla books with rice ones.
+description=Replaces the vanilla books with coffee ones.
 poster=rice.png
