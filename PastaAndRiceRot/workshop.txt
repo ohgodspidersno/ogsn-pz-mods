@@ -3,5 +3,5 @@ id=2035447891
 title=[DEPRECATED] Pasta and Rice Rot - Please download "Vanilla Food Fixes 1.0"
 description=This is now part of my newer, better mod:
 description=https://steamcommunity.com/sharedfiles/filedetails/?id=2072147750
-tags=
+tags=mod
 visibility=private

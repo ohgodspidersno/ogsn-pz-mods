@@ -3,5 +3,5 @@ id=2048755822
 title=[DEPRECATED] Vanilla Food Fixes BETA (v1.0 is now available)
 description=This is all now in version 1.0:
 description=https://steamcommunity.com/sharedfiles/filedetails/?id=2072147750
-tags=
+tags=mod
 visibility=private
