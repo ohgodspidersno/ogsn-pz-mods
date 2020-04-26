@@ -2,4 +2,4 @@ name=Let Me Think - PATCH - Compatibility - NRK Accountant
 id=LetMeThink_NRK_Accountant
 description=Allows "Let Me Think" and "NRK Accountant" to work together
 poster=poster.png
-require=LetMeThink,NRK_Accountant
+require=LetMeThink
