@@ -1,5 +1,5 @@
 name=Let Me Think - PATCH - Compatibility - NRK Accountant
-id=z_LetMeThink_BanjoRDPAP
-description=Lets "Let Me Think" and "NRK Accountant" work together
+id=LetMeThink_NRK_Accountant
+description=Allows "Let Me Think" and "NRK Accountant" to work together
 poster=poster.png
 require=LetMeThink,NRK_Accountant
