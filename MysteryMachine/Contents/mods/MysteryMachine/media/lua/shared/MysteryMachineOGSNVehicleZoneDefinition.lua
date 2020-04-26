@@ -1,22 +1,13 @@
-if VehicleZoneDistribution then
-  -- mysterymachine zone, not sure if it's possible to make this though
-  -- VehicleZoneDistribution.mysterymachine = {};
-  -- VehicleZoneDistribution.mysterymachine.vehicles = {};
-  -- VehicleZoneDistribution.mysterymachine.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  -- VehicleZoneDistribution.mysterymachine.specialCar = true;
+if VehicleZoneDistribution then -- check if the table exists for backwards compatibility
 
-  VehicleZoneDistribution.parkingstall.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.medium.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.good.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.trafficjamw.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.police.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.fire.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.ranger.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.mccoy.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.postal.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.spiffo.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.ambulance.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.fossoil.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 100};
-  VehicleZoneDistribution.spiffo.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 1};
-  VehicleZoneDistribution.radio.vehicles["Base.VanMysterymachine"] = {index = -1, spawnChance = 1};
+  VehicleZoneDistribution.police.chanceToSpawnNormal = 70;
+  VehicleZoneDistribution.fire.vehicles["Base.MysteryMachine"] = {index = -1, spawnChance = 1};
+  VehicleZoneDistribution.ranger.vehicles["Base.MysteryMachine"] = {index = 0, spawnChance = 1};
+  VehicleZoneDistribution.mccoy.vehicles["Base.MysteryMachine"] = {index = 1, spawnChance = 1};
+  VehicleZoneDistribution.postal.vehicles["Base.MysteryMachine"] = {index = 2, spawnChance = 1};
+  VehicleZoneDistribution.spiffo.vehicles["Base.MysteryMachine"] = {index = -1, spawnChance = 1};
+  VehicleZoneDistribution.ambulance.vehicles["Base.MysteryMachine"] = {index = -1, spawnChance = 1};
+  VehicleZoneDistribution.radio.vehicles["Base.MysteryMachine"] = {index = -1, spawnChance = 1};
+  VehicleZoneDistribution.fossoil.vehicles["Base.MysteryMachine"] = {index = 0, spawnChance = 1};
+
 end
