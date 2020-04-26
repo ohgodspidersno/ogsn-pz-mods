@@ -77,7 +77,7 @@ end
 -- is still valid.
 --
 function TABreakWindowLock:isValid()
-    return self.character:getPrimaryHandItem():getName() ==  Translator.getDisplayItemName("Crowbar");
+    return self.character:getPrimaryHandItem():getType() == "Crowbar";
 end
 
 ---

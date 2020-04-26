@@ -1,0 +1,3 @@
+Items_RU_york = {
+DisplayNameSpearChippedStone = "Копьё с острым камнем",
+}

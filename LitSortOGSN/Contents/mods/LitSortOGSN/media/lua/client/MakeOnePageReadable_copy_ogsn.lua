@@ -11,11 +11,11 @@ function ISReadABook:update(...)
 			self.pageTimer = 0;
 			local txtRandom = ZombRand(3);
 			if txtRandom == 0 then
-					self.character:Say(getText("IGUI_PlayerText_DontGet"));
+					self.character:Say(getText("IGUI_PlayerText_FlaggedBook1"));
 			elseif txtRandom == 1 then
-					self.character:Say(getText("IGUI_PlayerText_TooComplicated"));
+					self.character:Say(getText("IGUI_PlayerText_FlaggedBook2"));
 			else
-					self.character:Say(getText("IGUI_PlayerText_DontUnderstand"));
+					self.character:Say(getText("IGUI_PlayerText_FlaggedBook3"));
 			end
 			if self.item:getNumberOfPages() > 0 then
 					self.character:setAlreadyReadPages(self.item:getFullType(), 1)

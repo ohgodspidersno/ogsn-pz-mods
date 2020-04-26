@@ -1,3 +1,3 @@
 ItemName_ES = {
-  DisplayNameSpearChippedStone = "Lanza con piedra afilada",
+DisplayNameSpearChippedStone = "Lanza con piedra afilada",
 }
