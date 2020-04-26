@@ -17,13 +17,3 @@ table.insert(VehicleDistributions["Ranger"]["GloveBox"].items, 0.2);
 
 table.insert(VehicleDistributions["Radio"]["GloveBox"].items,"Base.KnoxCountryMapSecret");
 table.insert(VehicleDistributions["Radio"]["GloveBox"].items, 100);
-
-if getActivatedMods():contains("MysteryMachineOGSN") then
-  table.insert(VehicleDistributions["MysteryMachine"]["Glovebox"].items,"Base.KnoxCountryMapSecret");
-  table.insert(VehicleDistributions["MysteryMachine"]["Glovebox"].items, 100);
-end
--- table.insert(VehicleDistributions["GloveBox"].items, "filcher.PostcardLocal");
--- table.insert(VehicleDistributions["GloveBox"].items, 1);
-
--- policestorage = {
---         locker ={
