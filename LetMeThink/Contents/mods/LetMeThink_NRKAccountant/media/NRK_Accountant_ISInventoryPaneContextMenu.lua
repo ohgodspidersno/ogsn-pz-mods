@@ -3,6 +3,7 @@ local ISInventoryPaneContextMenu_createMenu = ISInventoryPaneContextMenu.createM
 ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, items, x, y, origin)
 	if ISInventoryPaneContextMenu.dontCreateMenu then return; end
 	-- if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return end
+	if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 and not getActivatedMods():contains("LetMeThink") then return end
 
 	local context = ISInventoryPaneContextMenu_createMenu(player, isInPlayerInventory, items, x, y, origin)
 
