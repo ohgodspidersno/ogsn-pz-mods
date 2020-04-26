@@ -68,6 +68,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     local clothingItemExtra = nil;
     local magazine = nil;
     local bullet = nil;
+    local hairDye = nil;
 
     local playerObj = getSpecificPlayer(player)
 
@@ -106,6 +107,9 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
         end
 		if testItem:getType() == "DishCloth" or testItem:getType() == "BathTowel" and getSpecificPlayer(player):getBodyDamage():getWetness() > 0 then
 			canBeDry = true;
+        end
+        if testItem:isHairDye() then
+            hairDye = testItem;
         end
         if testItem:isBroken() or testItem:getCondition() < testItem:getConditionMax() then
             brokenObject = testItem;
@@ -157,7 +161,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
         if isHandWeapon and isHandWeapon:canBeRemote() then
             remoteControllable = isHandWeapon;
         end
-		if instanceof(testItem, "InventoryContainer") and testItem:canBeEquipped() == "Back" then
+		if instanceof(testItem, "InventoryContainer") and testItem:canBeEquipped() == "Back" and not playerObj:isEquipped(testItem) then
 			canBeEquippedBack = true;
         end
         if instanceof(testItem, "InventoryContainer") then
@@ -703,7 +707,13 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
 	-- dry yourself with a towel
 	if canBeDry then
 		context:addOption(getText("ContextMenu_Dry_myself"), items, ISInventoryPaneContextMenu.onDryMyself, player);
-	end
+    end
+    if hairDye and playerObj:getHumanVisual():getHairModel() and playerObj:getHumanVisual():getHairModel() ~= "Bald" then
+        context:addOption(getText("ContextMenu_DyeHair"), hairDye, ISInventoryPaneContextMenu.onDyeHair, playerObj, false);
+    end
+    if hairDye and playerObj:getHumanVisual():getBeardModel() and playerObj:getHumanVisual():getBeardModel() ~= "" then
+        context:addOption(getText("ContextMenu_DyeBeard"), hairDye, ISInventoryPaneContextMenu.onDyeHair, playerObj, true);
+    end
     if isInPlayerInventory and not unequip and playerObj:getJoypadBind() == -1 and
             not ISInventoryPaneContextMenu.isAllFav(items) and
             not ISInventoryPaneContextMenu.isAllNoDropMoveable(items) then
@@ -817,15 +827,17 @@ ISInventoryPaneContextMenu.doClothingRecipeMenu = function(playerObj, clothing, 
 end
 
 ISInventoryPaneContextMenu.onInspectClothing = function(player, clothing)
-    if not ISInventoryPaneContextMenu.garmentUI then
-        ISInventoryPaneContextMenu.garmentUI = ISGarmentUI:new(500, 500, player, clothing);
-        ISInventoryPaneContextMenu.garmentUI:initialise();
-        ISInventoryPaneContextMenu.garmentUI:addToUIManager();
-    else
+    local playerNum = player:getPlayerNum()
+    if ISGarmentUI.windows[playerNum] then
         ISInventoryPaneContextMenu.garmentUI:close();
-        ISInventoryPaneContextMenu.garmentUI = ISGarmentUI:new(500, 500, player, clothing);
-        ISInventoryPaneContextMenu.garmentUI:initialise();
-        ISInventoryPaneContextMenu.garmentUI:addToUIManager();
+    end
+    local window = ISGarmentUI:new(-1, 500, player, clothing);
+    window:initialise();
+    window:addToUIManager();
+    ISGarmentUI.windows[playerNum] = window
+    if JoypadState.players[playerNum+1] then
+        window.prevFocus = JoypadState.players[playerNum+1].focus
+        setJoypadFocus(playerNum, window)
     end
 end
 
@@ -1522,6 +1534,10 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
     ISTimedActionQueue.add(ISFixAction:new(getSpecificPlayer(player), brokenObject, 60, fixing, fixer, vehiclePart));
 end
 
+ISInventoryPaneContextMenu.onDyeHair = function(hairDye, playerObj, beard)
+    ISTimedActionQueue.add(ISDyeHair:new(playerObj, hairDye, beard, 120));
+end
+
 ISInventoryPaneContextMenu.onDryMyself = function(towels, player)
     towels = ISInventoryPane.getActualItems(towels)
     for i,k in ipairs(towels) do
@@ -1655,16 +1671,18 @@ ISInventoryPaneContextMenu.onCheckMap = function(map, player)
     mapUI:initialise();
 --    mapUI:addToUIManager();
     local wrap = mapUI:wrapInCollapsableWindow(map:getName(), false);
-    wrap:addToUIManager();
     wrap:setInfo(getText("IGUI_Map_Info"));
     mapUI.wrap = wrap;
     wrap.render = ISMap.renderWrap;
     wrap.prerender = ISMap.prerenderWrap;
     wrap.setVisible = ISMap.setWrapVisible;
+    wrap.close = ISMap.closeWrap;
     wrap.mapUI = mapUI;
     mapUI.render = ISMap.noRender;
     mapUI.prerender = ISMap.noRender;
     map:doBuildingtStash();
+    wrap:setVisible(true);
+    wrap:addToUIManager();
 	if JoypadState.players[player+1] then
         setJoypadFocus(player, mapUI)
     end
@@ -1757,7 +1775,7 @@ ISInventoryPaneContextMenu.haveDamagePart = function(playerId)
 	for i=0,BodyPartType.ToIndex(BodyPartType.MAX) - 1 do
 		local bodyPart = bodyParts:get(i);
 		-- if it's damaged
-		if bodyPart:scratched() or bodyPart:deepWounded() or bodyPart:bitten() or bodyPart:stitched() then
+		if bodyPart:scratched() or bodyPart:deepWounded() or bodyPart:bitten() or bodyPart:stitched() or bodyPart:bleeding() or bodyPart:isBurnt() and not bodyPart:bandaged() then
 			table.insert(result, bodyPart);
 		end
 	end
