@@ -9,5 +9,4 @@ if VehicleZoneDistribution then -- check if the table exists for backwards compa
   VehicleZoneDistribution.ambulance.vehicles["Base.MysteryMachine"] = {index = -1, spawnChance = 1};
   VehicleZoneDistribution.radio.vehicles["Base.MysteryMachine"] = {index = -1, spawnChance = 1};
   VehicleZoneDistribution.fossoil.vehicles["Base.MysteryMachine"] = {index = 0, spawnChance = 1};
-
 end
