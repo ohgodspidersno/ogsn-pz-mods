@@ -4,13 +4,17 @@ Events.OnGameStart.Add( function ()
     print ("Adding FMJ items to NecroForge");
     if NecroList then
         print ("Necroforge added");
-		if NecroList.Items.FMJLockPickingMag then
+		if NecroList.Items.BobbyPin then
         else
-            NecroList.Items.FMJLockPickingMag = {"Literature", nil, nil, "The Burglar Magazine vol. 1", "FMJ.LockPickingMag", "media/textures/Item_MagazineBlacksmith1.png", nil, nil, nil};
+            NecroList.Items.BobbyPin = {"Normal", nil, nil, "Hairpin", "FMJ.BobbyPin", "media/textures/Item_BobbyPin.png", nil, nil, nil};
         end
-		if NecroList.Items.FMJLockPickingMag2 then
+    if NecroList.Items.LockPickingMag then
         else
-            NecroList.Items.FMJLockPickingMag2 = {"Literature", nil, nil, "The Burglar Magazine vol. 2", "FMJ.LockPickingMag2", "media/textures/Item_MagazineBlacksmith2.png", nil, nil, nil};
+            NecroList.Items.LockPickingMag = {"Literature", nil, nil, "Locksmith's Handbook Vol. 1", "FMJ.LockPickingMag", "media/textures/Item_magazine_Lock_01.png", nil, nil, nil};
+        end
+		if NecroList.Items.LockPickingMag2 then
+        else
+            NecroList.Items.LockPickingMag2 = {"Literature", nil, nil, "Locksmith's Handbook Vol. 2", "FMJ.LockPickingMag2", "media/textures/Item_magazine_Lock_02.png", nil, nil, nil};
         end
         print ("Necroforge not found!");
     end
