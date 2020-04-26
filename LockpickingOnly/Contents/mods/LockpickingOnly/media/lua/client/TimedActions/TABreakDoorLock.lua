@@ -68,7 +68,7 @@ end
 -- is still valid.
 --
 function TABreakDoorLock:isValid()
-    return self.character:getPrimaryHandItem():getName() == Translator.getDisplayItemName("Crowbar");
+    return self.character:getPrimaryHandItem():getType() == "Crowbar";
 end
 
 ---
