@@ -1,8 +1,19 @@
 
+require 'Vehicles/VehicleDistributions'
+
+local distributionTable = VehicleDistributions[1]
+
 if getActivatedMods():contains("KnoxCountryMap_OGSN") then
-  VehicleDistributions.Mysterymachine = {
-       TruckBed =
-       {
+  VehicleDistributions.MysteryMachine = {
+        GloveBox =
+        {
+                rolls = 1,
+                items = {
+                        "KnoxCountryMapSecret", 100,
+                }
+        },
+        TruckBed =
+        {
                rolls = 3,
                items = {
                        "Bread", 7,
@@ -32,9 +43,9 @@ if getActivatedMods():contains("KnoxCountryMap_OGSN") then
                        "farming.Bacon", 4,
                        "farming.Bacon", 4,
                }
-       },
-       SeatRearLeft =
-       {
+        },
+        SeatRearLeft =
+        {
                rolls = 3,
                items = {
                        "Bread", 7,
@@ -64,9 +75,9 @@ if getActivatedMods():contains("KnoxCountryMap_OGSN") then
                        "farming.Bacon", 4,
                        "farming.Bacon", 4,
                }
-       },
-       SeatRearRight =
-       {
+        },
+        SeatRearRight =
+        {
                rolls = 3,
                items = {
                        "Bread", 7,
@@ -96,9 +107,9 @@ if getActivatedMods():contains("KnoxCountryMap_OGSN") then
                        "farming.Bacon", 4,
                        "farming.Bacon", 4,
                }
-       },
+  },
 else
-  VehicleDistributions.Mysterymachine = {
+  VehicleDistributions.MysteryMachine = {
        TruckBed =
        {
                rolls = 3,
@@ -129,13 +140,6 @@ else
                        "farming.Cabbage", 4,
                        "farming.Bacon", 4,
                        "farming.Bacon", 4,
-               }
-       },
-       GloveBox =
-       {
-               rolls = 1,
-               items = {
-                       "KnoxCountryMapSecret", 100,
                }
        },
        SeatRearLeft =
@@ -203,7 +207,5 @@ else
                }
        },
 end
-local distributionTable = {
-       VanMysterymachine = { Normal = VehicleDistributions.Mysterymachine; },
- }
- table.insert(VehicleDistributions, 1, distributionTable);
+
+distributionTable["mysterymachine"] = { Normal = VehicleDistributions.mysterymachine; }
