@@ -1,8 +1,6 @@
 version=1
-title=Mod Template
-description=This is an example mod with two worlds.  You can use this as a template for your own map mods.
-description=
-description=The first world has a single 300x300-tile cell.
-description=The second world adds cells all around the first world.
+title=Scooby Doo Mystery Machine
+description=Zoinks! Like, I'm totally a zombie, Scoobs! Ruh roh!
+description=Van art created by gflewis2018, mod coding by Oh God Spiders No
 tags=mod
 visibility=public
