@@ -39,4 +39,8 @@ end
 function ISFlagABookAsSeen:update()
 	self.item:setJobDelta(self:getJobDelta());
 end
+
+function ISFlagABookAsSeen:perform()
+  ISBaseTimedAction.perform(self);
+end
 end
