@@ -1,0 +1,75 @@
+require('NPCs/MainCreationMethods');
+Events.OnNewGame.Add(
+	function(player, square)
+		player:getInventory():AddItem("cheatmenu.CMInfiniteCarryweight");
+		player:getInventory():AddItem("Base.BookCarpentry1");
+		player:getInventory():AddItem("Base.BookCarpentry2");
+		player:getInventory():AddItem("Base.BookCarpentry3");
+		player:getInventory():AddItem("Base.BookCarpentry4");
+		player:getInventory():AddItem("Base.BookCarpentry5");
+		player:getInventory():AddItem("Base.BookCooking1");
+		player:getInventory():AddItem("Base.BookCooking2");
+		player:getInventory():AddItem("Base.BookCooking3");
+		player:getInventory():AddItem("Base.BookCooking4");
+		player:getInventory():AddItem("Base.BookCooking5");
+		player:getInventory():AddItem("Base.BookElectrician1");
+		player:getInventory():AddItem("Base.BookElectrician2");
+		player:getInventory():AddItem("Base.BookElectrician3");
+		player:getInventory():AddItem("Base.BookElectrician4");
+		player:getInventory():AddItem("Base.BookElectrician5");
+		player:getInventory():AddItem("Base.BookFarming1");
+		player:getInventory():AddItem("Base.BookFarming2");
+		player:getInventory():AddItem("Base.BookFarming3");
+		player:getInventory():AddItem("Base.BookFarming4");
+		player:getInventory():AddItem("Base.BookFarming5");
+		player:getInventory():AddItem("Base.BookFishing1");
+		player:getInventory():AddItem("Base.BookFishing2");
+		player:getInventory():AddItem("Base.BookFishing3");
+		player:getInventory():AddItem("Base.BookFishing4");
+		player:getInventory():AddItem("Base.BookFishing5");
+		player:getInventory():AddItem("Base.BookFirstAid1");
+		player:getInventory():AddItem("Base.BookFirstAid2");
+		player:getInventory():AddItem("Base.BookFirstAid3");
+		player:getInventory():AddItem("Base.BookFirstAid4");
+		player:getInventory():AddItem("Base.BookFirstAid5");
+		player:getInventory():AddItem("Base.BookForaging1");
+		player:getInventory():AddItem("Base.BookForaging2");
+		player:getInventory():AddItem("Base.BookForaging3");
+		player:getInventory():AddItem("Base.BookForaging4");
+		player:getInventory():AddItem("Base.BookForaging5");
+		player:getInventory():AddItem("Base.BookMechanic1");
+		player:getInventory():AddItem("Base.BookMechanic2");
+		player:getInventory():AddItem("Base.BookMechanic3");
+		player:getInventory():AddItem("Base.BookMechanic4");
+		player:getInventory():AddItem("Base.BookMechanic5");
+		player:getInventory():AddItem("Base.BookMetalWelding1");
+		player:getInventory():AddItem("Base.BookMetalWelding2");
+		player:getInventory():AddItem("Base.BookMetalWelding3");
+		player:getInventory():AddItem("Base.BookMetalWelding4");
+		player:getInventory():AddItem("Base.BookMetalWelding5");
+		player:getInventory():AddItem("Base.BookBlacksmith1");
+		player:getInventory():AddItem("Base.BookBlacksmith2");
+		player:getInventory():AddItem("Base.BookBlacksmith3");
+		player:getInventory():AddItem("Base.BookBlacksmith4");
+		player:getInventory():AddItem("Base.BookBlacksmith5");
+		player:getInventory():AddItem("Base.BookTailoring1");
+		player:getInventory():AddItem("Base.BookTailoring2");
+		player:getInventory():AddItem("Base.BookTailoring3");
+		player:getInventory():AddItem("Base.BookTailoring4");
+		player:getInventory():AddItem("Base.BookTailoring5");
+		player:getInventory():AddItem("Base.BookTrapping1");
+		player:getInventory():AddItem("Base.BookTrapping2");
+		player:getInventory():AddItem("Base.BookTrapping3");
+		player:getInventory():AddItem("Base.BookTrapping4");
+		player:getInventory():AddItem("Base.BookTrapping5");
+
+	end
+)
+
+local function GhostMode()
+	local player = getSpecificPlayer(0)
+	player:setGhostMode(true)
+	player:setInvincible(true)
+end
+
+Events.OnGameStart.Add(GhostMode);
