@@ -9,11 +9,14 @@ table.insert(SuburbsDistributions["Bag_WeaponBag"].items, "Base.KnoxCountryMapSe
 table.insert(SuburbsDistributions["Bag_WeaponBag"].items, 1);
 
 -- VehicleDistributions
-table.insert(VehicleDistributions["Police"]["GloveBox"].items,"Base.KnoxCountryMapSecret");
-table.insert(VehicleDistributions["Police"]["GloveBox"].items, 0.1);
+VehicleDistributions.GloveBoxSecretMapRare = VehicleDistributions.GloveBox
+table.insert(VehicleDistributions["GloveBoxSecretMapRare"].items,"Base.KnoxCountryMapSecret");
+table.insert(VehicleDistributions["GloveBoxSecretMapRare"].items, 1);
 
-table.insert(VehicleDistributions["Ranger"]["GloveBox"].items,"Base.KnoxCountryMapSecret");
-table.insert(VehicleDistributions["Ranger"]["GloveBox"].items, 0.2);
+VehicleDistributions.GloveBoxSecretMapOnly = {rolls = 1, items = {"KnoxCountryMapSecret", 100,},}
 
-table.insert(VehicleDistributions["Radio"]["GloveBox"].items,"Base.KnoxCountryMapSecret");
-table.insert(VehicleDistributions["Radio"]["GloveBox"].items, 100);
+VehicleDistributions.Police.GloveBox = VehicleDistributions.GloveBoxSecretMapRare
+VehicleDistributions.Ranger.GloveBox = VehicleDistributions.GloveBoxSecretMapRare
+VehicleDistributions.Fire.GloveBox = VehicleDistributions.GloveBoxSecretMapRare
+
+VehicleDistributions.Radio.GloveBox = VehicleDistributions.GloveBoxSecretMapOnly
