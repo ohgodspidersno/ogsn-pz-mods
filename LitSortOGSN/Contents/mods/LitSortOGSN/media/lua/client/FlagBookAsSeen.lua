@@ -10,8 +10,16 @@ function ISFlagABookAsSeen:isValid()
       and not self.character:HasTrait("Illiterate")
 end
 
-function ISReadABook:start()
+function ISFlagABookAsSeen:start()
+  self.item:setJobType(getText("ContextMenu_FlagBook") ..' '.. self.item:getName());
+  self.item:setJobDelta(0.0);
+  -- self.startTimeHours = getGameTime():getTimeOfDay()
+  self:setAnimVariable("ReadType", "book")
+  self:setActionAnim(CharacterActionAnims.Read);
+  self:setOverrideHandModels(nil, self.item);
+  -- self.character:setReading(true) -- not sure if I want or need this...
 end
+
 function ISFlagABookAsSeen:stop()
   if self.item:getNumberOfPages() > 0 then -- check if valid
 
