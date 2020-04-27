@@ -43,4 +43,16 @@ end
 function ISFlagABookAsSeen:perform()
   ISBaseTimedAction.perform(self);
 end
+
+function ISFlagABookAsSeen:new(character, item, time)
+	local o = {}
+	setmetatable(o, self)
+	self.__index = self
+	o.character = character;
+	o.item = item;
+	o.stopOnWalk = false;
+	o.stopOnRun = true;
+	o.maxTime = time;
+	return o;
+end
 end
