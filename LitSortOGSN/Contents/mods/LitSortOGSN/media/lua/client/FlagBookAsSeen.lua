@@ -38,6 +38,14 @@ function ISFlagABookAsSeen:perform()
       print('player had already read some of it. how did they get here?')
     else
       -- otherwise, immediately set the number of read pages to 1
+      local txtRandom = ZombRand(3);
+      if txtRandom == 0 then
+          self.character:Say(getText("IGUI_PlayerText_FlaggedBook1"));
+      elseif txtRandom == 1 then
+          self.character:Say(getText("IGUI_PlayerText_FlaggedBook2"));
+      else
+          self.character:Say(getText("IGUI_PlayerText_FlaggedBook3"));
+      end
       self.item:setAlreadyReadPages(1)
     end
     -- then stop the action
