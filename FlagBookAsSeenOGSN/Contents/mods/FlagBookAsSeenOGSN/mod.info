@@ -1,4 +1,5 @@
 name=Flag a Book as Seen
+id=FlagBookAsSeenOGSN
 description=A way to quickly mark a particular book (e.g. Carpentry for Experts) as one that you've seen before.
 description=This way whenever you find new copies of it while looting, you'll know immediately that you already have a copy of it.
 poster=poster.png
