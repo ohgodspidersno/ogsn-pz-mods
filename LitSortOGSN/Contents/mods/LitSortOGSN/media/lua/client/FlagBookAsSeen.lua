@@ -21,6 +21,15 @@ function ISFlagABookAsSeen:start()
 end
 
 function ISFlagABookAsSeen:stop()
+  self.item:setJobDelta(0.0);
+  ISBaseTimedAction.stop(self);
+end
+
+function ISFlagABookAsSeen:update()
+	self.item:setJobDelta(self:getJobDelta());
+end
+
+function ISFlagABookAsSeen:perform()
   if self.item:getNumberOfPages() > 0 then -- check if valid
 
     if self.item:getAlreadyReadPages() > 1 then
@@ -31,17 +40,8 @@ function ISFlagABookAsSeen:stop()
       self.item:setAlreadyReadPages(1)
     end
     -- then stop the action
-    self.item:setJobDelta(0.0);
-    ISBaseTimedAction.stop(self);
+    ISBaseTimedAction.perform(self);
   end
-end
-
-function ISFlagABookAsSeen:update()
-	self.item:setJobDelta(self:getJobDelta());
-end
-
-function ISFlagABookAsSeen:perform()
-  ISBaseTimedAction.perform(self);
 end
 
 function ISFlagABookAsSeen:new(character, item, time)
@@ -54,5 +54,4 @@ function ISFlagABookAsSeen:new(character, item, time)
 	o.stopOnRun = true;
 	o.maxTime = time;
 	return o;
-end
 end
