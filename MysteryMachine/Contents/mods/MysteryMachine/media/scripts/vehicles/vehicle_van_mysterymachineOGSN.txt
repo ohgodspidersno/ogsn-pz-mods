@@ -32,7 +32,6 @@ module Base
 		sound
 		{
 			horn = VehicleHorn2,
-			backSignal = VehicleBackUpBeeper,
 		}
 
 		extents = 0.9341 0.7253 2.3297,
