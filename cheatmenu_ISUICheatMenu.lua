@@ -401,11 +401,12 @@ function ISUICheatMenu:createVehicleMenu()
 		}
 	end
 
-	if getActivatedMods():contains("VileM113APC") then
-		vehicleTable["VileM113APC"] = {
-			{"M113A1","Base.m113a1", "Vile M113APC"},
-		}
-	end
+-- This is commented out bcause for whatever reason this generates annoying error messages every time you open the right click context menu
+	-- if getActivatedMods():contains("VileM113APC") then
+	-- 	vehicleTable["VileM113APC"] = {
+	-- 		{"M113A1","Base.m113a1", "Vile M113APC"},
+	-- 	}
+	-- end
 
 	if getActivatedMods():contains("ZIL130PACK2") then
 		vehicleTable["ZIL130PACK2"] = {
