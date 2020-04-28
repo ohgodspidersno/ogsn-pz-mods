@@ -10,7 +10,6 @@ function MakeCupHerbalTeaOGSN(items, result, player)
     print('in loop. i =')
     print(i)
     local item = items:get(i)
-    local string_type = item:getStringItemType();
     local type = item:getType()
     if string_type == "Food" then
         if not item:isFresh() then
@@ -78,7 +77,6 @@ function MakeHerbalBlendOGSN(items, result, player)
   local fresh = true
   local rotten = false
   local dried_counter = 0
-  -- local burnt = false
   local oldest = 0
   local days_fresh = result:getOffAge()
   local days_rotten = result:getOffAgeMax()
@@ -86,7 +84,6 @@ function MakeHerbalBlendOGSN(items, result, player)
     print('in loop. i =')
     print(i)
     local item = items:get(i)
-    local string_type = item:getStringItemType();
     local type = item:getType()
     if string_type == "Food" then
         if not item:isFresh() then
@@ -118,18 +115,24 @@ function MakeHerbalBlendOGSN(items, result, player)
   -- freshness is only determined recursively by item's age
   -- result:setCooked(true)
   if not fresh then
-      if oldest > days_fresh then -- if one of the ingredients was very old, then we make it that old
-        result:setAge(oldest)
-      else
-        result:setAge(days_fresh+1) -- otherwise make it just a little stale
-      end
+      result:setAge(days_fresh+1)
+      -- This was causing bugs so i'm just going to simplify it. if it's fresh it's new, otherwise it's just barely stale
+      -- if oldest > days_fresh then -- if one of the ingredients was very old, then we make it that old
+      --   result:setAge(oldest)
+      -- else
+      --   result:setAge(days_fresh+1) -- otherwise make it just a little stale
+      -- end
   else
-      result:setAge(oldest) -- if it is fresh just set it to the age
+    result:setAge(0)
+      -- Again, buggy, just going to make it brand new if it's fresh
+      -- result:setAge(oldest) -- if it is fresh just set it to the age
   end
-  result:setRotten(rotten)  -- first mark it rotten if appropriate
-  if rotten and days_rotten > oldest then -- if it's rotten but somehow its age is still 'stale'or 'fresh'
-      result:setAge(days_rotten) -- 'then just set its age to be a little rotten
-  end
+  result:setRotten(rotten)  -- mark it rotten if appropriate
+
+  -- simplifying due to buginess...
+  -- if rotten and days_rotten > oldest then -- if it's rotten but somehow its age is still 'stale'or 'fresh'
+  --     result:setAge(days_rotten) -- 'then just set its age to be a little rotten
+  -- end
   -- result:setBurnt(burnt)
 
   -- if it was burnt or rotten strip it of any positive effects
