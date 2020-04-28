@@ -49,6 +49,8 @@ function CookRawHerbOGSN(herb)
     end
   end
 
+  if not driedType then return end -- to handle weirdness. this shouldn't happen.
+
   local driedHerb = InventoryItemFactory.CreateItem(driedType);
   oven:Remove(herb)
   oven:AddItem(driedHerb)
