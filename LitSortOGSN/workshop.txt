@@ -8,25 +8,32 @@ description=[h1]For a truly superlative book sorting experience[/h1]
 description=Some features only available in English for now, looking for translators to help.
 description=
 description=[url=https://steamcommunity.com/workshop/filedetails/discussion/2071347174/2264691117423886541/][h3]Don't like pictures? Here's a written description of the mod.[/h3][/url]
+description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
 description=
+description=[h1]Improved Sorting: Skill books, magazines, entertainment, etc. are now separated into groups.[/h1]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320153788997397/113F24AF28C6647601BA1F5AB4A0FCDD7E9FA25B/[/img]
 description=
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
 description=
+description=[h1]Flag Books as Owned: You can now instantly 'read' the first page of advanced books. If you find a new copy you will now be able to tell that you already own one.[/h1]
+description=[h3]This will not affect the time it takes to read that book once you are ready for it. Your character will even re-read the first page![/h3]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320517901007546/47E2881350AB79C6070C3315089B623D587C487F/[/img]
 description=
-description=
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
 description=
+description=[h1]Magazines now all have unique icons. Chapter is denoted by color and visible numbers. Similar books share logos and main color palette.[/h1]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333556248/B5918DA8B4EF0342A1F1889AA2542EA0115E5249/[/img]
+description=[h3]Modders: You may notice I made a bunch of extras. Feel free to use them in your own work![/h3]
 description=
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
 description=
+description=[h1]Four optional sets of stylish skill book icons to choose from. You may also keep the default set.[/h1]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320153791677462/140D28164332549A661439021C62A615450BB119/[/img]
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320153791790613/EC5D48FE83FCE0256367DF29A97BE163C1008D59/[/img]
 description=
 description=[img=]https://steamuserimages-a.akamaihd.net/ugc/1018320033333686586/CDF15798CE4108E5D85C4F4C5CE3159F0EF4B36B/[/img]
 description=
+description=[h3]Enjoy the mod? I would love it if you gave me some fake internet points. They are easy to give, and totally free![/h3]
 description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
