@@ -1,5 +1,4 @@
 require "TimedActions/ISBaseTimedAction"
-require "ISUI/ISInventoryPaneContextMenu"
 
 ISFlagABookAsSeen = ISBaseTimedAction:derive("ISFlagABookAsSeen");
 
@@ -63,12 +62,4 @@ function ISFlagABookAsSeen:new(character, item, time)
 	o.stopOnRun = true;
 	o.maxTime = time;
 	return o;
-end
-
-ISInventoryPaneContextMenu.flagBookItem = function(item, player)
-	-- if clothing isn't in main inventory, put it there first.
-	local playerObj = getSpecificPlayer(player)
-	ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
-	-- flag
-	ISTimedActionQueue.add(ISFlagABookAsSeen:new(playerObj, item, 10));
 end
