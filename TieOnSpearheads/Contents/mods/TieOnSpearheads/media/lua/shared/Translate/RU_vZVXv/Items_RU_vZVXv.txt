@@ -1,0 +1,3 @@
+Items_RU_vZVXv = {
+DisplayNameSpearChippedStone = "Копье с колотым камнем",
+}

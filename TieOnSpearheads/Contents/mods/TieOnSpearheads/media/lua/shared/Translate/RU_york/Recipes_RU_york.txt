@@ -1,4 +1,4 @@
-Recipes_RU = {
+Recipes_RU_york = {
 recipe_Bind_Bread_Knife_to_Spear_with_Twine = "Прикрепить нож для хлеба к копью шнуром",
 recipe_Bind_Butter_Knife_to_Spear_with_Twine = "Прикрепить нож для масла к копью шнуром",
 recipe_Bind_Fork_to_Spear_with_Twine = "Прикрепить вилку к копью шнуром",
