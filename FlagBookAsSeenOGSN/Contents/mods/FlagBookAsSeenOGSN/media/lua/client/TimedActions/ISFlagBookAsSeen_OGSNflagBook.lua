@@ -3,6 +3,7 @@ require "TimedActions/ISBaseTimedAction"
 ISFlagABookAsSeen = ISBaseTimedAction:derive("ISFlagABookAsSeen");
 
 function ISFlagABookAsSeen:isValid()
+  print('inside ISFlagABookAsSeen:isValid')
   -- player must have it, it must be a real valid book, and it must be totally unread
   return self.character:getInventory():contains(self.item)
       and self.item:getNumberOfPages() > 0
@@ -11,6 +12,7 @@ function ISFlagABookAsSeen:isValid()
 end
 
 function ISFlagABookAsSeen:start()
+  print('inside ISFlagABookAsSeen:start')
   self.item:setJobType(getText("ContextMenu_FlagBook") ..' '.. self.item:getName());
   self.item:setJobDelta(0.0);
   -- self.startTimeHours = getGameTime():getTimeOfDay()
@@ -21,15 +23,18 @@ function ISFlagABookAsSeen:start()
 end
 
 function ISFlagABookAsSeen:stop()
+  print('inside ISFlagABookAsSeen:stop')
   self.item:setJobDelta(0.0);
   ISBaseTimedAction.stop(self);
 end
 
 function ISFlagABookAsSeen:update()
+  print('inside ISFlagABookAsSeen:update')
 	self.item:setJobDelta(self:getJobDelta());
 end
 
 function ISFlagABookAsSeen:perform()
+  print('inside ISFlagABookAsSeen:perform')
   if self.item:getNumberOfPages() > 0 then -- check if valid
 
     if self.item:getAlreadyReadPages() > 1 then
@@ -53,6 +58,7 @@ function ISFlagABookAsSeen:perform()
 end
 
 function ISFlagABookAsSeen:new(character, item, time)
+  print('inside ISFlagABookAsSeen:new')
 	local o = {}
 	setmetatable(o, self)
 	self.__index = self
