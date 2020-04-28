@@ -1,6 +1,7 @@
 version=1
+id=2074510647
 title=Scooby Doo Mystery Machine
 description=Zoinks! Like, I'm totally a zombie, Scoobs! Ruh roh!
 description=Van art created by gflewis2018, mod coding by Oh God Spiders No
-tags=mod
+tags=
 visibility=public
