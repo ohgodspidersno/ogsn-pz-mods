@@ -28,7 +28,7 @@ module DistinctNames {
   item Hat_BandanaMask
   {
       Type = Clothing,
-      DisplayName = Bandana (Face),
+      DisplayName = Bandana,
       ClothingItem = Hat_BandanaMask,
       BodyLocation = Mask,
       ClothingItemExtra = Hat_Bandana;Hat_BandanaTied,
@@ -41,7 +41,7 @@ module DistinctNames {
   item Hat_BandanaMaskTINT
 {
     Type = Clothing,
-    DisplayName = Bandana (Face),
+    DisplayName = Bandana - Plain,
     ClothingItem = Hat_BandanaMaskTINT,
     BodyLocation = Mask,
     ClothingItemExtra = Hat_BandanaTINT;Hat_BandanaTiedTINT,

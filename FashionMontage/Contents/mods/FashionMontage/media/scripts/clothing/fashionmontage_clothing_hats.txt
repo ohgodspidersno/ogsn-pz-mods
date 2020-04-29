@@ -4,21 +4,34 @@ module DistinctNames {
   }
   item Hat_Bandana
   {
-  Type = Clothing,
-  DisplayName = Bandana (Head),
-  ClothingItem = Hat_Bandana,
-  BodyLocation = Hat,
-  IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
-  ClothingItemExtra = Hat_BandanaTied;Hat_BandanaMask,
+      Type = Clothing,
+      DisplayName = Bandana,
+      ClothingItem = Hat_Bandana,
+      BodyLocation = Hat,
+      IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
+      ClothingItemExtra = Hat_BandanaTied;Hat_BandanaMask,
       ClothingItemExtraOption = TieBandana;TieBandanaFace,
-  CanHaveHoles = false,
-  ChanceToFall = 5,
-  Insulation = 0.10,
+      CanHaveHoles = false,
+      ChanceToFall = 5,
+      Insulation = 0.10,
+  }
+  item Hat_BandanaTied
+  {
+      Type = Clothing,
+      DisplayName = Bandana (Rambo),
+      ClothingItem = Hat_BandanaTied,
+      BodyLocation = Hat,
+      IconsForTexture = RamboBandanna_Black;RamboBandanna_Blue;RamboBandanna_Red,
+      ClothingItemExtra = Hat_Bandana;Hat_BandanaMask,
+      ClothingItemExtraOption = UntieBandana;TieBandanaFace,
+      CanHaveHoles = false,
+      ChanceToFall = 5,
+      Insulation = 0.10,
   }
   item Hat_BandanaTINT
   {
       Type = Clothing,
-      DisplayName = Bandana (Head),
+      DisplayName = Bandana - Plain,
       ClothingItem = Hat_BandanaTINT,
       BodyLocation = Hat,
       Icon = BandanaBlack,
@@ -28,23 +41,10 @@ module DistinctNames {
       ChanceToFall = 5,
       Insulation = 0.10,
   }
-  item Hat_BandanaTied
-  {
-  Type = Clothing,
-  DisplayName = Bandana (Tied),
-  ClothingItem = Hat_BandanaTied,
-  BodyLocation = Hat,
-  IconsForTexture = RamboBandanna_Black;RamboBandanna_Blue;RamboBandanna_Red,
-  ClothingItemExtra = Hat_Bandana;Hat_BandanaMask,
-  ClothingItemExtraOption = UntieBandana;TieBandanaFace,
-  CanHaveHoles = false,
-  ChanceToFall = 5,
-  Insulation = 0.10,
-  }
   item Hat_BandanaTiedTINT
   {
       Type = Clothing,
-      DisplayName = Bandana (Tied),
+      DisplayName = Bandana - Plain (Rambo),
       ClothingItem = Hat_BandanaTiedTINT,
       BodyLocation = Hat,
       ClothingItemExtra = Hat_BandanaTINT;Hat_BandanaMaskTINT,
@@ -54,7 +54,6 @@ module DistinctNames {
       ChanceToFall = 5,
       Insulation = 0.10,
   }
-  
   item Hat_BaseballCap {
       Type = Clothing,
       DisplayName = Baseball Cap,
