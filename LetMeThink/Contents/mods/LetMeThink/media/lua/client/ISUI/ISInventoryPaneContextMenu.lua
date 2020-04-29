@@ -660,7 +660,12 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     context:addOption(getText("ContextMenu_RenameFood") .. canBeRenamedFood:getName(), canBeRenamedFood, ISInventoryPaneContextMenu.onRenameFood, player);
   end
   if canBeWrite then
-    local editable = getSpecificPlayer(player):getInventory():contains("Pencil") or getSpecificPlayer(player):getInventory():contains("Pen")
+    local editable
+    if getActivatedMods():contains("BanjoRDPAP") then
+      editable = getSpecificPlayer(player):getInventory():contains("Pencil") or getSpecificPlayer(player):getInventory():contains("Pen") or getSpecificPlayer(player):getInventory():contains("BluePen") or getSpecificPlayer(player):getInventory():contains("RedPen") or getSpecificPlayer(player):getInventory():contains("Crayons")
+    else
+      editable = getSpecificPlayer(player):getInventory():contains("Pencil") or getSpecificPlayer(player):getInventory():contains("Pen") or getSpecificPlayer(player):getInventory():contains("BluePen") or getSpecificPlayer(player):getInventory():contains("RedPen")
+    end
     if canBeWrite:getLockedBy() and canBeWrite:getLockedBy() ~= getSpecificPlayer(player):getUsername() then
       editable = false
     end
