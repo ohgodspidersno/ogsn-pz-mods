@@ -31,13 +31,26 @@ module DistinctNames {
       DisplayName = Bandana (Face),
       ClothingItem = Hat_BandanaMask,
       BodyLocation = Mask,
-      ClothingItemExtra = DistinctNames.Hat_BandanaTiedWhite,
-      ClothingItemExtraOption = TieBandana,
-      Icon = Handkerchief,
+      ClothingItemExtra = Hat_Bandana;Hat_BandanaTied,
+      ClothingItemExtraOption = UntieBandana;TieBandana,
+      IconsForTexture = Handkerchief_Black;Handkerchief_Blue;Handkerchief_Red,
       CanHaveHoles = false,
       ChanceToFall = 5,
       Insulation = 0.10,
   }
+  item Hat_BandanaMaskTINT
+{
+    Type = Clothing,
+    DisplayName = Bandana (Face),
+    ClothingItem = Hat_BandanaMaskTINT,
+    BodyLocation = Mask,
+    ClothingItemExtra = Hat_BandanaTINT;Hat_BandanaTiedTINT,
+    ClothingItemExtraOption = UntieBandana;TieBandana,
+    Icon = Handkerchief,
+    CanHaveHoles = false,
+    ChanceToFall = 5,
+    Insulation = 0.10,
+}
   item Hat_DustMask {
       Type = Clothing,
       DisplayName = Dust Mask,

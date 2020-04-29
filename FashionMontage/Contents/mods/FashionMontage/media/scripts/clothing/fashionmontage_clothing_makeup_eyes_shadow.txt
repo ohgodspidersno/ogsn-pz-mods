@@ -1,0 +1,45 @@
+module DistinctNames
+{ imports {Base}
+item MakeUp_EyesShadowWhite
+{
+    Type = Clothing,
+    ClothingItem = MakeUp_EyesShadowWhite,
+    BodyLocation = MakeUp_EyesShadow,
+}
+item MakeUp_EyesShadowLightBlue
+{
+    Type = Clothing,
+    ClothingItem = MakeUp_EyesShadowLightBlue,
+    BodyLocation = MakeUp_EyesShadow,
+}
+item MakeUp_EyesShadowBlue
+{
+    Type = Clothing,
+    ClothingItem = MakeUp_EyesShadowBlue,
+    BodyLocation = MakeUp_EyesShadow,
+}
+item MakeUp_EyesShadowRed
+{
+    Type = Clothing,
+    ClothingItem = MakeUp_EyesShadowRed,
+    BodyLocation = MakeUp_EyesShadow,
+}
+item MakeUp_EyesShadowPink
+{
+    Type = Clothing,
+    ClothingItem = MakeUp_EyesShadowPink,
+    BodyLocation = MakeUp_EyesShadow,
+}
+item MakeUp_EyesShadowGreen
+{
+    Type = Clothing,
+    ClothingItem = MakeUp_EyesShadowGreen,
+    BodyLocation = MakeUp_EyesShadow,
+}
+item MakeUp_EyesShadowYellow
+{
+    Type = Clothing,
+    ClothingItem = MakeUp_EyesShadowYellow,
+    BodyLocation = MakeUp_EyesShadow,
+}
+}

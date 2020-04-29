@@ -4,43 +4,57 @@ module DistinctNames {
   }
   item Hat_Bandana
   {
+  Type = Clothing,
+  DisplayName = Bandana (Head),
+  ClothingItem = Hat_Bandana,
+  BodyLocation = Hat,
+  IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
+  ClothingItemExtra = Hat_BandanaTied;Hat_BandanaMask,
+      ClothingItemExtraOption = TieBandana;TieBandanaFace,
+  CanHaveHoles = false,
+  ChanceToFall = 5,
+  Insulation = 0.10,
+  }
+  item Hat_BandanaTINT
+  {
       Type = Clothing,
-      DisplayName = Bandana,
-      ClothingItem = Hat_Bandana,
+      DisplayName = Bandana (Head),
+      ClothingItem = Hat_BandanaTINT,
       BodyLocation = Hat,
-      IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
-      ClothingItemExtra = DistinctNames.Hat_BandanaTied,
-      ClothingItemExtraOption = TieBandana,
+      Icon = BandanaBlack,
+      ClothingItemExtra = Hat_BandanaTiedTINT;Hat_BandanaMaskTINT,
+      ClothingItemExtraOption = TieBandana;TieBandanaFace,
       CanHaveHoles = false,
       ChanceToFall = 5,
       Insulation = 0.10,
   }
   item Hat_BandanaTied
   {
-      Type = Clothing,
-      DisplayName = Bandana (Tied),
-      ClothingItem = Hat_BandanaTied,
-      BodyLocation = Hat,
-      IconsForTexture = BandanaBlack;BandanaBlue;BandanaRed,
-      ClothingItemExtra = DistinctNames.Hat_Bandana,
-      ClothingItemExtraOption = UntieBandana,
-      CanHaveHoles = false,
-      ChanceToFall = 5,
-      Insulation = 0.10,
+  Type = Clothing,
+  DisplayName = Bandana (Tied),
+  ClothingItem = Hat_BandanaTied,
+  BodyLocation = Hat,
+  IconsForTexture = RamboBandanna_Black;RamboBandanna_Blue;RamboBandanna_Red,
+  ClothingItemExtra = Hat_Bandana;Hat_BandanaMask,
+  ClothingItemExtraOption = UntieBandana;TieBandanaFace,
+  CanHaveHoles = false,
+  ChanceToFall = 5,
+  Insulation = 0.10,
   }
-  item Hat_BandanaTiedWhite
+  item Hat_BandanaTiedTINT
   {
       Type = Clothing,
-      DisplayName = Bandana - Plain (Tied),
+      DisplayName = Bandana (Tied),
       ClothingItem = Hat_BandanaTiedTINT,
       BodyLocation = Hat,
-      ClothingItemExtra = DistinctNames.Hat_BandanaMask,
-      ClothingItemExtraOption = UntieBandana,
+      ClothingItemExtra = Hat_BandanaTINT;Hat_BandanaMaskTINT,
+      ClothingItemExtraOption = UntieBandana;TieBandanaFace,
       Icon = RamboBandanna,
       CanHaveHoles = false,
       ChanceToFall = 5,
       Insulation = 0.10,
   }
+  
   item Hat_BaseballCap {
       Type = Clothing,
       DisplayName = Baseball Cap,
