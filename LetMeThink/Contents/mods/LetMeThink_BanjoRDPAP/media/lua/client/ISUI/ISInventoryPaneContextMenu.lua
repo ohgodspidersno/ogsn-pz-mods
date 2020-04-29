@@ -11,11 +11,11 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
 
     if ISInventoryPaneContextMenu.dontCreateMenu then return; end
 
-
-	-- LetMeThink
-	-- if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-	-- 	return;
-	-- end
+	-- if the game is paused, we don't show the item context menu
+	local letMeThink = getActivatedMods():contains("LetMeThink")
+	if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 and not letMeThink then
+		return;
+	end
 
     -- items is a list that could container either InventoryItem objects, OR a table with a list of InventoryItem objects in .items
     -- Also there is a duplicate entry first in the list, so ignore that.
