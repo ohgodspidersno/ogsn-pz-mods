@@ -28,8 +28,11 @@ function ISBackButtonWheel:addCommands()
 
 	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
 
+	if isPaused then
+	else
 		self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
 		self:addSlice(getText("IGUI_BackButton_Crafting"), getTexture("media/ui/Carpentry_On.png"), self.onCommand, self, "Crafting")
+	end
 
 	if getCore():isZoomEnabled() and not getCore():getAutoZoom(self.playerNum) then
 		self:addSlice(getText("IGUI_BackButton_Zoom", getCore():getNextZoom(self.playerNum, -1) * 100), getTexture("media/ui/ZoomIn.png"), self.onCommand, self, "ZoomMinus")
@@ -62,20 +65,21 @@ function ISBackButtonWheel:addCommands()
 		self:addSlice(getText("IGUI_BackButton_Zoom", getCore():getNextZoom(self.playerNum, 1) * 100), getTexture("media/ui/ZoomOut.png"), self.onCommand, self, "ZoomPlus")
 	end
 
+	if not isPaused then
 		if not playerObj:getVehicle() then
 			self:addSlice(getText("IGUI_BackButton_Movable"), getTexture("media/ui/Furniture_Off2.png"), self.onCommand, self, "MoveFurniture")
 		end
+	end
 end
 
 function ISBackButtonWheel:onGainJoypadFocus(joypadData)
 	ISRadialMenu.onGainJoypadFocus(self, joypadData)
 	self.showPausedMessage = UIManager.isShowPausedMessage()
-	UIManager.setShowPausedMessage(false)
+
 end
 
 function ISBackButtonWheel:onLoseJoypadFocus(joypadData)
 	ISRadialMenu.onLoseJoypadFocus(self, joypadData)
-	UIManager.setShowPausedMessage(self.showPausedMessage)
 end
 
 function ISBackButtonWheel:onJoypadDown(button, joypadData)
@@ -88,14 +92,14 @@ function ISBackButtonWheel:onCommand(command)
 
 	local playerObj = getSpecificPlayer(self.playerNum)
 
-	if command == "PlayerInfo" then
+	if command == "PlayerInfo" and not isPaused then
 		getPlayerInfoPanel(self.playerNum):setVisible(true)
 		getPlayerInfoPanel(self.playerNum):addToUIManager()
 		focus = getPlayerInfoPanel(self.playerNum).panel:getActiveView()
-	elseif command == "Crafting" then
+	elseif command == "Crafting" and not isPaused then
 		getPlayerCraftingUI(self.playerNum):setVisible(true)
 		focus = getPlayerCraftingUI(self.playerNum)
-	elseif command == "MoveFurniture" then
+	elseif command == "MoveFurniture" and not isPaused then
 		local mo = ISMoveableCursor:new(getSpecificPlayer(self.playerNum));
 		getCell():setDrag(mo, mo.player);
 	elseif command == "ZoomPlus" and not getCore():getAutoZoom(self.playerNum) then

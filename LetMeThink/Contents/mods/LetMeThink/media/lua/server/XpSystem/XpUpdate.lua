@@ -36,13 +36,15 @@ end
 
 -- when you or a npc try to hit a tree
 xpUpdate.OnWeaponHitTree = function(owner, weapon)
-	owner:getXp():AddXP(Perks.Strength, 2);
+	if weapon and weapon:getType() ~= "BareHands" then
+		owner:getXp():AddXP(Perks.Strength, 2);
+	end
 end
 
 -- when you or a npc try to hit something
 xpUpdate.onWeaponHitXp = function(owner, weapon, hitObject, damage)
     local isShove = false
-    if hitObject:isOnFloor() == false and weapon:getName() == "Bare Hands" then
+    if hitObject:isOnFloor() == false and weapon:getType() == "BareHands" then
         isShove = true
     end
 	local exp = 1 * damage * 0.9;
@@ -110,7 +112,7 @@ end
 -- if we press the toggle skill panel key we gonna display the character info screen
 xpUpdate.displayCharacterInfo = function(key)
 	local playerObj = getSpecificPlayer(0)
-	if not playerObj or playerObj:isDead() then
+	if getGameSpeed() == 0 or not playerObj or playerObj:isDead() then
 		return;
 	end
 	if not getPlayerData(0) then return end

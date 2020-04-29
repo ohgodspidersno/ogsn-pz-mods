@@ -376,7 +376,8 @@ function ISInventoryPane:doButtons(y)
     self.contextButton2:setVisible(false);
     self.contextButton3:setVisible(false);
 
-	if getPlayerContextMenu(self.player):getIsVisible() or
+	if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 or
+		getPlayerContextMenu(self.player):getIsVisible() or
 		getSpecificPlayer(self.player):isAsleep() then
 			return
 	end
@@ -809,12 +810,40 @@ function ISInventoryPane:onMouseDoubleClick(x, y)
 							doWalk = false
 						end
 						ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, v, v:getContainer(), playerInv))
+					elseif k~= 1 and v:getContainer() == playerInv and instanceof(v, "HandWeapon") then
+						local tItem = v;
+						local equip = true;
+						if playerObj:getPrimaryHandItem() == tItem then
+							playerObj:setPrimaryHandItem(nil);
+							equip = false;
+						end
+						if playerObj:getSecondaryHandItem() == tItem then
+							playerObj:setSecondaryHandItem(nil);
+							equip = false;
+						end
+						if equip then
+							ISInventoryPaneContextMenu.equipWeapon(tItem, true, tItem:isTwoHandWeapon(), self.player);
+						end
 					end
 				end
 			end
 		elseif item and item:getContainer() ~= playerInv then
 			if luautils.walkToContainer(item:getContainer(), self.player) then
 				ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), playerInv))
+			end
+		elseif item and item:getContainer() == playerInv and item.items and instanceof(item.items[1], "HandWeapon") then
+			local tItem = item.items[1];
+			local equip = true;
+			if playerObj:getPrimaryHandItem() == tItem then
+				playerObj:setPrimaryItem(nil);
+				equip = false;
+			end
+			if playerObj:getSecondaryHandItem() == tItem then
+				playerObj:setSecondaryItem(nil);
+				equip = false;
+			end
+			if equip then
+				ISInventoryPaneContextMenu.equipWeapon(tItem, true, tItem:isTwoHandWeapon(), self.player);
 			end
 		end
 		self.previousMouseUp = nil;
@@ -984,6 +1013,9 @@ function ISInventoryPane:doGrabOnJoypadSelected()
 end
 
 function ISInventoryPane:doContextOnJoypadSelected()
+	if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+		return;
+	end
 	if getSpecificPlayer(self.player):isAsleep() then return end
 
 	if #self.items == 0 then return end
@@ -1281,7 +1313,7 @@ end
 function ISInventoryPane:update()
 
     local playerObj = getSpecificPlayer(self.player)
-
+    
     if self.doController then
         --print("do controller!")
         self.selected = {}
@@ -1348,8 +1380,7 @@ function ISInventoryPane:update()
         local mouseOverUI
         for i=0,uis:size()-1 do
             local ui = uis:get(i)
-            if ui:isVisible() and mx >= ui:getX() and my >= ui:getY() and
-                    mx < ui:getX() + ui:getWidth() and my < ui:getY() + ui:getHeight() then
+            if ui:isPointOver(mx, my) then
                 mouseOverUI = ui
                 break
             end
@@ -1422,7 +1453,7 @@ function ISInventoryPane:refreshContainer()
         local item = it:get(i);
 		local add = true;
 		-- don't add the ZedDmg category, they are just equipped models
-		if instanceof(item, "Clothing") and (item:getBodyLocation() == "ZedDmg" or item:getBodyLocation() == "Bandage" or item:getBodyLocation() == "Wound") then
+		if item:getDisplayName() == "Blooo" or (instanceof(item, "Clothing") and (item:getBodyLocation() == "ZedDmg" or item:getBodyLocation() == "Bandage" or item:getBodyLocation() == "Wound")) then
 			add = false;
 		end
 		if add then
@@ -1470,7 +1501,7 @@ function ISInventoryPane:refreshContainer()
 			local ind = self.itemindex[itemName];
 			ind.equipped = equipped
 			ind.inHotbar = inHotbar;
-
+	
 			table.insert(ind.items, item);
 		end
     end
@@ -1500,7 +1531,7 @@ function ISInventoryPane:refreshContainer()
 
     --print("Preparing to sort inv items");
     table.sort(self.itemslist, self.itemSortFunc );
-
+    
     -- Adding the first item in list additionally at front as a dummy at the start, to be used in the details view as a header.
     for k, v in ipairs(self.itemslist) do
         local item = v.items[1];
@@ -1533,9 +1564,9 @@ function ISInventoryPane:renderdetails(doDragged)
             self:refreshContainer()
         end
     end
-
+    
     local player = getSpecificPlayer(self.player)
-
+    
     if not doDragged then
 		-- background of item icon
         self:drawRectStatic(0, 0, self.column2, self.height, UIManager.isFBOActive() and 0.8 or 0.6, 0, 0, 0);
@@ -1944,7 +1975,7 @@ function ISInventoryPane:drawItemDetails(item, y, xoff, yoff, red)
 				fgBar.r = 0.6
 				fgBar.g = 0.0
 				fgBar.b = 0.0
-			end
+			end	
 			self:drawText(s, 40 + 30 + xoff, top + (self.itemHgt - self.fontHgt) / 2, fgText.a, fgText.r, fgText.g, fgText.b, self.font);
 			if item:isBurnt() then return end
 			local textWid = getTextManager():MeasureStringX(self.font, s)
@@ -2005,7 +2036,7 @@ function ISInventoryPane:onInventoryFontChanged()
 	self.fontHgt = getTextManager():getFontFromEnum(self.font):getLineHeight()
 	self.itemHgt = math.ceil(math.max(18, self.fontHgt) * self.zoom)
     self.texScale = math.min(32, (self.itemHgt - 2)) / 32
-
+    
     self.contextButton1:setFont(self.font)
     self.contextButton2:setFont(self.font)
     self.contextButton3:setFont(self.font)

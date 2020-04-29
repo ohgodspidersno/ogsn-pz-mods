@@ -8,6 +8,7 @@ ISDPadWheels = {}
 
 function ISDPadWheels.onDisplayLeft(joypadData)
 	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+	if isPaused then return end
 
 	local playerIndex = joypadData.player
 	local playerObj = getSpecificPlayer(playerIndex)
@@ -32,6 +33,7 @@ end
 
 function ISDPadWheels.onDisplayRight(joypadData)
 	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+	if isPaused then return end
 
 	local playerIndex = joypadData.player
 	local playerObj = getSpecificPlayer(playerIndex)
@@ -52,6 +54,7 @@ end
 
 function ISDPadWheels.onDisplayDown(joypadData)
 	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+	if isPaused then return end
 
 	local playerIndex = joypadData.player
 	local playerObj = getSpecificPlayer(playerIndex)
@@ -80,3 +83,4 @@ end
 function ISDPadWheels.onShout(playerObj)
 	playerObj:Callout()
 end
+

@@ -103,6 +103,7 @@ function ISHealthPanel:createChildren()
     self.listbox.itemheight = 128;
     self.listbox.drawBorder = false
     self.listbox.backgroundColor.a = 0
+    self.listbox.drawText = ISHealthPanel.drawText;
     self.listbox.doDrawItem = ISHealthPanel.doDrawItem;
     self.listbox.onRightMouseUp = ISHealthPanel.onBodyPartListRightMouseUp
     self:addChild(self.listbox)
@@ -127,6 +128,10 @@ function ISHealthPanel:setVisible(visible)
 end
 
 function ISHealthPanel:onBodyPartListRightMouseUp(x, y)
+    if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+        if not getDebug() then return end
+    end
+
     local row = self:rowAt(x, y)
     if row < 1 or row > #self.items then return end
     self.selected = row
@@ -159,6 +164,13 @@ ISHealthPanel.onCheat = function(bodyPart, action, player, otherPlayer)
     end
     if action == "removeblood" then
         player:getVisual():setBlood(BloodBodyPartType.FromIndex(BodyPartType.ToIndex(bodyPart:getType())), 0);
+        player:resetModelNextFrame();
+    end
+    if action == "dirt" then
+        player:addDirt(BloodBodyPartType.FromIndex(BodyPartType.ToIndex(bodyPart:getType())), nil, false);
+    end
+    if action == "removedirt" then
+        player:getVisual():setDirt(BloodBodyPartType.FromIndex(BodyPartType.ToIndex(bodyPart:getType())), 0);
         player:resetModelNextFrame();
     end
     if action == "bite" then
@@ -271,10 +283,19 @@ function ISHealthPanel:update()
     end
     if self:getIsVisible() then
         self:updateBodyPartList()
-        self:setWidthAndParentWidth(self.healthPanel:getWidth() + 100);
+        if self.textRight and self.listbox.textRight then
+            local width = math.max(self.textRight, self.listbox.x + self.listbox.textRight)
+            if width > 0 then
+                width = math.max(width, self.healthPanel:getRight())
+                self:setWidthAndParentWidth(width + 20);
+            end
+        end
         self:setHeightAndParentHeight(math.max(self.healthPanel:getBottom(), self.allTextHeight or 0) + FONT_HGT_SMALL + PAD_BOTTOM * 2);
 --        self.healthPanel:setX(self:getAbsoluteX());
 --        self.healthPanel:setY(self:getAbsoluteY() + 8);
+    else
+        self.textRight = 0
+        self.listbox.textRight = 0
     end
 end
 
@@ -292,8 +313,18 @@ function ISHealthPanel:render()
 
 --    self.healthPanel:render();
 
-    local fontHgt = getTextManager():getFontFromEnum(UIFont.Small):getLineHeight()
-    local y = self.healthPanel.y + fontHgt * 2; -- Overall Body Status / OK drawn in NewHealthPanel.java
+    local fontHgt = getTextManager():getFontHeight(UIFont.Small);
+    local y = self.healthPanel.y;
+
+    self:drawText(getText("IGUI_health_Overall_Body_Status"), self.healthPanel.x + 165, y, 1.0, 1.0, 1.0, 1.0, UIFont.Small)
+    y = y + fontHgt
+
+    local InjuryRedTextTint = (100 - self:getPatient():getBodyDamage():getHealth()) / 100
+    InjuryRedTextTint = math.max(InjuryRedTextTint, 0.2)
+    local str = self.healthPanel.javaObject:getDamageStatusString()
+    self:drawText(str, self.healthPanel.x + 165, y, 1.0, 1.0 - InjuryRedTextTint, 1.0 - InjuryRedTextTint, 1.0, UIFont.Small)
+    y = y + fontHgt
+
     local x = 180;
     local fgBar = {r=0.5, g=0.5, b=0.5, a=0.5}
 
@@ -367,6 +398,7 @@ end
 
 function ISHealthPanel:updateBodyPartList()
     -- These aid in reloading the .lua when debugging
+    self.listbox.drawText = self.drawText
     self.listbox.doDrawItem = self.doDrawItem
     self.listbox.onRightMouseUp = ISHealthPanel.onBodyPartListRightMouseUp
 
@@ -394,6 +426,15 @@ function ISHealthPanel:updateBodyPartList()
         self.listbox:addItem('dummy', data)
     end
     self.damagedParts = damagedParts
+
+    self.textRight = 0
+    self.listbox.textRight = 0
+end
+
+function ISHealthPanel:drawText(str, x, y, r, g, b, a, font)
+	ISUIElement.drawText(self, str, x, y, r, g, b, a, font)
+	local width = getTextManager():MeasureStringX(font or UIFont.Small, str)
+	self.textRight = math.max(self.textRight or 0, x + width)
 end
 
 function ISHealthPanel:doDrawItem(y, item, alt)
@@ -1572,6 +1613,8 @@ function ISHealthPanel:doBodyPartContextMenu(bodyPart, x, y)
             local option = context:addOption("Cheat", nil);
             local subMenu = context:getNew(context);
             context:addSubMenu(option, subMenu);
+            subMenu:addOption("Add Dirt", bodyPart, ISHealthPanel.onCheat, "dirt", self.character, self.otherPlayer);
+            subMenu:addOption("Remove Dirt", bodyPart, ISHealthPanel.onCheat, "removedirt", self.character, self.otherPlayer);
             subMenu:addOption("Add Blood", bodyPart, ISHealthPanel.onCheat, "blood", self.character, self.otherPlayer);
             subMenu:addOption("Remove Blood", bodyPart, ISHealthPanel.onCheat, "removeblood", self.character, self.otherPlayer);
             subMenu:addOption("Add Hole", bodyPart, ISHealthPanel.onCheat, "hole", self.character, self.otherPlayer);
