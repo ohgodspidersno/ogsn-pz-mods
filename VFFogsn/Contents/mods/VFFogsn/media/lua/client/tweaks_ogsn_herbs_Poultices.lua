@@ -36,3 +36,13 @@ TweakItem("Base.WildGarlic","MinutesToCook","120");
 TweakItem("Base.WildGarlic","MinutesToBurn","150");
 TweakItem("Base.WildGarlic","OnCooked","CookRawHerbOGSN");
 TweakItem("Base.WildGarlic","IsCookable","True");
+
+if getActivatedMods():contains("ForkMJsuperGarlic") then
+  TweakItem("Base.WildGarlic","UnhappyChange","10");
+  TweakItem("Base.WildGarlic","HungerChange","-8");
+  TweakItem("Base.WildGarlic","ReduceInfectionPower","4");
+  TweakItem("Base.WildGarlic","Carbohydrates","9");
+  TweakItem("Base.WildGarlic","Proteins","4.2");
+  TweakItem("Base.WildGarlic","Lipids","0.3");
+  TweakItem("Base.WildGarlic","Calories","88");
+end

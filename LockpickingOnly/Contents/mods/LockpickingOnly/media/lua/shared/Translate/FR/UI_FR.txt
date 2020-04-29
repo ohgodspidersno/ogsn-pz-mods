@@ -1,0 +1,19 @@
+/** French translation provided by steam user benobodys **/
+UI_FR = {
+UI_trait_nimblefingers = "Serrurier",
+UI_trait_nimblefingersDesc = "Commence par la connaissance du crochetage et cassage des serrures. Crochetage plus rapide. De meilleures chances d'ouvrir une serrure.",
+UI_Text_locklevel_veryeasy = "Très facile",
+UI_Text_locklevel_easy = "Facile",
+UI_Text_locklevel_medium = "Moyen",
+UI_Text_locklevel_hard = "Difficile",
+UI_Text_locklevel_veryhard = "Très Difficile",
+UI_Text_locklevel_willbreak = "Cassée",
+UI_Text_brokenLockModal = "Vous ne pouvez pas crocheter un verrou cassé.",
+UI_Text_contextBreakDoorLock = "Cassé le Verrou",
+UI_Text_contextPickDoorLock = "Crocheter le Verrou",
+UI_Text_contextBreakWindowLock = "Cassé le Verrou",
+UI_Text_BobbyStuck = "Bon sang! L'épingle est bloqué!",
+UI_Text_BobbyBroken = "Bon sang! J'ai cassé l'épingle!",
+UI_trait_BurglarDesc = "Peut crocheter des véhicules. Peut casser et crocheter les serrures. Moins de chance de casser le verrou d'une fenêtre.",
+UI_profdesc_burglar = "Peut crocheter des véhicules. Peut casser et crocheter les serrures. Moins de chance de casser le verrou d'une fenêtre.",
+}

@@ -1,4 +1,10 @@
 ContextMenu_CN = {
-  ContextMenu_EvolvedRecipe_OatmealEvolved = "燕麦粥",
-  ContextMenu_FoodType_Herbal = "草药",
+ContextMenu_EvolvedRecipe_OatmealEvolved = "燕麦粥",
+ContextMenu_FoodType_Herbal = "草药",
+ContextMenu_EvolvedRecipe_CommonMallowTeaEvolved = "茶",
+ContextMenu_EvolvedRecipe_LemonGrassTeaEvolved = "茶",
+ContextMenu_EvolvedRecipe_BlackSageTeaEvolved = "茶",
+ContextMenu_EvolvedRecipe_GinsengTeaEvolved = "茶",
+ContextMenu_EvolvedRecipe_MedicinalTeaEvolved = "茶",
+ContextMenu_EvolvedRecipe_EnergizingTeaEvolved = "茶",
 }

@@ -1,0 +1,12 @@
+module DistinctNames2 { imports {Base}
+item LongJohns {
+Type = Clothing,
+DisplayName = Long Johns,
+ClothingItem = LongJohns,
+BodyLocation = Torso1Legs1,
+BloodLocation = Trousers;ShirtLongSleeves,
+Icon = Longjohns,
+Insulation = 0.3,
+WindResistance = 0.15,
+}
+}

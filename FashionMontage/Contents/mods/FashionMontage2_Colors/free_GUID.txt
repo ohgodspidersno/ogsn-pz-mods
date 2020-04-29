@@ -1,0 +1,51 @@
+-- Old_Item : GUID : New_Item --
+Hat_HardHat_Miner : 0899bf9d-f42c-45fe-919e-9dd6c73f8fed
+Shorts_LongSport_Red : 5327466b-ef38-4e7b-a7c9-a8b6b1257087
+Apron_TacoDelPancho : 693e7c35-9616-4326-9ddd-5331404f8ba3 : Apron_TacoDelPancho (Called Plain Apron 3)
+Tattoo_Arm1 : ec2b8d6a-323b-4264-abe6-7499fa1cf01e
+Tattoo_chest1 : c256dda6-a3a1-4806-9410-a8e9569c9a37
+Test_Weapon : cbdb4e53-695e-42ff-b602-e5d19bb4d630
+Socks_LegWarmers : aaf3194d-6e6f-454f-a690-cbca734165bc
+Male_Undies : 1f8e2ebe-0525-4504-a307-fdd4e3ee2c78
+Bag_DuffelBag : b02d3217-b692-4035-8a61-8c4305998464
+Bag_DuffelBag_LHand : 2f9833c0-8b1d-48f9-a30f-e66b99132cde
+Bag_DuffelBag_RHand : d90ed5ae-6867-485b-b49f-88801bea0bc9
+Hat_Fedora_Delmonte : 6b4e91cf-0de7-41d8-b144-95a975e31669
+Hat_SurgicalCap_Blue : 9f6264ee-36ea-4064-86b4-f4ce102ba5d6
+Hat_SurgicalMask_Blue : 6ef9ba72-73e6-4373-8d29-6beddf2274a5
+Hat_VisorBlack : d2496708-62e1-4ffc-8682-0a2af7d0db9b
+Hat_VisorRed : 3d9930a6-2732-4d19-8701-17a94ed575a2
+
+PonchoGreen : 502bfde1-2263-4368-aded-6889e964bbeb : now used for second varsity jacket
+PonchoGreenDOWN : 2cfe07c1-329a-479a-9974-c73742e13be1
+Scarf_StripeBlueWhite : 1f5ca3c2-49b1-4a98-aec3-6e542ad09f3e
+Scarf_StripeRedWhite : de34608d-c152-4944-8f42-ea4ea6f067b2
+
+<!--The jockey helmets now all fall under Hat_JockeyHelmet01 aka e27317be-c4eb-4329-9e1a-8c22c2c4f812  -->
+Hat_JockeyHelmet02 : 48d4f5b3-30f8-4219-b8c6-07b2065042d8
+Hat_JockeyHelmet03 : b7502ccb-7893-4c77-bcfd-43e88fae6654
+Hat_JockeyHelmet04 : 9a84caf4-28e6-4c7c-8593-49cad0fc0ad1
+Hat_JockeyHelmet05 : 7c646f18-9c75-4348-a5cf-666585b85a04
+Hat_JockeyHelmet06 : 082b9eff-96d2-4928-88e8-414d34ced2bb
+
+SwimTrunks_Red : e525cc52-cf30-45df-adc7-19706c019673
+SwimTrunks_Green : 01e4a480-9178-46aa-ad16-001580971665
+SwimTrunks_Yellow : 2587e4f8-1e7f-4793-ad11-dd4b96ea7359
+
+Shoes_RedTrainers : b6bb377a-6b18-407a-8e9f-edf949fb1fe1
+Shoes_BlueTrainers : 95047b8a-0248-46ad-af29-cde76530915b
+
+Hat_BaseballCapBlue	: 3db63ccb-9014-45c2-bb9c-287ca24e335b : Used as a solid baseball cap
+Hat_BaseballCapBlue_Reverse	: 17b078c1-dc3e-4b8f-a3e1-191c9d4efaa8 Used as a solid baseball cap
+
+
+Hat_BaseballCapGreen	: fce4e0fd-047d-483a-ad43-873e4440c3aa
+Hat_BaseballCapGreen_Reverse	: f1766ddb-1fdc-4a4c-b26b-5a5aacb209a2
+Hat_BaseballCapRed	: 3dff8ffe-20d7-4b9b-80b4-9cfb550c67b6
+Hat_BaseballCapRed_Reverse	: 92ff40a4-6756-40fc-a453-fb7764df0e23
+Hat_BaseballCapKY_Red : ee133478-bfc7-4517-af9b-c9da2148d9fd
+
+Shoes_Black : 593bea3d-c127-4574-ac1e-2197dc56e486
+Shoes_Brown : c0a3a194-2ee9-4ce5-9d7a-aa1d5e031cea
+
+Jacket_NavyBlue : 0ab6a4b8-4dcf-4ee0-9e5a-c6304652568a

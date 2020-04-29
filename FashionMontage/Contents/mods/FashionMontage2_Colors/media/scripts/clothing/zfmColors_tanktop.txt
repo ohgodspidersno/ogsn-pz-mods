@@ -1,0 +1,24 @@
+module DistinctNames2 { imports {Base}
+item Vest_DefaultTEXTURE {
+Type = Clothing,
+DisplayName = Tank Top,
+ClothingItem = Vest_DefaultTEXTURE,
+BodyLocation = TankTop,
+Icon = Vest_White,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.40,
+WindResistance = 0.30,
+FabricType = Cotton,
+}
+item Vest_DefaultTEXTURE_TINT {
+Type = Clothing,
+DisplayName = Tank Top,
+ClothingItem = Vest_DefaultTEXTURE_TINT,
+BodyLocation = TankTop,
+Icon = Vest_White,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.40,
+WindResistance = 0.30,
+FabricType = Cotton,
+}
+}

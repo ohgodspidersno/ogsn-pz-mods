@@ -1,0 +1,17 @@
+version=1
+id=2086715842
+title=Infinite Weather - Forever Fog, Relentless Rain, Ceaseless Snow
+description=[h1]The Sky Is Falling[/h1]
+description=Special weather isn't just for challenge maps anymore!
+description=With this mod you can add permanent climate settings to any game.
+description=
+description=Poster art created in part with weather icons by Ho Thi Ngoc Trinh from the Noun Project
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
+tags=
+visibility=public

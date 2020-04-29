@@ -1,0 +1,242 @@
+module FMJ
+{
+	imports
+	{
+		Base
+	}
+/*******************MEAT JARS*******************/
+	item JarLizard
+	{
+		Type = Food,
+		DisplayName = Jar of Lizard Meats,
+		Icon = JarWhite,
+		Weight = 0.5,
+		Carbohydrates =	25,
+		Proteins = 350,
+		Lipids = 41.25,
+		Calories = 1305,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarPheasant
+	{
+		Type = Food,
+		DisplayName = Jar of Pheasant Meats,
+		Icon = MeatJar,
+		Weight = 0.5,
+		Carbohydrates =	100,
+		Proteins = 1175	,
+		Lipids = 150,
+		Calories = 6625,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarSnake
+	{
+		Type = Food,
+		DisplayName = Jar of Snake Meats,
+		Icon = JarWhite,
+		Weight = 0.5,
+		Carbohydrates =	25,
+		Proteins = 1000,
+		Lipids = 126.25,
+		Calories = 1550,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarChicken
+	{
+		Type = Food,
+		DisplayName = Jar of Chickens,
+		Icon = JarWhite,
+		Weight = 0.5,
+		Carbohydrates =	0,
+		Proteins = 90,
+		Lipids = 45,
+		Calories = 750,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarSteak
+	{
+		Type = Food,
+		DisplayName = Jar of Steaks,
+		Icon = MeatJar,
+		Weight = 0.5,
+		Carbohydrates =	0,
+		Proteins = 158.1,
+		Lipids = 46.75,
+		Calories = 1100,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarFrogMeat
+	{
+		Type = Food,
+		DisplayName = Jar of Frog Meats,
+		Icon = JarWhite,
+		Weight = 0.5,
+		Carbohydrates =	0,
+		Proteins = 73,
+		Lipids = 1.4,
+		Calories = 330,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarMeatPatty
+	{
+		Type = Food,
+		DisplayName = Jar of Meat Patties,
+		Icon = MeatJar,
+		Weight = 0.5,
+		Carbohydrates =	0,
+		Proteins =	130,
+		Lipids = 150,
+		Calories = 1900,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarMuttonChop
+	{
+		Type = Food,
+		DisplayName = Jar of Mutton Chops,
+		Icon = MeatJar,
+		Weight = 0.5,
+		Carbohydrates =	0.4,
+		Proteins = 165,
+		Lipids = 55,
+		Calories = 1170,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarPorkChop
+	{
+		Type = Food,
+		DisplayName = Jar of Pork Chops,
+		Icon = MeatJar,
+		Weight = 0.5,
+		Carbohydrates =	0,
+		Proteins = 125,
+		Lipids = 30,
+		Calories = 750,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarRabbitmeat
+	{
+		Type = Food,
+		DisplayName = Jar of Rabbit meat,
+		Icon = MeatJar,
+		Weight = 0.5,
+		Carbohydrates =	20,
+		Proteins = 925,
+		Lipids = 100,
+		Calories = 4845,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarSmallanimalmeat
+	{
+		Type = Food,
+		DisplayName = Jar of Small Animal Meats,
+		Icon = MeatJar,
+		Weight = 0.5,
+		Carbohydrates =	25,
+		Proteins = 225,
+		Lipids = 36.25,
+		Calories = 1005,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarSmallbirdmeat
+	{
+		Type = Food,
+		DisplayName = Jar of Small Bird Meats,
+		Icon = MeatJar,
+		Weight = 0.5,
+		Carbohydrates =	25,
+		Proteins = 450,
+		Lipids = 41.25,
+		Calories = 1305,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+	item JarSalmon
+	{
+		Type = Food,
+		DisplayName = Jar of Salmons,
+		Icon = JarBrown,
+		Weight = 0.5,
+		Carbohydrates =	0,
+		Proteins = 171.40,
+		Lipids = 52.75,
+		Calories = 1350,
+		DaysFresh =	365,
+		DaysTotallyRotten =	730,
+		OnCooked = FMJCannedFood_OnCooked,
+		IsCookable = true,
+		MinutesToBurn =	120,
+		MinutesToCook =	60,
+		StaticModel = CanClosed,
+	}
+}

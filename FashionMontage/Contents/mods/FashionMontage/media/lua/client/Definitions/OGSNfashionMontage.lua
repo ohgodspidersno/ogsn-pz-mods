@@ -3,7 +3,8 @@
 local listHat = {
   "DistinctNames.Hat_Bandana",
   "DistinctNames.Hat_BandanaTied",
-  -- "DistinctNames.Hat_BandanaTiedWhite",
+  "DistinctNames.Hat_BandanaTINT",
+  "DistinctNames.Hat_BandanaTiedTINT",
   "DistinctNames.Hat_BaseballCap",
   "DistinctNames.Hat_BaseballCap_Reverse",
   "DistinctNames.Hat_BaseballCapBlue",
@@ -231,6 +232,7 @@ local listMask = {
   "DistinctNames.Hat_BalaclavaFull",
   "DistinctNames.Hat_BalaclavaFace",
   "DistinctNames.Hat_BandanaMask",
+  "DistinctNames.Hat_BandanaMaskTINT",
   "DistinctNames.Hat_DustMask",
   "DistinctNames.Hat_SurgicalMask_Blue",
   "DistinctNames.Hat_SurgicalMask_Green",
@@ -337,7 +339,7 @@ local listBathRobe = {
 local listTorsoExtra = {
   "DistinctNames.Apron_Black",
   "DistinctNames.Apron_White",
-  -- "DistinctNames.Apron_WhiteTEXTURE",
+  "DistinctNames.Apron_WhiteTEXTURE",
   "DistinctNames.Apron_IceCream",
   "DistinctNames.Apron_PileOCrepe",
   "DistinctNames.Apron_PizzaWhirled",
@@ -392,9 +394,7 @@ ClothingSelectionDefinitions.default.Male.Neck = {chance = 0, items = listNeck}
 ClothingSelectionDefinitions.default.Male.Hands = {chance = 0, items = listHands}
 ClothingSelectionDefinitions.default.Male.Legs1 = {chance = 0, items = listLegs1}
 ClothingSelectionDefinitions.default.Male.Sweater = {chance = 30, items = listSweater}
--- ClothingSelectionDefinitions.default.Male.SweaterHat = {chance = 0, items = listSweaterHat}
 ClothingSelectionDefinitions.default.Male.Jacket = {chance = 30, items = listJacket}
--- ClothingSelectionDefinitions.default.Male.JacketHat = {chance = 0, items = listJacketHat}
 ClothingSelectionDefinitions.default.Male.FullSuit = {chance = 0, items = listFullSuit}
 ClothingSelectionDefinitions.default.Male.FullSuitHead = {chance = 0, items = listFullSuitHead}
 ClothingSelectionDefinitions.default.Male.FullTop = {chance = 0, items = listFullTop}
@@ -403,6 +403,7 @@ ClothingSelectionDefinitions.default.Male.TorsoExtra = {chance = 0, items = list
 ClothingSelectionDefinitions.default.Male.Tail = {chance = 0, items = listTail}
 ClothingSelectionDefinitions.default.Male.Back = {chance = 0, items = listBack}
 ClothingSelectionDefinitions.default.Male.Scarf = {chance = 0, items = listScarf}
+
 
 ClothingSelectionDefinitions.default.Female.Hat = {chance = 10, items = listHat}
 ClothingSelectionDefinitions.default.Female.TankTop = {chance = 10, items = listTankTop}
@@ -424,9 +425,7 @@ ClothingSelectionDefinitions.default.Female.Neck = {chance = 0, items = listNeck
 ClothingSelectionDefinitions.default.Female.Hands = {chance = 0, items = listHands}
 ClothingSelectionDefinitions.default.Female.Legs1 = {chance = 0, items = listLegs1}
 ClothingSelectionDefinitions.default.Female.Sweater = {chance = 30, items = listSweater}
--- ClothingSelectionDefinitions.default.Female.SweaterHat = {chance = 0, items = listSweaterHat}
 ClothingSelectionDefinitions.default.Female.Jacket = {chance = 30, items = listJacket}
--- ClothingSelectionDefinitions.default.Female.JacketHat = {chance = 0, items = listJacketHat}
 ClothingSelectionDefinitions.default.Female.FullSuit = {chance = 0, items = listFullSuit}
 ClothingSelectionDefinitions.default.Female.FullSuitHead = {chance = 0, items = listFullSuitHead}
 ClothingSelectionDefinitions.default.Female.FullTop = {chance = 0, items = listFullTop}
@@ -435,4 +434,17 @@ ClothingSelectionDefinitions.default.Female.TorsoExtra = {chance = 0, items = li
 ClothingSelectionDefinitions.default.Female.Tail = {chance = 0, items = listTail}
 ClothingSelectionDefinitions.default.Female.Back = {chance = 0, items = listBack}
 ClothingSelectionDefinitions.default.Female.Scarf = {chance = 0, items = listScarf}
---
+
+-- startingOutfit --
+ClothingSelectionDefinitions.starting =ClothingSelectionDefinitions.starting or {}
+ClothingSelectionDefinitions.starting.Male = ClothingSelectionDefinitions.starting.Male or {}
+ClothingSelectionDefinitions.starting.Female = ClothingSelectionDefinitions.starting.Female or {}
+ClothingSelectionDefinitions.starting.Male.Shoes = {shance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Male.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
+ClothingSelectionDefinitions.starting.Male.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
+ClothingSelectionDefinitions.starting.Male.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
+
+ClothingSelectionDefinitions.starting.Female.Shoes = {shance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Female.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
+ClothingSelectionDefinitions.starting.Female.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
+ClothingSelectionDefinitions.starting.Female.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}

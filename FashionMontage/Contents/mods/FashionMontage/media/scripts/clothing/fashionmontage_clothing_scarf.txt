@@ -41,8 +41,8 @@ module DistinctNames
   }
   item Scarf_StripeRedWhite {
       Type = Clothing,
-      DisplayName = Scarf,
-      ClothingItem = Scarf - Red Striped,
+      DisplayName = Scarf - Red Striped,,
+      ClothingItem = Scarf_StripeRedWhite,
       BodyLocation = Scarf,
       Icon = ScarfStripedRed,
       Weight = 0.2,

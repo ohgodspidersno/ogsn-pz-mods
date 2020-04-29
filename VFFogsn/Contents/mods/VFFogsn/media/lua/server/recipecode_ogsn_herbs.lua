@@ -67,6 +67,7 @@ function MakeHerbalBlendOGSN(items, result, player)
     print(i)
     local item = items:get(i)
     local type = item:getType()
+    if not type == "MortarPestle" then
     if not item:isFresh() then
       fresh = false
     end
@@ -83,6 +84,7 @@ function MakeHerbalBlendOGSN(items, result, player)
     if item:isRotten() then
       rotten = true
       fresh = false
+    end
     end
   end
 

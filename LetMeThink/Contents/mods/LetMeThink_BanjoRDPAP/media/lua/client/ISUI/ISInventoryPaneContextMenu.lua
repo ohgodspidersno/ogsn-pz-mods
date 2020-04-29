@@ -12,9 +12,10 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     if ISInventoryPaneContextMenu.dontCreateMenu then return; end
 
 	-- if the game is paused, we don't show the item context menu
-	-- if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-	-- 	return;
-	-- end
+	local letMeThink = getActivatedMods():contains("LetMeThink")
+	if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 and not letMeThink then
+		return;
+	end
 
     -- items is a list that could container either InventoryItem objects, OR a table with a list of InventoryItem objects in .items
     -- Also there is a duplicate entry first in the list, so ignore that.
@@ -69,12 +70,14 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     local magazine = nil;
     local bullet = nil;
     local hairDye = nil;
+    local makeup = nil;
 
     local playerObj = getSpecificPlayer(player)
 
 	ISInventoryPaneContextMenu.removeToolTip();
 
 	getCell():setDrag(nil, player);
+
 
     local containerList = ISInventoryPaneContextMenu.getContainers(playerObj)
     local testItem = nil;
@@ -110,6 +113,9 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
         end
         if testItem:isHairDye() then
             hairDye = testItem;
+        end
+        if testItem:getMakeUpType() then
+            makeup = testItem;
         end
         if testItem:isBroken() or testItem:getCondition() < testItem:getConditionMax() then
             brokenObject = testItem;
@@ -257,81 +263,10 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     local loot = getPlayerLoot(player);
 --~ 	context:addOption("Information", items, ISInventoryPaneContextMenu.onInformationItems);
 	if not isInPlayerInventory then
-		for i,k in pairs(items) do
-				if not instanceof(k, "InventoryItem") then
-					if #k.items > 2 then
-						context:addOption(getText("ContextMenu_Grab_one"), items, ISInventoryPaneContextMenu.onGrabOneItems, player);
-						context:addOption(getText("ContextMenu_Grab_half"), items, ISInventoryPaneContextMenu.onGrabHalfItems, player);
-						context:addOption(getText("ContextMenu_Grab_all"), items, ISInventoryPaneContextMenu.onGrabItems, player);
-						break;
-					else
-						context:addOption(getText("ContextMenu_Grab"), items, ISInventoryPaneContextMenu.onGrabItems, player);
-						break;
-					end
-				else
-					context:addOption(getText("ContextMenu_Grab"), items, ISInventoryPaneContextMenu.onGrabItems, player);
-					break;
-				end
-		end
+        ISInventoryPaneContextMenu.doGrabMenu(context, items, player);
     end
     if evorecipe then
-        for i=0,evorecipe:size()-1 do
-            local listOfAddedItems = {};
-            local evorecipe2 = evorecipe:get(i);
-            local items = evorecipe2:getItemsCanBeUse(getSpecificPlayer(player), baseItem, containerList);
-            if items:size() == 0 then
-                break;
-            end
-            -- check for every item category to add a "add random category" in top of the list
-            local catList = ISInventoryPaneContextMenu.getEvoItemCategories(items);
-            local cookingLvl = getSpecificPlayer(player):getPerkLevel(Perks.Cooking);
-            local subOption = nil;
-            if evorecipe2:isResultItem(baseItem) then
-                subOption = context:addOption(getText("ContextMenu_EvolvedRecipe_" .. evorecipe2:getUntranslatedName()), nil);
-            else
-                subOption = context:addOption(getText("ContextMenu_Create_From_Ingredient") .. getText("ContextMenu_EvolvedRecipe_" .. evorecipe2:getUntranslatedName()), nil);
-            end
-            local subMenuRecipe = context:getNew(context);
-            context:addSubMenu(subOption, subMenuRecipe);
-
-            for i,v in pairs(catList) do
-                if getText("ContextMenu_FoodType_"..i) ~= "ContextMenu_FoodType_"..i then
-                local txt = getText("ContextMenu_FromRandom", getText("ContextMenu_FoodType_"..i));
-                if evorecipe2:isResultItem(baseItem) then
-                    txt = getText("ContextMenu_AddRandom", getText("ContextMenu_FoodType_"..i));
-                end
-                subMenuRecipe:addOption(txt, evorecipe2, ISInventoryPaneContextMenu.onAddItemInEvoRecipe, baseItem, catList[i][ZombRand(1, #catList[i]+1)], player);
-                end
-            end
-            for i=0,items:size() -1 do
-                local evoItem = items:get(i);
-                local extraInfo = "";
-                if instanceof(evoItem, "Food") then
-                    if evoItem:isSpice() then
-                        extraInfo = getText("ContextMenu_EvolvedRecipe_Spice");
-                    elseif evoItem:getPoisonLevelForRecipe() then
-                        if evoItem:getHerbalistType() and evoItem:getHerbalistType() ~= "" and getSpecificPlayer(player):getKnownRecipes():contains("Herbalist") then
-                            extraInfo = getText("ContextMenu_EvolvedRecipe_Poison");
-                        end
-                        local use = ISInventoryPaneContextMenu.getRealEvolvedItemUse(evoItem, evorecipe2, cookingLvl);
-                        if use then
-                            extraInfo = extraInfo .. " (" .. use .. ")";
-                        end
-                    elseif not evoItem:isPoison() then
-                        local use = ISInventoryPaneContextMenu.getRealEvolvedItemUse(evoItem, evorecipe2, cookingLvl);
-                        extraInfo = " (" .. use .. ")";
-                        if listOfAddedItems[evoItem:getType()] and listOfAddedItems[evoItem:getType()] == use then
-                            evoItem = nil;
-                        else
-                            listOfAddedItems[evoItem:getType()] = use;
-                        end
-                    end
-                end
-                if evoItem then
-                    ISInventoryPaneContextMenu.addItemInEvoRecipe(subMenuRecipe, baseItem, evoItem, extraInfo, evorecipe2, player);
-                end
-            end
-        end
+        ISInventoryPaneContextMenu.doEvorecipeMenu(context, items, player, evorecipe, baseItem, containerList);
     end
 
     if(isInPlayerInventory and loot.inventory ~= nil and loot.inventory:getType() ~= "floor" ) and playerObj:getJoypadBind() == -1 then
@@ -466,13 +401,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
 		context:addOption(getText("ContextMenu_Equip_Two_Hands"), items, ISInventoryPaneContextMenu.OnTwoHandsEquip, player);
     end
 	if isWeapon and not isAllFood and not force2Hands and not clothing then
-        -- check if hands if not heavy damaged
-        if (playerObj:getPrimaryHandItem() ~= isWeapon or (playerObj:getPrimaryHandItem() == isWeapon and playerObj:getSecondaryHandItem() == isWeapon)) and not getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):isDeepWounded() and (getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):getFractureTime() == 0 or getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):getSplintFactor() > 0) then
-            context:addOption(getText("ContextMenu_Equip_Primary"), items, ISInventoryPaneContextMenu.OnPrimaryWeapon, player);
-        end
-        if (playerObj:getSecondaryHandItem() ~= isWeapon or (playerObj:getPrimaryHandItem() == isWeapon and playerObj:getSecondaryHandItem() == isWeapon)) and not getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):isDeepWounded() and (getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):getFractureTime() == 0 or getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):getSplintFactor() > 0) then
-		    context:addOption(getText("ContextMenu_Equip_Secondary"), items, ISInventoryPaneContextMenu.OnSecondWeapon, player);
-        end
+        ISInventoryPaneContextMenu.doEquipOption(context, playerObj, isWeapon, items, player);
     end
     -- weapon upgrades
     isWeapon = isHandWeapon -- to allow upgrading broken weapons
@@ -655,13 +584,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
 		context:addOption(getText("ContextMenu_Take_pills"), items, ISInventoryPaneContextMenu.onPillsItems, player);
     end
 	if isAllLiterature and not getSpecificPlayer(player):getTraits():isIlliterate() then
-		local readOption = context:addOption(getText("ContextMenu_Read"), items, ISInventoryPaneContextMenu.onLiteratureItems, player);
-        if getSpecificPlayer(player):isAsleep() then
-            readOption.notAvailable = true;
-            local tooltip = ISInventoryPaneContextMenu.addToolTip();
-            tooltip.description = getText("ContextMenu_NoOptionSleeping");
-            readOption.toolTip = tooltip;
-        end
+        ISInventoryPaneContextMenu.doLiteratureMenu(context, items, player)
     end
     if clothing and clothing:getCoveredParts():size() > 0 and clothing:isInPlayerInventory() then
         context:addOption(getText("IGUI_invpanel_Inspect"), playerObj, ISInventoryPaneContextMenu.onInspectClothing, clothing);
@@ -690,19 +613,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
 		context:addOption(txt, light, ISInventoryPaneContextMenu.onActivateItem, player);
 	end
 	if isAllBandage then
-		-- we get all the damaged body part
-		local bodyPartDamaged = ISInventoryPaneContextMenu.haveDamagePart(player);
-		-- if any part is damaged, we gonna create a sub menu with them
-		if #bodyPartDamaged > 0 then
-			local bandageOption = context:addOption(getText("ContextMenu_Apply_Bandage"), bodyPartDamaged, nil);
-			-- create a new contextual menu
-			local subMenuBandage = context:getNew(context);
-			-- we add our new menu to the option we want (here bandage)
-			context:addSubMenu(bandageOption, subMenuBandage);
-			for i,v in ipairs(bodyPartDamaged) do
-				subMenuBandage:addOption(BodyPartType.getDisplayName(v:getType()), items, ISInventoryPaneContextMenu.onApplyBandage, v, player);
-			end
-		end
+        ISInventoryPaneContextMenu.doBandageMenu(context, items, player);
 	end
 	-- dry yourself with a towel
 	if canBeDry then
@@ -713,6 +624,9 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     end
     if hairDye and playerObj:getHumanVisual():getBeardModel() and playerObj:getHumanVisual():getBeardModel() ~= "" then
         context:addOption(getText("ContextMenu_DyeBeard"), hairDye, ISInventoryPaneContextMenu.onDyeHair, playerObj, true);
+    end
+    if makeup then
+        ISInventoryPaneContextMenu.doMakeUpMenu(context, makeup, playerObj)
     end
     if isInPlayerInventory and not unequip and playerObj:getJoypadBind() == -1 and
             not ISInventoryPaneContextMenu.isAllFav(items) and
@@ -737,13 +651,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
         context:addOption(getText("ContextMenu_SetAlarm"), alarmClock, ISInventoryPaneContextMenu.onSetAlarm, player);
     end
     if clothingItemExtra then
-        local option = context:addOption(getText("ContextMenu_" .. clothingItemExtra:getClothingItemExtraOption()), clothingItemExtra, ISInventoryPaneContextMenu.onClothingItemExtra, player);
-        if not getSpecificPlayer(player):isEquipped(clothingItemExtra) then
-            local tooltip = ISInventoryPaneContextMenu.addToolTip();
-            option.notAvailable = true;
-            tooltip.description = getText("Tooltip_EquipFirst");
-            option.toolTip = tooltip;
-        end
+        ISInventoryPaneContextMenu.doClothingItemExtraMenu(context, clothingItemExtra, playerObj);
     end
     if canBeRenamed then
         context:addOption(getText("ContextMenu_RenameBag"), canBeRenamed, ISInventoryPaneContextMenu.onRenameBag, player);
@@ -781,6 +689,32 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     triggerEvent("OnFillInventoryObjectContextMenu", player, context, items);
 
     return context;
+end
+
+function ISInventoryPaneContextMenu.doLiteratureMenu(context, items, player)
+    local readOption = context:addOption(getText("ContextMenu_Read"), items, ISInventoryPaneContextMenu.onLiteratureItems, player);
+    if getSpecificPlayer(player):isAsleep() then
+        readOption.notAvailable = true;
+        local tooltip = ISInventoryPaneContextMenu.addToolTip();
+        tooltip.description = getText("ContextMenu_NoOptionSleeping");
+        readOption.toolTip = tooltip;
+    end
+end
+
+function ISInventoryPaneContextMenu.doBandageMenu(context, items, player)
+    -- we get all the damaged body part
+    local bodyPartDamaged = ISInventoryPaneContextMenu.haveDamagePart(player);
+    -- if any part is damaged, we gonna create a sub menu with them
+    if #bodyPartDamaged > 0 then
+        local bandageOption = context:addOption(getText("ContextMenu_Apply_Bandage"), bodyPartDamaged, nil);
+        -- create a new contextual menu
+        local subMenuBandage = context:getNew(context);
+        -- we add our new menu to the option we want (here bandage)
+        context:addSubMenu(bandageOption, subMenuBandage);
+        for i,v in ipairs(bodyPartDamaged) do
+            subMenuBandage:addOption(BodyPartType.getDisplayName(v:getType()), items, ISInventoryPaneContextMenu.onApplyBandage, v, player);
+        end
+    end
 end
 
 function ISInventoryPaneContextMenu.canRipItem(playerObj, item)
@@ -984,6 +918,7 @@ ISInventoryPaneContextMenu.repairClothing = function(player, clothing, part, fab
     -- if you piled up tailor job we ensure we get a correct fabric
     fabric = player:getInventory():getItemFromType(fabric:getType(), true, true);
     thread = player:getInventory():getItemFromType(thread:getType(), true, true);
+    if fabric == nil or thread == nil then return end
     if luautils.haveToBeTransfered(player, fabric) then
         ISTimedActionQueue.add(ISInventoryTransferAction:new(player, fabric, fabric:getContainer(), player:getInventory()))
     end
@@ -1601,29 +1536,6 @@ ISInventoryPaneContextMenu.onSetAlarm = function(alarm, player)
     end
 end
 
-ISInventoryPaneContextMenu.onClothingItemExtra = function(clothing, player)
-    local playerObj = getSpecificPlayer(player);
-    local newClothing = InventoryItemFactory.CreateItem(clothing:getClothingItemExtra());
-    playerObj:removeWornItem(clothing);
-    playerObj:getInventory():AddItem(newClothing);
-    newClothing:getVisual():setTint(clothing:getVisual():getTint(clothing:getClothingItem()));
-    newClothing:getVisual():setBaseTexture(clothing:getVisual():getBaseTexture());
-    newClothing:getVisual():setTextureChoice(clothing:getVisual():getTextureChoice());
-    newClothing:getVisual():setDecal(clothing:getVisual():getDecal(clothing:getClothingItem()));
-    newClothing:setDirtyness(clothing:getDirtyness());
-    newClothing:setTexture(clothing:getTexture());
-    newClothing:setColor(clothing:getColor());
-    newClothing:getVisual():copyBlood(clothing:getVisual());
-    newClothing:getVisual():copyHoles(clothing:getVisual());
-    newClothing:getVisual():copyPatches(clothing:getVisual());
-    clothing:copyPatchesTo(newClothing);
-    playerObj:setWornItem(newClothing:getBodyLocation(), newClothing);
-    playerObj:getInventory():Remove(clothing);
-    newClothing:getContainer():setDrawDirty(true);
-    playerObj:initSpritePartsEmpty();
-    triggerEvent("OnClothingUpdated", playerObj);
-end
-
 ISInventoryPaneContextMenu.onRenameMap = function(map, player)
     local modal = ISTextBox:new(0, 0, 280, 180, getText("ContextMenu_NameThisBag"), map:getName(), nil, ISInventoryPaneContextMenu.onRenameBagClick, player, getSpecificPlayer(player), map);
     modal:initialise();
@@ -1792,8 +1704,10 @@ end
 
 -- read a book, loot it first if it's not in the player's inventory
 ISInventoryPaneContextMenu.readItem = function(item, player)
-	-- if clothing isn't in main inventory, put it there first.
 	local playerObj = getSpecificPlayer(player)
+	if item:getContainer() == nil then
+		return
+	end
 	ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
 	-- read
 	ISTimedActionQueue.add(ISReadABook:new(playerObj, item, 150));
@@ -1881,7 +1795,7 @@ ISInventoryPaneContextMenu.canUnpack = function(items, player)
     local playerObj = getSpecificPlayer(player)
     for i,item in ipairs(items) do
         if playerObj:getInventory():contains(item) then return false end
-        if not item:getContainer():isInCharacterInventory(playerObj) then return false end
+--        if not item:getContainer():isInCharacterInventory(playerObj) then return false end
 --        if item:isFavorite() then return false; end
     end
     return true
@@ -2589,4 +2503,201 @@ ISInventoryPaneContextMenu.getRealEvolvedItemUse = function(evoItem, evorecipe2,
         end
     end
     return use;
+end
+
+ISInventoryPaneContextMenu.doEquipOption = function(context, playerObj, isWeapon, items, player)
+    -- check if hands if not heavy damaged
+    if (playerObj:getPrimaryHandItem() ~= isWeapon or (playerObj:getPrimaryHandItem() == isWeapon and playerObj:getSecondaryHandItem() == isWeapon)) and not getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):isDeepWounded() and (getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):getFractureTime() == 0 or getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):getSplintFactor() > 0) then
+        -- forbid reequipping skinned items to avoid multiple problems for nowprint("equip 2nd hand", isWeapon)
+        local add = true;
+        if playerObj:getSecondaryHandItem() == isWeapon and isWeapon:getScriptItem():getReplaceWhenUnequip() then
+            add = false;
+        end
+        if add then
+            context:addOption(getText("ContextMenu_Equip_Primary"), items, ISInventoryPaneContextMenu.OnPrimaryWeapon, player);
+        end
+    end
+    if (playerObj:getSecondaryHandItem() ~= isWeapon or (playerObj:getPrimaryHandItem() == isWeapon and playerObj:getSecondaryHandItem() == isWeapon)) and not getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):isDeepWounded() and (getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):getFractureTime() == 0 or getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):getSplintFactor() > 0) then
+        -- forbid reequipping skinned items to avoid multiple problems for nowprint("equip 2nd hand", isWeapon)
+        local add = true;
+        if playerObj:getPrimaryHandItem() == isWeapon and isWeapon:getScriptItem():getReplaceWhenUnequip() then
+            add = false;
+        end
+        if add then
+            context:addOption(getText("ContextMenu_Equip_Secondary"), items, ISInventoryPaneContextMenu.OnSecondWeapon, player);
+        end
+    end
+end
+
+
+ISInventoryPaneContextMenu.onMakeUp = function(makeup, player)
+    if ISInventoryPaneContextMenu.makeUpUI then
+        ISInventoryPaneContextMenu.makeUpUI:setVisible(true);
+        ISInventoryPaneContextMenu.makeUpUI.item = makeup;
+        ISInventoryPaneContextMenu.makeUpUI:reinit();
+    else
+        ISInventoryPaneContextMenu.makeUpUI = ISMakeUpUI:new(0, 0, makeup, player);
+        ISInventoryPaneContextMenu.makeUpUI:initialise();
+        ISInventoryPaneContextMenu.makeUpUI:addToUIManager();
+    end
+end
+
+function ISInventoryPaneContextMenu.doGrabMenu(context, items, player)
+    for i,k in pairs(items) do
+        if not instanceof(k, "InventoryItem") then
+            if #k.items > 2 then
+                context:addOption(getText("ContextMenu_Grab_one"), items, ISInventoryPaneContextMenu.onGrabOneItems, player);
+                context:addOption(getText("ContextMenu_Grab_half"), items, ISInventoryPaneContextMenu.onGrabHalfItems, player);
+                context:addOption(getText("ContextMenu_Grab_all"), items, ISInventoryPaneContextMenu.onGrabItems, player);
+                break;
+            else
+                context:addOption(getText("ContextMenu_Grab"), items, ISInventoryPaneContextMenu.onGrabItems, player);
+                break;
+            end
+        else
+            context:addOption(getText("ContextMenu_Grab"), items, ISInventoryPaneContextMenu.onGrabItems, player);
+            break;
+        end
+    end
+end
+
+function ISInventoryPaneContextMenu.doEvorecipeMenu(context, items, player, evorecipe, baseItem, containerList)
+    for i=0,evorecipe:size()-1 do
+        local listOfAddedItems = {};
+        local evorecipe2 = evorecipe:get(i);
+        local items = evorecipe2:getItemsCanBeUse(getSpecificPlayer(player), baseItem, containerList);
+        if items:size() == 0 then
+            break;
+        end
+        -- check for every item category to add a "add random category" in top of the list
+        local catList = ISInventoryPaneContextMenu.getEvoItemCategories(items);
+        local cookingLvl = getSpecificPlayer(player):getPerkLevel(Perks.Cooking);
+        local subOption = nil;
+        if evorecipe2:isResultItem(baseItem) then
+            subOption = context:addOption(getText("ContextMenu_EvolvedRecipe_" .. evorecipe2:getUntranslatedName()), nil);
+        else
+            subOption = context:addOption(getText("ContextMenu_Create_From_Ingredient") .. getText("ContextMenu_EvolvedRecipe_" .. evorecipe2:getUntranslatedName()), nil);
+        end
+        local subMenuRecipe = context:getNew(context);
+        context:addSubMenu(subOption, subMenuRecipe);
+
+        for i,v in pairs(catList) do
+            if getText("ContextMenu_FoodType_"..i) ~= "ContextMenu_FoodType_"..i then
+                local txt = getText("ContextMenu_FromRandom", getText("ContextMenu_FoodType_"..i));
+                if evorecipe2:isResultItem(baseItem) then
+                    txt = getText("ContextMenu_AddRandom", getText("ContextMenu_FoodType_"..i));
+                end
+                subMenuRecipe:addOption(txt, evorecipe2, ISInventoryPaneContextMenu.onAddItemInEvoRecipe, baseItem, catList[i][ZombRand(1, #catList[i]+1)], player);
+            end
+        end
+        for i=0,items:size() -1 do
+            local evoItem = items:get(i);
+            local extraInfo = "";
+            if instanceof(evoItem, "Food") then
+                if evoItem:isSpice() then
+                    extraInfo = getText("ContextMenu_EvolvedRecipe_Spice");
+                elseif evoItem:getPoisonLevelForRecipe() then
+                    if evoItem:getHerbalistType() and evoItem:getHerbalistType() ~= "" and getSpecificPlayer(player):getKnownRecipes():contains("Herbalist") then
+                        extraInfo = getText("ContextMenu_EvolvedRecipe_Poison");
+                    end
+                    local use = ISInventoryPaneContextMenu.getRealEvolvedItemUse(evoItem, evorecipe2, cookingLvl);
+                    if use then
+                        extraInfo = extraInfo .. " (" .. use .. ")";
+                    end
+                elseif not evoItem:isPoison() then
+                    local use = ISInventoryPaneContextMenu.getRealEvolvedItemUse(evoItem, evorecipe2, cookingLvl);
+                    extraInfo = " (" .. use .. ")";
+                    if listOfAddedItems[evoItem:getType()] and listOfAddedItems[evoItem:getType()] == use then
+                        evoItem = nil;
+                    else
+                        listOfAddedItems[evoItem:getType()] = use;
+                    end
+                end
+            end
+            if evoItem then
+                ISInventoryPaneContextMenu.addItemInEvoRecipe(subMenuRecipe, baseItem, evoItem, extraInfo, evorecipe2, player);
+            end
+        end
+    end
+end
+
+ISInventoryPaneContextMenu.doMakeUpMenu = function(context, makeup, playerObj)
+    local option = context:addOption(getText("IGUI_MakeUp"), makeup, ISInventoryPaneContextMenu.onMakeUp, playerObj);
+    local mirror = false;
+
+    -- check for mirror in inventory
+    if playerObj:getInventory():contains("Mirror") then
+        mirror = true;
+    end
+
+    -- check for world mirror
+    if not mirror then
+        for x=playerObj:getCurrentSquare():getX() - 1, playerObj:getCurrentSquare():getX() + 2 do
+            for y=playerObj:getCurrentSquare():getY() - 1, playerObj:getCurrentSquare():getY() + 2 do
+                local sq = getCell():getGridSquare(x, y, playerObj:getCurrentSquare():getZ())
+                if sq then
+                    for i=0, sq:getObjects():size() - 1 do
+                        local object = sq:getObjects():get(i);
+                        local sprite = object:getSprite();
+                        if not sq:isWallTo(playerObj:getCurrentSquare()) and sprite:getProperties():Is("IsMirror") then
+                            mirror = true;
+                            break;
+                        end
+                        if object:getAttachedAnimSprite() then
+                            for j=0,object:getAttachedAnimSprite():size() - 1 do
+                                local sprite = object:getAttachedAnimSprite():get(j):getParentSprite();
+                                if not sq:isWallTo(playerObj:getCurrentSquare()) and sprite:getProperties():Is("IsMirror") then
+                                    mirror = true;
+                                    break;
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    if not mirror then
+        local tooltip = ISInventoryPaneContextMenu.addToolTip();
+        option.notAvailable = true;
+        tooltip.description = getText("Tooltip_NeedMirror");
+        option.toolTip = tooltip;
+    end
+end
+
+ISInventoryPaneContextMenu.doClothingItemExtraMenu = function(context, clothingItemExtra, playerObj)
+    for i=0, clothingItemExtra:getClothingItemExtraOption():size()-1 do
+        local option = context:addOption(getText("ContextMenu_" .. clothingItemExtra:getClothingItemExtraOption():get(i)), clothingItemExtra, ISInventoryPaneContextMenu.onClothingItemExtra, clothingItemExtra:getClothingItemExtra():get(i), playerObj);
+        if not playerObj:isEquipped(clothingItemExtra) then
+            local tooltip = ISInventoryPaneContextMenu.addToolTip();
+            option.notAvailable = true;
+            tooltip.description = getText("Tooltip_EquipFirst");
+            option.toolTip = tooltip;
+        end
+    end
+end
+
+ISInventoryPaneContextMenu.onClothingItemExtra = function(clothing, newClothing, playerObj)
+    local newClothing = InventoryItemFactory.CreateItem(newClothing);
+    playerObj:removeWornItem(clothing);
+    playerObj:getInventory():AddItem(newClothing);
+    newClothing:getVisual():setTint(clothing:getVisual():getTint(clothing:getClothingItem()));
+    newClothing:getVisual():setBaseTexture(clothing:getVisual():getBaseTexture());
+    newClothing:getVisual():setTextureChoice(clothing:getVisual():getTextureChoice());
+    newClothing:getVisual():setDecal(clothing:getVisual():getDecal(clothing:getClothingItem()));
+--    newClothing:setDirtyness(clothing:getDirtyness());
+--    newClothing:setTexture(clothing:getTexture());
+    newClothing:setColor(clothing:getColor());
+    newClothing:getVisual():copyDirt(clothing:getVisual());
+    newClothing:getVisual():copyBlood(clothing:getVisual());
+    newClothing:getVisual():copyHoles(clothing:getVisual());
+    newClothing:getVisual():copyPatches(clothing:getVisual());
+    clothing:copyPatchesTo(newClothing);
+    playerObj:setWornItem(newClothing:getBodyLocation(), newClothing);
+    playerObj:getInventory():Remove(clothing);
+    newClothing:synchWithVisual();
+    newClothing:getContainer():setDrawDirty(true);
+    playerObj:initSpritePartsEmpty();
+    triggerEvent("OnClothingUpdated", playerObj);
 end

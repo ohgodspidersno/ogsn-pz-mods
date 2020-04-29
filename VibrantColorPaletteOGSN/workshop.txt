@@ -1,0 +1,9 @@
+version=1
+id=2084216301
+title=Vibrant Color Palette [IWBUMS 41.36+]
+description=[h1]Brighter Colors for a Darker Future[/h1]
+description=Brings back vibrant, super-saturated clothing colors.
+description=
+description=Honestly, the devs knew what they were doing when they took this out, but hey sometimes you wanna vibe.
+tags=
+visibility=public

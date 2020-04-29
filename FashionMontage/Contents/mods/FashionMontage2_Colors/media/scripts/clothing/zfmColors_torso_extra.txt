@@ -1,0 +1,177 @@
+module DistinctNames2 { imports {Base}
+item Apron_White {
+Type = Clothing,
+DisplayName = Apron - Plain,
+ClothingItem = Apron_White,
+BodyLocation = TorsoExtra,
+BloodLocation = Apron,
+Icon = ApronWhite,
+FabricType = Cotton,
+}
+item Apron_Black {
+Type = Clothing,
+DisplayName = Apron - Plain 2,
+ClothingItem = Apron_Black,
+BodyLocation = TorsoExtra,
+BloodLocation = Apron,
+Icon = ApronBlack,
+FabricType = Cotton,
+}
+item Apron_WhiteTEXTURE {
+Type = Clothing,
+DisplayName = Apron - Plain Tight Fit,
+ClothingItem = Apron_WhiteTEXTURE,
+BodyLocation = TorsoExtra,
+BloodLocation = Apron,
+Icon = ApronWhite,
+FabricType = Cotton,
+}
+item Apron_IceCream {
+Type = Clothing,
+DisplayName = Apron - Ice Cream Server,
+ClothingItem = Apron_IceCream,
+BodyLocation = TorsoExtra,
+BloodLocation = Apron,
+Icon = ApronIceCream,
+FabricType = Cotton,
+}
+item Apron_PileOCrepe {
+Type = Clothing,
+DisplayName = Apron - PileOCrepe Server,
+ClothingItem = Apron_PileOCrepe,
+BodyLocation = TorsoExtra,
+BloodLocation = Apron,
+Icon = Apron_Pileocrepes,
+FabricType = Cotton,
+}
+item Apron_PizzaWhirled {
+Type = Clothing,
+DisplayName = Apron - PizzaWhirled Server,
+ClothingItem = Apron_PizzaWhirled,
+BodyLocation = TorsoExtra,
+BloodLocation = Apron,
+Icon = Apron_PizzaWhirled,
+FabricType = Cotton,
+}
+item Apron_Spiffos {
+Type = Clothing,
+DisplayName = Apron - Spiffo's Server,
+ClothingItem = Apron_Spiffos,
+BodyLocation = TorsoExtra,
+BloodLocation = Apron,
+Icon = ApronSpiffo,
+FabricType = Cotton,
+}
+item Vest_BulletCivilian {
+Type = Clothing,
+DisplayName = Bulletproof Vest,
+ClothingItem = Vest_BulletCivilian,
+BodyLocation = TorsoExtra,
+Icon = BulletVestWhite,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.6,
+WindResistance = 0.25,
+}
+item Vest_BulletPolice {
+Type = Clothing,
+DisplayName = Bulletproof Vest - Law Enforcement,
+ClothingItem = Vest_BulletPolice,
+BodyLocation = TorsoExtra,
+Icon = BulletVestPolice,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.65,
+WindResistance = 0.30,
+}
+item Vest_BulletArmy {
+Type = Clothing,
+DisplayName = Bulletproof Vest - Military,
+ClothingItem = Vest_BulletArmy,
+BodyLocation = TorsoExtra,
+Icon = BulletVestCamo,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.75,
+WindResistance = 0.45,
+}
+item Vest_Waistcoat {
+Type = Clothing,
+DisplayName = Waistcoat,
+ClothingItem = Vest_Waistcoat,
+BodyLocation = TorsoExtra,
+Icon = Vest_Black,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.35,
+WindResistance = 0.25,
+FabricType = Cotton,
+}
+item Vest_Waistcoat_GigaMart {
+Type = Clothing,
+DisplayName = Waistcoat - GigaMart,
+ClothingItem = Vest_Waistcoat_GigaMart,
+BodyLocation = TorsoExtra,
+Icon = Vest_DarkBlue,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.40,
+WindResistance = 0.20,
+FabricType = Cotton,
+}
+item Vest_Foreman {
+Type = Clothing,
+DisplayName = Vest - Foreman,
+ClothingItem = Vest_Foreman,
+BodyLocation = TorsoExtra,
+Icon = ForemanVest,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.70,
+WindResistance = 0.55,
+}
+item Vest_HighViz {
+Type = Clothing,
+DisplayName = Vest - High Visibility,
+ClothingItem = Vest_HighViz,
+BodyLocation = TorsoExtra,
+Icon = ConstructionVest,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.1,
+WindResistance = 0.05,
+}
+item Vest_Hunting_Grey {
+Type = Clothing,
+DisplayName = Vest - Hunting Grey,
+ClothingItem = Vest_Hunting_Grey,
+BodyLocation = TorsoExtra,
+Icon = Huntingvest_Grey,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.90,
+WindResistance = 0.80,
+}
+item Vest_Hunting_Orange {
+Type = Clothing,
+DisplayName = Vest - Hunting Orange,
+ClothingItem = Vest_Hunting_Orange,
+BodyLocation = TorsoExtra,
+Icon = Huntingvest_Orange,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.75,
+WindResistance = 0.75,
+}
+item Vest_Hunting_Camo {
+Type = Clothing,
+DisplayName = Vest - Hunting Camo,
+ClothingItem = Vest_Hunting_Camo,
+BodyLocation = TorsoExtra,
+Icon = Huntingvest_Camo,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.8,
+WindResistance = 0.65,
+}
+item Vest_Hunting_CamoGreen {
+Type = Clothing,
+DisplayName = Vest - Hunting Camo Green,
+ClothingItem = Vest_Hunting_CamoGreen,
+BodyLocation = TorsoExtra,
+Icon = Huntingvest_Camo,
+BloodLocation = ShirtNoSleeves,
+Insulation = 0.70,
+WindResistance = 0.80,
+}
+}
