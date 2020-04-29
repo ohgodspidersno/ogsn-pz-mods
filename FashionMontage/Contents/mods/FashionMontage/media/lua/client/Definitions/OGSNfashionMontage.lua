@@ -374,6 +374,45 @@ local listScarf = {
   "DistinctNames.Scarf_StripeRedWhite",
 }
 
+local listMakeupLips = {
+  "MakeUp_LipsRed",
+  "MakeUp_LipsLightBlue",
+  "MakeUp_LipsBlue",
+  "MakeUp_LipsBlack",
+  "MakeUp_LipsGreen",
+  "MakeUp_LipsPink",
+}
+
+local listMakeupEyesShadow = {
+  "MakeUp_EyesShadowWhite",
+  "MakeUp_EyesShadowLightBlue",
+  "MakeUp_EyesShadowBlue",
+  "MakeUp_EyesShadowRed",
+  "MakeUp_EyesShadowPink",
+  "MakeUp_EyesShadowGreen",
+  "MakeUp_EyesShadowYellow",
+}
+
+local listMakeupEyes = {
+  "MakeUp_Crow",
+  "MakeUp_RedStripes1",
+  "MakeUp_RedStripes2",
+  "MakeUp_CamoEyes1",
+  "MakeUp_CamoEyes2",
+  "MakeUp_CamoStripes",
+  "MakeUp_Football",
+}
+
+local listMakeupFullFace = {
+  "MakeUp_CamoFullFace1",
+  "MakeUp_CamoFullFace2",
+  "MakeUp_BraveHeart",
+  "MakeUp_ClownFace1",
+  "MakeUp_ClownFace2",
+  "MakeUp_SkullFace1",
+  "MakeUp_SkullFace2",
+}
+
 ClothingSelectionDefinitions.default.Male.Hat = {chance = 10, items = listHat}
 ClothingSelectionDefinitions.default.Male.TankTop = {chance = 10, items = listTankTop}
 ClothingSelectionDefinitions.default.Male.Tshirt = {items = listTshirt}
@@ -394,9 +433,7 @@ ClothingSelectionDefinitions.default.Male.Neck = {chance = 0, items = listNeck}
 ClothingSelectionDefinitions.default.Male.Hands = {chance = 0, items = listHands}
 ClothingSelectionDefinitions.default.Male.Legs1 = {chance = 0, items = listLegs1}
 ClothingSelectionDefinitions.default.Male.Sweater = {chance = 30, items = listSweater}
--- ClothingSelectionDefinitions.default.Male.SweaterHat = {chance = 0, items = listSweaterHat}
 ClothingSelectionDefinitions.default.Male.Jacket = {chance = 30, items = listJacket}
--- ClothingSelectionDefinitions.default.Male.JacketHat = {chance = 0, items = listJacketHat}
 ClothingSelectionDefinitions.default.Male.FullSuit = {chance = 0, items = listFullSuit}
 ClothingSelectionDefinitions.default.Male.FullSuitHead = {chance = 0, items = listFullSuitHead}
 ClothingSelectionDefinitions.default.Male.FullTop = {chance = 0, items = listFullTop}
@@ -405,6 +442,10 @@ ClothingSelectionDefinitions.default.Male.TorsoExtra = {chance = 0, items = list
 ClothingSelectionDefinitions.default.Male.Tail = {chance = 0, items = listTail}
 ClothingSelectionDefinitions.default.Male.Back = {chance = 0, items = listBack}
 ClothingSelectionDefinitions.default.Male.Scarf = {chance = 0, items = listScarf}
+ClothingSelectionDefinitions.default.Male.listMakeupLips = {chance = 0, items = listMakeupLips}
+ClothingSelectionDefinitions.default.Male.listMakeupEyesShadow = {chance = 0, items = listMakeupEyesShadow}
+ClothingSelectionDefinitions.default.Male.listMakeupEyes = {chance = 0, items = listMakeupEyes}
+ClothingSelectionDefinitions.default.Male.listMakeupFullFace = {chance = 0, items = listMakeupFullFace}
 
 ClothingSelectionDefinitions.default.Female.Hat = {chance = 10, items = listHat}
 ClothingSelectionDefinitions.default.Female.TankTop = {chance = 10, items = listTankTop}
@@ -426,9 +467,7 @@ ClothingSelectionDefinitions.default.Female.Neck = {chance = 0, items = listNeck
 ClothingSelectionDefinitions.default.Female.Hands = {chance = 0, items = listHands}
 ClothingSelectionDefinitions.default.Female.Legs1 = {chance = 0, items = listLegs1}
 ClothingSelectionDefinitions.default.Female.Sweater = {chance = 30, items = listSweater}
--- ClothingSelectionDefinitions.default.Female.SweaterHat = {chance = 0, items = listSweaterHat}
 ClothingSelectionDefinitions.default.Female.Jacket = {chance = 30, items = listJacket}
--- ClothingSelectionDefinitions.default.Female.JacketHat = {chance = 0, items = listJacketHat}
 ClothingSelectionDefinitions.default.Female.FullSuit = {chance = 0, items = listFullSuit}
 ClothingSelectionDefinitions.default.Female.FullSuitHead = {chance = 0, items = listFullSuitHead}
 ClothingSelectionDefinitions.default.Female.FullTop = {chance = 0, items = listFullTop}
@@ -437,4 +476,8 @@ ClothingSelectionDefinitions.default.Female.TorsoExtra = {chance = 0, items = li
 ClothingSelectionDefinitions.default.Female.Tail = {chance = 0, items = listTail}
 ClothingSelectionDefinitions.default.Female.Back = {chance = 0, items = listBack}
 ClothingSelectionDefinitions.default.Female.Scarf = {chance = 0, items = listScarf}
+ClothingSelectionDefinitions.default.Female.listMakeupLips = {chance= 0, items = listMakeupLips}
+ClothingSelectionDefinitions.default.Female.listMakeupEyesShadow = {chance= 0, items = listMakeupEyesShadow}
+ClothingSelectionDefinitions.default.Female.listMakeupEyes = {chance= 0, items = listMakeupEyes}
+ClothingSelectionDefinitions.default.Female.listMakeupFullFace = {chance= 0, items = listMakeupFullFace}
 --
