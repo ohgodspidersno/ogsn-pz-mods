@@ -26,10 +26,11 @@ function ISBackButtonWheel:addCommands()
 
 	self:clear()
 
-	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 -- LetMeThink did not touch this
 
-	if isPaused then
-	else
+	-- LetMeThink
+	-- if isPaused then
+	-- else
 		self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
 		self:addSlice(getText("IGUI_BackButton_Crafting"), getTexture("media/ui/Carpentry_On.png"), self.onCommand, self, "Crafting")
 	end
@@ -40,7 +41,7 @@ function ISBackButtonWheel:addCommands()
 	end
 
 	if UIManager.getSpeedControls() and not isClient() then
-		if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 or getGameTime():getTrueMultiplier() > 1 then
+		if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 or getGameTime():getTrueMultiplier() > 1 then -- LetMeThink did not touch this
 			self:addSlice(getText("IGUI_BackButton_Play"), getTexture("media/ui/Time_Play_Off.png"), self.onCommand, self, "Pause")
 		else
 			self:addSlice(getText("UI_optionscreen_binding_Pause"), getTexture("media/ui/Time_Pause_Off.png"), self.onCommand, self, "Pause")
@@ -65,7 +66,8 @@ function ISBackButtonWheel:addCommands()
 		self:addSlice(getText("IGUI_BackButton_Zoom", getCore():getNextZoom(self.playerNum, 1) * 100), getTexture("media/ui/ZoomOut.png"), self.onCommand, self, "ZoomPlus")
 	end
 
-	if not isPaused then
+	if true then -- LetMeThink
+	-- if not isPaused then
 		if not playerObj:getVehicle() then
 			self:addSlice(getText("IGUI_BackButton_Movable"), getTexture("media/ui/Furniture_Off2.png"), self.onCommand, self, "MoveFurniture")
 		end
@@ -88,18 +90,21 @@ end
 
 function ISBackButtonWheel:onCommand(command)
 	local focus = nil
-	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 -- LetMeThink did not touch this
 
 	local playerObj = getSpecificPlayer(self.playerNum)
 
-	if command == "PlayerInfo" and not isPaused then
+	if command == "PlayerInfo" then -- LetMeThink
+	-- if command == "PlayerInfo" and not isPaused then
 		getPlayerInfoPanel(self.playerNum):setVisible(true)
 		getPlayerInfoPanel(self.playerNum):addToUIManager()
 		focus = getPlayerInfoPanel(self.playerNum).panel:getActiveView()
-	elseif command == "Crafting" and not isPaused then
+	elseif command == "Crafting" then -- LetMeThink
+	-- elseif command == "Crafting" and not isPaused then
 		getPlayerCraftingUI(self.playerNum):setVisible(true)
 		focus = getPlayerCraftingUI(self.playerNum)
-	elseif command == "MoveFurniture" and not isPaused then
+	elseif command == "MoveFurniture" then -- LetMeThink
+	-- elseif command == "MoveFurniture" and not isPaused then
 		local mo = ISMoveableCursor:new(getSpecificPlayer(self.playerNum));
 		getCell():setDrag(mo, mo.player);
 	elseif command == "ZoomPlus" and not getCore():getAutoZoom(self.playerNum) then
@@ -108,7 +113,7 @@ function ISBackButtonWheel:onCommand(command)
 		getCore():doZoomScroll(self.playerNum, -1)
 	elseif command == "Pause" then
 		if UIManager.getSpeedControls() and not isClient() then
-			if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 or getGameTime():getTrueMultiplier() > 1 then
+			if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 or getGameTime():getTrueMultiplier() > 1 then -- LetMeThink did not touch this
 				UIManager.getSpeedControls():ButtonClicked("Play")
 			elseif UIManager.getSpeedControls() then
 				UIManager.getSpeedControls():ButtonClicked("Pause")

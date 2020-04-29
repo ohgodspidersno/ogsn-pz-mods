@@ -223,9 +223,10 @@ local TurnOnOff = {
 }
 
 function ISInventoryPage:toggleStove()
-	if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-		return
-	end
+	-- LetMeThink
+	-- if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+	-- 	return
+	-- end
 
 	local object = self.inventoryPane.inventory:getParent()
 	if not object then return end
@@ -457,7 +458,7 @@ function ISInventoryPage:prerender()
 	else
 		self:drawTextRight(roundedWeight .. "", self.width - 20, 0, 1,1,1,1);
     end
-    
+
 	local weightWid = getTextManager():MeasureStringX(UIFont.Small, "99.99 / 99")
 	weightWid = math.max(90, weightWid)
     self.transferAll:setX(self.pinButton:getX() - weightWid - getTextManager():MeasureStringX(UIFont.Small, getText("IGUI_invpage_Transfer_all")));
@@ -466,11 +467,11 @@ function ISInventoryPage:prerender()
     else
         self.transferAll:setVisible(true)
     end
-    
+
 
     -- self:drawRectBorder(self:getWidth()-32, 15, 32, self:getHeight()-16-6, self.borderColor.a, self.borderColor.r, self.borderColor.g, self.borderColor.b);
     self:setStencilRect(0,0,self.width+1, height);
-    
+
     if ISInventoryPage.renderDirty then
         ISInventoryPage.renderDirty = false;
         ISInventoryPage.dirtyUI();
@@ -557,7 +558,7 @@ end
 function ISInventoryPage:onJoypadDown(button)
     ISContextMenu.globalPlayerContext = self.player;
     local playerObj = getSpecificPlayer(self.player)
-    
+
     if button == Joypad.AButton then
         self.inventoryPane:doContextOnJoypadSelected();
     end
@@ -1342,7 +1343,7 @@ function ISInventoryPage:new (x, y, width, height, inventory, onCharacter, zoom)
     o.conglovebox = getTexture("media/ui/Container_GloveCompartment.png");
     o.conseat = getTexture("media/ui/Container_Carseat.png");
     o.contrunk = getTexture("media/ui/Container_TruckBed.png");
-    
+
     o.conDefault = o.conShelf;
     o.highlightColors = {r=0.98,g=0.56,b=0.11};
 
@@ -1497,7 +1498,9 @@ function ISInventoryPage:SaveLayout(name, layout)
 end
 
 ISInventoryPage.onKeyPressed = function(key)
-	if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getGameSpeed() > 0 and getPlayerInventory(0) then
+
+	if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getPlayerInventory(0) then -- LetMeThink
+	-- if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getGameSpeed() > 0 and getPlayerInventory(0) then
         getPlayerInventory(0):setVisible(not getPlayerInventory(0):getIsVisible());
         getPlayerLoot(0):setVisible(getPlayerInventory(0):getIsVisible());
 	end

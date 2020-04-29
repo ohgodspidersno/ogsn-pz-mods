@@ -145,8 +145,10 @@ ISObjectClickHandler.doClick = function (object, x, y)
         end
     end
 
-    local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-    if not isPaused and instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
+    -- LetMeThink
+    -- local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+    -- if not isPaused and instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
+    if instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
             playerObj:getCurrentSquare() and object:getSquare() and
             playerObj:DistToSquared(object:getX() + 0.5, object:getY() + 0.5) < 1.5 * 1.5 and
             not playerObj:getCurrentSquare():isSomethingTo(object:getSquare()) then
@@ -159,7 +161,7 @@ ISObjectClickHandler.onObjectLeftMouseButtonDown = function(object, x, y)
     if not getSpecificPlayer(0) or getSpecificPlayer(0):isDead() then
         return
     end
-    
+
     local self = ISObjectClickHandler
     if self.lastClickTime ~= nil and UIManager.isDoubleClick(self.downx, self.downy, x, y, self.lastClickTime) then
         self.isDoubleClick = true

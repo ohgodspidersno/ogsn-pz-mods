@@ -41,8 +41,9 @@ function ISVehicleMenu.OnFillWorldObjectContextMenu(player, context, worldobject
 end
 
 function ISVehicleMenu.showRadialMenu(playerObj)
-	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-	if isPaused then return end
+	-- LetMeThink
+	-- local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+	-- if isPaused then return end
 
 	local vehicle = playerObj:getVehicle()
 	if not vehicle then
@@ -65,7 +66,7 @@ function ISVehicleMenu.showRadialMenu(playerObj)
 	menu:setY(getPlayerScreenTop(playerObj:getPlayerNum()) + getPlayerScreenHeight(playerObj:getPlayerNum()) / 2 - menu:getHeight() / 2)
 
 	local texture = getTexture("media/ui/abutton.png")
-	
+
 	local seat = vehicle:getSeat(playerObj)
 
 	menu:addSlice(getText("IGUI_SwitchSeat"), getTexture("media/ui/vehicles/vehicle_changeseats.png"), ISVehicleMenu.onShowSeatUI, playerObj, vehicle )
@@ -125,11 +126,11 @@ function ISVehicleMenu.showRadialMenu(playerObj)
 			menu:addSlice(getText("ContextMenu_VehicleHeaterOn"), tex, ISVehicleMenu.onToggleHeater, playerObj )
 		end
 	end
-	
+
 	if vehicle:isDriver(playerObj) and vehicle:hasHorn() then
 		menu:addSlice(getText("ContextMenu_VehicleHorn"), getTexture("media/ui/vehicles/vehicle_horn.png"), ISVehicleMenu.onHorn, playerObj)
 	end
-	
+
 	if (vehicle:hasLightbar()) then
 		menu:addSlice(getText("ContextMenu_VehicleLightbar"), getTexture("media/ui/vehicles/vehicle_lightbar.png"), ISVehicleMenu.onLightbar, playerObj)
 	end
@@ -163,7 +164,7 @@ function ISVehicleMenu.showRadialMenu(playerObj)
 			menu:addSlice(getText("ContextMenu_Unlock_Doors"), getTexture("media/ui/vehicles/vehicle_lockdoors.png"), ISVehiclePartMenu.onLockDoors, playerObj, vehicle, false)
 		end
 --	end
-	
+
 --	menu:addSlice("Honk", texture, { playerObj, ISVehicleMenu.onHonk })
 	if vehicle:getCurrentSpeedKmHour() > 1 then
 		menu:addSlice(getText("ContextMenu_VehicleMechanicsStopCar"), getTexture("media/ui/vehicles/vehicle_repair.png"), nil, playerObj, vehicle )
@@ -263,13 +264,13 @@ function ISVehicleMenu.showRadialMenuOutside(playerObj)
 
 	if vehicle then
 		menu:addSlice(getText("ContextMenu_VehicleMechanics"), getTexture("media/ui/vehicles/vehicle_repair.png"), ISVehicleMenu.onMechanic, playerObj, vehicle)
-		
+
 		if vehicle:getScript() and vehicle:getScript():getWheelCount() > 0 then
 			menu:addSlice(getText("IGUI_EnterVehicle"), getTexture("media/ui/vehicles/vehicle_changeseats.png"), ISVehicleMenu.onShowSeatUI, playerObj, vehicle )
 		end
-		
+
 		ISVehicleMenu.FillPartMenu(playerIndex, nil, menu, vehicle)
-	
+
 		local doorPart = vehicle:getUseablePart(playerObj)
 		if doorPart and doorPart:getDoor() and doorPart:getInventoryItem() then
 			local isHood = doorPart:getId() == "EngineDoor"
@@ -298,7 +299,7 @@ function ISVehicleMenu.showRadialMenuOutside(playerObj)
 			end
 		end
 	end
-	
+
 	menu:setX(getPlayerScreenLeft(playerIndex) + getPlayerScreenWidth(playerIndex) / 2 - menu:getWidth() / 2)
 	menu:setY(getPlayerScreenTop(playerIndex) + getPlayerScreenHeight(playerIndex) / 2 - menu:getHeight() / 2)
 	menu:addToUIManager()
@@ -318,9 +319,9 @@ function ISVehicleMenu.FillMenuOutsideVehicle(player, context, vehicle, test)
 ]]--
 --	context:addOption("Vehicle Info", playerObj, ISVehicleMenu.onInfo, vehicle)
 	ISVehicleMenu.FillPartMenu(player, context, nil, vehicle);
-	
+
 	context:addOption(getText("ContextMenu_VehicleMechanics"), playerObj, ISVehicleMenu.onMechanic, vehicle);
-	
+
 	local part = vehicle:getClosestWindow(playerObj);
 	if part then
 		local window = part:getWindow()
@@ -328,7 +329,7 @@ function ISVehicleMenu.FillMenuOutsideVehicle(player, context, vehicle, test)
 			context:addOption(getText("ContextMenu_Vehicle_Smashwindow", getText("IGUI_VehiclePart" .. part:getId())), playerObj, ISVehiclePartMenu.onSmashWindow, part)
 		end
 	end
-	
+
 	-- remove burnt vehicles
 	if string.match(vehicle:getScript():getName(), "Burnt") then
 		local option = context:addOption(getText("ContextMenu_RemoveBurntVehicle"), playerObj, ISVehicleMenu.onRemoveBurntVehicle, vehicle);
@@ -338,14 +339,14 @@ function ISVehicleMenu.FillMenuOutsideVehicle(player, context, vehicle, test)
 		option.toolTip = toolTip;
 		toolTip:setName(getText("ContextMenu_RemoveBurntVehicle"));
 		toolTip.description = getText("Tooltip_removeBurntVehicle") .. " <LINE> <LINE> ";
-		
+
 		if playerObj:getInventory():contains("WeldingMask") then
 			toolTip.description = toolTip.description .. " <LINE> <RGB:1,1,1> " .. getItemNameFromFullType("Base.WeldingMask") .. " 1/1";
 		else
 			toolTip.description = toolTip.description .. " <LINE> <RGB:1,0,0> " .. getItemNameFromFullType("Base.WeldingMask") .. " 0/1";
 			option.notAvailable = true;
 		end
-		
+
 		local blowTorch = ISBlacksmithMenu.getBlowTorchWithMostUses(playerObj:getInventory());
 		if blowTorch then
 			local blowTorchUseLeft = blowTorch:getDrainableUsesInt();
@@ -367,7 +368,7 @@ function ISVehicleMenu.FillMenuOutsideVehicle(player, context, vehicle, test)
 		vehicleMenu = ISContextMenu:getNew(context)
 		context:addSubMenu(subOption, vehicleMenu)
 	end
-	
+
 	if getCore():getDebug() then
 		vehicleMenu:addOption("Reload Vehicle Textures", vehicle:getScript():getName(), reloadVehicleTextures)
 		if ISVehicleMechanics.cheat then
@@ -382,7 +383,7 @@ function ISVehicleMenu.FillMenuOutsideVehicle(player, context, vehicle, test)
 			ISVehicleMenu.addSetScriptMenu(vehicleMenu, playerObj, vehicle)
 		end
 	end
-	
+
 	if getCore():getDebug() or ISVehicleMechanics.cheat or (isClient() and isAdmin()) then
 		vehicleMenu:addOption("Remove vehicle", playerObj, ISVehicleMechanics.onCheatRemove, vehicle);
 	end
@@ -500,7 +501,7 @@ function ISVehicleMenu.onMechanic(playerObj, vehicle)
 --	ui:initParts();
 --	ui:setVisible(true, JoypadState.players[playerObj:getPlayerNum()+1])
 --	ui:addToUIManager()
-	
+
 --print("ONMECHANIC")
 	-- get the closest tire to the player
 --	local closestDist;
@@ -811,7 +812,7 @@ function ISVehicleMenu.onEnter(playerObj, vehicle, seat)
 	else
 		if vehicle:isPassengerUseDoor2(playerObj, seat) then
 			ISVehicleMenu.processEnter2(playerObj, vehicle, seat);
-		else 
+		else
 			ISVehicleMenu.processEnter(playerObj, vehicle, seat);
 		end
 	end
@@ -925,12 +926,12 @@ function ISVehicleMenu.onExit(playerObj, seatFrom)
     local vehicle = playerObj:getVehicle()
     vehicle:updateHasExtendOffsetForExit(playerObj)
 	if (not playerObj:isBlockMovement()) then
-		
+
 		if not vehicle then return end
-		if vehicle:getCurrentSpeedKmHour() > 1 or vehicle:getCurrentSpeedKmHour() < -1 then 
+		if vehicle:getCurrentSpeedKmHour() > 1 or vehicle:getCurrentSpeedKmHour() < -1 then
 			playerObj:Say(getText("IGUI_PlayerText_CanNotExitFromMovingCar"))
             vehicle:updateHasExtendOffsetForExitEnd(playerObj)
-			return 
+			return
 		end
 		seatFrom = seatFrom or vehicle:getSeat(playerObj)
 		if vehicle:isExitBlocked(seatFrom) then
@@ -965,8 +966,9 @@ function ISVehicleMenu.onExitAux(playerObj, seat)
 end
 
 function ISVehicleMenu.onShowSeatUI(playerObj, vehicle)
-	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-	if isPaused then return end
+	-- LetMeThink
+	-- local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+	-- if isPaused then return end
 
 	local playerNum = playerObj:getPlayerNum()
 	if not ISVehicleMenu.seatUI then
@@ -1084,4 +1086,3 @@ end
 Events.OnFillWorldObjectContextMenu.Add(ISVehicleMenu.OnFillWorldObjectContextMenu)
 Events.OnKeyPressed.Add(ISVehicleMenu.onKeyPressed);
 Events.OnKeyStartPressed.Add(ISVehicleMenu.onKeyStartPressed);
-
