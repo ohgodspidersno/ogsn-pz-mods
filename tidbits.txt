@@ -1,3 +1,32 @@
+Fashion Montage Colors
+
+These should not be colorized at all:
+  baseball cap KY
+  bonnie hat green
+  flat hat - police trooper
+  USA Helmet
+  ice cream cap
+  spiffos cap
+  santa hats (both)
+
+These should be modified to acccomodate:
+
+  Denim:
+  Light_denim looks good, have one 'jean item' be normal and the other be colorful
+
+  Jackets
+
+  Varsity
+
+
+
+
+
+
+
+
+
+
 A document to contain little bits of helpful information
 ------------------------------
 UTF-8 Whitespaces: (these might be different widths, and/or won't be erased automatically)
