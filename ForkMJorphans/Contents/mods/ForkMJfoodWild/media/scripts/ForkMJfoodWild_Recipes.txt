@@ -1,0 +1,158 @@
+module FMJ
+{
+	imports
+	{
+		Base
+	}
+/*******************MEATS*******************/
+	recipe Butcher Lizard
+	{
+		keep KitchenKnife/HuntingKnife/MeatCleaver,
+		DeadLizard,
+		Result: LizardMeat,
+		Sound: PZ_FoodSwoosh,
+		Time: 50.0,
+		OnCreate: CutAnimal_OnCreate,
+		Category: Cooking,
+		OnGiveXP: Give10CookingXP,
+	}
+	recipe Butcher Pheasant
+	{
+		keep KitchenKnife/HuntingKnife/MeatCleaver,
+		DeadPheasant,
+		Result: PheasantMeat,
+		Sound: PZ_FoodSwoosh,
+		Time: 50.0,
+		OnCreate: CutAnimal_OnCreate,
+		Category: Cooking,
+		OnGiveXP: Give10CookingXP,
+	}
+	recipe Butcher Snake
+	{
+		keep KitchenKnife/HuntingKnife/MeatCleaver,
+		DeadSnake,
+		Result: SnakeMeat,
+		Sound: PZ_FoodSwoosh,
+		Time: 50.0,
+		OnCreate: CutAnimal_OnCreate,
+		Category: Cooking,
+		OnGiveXP: Give10CookingXP,
+	}
+/*******************VEGETABLE JARS*******************/
+	recipe Make Jar of Wild Carrots
+	{
+		EmptyJar,
+		JarLid,
+		WildCarrots=5,
+		Water=10,
+		Vinegar=2,
+		Sugar=1,
+		Result: JarWildCarrots,
+        Time: 100.0,
+        OnCreate: CannedFood_OnCreate,
+        Category: Cooking,
+        OnGiveXP: Give10CookingXP,
+	}
+	recipe Open Jar of Wild Carrots
+	{
+		JarWildCarrots,
+		Result: WildCarrots=5,
+		Time: 30.0,
+		OnCreate: OpenCannedFood_OnCreate,
+		Category: Cooking,
+		OnGiveXP: NoXP_OnGiveXP,
+    }
+	recipe Make Jar of Wild Corns
+	{
+		EmptyJar,
+		JarLid,
+		WildCorn=5,
+		Water=10,
+		Vinegar=2,
+		Sugar=1,
+		Result: JarWildCorn,
+        Time: 100.0,
+        OnCreate: CannedFood_OnCreate,
+        Category: Cooking,
+        OnGiveXP: Give10CookingXP,
+	}
+	recipe Open Jar of Carrots
+	{
+		JarWildCorn,
+		Result: WildCorn=5,
+		Time: 30.0,
+		OnCreate: OpenCannedFood_OnCreate,
+		Category: Cooking,
+		OnGiveXP: NoXP_OnGiveXP,
+    }
+	recipe Make Jar of Wild Potatoes
+	{
+		EmptyJar,
+		JarLid,
+		WildPotatoes=5,
+		Water=10,
+		Vinegar=2,
+		Sugar=1,
+		Result: JarWildPotatoes,
+    Time: 100.0,
+    OnCreate: CannedFood_OnCreate,
+    Category: Cooking,
+    OnGiveXP: Give10CookingXP,
+	}
+	recipe Open Jar of Wild Potatoes
+	{
+		JarWildPotatoes,
+		Result: WildPotatoes=5,
+		Time: 30.0,
+		OnCreate: OpenCannedFood_OnCreate,
+		Category: Cooking,
+		OnGiveXP: NoXP_OnGiveXP,
+    }
+/*******************CIGARRETS*******************/
+	recipe Make Roll Ups
+	{
+		Tobacco= 1,
+		Newspaper= 1,
+		Result: RollUps= 20,
+		Time: 450.0,
+		Category: Survivalist,
+	}
+	recipe Make Quality Roll Ups
+	{
+		Tobacco= 1,
+		Nettle= 1,
+		Herbs= 1,
+		Newspaper= 1,
+		Result: QRollUps= 20,
+		Time: 450.0,
+		Category: Survivalist,
+	}
+/*******************SURVIVAL*******************/
+	recipe Grind flour
+	{
+		keep MortarPestle/Stone,
+		WheatGrains= 3,
+		Result: Flour= 1,
+		Time: 450.0,
+		Category: Survivalist,
+	}
+	recipe Remove grains from Wheat
+	{
+		WildWheat= 1,
+		Result: WheatGrains= 2,
+		Time: 450.0,
+		Category: Survivalist,
+	}
+	recipe Make Mouse Trap
+	{
+		keep Saw,
+		Plank= 1,
+		Nails= 2,
+		Wire= 1,
+		Result: TrapMouse,
+		Sound: Sawing,
+		Time: 120.0,
+		Category: Trapper,
+		NeedToBeLearn: true,
+	}
+}
