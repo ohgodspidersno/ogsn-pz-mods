@@ -374,45 +374,6 @@ local listScarf = {
   "DistinctNames.Scarf_StripeRedWhite",
 }
 
-local listMakeupLips = {
-  "MakeUp_LipsRed",
-  "MakeUp_LipsLightBlue",
-  "MakeUp_LipsBlue",
-  "MakeUp_LipsBlack",
-  "MakeUp_LipsGreen",
-  "MakeUp_LipsPink",
-}
-
-local listMakeupEyesShadow = {
-  "MakeUp_EyesShadowWhite",
-  "MakeUp_EyesShadowLightBlue",
-  "MakeUp_EyesShadowBlue",
-  "MakeUp_EyesShadowRed",
-  "MakeUp_EyesShadowPink",
-  "MakeUp_EyesShadowGreen",
-  "MakeUp_EyesShadowYellow",
-}
-
-local listMakeupEyes = {
-  "MakeUp_Crow",
-  "MakeUp_RedStripes1",
-  "MakeUp_RedStripes2",
-  "MakeUp_CamoEyes1",
-  "MakeUp_CamoEyes2",
-  "MakeUp_CamoStripes",
-  "MakeUp_Football",
-}
-
-local listMakeupFullFace = {
-  "MakeUp_CamoFullFace1",
-  "MakeUp_CamoFullFace2",
-  "MakeUp_BraveHeart",
-  "MakeUp_ClownFace1",
-  "MakeUp_ClownFace2",
-  "MakeUp_SkullFace1",
-  "MakeUp_SkullFace2",
-}
-
 ClothingSelectionDefinitions.default.Male.Hat = {chance = 10, items = listHat}
 ClothingSelectionDefinitions.default.Male.TankTop = {chance = 10, items = listTankTop}
 ClothingSelectionDefinitions.default.Male.Tshirt = {items = listTshirt}
@@ -476,6 +437,46 @@ ClothingSelectionDefinitions.default.Female.Scarf = {chance = 0, items = listSca
 
 
 --- MAKEUP ----
+
+-- local listMakeupLips = {
+--   "MakeUp_LipsRed",
+--   "MakeUp_LipsLightBlue",
+--   "MakeUp_LipsBlue",
+--   "MakeUp_LipsBlack",
+--   "MakeUp_LipsGreen",
+--   "MakeUp_LipsPink",
+-- }
+
+-- local listMakeupEyesShadow = {
+--   "MakeUp_EyesShadowWhite",
+--   "MakeUp_EyesShadowLightBlue",
+--   "MakeUp_EyesShadowBlue",
+--   "MakeUp_EyesShadowRed",
+--   "MakeUp_EyesShadowPink",
+--   "MakeUp_EyesShadowGreen",
+--   "MakeUp_EyesShadowYellow",
+-- }
+
+-- local listMakeupEyes = {
+--   "MakeUp_Crow",
+--   "MakeUp_RedStripes1",
+--   "MakeUp_RedStripes2",
+--   "MakeUp_CamoEyes1",
+--   "MakeUp_CamoEyes2",
+--   "MakeUp_CamoStripes",
+--   "MakeUp_Football",
+-- }
+
+-- local listMakeupFullFace = {
+--   "MakeUp_CamoFullFace1",
+--   "MakeUp_CamoFullFace2",
+--   "MakeUp_BraveHeart",
+--   "MakeUp_ClownFace1",
+--   "MakeUp_ClownFace2",
+--   "MakeUp_SkullFace1",
+--   "MakeUp_SkullFace2",
+-- }
+
 -- ClothingSelectionDefinitions.default.Male.listMakeupLips = {chance = 0, items = listMakeupLips}
 -- ClothingSelectionDefinitions.default.Male.listMakeupEyesShadow = {chance = 0, items = listMakeupEyesShadow}
 -- ClothingSelectionDefinitions.default.Male.listMakeupEyes = {chance = 0, items = listMakeupEyes}
