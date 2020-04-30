@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel></m_MaleModel>
+	<m_FemaleModel></m_FemaleModel>
+	<m_GUID>1be7cae9-82bd-473f-8de9-23a8d9ca3117</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_BaseTextures>clothes\tie\tie_black_noneck</m_BaseTextures>
+	<m_BaseTextures>clothes\tie\tie_blue_noneck</m_BaseTextures>
+	<m_BaseTextures>clothes\tie\tie_bluespotted_noneck</m_BaseTextures>
+	<m_BaseTextures>clothes\tie\tie_bluestripe_noneck</m_BaseTextures>
+	<m_BaseTextures>clothes\tie\tie_multicoloured_noneck</m_BaseTextures>
+	<m_BaseTextures>clothes\tie\tie_red_noneck</m_BaseTextures>
+	<m_BaseTextures>clothes\tie\tie_redspotted_noneck</m_BaseTextures>
+	<m_BaseTextures>clothes\tie\tie_redstripe_noneck</m_BaseTextures>
+</clothingItem>

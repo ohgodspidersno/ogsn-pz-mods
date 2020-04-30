@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>media\models_X\Skinned\BackPacks\DuffelBag_RHand.X</m_MaleModel>
+	<m_FemaleModel>media\models_X\Skinned\BackPacks\DuffelBag_RHand.X</m_FemaleModel>
+	<m_GUID>d90ed5ae-6867-485b-b49f-88801bea0bc9</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<textureChoices>duffelbagblue</textureChoices>
+	<textureChoices>duffelbaggreen</textureChoices>
+	<textureChoices>duffelbaggrey</textureChoices>
+</clothingItem>

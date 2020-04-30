@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>media\models_X\Skinned\BackPacks\PlasticLunchBox_RHand.X</m_MaleModel>
+	<m_FemaleModel>media\models_X\Skinned\BackPacks\PlasticLunchBox_RHand.X</m_FemaleModel>
+	<m_GUID>d7b82cdf-e4a8-4518-b79c-8b4959f21c4d</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<textureChoices>clothes\bag\plasticlunchbox_02</textureChoices>
+</clothingItem>

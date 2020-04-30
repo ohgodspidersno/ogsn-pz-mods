@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>static\clothes\m_gasmask</m_MaleModel>
+	<m_FemaleModel>static\clothes\f_gasmask</m_FemaleModel>
+	<m_GUID>92efbe27-baa3-4e7f-bc7c-cb4713d23c14</m_GUID>
+	<m_Static>true</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone>Bip01_Head</m_AttachBone>
+	<m_HatCategory>nobeard</m_HatCategory>
+	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
+	<textureChoices>gasmask</textureChoices>
+</clothingItem>

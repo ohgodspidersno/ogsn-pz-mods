@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel></m_MaleModel>
+	<m_FemaleModel></m_FemaleModel>
+	<m_GUID>ceead19e-1c55-4d89-8a59-864dd72d0c93</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_BaseTextures>clothes\shirt_tshirt_textures\shirt_denim</m_BaseTextures>
+	<m_BaseTextures>clothes\shirt_tshirt_textures\shirt_denimblack</m_BaseTextures>
+	<m_BaseTextures>clothes\shirt_tshirt_textures\shirt_denimlight</m_BaseTextures>
+</clothingItem>

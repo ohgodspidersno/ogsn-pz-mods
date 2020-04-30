@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>skinned\clothes\bob_longshorts</m_MaleModel>
+	<m_FemaleModel>skinned\clothes\kate_longshorts</m_FemaleModel>
+	<m_GUID>e275bac3-e804-41cb-a80f-c6e54a9ce7f8</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_Masks>2</m_Masks>
+	<textureChoices>clothes\trousers_mesh\trousersmesh_denim</textureChoices>
+	<textureChoices>clothes\trousers_mesh\trousersmesh_denimblack</textureChoices>
+	<textureChoices>clothes\trousers_mesh\trousersmesh_denimlight</textureChoices>
+</clothingItem>

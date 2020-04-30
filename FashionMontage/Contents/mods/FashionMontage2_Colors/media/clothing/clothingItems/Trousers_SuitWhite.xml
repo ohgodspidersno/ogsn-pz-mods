@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>skinned\clothes\bob_suittrousers</m_MaleModel>
+	<m_FemaleModel>skinned\clothes\kate_suittrousers</m_FemaleModel>
+	<m_GUID>309ccaef-b2b6-4a7d-859d-bb4d29e8ff69</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_Masks>14</m_Masks>
+	<m_Masks>15</m_Masks>
+	<m_Masks>7</m_Masks>
+	<m_Masks>9</m_Masks>
+	<m_Masks>11</m_Masks>
+	<textureChoices>clothes\suittrousers\suittrousersmesh_white</textureChoices>
+</clothingItem>

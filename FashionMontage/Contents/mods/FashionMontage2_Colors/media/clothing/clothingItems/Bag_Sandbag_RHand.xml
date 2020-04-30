@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>media\models_X\Skinned\BackPacks\SandBag_RHand.X</m_MaleModel>
+	<m_FemaleModel>media\models_X\Skinned\BackPacks\SandBag_RHand.X</m_FemaleModel>
+	<m_GUID>65c4f680-313c-4050-a7ff-605a737f3735</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<textureChoices>clothes\bag\sandbag</textureChoices>
+</clothingItem>

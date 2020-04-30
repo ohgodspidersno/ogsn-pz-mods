@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel></m_MaleModel>
+	<m_FemaleModel></m_FemaleModel>
+	<m_GUID>99f1aa77-0c9c-4f83-a903-c9ba97ab52e8</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_BaseTextures>clothes\dress_textures\dress_long</m_BaseTextures>
+</clothingItem>

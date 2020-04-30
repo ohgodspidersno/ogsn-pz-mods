@@ -1,0 +1,5 @@
+COLOR NOTES TO SELF
+Spiffo tie item can be used to catch all the alternate solid ties
+1. Green long leather jacket should be colorful
+2. Might be cool if there were two short leather jackets, one of which was black and the other colorful
+    maybe take the XML of one of the unused ponchos?

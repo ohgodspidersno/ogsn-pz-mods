@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>weapons\2handed\spearscalpel</m_MaleModel>
+	<m_FemaleModel>weapons\2handed\spearscalpel</m_FemaleModel>
+	<m_GUID>cbdb4e53-695e-42ff-b602-e5d19bb4d630</m_GUID>
+	<m_Static>true</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone>Bip01_Head</m_AttachBone>
+</clothingItem>
