@@ -339,7 +339,7 @@ local listBathRobe = {
 local listTorsoExtra = {
   "DistinctNames.Apron_Black",
   "DistinctNames.Apron_White",
-  -- "DistinctNames.Apron_WhiteTEXTURE",
+  "DistinctNames.Apron_WhiteTEXTURE",
   "DistinctNames.Apron_IceCream",
   "DistinctNames.Apron_PileOCrepe",
   "DistinctNames.Apron_PizzaWhirled",
