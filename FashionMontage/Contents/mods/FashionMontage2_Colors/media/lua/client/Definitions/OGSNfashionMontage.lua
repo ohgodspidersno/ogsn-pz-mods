@@ -130,6 +130,7 @@ local listSocks = {
 }
 local listPants = {
   "DistinctNames2.Shorts_ShortFormal",
+  "DistinctNames2.Trousers_WhiteTINT",
   "DistinctNames2.Trousers_Denim",
   "DistinctNames2.Trousers_JeanBaggy",
   "DistinctNames2.TrousersMesh_DenimLight",
@@ -335,6 +336,8 @@ local listScarf = {
   "DistinctNames2.Scarf_StripeBlackWhite",
 }
 
+
+
 ClothingSelectionDefinitions.default.Male.Hat = {chance = 10, items = listHat}
 ClothingSelectionDefinitions.default.Male.TankTop = {chance = 10, items = listTankTop}
 ClothingSelectionDefinitions.default.Male.Tshirt = {items = listTshirt}
@@ -395,3 +398,18 @@ ClothingSelectionDefinitions.default.Female.TorsoExtra = {chance = 0, items = li
 ClothingSelectionDefinitions.default.Female.Tail = {chance = 0, items = listTail}
 ClothingSelectionDefinitions.default.Female.Back = {chance = 0, items = listBack}
 ClothingSelectionDefinitions.default.Female.Scarf = {chance = 0, items = listScarf}
+
+
+-- startingOutfit --
+ClothingSelectionDefinitions.starting =ClothingSelectionDefinitions.starting or {}
+ClothingSelectionDefinitions.starting.Male = ClothingSelectionDefinitions.starting.Male or {}
+ClothingSelectionDefinitions.starting.Female = ClothingSelectionDefinitions.starting.Female or {}
+ClothingSelectionDefinitions.starting.Male.Shoes = {shance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Male.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
+ClothingSelectionDefinitions.starting.Male.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
+ClothingSelectionDefinitions.starting.Male.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
+
+ClothingSelectionDefinitions.starting.Female.Shoes = {shance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Female.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
+ClothingSelectionDefinitions.starting.Female.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
+ClothingSelectionDefinitions.starting.Female.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
