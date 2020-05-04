@@ -1,9 +1,0 @@
-// module Base {
-// item MakeUp_GreenCamo {
-// Type = Clothing,
-// DisplayName = MakeUp_GreenCamo,
-// ClothingItem = MakeUp_GreenCamo,
-// BodyLocation = MakeUp,
-// Icon = MakeUp_GreenCamo,
-// }
-// }
