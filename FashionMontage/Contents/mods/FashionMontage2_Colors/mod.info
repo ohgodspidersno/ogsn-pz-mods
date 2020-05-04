@@ -1,4 +1,4 @@
-name=Fashion Montage 2 - WARNING!!! READ DESCRIPTION BEFORE ENABLING!!!
+name=Fashion Montage 2 - IMPORTANT: After enabling/disabling this mod you must exit and re-open the program. Do not use this mod on existing save games.
 id=FashionMontage2_Colors
-description=You must exit and re-open Project Zomboid after enabling this mod. This will break existing save games!
+description=You must exit and re-open Project Zomboid after enabling this mod. Do not enable this mod on existing save games.
 poster=poster.png
