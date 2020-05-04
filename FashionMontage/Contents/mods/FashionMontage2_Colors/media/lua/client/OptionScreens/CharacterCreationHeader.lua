@@ -25,7 +25,7 @@ function AvatarPanel:createChildren()
 	self.avatarPanel.backgroundColor = {r=0, g=0, b=0, a=0.8}
 	self.avatarPanel.borderColor = {r=1, g=1, b=1, a=0.2}
 	self:addChild(self.avatarPanel)
-	CharacterCreationHeader.instance:randomGenericOutfit()
+	CharacterCreationHeader.instance:startingOutfit()
 	self.avatarPanel:setState("idle")
 	self.avatarPanel:setDirection(IsoDirections.S)
 	self.avatarPanel:setIsometric(false)
