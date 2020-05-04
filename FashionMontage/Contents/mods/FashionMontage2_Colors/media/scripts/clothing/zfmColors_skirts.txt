@@ -1,0 +1,47 @@
+module DistinctNames { imports {Base}
+item Skirt_Knees {
+Type = Clothing,
+DisplayName = Knee-length Skirt,
+ClothingItem = Skirt_Knees,
+BodyLocation = Skirt,
+Icon = SkirtGeneric,
+BloodLocation = ShortsShort,
+Insulation = 0.1,
+WindResistance = 0.01,
+FabricType = Cotton,
+}
+item Skirt_Long {
+Type = Clothing,
+DisplayName = Long Skirt,
+ClothingItem = Skirt_Long,
+BodyLocation = Skirt,
+Icon = SkirtLongWhite,
+BloodLocation = Trousers,
+RunSpeedModifier = 0.90,
+Insulation = 0.3,
+WindResistance = 0.2,
+FabricType = Cotton,
+}
+item Skirt_Normal {
+Type = Clothing,
+DisplayName = Skirt,
+ClothingItem = Skirt_Normal,
+BodyLocation = Skirt,
+Icon = SkirtGeneric,
+BloodLocation = Trousers,
+RunSpeedModifier = 0.93,
+Insulation = 0.25,
+WindResistance = 0.1,
+FabricType = Cotton,
+}
+item Skirt_Short {
+Type = Clothing,
+DisplayName = Short Skirt,
+ClothingItem = Skirt_Short,
+BodyLocation = Skirt,
+Icon = SkirtGeneric,
+BloodLocation = ShortsShort,
+Insulation = 0.05,
+FabricType = Cotton,
+}
+}

@@ -10,5 +10,11 @@
 	<m_HatCategory>nohair</m_HatCategory>
 	<m_Masks>0</m_Masks>
 	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
-	<textureChoices>Clothes/SpiffoHead</textureChoices>
+	<textureChoices>Clothes/SpiffoHead_orange</textureChoices>
+	<textureChoices>Clothes/SpiffoHead_grey</textureChoices>
+	<textureChoices>Clothes/SpiffoHead_red</textureChoices>
+	<textureChoices>Clothes/SpiffoHead_blue</textureChoices>
+	<textureChoices>Clothes/SpiffoHead_green</textureChoices>
+	<textureChoices>Clothes/SpiffoHead_purple</textureChoices>
+	<textureChoices>Clothes/SpiffoHead_pink</textureChoices>
 </clothingItem>

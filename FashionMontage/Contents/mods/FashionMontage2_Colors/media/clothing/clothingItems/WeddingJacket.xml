@@ -5,12 +5,12 @@
 	<m_GUID>0e10adb3-6611-42bd-abe9-d860ee432cd6</m_GUID>
 	<m_Static>false</m_Static>
 	<m_AllowRandomHue>false</m_AllowRandomHue>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
 	<m_Masks>13</m_Masks>
 	<m_Masks>14</m_Masks>
 	<m_Masks>3</m_Masks>
 	<m_Masks>5</m_Masks>
 	<m_UnderlayMasksFolder>media/textures/Clothes/WeddingDress_Jacket/Mask_Jacket</m_UnderlayMasksFolder>
-	<textureChoices>clothes\weddingdress_jacket\weddingjacket</textureChoices>
+	<textureChoices>clothes\weddingdress_jacket\weddingjacket_colors</textureChoices>
 </clothingItem>

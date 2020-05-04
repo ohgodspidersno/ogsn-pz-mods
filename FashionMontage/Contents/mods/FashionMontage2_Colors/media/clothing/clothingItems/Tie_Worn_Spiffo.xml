@@ -5,7 +5,7 @@
 	<m_GUID>a14cc5d1-dab8-48e2-a03d-0a9dfd0cb4d7</m_GUID>
 	<m_Static>false</m_Static>
 	<m_AllowRandomHue>false</m_AllowRandomHue>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
-	<m_BaseTextures>clothes\tie\tie_spiffo_noneck</m_BaseTextures>
+	<textureChoices>clothes\tie\tie_whitefull</textureChoices>
 </clothingItem>

@@ -8,5 +8,6 @@
 	<m_AttachBone></m_AttachBone>
 	<m_Masks>2</m_Masks>
 	<textureChoices>clothes\shorts_textures\longshorts_camogreen</textureChoices>
+	<textureChoices>clothes\shorts_textures\longshorts_camodesert</textureChoices>
 	<textureChoices>clothes\shorts_textures\longshorts_camourban</textureChoices>
 </clothingItem>

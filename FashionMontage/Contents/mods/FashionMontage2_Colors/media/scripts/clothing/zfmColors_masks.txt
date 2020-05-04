@@ -1,0 +1,68 @@
+module DistinctNames { imports {Base}
+item Hat_BalaclavaFull {
+Type = Clothing,
+DisplayName = Balaclava,
+ClothingItem = Hat_BalaclavaFull,
+BodyLocation = Mask,
+BloodLocation = Head,
+Icon = Balaclava,
+CanHaveHoles = false,
+Insulation = 1.0,
+WindResistance = 1.0,
+WaterResistance = 0.5,
+}
+item Hat_BalaclavaFace {
+Type = Clothing,
+DisplayName = Balaclava - Open,
+ClothingItem = Hat_BalaclavaFace,
+BodyLocation = Mask,
+Icon = BalaclavaOpen,
+CanHaveHoles = false,
+BloodLocation = Head,
+Insulation = 0.8,
+WindResistance = 0.8,
+}
+item Hat_BandanaMaskTINT {
+Type = Clothing,
+DisplayName = Bandana - Plain (Face),
+ClothingItem = Hat_BandanaMaskTINT,
+BodyLocation = Mask,
+ClothingItemExtra = Hat_BandanaTINT;Hat_BandanaTiedTINT,
+ClothingItemExtraOption = UntieBandana;TieBandana,
+Icon = Handkerchief,
+CanHaveHoles = false,
+ChanceToFall = 5,
+Insulation = 0.10,
+}
+item Hat_BandanaMask {
+Type = Clothing,
+DisplayName = Bandana (Face),
+ClothingItem = Hat_BandanaMask,
+BodyLocation = Mask,
+ClothingItemExtra = Hat_Bandana;Hat_BandanaTied,
+ClothingItemExtraOption = UntieBandana;TieBandana,
+IconsForTexture = Handkerchief_Black;Handkerchief_Blue;Handkerchief_Red,
+CanHaveHoles = false,
+ChanceToFall = 5,
+Insulation = 0.10,
+}
+item Hat_DustMask {
+Type = Clothing,
+DisplayName = Dust Mask,
+ClothingItem = Hat_DustMask,
+BodyLocation = Mask,
+Icon = DustMask,
+CanHaveHoles = false,
+BloodLocation = Head,
+Insulation = 0.6,
+WindResistance = 0.5,
+}
+item Hat_SurgicalMask_Green {
+Type = Clothing,
+DisplayName = Medical Mask,
+ClothingItem = Hat_SurgicalMask_Green,
+BodyLocation = Mask,
+Icon = SurgicalMaskGreen,
+CanHaveHoles = false,
+}
+}

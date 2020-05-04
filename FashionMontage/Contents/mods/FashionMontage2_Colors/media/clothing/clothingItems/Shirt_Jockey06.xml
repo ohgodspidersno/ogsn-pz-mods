@@ -4,7 +4,7 @@
 	<m_FemaleModel></m_FemaleModel>
 	<m_GUID>b6373a7a-7404-4127-9da4-d603dd094236</m_GUID>
 	<m_Static>false</m_Static>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
 	<m_BaseTextures>clothes\shirt_tshirt_textures\shirt_jockey06</m_BaseTextures>
 </clothingItem>

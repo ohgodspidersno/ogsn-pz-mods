@@ -4,8 +4,7 @@
 	<m_FemaleModel>static\clothes\f_glasses_skigoggles</m_FemaleModel>
 	<m_GUID>03007a08-7e7f-4a5d-93a7-e2d8d5a46c53</m_GUID>
 	<m_Static>true</m_Static>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone>Bip01_Head</m_AttachBone>
-	<textureChoices>skigoggles_orange</textureChoices>
-	<textureChoices>skigoggles_white</textureChoices>
+	<textureChoices>skigoggles_light</textureChoices>
 </clothingItem>

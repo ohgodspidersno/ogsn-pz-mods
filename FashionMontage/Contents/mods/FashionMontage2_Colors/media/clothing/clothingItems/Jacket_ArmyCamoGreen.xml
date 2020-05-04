@@ -13,4 +13,6 @@
 	<m_Masks>5</m_Masks>
 	<m_UnderlayMasksFolder>media/textures/Clothes/Jacket/Masks</m_UnderlayMasksFolder>
 	<textureChoices>clothes\jacket\jacket_camogreen</textureChoices>
+	<textureChoices>clothes\jacket\jacket_camodesert</textureChoices>
+	<textureChoices>clothes\jacket\jacket_camourban</textureChoices>
 </clothingItem>

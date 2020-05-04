@@ -9,7 +9,8 @@
 	<m_AttachBone>Bip01_Head</m_AttachBone>
 	<m_HatCategory>Group01</m_HatCategory>
 	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
-	<textureChoices>summerhat</textureChoices>
-	<textureChoices>summerhatpink</textureChoices>
-	<textureChoices>summerhatstripe</textureChoices>
+	<textureChoices>summerhatcolors</textureChoices>
+	<!-- <textureChoices>summerhat</textureChoices> -->
+	<!-- <textureChoices>summerhatpink</textureChoices> -->
+	<!-- <textureChoices>summerhatstripe</textureChoices> -->
 </clothingItem>

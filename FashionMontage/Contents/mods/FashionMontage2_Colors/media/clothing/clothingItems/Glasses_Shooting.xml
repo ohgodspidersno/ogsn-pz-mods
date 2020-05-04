@@ -4,7 +4,7 @@
 	<m_FemaleModel>static\clothes\f_glasses_shooting</m_FemaleModel>
 	<m_GUID>a5643cfa-9468-4815-8057-d192730b9344</m_GUID>
 	<m_Static>true</m_Static>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone>Bip01_Head</m_AttachBone>
-	<textureChoices>shootingglasses</textureChoices>
+	<textureChoices>shootingglasses_colors</textureChoices>
 </clothingItem>

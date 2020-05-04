@@ -2536,14 +2536,19 @@ end
 
 
 ISInventoryPaneContextMenu.onMakeUp = function(makeup, player)
-  if ISInventoryPaneContextMenu.makeUpUI then
-    ISInventoryPaneContextMenu.makeUpUI:setVisible(true);
-    ISInventoryPaneContextMenu.makeUpUI.item = makeup;
-    ISInventoryPaneContextMenu.makeUpUI:reinit();
+  if ISMakeUpUI.windows[player] then
+    ISMakeUpUI.windows[player]:setVisible(true);
+    ISMakeUpUI.windows[player].item = makeup;
+    ISMakeUpUI.windows[player]:reinit();
   else
-    ISInventoryPaneContextMenu.makeUpUI = ISMakeUpUI:new(0, 0, makeup, player);
-    ISInventoryPaneContextMenu.makeUpUI:initialise();
-    ISInventoryPaneContextMenu.makeUpUI:addToUIManager();
+    ISMakeUpUI.windows[player] = ISMakeUpUI:new(0, 0, makeup, player);
+    ISMakeUpUI.windows[player]:initialise();
+    ISMakeUpUI.windows[player]:addToUIManager();
+  end
+  local playerNum = player:getPlayerNum()
+  if JoypadState.players[playerNum + 1] then
+    ISMakeUpUI.windows[player].prevFocus = JoypadState.players[playerNum + 1].focus
+    JoypadState.players[playerNum + 1].focus = ISMakeUpUI.windows[player]
   end
 end
 

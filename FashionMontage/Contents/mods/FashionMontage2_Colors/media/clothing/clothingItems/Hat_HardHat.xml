@@ -5,12 +5,12 @@
 	<m_GUID>523b2893-137b-44bc-b3f6-ba2c9d42d488</m_GUID>
 	<m_Static>true</m_Static>
 	<m_AllowRandomHue>false</m_AllowRandomHue>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone>Bip01_Head</m_AttachBone>
 	<m_HatCategory>Group01</m_HatCategory>
 	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
-	<textureChoices>hardhat</textureChoices>
-	<textureChoices>hardhatblue</textureChoices>
-	<textureChoices>hardhatred</textureChoices>
+	<!-- <textureChoices>hardhat</textureChoices> -->
+	<!-- <textureChoices>hardhatblue</textureChoices> -->
+	<!-- <textureChoices>hardhatred</textureChoices> -->
 	<textureChoices>hardhatwhite</textureChoices>
 </clothingItem>

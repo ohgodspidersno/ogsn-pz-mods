@@ -1,0 +1,32 @@
+// module Base {
+// item MakeUp_LipsRed {
+// Type = Clothing,
+// ClothingItem = MakeUp_LipsRed,
+// BodyLocation = MakeUp_Lips,
+// }
+// item MakeUp_LipsLightBlue {
+// Type = Clothing,
+// ClothingItem = MakeUp_LipsLightBlue,
+// BodyLocation = MakeUp_Lips,
+// }
+// item MakeUp_LipsBlue {
+// Type = Clothing,
+// ClothingItem = MakeUp_LipsBlue,
+// BodyLocation = MakeUp_Lips,
+// }
+// item MakeUp_LipsBlack {
+// Type = Clothing,
+// ClothingItem = MakeUp_LipsBlack,
+// BodyLocation = MakeUp_Lips,
+// }
+// item MakeUp_LipsGreen {
+// Type = Clothing,
+// ClothingItem = MakeUp_LipsGreen,
+// BodyLocation = MakeUp_Lips,
+// }
+// item MakeUp_LipsPink {
+// Type = Clothing,
+// ClothingItem = MakeUp_LipsPink,
+// BodyLocation = MakeUp_Lips,
+// }
+// }

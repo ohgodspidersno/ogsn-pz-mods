@@ -6,5 +6,11 @@
 	<m_Static>false</m_Static>
 	<m_AllowRandomTint>false</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
-	<textureChoices>clothes\spiffosuit\spiffosuit</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_orange</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_grey</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_red</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_blue</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_green</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_purple</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_pink</textureChoices>
 </clothingItem>

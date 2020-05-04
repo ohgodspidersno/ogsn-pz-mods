@@ -1,0 +1,20 @@
+module DistinctNames { imports {Base}
+item HolsterSimple {
+Weight = 0.2,
+Type = Clothing,
+DisplayName = Holster - Single,
+Icon = GunHolster,
+BodyLocation = BeltExtra,
+ClothingItem = Holster,
+AttachmentsProvided = HolsterRight,
+}
+item HolsterDouble {
+Weight = 0.2,
+Type = Clothing,
+DisplayName = Holster - Double,
+Icon = GunHolsterDouble,
+BodyLocation = BeltExtra,
+ClothingItem = HolsterDouble,
+AttachmentsProvided = HolsterLeft;HolsterRight,
+}
+}

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <clothingItem>
 	<m_MaleModel>skinned\clothes\bob_bulletvest</m_MaleModel>
-	<m_FemaleModel>skinned\clothes\bob_bulletvest</m_FemaleModel>
+	<m_FemaleModel>skinned\clothes\kate_bulletvest</m_FemaleModel>
 	<m_GUID>0d7e7bf1-e6ea-4915-a87a-4bbbb687718e</m_GUID>
 	<m_Static>false</m_Static>
 	<m_AllowRandomHue>false</m_AllowRandomHue>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
 	<textureChoices>clothes\bulletvest\vest_bulletcivilian</textureChoices>
 </clothingItem>

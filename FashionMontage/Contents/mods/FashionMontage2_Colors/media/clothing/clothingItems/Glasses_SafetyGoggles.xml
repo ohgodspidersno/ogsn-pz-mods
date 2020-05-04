@@ -4,7 +4,7 @@
 	<m_FemaleModel>static\clothes\f_glasses_safetygoggles</m_FemaleModel>
 	<m_GUID>c05cf7a7-f704-43ce-a6bf-5eee59d96a5c</m_GUID>
 	<m_Static>true</m_Static>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone>Bip01_Head</m_AttachBone>
 	<textureChoices>skigoggles_safety</textureChoices>
 </clothingItem>

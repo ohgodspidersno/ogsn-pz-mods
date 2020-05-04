@@ -5,11 +5,11 @@
 	<m_GUID>ae7791f9-a5df-48d8-882f-a0749b8af2b1</m_GUID>
 	<m_Static>true</m_Static>
 	<m_AllowRandomHue>false</m_AllowRandomHue>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone>Bip01_Head</m_AttachBone>
 	<m_HatCategory>Group02</m_HatCategory>
 	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
-	<textureChoices>cowboyhat_black</textureChoices>
-	<textureChoices>cowboyhat_brown</textureChoices>
+	<!-- <textureChoices>cowboyhat_black</textureChoices> -->
+	<!-- <textureChoices>cowboyhat_brown</textureChoices> -->
 	<textureChoices>cowboyhat_white</textureChoices>
 </clothingItem>

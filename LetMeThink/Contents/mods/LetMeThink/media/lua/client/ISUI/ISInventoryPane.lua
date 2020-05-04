@@ -1454,7 +1454,7 @@ function ISInventoryPane:refreshContainer()
     local item = it:get(i);
     local add = true;
     -- don't add the ZedDmg category, they are just equipped models
-    if item:getDisplayName() == "Blooo" or (instanceof(item, "Clothing") and (item:getBodyLocation() == "ZedDmg" or item:getBodyLocation() == "Bandage" or item:getBodyLocation() == "Wound")) then
+    if item:isHidden() then
       add = false;
     end
     if add then

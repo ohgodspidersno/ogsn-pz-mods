@@ -1,0 +1,29 @@
+module DistinctNames { imports {Base}
+item Hat_GasMask {
+Type = Clothing,
+DisplayName = Gas Mask,
+ClothingItem = Hat_GasMask,
+BodyLocation = MaskEyes,
+Icon = GasMask,
+CanHaveHoles = false,
+BloodLocation = Head,
+Insulation = 0.75,
+WindResistance = 0.60,
+WaterResistance = 1.0,
+}
+item WeldingMask {
+Type = Clothing,
+DisplayName = Welder Mask,
+ClothingItem = Hat_WeldersMask,
+BodyLocation = MaskEyes,
+Icon = WeldingMask,
+BloodLocation = Head,
+CanHaveHoles = false,
+BloodLocation = Head,
+BiteDefense = 30,
+ScratchDefense = 50,
+ChanceToFall = 30,
+Insulation = 0.25,
+WindResistance = 0.55,
+}
+}

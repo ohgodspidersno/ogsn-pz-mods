@@ -5,7 +5,7 @@
 	<m_GUID>050b77d0-a609-4e90-ac1a-f0733fc77967</m_GUID>
 	<m_Static>false</m_Static>
 	<m_AllowRandomHue>false</m_AllowRandomHue>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
 	<m_Masks>14</m_Masks>
 	<m_Masks>15</m_Masks>

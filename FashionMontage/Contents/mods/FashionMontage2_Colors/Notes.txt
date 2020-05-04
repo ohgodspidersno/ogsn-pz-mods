@@ -1,0 +1,15 @@
+Riot helmet looks dumb like this (make diff options instead)
+Pilot helmet looks okay but opportunity for crazy shit
+
+
+
+
+
+Tshirt
+give profession shirts a decal (or choice thereof), a white base, and color selectable
+
+
+
+Next Step:
+Change the lua so that you can cycle between baseTextures in the same way that you can cycle through textureChoices
+Add color palette picker

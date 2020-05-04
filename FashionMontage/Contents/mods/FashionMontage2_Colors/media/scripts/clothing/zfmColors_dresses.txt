@@ -1,0 +1,54 @@
+module DistinctNames { imports {Base}
+item Dress_Long {
+Type = Clothing,
+DisplayName = Dress - Ankle,
+ClothingItem = Dress_Long,
+BodyLocation = Dress,
+BloodLocation = Trousers;Shirt,
+Icon = DressLongWhite,
+RunSpeedModifier = 0.90,
+Insulation = 0.3,
+WindResistance = 0.2,
+}
+item Dress_Normal {
+Type = Clothing,
+DisplayName = Dress,
+ClothingItem = Dress - Calf,
+BodyLocation = Dress,
+BloodLocation = Trousers;Shirt,
+Icon = DressMediumWhite,
+RunSpeedModifier = 0.93,
+Insulation = 0.20,
+WindResistance = 0.15,
+}
+item Dress_Knees {
+Type = Clothing,
+DisplayName = Dress - Knee,
+ClothingItem = Dress_Knees,
+BodyLocation = Dress,
+BloodLocation = ShortsShort;Shirt,
+Icon = DressShortWhite,
+Insulation = 0.15,
+WindResistance = 0.1,
+}
+item Dress_Short {
+Type = Clothing,
+DisplayName = Dress - Thigh,
+ClothingItem = Dress_Short,
+BodyLocation = Dress,
+BloodLocation = ShortsShort;Shirt,
+Icon = DressShortWhite,
+Insulation = 0.1,
+WindResistance = 0.05,
+}
+item HospitalGown {
+Type = Clothing,
+DisplayName = Hospital Gown,
+ClothingItem = Gown_Hospital,
+BodyLocation = Dress,
+BloodLocation = Trousers;Shirt,
+Icon = HospitalGown,
+Insulation = 0.10,
+WindResistance = 0.05,
+}
+}

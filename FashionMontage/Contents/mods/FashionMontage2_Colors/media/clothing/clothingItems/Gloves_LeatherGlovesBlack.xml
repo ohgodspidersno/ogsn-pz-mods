@@ -4,7 +4,7 @@
 	<m_FemaleModel></m_FemaleModel>
 	<m_GUID>096acc98-7ac1-4867-82dd-af77afb6a87b</m_GUID>
 	<m_Static>false</m_Static>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
-	<m_BaseTextures>clothes\gloves\leathergloves_black</m_BaseTextures>
+	<m_BaseTextures>clothes\gloves\leathergloves_colors</m_BaseTextures>
 </clothingItem>

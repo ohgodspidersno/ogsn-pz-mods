@@ -1,235 +1,398 @@
-Apron_IceCream
-Apron_PileOCrepe
-Apron_PizzaWhirled
-Apron_Spiffos
-Apron_TacoDelPancho
-Apron_White
-Apron_WhiteTEXTURE
-Dungarees
-Ghillie_Top
-Ghillie_Trousers
-Glasses
-Glasses_Aviators
-Glasses_Normal
-Glasses_Reading
-Glasses_SafetyGoggles
-Glasses_Shooting
-Glasses_SkiGoggles
-Glasses_Sun
-Glasses_SwimmingGoggles
-Gloves_LeatherGloves
-Gloves_LeatherGlovesBlack
-Gloves_LongWomenGloves
-Gown_Hospital
-Hat_Army
-Hat_BaseballCap
-Hat_BaseballCapBlue
-Hat_BaseballCapBlue_Reverse
-Hat_BaseballCapGreen
-Hat_BaseballCapGreen_Reverse
-Hat_BaseballCapKY
-Hat_BaseballCapKY_Red
-Hat_BaseballCapKY_Reverse
-Hat_BaseballCapRed
-Hat_BaseballCapRed_Reverse
-Hat_BaseballCap_Reverse
-Hat_BaseballHelmet_KY
-Hat_BaseballHelmet_Rangers
-Hat_BaseballHelmet_Z
-Hat_BonnieHat
-Hat_BonnieHat_CamoGreen
-Hat_ChefHat
-Hat_Cowboy
-Hat_CrashHelmetFULL
-Hat_CrashHelmet_Police
-Hat_CrashHelmet_Stars
-Hat_DustMask
-Hat_EarMuff_Protectors
-Hat_FastFood
-Hat_FastFood_IceCream
-Hat_FastFood_SPiffo
-Hat_Fedora
-Hat_Fedora_Delmonte
-Hat_Fireman
-Hat_FootballHelmet
-Hat_GasMask
-Hat_HardHat
-Hat_HardHat_Miner
-Hat_JockeyHelmet01
-Hat_JockeyHelmet02
-Hat_JockeyHelmet03
-Hat_JockeyHelmet04
-Hat_JockeyHelmet05
-Hat_JockeyHelmet06
-Hat_NBCmask
-Hat_PeakedCapArmy
-Hat_Police
-Hat_Police_Grey
-Hat_Raccoon
-Hat_Ranger
-Hat_RidingHelmet
-Hat_RiotHelmet
-Hat_SPHhelmet
-Hat_SantaHAt
-Hat_SantaHAtGreen
-Hat_ShowerCap
-Hat_Spiffo
-Hat_SummerHat
-Hat_SurgicalCap_Blue
-Hat_SurgicalCap_Green
-Hat_SurgicalMask_Blue
-Hat_SurgicalMask_Green
-Hat_VisorBlack
-Hat_VisorRed
-Hat_WeddingVeil
-Hat_WeldersMask
-Hat_WinterHat
-HazmatSuit
-JacketLong_Doctor
-JacketLong_Random
-JacketLong_Santa
-JacketLong_SantaGreen
-Jacket_ArmyCamoDesert
-Jacket_ArmyCamoGreen
-Jacket_Chef
-Jacket_CoatArmy
-Jacket_Fireman
-Jacket_NavyBlue
-Jacket_Police
-Jacket_Ranger
-Jacket_Varsity
-LongJohns
-LongJohns_Bottoms
-Male_Undies
-PonchoGreen
-PonchoGreenDOWN
-PonchoYellow
-PonchoYellowDOWN
-Scarf_StripeBlackWhite
-Scarf_StripeBlueWhite
-Scarf_StripeRedWhite
-Shirt_Baseball_KY
-Shirt_Baseball_Rangers
-Shirt_Baseball_Z
-Shirt_CamoDesert
-Shirt_CamoGreen
-Shirt_CamoUrban
-Shirt_Denim
-Shirt_FormalWhite
-Shirt_FormalWhite_ShortSleeve
-Shirt_HawaiianRed
-Shirt_Jockey01
-Shirt_Jockey02
-Shirt_Jockey03
-Shirt_Jockey04
-Shirt_Jockey05
-Shirt_Jockey06
-Shirt_Lumberjack
-Shirt_OfficerWhite
-Shirt_PoliceBlue
-Shirt_PoliceGrey
-Shirt_Priest
-Shirt_PrisonGuard
-Shirt_Ranger
-Shirt_Scrubs
-Shirt_Workman
-Shoes_ArmyBoots
-Shoes_ArmyBootsDesert
-Shoes_Black
-Shoes_BlackBoots
-Shoes_BlueTrainers
-Shoes_Brown
-Shoes_Random
-Shoes_RedTrainers
-Shoes_RidingBoots
-Shorts_CamoGreenLong
-Shorts_LongDenim
-Shorts_LongSport
-Shorts_LongSport_Red
-Shorts_ShortDenim
-Shorts_ShortSport
-SpiffoSuit
-SpiffoTail
-Suit_Jacket
-SwimTrunks_Blue
-SwimTrunks_Green
-SwimTrunks_Red
-SwimTrunks_Yellow
-Tattoo_Arm1
-Tattoo_Chest1
-Test_Weapon
-Tie_BowTieFull
-Tie_BowTieWorn
-Tie_Full
-Tie_Full_Spiffo
-Tie_Worn
-Tie_Worn_Spiffo
-Trousers
-TrousersMesh_DenimLight
-Trousers_ArmyService
-Trousers_CamoDesert
-Trousers_CamoGreen
-Trousers_CamoUrban
-Trousers_Chef
-Trousers_DefaultTEXTURE
-Trousers_DefaultTEXTURE_HUE
-Trousers_Denim
-Trousers_Fireman
-Trousers_JeanBaggy
-Trousers_NavyBlue
-Trousers_Police
-Trousers_PoliceGrey
-Trousers_PrisonGuard
-Trousers_Ranger
-Trousers_Santa
-Trousers_SantaGReen
-Trousers_Scrubs
-Trousers_Suit
-Trousers_SuitTEXTURE
-Trousers_WhiteTEXTURE
-Tshirt_ArmyGreen
-Tshirt_BusinessSpiffo
-Tshirt_CamoDesert
-Tshirt_CamoGreen
-Tshirt_CamoUrban
-Tshirt_DefaultDECAL
-Tshirt_DefaultTEXTURE
-Tshirt_Fossoil
-Tshirt_Gas2Go
-Tshirt_McCoys
-Tshirt_PileOCrepe
-Tshirt_PizzaWhirled
-Tshirt_PoliceBlue
-Tshirt_PoliceGrey
-Tshirt_Profession_FiremanBlue
-Tshirt_Profession_FiremanRed
-Tshirt_Profession_FiremanRed02
-Tshirt_Profession_FiremanWhite
-Tshirt_Profession_PoliceBlue
-Tshirt_Profession_PoliceWhite
-Tshirt_Profession_RangerBrown
-Tshirt_Profession_RangerGreen
-Tshirt_Profession_VeterenGreen
-Tshirt_Profession_VeterenRed
-Tshirt_Ranger
-Tshirt_Rock
-Tshirt_Scrubs
-Tshirt_Sport
-Tshirt_SportDECAL
-Tshirt_ThunderGas
-Tshirt_ValleyStation
-Tshirt_WhiteLongSleeve
-Vest_BulletArmy
-Vest_BulletCivilian
-Vest_BulletPolice
-Vest_DefaultTEXTURE
-Vest_Foreman
-Vest_HighViz
-Vest_Hunting_Camo
-Vest_Hunting_CamoGreen
-Vest_Hunting_Grey
-Vest_Hunting_Orange
-Vest_Waistcoat
-Vest_Waistcoat_GigaMart
-WeddingDress
-WeddingJacket
+-- INDEX XML (media/clothing)--
+    clothing.xml
+    clothingDecals.xml
+
+-- CLOTHING ITEMS (media/clothing/clothingItems) --
+    Apron_TacoDelPancho.xml
+    Apron_Spiffos.xml
+    Apron_PizzaWhirled.xml
+    Apron_PileOCrepe.xml
+    Apron_IceCream.xml
+    WeddingJacket.xml
+    WeddingDress.xml
+    Vest_Waistcoat_GigaMart.xml
+    Vest_Waistcoat.xml
+    Vest_Hunting_Orange.xml
+    Vest_Hunting_Grey.xml
+    Vest_Hunting_CamoGreen.xml
+    Vest_Hunting_Camo.xml
+    Vest_HighViz.xml
+    Vest_Foreman.xml
+    Vest_DefaultTEXTURE_TINT.xml
+    Vest_DefaultTEXTURE.xml
+    Vest_BulletPolice.xml
+    Vest_BulletCivilian.xml
+    Vest_BulletArmy.xml
+    Tshirt_WhiteTINT.xml
+    Tshirt_WhiteLongSleeveTINT.xml
+    Tshirt_WhiteLongSleeve.xml
+    Tshirt_ValleyStation.xml
+    Tshirt_ThunderGas.xml
+    Tshirt_SportDECAL.xml
+    Tshirt_Sport.xml
+    Tshirt_SpiffoDECAL.xml
+    Tshirt_Scrubs.xml
+    Tshirt_Rock.xml
+    Tshirt_Ranger.xml
+    Tshirt_Profession_VeterenRed.xml
+    Tshirt_Profession_VeterenGreen.xml
+    Tshirt_Profession_RangerGreen.xml
+    Tshirt_Profession_RangerBrown.xml
+    Tshirt_Profession_PoliceWhite.xml
+    Tshirt_Profession_PoliceBlue.xml
+    Tshirt_Profession_FiremanWhite.xml
+    Tshirt_Profession_FiremanRed02.xml
+    Tshirt_Profession_FiremanRed.xml
+    Tshirt_Profession_FiremanBlue.xml
+    Tshirt_PoloTINT.xml
+    Tshirt_PoloStripedTINT.xml
+    Tshirt_PoliceGrey.xml
+    Tshirt_PoliceBlue.xml
+    Tshirt_PizzaWhirled.xml
+    Tshirt_PileOCrepe.xml
+    Tshirt_McCoys.xml
+    Tshirt_IndieStoneDECAL.xml
+    Tshirt_Gas2Go.xml
+    Tshirt_Fossoil.xml
+    Tshirt_DefaultTEXTURE_TINT.xml
+    Tshirt_DefaultTEXTURE.xml
+    Tshirt_DefaultDECAL_TINT.xml
+    Tshirt_DefaultDECAL.xml
+    Tshirt_CamoUrban.xml
+    Tshirt_CamoGreen.xml
+    Tshirt_CamoDesert.xml
+    Tshirt_BusinessSpiffo.xml
+    Tshirt_ArmyGreen.xml
+    Trousers_WhiteTINT.xml
+    Trousers_WhiteTEXTURE.xml
+    Trousers_SuitWhite.xml
+    Trousers_SuitTEXTURE.xml
+    Trousers_Suit.xml
+    Trousers_Scrubs.xml
+    Trousers_SantaGReen.xml
+    Trousers_Santa.xml
+    Trousers_Ranger.xml
+    Trousers_PrisonGuard.xml
+    Trousers_PoliceGrey.xml
+    Trousers_Police.xml
+    Trousers_Padded.xml
+    Trousers_NavyBlue.xml
+    Trousers_JeanBaggy.xml
+    Trousers_Fireman.xml
+    Trousers_Denim.xml
+    Trousers_DefaultTEXTURE_TINT.xml
+    Trousers_DefaultTEXTURE_HUE.xml
+    Trousers_DefaultTEXTURE.xml
+    Trousers_Chef.xml
+    Trousers_CamoUrban.xml
+    Trousers_CamoGreen.xml
+    Trousers_CamoDesert.xml
+    Trousers_Black.xml
+    Trousers_ArmyService.xml
+    TrousersMesh_DenimLight.xml
+    Trousers.xml
+    Tie_Worn_Spiffo.xml
+    Tie_Worn.xml
+    Tie_Full_Spiffo.xml
+    Tie_Full.xml
+    Tie_BowTieWorn.xml
+    Tie_BowTieFull.xml
+    Test_Weapon.xml
+    Tattoo_Chest1.xml
+    Tattoo_Arm1.xml
+    Swimsuit_TINT.xml
+    SwimTrunks_Yellow.xml
+    SwimTrunks_Red.xml
+    SwimTrunks_Green.xml
+    SwimTrunks_Blue.xml
+    Suit_Jacket.xml
+    SpiffoTail.xml
+    SpiffoSuit.xml
+    Socks_Long.xml
+    Socks_LegWarmers.xml
+    Socks_Ankle.xml
+    Skirt_Short.xml
+    Skirt_Normal.xml
+    Skirt_Long.xml
+    Skirt_Knees.xml
+    Shorts_ShortSport.xml
+    Shorts_ShortFormal.xml
+    Shorts_ShortDenim.xml
+    Shorts_LongSport_Red.xml
+    Shorts_LongSport.xml
+    Shorts_LongDenim.xml
+    Shorts_CamoGreenLong.xml
+    Shoes_Wellies.xml
+    Shoes_TrainerTINT.xml
+    Shoes_Slippers.xml
+    Shoes_RidingBoots.xml
+    Shoes_RedTrainers.xml
+    Shoes_Random.xml
+    Shoes_Brown.xml
+    Shoes_BlueTrainers.xml
+    Shoes_BlackBoots.xml
+    Shoes_Black.xml
+    Shoes_ArmyBootsDesert.xml
+    Shoes_ArmyBoots.xml
+    Shirt_Workman.xml
+    Shirt_Scrubs.xml
+    Shirt_Ranger.xml
+    Shirt_PrisonGuard.xml
+    Shirt_Priest.xml
+    Shirt_PoliceGrey.xml
+    Shirt_PoliceBlue.xml
+    Shirt_OfficerWhite.xml
+    Shirt_Lumberjack.xml
+    Shirt_Jockey06.xml
+    Shirt_Jockey05.xml
+    Shirt_Jockey04.xml
+    Shirt_Jockey03.xml
+    Shirt_Jockey02.xml
+    Shirt_Jockey01.xml
+    Shirt_HawaiianTINT.xml
+    Shirt_HawaiianRed.xml
+    Shirt_FormalWhite_ShortSleeve.xml
+    Shirt_FormalWhite.xml
+    Shirt_Denim.xml
+    Shirt_CamoUrban.xml
+    Shirt_CamoGreen.xml
+    Shirt_CamoDesert.xml
+    Shirt_Baseball_Z.xml
+    Shirt_Baseball_Rangers.xml
+    Shirt_Baseball_KY.xml
+    Scarf_White.xml
+    Scarf_StripeRedWhite.xml
+    Scarf_StripeBlueWhite.xml
+    Scarf_StripeBlackWhite.xml
+    PonchoYellowDOWN.xml
+    PonchoYellow.xml
+    PonchoGreenDOWN.xml
+    PonchoGreen.xml
+    Male_Undies.xml
+    LongJohns_Bottoms.xml
+    LongJohns.xml
+    LongCoat_Bathrobe.xml
+    Jumper_VNeck.xml
+    Jumper_TankTopTINT.xml
+    Jumper_TankTopDiamondTINT.xml
+    Jumper_RoundNeck.xml
+    Jumper_PoloNeck.xml
+    Jumper_DiamondPatternTINT.xml
+    Jacket_WhiteTINT.xml
+    Jacket_Varsity.xml
+    Jacket_Ranger.xml
+    Jacket_Police.xml
+    Jacket_PaddedDOWN.xml
+    Jacket_Padded.xml
+    Jacket_NavyBlue.xml
+    Jacket_Fireman.xml
+    Jacket_CoatArmy.xml
+    Jacket_Chef.xml
+    Jacket_Black.xml
+    Jacket_ArmyCamoGreen.xml
+    Jacket_ArmyCamoDesert.xml
+    JacketLong_SantaGreen.xml
+    JacketLong_Santa.xml
+    JacketLong_Random.xml
+    JacketLong_Doctor.xml
+    HoodieUP_WhiteTINT.xml
+    HoodieDOWN_WhiteTINT.xml
+    HazmatSuit.xml
+    Hat_WoolyHat.xml
+    Hat_WinterHat.xml
+    Hat_WeldersMask.xml
+    Hat_WeddingVeil.xml
+    Hat_Visor_WhiteTINT.xml
+    Hat_VisorRed.xml
+    Hat_VisorBlack.xml
+    Hat_Sweatband.xml
+    Hat_SurgicalMask_Green.xml
+    Hat_SurgicalMask_Blue.xml
+    Hat_SurgicalCap_Green.xml
+    Hat_SurgicalCap_Blue.xml
+    Hat_SummerHat.xml
+    Hat_Spiffo.xml
+    Hat_ShowerCap.xml
+    Hat_SantaHAtGreen.xml
+    Hat_SantaHAt.xml
+    Hat_SPHhelmet.xml
+    Hat_RiotHelmet.xml
+    Hat_RidingHelmet.xml
+    Hat_Ranger.xml
+    Hat_Raccoon.xml
+    Hat_Police_Grey.xml
+    Hat_Police.xml
+    Hat_PeakedCapArmy.xml
+    Hat_NBCmask.xml
+    Hat_JockeyHelmet06.xml
+    Hat_JockeyHelmet05.xml
+    Hat_JockeyHelmet04.xml
+    Hat_JockeyHelmet03.xml
+    Hat_JockeyHelmet02.xml
+    Hat_JockeyHelmet01.xml
+    Hat_HockeyHelmet.xml
+    Hat_HardHat_Miner.xml
+    Hat_HardHat.xml
+    Hat_GolfHatTINT.xml
+    Hat_GolfHat.xml
+    Hat_GasMask.xml
+    Hat_FootballHelmet.xml
+    Hat_Fireman.xml
+    Hat_Fedora_Delmonte.xml
+    Hat_Fedora.xml
+    Hat_FastFood_SPiffo.xml
+    Hat_FastFood_IceCream.xml
+    Hat_FastFood.xml
+    Hat_EarMuffs.xml
+    Hat_EarMuff_Protectors.xml
+    Hat_DustMask.xml
+    Hat_CrashHelmet_Stars.xml
+    Hat_CrashHelmet_Police.xml
+    Hat_CrashHelmetFULL.xml
+    Hat_CrashHelmet.xml
+    Hat_Cowboy.xml
+    Hat_ChefHat.xml
+    Hat_BonnieHat_CamoGreen.xml
+    Hat_BonnieHat.xml
+    Hat_BicycleHelmet.xml
+    Hat_BeretArmy.xml
+    Hat_Beret.xml
+    Hat_Beany.xml
+    Hat_BaseballHelmet_Z.xml
+    Hat_BaseballHelmet_Rangers.xml
+    Hat_BaseballHelmet_KY.xml
+    Hat_BaseballCap_Reverse.xml
+    Hat_BaseballCapRed_Reverse.xml
+    Hat_BaseballCapRed.xml
+    Hat_BaseballCapKY_Reverse.xml
+    Hat_BaseballCapKY_Red.xml
+    Hat_BaseballCapKY.xml
+    Hat_BaseballCapGreen_Reverse.xml
+    Hat_BaseballCapGreen.xml
+    Hat_BaseballCapBlue_Reverse.xml
+    Hat_BaseballCapBlue.xml
+    Hat_BaseballCap.xml
+    Hat_BandanaTiedTINT.xml
+    Hat_BandanaTied.xml
+    Hat_BandanaTINT.xml
+    Hat_BandanaMaskTINT.xml
+    Hat_BandanaMask.xml
+    Hat_Bandana.xml
+    Hat_BalaclavaFull.xml
+    Hat_BalaclavaFace.xml
+    Hat_Army.xml
+    Gown_Hospital.xml
+    Gloves_WhiteTINT.xml
+    Gloves_LongWomenGloves.xml
+    Gloves_LeatherGlovesBlack.xml
+    Gloves_LeatherGloves.xml
+    Gloves_FingerlessGloves.xml
+    Glasses_SwimmingGoggles.xml
+    Glasses_Sun.xml
+    Glasses_SkiGoggles.xml
+    Glasses_Shooting.xml
+    Glasses_SafetyGoggles.xml
+    Glasses_Reading.xml
+    Glasses_Normal.xml
+    Glasses_Aviators.xml
+    Glasses.xml
+    Ghillie_Trousers.xml
+    Ghillie_Top.xml
+    Dungarees.xml
+    Dress_Short.xml
+    Dress_Normal.xml
+    Dress_Long.xml
+    Dress_Knees.xml
+    Boilersuit_PrisonerKhaki.xml
+    Boilersuit_Prisoner.xml
+    Boilersuit_Flying.xml
+    Boilersuit_BlueRed.xml
+    Boilersuit.xml
+    Bikini_TINT.xml
+    Bikini_Pattern01.xml
+    Bag_WorkerBag.xml
+    Bag_WeaponBag.xml
+    Bag_Tote_RHand.xml
+    Bag_Tote_LHand.xml
+    Bag_Toolbox_RHand.xml
+    Bag_Toolbox_LHand.xml
+    Bag_SurvivorBag.xml
+    Bag_Suitcase_RHand.xml
+    Bag_Suitcase_LHand.xml
+    Bag_SchoolBag_RHand.xml
+    Bag_SchoolBag_LHand.xml
+    Bag_SchoolBag.xml
+    Bag_Sandbag_RHand.xml
+    Bag_Sandbag_LHand.xml
+    Bag_Purse_RHand.xml
+    Bag_Purse_LHand.xml
+    Bag_Plasticbag_RHand.xml
+    Bag_Plasticbag_LHand.xml
+    Bag_MoneyBag.xml
+    Bag_Lunchbox_RHand.xml
+    Bag_Lunchbox_LHand.xml
+    Bag_Lunchbox2_RHand.xml
+    Bag_Lunchbox2_LHand.xml
+    Bag_InmateEscapedBag.xml
+    Bag_HikingBag_RHand.xml
+    Bag_HikingBag_LHand.xml
+    Bag_HikingBag.xml
+    Bag_Handbag_RHand.xml
+    Bag_Handbag_LHand.xml
+    Bag_GolfBag.xml
+    Bag_Garbagebag_RHand.xml
+    Bag_Garbagebag_LHand.xml
+    Bag_FirstAidKit_RHand.xml
+    Bag_FirstAidKit_LHand.xml
+    Bag_DuffelBag_RHandTINT.xml
+    Bag_DuffelBag_RHand.xml
+    Bag_DuffelBag_LHandTINT.xml
+    Bag_DuffelBag_LHand.xml
+    Bag_DuffelBagTINT.xml
+    Bag_DuffelBag.xml
+    Bag_BigHikingBag_RHand.xml
+    Bag_BigHikingBag_LHand.xml
+    Bag_BigHikingBag.xml
+    Bag_ALICEpack_RHand.xml
+    Bag_ALICEpack_LHand.xml
+    Bag_ALICEpack_Army_RHand.xml
+    Bag_ALICEpack_Army_LHand.xml
+    Bag_ALICEpack_Army.xml
+    Bag_ALICEpack.xml
+    Apron_WhiteTEXTURE.xml
+    Apron_White.xml
+    Apron_Black.xml
+
+-- CLOTHING DECALS (media/clothing/clothingDecals) --
+    TShirtPie.xml
+    TShirtRJ.xml
+    TShirtSpiffo1.xml
+    TShirtSpiffo2.xml
+    TShirtSpiffo3.xml
+    TShirtSpiffo4.xml
+    TShirtSpiffo5.xml
+    TShirtSpiffo6.xml
+    TShirt_Buisness_FossoilDECAL.xml
+    TShirt_Buisness_FossoilLogoDECAL.xml
+    TShirt_Buisness_Gas2GoDECAL.xml
+    TShirt_Buisness_McCoysDECAL.xml
+    TShirt_Buisness_PileOCrepeDECAL.xml
+    TShirt_Buisness_PizzaWhirledDECAL.xml
+    TShirt_Buisness_SpiffosDECAL.xml
+    TShirt_Buisness_SpiffosLogoDECAL.xml
+    TShirt_Buisness_TacoDelPanchoDECAL.xml
+    TShirt_Buisness_ThunderGasDECAL.xml
+    TShirt_Buisness_ValleyStationDECAL.xml
+    TShirt_Buisness_WokandRollsDECAL.xml
+    TShirt_Culture_CardinalDECAL.xml
+    TShirt_Culture_ShamrockDECAL.xml
+    TShirt_Culture_USAflagDECAL.xml
+    TShirt_Culture_WolfDECAL.xml
+    TShirt_ILoveKYDECAL.xml
+    TShirt_RockDECAL.xml
+    TShirt_Sport_AlphaDECAL.xml
+    TShirt_Sport_BaseBallKYDECAL.xml
+    TShirt_Sport_BaseBallRangersDECAL.xml
+    TShirt_Sport_BaseBallZDECAL.xml
+    TShirt_Sport_BasketBallDECAL.xml
+    TShirt_Sport_OmegaDECAL.xml

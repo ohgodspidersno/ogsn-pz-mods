@@ -4,7 +4,7 @@
 	<m_FemaleModel></m_FemaleModel>
 	<m_GUID>c0a3a194-2ee9-4ce5-9d7a-aa1d5e031cea</m_GUID>
 	<m_Static>false</m_Static>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
-	<m_BaseTextures>clothes\shoes_socks_textres\brownshoes</m_BaseTextures>
+	<m_BaseTextures>clothes\shoes_socks_textres\colorshoes</m_BaseTextures>
 </clothingItem>

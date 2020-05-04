@@ -1102,12 +1102,12 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   -- window frame without window
   if windowFrame and not window and not thumpableWindow then
     local numSheetRope = IsoWindowFrame.countAddSheetRope(windowFrame)
-    if windowFrame:canAddSheetRope() and playerObj:getCurrentSquare():getZ() > 0 and not windowFrame:isBarricaded() and
+    if IsoWindowFrame.canAddSheetRope(windowFrame) and playerObj:getCurrentSquare():getZ() > 0 and
     playerInv:containsTypeRecurse("Nails") then
-      if (playerInv:getItemCountRecurse("SheetRope") >= windowFrame:countAddSheetRope()) then
+      if (playerInv:getItemCountRecurse("SheetRope") >= IsoWindowFrame.countAddSheetRope(windowFrame)) then
         if test == true then return true; end
         context:addOption(getText("ContextMenu_Add_escape_rope_sheet"), worldobjects, ISWorldObjectContextMenu.onAddSheetRope, windowFrame, player);
-      elseif (playerInv:getItemCountRecurse("Rope") >= windowFrame:countAddSheetRope()) then
+      elseif (playerInv:getItemCountRecurse("Rope") >= IsoWindowFrame.countAddSheetRope(windowFrame)) then
         if test == true then return true; end
         context:addOption(getText("ContextMenu_Add_escape_rope"), worldobjects, ISWorldObjectContextMenu.onAddSheetRope, windowFrame, player);
       end
@@ -2450,7 +2450,7 @@ ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
   for i = 0, clothingInventory:size() - 1 do
     local item = clothingInventory:get(i)
     -- Wasn't able to reproduce the wash 'Blooo' bug, don't know the exact cause so here's a fix...
-    if item:getDisplayName() ~= "Blooo" and (item:hasBlood() or item:hasDirt()) then
+    if not item:isHidden() and (item:hasBlood() or item:hasDirt()) then
       if washEquipment == false then
         washEquipment = true
       end

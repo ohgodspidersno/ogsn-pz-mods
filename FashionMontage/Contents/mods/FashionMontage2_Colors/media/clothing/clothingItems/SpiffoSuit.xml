@@ -16,5 +16,11 @@
 	<m_Masks>8</m_Masks>
 	<m_Masks>9</m_Masks>
 	<m_Masks>10</m_Masks>
-	<textureChoices>clothes\spiffosuit\spiffosuit</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_orange</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_grey</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_red</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_blue</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_green</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_purple</textureChoices>
+	<textureChoices>clothes\spiffosuit\spiffosuit_pink</textureChoices>
 </clothingItem>

@@ -7,4 +7,6 @@
 	<m_AllowRandomTint>false</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
 	<m_BaseTextures>clothes\shirt_tshirt_textures\shirt_baseball_ky</m_BaseTextures>
+	<m_BaseTextures>clothes\shirt_tshirt_textures\shirt_baseball_rangers</m_BaseTextures>
+	<m_BaseTextures>clothes\shirt_tshirt_textures\shirt_baseball_z</m_BaseTextures>
 </clothingItem>

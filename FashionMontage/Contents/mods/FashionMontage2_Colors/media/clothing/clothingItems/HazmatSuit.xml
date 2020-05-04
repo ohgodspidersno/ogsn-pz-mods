@@ -19,4 +19,13 @@
 	<m_Masks>10</m_Masks>
 	<m_Masks>11</m_Masks>
 	<textureChoices>clothes\hazmat\hazmat_yellow</textureChoices>
+	<textureChoices>clothes\hazmat\hazmat_white</textureChoices>
+	<textureChoices>clothes\hazmat\hazmat_black</textureChoices>
+	<textureChoices>clothes\hazmat\hazmat_orange</textureChoices>
+	<textureChoices>clothes\hazmat\hazmat_red</textureChoices>
+	<textureChoices>clothes\hazmat\hazmat_blue</textureChoices>
+	<textureChoices>clothes\hazmat\hazmat_green</textureChoices>
+	<textureChoices>clothes\hazmat\hazmat_cyan</textureChoices>
+	<textureChoices>clothes\hazmat\hazmat_purple</textureChoices>
+	<textureChoices>clothes\hazmat\hazmat_pink</textureChoices>
 </clothingItem>

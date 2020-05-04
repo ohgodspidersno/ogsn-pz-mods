@@ -9,5 +9,5 @@
 	<m_AttachBone></m_AttachBone>
 	<m_Masks>13</m_Masks>
 	<m_UnderlayMasksFolder>media/textures/Clothes/Vest/Masks</m_UnderlayMasksFolder>
-	<textureChoices>clothes\bulletvest\huntingvest_camo</textureChoices>
+	<textureChoices>clothes\bulletvest\huntingvest_camocolors</textureChoices>
 </clothingItem>

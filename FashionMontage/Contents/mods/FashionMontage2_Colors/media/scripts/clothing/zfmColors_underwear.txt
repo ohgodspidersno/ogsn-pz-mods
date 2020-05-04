@@ -1,0 +1,34 @@
+module DistinctNames { imports {Base}
+item Bikini_TINT {
+Type = Clothing,
+DisplayName = Bikini,
+ClothingItem = Bikini_TINT,
+BodyLocation = Underwear,
+Icon = Bikini_White,
+Weight = 0.2,
+}
+item Bikini_Pattern01 {
+Type = Clothing,
+DisplayName = Bikini Striped,
+ClothingItem = Bikini_Pattern01,
+BodyLocation = Underwear,
+Icon = Bikini_OrangePolkaDot,
+Weight = 0.2,
+}
+item Swimsuit_TINT {
+Type = Clothing,
+DisplayName = One Piece,
+ClothingItem = Swimsuit_TINT,
+BodyLocation = Underwear,
+Icon = Swimsuit_White,
+Weight = 0.1,
+}
+item SwimTrunks_Blue {
+Type = Clothing,
+DisplayName = Swim Trunks,
+ClothingItem = SwimTrunks_Blue,
+BodyLocation = Underwear,
+Icon = Swimtrunks_Blue;Swimtrunks_Green;Swimtrunks_Red;Swimtrunks_Yellow,
+Weight = 0.1,
+}
+}

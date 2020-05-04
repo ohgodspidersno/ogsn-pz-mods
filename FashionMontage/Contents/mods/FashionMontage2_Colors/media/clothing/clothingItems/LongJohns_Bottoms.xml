@@ -4,7 +4,7 @@
 	<m_FemaleModel></m_FemaleModel>
 	<m_GUID>c888b687-b0b7-41ab-bd02-5a4d573bb9a3</m_GUID>
 	<m_Static>false</m_Static>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
-	<m_BaseTextures>clothes\boliersuit\longjohns_bottoms</m_BaseTextures>
+	<m_BaseTextures>clothes\boliersuit\longjohns_bottoms_colors</m_BaseTextures>
 </clothingItem>

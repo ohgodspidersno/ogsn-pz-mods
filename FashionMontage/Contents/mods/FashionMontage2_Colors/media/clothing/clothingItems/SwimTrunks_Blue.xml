@@ -5,7 +5,8 @@
 	<m_GUID>eb4fee3c-106c-48cc-8e10-c236fc2fa72e</m_GUID>
 	<m_Static>false</m_Static>
 	<m_AllowRandomHue>false</m_AllowRandomHue>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
-	<m_BaseTextures>clothes\shorts_textures\swimmingtrunks_blue</m_BaseTextures>
+	<m_BaseTextures>clothes\shorts_textures\swimmingtrunks_colors</m_BaseTextures>
+	<!-- <m_BaseTextures>clothes\shorts_textures\swimmingtrunks_blue</m_BaseTextures> -->
 </clothingItem>

@@ -5,9 +5,7 @@
 	<m_GUID>6d702d88-4ca0-4bcb-9aee-d88f2be29e69</m_GUID>
 	<m_Static>true</m_Static>
 	<m_AllowRandomHue>false</m_AllowRandomHue>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone>Bip01_Head</m_AttachBone>
-	<textureChoices>normalglassesblack</textureChoices>
-	<textureChoices>normalglassesblue</textureChoices>
-	<textureChoices>normalglassesred</textureChoices>
+	<textureChoices>normalglassescolors</textureChoices>
 </clothingItem>

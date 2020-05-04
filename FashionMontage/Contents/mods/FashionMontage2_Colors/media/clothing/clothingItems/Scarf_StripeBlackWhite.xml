@@ -8,4 +8,6 @@
 	<m_AllowRandomTint>false</m_AllowRandomTint>
 	<m_AttachBone></m_AttachBone>
 	<textureChoices>clothes\scarf\scarf_stripeblackwhite</textureChoices>
+	<textureChoices>clothes\scarf\scarf_stripebluewhite</textureChoices>
+	<textureChoices>clothes\scarf\scarf_striperedwhite</textureChoices>
 </clothingItem>
