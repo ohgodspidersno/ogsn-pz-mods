@@ -1,0 +1,8 @@
+/** French translation provided by steam user benobodys **/
+Tooltip_FR = {
+Tooltip_BobbyPin_FMJ = "Une épingle à cheveux et un tournevis peuvent être utilisés pour crocheter les serrures, si vous avez des compétences de serrurier",
+Tooltip_LockPickingMag_FMJ = "Apprenez à crocheter des serrures à l'aide d'une épingle à cheveux et d'un tournevis et à créer des épingles à cheveux à l'aide de fil",
+Tooltip_LockPickingMag2_FMJ = "apprendre à détruire les serrures à l'aide d'un pied de biche",
+Tooltip_Screwdriver_FMJ = "Un tournevis et une épingle à cheveux peuvent être utilisés pour crocheter les serrures, si vous avez des compétences de serrurier,
+Tooltip_Crowbar_FMJ = "Peut être utilisé pour détruire les serrures, si vous avez des compétences de serrurier",
+}

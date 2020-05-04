@@ -1,0 +1,6 @@
+/** French translation provided by steam user benobodys **/
+ItemName_FR = {
+ItemName_FMJ.BobbyPin = "épingle",
+ItemName_FMJ.LockPickingMag = "Manuel de serrurier, vol. 1",
+ItemName_FMJ.LockPickingMag2 = "Manuel de serrurier, vol. 2",
+}
