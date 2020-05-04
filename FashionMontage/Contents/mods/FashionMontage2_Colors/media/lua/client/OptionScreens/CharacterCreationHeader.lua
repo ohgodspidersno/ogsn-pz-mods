@@ -171,7 +171,6 @@ function CharacterCreationHeader:create()
 
 	if MainScreen.instance.avatar == nil then
 		self:createAvatar();
-		CharacterCreationProfession.instance:changeClothes();
 	end
 
 	self:disableBtn();
@@ -187,7 +186,6 @@ function CharacterCreationHeader:onGenderSelected(combo)
 	end
 	self:randomGenericOutfit()
 	self:setAvatarFromUI()
-	CharacterCreationProfession.instance:changeClothes();
 
 	-- we random the name
 	SurvivorFactory.randomName(MainScreen.instance.desc);
@@ -279,7 +277,6 @@ function CharacterCreationHeader:onOptionMouseDown(button, x, y)
 		MainScreen.instance.desc:setFemale(female)
 		MainScreen.instance.desc:getHumanVisual():clear()
 		self:setAvatarFromUI()
---		CharacterCreationProfession.instance:changeClothes();
 		self:randomGenericOutfit();
 	end
 
