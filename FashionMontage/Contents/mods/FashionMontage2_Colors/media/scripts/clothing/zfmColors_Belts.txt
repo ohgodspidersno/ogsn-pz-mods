@@ -1,4 +1,4 @@
-module DistinctNames { imports {Base}
+module DistinctNames2 { imports {Base}
 item HolsterSimple {
 Weight = 0.2,
 Type = Clothing,

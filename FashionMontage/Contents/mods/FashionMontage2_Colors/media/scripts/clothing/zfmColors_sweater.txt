@@ -1,4 +1,4 @@
-module DistinctNames { imports {Base}
+module DistinctNames2 { imports {Base}
 item Jumper_DiamondPatternTINT {
 Type = Clothing,
 DisplayName = Diamond-pattern Sweater,
@@ -27,7 +27,7 @@ item HoodieDOWN_WhiteTINT {
 Type = Clothing,
 DisplayName = Hoodie,
 ClothingItem = HoodieDOWN_WhiteTINT,
-ClothingItemExtra = DistinctNames.HoodieUP_WhiteTINT,
+ClothingItemExtra = DistinctNames2.HoodieUP_WhiteTINT,
 ClothingItemExtraOption = UpHoodie,
 BodyLocation = Sweater,
 BloodLocation = Jumper,
