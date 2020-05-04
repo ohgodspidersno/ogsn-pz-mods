@@ -184,7 +184,7 @@ function CharacterCreationHeader:onGenderSelected(combo)
 		MainScreen.instance.avatar:setFemale(false);
 		MainScreen.instance.desc:setFemale(false);
 	end
-	self:randomGenericOutfit()
+	-- self:randomGenericOutfit()
 	self:setAvatarFromUI()
 
 	-- we random the name
