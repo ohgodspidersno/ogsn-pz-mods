@@ -198,6 +198,21 @@ function CharacterCreationHeader:onGenderSelected(combo)
 	CharacterCreationMain.instance:loadJoypadButtons();
 end
 
+function CharacterCreationHeader:startingOutfit()
+  local desc = MainScreen.instance.desc;
+	local starting = ClothingSelectionDefinitions.starting;
+	if MainScreen.instance.desc:isFemale() then
+		self:dressWithDefinitions(starting.Female, true);
+	else
+		self:dressWithDefinitions(starting.Male, true);
+	end
+
+	self.avatarPanel:setSurvivorDesc(desc)
+	CharacterCreationHeader.instance.avatarPanel:setSurvivorDesc(desc)
+	CharacterCreationMain.instance:disableBtn()
+	CharacterCreationMain.instance:initClothing()
+end
+
 function CharacterCreationHeader:randomGenericOutfit()
 	local desc = MainScreen.instance.desc;
 --	local randomOutfit = "Generic0" .. ZombRand(5) + 1;
