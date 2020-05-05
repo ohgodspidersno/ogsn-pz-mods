@@ -324,12 +324,12 @@ local listTail = {
   "DistinctNames2.SpiffoTail",
 }
 local listBack = {
-  "DistinctNames2.Bag_ALICEpack_Army",
-  "DistinctNames2.Bag_ALICEpack",
-  "DistinctNames2.Bag_BigHikingBag",
-  "DistinctNames2.Bag_NormalHikingBag",
-  "DistinctNames2.Bag_DuffelBagTINT",
-  "DistinctNames2.Bag_Schoolbag",
+  "Base.Bag_ALICEpack_Army",
+  "Base.Bag_ALICEpack",
+  "Base.Bag_BigHikingBag",
+  "Base.Bag_NormalHikingBag",
+  "Base.Bag_DuffelBagTINT",
+  "Base.Bag_Schoolbag",
 }
 local listScarf = {
   "DistinctNames2.Scarf_White",
