@@ -1,13 +1,18 @@
-Events.OnInitWorld.Add(function() {
-    print('OnInitWorld: StormsAreComing enabled')
-});
+-- Events.OnInitWorld.Add(
+--   function()
+--     -- print('OnInitWorld: StormsAreComing enabled')
+--   end
+-- );
 
-Events.OnGameStart.Add(function() {
-    print('OnGameStart: StormsAreComing enabled')
-});
+-- Events.OnGameStart.Add(
+--   function()
+--     -- print('OnGameStart: StormsAreComing enabled')
+--   end
+-- );
 
-Events.OnInitSeasons.Add(function(_season) {
-    print('OnInitSeasons: StormsAreComing enabled')
+Events.OnInitSeasons.Add(
+  function(_season)
+    -- print('OnInitSeasons: StormsAreComing enabled')
     _season:init(
         25, --aprox miami florida
         16, --min
@@ -19,13 +24,18 @@ Events.OnInitSeasons.Add(function(_season) {
         _season:getSeedB(),
         _season:getSeedC()
     );
-});
+  end
+);
 
-Events.EveryTenMinutes.Add(function() {
-    print('EveryTenMinutes: StormsAreComing enabled')
+Events.EveryTenMinutes.Add(
+  function()
+    -- print('EveryTenMinutes: StormsAreComing enabled')
     getClimateManager():triggerCustomWeather(0.95, true);
-});
+  end
+);
 
-Events.EveryDays.Add(function() {
-    print('EveryDays: StormsAreComing enabled')
-});
+-- Events.EveryDays.Add(
+--   function()
+--     -- print('EveryDays: StormsAreComing enabled')
+--   end
+-- );
