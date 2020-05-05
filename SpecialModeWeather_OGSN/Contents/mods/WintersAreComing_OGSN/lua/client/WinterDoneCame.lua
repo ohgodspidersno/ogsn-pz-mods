@@ -1,4 +1,4 @@
-local function WDC_gameStart()
+local function WAC_gameStart()
   if getGameTime():getWorldAgeHours() >= 4*24 then
       getCore():setForceSnow(true);
       forceSnowCheck();
@@ -18,7 +18,7 @@ local function WDC_gameStart()
 	end
 end
 
-local function WDC_days()
+local function WAC_days()
   if getGameTime():getWorldAgeHours() >=4*24 then
       getCore():setForceSnow(true);
   end
@@ -27,7 +27,7 @@ local function WDC_days()
   end
 end
 
-local function WDC_seasons(_season)
+local function WAC_seasons(_season)
   _season:init(
       50, -- Newfoundland. _season:getLat(),
       -5,
@@ -41,6 +41,6 @@ local function WDC_seasons(_season)
   );
 end
 
-Events.OnGameStart.Add(WDC_gameStart)
-Events.EveryDays.Add(WDC_days);
-Events.OnInitSeasons.Add(WDC_seasons);
+Events.OnGameStart.Add(WAC_gameStart)
+Events.EveryDays.Add(WAC_days);
+Events.OnInitSeasons.Add(WAC_seasons);
