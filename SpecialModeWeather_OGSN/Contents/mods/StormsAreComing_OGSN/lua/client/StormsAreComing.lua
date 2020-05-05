@@ -1,23 +1,13 @@
---***********************************************************
---**                    THE INDIE STONE                    **
---**				  Author: turbotutone				   **
---***********************************************************
+Events.OnInitWorld.Add(function() {
+    print('OnInitWorld: StormsAreComing enabled')
+});
 
-AStormIsComing = {}
+Events.OnGameStart.Add(function() {
+    print('OnGameStart: StormsAreComing enabled')
+});
 
-
-AStormIsComing.OnGameStart = function()
-    --[[
-    local modal = ISModalRichText:new(getCore():getScreenWidth()/2 - 100, getCore():getScreenHeight()/2 - 50, 200, 100, getText("Challenge_AStormIsComingInfoBox"), false, nil, nil, 0);
-    modal:initialise();
-    modal:addToUIManager();
-    if JoypadState.players[1] then
-        JoypadState.players[1].focus = modal
-    end
-    --]]
-end
-
-AStormIsComing.OnInitSeasons = function(_season)
+Events.OnInitSeasons.Add(function(_season) {
+    print('OnInitSeasons: StormsAreComing enabled')
     _season:init(
         25, --aprox miami florida
         16, --min
@@ -29,38 +19,13 @@ AStormIsComing.OnInitSeasons = function(_season)
         _season:getSeedB(),
         _season:getSeedC()
     );
-end
+});
 
-AStormIsComing.OnInitWorld = function()
-    SandboxVars.DayLength = 3;
-    SandboxVars.StartMonth = 7;
-    SandboxVars.StartTime = 2;
-    SandboxVars.Temperature = 3;
-    SandboxVars.Rain = 3;
-    -- SandboxVars.TimeSinceApo = 1;
-    Events.OnGameStart.Add(AStormIsComing.OnGameStart);
-    --Events.EveryDays.Add(AStormIsComing.EveryDays);
-    Events.EveryTenMinutes.Add(AStormIsComing.EveryTenMinutes);
-    Events.OnInitSeasons.Add(AStormIsComing.OnInitSeasons);
-end
-
-AStormIsComing.EveryTenMinutes = function()
+Events.EveryTenMinutes.Add(function() {
+    print('EveryTenMinutes: StormsAreComing enabled')
     getClimateManager():triggerCustomWeather(0.95, true);
-end
+});
 
-
-AStormIsComing.RemovePlayer = function(p)
-end
-
-AStormIsComing.AddPlayer = function(p)
-
-end
-
-AStormIsComing.Render = function()
-end
-
-AStormIsComing.hourOfDay = 7;
-Events.OnGameStart.Add(AStormIsComing.OnGameStart);
---Events.EveryDays.Add(AStormIsComing.EveryDays);
-Events.EveryTenMinutes.Add(AStormIsComing.EveryTenMinutes);
-Events.OnInitSeasons.Add(AStormIsComing.OnInitSeasons);
+Events.EveryDays.Add(function() {
+    print('EveryDays: StormsAreComing enabled')
+});
