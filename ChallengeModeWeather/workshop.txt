@@ -1,0 +1,5 @@
+version=1
+title=Use the Challenge Mode Special Weather Settings In Any Game
+description=Now you can have special never-ending fog, rain, or snow in any game, with whatever sandbox settings you want.
+tags=
+visibility=public
