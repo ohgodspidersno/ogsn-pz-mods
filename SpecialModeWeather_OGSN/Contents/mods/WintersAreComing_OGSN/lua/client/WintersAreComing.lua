@@ -84,3 +84,7 @@ end
 -- end
 
 WinterIsComing.hourOfDay = 7;
+Events.OnGameStart.Add(WinterIsComing.OnGameStart);
+  Events.EveryDays.Add(WinterIsComing.EveryDays);
+  --Events.EveryTenMinutes.Add(WinterIsComing.EveryTenMinutes);
+  Events.OnInitSeasons.Add(WinterIsComing.OnInitSeasons);

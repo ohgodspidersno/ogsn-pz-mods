@@ -59,3 +59,8 @@ TheDescendingFog.Render = function()
 end
 
 TheDescendingFog.hourOfDay = 7;
+
+Events.OnGameStart.Add(TheDescendingFog.OnGameStart);
+--Events.EveryDays.Add(TheDescendingFog.EveryDays);
+Events.EveryTenMinutes.Add(TheDescendingFog.EveryTenMinutes);
+Events.OnInitSeasons.Add(TheDescendingFog.OnInitSeasons);

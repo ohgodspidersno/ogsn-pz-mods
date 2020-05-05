@@ -60,3 +60,7 @@ AStormIsComing.Render = function()
 end
 
 AStormIsComing.hourOfDay = 7;
+Events.OnGameStart.Add(AStormIsComing.OnGameStart);
+--Events.EveryDays.Add(AStormIsComing.EveryDays);
+Events.EveryTenMinutes.Add(AStormIsComing.EveryTenMinutes);
+Events.OnInitSeasons.Add(AStormIsComing.OnInitSeasons);
