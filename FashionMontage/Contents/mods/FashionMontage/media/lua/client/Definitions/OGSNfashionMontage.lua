@@ -435,53 +435,16 @@ ClothingSelectionDefinitions.default.Female.Tail = {chance = 0, items = listTail
 ClothingSelectionDefinitions.default.Female.Back = {chance = 0, items = listBack}
 ClothingSelectionDefinitions.default.Female.Scarf = {chance = 0, items = listScarf}
 
+-- startingOutfit --
+ClothingSelectionDefinitions.starting =ClothingSelectionDefinitions.starting or {}
+ClothingSelectionDefinitions.starting.Male = ClothingSelectionDefinitions.starting.Male or {}
+ClothingSelectionDefinitions.starting.Female = ClothingSelectionDefinitions.starting.Female or {}
+ClothingSelectionDefinitions.starting.Male.Shoes = {shance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Male.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
+ClothingSelectionDefinitions.starting.Male.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
+ClothingSelectionDefinitions.starting.Male.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
 
---- MAKEUP ----
-
--- local listMakeupLips = {
---   "MakeUp_LipsRed",
---   "MakeUp_LipsLightBlue",
---   "MakeUp_LipsBlue",
---   "MakeUp_LipsBlack",
---   "MakeUp_LipsGreen",
---   "MakeUp_LipsPink",
--- }
-
--- local listMakeupEyesShadow = {
---   "MakeUp_EyesShadowWhite",
---   "MakeUp_EyesShadowLightBlue",
---   "MakeUp_EyesShadowBlue",
---   "MakeUp_EyesShadowRed",
---   "MakeUp_EyesShadowPink",
---   "MakeUp_EyesShadowGreen",
---   "MakeUp_EyesShadowYellow",
--- }
-
--- local listMakeupEyes = {
---   "MakeUp_Crow",
---   "MakeUp_RedStripes1",
---   "MakeUp_RedStripes2",
---   "MakeUp_CamoEyes1",
---   "MakeUp_CamoEyes2",
---   "MakeUp_CamoStripes",
---   "MakeUp_Football",
--- }
-
--- local listMakeupFullFace = {
---   "MakeUp_CamoFullFace1",
---   "MakeUp_CamoFullFace2",
---   "MakeUp_BraveHeart",
---   "MakeUp_ClownFace1",
---   "MakeUp_ClownFace2",
---   "MakeUp_SkullFace1",
---   "MakeUp_SkullFace2",
--- }
-
--- ClothingSelectionDefinitions.default.Male.listMakeupLips = {chance = 0, items = listMakeupLips}
--- ClothingSelectionDefinitions.default.Male.listMakeupEyesShadow = {chance = 0, items = listMakeupEyesShadow}
--- ClothingSelectionDefinitions.default.Male.listMakeupEyes = {chance = 0, items = listMakeupEyes}
--- ClothingSelectionDefinitions.default.Male.listMakeupFullFace = {chance = 0, items = listMakeupFullFace}
--- ClothingSelectionDefinitions.default.Female.listMakeupLips = {chance= 0, items = listMakeupLips}
--- ClothingSelectionDefinitions.default.Female.listMakeupEyesShadow = {chance= 0, items = listMakeupEyesShadow}
--- ClothingSelectionDefinitions.default.Female.listMakeupEyes = {chance= 0, items = listMakeupEyes}
--- ClothingSelectionDefinitions.default.Female.listMakeupFullFace = {chance= 0, items = listMakeupFullFace}
+ClothingSelectionDefinitions.starting.Female.Shoes = {shance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Female.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
+ClothingSelectionDefinitions.starting.Female.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
+ClothingSelectionDefinitions.starting.Female.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
