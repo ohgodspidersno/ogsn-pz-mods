@@ -220,11 +220,11 @@ function CharacterCreationHeader:randomGenericOutfit()
 --	desc:dressInNamedOutfit(randomOutfit)
 --	self.avatarPanel:setSurvivorDesc(desc)
 
-	local starting = ClothingSelectionDefinitions.starting;
+	local default = ClothingSelectionDefinitions.default;
 	if MainScreen.instance.desc:isFemale() then
-		self:dressWithDefinitions(starting.Female, true);
+		self:dressWithDefinitions(default.Female, true);
 	else
-		self:dressWithDefinitions(starting.Male, true);
+		self:dressWithDefinitions(default.Male, true);
 	end
 
 	local profession = ClothingSelectionDefinitions[desc:getProfession()];

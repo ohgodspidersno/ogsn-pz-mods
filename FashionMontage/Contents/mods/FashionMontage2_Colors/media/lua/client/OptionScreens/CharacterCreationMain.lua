@@ -25,7 +25,7 @@ end
 --**
 --************************************************************************--
 function CharacterCreationMain:instantiate()
-	
+
 	--self:initialise();
 	self.javaObject = UIElement.new(self);
 	self.javaObject:setX(self.x);
@@ -55,14 +55,14 @@ function CharacterCreationMain:create()
 	self.mainPanel = ISPanel:new((tw-w)/2, 48, w, self.height - mainPanelPadBottom - mainPanelY);
 	self.mainPanel.backgroundColor = {r=0, g=0, b=0, a=0.8};
 	self.mainPanel.borderColor = {r=1, g=1, b=1, a=0.5};
-	
+
 	self.mainPanel:initialise();
 	self.mainPanel:setAnchorRight(true);
 	self.mainPanel:setAnchorLeft(true);
 	self.mainPanel:setAnchorBottom(true);
 	self.mainPanel:setAnchorTop(true);
 	self:addChild(self.mainPanel);
-	
+
 	-- we add the header (contain forename/surname/avatar/...)
 	MainScreen.instance.charCreationHeader:setX(self.mainPanel:getX());
 	MainScreen.instance.charCreationHeader:setY(self.mainPanel:getY());
@@ -71,9 +71,9 @@ function CharacterCreationMain:create()
 	MainScreen.instance.charCreationHeader:setAnchorLeft(true);
 	MainScreen.instance.charCreationHeader:setAnchorBottom(false);
 	MainScreen.instance.charCreationHeader:setAnchorTop(true);
-	
+
 	self:addChild(MainScreen.instance.charCreationHeader);
-	
+
 	-- HAIR TYPE SELECTION
 	self.xOffset = MainScreen.instance.charCreationHeader.avatarPanel:getRight() + 24
 	self.yOffset = 64+96+6+40;
@@ -81,13 +81,13 @@ function CharacterCreationMain:create()
 	self:createChestTypeBtn();
 	self:createHairTypeBtn();
 	self:createBeardTypeBtn();
-	
+
 	-- CLOTHING
 	self.yOffset = CharacterCreationHeader.instance.avatarPanel.y;
 	self:createClothingBtn();
-	
+
 	local buttonHgt = FONT_HGT_SMALL + 3 * 2
-	
+
 	-- BOTTOM BUTTON
 	self.backButton = ISButton:new(16, self.mainPanel.height - 5 - buttonHgt, 100, buttonHgt, getText("UI_btn_back"), self, self.onOptionMouseDown);
 	self.backButton.internal = "BACK";
@@ -99,7 +99,7 @@ function CharacterCreationMain:create()
 	self.backButton.borderColor = {r=1, g=1, b=1, a=0.1};
 	self.backButton.setJoypadFocused = self.setJoypadFocusedBButton
 	self.mainPanel:addChild(self.backButton);
-	
+
 	self.savedBuilds = ISComboBox:new(self.backButton:getRight() + 22, self.backButton.y, 250, buttonHgt, self, CharacterCreationMain.loadOutfit);
 	self.savedBuilds:setAnchorTop(false);
 	self.savedBuilds:setAnchorBottom(true);
@@ -132,7 +132,7 @@ function CharacterCreationMain:create()
 	self.deleteBuildButton:setAnchorBottom(true);
 	self.deleteBuildButton.borderColor = { r = 1, g = 1, b = 1, a = 0.1 };
 	self.mainPanel:addChild(self.deleteBuildButton);
-	
+
 	self.playButton = ISButton:new(self.mainPanel.width - 116, self.mainPanel.height - 5 - buttonHgt, 100, buttonHgt, getText("UI_btn_play"), self, self.onOptionMouseDown);
 	self.playButton.internal = "NEXT";
 	self.playButton:initialise();
@@ -144,7 +144,7 @@ function CharacterCreationMain:create()
 	self.playButton:setEnable(true); -- sets the hard-coded border color
 	self.playButton.setJoypadFocused = self.setJoypadFocusedAButton
 	self.mainPanel:addChild(self.playButton);
-	
+
 	local textWid = getTextManager():MeasureStringX(UIFont.Small, getText("UI_characreation_random"))
 	local buttonWid = math.max(100, textWid + 8 * 2)
 	self.randomButton = ISButton:new(self.playButton:getX() - 10 - buttonWid, self.playButton:getY(), buttonWid, buttonHgt, getText("UI_characreation_random"), self, self.onOptionMouseDown);
@@ -158,7 +158,7 @@ function CharacterCreationMain:create()
 	self.randomButton.borderColor = { r = 1, g = 1, b = 1, a = 0.1 };
 	self.backButton.setJoypadFocused = self.setJoypadFocusedYButton
 	self.mainPanel:addChild(self.randomButton);
-	
+
 	-- Hack: CharacterCreationHeader.avatarPanel overlaps this
 	local panel = CharacterCreationHeader.instance.avatarPanel
 	self.avatarPanelX = panel.x
@@ -167,7 +167,7 @@ function CharacterCreationMain:create()
 	panel:setY(absY - self:getAbsoluteY())
 	CharacterCreationHeader.instance:removeChild(panel)
 	self:addChild(panel)
-	
+
 	-- DISABLE BUTTON
 	self:disableBtn();
 end
@@ -194,14 +194,14 @@ function CharacterCreationMain:deleteBuildStep2(button, joypadData) -- {{{
 		joypadData.focus = self
 		updateJoypadFocus(joypadData)
 	end
-	
+
 	if button.internal == "NO" then return end
-	
+
 	local delBuild = self.savedBuilds.options[self.savedBuilds.selected];
-	
+
 	local builds = CharacterCreationMain.readSavedOutfitFile();
 	builds[delBuild] = nil;
-	
+
 	local options = {};
 	CharacterCreationMain.writeSaveFile(builds);
 	for key,val in pairs(builds) do
@@ -209,7 +209,7 @@ function CharacterCreationMain:deleteBuildStep2(button, joypadData) -- {{{
 			options[key] = 1;
 		end
 	end
-	
+
 	self.savedBuilds.options = {};
 	for key,val in pairs(options) do
 		table.insert(self.savedBuilds.options, key);
@@ -243,16 +243,16 @@ function CharacterCreationMain:saveBuildStep2(button, joypadData, param2)
 		joypadData.focus = self
 		updateJoypadFocus(joypadData)
 	end
-	
+
 	if button.internal == "CANCEL" then
 		return
 	end
-	
+
 	local savename = button.parent.entry:getText()
 	if savename == '' then return end
-	
+
 	local desc = MainScreen.instance.desc;
-	
+
 	local builds = CharacterCreationMain.readSavedOutfitFile();
 	local savestring = "gender=" .. MainScreen.instance.charCreationHeader.genderCombo.selected .. ";";
 	savestring = savestring .. "skincolor=" .. self.colorPickerSkin.index .. "|" .. self.skinColorButton.backgroundColor.r .. "," .. self.skinColorButton.backgroundColor.g .. "," .. self.skinColorButton.backgroundColor.b .. ";";
@@ -275,13 +275,13 @@ function CharacterCreationMain:saveBuildStep2(button, joypadData, param2)
 		end
 	end
 	builds[savename] = savestring;
-	
+
 	local options = {};
 	CharacterCreationMain.writeSaveFile(builds);
 	for key,val in pairs(builds) do
 		options[key] = 1;
 	end
-	
+
 	self.savedBuilds.options = {};
 	local i = 1;
 	for key,val in pairs(options) do
@@ -302,11 +302,11 @@ function CharacterCreationMain:loadOutfit(box)
 	if name == nil then return end;
 
 	local desc = MainScreen.instance.desc;
-	
+
 	local saved_builds = CharacterCreationMain.readSavedOutfitFile();
 	local build = saved_builds[name];
 	if build == nil then return end;
-	
+
 	desc:getWornItems():clear();
 
 	local items = luautils.split(build, ";");
@@ -369,7 +369,7 @@ end
 
 function CharacterCreationMain.readSavedOutfitFile()
 	local retVal = {};
-	
+
 	local saveFile = getFileReader(CharacterCreationMain.savefile, true);
 	local line = saveFile:readLine();
 	while line ~= nil do
@@ -378,7 +378,7 @@ function CharacterCreationMain.readSavedOutfitFile()
 		line = saveFile:readLine();
 	end
 	saveFile:close();
-	
+
 	return retVal;
 end
 
@@ -392,27 +392,27 @@ end
 
 function CharacterCreationMain:createChestTypeBtn()
 	local comboHgt = FONT_HGT_SMALL + 3 * 2
-	
+
 	local lbl = ISLabel:new(self.xOffset, self.yOffset, FONT_HGT_MEDIUM, getText("UI_characreation_body"), 1, 1, 1, 1, UIFont.Medium, true);
 	lbl:initialise();
 	lbl:instantiate();
 	self.mainPanel:addChild(lbl);
-	
+
 	local rect = ISRect:new(self.xOffset, self.yOffset + FONT_HGT_MEDIUM + 5, 300, 1, 1, 0.3, 0.3, 0.3);
 	rect:initialise();
 	rect:instantiate();
 	self.mainPanel:addChild(rect);
-	
+
 	self.yOffset = self.yOffset + FONT_HGT_MEDIUM + 15;
-	
+
 	-------------
-	-- SKIN COLOR 
+	-- SKIN COLOR
 	-------------
 	self.skinColorLbl = ISLabel:new(self.xOffset+70, self.yOffset, FONT_HGT_SMALL, getText("UI_SkinColor"), 1, 1, 1, 1, UIFont.Small);
 	self.skinColorLbl:initialise();
 	self.skinColorLbl:instantiate();
 	self.mainPanel:addChild(self.skinColorLbl);
-	
+
 	local xColor = 90;
 	self.skinColors = { {r=1,g=0.91,b=0.72},
 		{r=0.98,g=0.79,b=0.49},
@@ -429,16 +429,16 @@ function CharacterCreationMain:createChestTypeBtn()
 	skinColorBtn.backgroundColor = {r = color.r, g = color.g, b = color.b, a = 1}
 	self.mainPanel:addChild(skinColorBtn)
 	self.skinColorButton = skinColorBtn
-	
+
 	self.colorPickerSkin = ISColorPicker:new(0, 0, nil)
 	self.colorPickerSkin:initialise()
 	self.colorPickerSkin.keepOnScreen = true
 	self.colorPickerSkin.pickedTarget = self
 	self.colorPickerSkin.resetFocusTo = self
 	self.colorPickerSkin:setColors(self.skinColors, #self.skinColors, 1)
-	
+
 	self.yOffset = self.yOffset + FONT_HGT_SMALL + 5 + 4;
-	
+
 	-------------
 	-- CHEST HAIR
 	-------------
@@ -446,7 +446,7 @@ function CharacterCreationMain:createChestTypeBtn()
 	self.chestHairLbl:initialise();
 	self.chestHairLbl:instantiate();
 	self.mainPanel:addChild(self.chestHairLbl);
-	
+
 	self.chestHairCombo = ISComboBox:new(self.xOffset+90, self.yOffset, 100, comboHgt, self, CharacterCreationMain.onChestHairSelected);
 	self.chestHairCombo:initialise();
 	--	self.chestHairCombo:instantiate();
@@ -454,7 +454,7 @@ function CharacterCreationMain:createChestTypeBtn()
 	self.chestHairCombo:addOption(getText("UI_No"))
 	self.mainPanel:addChild(self.chestHairCombo)
 	self.yOffset = self.yOffset + comboHgt + 4;
-	
+
 	----------------------
 	-- HEAD/FACIAL STUBBLE
 	----------------------
@@ -462,7 +462,7 @@ function CharacterCreationMain:createChestTypeBtn()
 	self.shavedHairLbl:initialise();
 	self.shavedHairLbl:instantiate();
 	--	self.mainPanel:addChild(self.shavedHairLbl);
-	
+
 	self.shavedHairCombo = ISComboBox:new(self.xOffset+90, self.yOffset, 100, comboHgt, self, CharacterCreationMain.onShavedHairSelected);
 	self.shavedHairCombo:initialise();
 	--	self.shavedHairCombo:instantiate();
@@ -475,44 +475,44 @@ end
 
 function CharacterCreationMain:createHairTypeBtn()
 	local comboHgt = FONT_HGT_SMALL + 3 * 2
-	
+
 	local lbl = ISLabel:new(self.xOffset, self.yOffset, FONT_HGT_MEDIUM, getText("UI_characreation_hair"), 1, 1, 1, 1, UIFont.Medium, true);
 	lbl:initialise();
 	lbl:instantiate();
 	self.mainPanel:addChild(lbl);
-	
+
 	local rect = ISRect:new(self.xOffset, self.yOffset + FONT_HGT_MEDIUM + 5, 300, 1, 1, 0.3, 0.3, 0.3);
 	rect:setAnchorRight(false);
 	rect:initialise();
 	rect:instantiate();
 	self.mainPanel:addChild(rect);
-	
+
 	self.yOffset = self.yOffset + FONT_HGT_MEDIUM + 15;
-	
+
 	self.hairTypeLbl = ISLabel:new(self.xOffset+70, self.yOffset, comboHgt, getText("UI_characreation_hairtype"), 1, 1, 1, 1, UIFont.Small);
 	self.hairTypeLbl:initialise();
 	self.hairTypeLbl:instantiate();
-	
+
 	self.mainPanel:addChild(self.hairTypeLbl);
-	
+
 	self.hairTypeCombo = ISComboBox:new(self.xOffset+90, self.yOffset, self.comboWid, comboHgt, self, CharacterCreationMain.onHairTypeSelected);
 	self.hairTypeCombo:initialise();
 	--	self.hairTypeCombo:instantiate();
 	self.mainPanel:addChild(self.hairTypeCombo)
-	
+
 	self.hairType = 0
-	
+
 	self.yOffset = self.yOffset + comboHgt + 4;
-	
+
 	self.hairColorLbl = ISLabel:new(self.xOffset+70, self.yOffset, FONT_HGT_SMALL, getText("UI_characreation_color"), 1, 1, 1, 1, UIFont.Small);
 	self.hairColorLbl:initialise();
 	self.hairColorLbl:instantiate();
-	
+
 	self.mainPanel:addChild(self.hairColorLbl);
-	
+
 	local xColor = 90;
 	local fontHgt = getTextManager():getFontHeight(self.hairColorLbl.font)
-	
+
 	local hairColors = MainScreen.instance.desc:getCommonHairColor();
 	local hairColors1 = {}
 	local info = ColorInfo.new()
@@ -530,59 +530,59 @@ function CharacterCreationMain:createHairTypeBtn()
 	hairColorBtn.backgroundColor = {r=color.r, g=color.g, b=color.b, a=1}
 	self.mainPanel:addChild(hairColorBtn)
 	self.hairColorButton = hairColorBtn
-	
+
 	self.colorPickerHair = ISColorPicker:new(0, 0, nil)
 	self.colorPickerHair:initialise()
 	self.colorPickerHair.keepOnScreen = true
 	self.colorPickerHair.pickedTarget = self
 	self.colorPickerHair.resetFocusTo = self
 	self.colorPickerHair:setColors(hairColors1, math.min(#hairColors1, 10), math.ceil(#hairColors1 / 10))
-	
+
 	self.yOffset = self.yOffset + comboHgt + 10;
 end
 
 function CharacterCreationMain:createBeardTypeBtn()
 	local comboHgt = FONT_HGT_SMALL + 3 * 2
-	
+
 	self.beardLbl = ISLabel:new(self.xOffset, self.yOffset, FONT_HGT_MEDIUM, getText("UI_characreation_beard"), 1, 1, 1, 1, UIFont.Medium, true);
 	self.beardLbl:initialise();
 	self.beardLbl:instantiate();
 	self.mainPanel:addChild(self.beardLbl);
-	
+
 	self.beardRect = ISRect:new(self.xOffset, self.yOffset + FONT_HGT_MEDIUM + 5, 300, 1, 1, 0.3, 0.3, 0.3);
 	self.beardRect:setAnchorRight(false);
 	self.beardRect:initialise();
 	self.beardRect:instantiate();
 	self.mainPanel:addChild(self.beardRect);
-	
+
 	self.yOffset = self.yOffset + FONT_HGT_MEDIUM + 15;
-	
+
 	self.beardTypeLbl = ISLabel:new(self.xOffset+ 70, self.yOffset, comboHgt, getText("UI_characreation_beardtype"), 1, 1, 1, 1, UIFont.Small);
 	self.beardTypeLbl:initialise();
 	self.beardTypeLbl:instantiate();
-	
+
 	self.mainPanel:addChild(self.beardTypeLbl);
-	
+
 	self.beardTypeCombo = ISComboBox:new(self.xOffset+90, self.yOffset, self.comboWid, comboHgt, self, CharacterCreationMain.onBeardTypeSelected);
 	self.beardTypeCombo:initialise();
 	--	self.beardTypeCombo:instantiate();
 	self.mainPanel:addChild(self.beardTypeCombo)
-	
+
 	self.yOffset = self.yOffset + comboHgt + 10;
 end
 
 function CharacterCreationMain:createClothingComboDebug(label, bodyLocation)
 	local comboHgt = FONT_HGT_SMALL + 3 * 2
 	local x = 0
-	
+
 	local label = ISLabel:new(x + 70 + 70, self.yOffset, comboHgt, label, 1, 1, 1, 1, UIFont.Small)
 	label:initialise()
 	self.clothingPanel:addChild(label)
-	
+
 	local combo = ISComboBox:new(x + 90 + 70, self.yOffset, self.comboWid, comboHgt, self, self.onClothingComboSelected, bodyLocation)
 	combo:initialise()
 	self.clothingPanel:addChild(combo)
-	
+
 	local fontHgt = getTextManager():getFontHeight(self.skinColorLbl.font)
 	local button = ISButton:new(combo:getRight() + 20, self.yOffset, 45, comboHgt, "", self)
 	button:setOnClick(CharacterCreationMain.onClothingColorClicked, bodyLocation)
@@ -590,29 +590,29 @@ function CharacterCreationMain:createClothingComboDebug(label, bodyLocation)
 	button:initialise()
 	button.backgroundColor = {r = 1, g = 1, b = 1, a = 1}
 	self.clothingPanel:addChild(button)
-	
+
 	local comboDecal = ISComboBox:new(button:getRight() + 20, self.yOffset, self.comboWid, comboHgt, self, self.onClothingDecalComboSelected, bodyLocation)
 	comboDecal:initialise()
 	self.clothingPanel:addChild(comboDecal)
-	
+
 	local comboTexture = ISComboBox:new(combo:getRight() + 20, self.yOffset, 80, comboHgt, self, self.onClothingTextureComboSelected, bodyLocation)
 	comboTexture:initialise()
 	self.clothingPanel:addChild(comboTexture)
-	
+
 	self.clothingCombo = self.clothingCombo or {}
 	self.clothingColorBtn = self.clothingColorBtn or {}
 	self.clothingTextureCombo = self.clothingTextureCombo or {}
 	self.clothingDecalCombo = self.clothingDecalCombo or {}
-	
+
 	self.clothingCombo[bodyLocation] = combo
 	self.clothingColorBtn[bodyLocation] = button
 	self.clothingTextureCombo[bodyLocation] = comboTexture
 	self.clothingDecalCombo[bodyLocation] = comboDecal
-	
+
 	table.insert(self.clothingWidgets, { combo, button, comboDecal, comboTexture })
-	
+
 	self.yOffset = self.yOffset + comboHgt + 4
-	
+
 	return
 end
 
@@ -686,28 +686,28 @@ end
 -- In normal mode, you'll have access to basic clothes + some specific to your profession (RP option can be enabled in MP to have access to a full outfit)
 function CharacterCreationMain:createClothingBtn()
 	local comboHgt = FONT_HGT_SMALL + 3 * 2
-	
+
 	local x = self.mainPanel:getWidth() / 2
-	
+
 	self.clothingPanel = ClothingPanel:new(x, 0, self.mainPanel.width / 2, self.mainPanel.height - 5 - 25 - 10)
 	self.clothingPanel:initialise()
 	self.clothingPanel.background = false
 	self.mainPanel:addChild(self.clothingPanel)
-	
+
 	x = 0
 	self.clothingLbl = ISLabel:new(x, self.yOffset, FONT_HGT_MEDIUM, getText("UI_characreation_clothing"), 1, 1, 1, 1, UIFont.Medium, true);
 	self.clothingLbl:initialise();
 	self.clothingPanel:addChild(self.clothingLbl);
-	
+
 	local rect = ISRect:new(x, self.yOffset + FONT_HGT_MEDIUM + 5, 400, 1, 1, 0.3, 0.3, 0.3);
 	rect:setAnchorRight(true);
 	rect:initialise();
 	rect:instantiate();
 	self.clothingPanel:addChild(rect);
-	
+
 	self.yOffset = self.yOffset + FONT_HGT_MEDIUM + 15;
 	self.originalYOffset = self.yOffset;
-	
+
 	if CharacterCreationMain.debug then
 		self:initClothingDebug();
 	end
@@ -716,18 +716,18 @@ end
 function CharacterCreationMain:createClothingCombo(label, bodyLocation)
 	local comboHgt = FONT_HGT_SMALL + 3 * 2
 	local x = 0
-	
+
 	if not self.clothingPanel then return; end
-	
+
 	local label = ISLabel:new(x + 70 + 70, self.yOffset, comboHgt, label, 1, 1, 1, 1, UIFont.Small)
 	label:initialise()
 	self.clothingPanel:addChild(label)
-	
+
 	local combo = ISComboBox:new(x + 90 + 70, self.yOffset, self.comboWid, comboHgt, self, self.onClothingComboSelected, bodyLocation)
 	combo:initialise()
 	combo.bodyLocation = bodyLocation;
 	self.clothingPanel:addChild(combo)
-	
+
 	local fontHgt = getTextManager():getFontHeight(self.skinColorLbl.font)
 	local button = ISButton:new(combo:getRight() + 20, self.yOffset, 45, comboHgt, "", self)
 	button:setOnClick(CharacterCreationMain.onClothingColorClicked, bodyLocation)
@@ -735,25 +735,25 @@ function CharacterCreationMain:createClothingCombo(label, bodyLocation)
 	button:initialise()
 	button.backgroundColor = {r = 1, g = 1, b = 1, a = 1}
 	self.clothingPanel:addChild(button)
-	
+
 	local comboTexture = ISComboBox:new(combo:getRight() + 20, self.yOffset, 80, comboHgt, self, self.onClothingTextureComboSelected, bodyLocation)
 	comboTexture:initialise()
 	self.clothingPanel:addChild(comboTexture)
-	
+
 	self.clothingCombo = self.clothingCombo or {}
 	self.clothingColorBtn = self.clothingColorBtn or {}
 	self.clothingTextureCombo = self.clothingTextureCombo or {}
 	self.clothingComboLabel = self.clothingComboLabel or {}
-	
+
 	self.clothingCombo[bodyLocation] = combo
 	self.clothingColorBtn[bodyLocation] = button
 	self.clothingTextureCombo[bodyLocation] = comboTexture
 	self.clothingComboLabel[bodyLocation] = label;
-	
+
 	table.insert(self.clothingWidgets, { combo, button, comboTexture })
-	
+
 	self.yOffset = self.yOffset + comboHgt + 4
-	
+
 	return
 end
 
@@ -783,11 +783,11 @@ function CharacterCreationMain:initClothing()
 	if getDebug() then
 		self:debugClothingDefinitions()
 	end
-	
+
 	if CharacterCreationMain.debug then return; end
-	
+
 	self.clothingWidgets = {}
-	
+
 	local desc = MainScreen.instance.desc;
 	local default = ClothingSelectionDefinitions.default;
 	if MainScreen.instance.desc:isFemale() then
@@ -795,7 +795,7 @@ function CharacterCreationMain:initClothing()
 	else
 		self:doClothingCombo(default.Male, true);
 	end
-	
+
 	local profession = ClothingSelectionDefinitions[desc:getProfession()];
 	if profession then
 		if MainScreen.instance.desc:isFemale() then
@@ -812,7 +812,7 @@ end
 
 function CharacterCreationMain:doClothingCombo(definition, erasePrevious)
 	if not self.clothingPanel then return; end
-	
+
 	-- reinit all combos
 	if erasePrevious then
 		if self.clothingCombo then
@@ -829,7 +829,7 @@ function CharacterCreationMain:doClothingCombo(definition, erasePrevious)
 		self.clothingComboLabel = {};
 		self.yOffset = self.originalYOffset;
 	end
-	
+
 	-- create new combo or populate existing one (for when having specific profession clothing)
 	local desc = MainScreen.instance.desc;
 	for bodyLocation, profTable in pairs(definition) do
@@ -846,7 +846,7 @@ function CharacterCreationMain:doClothingCombo(definition, erasePrevious)
 			combo.options = {}
 			combo:addOptionWithData(getText("UI_characreation_clothing_none"), nil)
 		end
-		
+
 		for j,clothing in ipairs(profTable.items) do
 			local item = ScriptManager.instance:FindItem(clothing)
 			local displayName = item:getDisplayName()
@@ -856,13 +856,13 @@ function CharacterCreationMain:doClothingCombo(definition, erasePrevious)
 			end
 		end
 	end
-	
+
 	self:updateSelectedClothingCombo();
-	
+
 	self.clothingPanel:setScrollChildren(true)
 	self.clothingPanel:setScrollHeight(self.yOffset)
 	self.clothingPanel:addScrollBars()
-	
+
 	self.colorPicker = ISColorPicker:new(0, 0, {h=1,s=0.6,b=0.9});
 	self.colorPicker:initialise()
 	self.colorPicker.keepOnScreen = true
@@ -925,22 +925,22 @@ function CharacterCreationMain:initClothingDebug()
 	self.outfitLbl = ISLabel:new(x + 70 + 70, self.yOffset, comboHgt, "Outfit", 1, 1, 1, 1, UIFont.Small)
 	self.outfitLbl:initialise()
 	self.clothingPanel:addChild(self.outfitLbl)
-	
+
 	self.outfitCombo = ISComboBox:new(x + 90 + 70, self.yOffset, self.comboWid, comboHgt, self, CharacterCreationMain.onOutfitSelected);
 	self.outfitCombo:initialise()
 	self.clothingPanel:addChild(self.outfitCombo)
-	
+
 	local fontHgt = getTextManager():getFontHeight(self.skinColorLbl.font)
 	local button = ISButton:new(self.outfitCombo:getRight() + 20, self.yOffset + (fontHgt - 15) / 2, 15, 15, "Randomize", self)
 	button:setOnClick(CharacterCreationMain.onRandomizeOutfitClicked)
 	button:initialise()
 	self.clothingPanel:addChild(button)
-	
+
 	self.clothingWidgets = {}
 	table.insert(self.clothingWidgets, { self.outfitCombo, button })
-	
+
 	self.yOffset = self.yOffset + comboHgt + 4;
-	
+
 	--
 	-- Clothing
 	--
@@ -971,11 +971,11 @@ function CharacterCreationMain:initClothingDebug()
 		self:createClothingComboDebug("Shoes", "Shoes")
 		self:createClothingComboDebug("Tail", "Tail")
 		self:createClothingComboDebug("Back", "Back")
-		
+
 		self.clothingPanel:setScrollChildren(true)
 		self.clothingPanel:setScrollHeight(self.yOffset)
 		self.clothingPanel:addScrollBars()
-		
+
 		self.colorPicker = ISColorPicker:new(0, 0)
 		self.colorPicker:initialise()
 		self.colorPicker.keepOnScreen = true
@@ -989,11 +989,11 @@ function CharacterCreationMain:setVisible(bVisible, joypadData)
 	if self.javaObject == nil then
 		self:instantiate();
 	end
-	
+
 	ISPanelJoypad.setVisible(self, bVisible, joypadData)
-	
+
 	if bVisible and MainScreen.instance.desc then
-		MainScreen.instance.charCreationHeader:randomGenericOutfit();
+		MainScreen.instance.charCreationHeader:startingOutfit();
 		self:initClothing();
 	end
 end
@@ -1001,7 +1001,7 @@ end
 function CharacterCreationMain:disableBtn()
 	-- CharacterCreationHeader calls this during creation
 	if not self.chestHairLbl then return end
-	
+
 	local desc = MainScreen.instance.desc
 	local visible = not desc:isFemale()
 	self.chestHairLbl:setVisible(visible)
@@ -1012,11 +1012,11 @@ function CharacterCreationMain:disableBtn()
 	self.beardTypeCombo:setVisible(visible)
 	self.beardRect:setVisible(visible)
 	self.beardLbl:setVisible(visible)
-	
+
 	-- Changing male <-> female, update combobox choices.
 	if self.female ~= desc:isFemale() then
 		self.female = desc:isFemale()
-		
+
 		self.hairTypeCombo.options = {}
 		local hairStyles = getAllHairStyles(desc:isFemale())
 		for i=1,hairStyles:size() do
@@ -1028,7 +1028,7 @@ function CharacterCreationMain:disableBtn()
 			end
 			self.hairTypeCombo:addOptionWithData(label, hairStyles:get(i-1))
 		end
-		
+
 		self.beardTypeCombo.options = {}
 		if desc:isFemale() then
 			-- no bearded ladies
@@ -1044,7 +1044,7 @@ function CharacterCreationMain:disableBtn()
 				self.beardTypeCombo:addOptionWithData(label, beardStyles:get(i-1))
 			end
 		end
-		
+
 		if self.outfitCombo then
 			self.outfitCombo.options = {}
 			self.outfitCombo:addOptionWithData(getText("UI_characreation_clothing_none"), nil)
@@ -1053,7 +1053,7 @@ function CharacterCreationMain:disableBtn()
 				self.outfitCombo:addOptionWithData(outfits:get(i-1), outfits:get(i-1))
 			end
 		end
-		
+
 		local fillCombo = function(bodyLocation)
 			local combo = self.clothingCombo[bodyLocation]
 			combo.options = {}
@@ -1070,29 +1070,29 @@ function CharacterCreationMain:disableBtn()
 				combo:addOptionWithData(displayName, fullType)
 			end
 		end
-		
+
 		if CharacterCreationMain.debug then
 			for bodyLocation,combo in pairs(self.clothingCombo) do
 				fillCombo(bodyLocation)
 			end
 		end
 	end
-	
+
 	self:syncUIWithTorso()
 	self.hairTypeCombo.selected = self.hairType + 1
-	
+
 	if self.skinColors and self.skinColor then
 		local color = self.skinColors[self.skinColor]
 		self.skinColorButton.backgroundColor.r = color.r
 		self.skinColorButton.backgroundColor.g = color.g
 		self.skinColorButton.backgroundColor.b = color.b
 	end
-	
+
 	local color = desc:getHumanVisual():getHairColor()
 	self.hairColorButton.backgroundColor.r = color:getRedFloat()
 	self.hairColorButton.backgroundColor.g = color:getGreenFloat()
 	self.hairColorButton.backgroundColor.b = color:getBlueFloat()
-	
+
 	if MainScreen.instance.avatar then
 		self.hairTypeCombo.selected = 1
 		local hairModel = desc:getHumanVisual():getHairModel()
@@ -1103,7 +1103,7 @@ function CharacterCreationMain:disableBtn()
 				break
 			end
 		end
-		
+
 		self.beardTypeCombo.selected = 1
 		local beardModel = desc:getHumanVisual():getBeardModel()
 		for i=1,#self.beardTypeCombo.options do
@@ -1113,7 +1113,7 @@ function CharacterCreationMain:disableBtn()
 				break
 			end
 		end
-		
+
 		if CharacterCreationMain.debug then
 			for bodyLocation,combo in pairs(self.clothingCombo) do
 				local selected = combo.selected
@@ -1309,7 +1309,7 @@ function CharacterCreationMain:onClothingComboSelected(combo, bodyLocation)
 		end
 	end
 	self:updateSelectedClothingCombo();
-	
+
 	CharacterCreationHeader.instance.avatarPanel:setSurvivorDesc(desc)
 	self:disableBtn()
 end
@@ -1375,7 +1375,7 @@ function CharacterCreationMain:onOptionMouseDown(button, x, y)
 		--		MainScreen.instance.charCreationMain:removeChild(MainScreen.instance.charCreationHeader);
 		--		MainScreen.instance.charCreationProfession:addChild(MainScreen.instance.charCreationHeader);
 		--		MainScreen.instance.charCreationProfession:setVisible(true, self.joyfocus);
-		
+
 		MainScreen.instance.charCreationMain:setVisible(false);
 		-- set the player desc we build
 		self:initPlayer();
@@ -1542,15 +1542,15 @@ function CharacterCreationMain:onResolutionChange(oldw, oldh, neww, newh)
 	self.mainPanel:setX((tw - w) / 2)
 	self.mainPanel:setY(48)
 	self.mainPanel:recalcSize()
-	
+
 	self.clothingPanel:setX(self.mainPanel:getWidth() / 2)
 	self.clothingPanel:setWidth(self.mainPanel:getWidth() / 2)
 	self.clothingPanel:setHeight(self.mainPanel:getHeight() - 5 - 25 - 10)
-	
+
 	MainScreen.instance.charCreationHeader:setX(self.mainPanel:getX());
 	MainScreen.instance.charCreationHeader:setY(self.mainPanel:getY());
 	--	MainScreen.instance.charCreationHeader:setWidth(self.mainPanel:getWidth());
-	
+
 	local panel = CharacterCreationHeader.instance.avatarPanel
 	panel:setX(self.mainPanel:getAbsoluteX() + self.avatarPanelX - self:getAbsoluteX())
 end
