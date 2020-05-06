@@ -12,7 +12,7 @@ local fog_trend --= max_fog -- this will update daily and will determine where t
 local function setFogTrend()
   local suddenChange = ZombRand(15) -- small flat chance that it will simply trend toward the max
   if suddenChange == 1 then fog_trend = max_fog
-  else fog_trend = (ZombRandFloat(min_fog,max_fog)+ZombRandFloat((min_fog+1),max_fog))/2 -- makes two rolls of the dice, designed to skew slightly higher than the median
+  else fog_trend = (ZombRandFloat(min_fog,max_fog))
   end
   print("fog_trend today: ",fog_trend)
 end
