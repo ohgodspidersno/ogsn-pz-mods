@@ -33,12 +33,24 @@ end
 
 Events.OnGameStart.Add(
   function()
+      clim = getClimateManager();
+      FOG_ID = 5;
+      fog = clim:getClimateFloat(FOG_ID);
+      starting_strength = 0.3;
+      max_fog = 1;
+      min_fog = 0.3;
+      df = 0.01; -- the step size for fog intensity's change every ten minutes
+
+      fog_strength = starting_strength  -- fog_strength is the current intensity
+      fog_trend = max_fog -- this will update daily and will determine where the intensity that fog will gradually creep toward over the course of the day
+
+      setFogTrend()
       fog:setEnableAdmin(true);
       fog_strength = fog:getAdminValue()
       -- Now check for other weirdnesses, like if it was too big/small or if the min/max changed since last time the game was opened
       if fog_strength < min_fog then fog_strength = min_fog
       elseif fog_strength > max_fog then fog_strength = max_fog end -- in case something weird happens it will reset
-      setFogTrend()
+      fog:setAdminValue(fog_strength)
   end
 );
 
