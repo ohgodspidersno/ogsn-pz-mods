@@ -38,11 +38,12 @@ Events.OnGameStart.Add(
       -- Now check for other weirdnesses, like if it was too big/small or if the min/max changed since last time the game was opened
       if fog_strength < min_fog then fog_strength = min_fog
       elseif fog_strength > max_fog then fog_strength = max_fog end -- in case something weird happens it will reset
+      setFogTrend()
   end
 );
 
 Events.EveryDays.Add(
-  setNextFogStrength
+  setFogTrend
 );
 
 Events.EveryTenMinutes.Add(
