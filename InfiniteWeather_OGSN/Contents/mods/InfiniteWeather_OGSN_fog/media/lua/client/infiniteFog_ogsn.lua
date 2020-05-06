@@ -1,19 +1,20 @@
-local clim = getClimateManager();
-local FOG_ID = 5;
-local fog = clim:getClimateFloat(FOG_ID);
-local starting_strength = 0.3;
-local max_fog = 1;
-local min_fog = 0.3;
-local df = 0.01; -- the step size for fog intensity's change every ten minutes
+local clim --= getClimateManager();
+local FOG_ID --= 5;
+local fog --= clim:getClimateFloat(FOG_ID);
+local starting_strength --= 0.3;
+local max_fog --= 1;
+local min_fog --= 0.3;
+local df --= 0.005; -- the step size for fog intensity's change every ten minutes
 
-local fog_strength = starting_strength  -- fog_strength is the current intensity
-local fog_trend = max_fog -- this will update daily and will determine where the intensity that fog will gradually creep toward over the course of the day
+local fog_strength --= starting_strength  -- fog_strength is the current intensity
+local fog_trend --= max_fog -- this will update daily and will determine where the intensity that fog will gradually creep toward over the course of the day
 
 local function setFogTrend()
   local suddenChange = ZombRand(15) -- small flat chance that it will simply trend toward the max
   if suddenChange == 1 then fog_trend = max_fog
   else fog_trend = (ZombRandFloat(min_fog,max_fog)+ZombRandFloat((min_fog+1),max_fog))/2 -- makes two rolls of the dice, designed to skew slightly higher than the median
   end
+  print("fog_trend today: ",fog_trend)
 end
 
 local function setNextFogStrength()
@@ -21,7 +22,7 @@ local function setNextFogStrength()
     if delta > 0 then fog_strength = math.min(fog_strength + df, max_fog)  -- trends up, unless it's already at full power
     elseif delta < 0 then fog_strength = math.max(fog_strength - df, min_fog)  -- trends down, unless it's already at min power
     end
-    print('just finished setNextFogStrength:',fog_strength)
+    -- print('just finished setNextFogStrength:',fog_strength)
 end
 
 local function updateFog()
@@ -39,7 +40,7 @@ Events.OnGameStart.Add(
       starting_strength = 0.3;
       max_fog = 1;
       min_fog = 0.3;
-      df = 0.01; -- the step size for fog intensity's change every ten minutes
+      df = 0.005; -- the step size for fog intensity's change every ten minutes
 
       fog_strength = starting_strength  -- fog_strength is the current intensity
       fog_trend = max_fog -- this will update daily and will determine where the intensity that fog will gradually creep toward over the course of the day
@@ -57,6 +58,14 @@ Events.OnGameStart.Add(
 Events.EveryDays.Add(
   setFogTrend
 );
+
+Events.EveryHours.Add(
+  function()
+    if getGameTime():getHour() % 6 == 0 and fog_strength ~= fog_trend then
+      print('Fog level is changing, currently at %s',fog_strength,' on its way to %s',fog_trend)
+    end
+  end
+)
 
 Events.EveryTenMinutes.Add(
   updateFog
