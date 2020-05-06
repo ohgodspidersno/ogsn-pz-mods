@@ -1,9 +1,12 @@
-Events.OnInitWorld.Add(function() {
-print('OnInitWorld: WintersAreComing enabled')
-});
+-- Events.OnInitWorld.Add(
+--   function()
+--     -- print('OnInitWorld: WintersAreComing enabled')
+--   end
+-- );
 
-Events.OnGameStart.Add(function() {
-    print('OnGameStart: WintersAreComing enabled')
+Events.OnGameStart.Add(
+  function()
+    -- print('OnGameStart: WintersAreComing enabled')
     if getGameTime():getWorldAgeHours() >= 4*24 then
         getCore():setForceSnow(true);
         forceSnowCheck();
@@ -23,11 +26,12 @@ Events.OnGameStart.Add(function() {
   			JoypadState.players[1].focus = modal
   		end
   	end
-end
-});
+  end
+);
 
-Events.OnInitSeasons.Add(function(_season) {
-    print('OnInitSeasons: WintersAreComing enabled')
+Events.OnInitSeasons.Add(
+  function(_season)
+    -- print('OnInitSeasons: WintersAreComing enabled')
     _season:init(
         50, -- Newfoundland. _season:getLat(),
         -5,
@@ -39,18 +43,23 @@ Events.OnInitSeasons.Add(function(_season) {
         _season:getSeedB(),
         _season:getSeedC()
     );
-});
+  end
+);
 
-Events.EveryTenMinutes.Add(function() {
-print('EveryTenMinutes: WintersAreComing enabled')
-});
+-- Events.EveryTenMinutes.Add(
+--   function()
+--     -- print('EveryTenMinutes: WintersAreComing enabled')
+--   end
+-- );
 
-Events.EveryDays.Add(function() {
-    print('EveryDays: WintersAreComing enabled')
+Events.EveryDays.Add(
+  function()
+    -- print('EveryDays: WintersAreComing enabled')
     if getGameTime():getWorldAgeHours() >=4*24 then
         getCore():setForceSnow(true);
     end
     if getGameTime():getWorldAgeHours() >=3*24 and getGameTime():getWorldAgeHours() <=4*24 then
         getClimateManager():triggerWinterIsComingStorm();
     end
-});
+  end
+);
