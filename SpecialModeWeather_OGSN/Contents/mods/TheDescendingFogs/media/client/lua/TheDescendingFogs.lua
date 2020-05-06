@@ -10,7 +10,11 @@ local fog_strength = starting_strength  -- fog_strength is the current intensity
 local fog_trend = max_fog -- this will update daily and will determine where the intensity that fog will gradually creep toward over the course of the day
 
 local function setFogTrend()
-  fog_trend = (ZombRandFloat(min,max)+ZombRandFloat((min+1),max))/2 -- makes two rolls of the dice, designed to skew slightly higher than the median
+  local suddenChange = ZombRand(15) -- small flat chance that it will simply trend toward the max
+  if suddenChange == 1 then fog_trend = max_fog
+  else fog_trend = (ZombRandFloat(min,max)+ZombRandFloat((min+1),max))/2 -- makes two rolls of the dice, designed to skew slightly higher than the median
+  end
+end
 
 local function setNextFogStrength()
     local delta = fog_trend - fog_strength
