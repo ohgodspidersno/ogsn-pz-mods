@@ -12,14 +12,14 @@ local fog_trend = max_fog -- this will update daily and will determine where the
 local function setFogTrend()
   local suddenChange = ZombRand(15) -- small flat chance that it will simply trend toward the max
   if suddenChange == 1 then fog_trend = max_fog
-  else fog_trend = (ZombRandFloat(min,max)+ZombRandFloat((min+1),max))/2 -- makes two rolls of the dice, designed to skew slightly higher than the median
+  else fog_trend = (ZombRandFloat(min_fog,max_fog)+ZombRandFloat((min_fog+1),max_fog))/2 -- makes two rolls of the dice, designed to skew slightly higher than the median
   end
 end
 
 local function setNextFogStrength()
     local delta = fog_trend - fog_strength
-    if delta > 0 then fog_strength = math.min(fog_strength + df, max)  -- trends up, unless it's already at full power
-    elseif delta < 0 then fog_strength = math.max(fog_strength - df, min)  -- trends down, unless it's already at min power
+    if delta > 0 then fog_strength = math.min(fog_strength + df, max_fog)  -- trends up, unless it's already at full power
+    elseif delta < 0 then fog_strength = math.max(fog_strength - df, min_fog)  -- trends down, unless it's already at min power
     end
     print('just finished setNextFogStrength:',fog_strength)
 end
