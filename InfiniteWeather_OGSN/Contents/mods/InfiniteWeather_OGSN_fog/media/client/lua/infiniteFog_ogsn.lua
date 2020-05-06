@@ -25,7 +25,7 @@ local function setNextFogStrength()
 end
 
 local function updateFog()
-  print('fog was:',fog_strength)
+  -- print('fog was:',fog_strength)
   fog:setEnableAdmin(true);
   fog:setAdminValue(fog_strength);
   setNextFogStrength(fog_strength)
