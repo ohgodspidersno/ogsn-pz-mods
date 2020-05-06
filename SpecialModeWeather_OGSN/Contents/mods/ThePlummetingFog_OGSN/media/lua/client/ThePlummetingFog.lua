@@ -1,33 +1,43 @@
-Events.OnInitWorld.Add(function() {
-print('OnInitWorld: ThePlummetingFog enabled')
-});
+-- Events.OnInitWorld.Add(
+--   function()
+--     -- print('OnInitWorld: ThePlummetingFog enabled')
+--   end
+-- );
 
-Events.OnGameStart.Add(function() {
-print('OnGameStart: ThePlummetingFog enabled')
-});
+-- Events.OnGameStart.Add(
+--   function()
+--     -- print('OnGameStart: ThePlummetingFog enabled')
+--   end
+-- );
 
-Events.OnInitSeasons.Add(function(_season) {
-    print('OnInitSeasons: ThePlummetingFog enabled')
-        _season:init(
-            _season:getLat(), --aprox miami florida
-            _season:getTempMin(), --min
-            _season:getTempMax(), --max
-            _season:getTempDiff(), --amount of degrees temp can go lower or higher then mean
-            _season:getSeasonLag(),
-            _season:getHighNoon(),
-            _season:getSeedA(),
-            _season:getSeedB(),
-            _season:getSeedC()
-        );
-});
+Events.OnInitSeasons.Add(
+  function(_season)
+      -- print('OnInitSeasons: ThePlummetingFog enabled')
+          _season:init(
+              _season:getLat(), --aprox miami florida
+              _season:getTempMin(), --min
+              _season:getTempMax(), --max
+              _season:getTempDiff(), --amount of degrees temp can go lower or higher then mean
+              _season:getSeasonLag(),
+              _season:getHighNoon(),
+              _season:getSeedA(),
+              _season:getSeedB(),
+              _season:getSeedC()
+          );
+  end
+);
 
-Events.EveryTenMinutes.Add(function() {
-print('EveryTenMinutes: ThePlummetingFog enabled')
-});
+-- Events.EveryTenMinutes.Add(
+--   function()
+--     -- print('EveryTenMinutes: ThePlummetingFog enabled')
+--   end
+-- );
 
-Events.EveryDays.Add(function() {
-print('EveryDays: ThePlummetingFog enabled')
-});
+-- Events.EveryDays.Add(
+--   function()
+--     -- print('EveryDays: ThePlummetingFog enabled')
+--   end
+-- );
 
 
 -- from AdminPanel/ISAdmPanelClimate
