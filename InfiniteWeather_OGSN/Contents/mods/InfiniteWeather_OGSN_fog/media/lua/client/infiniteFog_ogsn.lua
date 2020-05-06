@@ -34,9 +34,7 @@ end
 Events.OnGameStart.Add(
   function()
       fog:setEnableAdmin(true);
-      if pcall(fog_strength = fog:getAdminValue()) -- protected call, if no error then it returns true
-      then -- do nothing special if nothing went wrong
-      else fog_strength = starting_strength end -- if there was an error set current strength to the default starting value
+      fog_strength = fog:getAdminValue()
       -- Now check for other weirdnesses, like if it was too big/small or if the min/max changed since last time the game was opened
       if fog_strength < min_fog then fog_strength = min_fog
       elseif fog_strength > max_fog then fog_strength = max_fog end -- in case something weird happens it will reset
