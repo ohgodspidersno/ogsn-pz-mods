@@ -1,0 +1,16 @@
+Recipes_CN = {
+Recipe_Create_Medicinal_Tea_Blend = "制作药用茶包",
+Recipe_Create_Energizing_Tea_Blend = "制作提神茶包",
+Recipe_Brew_Cup_of_Common_Mallow_Tea = "沏一杯锦葵茶",
+Recipe_Brew_Cup_of_Lemon_Grass_Tea = "沏一杯柠檬草茶",
+Recipe_Brew_Cup_of_Black_Sage_Tea = "沏一杯鼠尾草茶",
+Recipe_Brew_Cup_of_Ginseng_Tea = "沏一杯人参茶",
+Recipe_Brew_Cup_of_Medicinal_Blended_Tea = "沏一杯药茶",
+Recipe_Brew_Cup_of_Energizing_Blended_Tea = "沏一杯提神茶",
+Recipe_Make_2_Bowls_of_Stir_Fry = "制作 2 碗炒菜",
+Recipe_Make_4_Bowls_of_Stir_Fry = "制作 4 碗炒菜",
+Recipe_Make_2_Bowls_of_Stir_Fry = "制作 2 碗炒菜",
+Recipe_Make_4_Bowls_of_Stir_Fry = "制作 4 碗炒菜",
+Recipe_Make_2_Bowls_of_Roasted_Vegetables = "制作 2 碗烤蔬菜",
+Recipe_Make_4_Bowls_of_Roasted_Vegetables = "制作 4 碗烤蔬菜",
+}
