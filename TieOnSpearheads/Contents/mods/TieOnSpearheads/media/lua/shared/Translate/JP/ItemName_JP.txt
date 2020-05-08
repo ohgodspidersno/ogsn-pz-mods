@@ -1,0 +1,3 @@
+ItemName_JP = {
+ItemName_Base.SpearChippedStone = "欠けた石の槍"
+}

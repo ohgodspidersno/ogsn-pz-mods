@@ -1,0 +1,5 @@
+/** Czech translation provided by steam user WaldaGamer **/
+Items_CS = {
+DisplayName_Lockpick = "Šperhák",
+DisplayName_Hairpin = "Sponka",
+}

@@ -1,0 +1,113 @@
+module RS
+{ 		
+   imports {Base}
+
+
+    item LunchBox
+    {
+            WeightReduction	=	50,
+            Weight	=	0.5,
+            Type	=	Container,
+            Capacity	=	6,
+            DisplayName	=	Lunch Box,
+	    Icon	=	M01LunchBox,
+            OpenSound   =       RS_OpenLunchBox,
+            CloseSound   =      RS_CloseLunchBox,
+
+    }
+
+    item Briefcase
+    {
+            WeightReduction	=	60,
+            Weight	=	0.8,
+            Type	=	Container,
+            Capacity	=	15,
+            DisplayName	=	Briefcase,
+	    Icon	=	M02Briefcase,
+            OpenSound   =       RS_OpenBriefcase,
+            CloseSound   =      RS_CloseBriefcase,
+    }
+
+    item Suitcase
+    {
+            WeightReduction	=	65,
+            Weight	=	1,
+            Type	=	Container,
+            Capacity	=	20,
+            DisplayName	=	Suitcase,
+	    Icon	=	M03Suitcase,
+            OpenSound   =       RS_OpenBriefcase,
+            CloseSound   =      RS_CloseBriefcase,
+
+    }
+
+    item SmallLeatherBag
+    {
+            WeightReduction	=	55,
+            Weight	=	0.5,
+            Type	=	Container,
+            Capacity	=	12,
+            DisplayName	=	Small Leather Bag,
+	    Icon	=	M04SmallLeatherBag,
+            OpenSound   =       RS_OpenLeatherBag,
+            CloseSound   =      RS_CloseLeatherBag,
+
+    }
+
+    item NormalBackpack
+    {
+            WeightReduction	=	80,
+            Weight	=	0.8,
+            Type	=	Container,
+            Capacity	=	22,
+            DisplayName	=	Explorer Backpack,
+	    Icon	=	M05NormalBackpack,
+            CanBeEquipped =     Back,
+            OpenSound   =       PZ_OpenBag,
+            CloseSound   =      PZ_CloseBag,
+            PutInSound   =      PZ_PutInBag,
+    }
+
+    item HikingBackpack
+    {
+            WeightReduction	=	85,
+            Weight	=	0.8,
+            Type	=	Container,
+            Capacity	=	22,
+            DisplayName	=	Hiking Backpack,
+	    Icon	=	M06HikingBackpack,
+            CanBeEquipped =     Back,
+            OpenSound   =       PZ_OpenBag,
+            CloseSound   =      PZ_CloseBag,
+            PutInSound   =      PZ_PutInBag,
+    }
+
+    item AliceBackpack
+    {
+            WeightReduction	=	90,
+            Weight	=	1,
+            Type	=	Container,
+            Capacity	=	26,
+            DisplayName	=	ALICE Backpack,
+	    Icon	=	M07ALICEBackpack,
+            CanBeEquipped =     Back,
+            OpenSound   =       PZ_OpenBag,
+            CloseSound   =      PZ_CloseBag,
+            PutInSound   =      PZ_PutInBag,
+    }
+
+    item MolleBackpack
+    {
+            WeightReduction	=	95,
+            Weight	=	1.2,
+            Type	=	Container,
+            Capacity	=	30,
+            DisplayName	=	MOLLE Backpack,
+	    Icon	=	M08MOLLEBackpack,
+            CanBeEquipped =     Back,
+            OpenSound   =       PZ_OpenBag,
+            CloseSound   =      PZ_CloseBag,
+            PutInSound   =      PZ_PutInBag,
+    }
+
+}

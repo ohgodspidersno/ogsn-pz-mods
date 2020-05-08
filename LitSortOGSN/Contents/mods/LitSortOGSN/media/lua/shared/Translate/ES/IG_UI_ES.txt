@@ -1,0 +1,5 @@
+IGUI_ES = {
+IGUI_PlayerText_FlaggedBook1 = "Lo recordaré.",
+IGUI_PlayerText_FlaggedBook2 = "Me aseguraré de que ya lo he visto.",
+IGUI_PlayerText_FlaggedBook3 = "Lo he anotado.",
+}

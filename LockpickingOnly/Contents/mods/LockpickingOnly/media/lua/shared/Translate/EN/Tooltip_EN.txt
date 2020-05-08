@@ -1,7 +1,7 @@
 Tooltip_EN = {
-  Tooltip_BobbyPin_FMJ          = "A hairpin and screwdriver can be used<br>to pick locks, if you have locksmith skills",
-  Tooltip_LockPickingMag_FMJ    = "Learn to pick locks using a hairpin and screw driver,<br>and how to create hairpins using wire",
+  Tooltip_BobbyPin_FMJ          = "A lockpick and screwdriver can be used<br>to pick locks, if you have locksmith skills",
+  Tooltip_LockPickingMag_FMJ    = "Learn to pick locks using a lockpick and screw driver,<br>and how to create lockpicks using paperclips or wire",
   Tooltip_LockPickingMag2_FMJ   = "Learn to destroy locks using a crowbar",
-  Tooltip_Screwdriver_FMJ       = "A screwdriver and hairpin can be used<br>to pick locks, if you have locksmith skills",
+  Tooltip_Screwdriver_FMJ       = "A screwdriver and lockpick can be used<br>to pick locks, if you have locksmith skills",
   Tooltip_Crowbar_FMJ           = "Can be used to destroy locks,<br>if you have locksmith skills",
 }

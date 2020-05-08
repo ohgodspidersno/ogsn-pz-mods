@@ -1,5 +1,7 @@
-require 'Items/SuburbsDistributions'
 require 'Vehicles/VehicleDistributions'
+require "Items/SuburbsDistributions";
+
+SuburbsDistributions = SuburbsDistributions or {}
 
 -- SuburbsDistributions
 table.insert(SuburbsDistributions["all"]["desk"].items, "Base.KnoxCountryMapSecret");

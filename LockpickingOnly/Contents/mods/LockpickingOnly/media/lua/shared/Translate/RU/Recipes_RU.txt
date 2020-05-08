@@ -1,0 +1,4 @@
+Recipes_RU = {
+Recipe_Create_Hairpin = "Сделать отмычку",
+Recipe_Create_Lockpick = "Cделать отмычку",
+}

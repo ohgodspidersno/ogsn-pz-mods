@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel></m_MaleModel>
+	<m_FemaleModel></m_FemaleModel>
+	<m_GUID>477b9515-823a-47e8-98c9-9dc51717f398</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_BaseTextures>clothes\gloves\woolygloves_white</m_BaseTextures>
+</clothingItem>

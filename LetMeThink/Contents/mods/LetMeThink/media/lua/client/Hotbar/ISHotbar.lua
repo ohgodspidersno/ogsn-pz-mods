@@ -398,6 +398,10 @@ function ISHotbar:refresh()
   for i = 0, self.chr:getWornItems():size() - 1 do
     local item = self.chr:getWornItems():getItemByIndex(i);
     table.insert(self.wornItems, item)
+    -- Skip bags in hands
+    if item and self.chr:isHandItem(item) then
+      item = nil
+    end
     -- item gives some attachments
     if item and item:getAttachmentsProvided() then
       for j = 0, item:getAttachmentsProvided():size() - 1 do
@@ -692,6 +696,7 @@ end
 
 ISHotbar.onClothingUpdated = function(player)
   local hotbar = getPlayerHotbar(player:getPlayerNum());
+  if hotbar == nil then return end -- player is dead
   --	hotbar:refresh();
   hotbar.needsRefresh = true
 end

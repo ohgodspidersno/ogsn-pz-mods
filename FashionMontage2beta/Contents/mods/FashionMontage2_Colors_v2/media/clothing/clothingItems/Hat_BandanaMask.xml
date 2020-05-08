@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>media\models_X\Static\Clothes\M_BandanaMask.X</m_MaleModel>
+	<m_FemaleModel>media\models_X\Static\Clothes\F_BandanaMask.X</m_FemaleModel>
+	<m_GUID>e9e67eaf-4871-4d1d-887e-01f2ef884dee</m_GUID>
+	<m_Static>true</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone>Bip01_Head</m_AttachBone>
+	<m_HatCategory>nobeard</m_HatCategory>
+	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
+	<textureChoices>bandanamask_black</textureChoices>
+	<textureChoices>bandanamask_blue</textureChoices>
+	<textureChoices>bandanamask_red</textureChoices>
+</clothingItem>

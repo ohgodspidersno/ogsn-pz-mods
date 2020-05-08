@@ -1,0 +1,14 @@
+Items_RU = {
+DisplayName_Knox_Country_Map = "Карта округа Нокс",
+DisplayName_Crumpled_Map = "Карта округа Нокс (Помеченная)",
+DisplayName_March_Ridge_Map = "Карта Марч Риджа",
+DisplayName_Muldraugh_Map = "Карта Малдро",
+DisplayName_Rosewood_Map = "Карта Розвуда",
+DisplayName_Westpoint_Map = "Карта Вэст Поинта",
+DisplayName_Riverside_Map = "Карта Риверсайда",
+
+/**** IMPROVED MAPS MOD ****/
+DisplayName_Crossroads_Mall_Map = "Карта торгового центра Кроссроудс",
+DisplayName_Dixie_Map = "Карта Дикси",
+DisplayName_Scenic_Grove_Map = "Карта Синик Гроув",
+}

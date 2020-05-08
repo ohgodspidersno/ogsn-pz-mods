@@ -1,0 +1,4 @@
+name=OGSN Orphanage - Good Tea, Coffee, Vitamins (fatigue reduction)
+id=OGSN_orphan_GoodTeaCoffeeVitamins
+description=Tea bags and coffee bags spawn in batches of 25. Tea and coffee have 25 fatigue reduction, vitamins 25 (4 doses). Zombies will have vitamins with 3% chance.
+poster=poster.png

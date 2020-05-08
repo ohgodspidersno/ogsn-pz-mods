@@ -1,0 +1,4 @@
+Recipes_CH = {
+Recipe_Create_Hairpin = "製作開鎖器",
+Recipe_Create_Lockpick = "製作開鎖器",
+}

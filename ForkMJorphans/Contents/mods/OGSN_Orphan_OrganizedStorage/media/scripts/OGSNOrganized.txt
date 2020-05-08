@@ -1,0 +1,382 @@
+module GidOrganized
+{
+	imports
+	{
+		Base,
+	}
+	/************************ITEMS************************/
+
+	item OS30pkAntibiotics
+	{
+		Weight			= 0.3,
+		Type			= Normal,
+		DisplayName		= 30-Count Bottle of Antibiotics,
+		Icon			= OS30pkAntibiotics,
+	}
+
+	item OS12pkAdhesiveBandages
+	{
+		Weight			= 0.3,
+		Type			= Normal,
+		DisplayName		= 12-Pack of Adhesive Bandages,
+		Icon			= OS12pkAdhesiveBandages,
+	}
+
+	item OS9pkBandages
+	{
+		Weight			= 0.3,
+		Type			= Normal,
+		DisplayName		= 9-Pack of Bandages,
+		Icon			= OS9pkBandages,
+	}
+
+	item OS9pkSterileBandages
+	{
+		Weight			= 0.3,
+		Type			= Normal,
+		DisplayName		= 9-Pack of Sterile Bandages,
+		Icon			= OS9pkSterileBandages,
+	}
+
+	item OS12pkCottonBalls
+	{
+		Weight			= 0.3,
+		Type			= Normal,
+		DisplayName		= 12-Count Box of Cotton Balls,
+		Icon			= OS12pkCottonBalls,
+	}
+
+	item OS9pkBandagesDirty
+	{
+		Weight			= 0.3,
+		Type			= Normal,
+		DisplayName		= 9-Pack of Dirty Bandages,
+		Icon			= OS9pkBandagesDirty,
+	}
+
+	item OS50pkPainkillers
+	{
+		Weight				= 0.6,
+		Type				= Normal,
+		UseWhileEquipped	= FALSE,
+		DisplayName			= 50-Count Bottle of Painkillers,
+		Icon				= OS50pkPainkillers,
+	}
+
+	item OS50pkVitamins
+	{
+		Weight				= 0.6,
+		Type				= Normal,
+		UseWhileEquipped	= FALSE,
+		DisplayName			= 50-Count Bottle of Vitamins,
+		Icon				= OS50pkVitamins,
+	}
+
+	item OS50pkBetaBlockers
+	{
+		Weight				= 0.6,
+		Type				= Normal,
+		UseWhileEquipped	= FALSE,
+		DisplayName			= 50-Count Bottle of Beta Blockers,
+		Icon				= OS50pkBetaBlockers,
+	}
+
+	item OS50pkAntidepressants
+	{
+		Weight				= 0.6,
+		Type				= Normal,
+		UseWhileEquipped	= FALSE,
+		DisplayName			= 50-Count Bottle of Antidepressants,
+		Icon				= OS50pkAntidepressants,
+	}
+
+	item OS50pkSleepingPills
+	{
+		Weight				= 0.6,
+		Type				= Normal,
+		UseWhileEquipped	= FALSE,
+		DisplayName			= 50-Count Bottle of Sleeping Pills,
+		Icon				= OS50pkSleepingPills,
+	}
+
+	item OS4pkDisinfectant
+	{
+		Weight				= 0.8,
+		Type				= Normal,
+		UseWhileEquipped	= FALSE,
+		DisplayName			= 4-Pack of Full Disinfectant Bottles,
+		Icon				= OS4pkDisinfectant,
+	}
+
+	item OS30pkAlcoholWipes
+	{
+		Weight				= 0.9,
+		Type				= Normal,
+		UseWhileEquipped	= FALSE,
+		DisplayName			= 30-Count Box of Alcohol Wipes,
+		Icon				= OS30pkAlcoholWipes,
+	}
+
+	/************************RECIPES**********************/
+
+	recipe Pack 30 Antibiotics
+	{
+		Antibiotics=30,
+
+		Result:OS30pkAntibiotics,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 30 Antibiotics
+	{
+		OS30pkAntibiotics,
+
+		Result:Antibiotics=30,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 9 Bandages
+	{
+		Bandage=9,
+
+		Result:OS9pkBandages,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 9 Bandages
+	{
+		OS9pkBandages,
+
+		Result:Bandage=9,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 9 Sterile Bandages
+	{
+		AlcoholBandage=9,
+
+		Result:OS9pkSterileBandages,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 9 Sterile Bandages
+	{
+		OS9pkSterileBandages,
+
+		Result:AlcoholBandage=9,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 9 Dirty Bandages
+	{
+		BandageDirty=9,
+
+		Result:OS9pkBandagesDirty,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 9 Dirty Bandages
+	{
+		OS9pkBandagesDirty,
+
+		Result:BandageDirty=9,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 12 Cotton Balls
+	{
+		CottonBalls=12,
+
+		Result:OS12pkCottonBalls,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 12 Cotton Balls
+	{
+		OS12pkCottonBalls,
+
+		Result:CottonBalls=12,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 12 Adhesive Bandages
+	{
+		Bandaid=12,
+
+		Result:OS12pkAdhesiveBandages,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 12 Adhesive Bandages
+	{
+		OS12pkAdhesiveBandages,
+
+		Result:Bandaid=12,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Bottle 50 Vitamins
+	{
+		PillsVitamins=50,
+
+		Result:OS50pkVitamins,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unbottle 5x 10 Vitamins
+	{
+		OS50pkVitamins,
+
+		Result:PillsVitamins=5,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Bottle 50 Painkillers
+	{
+		Pills=50,
+
+		Result:OS50pkPainkillers,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unbottle 5x 10 Painkillers
+	{
+		OS50pkPainkillers,
+
+		Result:Pills=5,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Bottle 50 Beta Blockers
+	{
+		PillsBeta=50,
+
+		Result:OS50pkBetaBlockers,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unbottle 5x 10 Beta Blockers
+	{
+		OS50pkBetaBlockers,
+
+		Result:PillsBeta=5,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Bottle 50 Antidepressants
+	{
+		PillsAntiDep=50,
+
+		Result:OS50pkAntidepressants,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unbottle 5x 10 Antidepressants
+	{
+		OS50pkAntidepressants,
+
+		Result:PillsAntiDep=5,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Bottle 50 Sleeping Tablets
+	{
+		PillsSleepingTablets=50,
+
+		Result:OS50pkSleepingPills,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unbottle 5x 10 Sleeping Tablets
+	{
+		OS50pkSleepingPills,
+
+		Result:PillsSleepingTablets=5,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Combine to 4 Full Bottles of Disinfectant
+	{
+		Disinfectant=40,
+
+		Result:OS4pkDisinfectant,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Split to 4 Bottles
+	{
+		OS4pkDisinfectant,
+
+		Result:Disinfectant=4,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Box 30 Alcohol Wipes
+	{
+		AlcoholWipes=30,
+
+		Result:OS30pkAlcoholWipes,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 30 AlcoholWipes
+	{
+		OS30pkAlcoholWipes,
+
+		Result:AlcoholWipes=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+}

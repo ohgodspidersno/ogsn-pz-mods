@@ -546,6 +546,29 @@ function ISInventoryPane:transferItemsByWeight(items, container)
   end
 end
 
+function ISInventoryPane:removeAll(player)
+  local width = 350;
+  local x = getPlayerScreenLeft(player) + (getPlayerScreenWidth(player) - width) / 2
+  local height = 120;
+  local y = getPlayerScreenTop(player) + (getPlayerScreenHeight(player) - height) / 2
+  local modal = ISModalDialog:new(x, y, width, height, getText("IGUI_ConfirmDeleteItems"), true, self, ISInventoryPane.onConfirmDelete, player);
+  modal:initialise()
+  modal:addToUIManager()
+  if JoypadState.players[player + 1] then
+    modal.prevFocus = JoypadState.players[player + 1].focus
+    setJoypadFocus(player, modal)
+  end
+end
+
+function ISInventoryPane:onConfirmDelete(button)
+  if button.internal == "YES" then
+    local object = self.inventory:getParent()
+    local playerObj = getSpecificPlayer(self.player)
+    local args = { x = object:getX(), y = object:getY(), z = object:getZ(), index = object:getObjectIndex() }
+    sendClientCommand(playerObj, 'object', 'emptyTrash', args)
+  end
+end
+
 function ISInventoryPane:lootAll()
   local playerObj = getSpecificPlayer(self.player)
   local playerInv = getPlayerInventory(self.player).inventory
@@ -1019,7 +1042,17 @@ function ISInventoryPane:doContextOnJoypadSelected()
   -- end
   if getSpecificPlayer(self.player):isAsleep() then return end
 
-  if #self.items == 0 then return end
+  local isInInv = self.inventory:isInCharacterInventory(getSpecificPlayer(self.player))
+
+  if #self.items == 0 then
+    local menu = ISInventoryPaneContextMenu.createMenuNoItems(self.player, not isInInv, self:getAbsoluteX() + 64, self:getAbsoluteY() + 64)
+    if menu then
+      menu.origin = self.inventoryPage
+      menu.mouseOver = 1
+      setJoypadFocus(self.player, menu)
+    end
+    return
+  end
 
   if self.joyselection ~= nil and self.doController then
     self.selected = {};
@@ -1041,10 +1074,6 @@ function ISInventoryPane:doContextOnJoypadSelected()
 
   end
 
-  local isInInv = false;
-  if self.inventory:isInCharacterInventory(getSpecificPlayer(self.player)) then
-    isInInv = true;
-  end
   local contextMenuItems = {}
   for k, v in ipairs(self.items) do
     if self.selected[k] ~= nil then
@@ -1064,6 +1093,15 @@ end
 function ISInventoryPane:onRightMouseUp(x, y)
 
   if self.player ~= 0 then return end
+
+  local isInInv = self.inventory:isInCharacterInventory(getSpecificPlayer(self.player))
+
+  if #self.items == 0 then
+    local menu = ISInventoryPaneContextMenu.createMenuNoItems(self.player, not isInInv, self:getAbsoluteX() + x, self:getAbsoluteY() + y + self:getYScroll())
+    if menu then
+    end
+    return
+  end
 
   if self.selected == nil then
     self.selected = {}
@@ -1094,10 +1132,6 @@ function ISInventoryPane:onRightMouseUp(x, y)
 
   end
 
-  local isInInv = false;
-  if self.inventory:isInCharacterInventory(getSpecificPlayer(self.player)) then
-    isInInv = true;
-  end
   local contextMenuItems = {}
   for k, v in ipairs(self.items) do
     if self.selected[k] ~= nil then

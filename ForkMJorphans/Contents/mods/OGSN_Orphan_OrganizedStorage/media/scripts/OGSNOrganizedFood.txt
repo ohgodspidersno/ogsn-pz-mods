@@ -1,0 +1,645 @@
+module GidOrganizedFood
+{
+	imports
+	{
+		Base,
+	}
+	/************************ITEMS************************/
+
+	item OS6pkPopDiet
+	{
+		Weight			= 1.5,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Diet Pop,
+		Icon			= OS6pkPopDiet,
+	}
+
+	item OS6pkPop
+	{
+		Weight			= 1.5,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Pop,
+		Icon			= OS6pkPop,
+	}
+
+	item OS6pkFizz
+	{
+		Weight			= 1.5,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Fizz Pop,
+		Icon			= OS6pkFizz,
+	}
+
+	item OS6pkCannedSoup
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Soup,
+		Icon			= OS6pkCannedSoup,
+	}
+
+	item OS6pkCannedBeans
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Beans,
+		Icon			= OS6pkCannedBeans,
+	}
+
+	item OS6pkCannedBolognese
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Bolognese,
+		Icon			= OS6pkCannedBolognese,
+	}
+
+	item OS6pkCannedCarrots
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Carrots,
+		Icon			= OS6pkCannedCarrots,
+	}
+
+	item OS6pkCannedChili
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Chili,
+		Icon			= OS6pkCannedChili,
+	}
+
+	item OS6pkCannedCorn
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Corn,
+		Icon			= OS6pkCannedCorn,
+	}
+
+	item OS6pkCannedCornedBeef
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Corned Beef,
+		Icon			= OS6pkCannedCornedBeef,
+	}
+
+	item OS6pkCannedMushSoup
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Mushroom Soup,
+		Icon			= OS6pkCannedMushSoup,
+	}
+
+	item OS6pkCannedPeas
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Peas,
+		Icon			= OS6pkCannedPeas,
+	}
+
+	item OS6pkCannedPotato
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Potato,
+		Icon			= OS6pkCannedPotato,
+	}
+
+	item OS6pkCannedTomato
+	{
+		Weight			= 2.4,
+		Type			= Normal,
+		DisplayName		= 6-Pack of Canned Tomato,
+		Icon			= OS6pkCannedTomato,
+	}
+
+	item OS8pkCannedTuna
+	{
+		Weight			= 1.2,
+		Type			= Normal,
+		DisplayName		= 8-Pack of Canned Tuna,
+		Icon			= OS8pkCannedTuna,
+	}
+	item OS4pkSardines
+	{
+		Weight			= 1.6,
+		Type			= Normal,
+		DisplayName		= 4-Pack of Canned Sardines,
+		Icon			= OS4pkSardines,
+	}
+
+	item OS4pkCoffee
+	{
+		Weight			= 2,
+		Type			= Normal,
+		DisplayName		= 4-Pack of Instant Coffee,
+		Icon			= OS4pkCoffee,
+	}
+
+	item OS12pkWineEmpty
+	{
+		Weight			= 2.2,
+		Type			= Normal,
+		DisplayName		= 12-Pack Case of Empty Wine Bottles,
+		Icon			= OS12pkWineEmpty,
+	}
+
+	item OS12pkWineEmpty2
+	{
+		Weight			= 2.2,
+		Type			= Normal,
+		DisplayName		= 12-Pack Case of Empty Wine Bottles,
+		Icon			= OS12pkWineEmpty,
+	}
+
+	item OS8pkWhiskeyEmpty
+	{
+		Weight			= 1.5,
+		Type			= Normal,
+		DisplayName		= 8-Pack Case of Empty Whiskey Bottles,
+		Icon			= OS8pkWhiskeyEmpty,
+	}
+
+	item OS24pkWaterBottleEmpty
+	{
+		Weight			= 1.2,
+		Type			= Normal,
+		DisplayName		= 24-Pack of Empty Water Bottles,
+		Icon			= OS24pkWaterBottleEmpty,
+	}
+
+	item OS24pkWaterBottleFull
+	{
+		Weight			= 9.6,
+		Type			= Normal,
+		DisplayName		= 24-Pack of Full Water Bottles,
+		Icon			= OS24pkWaterBottleFull,
+	}
+
+	item OS4pkDuctTape
+	{
+		Weight			= .8,
+		Type			= Normal,
+		DisplayName		= 4-Pack of Duct Dape,
+		Icon			= OS4pkDuctTape,
+	}
+
+	/************************RECIPES**********************/
+
+	recipe Pack 6 Diet Pop Cans
+	{
+		Pop=6,
+
+		Result:OS6pkPopDiet,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Diet Pop Cans
+	{
+		OS6pkPopDiet,
+
+		Result:Pop=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Pop Cans
+	{
+		Pop2=6,
+
+		Result:OS6pkPop,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Pop Cans
+	{
+		OS6pkPop,
+
+		Result:Pop2=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Fizz Cans
+	{
+		Pop3=6,
+
+		Result:OS6pkFizz,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Fizz Cans
+	{
+		OS6pkFizz,
+
+		Result:Pop3=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Soups
+	{
+		TinnedSoup=6,
+
+		Result:OS6pkCannedSoup,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Soups
+	{
+		OS6pkCannedSoup,
+
+		Result:TinnedSoup=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Beans
+	{
+		TinnedBeans=6,
+
+		Result:OS6pkCannedBeans,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Beans
+	{
+		OS6pkCannedBeans,
+
+		Result:TinnedBeans=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 8 Canned Tuna
+	{
+		TunaTin=8,
+
+		Result:OS8pkCannedTuna,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 8 Canned Tuna
+	{
+		OS8pkCannedTuna,
+
+		Result:TunaTin=8,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 4 Instant Coffee Mix
+	{
+		OS4pkCoffee,
+
+		Result:Coffee=4,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 12 Empty Wine Bottles
+	{
+		WineEmpty=12,
+
+		Result:OS12pkWineEmpty,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 12 Empty Wine Bottles
+	{
+		OS12pkWineEmpty,
+
+		Result:WineEmpty=12,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 12 Empty Wine2 Bottles
+	{
+		WineEmpty2=12,
+
+		Result:OS12pkWineEmpty2,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 12 Empty Wine2 Bottles
+	{
+		OS12pkWineEmpty2,
+
+		Result:WineEmpty2=12,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 8 Empty Whiskey Bottles
+	{
+		WhiskeyEmpty=8,
+
+		Result:OS8pkWhiskeyEmpty,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 8 Empty Whiskey Bottles
+	{
+		OS8pkWhiskeyEmpty,
+
+		Result:WhiskeyEmpty=8,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 24 Empty Water Bottles
+	{
+		WaterBottleEmpty=24,
+
+		Result:OS24pkWaterBottleEmpty,
+		Time:240.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 24 Empty Water Bottles
+	{
+		OS24pkWaterBottleEmpty,
+
+		Result:WaterBottleEmpty=24,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 24 Full Water Bottles
+	{
+		OS24pkWaterBottleFull,
+
+		Result:WaterBottleFull=24,
+		Time:120.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Fill Pack of Empty Water Bottles
+	{
+		OS24pkWaterBottleEmpty,
+		Water=240,
+
+		Result:OS24pkWaterBottleFull,
+		Time:960.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 4 Rolls of Duct Tape
+	{
+		DuctTape=16,
+
+		Result:OS4pkDuctTape,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 4 Rolls of Duct Tape
+	{
+		OS4pkDuctTape,
+
+		Result:DuctTape=4,
+		Time:30.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Bolognese
+	{
+		CannedBolognese=6,
+
+		Result:OS6pkCannedBolognese,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Bolognese
+	{
+		OS6pkCannedBolognese,
+
+		Result:CannedBolognese=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Carrots
+	{
+		CannedCarrots2=6,
+
+		Result:OS6pkCannedCarrots,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Carrots
+	{
+		OS6pkCannedCarrots,
+
+		Result:CannedCarrots2=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Chili
+	{
+		CannedChili=6,
+
+		Result:OS6pkCannedChili,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Chili
+	{
+		OS6pkCannedChili,
+
+		Result:CannedChili=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Corn
+	{
+		CannedCorn=6,
+
+		Result:OS6pkCannedCorn,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Corn
+	{
+		OS6pkCannedCorn,
+
+		Result:CannedCorn=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Mushroom Soup
+	{
+		CannedMushroomSoup=6,
+
+		Result:OS6pkCannedMushSoup,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Mushroom Soup
+	{
+		OS6pkCannedMushSoup,
+
+		Result:CannedMushroomSoup=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Peas
+	{
+		CannedPeas=6,
+
+		Result:OS6pkCannedPeas,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Peas
+	{
+		OS6pkCannedPeas,
+
+		Result:CannedPeas=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Potato
+	{
+		CannedPotato2=6,
+
+		Result:OS6pkCannedPotato,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Potato
+	{
+		OS6pkCannedPotato,
+
+		Result:CannedPotato2=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Tomato
+	{
+		CannedTomato2=6,
+
+		Result:OS6pkCannedTomato,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Tomato
+	{
+		OS6pkCannedTomato,
+
+		Result:CannedTomato2=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 4 Canned Sardines
+	{
+		CannedSardines=4,
+
+		Result:OS4pkSardines,
+		Time:40.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 4 Sardines
+	{
+		OS4pkSardines,
+
+		Result:CannedSardines=4,
+		Time:40.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 6 Canned Corned Beef
+	{
+		CannedCornedBeef=6,
+
+		Result:OS6pkCannedCornedBeef,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Unpack 6 Canned Corned Beef
+	{
+		OS6pkCannedCornedBeef,
+
+		Result:CannedCornedBeef=6,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+}

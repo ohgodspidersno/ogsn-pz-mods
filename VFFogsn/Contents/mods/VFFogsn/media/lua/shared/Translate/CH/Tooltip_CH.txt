@@ -1,0 +1,14 @@
+Tooltip_CH = {
+Tooltip_CommonMallowDried = "食用可減輕感冒和流感症狀。藥效比新鮮時要小。 <br>沏茶以獲得更好的效果。",
+Tooltip_LemonGrassDried = "食用可減輕食物中毒症狀。藥效比新鮮時要小。 <br>沏茶以獲得更好的效果。",
+Tooltip_BlackSageDried = "提供輕微止痛效果。藥效比新鮮時要小。 <br>沏茶以獲得更好的效果。",
+Tooltip_GinsengDried = "食用可恢復耐力。藥效比新鮮時要小。 <br>沏茶以獲得更好的效果。",
+Tooltip_Tea_CommonMallow = "飲用可減輕感冒和流感症狀",
+Tooltip_Tea_LemonGrass = "飲用可減輕食物中毒症狀",
+Tooltip_Tea_BlackSage = "提供輕微止痛效果",
+Tooltip_Tea_Ginseng = "飲用可恢復耐力",
+Tooltip_Tea_Medicinal = "飲用可減輕感冒、流感和食物中毒症狀。 <br>同時提供止痛效果。",
+Tooltip_Tea_Energizing = "飲用它來抵抗疲勞和痛苦。",
+Tooltip_Teabag_Medicinal = "沏茶飲用以減輕感冒、流感和食物中毒症狀。 <br>同時提供止痛效果。",
+Tooltip_Teabag_Energizing = "沏茶飲用以抵抗疲勞和痛苦。",
+}

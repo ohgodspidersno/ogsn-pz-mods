@@ -1,0 +1,309 @@
+module RS
+{ 
+
+	recipe Assemble Plates
+	{
+		Plate=4,
+
+		Result:PileOfPlates,
+		OnGiveXP:NoXP_OnGiveXP,
+		Time:90.0,
+		Category:Cooking,
+	}
+
+	recipe Unassemble Plates
+	{
+		PileOfPlates,
+
+		Result:Plate=4,
+		OnGiveXP:NoXP_OnGiveXP,
+		Time:90.0,
+		Category:Cooking,
+	}
+
+	recipe Wash Dishes
+	{
+		keep DishCloth,
+		keep Sponge,
+		DirtyPlate,
+		DishWashingLiquid=1,
+		Water=2,
+
+		Result:Plate,
+		Time:250.0,
+		Category:Cooking,
+		OnGiveXP:NoXP_OnGiveXP,
+		Sound:RS_WashingDishes,
+	}
+
+	recipe Open Six Pack Beer
+	{
+		BeerSixPack1,
+
+		Result:Beer1=6,
+		OnGiveXP:NoXP_OnGiveXP,
+		Time:100.0,
+		Category:Cooking,
+	}
+
+	recipe Open Six Pack Beer
+	{
+		BeerSixPack2,
+
+		Result:Beer2=6,
+		OnGiveXP:NoXP_OnGiveXP,
+		Time:100.0,
+		Category:Cooking,
+	}
+
+	recipe Open Six Pack Beer
+	{
+		BeerSixPack3,
+
+		Result:Beer3=6,
+		OnGiveXP:NoXP_OnGiveXP,
+		Time:100.0,
+		Category:Cooking,
+	}
+
+	recipe Open MRE Box
+	{
+		keep Scissors/HuntingKnife/KitchenKnife/ButcherKnife/KnuckleKnife/PoliceKnife/CombatKnife/Machete,
+		MREBox,
+
+		Result:MediumMREPackage=10,
+		OnGiveXP:NoXP_OnGiveXP,
+		Time:250.0,
+		Category:Cooking,
+		Sound:RS_Openboxcrate1,
+	}
+
+	recipe Open MRE Box
+	{
+		keep Scissors/HuntingKnife/KitchenKnife/ButcherKnife/KnuckleKnife/PoliceKnife/CombatKnife/Machete,
+		MREBox2,
+
+		Result:MREPackage=10,
+		OnGiveXP:NoXP_OnGiveXP,
+		Time:250.0,
+		Category:Cooking,
+		Sound:RS_Openboxcrate1,
+	}
+
+	recipe Break Glass Panel
+	{
+
+		keep Hammer/Sledgehammer/AxeStone/SharpedStone/Stone,
+		GlassPanel,
+
+		Result:ShardsOfBrokenGlass=3,
+		OnGiveXP:NoXP_OnGiveXP,
+		Sound:RS_GlassSmash,
+		Time:60.0,
+		Category:Carpentry,
+	}
+
+	recipe Make Improvised Shard Of Broken Glass Weapon
+	{
+
+		ShardsOfBrokenGlass,
+		Base.RippedSheets=2,
+
+		Result:ImprovisedShardOfBrokenGlassWeapon,
+		OnGiveXP:NoXP_OnGiveXP,
+		Time:100.0,
+		Category:Carpentry,
+	}
+
+        recipe Make Aloe Poultice
+	{
+        	keep MortarPestle,
+        	Aloe=2,
+
+        	Result:AloeCataplasm,
+        	Time:90.0,
+        	Category:Health,
+	}
+
+	recipe Make Hot Milk Cuppa
+	{	
+		FullKettle=2,
+		MilkPowder=1,
+		destroy Mugl,
+		Sugar=1,
+
+
+		Result:HotMilkCuppa,
+		Time:200.0,
+		Heat:-0.22,
+		CanBeDoneFromFloor:true,
+		Category:Cooking,
+		Sound:RS_PrepareHotDrink,
+
+	}
+
+	recipe Make Hot Milk Cuppa
+	{	
+		FullKettle=2,
+		MilkPowder2=1,
+		destroy Mugl,
+		Sugar=1,
+
+
+		Result:HotMilkCuppa,
+		Time:200.0,
+		Heat:-0.22,
+		CanBeDoneFromFloor:true,
+		Category:Cooking,
+		Sound:RS_PrepareHotDrink,
+
+	}
+
+	recipe Make Hot Milk Cuppa
+	{	
+		FullKettle=2,
+		BabyFormula=1,
+		destroy Mugl,
+		Sugar=1,
+
+
+		Result:HotMilkCuppa,
+		Time:200.0,
+		Heat:-0.22,
+		CanBeDoneFromFloor:true,
+		Category:Cooking,
+		Sound:RS_PrepareHotDrink,
+
+	}
+
+	recipe Make Cold Milk Cuppa
+	{	
+		FullKettle=2,
+		MilkPowder=1,
+		destroy Mugl,
+		Sugar=1,
+
+
+		Result:ColdMilkCuppa,
+		Time:200.0,
+		Heat:-0.22,
+		CanBeDoneFromFloor:true,
+		Category:Cooking,
+		Sound:RS_PrepareHotDrink,
+
+	}
+
+	recipe Make Cold Milk Cuppa
+	{	
+		FullKettle=2,
+		MilkPowder2=1,
+		destroy Mugl,
+		Sugar=1,
+
+
+		Result:ColdMilkCuppa,
+		Time:200.0,
+		Heat:1,
+		CanBeDoneFromFloor:true,
+		Category:Cooking,
+		Sound:RS_PrepareHotDrink,
+
+	}
+
+	recipe Make Cold Milk Cuppa
+	{	
+		FullKettle=2,
+		BabyFormula=1,
+		destroy Mugl,
+		Sugar=1,
+
+
+		Result:ColdMilkCuppa,
+		Time:200.0,
+		Heat:1,
+		CanBeDoneFromFloor:true,
+		Category:Cooking,
+		Sound:RS_PrepareHotDrink,
+
+	}
+
+	recipe Make Hot Camomile Tea
+	{	
+		FullKettle=2,
+		destroy Camomile,
+		destroy Mugl,
+		Sugar=1,
+
+
+		Result:HotCamomileCuppa,
+		Time:200.0,
+		Heat:-0.22,
+		CanBeDoneFromFloor:true,
+		Category:Health,
+		Sound:RS_PrepareHotDrink,
+
+	}
+
+	recipe Make Hot Mint Tea
+	{	
+		FullKettle=2,
+		destroy Mint,
+		destroy Mugl,
+		Sugar=1,
+
+
+		Result:HotMintCuppa,
+		Time:200.0,
+		Heat:-0.22,
+		CanBeDoneFromFloor:true,
+		Category:Health,
+		Sound:RS_PrepareHotDrink,
+
+	}
+
+	recipe Make Hot Ginger Tea
+	{	
+		FullKettle=2,
+		destroy Ginger,
+		destroy Mugl,
+		Sugar=1,
+
+
+		Result:HotGingerCuppa,
+		Time:200.0,
+		Heat:-0.22,
+		CanBeDoneFromFloor:true,
+		Category:Health,
+		Sound:RS_PrepareHotDrink,
+
+	}
+
+	recipe Make Hot Lavender Tea
+	{	
+		FullKettle=2,
+		destroy Lavender,
+		destroy Mugl,
+		Sugar=1,
+
+
+		Result:HotLavenderCuppa,
+		Time:200.0,
+		Heat:-0.22,
+		CanBeDoneFromFloor:true,
+		Category:Health,
+		Sound:RS_PrepareHotDrink,
+
+	}
+
+	recipe Open Plastic Ice Bag
+	{
+		Plasticicebag,
+
+		Result:Icecubes=5,
+		OnGiveXP:NoXP_OnGiveXP,
+		Time:90.0,
+		Category:Cooking,
+		Sound:RS_OpenIceBag,
+	}
+
+}

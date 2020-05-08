@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>static\clothes\m_baseballcapreverse</m_MaleModel>
+	<m_FemaleModel>static\clothes\f_baseballcapreverse</m_FemaleModel>
+	<m_GUID>92ff40a4-6756-40fc-a453-fb7764df0e23</m_GUID>
+	<m_Static>true</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone>Bip01_Head</m_AttachBone>
+	<m_HatCategory>Group01</m_HatCategory>
+	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
+	<textureChoices>clothes\hat\baseballcapred</textureChoices>
+</clothingItem>

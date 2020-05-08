@@ -1,0 +1,4 @@
+Items_RU = {
+DisplayName_Lockpick = "Отмычка",
+DisplayName_Hairpin = "Шпилька",
+}

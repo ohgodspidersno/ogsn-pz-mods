@@ -1,0 +1,4 @@
+Recipes_CS = {
+  Recipe_Create_Hairpin = "Create Lockpick",
+  Recipe_Create_Lockpick = "Create Lockpick",
+}

@@ -899,7 +899,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     if not movedWindow and thumpableWindow:canClimbThrough(playerObj) then
       if test == true then return true; end
       local climboption = context:addOption(getText("ContextMenu_Climb_through"), worldobjects, ISWorldObjectContextMenu.onClimbThroughWindow, thumpableWindow, player);
-      if not JoypadState[player + 1] then
+      if not JoypadState.players[player + 1] then
         local tooltip = ISWorldObjectContextMenu.addToolTip()
         tooltip:setName(getText("ContextMenu_Info"))
         tooltip.description = getText("Tooltip_Climb", getKeyName(getCore():getKey("Interact")));
@@ -909,7 +909,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   elseif thump and thump:isHoppable() and thump:canClimbOver(playerObj) then
     if test == true then return true; end
     local climboption = context:addOption(getText("ContextMenu_Climb_over"), worldobjects, ISWorldObjectContextMenu.onClimbOverFence, thump, player);
-    if not JoypadState[player + 1] then
+    if not JoypadState.players[player + 1] then
       local tooltip = ISWorldObjectContextMenu.addToolTip()
       tooltip:setName(getText("ContextMenu_Info"))
       tooltip.description = getText("Tooltip_Climb", getKeyName(getCore():getKey("Interact")));
@@ -1034,7 +1034,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     if window:IsOpen() and not window:isSmashed() and not barricade then
       if test == true then return true; end
       local opencloseoption = context:addOption(getText("ContextMenu_Close_window"), worldobjects, ISWorldObjectContextMenu.onOpenCloseWindow, window, player);
-      if not JoypadState[player + 1] then
+      if not JoypadState.players[player + 1] then
         local tooltip = ISWorldObjectContextMenu.addToolTip()
         tooltip:setName(getText("ContextMenu_Info"))
         tooltip.description = getText("Tooltip_OpenClose", getKeyName(getCore():getKey("Interact")));
@@ -1046,7 +1046,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       if test == true then return true; end
       if not window:getSprite() or not window:getSprite():getProperties():Is("WindowLocked") then
         local opencloseoption = context:addOption(getText("ContextMenu_Open_window"), worldobjects, ISWorldObjectContextMenu.onOpenCloseWindow, window, player);
-        if not JoypadState[player + 1] then
+        if not JoypadState.players[player + 1] then
           local tooltip = ISWorldObjectContextMenu.addToolTip()
           tooltip:setName(getText("ContextMenu_Info"))
           tooltip.description = getText("Tooltip_OpenClose", getKeyName(getCore():getKey("Interact")));
@@ -1058,7 +1058,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     if window:canClimbThrough(playerObj) then
       if test == true then return true; end
       local climboption = context:addOption(getText("ContextMenu_Climb_through"), worldobjects, ISWorldObjectContextMenu.onClimbThroughWindow, window, player);
-      if not JoypadState[player + 1] then
+      if not JoypadState.players[player + 1] then
         local tooltip = ISWorldObjectContextMenu.addToolTip()
         tooltip:setName(getText("ContextMenu_Info"))
         tooltip.description = getText("Tooltip_Climb", getKeyName(getCore():getKey("Interact")));
@@ -1084,7 +1084,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     if not curtain:getSquare():getProperties():Is(IsoFlagType.exterior) then
       if not playerObj:getCurrentSquare():Is(IsoFlagType.exterior) then
         local option = context:addOption(text, worldobjects, ISWorldObjectContextMenu.onOpenCloseCurtain, curtain, player);
-        if not JoypadState[player + 1] then
+        if not JoypadState.players[player + 1] then
           local tooltip = ISWorldObjectContextMenu.addToolTip()
           tooltip:setName(getText("ContextMenu_Info"))
           tooltip.description = getText("Tooltip_OpenCloseCurtains", getKeyName(getCore():getKey("Interact")));
@@ -1119,7 +1119,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     if test == true then return true end
     if IsoWindowFrame.canClimbThrough(windowFrame, playerObj) then
       local climboption = context:addOption(getText("ContextMenu_Climb_through"), worldobjects, ISWorldObjectContextMenu.onClimbThroughWindow, windowFrame, player)
-      if not JoypadState[player + 1] then
+      if not JoypadState.players[player + 1] then
         local tooltip = ISWorldObjectContextMenu.addToolTip()
         tooltip:setName(getText("ContextMenu_Info"))
         tooltip.description = getText("Tooltip_Climb", getKeyName(getCore():getKey("Interact")))
@@ -1147,7 +1147,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     if not door:isBarricaded() then
       if test == true then return true; end
       local opendooroption = context:addOption(text, worldobjects, ISWorldObjectContextMenu.onOpenCloseDoor, door, player);
-      if not JoypadState[player + 1] then
+      if not JoypadState.players[player + 1] then
         local tooltip = ISWorldObjectContextMenu.addToolTip()
         tooltip:setName(getText("ContextMenu_Info"))
         tooltip.description = getText("Tooltip_OpenClose", getKeyName(getCore():getKey("Interact")));

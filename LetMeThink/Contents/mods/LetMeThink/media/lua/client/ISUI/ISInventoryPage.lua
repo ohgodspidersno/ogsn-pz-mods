@@ -61,13 +61,8 @@ function ISInventoryPage:createChildren()
   self:addChild(panel2);
 
   self.inventoryPane = panel2;
-  self.lootAll = ISButton:new(3 + closeBtnSize * 2 + 1, 0, 50, lootButtonHeight, getText("IGUI_invpage_Loot_all"), self, ISInventoryPage.lootAll);
-  self.lootAll:initialise();
-  self.lootAll.borderColor.a = 0.0;
-  self.lootAll.backgroundColor.a = 0.0;
-  self.lootAll.backgroundColorMouseOver.a = 0.7;
-  self:addChild(self.lootAll);
-  self.lootAll:setVisible(false);
+
+  -- FIXME: It is wrong to have both self.transferAll and ISInventoryPage.transferAll (button and function with the same name).
 
   local textWid = getTextManager():MeasureStringX(UIFont.Small, getText("IGUI_invpage_Transfer_all"))
   self.transferAll = ISButton:new(self.width - 3 - closeBtnSize - 90 - textWid, 0, textWid, lootButtonHeight, getText("IGUI_invpage_Transfer_all"), self, ISInventoryPage.transferAll);
@@ -78,13 +73,31 @@ function ISInventoryPage:createChildren()
   self:addChild(self.transferAll);
   self.transferAll:setVisible(false);
 
-  self.toggleStove = ISButton:new(self.lootAll:getRight() + 16, 0, 50, lootButtonHeight, getText("ContextMenu_Turn_On"), self, ISInventoryPage.toggleStove);
-  self.toggleStove:initialise();
-  self.toggleStove.borderColor.a = 0.0;
-  self.toggleStove.backgroundColor.a = 0.0;
-  self.toggleStove.backgroundColorMouseOver.a = 0.7;
-  self:addChild(self.toggleStove);
-  self.toggleStove:setVisible(false);
+  if not self.onCharacter then
+    self.lootAll = ISButton:new(3 + closeBtnSize * 2 + 1, 0, 50, lootButtonHeight, getText("IGUI_invpage_Loot_all"), self, ISInventoryPage.lootAll);
+    self.lootAll:initialise();
+    self.lootAll.borderColor.a = 0.0;
+    self.lootAll.backgroundColor.a = 0.0;
+    self.lootAll.backgroundColorMouseOver.a = 0.7;
+    self:addChild(self.lootAll);
+    self.lootAll:setVisible(false);
+
+    self.removeAll = ISButton:new(self.lootAll:getRight() + 16, 0, 50, lootButtonHeight, getText("IGUI_invpage_RemoveAll"), self, ISInventoryPage.removeAll);
+    self.removeAll:initialise();
+    self.removeAll.borderColor.a = 0.0;
+    self.removeAll.backgroundColor.a = 0.0;
+    self.removeAll.backgroundColorMouseOver.a = 0.7;
+    self:addChild(self.removeAll);
+    self.removeAll:setVisible(false);
+
+    self.toggleStove = ISButton:new(self.lootAll:getRight() + 16, 0, 50, lootButtonHeight, getText("ContextMenu_Turn_On"), self, ISInventoryPage.toggleStove);
+    self.toggleStove:initialise();
+    self.toggleStove.borderColor.a = 0.0;
+    self.toggleStove.backgroundColor.a = 0.0;
+    self.toggleStove.backgroundColorMouseOver.a = 0.7;
+    self:addChild(self.toggleStove);
+    self.toggleStove:setVisible(false);
+  end
 
   --	local filter = ISRadioOption:new(0, 15, 150, 150, "Filter", self, ISInventoryPage.onChangeFilter);
   --	filter:addOption("All");
@@ -235,6 +248,7 @@ function ISInventoryPage:toggleStove()
 end
 
 function ISInventoryPage:syncToggleStove()
+  if self.onCharacter then return end
   local isVisible = self.toggleStove:getIsVisible()
   local shouldBeVisible = false
   local stove = nil
@@ -311,6 +325,15 @@ function ISInventoryPage:setPinned()
   self.collapseButton:bringToTop();
 end
 
+function ISInventoryPage:isRemoveButtonVisible()
+  if self.onCharacter then return false end
+  if self.inventory:isEmpty() then return false end
+  local obj = self.inventory:getParent()
+  if not instanceof(obj, "IsoObject") then return false end
+  local sprite = obj:getSprite()
+  return sprite and sprite:getProperties() and sprite:getProperties():Is("IsTrashCan")
+end
+
 function ISInventoryPage:update()
 
   if self.coloredInv and (self.inventory ~= self.coloredInv or self.isCollapsed) then
@@ -343,6 +366,9 @@ function ISInventoryPage:update()
   end
 
   if not self.onCharacter then
+    -- add "remove all" button for trash can/bins
+    self.removeAll:setVisible(self:isRemoveButtonVisible())
+
     local playerObj = getSpecificPlayer(self.player)
     if self.lastDir ~= playerObj:getDir() then
       self.lastDir = playerObj:getDir()
@@ -438,10 +464,10 @@ function ISInventoryPage:prerender()
   --~ 		self.title = getSpecificPlayer(self.player):getDescriptor():getForename().." "..getSpecificPlayer(self.player):getDescriptor():getSurname().."'s Inventory";
   --~ 	end
 
-  if self.title and not self.lootAll:getIsVisible() then
+  if self.title and self.onCharacter then
     self:drawText(self.title, self.infoButton:getRight() + 1, 0, 1, 1, 1, 1);
   end
-  if self.title and self.lootAll:getIsVisible() then
+  if self.title and not self.onCharacter then
     self:drawText(self.title, self.lootAll:getRight() + 8, 0, 1, 1, 1, 1);
   end
 
@@ -578,8 +604,8 @@ function ISInventoryPage:onJoypadDown(button)
   end
 
   if button == Joypad.LBumper then
-    local inv = getPlayerInventory(self.player);
-    inv.backpackChoice = inv:nextUnlockedContainer(inv.backpackChoice, true);
+    local inv = self -- getPlayerInventory(self.player);
+    inv.backpackChoice = inv:prevUnlockedContainer(inv.backpackChoice, true);
 
     local but = inv.backpacks[inv.backpackChoice];
     if but == nil or inv.backpackChoice > #inv.backpacks then
@@ -593,7 +619,7 @@ function ISInventoryPage:onJoypadDown(button)
     inv:refreshBackpacks();
   end
   if button == Joypad.RBumper then
-    local inv = getPlayerLoot(self.player);
+    local inv = self -- getPlayerLoot(self.player);
     inv.backpackChoice = inv:nextUnlockedContainer(inv.backpackChoice, true);
 
     local but = inv.backpacks[inv.backpackChoice];
@@ -1498,9 +1524,8 @@ function ISInventoryPage.loadWeight(inv)
   end
 
   ISInventoryPage.onKeyPressed = function(key)
-
-    if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getPlayerInventory(0) then -- LetMeThink
-      -- if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getGameSpeed() > 0 and getPlayerInventory(0) then
+    if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getPlayerInventory(0) then -- LetMeThnk
+    -- if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getGameSpeed() > 0 and getPlayerInventory(0) then
       getPlayerInventory(0):setVisible(not getPlayerInventory(0):getIsVisible());
       getPlayerLoot(0):setVisible(getPlayerInventory(0):getIsVisible());
     end
@@ -1532,6 +1557,10 @@ function ISInventoryPage.loadWeight(inv)
 
   ISInventoryPage.ongamestart = function()
     ISInventoryPage.renderDirty = true;
+  end
+
+  function ISInventoryPage:removeAll()
+    self.inventoryPane:removeAll(self.player);
   end
 
   Events.OnKeyPressed.Add(ISInventoryPage.onKeyPressed);

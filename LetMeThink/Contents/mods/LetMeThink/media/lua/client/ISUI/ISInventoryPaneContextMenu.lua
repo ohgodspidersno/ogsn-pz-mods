@@ -344,6 +344,11 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     end
   end
 
+  if not inPlayerInv and playerObj:getJoypadBind() ~= -1 then
+    ISInventoryPaneContextMenu.doStoveMenu(context, player)
+    ISInventoryPaneContextMenu.doTrashCanMenu(context, player)
+  end
+
   -- equip a backpack when you have nothing equipped already
   if canBeEquippedBack and not unequip and not getSpecificPlayer(player):getClothingItem_Back() then
     context:addOption(getText("ContextMenu_Equip_on_your_Back"), items, ISInventoryPaneContextMenu.onWearItems, player);
@@ -694,6 +699,63 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   triggerEvent("OnFillInventoryObjectContextMenu", player, context, items);
 
   return context;
+end
+
+ISInventoryPaneContextMenu.createMenuNoItems = function(playerNum, isLoot, x, y)
+
+  if ISInventoryPaneContextMenu.dontCreateMenu then return end
+
+  if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return end
+
+  local playerObj = getSpecificPlayer(playerNum)
+
+  local loot = getPlayerLoot(playerNum)
+
+  local context = ISContextMenu.get(playerNum, x, y)
+
+  triggerEvent("OnPreFillInventoryContextMenuNoItems", playerNum, context, isLoot)
+
+  if isLoot and playerObj:getJoypadBind() ~= -1 then
+    ISInventoryPaneContextMenu.doStoveMenu(context, playerNum)
+    ISInventoryPaneContextMenu.doTrashCanMenu(context, playerNum)
+  end
+
+  triggerEvent("OnFillInventoryContextMenuNoItems", playerNum, context, isLoot)
+
+  if context.numOptions == 1 then
+    context:setVisible(false)
+    return nil
+  end
+
+  return context
+end
+
+function ISInventoryPaneContextMenu.doStoveMenu(context, playerNum)
+  local loot = getPlayerLoot(playerNum)
+
+  -- Microwave, Stove, ClothingWasher, ClothingDryer
+  if loot.toggleStove:isVisible() then
+    context:addOption(loot.toggleStove.title, loot, ISInventoryPage.toggleStove)
+  end
+
+  if loot.inventoryPane.inventory and getCore():getGameMode() ~= "LastStand" then
+    local stove = loot.inventoryPane.inventory:getParent()
+    if instanceof(stove, "IsoStove") and stove:getContainer() and stove:getContainer():isPowered() then
+      if stove:getContainer():getType() == "microwave" then
+        context:addOption(getText("ContextMenu_StoveSetting"), nil, ISWorldObjectContextMenu.onMicrowaveSetting, stove, playerNum)
+      elseif stove:getContainer():getType() == "stove" then
+        context:addOption(getText("ContextMenu_StoveSetting"), nil, ISWorldObjectContextMenu.onStoveSetting, stove, playerNum)
+      end
+    end
+  end
+end
+
+function ISInventoryPaneContextMenu.doTrashCanMenu(context, playerNum)
+  local loot = getPlayerLoot(playerNum)
+
+  if loot.removeAll:isVisible() then
+    context:addOption(loot.removeAll.title, loot, ISInventoryPage.removeAll)
+  end
 end
 
 function ISInventoryPaneContextMenu.doLiteratureMenu(context, items, player)
@@ -1268,7 +1330,11 @@ ISInventoryPaneContextMenu.checkConsolidate = function(drainable, player, contex
   end
 
   if #consolidateList > 0 then
-    local consolidateOption = context:addOption(getText("ContextMenu_Pour_into"), nil, nil)
+    local optionName = getText("ContextMenu_Pour_into");
+    if drainable:getConsolidateOption() then
+      optionName = getText(drainable:getConsolidateOption());
+    end
+    local consolidateOption = context:addOption(optionName, nil, nil)
     local subMenuConsolidate = context:getNew(context)
     context:addSubMenu(consolidateOption, subMenuConsolidate)
     for _, intoItem in pairs(consolidateList) do
@@ -1800,6 +1866,7 @@ ISInventoryPaneContextMenu.canUnpack = function(items, player)
   local playerObj = getSpecificPlayer(player)
   for i, item in ipairs(items) do
     if playerObj:getInventory():contains(item) then return false end
+    if not playerObj:getInventory():contains(item, true) then return false end
     --        if not item:getContainer():isInCharacterInventory(playerObj) then return false end
     --        if item:isFavorite() then return false; end
   end

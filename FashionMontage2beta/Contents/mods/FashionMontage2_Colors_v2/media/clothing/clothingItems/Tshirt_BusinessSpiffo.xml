@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel></m_MaleModel>
+	<m_FemaleModel></m_FemaleModel>
+	<m_GUID>33576d69-435a-4d88-be30-f9b7fda9a22d</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_DecalGroup>TShirtBusinessSpiffo</m_DecalGroup>
+	<m_BaseTextures>clothingtshirt</m_BaseTextures>
+</clothingItem>

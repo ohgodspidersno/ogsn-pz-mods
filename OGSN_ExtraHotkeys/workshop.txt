@@ -1,0 +1,5 @@
+version=1
+title=More Vanilla Hotkeys
+description=Adds a stomp button and a loot all button
+tags=
+visibility=public

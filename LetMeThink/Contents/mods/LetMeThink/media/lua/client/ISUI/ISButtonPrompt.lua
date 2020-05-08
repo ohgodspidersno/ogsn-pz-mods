@@ -73,7 +73,7 @@ function ISButtonPrompt:prerender()
   local shift = 16
   local textPadX = 11
 
-  local joypadID = (self.player and JoypadState[self.player + 1]) and JoypadState[self.player + 1].id or nil
+  local joypadID = (self.player and JoypadState.players[self.player + 1]) and JoypadState.players[self.player + 1].id or nil
 
   x = self.x1 + self.lmargin;
   if self.xPrompt ~= nil then
@@ -819,7 +819,7 @@ function ISButtonPrompt:getBestXButtonAction(dir)
   local vehicle = playerObj:getVehicle()
   if vehicle then
     if vehicle:isDriver(playerObj) then
-      self:setXPrompt(getText("IGUI_Controller_CruiseControl"), ISVehicleRegulator.onJoypadPressX, JoypadState[self.player + 1])
+      self:setXPrompt(getText("IGUI_Controller_CruiseControl"), ISVehicleRegulator.onJoypadPressX, JoypadState.players[self.player + 1])
     end
     return
   end

@@ -1,7 +1,7 @@
 require 'Items/SuburbsDistributions'
 require 'Items/ProceduralDistributions'
 
--------table.insert(SuburbsDistributions["burgerkitchen"]["fridge"].items, "FMJ.PotatoPancakes");
+table.insert(SuburbsDistributions["burgerkitchen"]["fridge"].items, "FMJ.PotatoPancakes");
 table.insert(SuburbsDistributions["burgerkitchen"]["fridge"].items, 4);
 table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "FMJ.PotatoPancakes");
 table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 4);

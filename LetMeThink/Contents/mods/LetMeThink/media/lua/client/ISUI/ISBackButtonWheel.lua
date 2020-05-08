@@ -59,7 +59,7 @@ function ISBackButtonWheel:addCommands()
     self:addSlice(getText("IGUI_BackButton_Zoom", getCore():getNextZoom(self.playerNum, 1) * 100), getTexture("media/ui/ZoomOut.png"), self.onCommand, self, "ZoomPlus")
   end
 
--- LetMeThink
+  -- LetMeThink
   if not playerObj:getVehicle() then
     self:addSlice(getText("IGUI_BackButton_Movable"), getTexture("media/ui/Furniture_Off2.png"), self.onCommand, self, "MoveFurniture")
   end

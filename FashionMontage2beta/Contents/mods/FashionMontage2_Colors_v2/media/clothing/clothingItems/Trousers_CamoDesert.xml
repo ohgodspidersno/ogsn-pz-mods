@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+		<!-- This is now colorful camo long shorts -->
+	<m_MaleModel>skinned\clothes\bob_longshorts</m_MaleModel>
+	<m_FemaleModel>skinned\clothes\kate_longshorts</m_FemaleModel>
+	<m_GUID>94c07af5-2e55-4a1d-9637-6b2326578e7f</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_Masks>2</m_Masks>
+	<textureChoices>clothes\shorts_textures\longshorts_camourban</textureChoices>
+</clothingItem>

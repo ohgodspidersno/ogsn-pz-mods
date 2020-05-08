@@ -1,0 +1,5 @@
+IGUI_RU = {
+IGUI_PlayerText_FlaggedBook1 = "Я буду искать это.",
+IGUI_PlayerText_FlaggedBook2 = "Я не забуду, что видел это.",
+IGUI_PlayerText_FlaggedBook3 = "Я запомнил это.",
+}

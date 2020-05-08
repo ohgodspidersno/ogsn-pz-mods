@@ -1,0 +1,468 @@
+module RS
+{ 		
+   imports {Base}
+
+
+    item DishWashingLiquid
+    {
+		Weight	=	0.3,
+		Type	=	Drainable,
+        	UseDelta	=	        0.1,
+		DisplayName	=	Dish Washing Liquid,
+		Icon	=	G01DishWashingLiquid,
+    }
+
+    item Plate
+    {
+		Weight	=	0.2,
+		Type	=	Normal,
+		DisplayName	=	Plate,
+		Icon	=	K01Plate,
+    }
+
+    item PileOfPlates
+    {
+		Weight	=	0.8,
+		Type	=	Normal,
+		DisplayName	=	Pile Of Plates,
+		Icon	=	K02PileOfPlates,
+    }
+
+    item Glass
+    {
+		Weight	=	0.1,
+		Type	=	Normal,
+		CanStoreWater	=	TRUE,
+		DisplayName	=	Crystal Glass,
+		Icon	=	K03Glass,
+		ReplaceOnUseOn	=	WaterSource-RS.WaterGlass,
+		RainFactor = 0.2,
+		Tooltip = Tooltip_item_RainFromGround,
+    }
+
+    item WaterGlass
+    {
+		IsWaterSource	=	TRUE,
+		Weight	=	0.6,
+		CanStoreWater	=	TRUE,
+		Type	=	Drainable,
+		UseDelta	=	1,
+		DisplayName	=	Glass Of Water,
+		ReplaceOnDeplete	=	RS.Glass,
+		UseWhileEquipped	=	FALSE,
+		ReplaceOnUseOn	=	WaterSource-RS.WaterGlass,
+		Icon	=	K03WaterGlass,
+		CustomContextMenu = Drink,
+		IsCookable	=	TRUE,
+		CustomEatSound		= PZ_DrinkingFromBottle,
+		RainFactor = 0.2,
+		Tooltip = Tooltip_item_RainFromGround,
+    }
+
+    item MargaritaGlass
+    {
+		Weight	=	0.1,
+		Type	=	Normal,
+		DisplayName	=	Margarita Glass,
+		Icon	=	K04MargaritaGlass,
+    }
+
+    item MartiniGlass
+    {
+		Weight	=	0.1,
+		Type	=	Normal,
+		DisplayName	=	Martini Glass,
+		Icon	=	K05MartiniGlass,
+    }
+
+    item WoodenSpoon
+    {
+	    Weight	=	0.1,
+	    Type	=	Normal,
+	    DisplayName	=	Wooden Spoon,
+	    Icon	=	K06WoodenSpoon,
+    }
+
+    item CocktailSpoon
+    {
+		MaxRange	=	0.9,
+		WeaponSprite	=	Knife,
+		MinAngle	=	0,
+		Type	=	Weapon,
+		MinimumSwingTime	=	2,
+		SwingAmountBeforeImpact	=	0.02,
+		Categories	=	Blade,
+		Weight	=	0.3,
+		ConditionLowerChanceOneIn	=	1,
+		PushBackMod	=	0.3,
+		MaxDamage	=	0.1,
+		SubCategory	=	Stab,
+		AimingMod	=	0.8,
+		ConditionMax	=	3,
+		MaxHitCount	=	1,
+		IsAimedHandWeapon	=	TRUE,
+		DoorDamage	=	1,
+		SwingAnim	=	Stab,
+		CriticalChance	=	10,
+		WeaponWeight	=	0.3,
+		DisplayName	=	Cocktail Spoon,
+		MinRange	=	0.2,
+		SwingTime	=	2,
+		MinDamage	=	0.1,
+		KnockdownMod	=	0,
+		Icon	=	K07CocktailSpoon,
+		TreeDamage  =   0,
+		EnduranceMod = 0.5,
+		MetalValue = 5,
+    }
+
+    item MetalBowl
+    {
+		Weight	=	0.4,
+		Type	=	Normal,
+		DisplayName	=	Metal Bowl,
+		Icon	=	K08MetalBowl,
+		CanStoreWater	=	TRUE,
+		ReplaceOnUseOn	=	WaterSource-RS.WaterMetalBowl,
+		RainFactor = 1,
+		Tooltip = Tooltip_item_RainFromGround,
+		MetalValue = 30,
+    }
+
+    item WaterMetalBowl
+    {
+		Weight	=	1.2,
+		Type	=	Drainable,
+		UseWhileEquipped	=	FALSE,
+		UseDelta	=	0.25,
+		DisplayName	=	Metal Bowl with Water,
+		Icon	=	K08WaterMetalBowl,
+		CanStoreWater	=	TRUE,
+		IsWaterSource	=	TRUE,
+		ReplaceOnDeplete	=	RS.MetalBowl,
+		ReplaceOnUseOn	=	WaterSource-RS.WaterMetalBowl,
+		RainFactor = 0.5,
+		Tooltip = Tooltip_item_RainFromGround,
+		MetalValue = 30,
+    }
+
+    item Stir
+    {
+		Weight	=	0.1,
+		Type	=	Normal,
+		DisplayName	=	Stir,
+		Icon	=	K09Stir,
+		MetalValue = 20,
+    }
+
+    item Shaker
+    {
+		Weight	=	0.2,
+		Type	=	Normal,
+		DisplayName	=	Shaker,
+		Icon	=	K10Shaker,
+		MetalValue = 80,
+    }
+
+    item BakingMold
+    {
+		Weight	=	0.2,
+		Type	=	Normal,
+		DisplayName	=	Baking Mold,
+		Icon	=	K11BakingMold,
+		MetalValue = 60,
+    }
+
+    item CookieMold
+    {
+		Weight	=	0.1,
+		Type	=	Normal,
+		DisplayName	=	Cookie Mold,
+		Icon	=	K12CookieMold,
+		MetalValue = 5,
+    }
+
+    item Grater
+    {
+		Weight	=	0.2,
+		Type	=	Normal,
+		DisplayName	=	Grater,
+		Icon	=	K13Grater,
+		MetalValue = 65,
+    }
+
+
+    item Wok
+    {
+		MaxRange	=	1.5,
+		WeaponSprite	=	FryingPan,
+		MinAngle	=	0.2,
+		Type	=	Weapon,
+		MinimumSwingTime	=	3,
+		KnockBackOnNoDeath	=	TRUE,
+		SwingAmountBeforeImpact	=	0.02,
+		Categories	=	Improvised;Blunt,
+		ConditionLowerChanceOneIn	=	20,
+		Weight	=	2,
+		SplatNumber	=	1,
+		PushBackMod	=	0.5,
+		MinDamage	=	0.5,
+		MaxDamage	=	1.2,
+		SubCategory	=	Swinging,
+		ConditionMax	=	15,
+		MaxHitCount	=	2,
+		DoorDamage	=	5,
+		SwingAnim	=	Bat,
+		WeaponWeight	=	2,
+		DisplayName	=	Wok,
+		MinRange	=	0.61,
+		SwingTime	=	3,
+		KnockdownMod	=	1.3,
+		SplatBloodOnNoDeath	=	FALSE,
+		Icon	=	K14Wok,
+		RunAnim	=	Run_Weapon2,
+        IdleAnim	=	Idle_Weapon2,
+        TreeDamage  =   0,
+        EnduranceMod = 1.3,
+        MetalValue = 40,
+    }
+
+    item DirtyPlate
+    {
+		Weight	=	0.2,
+		Type	=	Normal,
+		DisplayName	=	Dirty Plate,
+		Icon	=	K15DirtyDish,
+    }
+
+    item SmallGlassBottle
+    {
+		Weight	=	0.8,
+		Type	=	Normal,
+		DisplayName	=	Small Glass Bottle,
+		Icon	=	K16ASmallGlassBottle,
+    }
+
+    item GlassPanel
+    {
+		Weight	=	2,
+		Type	=	Normal,
+		DisplayName	=	Glass Panel,
+		Icon	=	K17GlassPanel,
+    }
+
+    item ShardsOfBrokenGlass
+    {
+		Weight	=	0.9,
+		Type	=	Normal,
+		DisplayName	=	Shards Of Broken Glass,
+		Icon	=	K18ShardsOfBrokenGlass,
+    }
+
+    item ButcherKnife
+    {
+		MaxRange	=	0.9,
+		WeaponSprite	=	Knife,
+		MinAngle	=	0,
+		Type	=	Weapon,
+		MinimumSwingTime	=	1.5,
+		KnockBackOnNoDeath	=	FALSE,
+		SwingAmountBeforeImpact	=	0.02,
+		Categories	=	Blade,
+		ConditionLowerChanceOneIn	=	20,
+		Weight	=	0.3,
+		SplatNumber	=	0,
+		PushBackMod	=	0.5,
+		MaxDamage	=	1,
+		SubCategory	=	Stab,
+		AimingMod	=	0.8,
+		ConditionMax	=	10,
+		MaxHitCount	=	2,
+		IsAimedHandWeapon	=	TRUE,
+		DoorDamage	=	5,
+		SwingAnim	=	Stab,
+		WeaponWeight	=	2,
+		DisplayName	=	Butcher Knife,
+		MinRange	=	0.61,
+		CloseKillMove = Jaw_Stab,
+		SwingTime	=	2,
+		MinDamage	=	0.6,
+		KnockdownMod	=	0.5,
+		SplatBloodOnNoDeath	=	TRUE,
+		Icon	=	K19ButcherKnife,
+		CriticalChance = 10,
+		RunAnim	=	Run_Weapon2,
+        IdleAnim	=	Idle_Weapon2,
+        BreakSound  =   PZ_MetalSnap,
+        TreeDamage  =   5,
+        EnduranceMod = 0.8,
+        MetalValue = 15,
+
+    }
+
+    item EmptySmallTuperware
+    {
+		Weight	=	0.5,
+		Type	=	Normal,
+		DisplayName	=	Emtpy Small Tupperware,
+		Icon	=	K20SmallTupperwareEmpty,
+    }
+
+    item EmptyMediumTuperware
+    {
+		Weight	=	0.5,
+		Type	=	Normal,
+		DisplayName	=	Emtpy Medium Tupperware,
+		Icon	=	K22MediumTupperwareEmpty,
+    }
+
+    item GardeningScissors
+	{
+		MaxRange	=	1.0,
+		WeaponSprite	=	Knife,
+		MinAngle	=	0,
+		Type	=	Weapon,
+		MinimumSwingTime	=	2,
+		SwingAmountBeforeImpact	=	0.02,
+		Categories	=	Blade,
+		Weight	=	1,
+		ConditionLowerChanceOneIn	=	1,
+		PushBackMod	=	0.3,
+		MaxDamage	=	0.3,
+		SubCategory	=	Stab,
+		AimingMod	=	0.8,
+		ConditionMax	=	10,
+		MaxHitCount	=	1,
+		IsAimedHandWeapon	=	TRUE,
+		DoorDamage	=	1,
+		SwingAnim	=	Stab,
+		CriticalChance	=	5,
+		WeaponWeight	=	0.4,
+		DisplayName	=	Gardening Scissors,
+		MinRange	=	0.61,
+		SwingTime	=	2,
+		MinDamage	=	0.2,
+		KnockdownMod	=	0,
+		Icon	=	K24GardeningScissors,
+		TreeDamage  =   15,
+		EnduranceMod = 0.5,
+		MetalValue = 90,
+	}
+
+    item Squeezer
+    {
+		Weight	=	0.1,
+		Type	=	Normal,
+		DisplayName	=	Squeezer,
+		Icon	=	K25Squeezer,
+		MetalValue = 5,
+    }
+
+    item RockGlass
+    {
+		Weight	=	0.1,
+		Type	=	Normal,
+		CanStoreWater	=	TRUE,
+		DisplayName	=	Rock Glass,
+		Icon	=	K26RockGlass,
+		ReplaceOnUseOn	=	WaterSource-RS.WaterRockGlass,
+		RainFactor = 0.5,
+		Tooltip = Tooltip_item_RainFromGround,
+    }
+
+    item WaterRockGlass
+    {
+		IsWaterSource	=	TRUE,
+		Weight	=	0.5,
+		CanStoreWater	=	TRUE,
+		Type	=	Drainable,
+		UseDelta	=	1,
+		DisplayName	=	Glass Of Water,
+		ReplaceOnDeplete	=	RS.RockGlass,
+		UseWhileEquipped	=	FALSE,
+		ReplaceOnUseOn	=	WaterSource-RS.WaterRockGlass,
+		Icon	=	K26WaterRockGlass,
+		CustomContextMenu = Drink,
+		IsCookable	=	TRUE,
+		CustomEatSound		= PZ_DrinkingFromBottle,
+		RainFactor = 0.5,
+		Tooltip = Tooltip_item_RainFromGround,
+    }
+
+
+    item BarSqueezer
+    {
+		Weight	=	0.2,
+		Type	=	Normal,
+		DisplayName	=	Bar Squeezer,
+		Icon	=	K27BarSqueezer,
+		MetalValue = 25,
+    }
+
+    item ShotGlass
+    {
+		Weight	=	0.1,
+		Type	=	Normal,
+		CanStoreWater	=	TRUE,
+		DisplayName	=	Shot Glass,
+		Icon	=	K28ShotGlass,
+		ReplaceOnUseOn	=	WaterSource-RS.WaterShotGlass,
+		RainFactor = 1,
+		Tooltip = Tooltip_item_RainFromGround,
+    }
+
+    item WaterShotGlass
+    {
+		IsWaterSource	=	TRUE,
+		Weight	=	0.2,
+		CanStoreWater	=	TRUE,
+		Type	=	Drainable,
+		UseDelta	=	1,
+		DisplayName	=	Shot Of Water,
+		ReplaceOnDeplete	=	RS.ShotGlass,
+		UseWhileEquipped	=	FALSE,
+		ReplaceOnUseOn	=	WaterSource-RS.WaterShotGlass,
+		Icon	=	K28WaterShotGlass,
+		CustomContextMenu = Drink,
+		IsCookable	=	TRUE,
+		CustomEatSound		= PZ_DrinkingFromBottle,
+		RainFactor = 1,
+		Tooltip = Tooltip_item_RainFromGround,
+    }
+
+    item Strainer
+    {
+		Weight	=	0.2,
+		Type	=	Normal,
+		DisplayName	=	Strainer,
+		Icon	=	K29Strainer,
+		MetalValue = 20,
+    }
+
+    item ChoppingBoard
+    {
+		Weight	=	0.5,
+		Type	=	Normal,
+		DisplayName	=	Chopping Board,
+		Icon	=	K30ChoppingBoard,
+    }
+
+    item FryingBasket
+    {
+		Weight	=	0.1,
+		Type	=	Normal,
+		DisplayName	=	Frying Basket,
+		Icon	=	K31FryingBasket,
+		MetalValue = 15,
+    }
+
+    item PizzaTray
+    {
+		Weight	=	0.1,
+		Type	=	Normal,
+		DisplayName	=	Pizza Tray,
+		Icon	=	K32PizzaTray,
+		MetalValue = 15,
+    }
+
+}

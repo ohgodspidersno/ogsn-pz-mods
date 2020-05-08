@@ -1,0 +1,5 @@
+Stash_RU = {
+Stash_AnnotedMap = " с Пометками",
+Stash_AnnotatedMap_Prefix = " Карта"
+Stash_AnnotedMap_Suffix = "- Помеченная"
+}

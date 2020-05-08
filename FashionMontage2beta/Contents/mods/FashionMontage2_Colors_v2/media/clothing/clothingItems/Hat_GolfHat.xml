@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>static\clothes\m_golfhat</m_MaleModel>
+	<m_FemaleModel>static\clothes\f_golfhat</m_FemaleModel>
+	<m_GUID>c701576a-75d7-440e-bd74-61f86a605de1</m_GUID>
+	<m_Static>true</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone>Bip01_Head</m_AttachBone>
+	<m_HatCategory>default</m_HatCategory>
+	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
+	<textureChoices>golfhat_tartan</textureChoices>
+	<textureChoices>golfhat_tartanwhite</textureChoices>
+	<textureChoices>golfhat_tartan02</textureChoices>
+	<textureChoices>golfhat_tartan03</textureChoices>
+</clothingItem>

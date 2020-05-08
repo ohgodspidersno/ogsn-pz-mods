@@ -1,9 +1,6 @@
 version=1
 id=2071347174
 title=An Exhilaratingly Organized Literature Mod
-description=[h1]Update[/h1]
-description=Splits the "Flag as Owned" mechanic into its own submod, mainly to more clearly indicate that this feature exists.
-description=
 description=[h1]For a truly superlative book sorting experience[/h1]
 description=Some features only available in English for now, looking for translators to help.
 description=

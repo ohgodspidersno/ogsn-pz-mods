@@ -1,0 +1,176 @@
+--- TOTALLY WASTED ---
+  Apron_TacoDelPancho
+  	<m_GUID>693e7c35-9616-4326-9ddd-5331404f8ba3</m_GUID>
+    zed type is never used (Waiter_TachoDelPancho)
+
+  Glasses  825f5380-d6ef-4cf8-8d77-d3a115724f4a
+    This is identical to ski goggles orange option (03007a08-7e7f-4a5d-93a7-e2d8d5a46c53)
+    Solution: make one a light and the other a dark version
+
+  Tattoos:
+    ec2b8d6a-323b-4264-abe6-7499fa1cf01e
+    c256dda6-a3a1-4806-9410-a8e9569c9a37
+
+  Test_Weapon - not anywhere in the code
+    cbdb4e53-695e-42ff-b602-e5d19bb4d630
+
+  Leg Warmers Don't Appear Anywhere
+    <m_GUID>aaf3194d-6e6f-454f-a690-cbca734165bc</m_GUID>
+
+  Do we need grey AND blue police stuff?
+    blue shirt: <m_GUID>c87c06e9-15c3-4667-807f-7bec508f1405</m_GUID>
+    grey shirt: <m_GUID>6e3a5fbf-5473-4a8b-92d1-a10a48a52fef</m_GUID>
+
+  Male Undies don't appear anywhere
+    1f8e2ebe-0525-4504-a307-fdd4e3ee2c78
+
+  This duffelbag set (back/LHand/RHand) are static colors even though a tinted version exists:
+    <m_GUID>b02d3217-b692-4035-8a61-8c4305998464</m_GUID>
+    <m_GUID>2f9833c0-8b1d-48f9-a30f-e66b99132cde</m_GUID>
+    <m_GUID>d90ed5ae-6867-485b-b49f-88801bea0bc9</m_GUID>
+
+  Fedora: both of them are normal colors.
+    Normal:   <m_GUID>93c9d8b6-3382-4a16-a248-609a702d57b5</m_GUID>
+    Delmonte: <m_GUID>6b4e91cf-0de7-41d8-b144-95a975e31669</m_GUID>
+    Make one a choice of delmonte/normal/indie, and the other one crazy
+
+  hardhatminer is identical to normal hardhat and never appears anywhere
+    <m_GUID>0899bf9d-f42c-45fe-919e-9dd6c73f8fed</m_GUID>
+
+
+  Medical blue/green split:
+    green cap:  <m_GUID>c617853e-dd00-443e-952a-7b910150c410</m_GUID>
+    blue cap:   <m_GUID>9f6264ee-36ea-4064-86b4-f4ce102ba5d6</m_GUID>
+
+    green mask: <m_GUID>b73fbbc8-f390-4b5a-ad4f-b24239c185e1</m_GUID>
+    blue mask:  <m_GUID>6ef9ba72-73e6-4373-8d29-6beddf2274a5</m_GUID>
+
+  Static Visors:
+    3d9930a6-2732-4d19-8701-17a94ed575a2 (red)
+    d2496708-62e1-4ffc-8682-0a2af7d0db9b (black)
+
+  jacket_navyblue:
+    0ab6a4b8-4dcf-4ee0-9e5a-c6304652568a
+
+  two ponchos, only need one colorful one
+    Green UP: 502bfde1-2263-4368-aded-6889e964bbeb
+    Green DOWN: 2cfe07c1-329a-479a-9974-c73742e13be1
+
+    Yellow UP: 67089f74-7ba1-467e-b325-d5245e35cf08
+    Yellow DOWN: d788ff7a-361a-4830-a911-a838f53c7efe
+
+  Striped Scarves: Definitely do not need three of these.
+    could have one white w/ many color textures, and another with dark and palette choice, and then a third free GUID
+    <m_GUID>2ad4e7f8-06a3-4681-a44a-9f566433986c</m_GUID>
+  	<m_GUID>1f5ca3c2-49b1-4a98-aec3-6e542ad09f3e</m_GUID>
+  	<m_GUID>de34608d-c152-4944-8f42-ea4ea6f067b2</m_GUID>
+
+  Jockeys:
+    One jockey uniform with six choices. Give all zeds a plain black helmet so they don't look mismatched.
+    This frees up 10 GUIDs (5S from the shirts, 5 from the helmets)
+    Shirts:
+      Shirt_Jockey01 <m_GUID>65e37ef2-a58e-4c76-b4aa-272ad4546677</m_GUID>
+      Shirt_Jockey02 <m_GUID>5b1bd1bf-d8a3-498f-bd72-4240420fd9c2</m_GUID>
+      Shirt_Jockey03 <m_GUID>1ea53e74-d1c3-4d51-9197-97fa64857fe1</m_GUID>
+      Shirt_Jockey04 <m_GUID>e455a4a5-15c7-4a32-99a1-3f08950a549a</m_GUID>
+      Shirt_Jockey05 <m_GUID>84d47569-4a26-465d-8e9a-8418deb33f0b</m_GUID>
+      Shirt_Jockey06 <m_GUID>b6373a7a-7404-4127-9da4-d603dd094236</m_GUID>
+    Helmets
+      Hat_JockeyHelmet01	<m_GUID>e27317be-c4eb-4329-9e1a-8c22c2c4f812</m_GUID>
+      Hat_JockeyHelmet02	<m_GUID>48d4f5b3-30f8-4219-b8c6-07b2065042d8</m_GUID>
+      Hat_JockeyHelmet03	<m_GUID>b7502ccb-7893-4c77-bcfd-43e88fae6654</m_GUID>
+      Hat_JockeyHelmet04	<m_GUID>9a84caf4-28e6-4c7c-8593-49cad0fc0ad1</m_GUID>
+      Hat_JockeyHelmet05	<m_GUID>7c646f18-9c75-4348-a5cf-666585b85a04</m_GUID>
+      Hat_JockeyHelmet06	<m_GUID>082b9eff-96d2-4928-88e8-414d34ced2bb</m_GUID>
+
+  SwimTrunks:
+    Either have one item that has many colors as choices, or just have a tinted version
+    blue: <m_GUID>eb4fee3c-106c-48cc-8e10-c236fc2fa72e</m_GUID>
+    green: <m_GUID>01e4a480-9178-46aa-ad16-001580971665</m_GUID>
+    red: <m_GUID>e525cc52-cf30-45df-adc7-19706c019673</m_GUID>
+    yellow: <m_GUID>2587e4f8-1e7f-4793-ad11-dd4b96ea7359</m_GUID>
+
+
+  Sports Shorts:
+    an exclusive red version is still sitting there:
+    Shorts_LongSport_Red: <m_GUID>5327466b-ef38-4e7b-a7c9-a8b6b1257087</m_GUID>
+
+  Profession Shirts
+    Each profession gets:
+      1. one that has all the 'real' ones under it. The zeds get this one.
+      2. one light decal with palette
+      3. one dark decal with palette
+      (12 GUIDS, 10 currently so need two more)
+
+  Specific Color Trainers:
+    Shoes_RedTrainers b6bb377a-6b18-407a-8e9f-edf949fb1fe1
+    Shoes_BlueTrainers 95047b8a-0248-46ad-af29-cde76530915b
+
+  Specific Color Random Shoes:
+    Shoes_Black 593bea3d-c127-4574-ac1e-2197dc56e486
+    Shoes_Brown c0a3a194-2ee9-4ce5-9d7a-aa1d5e031cea
+        both should be Shoes_Random aka 7741404b-9689-4608-a0f5-4e06597776f9
+
+  Specific Colored Baseball Caps:
+      GOOD:
+        Hat_BaseballCap 	<m_GUID>7b339ad5-da2e-42a5-8a51-ee87239a943c</m_GUID>
+        Hat_BaseballCap_Reverse 	<m_GUID>d90d4976-d993-4fae-ad78-f5a4fcf05366</m_GUID>
+        Hat_BaseballCapKY	<m_GUID>b78f9552-1d93-46b7-a42c-6f554ce43e29</m_GUID>
+        Hat_BaseballCapKY_Reverse	<m_GUID>7f5d4c0c-d536-4279-9495-68216def74c2</m_GUID>
+
+      BAD:
+        Hat_BaseballCapBlue	<m_GUID>3db63ccb-9014-45c2-bb9c-287ca24e335b</m_GUID>
+        Hat_BaseballCapBlue_Reverse	<m_GUID>17b078c1-dc3e-4b8f-a3e1-191c9d4efaa8</m_GUID>
+        Hat_BaseballCapGreen	<m_GUID>fce4e0fd-047d-483a-ad43-873e4440c3aa</m_GUID>
+        Hat_BaseballCapGreen_Reverse	<m_GUID>f1766ddb-1fdc-4a4c-b26b-5a5aacb209a2</m_GUID>
+        Hat_BaseballCapRed	<m_GUID>3dff8ffe-20d7-4b9b-80b4-9cfb550c67b6</m_GUID>
+        Hat_BaseballCapRed_Reverse	<m_GUID>92ff40a4-6756-40fc-a453-fb7764df0e23</m_GUID>
+
+      AWFUL (no reverse pair)
+        Hat_BaseballCapKY_Red <m_GUID>ee133478-bfc7-4517-af9b-c9da2148d9fd</m_GUID>
+
+
+--- WOULD NOT BE MISSED ---
+  These special bags are pretty rare and wouldn't be missed
+    Golfbag <m_GUID>7fef68a1-2a79-4a80-978d-14e845fecc38</m_GUID>
+    Bag_WorkerBag 274f23a7-b388-4e0e-a17c-9c9b61b8f68f
+    Bag_MoneyBag cecf13a1-1f18-481d-9458-b37009a2bb82
+
+  Might not need to have both a normal and a camo bonnie hat
+    BonnieHat <m_GUID>061cfa05-c6e2-4dcd-8737-ab7af41e0750</m_GUID>
+    BonnieHat_CamoGren <m_GUID>7a946b38-8764-419f-a3fc-fd9c4c03cc23</m_GUID>
+
+  Camo Stuff:
+    jacket_camodesert <m_GUID>eb8d1f35-8d0b-4c9c-a308-aba2aa040f90</m_GUID>
+    jacket_camogreen  <m_GUID>b0d642f6-eb11-456c-aeb0-1b190b29a364</m_GUID>
+
+    shirt_camodesert  <m_GUID>a9957692-c412-4270-83b9-f29692f6a881</m_GUID>
+    shirt_camourban <m_GUID>dd34e357-8851-4fe6-9ee3-61d4ce953e66</m_GUID>
+    shirt_camogreen <m_GUID>48efaf62-6a65-474a-8773-886e05ea7632</m_GUID>
+
+    longshorts_camo (green and urban) <m_GUID>c003fd5d-5872-42a0-bd12-8612d166441e</m_GUID>
+
+    trousersmesh_camodesert <m_GUID>94c07af5-2e55-4a1d-9637-6b2326578e7f</m_GUID>
+    trousersmesh_camogreen <m_GUID>d325b65d-497d-4c77-8919-74a65172cb94</m_GUID>
+    trousersmesh_camourban <m_GUID>2424958a-64aa-4494-aeba-ad05a08d5917</m_GUID>
+
+    tshirt_camodesert <m_GUID>4200bb51-b2b7-4379-93fa-3036534c4295</m_GUID>
+    tshirt_camogreen <m_GUID>cbe793fe-97d9-4585-88e0-bc18be39d714</m_GUID>
+    tshirt_camourban <m_GUID>1095daca-6a73-4c65-a4f2-e728ba714175</m_GUID>
+
+  Baseball Stuff
+    shirt_baseball_ky <m_GUID>47dff0a4-907c-4586-84fa-e0f6059adc07</m_GUID>
+    shirt_baseball_rangers  <m_GUID>041a3ab6-6dea-4c1c-b3d4-3cf50ba68565</m_GUID>
+    shirt_baseball_z <m_GUID>99b1a7cb-f0b1-4f36-98c3-6c97b4e0ea9a</m_GUID>
+
+    Hat_BaseballHelmet_KY <m_GUID>ec8fe383-948b-4c65-9dc6-d3af46b17aea</m_GUID>
+    Hat_BaseballHelmet_Rangers  <m_GUID>1e62c95a-def1-4e6a-b632-07f9d2a943fc</m_GUID>
+    Hat_BaseballHelmet_Z <m_GUID>ef1a56bf-f5ce-4568-bcaa-4aaaef093bb9</m_GUID>
+
+
+--- GENERAL IDEAS ---
+Leather Gloves: Turn one of the LeatherGloves*.xml into a colorful one
+Camo Everything: Make one of them green/desert/urban and another crazy. If there is a third, steal its GUID
+Varsity Jacket: Make two items, inverts of each other. One will need a fresh GUID
+Long Leather Coat: All three share one GUID right no so we need a fresh GUID
+Summer Hat: Striped would either need its own item, or maybe a 50/50 decal?

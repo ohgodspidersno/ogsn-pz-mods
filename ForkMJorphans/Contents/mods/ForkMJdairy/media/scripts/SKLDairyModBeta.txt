@@ -1,0 +1,548 @@
+module Base
+{
+
+/*========== NEW ITEMS ========================================================================*/
+
+item DairyCookingMag
+{
+	Type                = Literature,
+	DisplayName         = Good Cooking Magazine,
+	Icon                = DairyMag,
+	Weight              = 0.1,
+	TeachedRecipes      = Make Butter;Prepare Cheese;Prepare Yogurt,
+	ReplaceOnUse        = DairyCookingMag,
+}
+
+item Strainer
+{
+	Type                = Normal,
+	DisplayName         = Strainer,
+	Icon                = Strainer,
+	Weight              = 0.5,	
+	MetalValue          = 15,
+}
+
+item PowderedMilk
+{
+	Type                = Drainable,
+	UseDelta            = 0.2,
+	UseWhileEquipped    = FALSE,
+	DisplayName         = Powdered Milk,
+	Icon                = PowderedMilk,
+	Weight              = 0.8,
+}
+
+item MilkJar
+{
+	Type                = Food,
+	DisplayName         = Jar of Milk,
+	Icon                = MilkJar,
+	ReplaceOnUse        = EmptyJar,
+	Weight              = 1.0,
+
+	DaysFresh           = 4,
+	DaysTotallyRotten   = 7,
+	
+	HungerChange        = -20,
+	ThirstChange        = -100,
+
+	Calories            = 320,
+	Carbohydrates       = 22,
+	Proteins            = 14,
+	Lipids              = 18,
+	
+	Packaged            = TRUE,
+	CantBeFrozen        = TRUE,
+	
+	CustomContextMenu   = Drink,
+	CustomEatSound      = PZ_DrinkingFromBottle,
+	
+	EvolvedRecipe       = HotDrink:2,
+	FoodType            = NoExplicit,
+}
+
+item MilkWaterBottle
+{
+	Type                = Food,
+	DisplayName         = Bottle of Milk,
+	Icon                = MilkWaterBottle,
+	ReplaceOnUse        = WaterBottleEmpty,
+	Weight              = 0.8,
+
+	DaysFresh           = 4,
+	DaysTotallyRotten   = 7,
+	
+	HungerChange        = -20,
+	ThirstChange        = -100,
+
+	Calories            = 320,
+	Carbohydrates       = 22,
+	Proteins            = 14,
+	Lipids              = 18,
+	
+	Packaged            = TRUE,
+	CantBeFrozen        = TRUE,
+	
+	CustomContextMenu   = Drink,
+	CustomEatSound      = PZ_DrinkingFromBottle,
+	
+	EvolvedRecipe       = HotDrink:2,
+	FoodType            = NoExplicit,
+}
+
+item MilkPopBottle
+{
+	Type                = Food,
+	DisplayName         = Bottle of Milk,
+	Icon                = MilkPopBottle,
+	ReplaceOnUse        = PopBottleEmpty,
+	Weight              = 0.8,
+
+	DaysFresh           = 4,
+	DaysTotallyRotten   = 7,
+	
+	HungerChange        = -20,
+	ThirstChange        = -100,
+
+	Calories            = 320,
+	Carbohydrates       = 22,
+	Proteins            = 14,
+	Lipids              = 18,
+	
+	Packaged            = TRUE,
+	CantBeFrozen        = TRUE,
+	
+	CustomContextMenu   = Drink,
+	CustomEatSound      = PZ_DrinkingFromBottle,
+	
+	EvolvedRecipe       = HotDrink:2,
+	FoodType            = NoExplicit,
+}
+
+item CheesePrep
+{
+	Type                = Food,
+	DisplayName         = Cheese Preparation,
+	Icon                = DairyPan,
+	ReplaceOnUse        = Saucepan,
+	Weight              = 1.0,
+	
+	DaysFresh           = 2,
+	DaysTotallyRotten   = 4,
+	
+	UnhappyChange       = 20,
+	HungerChange        = -20,
+	
+	Calories            = 320,
+	Carbohydrates       = 22,
+	Proteins            = 14,
+	Lipids              = 18,
+	
+	IsCookable          = TRUE,
+	DangerousUncooked   = TRUE,
+}
+
+item YogurtCulture
+{
+	Type                = Drainable,
+	DisplayName         = Yogurt Culture,
+	Icon                = YogurtCulture,
+	Weight              = 0.1,	
+	UseDelta            = 0.2,
+	UseWhileEquipped    = FALSE,
+}
+
+item YogurtPrep
+{
+	Type                = Food,
+	DisplayName         = Yogurt Preparation,
+	Icon                = DairyPan,
+	ReplaceOnUse        = Saucepan,
+	Weight              = 1.0,
+	
+	DaysFresh           = 2,
+	DaysTotallyRotten   = 4,
+	
+	UnhappyChange       = 20,
+	HungerChange        = -20,
+	
+	Calories            = 320,
+	Carbohydrates       = 22,
+	Proteins            = 14,
+	Lipids              = 18,
+	
+	IsCookable          = TRUE,
+	DangerousUncooked   = TRUE,
+}
+
+item YogurtJar
+{
+	Type                = Food,
+	DisplayName         = Jar of Yogurt,
+	Icon                = YogurtJar,
+	ReplaceOnUse        = EmptyJar,	
+	Weight              = 1.0,
+		
+	DaysFresh           = 4,
+	DaysTotallyRotten   = 7,
+	
+	HungerChange        = -20,
+
+	Calories            = 320,
+	Carbohydrates       = 22,
+	Proteins            = 14,
+	Lipids              = 18,
+	
+	Packaged            = TRUE,
+	CantBeFrozen        = TRUE,
+	
+	Spice               = TRUE,
+	EvolvedRecipe       = FruitSalad:2;Salad:2,
+	FoodType            = NoExplicit,
+}
+
+/*========== UPDATED ITEMS ====================================================================*/
+
+item Butter
+{
+	Type                = Food,
+	DisplayName         = Butter,
+	Icon                = Butter,
+	Weight              = 0.2,
+	
+	HungerChange        = -20,
+	UnhappyChange       = 20,
+	
+	Calories            = 800,
+	Carbohydrates       = 0,
+	Proteins            = 0,
+	Lipids              = 88,
+
+	EvolvedRecipe       = Sandwich:5;Stir fry:5;Roasted Vegetables:5;PastaPot:5;PastaPan:5,
+	FoodType            = NoExplicit,
+	Packaged            = TRUE,
+}
+
+item Yoghurt
+{
+	Type                = Food,
+	DisplayName         = Yogurt,
+	Icon                = Yoghurt,
+	Weight              = 0.3,
+	
+	DaysFresh           = 10,
+	DaysTotallyRotten   = 15,
+	
+	HungerChange        = -10,
+	
+	Calories            = 170,
+	Carbohydrates       = 33,
+	Proteins            = 5,
+	Lipids              = 1.5,
+
+	Spice               = TRUE,
+	EvolvedRecipe       = FruitSalad:2;Salad:2,
+	FoodType            = NoExplicit,
+	
+	Packaged            = TRUE,
+}
+
+/*========== NEW RECIPES ======================================================================*/
+	
+recipe Make Jar of Milk
+{
+   EmptyJar,
+   PowderedMilk,
+   Water=10,
+   Result:MilkJar,
+   Time:60.0,	
+   Category:Cooking,
+   OnGiveXP:Give3CookingXP,
+}
+
+recipe Empty Jar of Milk
+{
+   MilkJar,
+   Result:EmptyJar,
+   Time:30.0,	
+   Category:Cooking,
+}
+
+recipe Make Bottle of Milk
+{
+   WaterBottleEmpty,
+   PowderedMilk,
+   Water=10,
+   Result:MilkWaterBottle,
+   Time:60.0,	
+   Category:Cooking,
+   OnGiveXP:Give3CookingXP,
+}
+
+recipe Make Bottle of Milk
+{
+   PopBottleEmpty,
+   PowderedMilk,
+   Water=10,
+   Result:MilkPopBottle,
+   Time:60.0,	
+   Category:Cooking,
+   OnGiveXP:Give3CookingXP,
+}
+
+recipe Make Butter
+{
+	NeedToBeLearn:TRUE,
+	MilkJar;20,
+	keep JarLid,
+	keep Strainer,		
+	Result:Butter,
+	Time:100.0,
+	Category:Cooking,
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Make Butter
+{
+	NeedToBeLearn:TRUE,
+	MilkWaterBottle;20,
+	keep Strainer,		
+	Result:Butter,
+	Time:100.0,
+	Category:Cooking,
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Make Butter
+{
+	NeedToBeLearn:TRUE,
+	MilkPopBottle;20,
+	keep Strainer,		
+	Result:Butter,
+	Time:100.0,
+	Category:Cooking,
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Prepare Cheese
+{
+	NeedToBeLearn:TRUE,
+	destroy Saucepan,		
+	MilkJar;20,
+	Vinegar=4,
+	Salt;2,
+	Result:CheesePrep,
+	Time:100.0,
+	Category:Cooking,	
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Prepare Cheese
+{
+	NeedToBeLearn:TRUE,
+	destroy Saucepan,		
+	MilkWaterBottle;20,
+	Vinegar=4,
+	Salt;2,
+	Result:CheesePrep,
+	Time:100.0,
+	Category:Cooking,	
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Prepare Cheese
+{
+	NeedToBeLearn:TRUE,
+	destroy Saucepan,		
+	MilkPopBottle;20,
+	Vinegar=4,
+	Salt;2,
+	Result:CheesePrep,
+	Time:100.0,
+	Category:Cooking,	
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Make Cheese	
+{
+	CheesePrep,	
+	keep Strainer,
+	Result:Cheese=3,
+	OnTest:DairyModIsCooked_TestIsValid,
+	OnCreate:DairyModReturnSaucePan_OnCreate,
+	Time:100.0,	
+	Category:Cooking,
+	OnGiveXP:Give3CookingXP,	
+}
+
+recipe Prepare Yogurt
+{
+	NeedToBeLearn:TRUE,
+	destroy Saucepan,
+	MilkJar;20,
+	YogurtCulture,
+	Result:YogurtPrep,
+	Time:100.0,
+	Category:Cooking,	
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Prepare Yogurt
+{
+	NeedToBeLearn:TRUE,
+	destroy Saucepan,
+	MilkWaterBottle;20,
+	YogurtCulture,
+	Result:YogurtPrep,
+	Time:100.0,
+	Category:Cooking,
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Prepare Yogurt
+{
+	NeedToBeLearn:TRUE,
+	destroy Saucepan,
+	MilkPopBottle;20,
+	YogurtCulture,
+	Result:YogurtPrep,
+	Time:100.0,
+	Category:Cooking,
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Make Yogurt
+{
+	YogurtPrep,
+	EmptyJar,
+	keep Strainer,
+	Result:YogurtJar,
+	OnCreate:DairyModReturnSaucePan_OnCreate,
+	OnTest:DairyModIsCooked_TestIsValid,
+	Time:100.0,
+	Category:Cooking,
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Empty Jar of Yogurt
+{
+   YogurtJar,
+   Result:EmptyJar,
+   Time:30.0,	
+   Category:Cooking,
+}
+
+/*========== UPDATED RECIPES ==================================================================*/
+
+recipe Make Mildew Cure	
+{
+	MilkJar;20,
+	farming.GardeningSprayEmpty,
+	Result:farming.GardeningSprayMilk,
+	Time:40.0,
+	Category:Farming,
+	NeedToBeLearn:true,
+}
+
+recipe Make Mildew Cure
+{
+	MilkWaterBottle;20,
+	farming.GardeningSprayEmpty,
+	Result:farming.GardeningSprayMilk,
+	Time:40.0,
+	Category:Farming,
+	NeedToBeLearn:true,
+}
+
+recipe Make Mildew Cure
+{
+	MilkPopBottle;20,
+	farming.GardeningSprayEmpty,
+	Result:farming.GardeningSprayMilk,
+	Time:40.0,
+	Category:Farming,
+	NeedToBeLearn:true,
+}
+
+recipe Make Cake Batter
+{
+	Bowl,
+	Flour=2,
+	Butter;15,
+	Sugar=3,
+	Egg/WildEggs,
+	Yeast,
+	MilkJar;10,
+	Result:CakeBatter,
+	NeedToBeLearn:true,
+	Time:50.0,
+	Category:Cooking,
+	OnGiveXP:Give10CookingXP,
+}
+
+recipe Make Cake Batter
+{
+	Bowl,
+	Flour=2,
+	Butter;15,
+	Sugar=3,
+	Egg/WildEggs,
+	Yeast,
+	MilkWaterBottle;10,
+	Result:CakeBatter,
+	NeedToBeLearn:true,
+	Time:50.0,
+	Category:Cooking,
+	OnGiveXP:Give10CookingXP,
+}
+
+recipe Make Cake Batter
+{
+	Bowl,
+	Flour=2,
+	Butter;15,
+	Sugar=3,
+	Egg/WildEggs,
+	Yeast,
+	MilkPopBottle;10,
+	Result:CakeBatter,
+	NeedToBeLearn:true,
+	Time:50.0,
+	Category:Cooking,
+	OnGiveXP:Give10CookingXP,
+}
+
+recipe Make Bowl of Cereal
+{
+	Bowl,
+	Cereal;5,
+	MilkJar;2,
+	Result:CerealBowl,
+	Time:20.0,
+	Category:Cooking,
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Make Bowl of Cereal
+{
+	Bowl,
+	Cereal;5,
+	MilkWaterBottle;2,
+	Result:CerealBowl,
+	Time:20.0,
+	Category:Cooking,
+	OnGiveXP:Give3CookingXP,
+}
+
+recipe Make Bowl of Cereal
+{
+	Bowl,
+	Cereal;5,
+	MilkPopBottle;2,
+	Result:CerealBowl,
+	Time:20.0,
+	Category:Cooking,
+	OnGiveXP:Give3CookingXP,
+}
+
+}

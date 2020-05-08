@@ -1,0 +1,4 @@
+Items_CH = {
+DisplayName_Locpick = "鎖器",
+DisplayName_Hairpin = "髮夾",
+}

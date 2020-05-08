@@ -1,9 +1,6 @@
 -- Based on the fantastic "Maek One Page Readable" mod by RH4DB4
 -- https://steamcommunity.com/sharedfiles/filedetails/?id=1928908192&searchtext=read+one+page
 -- TimedActions\ISReadABook.lua
-
-if getActivatedMods():contains("LitSortOGSN") then return end -- don't want it doing the same thing as the copy in LitSort
-
 local originalISReadABookUpdate = ISReadABook.update
 
 function ISReadABook:update(...)

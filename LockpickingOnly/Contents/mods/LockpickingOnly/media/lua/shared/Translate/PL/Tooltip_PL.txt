@@ -1,8 +1,8 @@
 /** Translation provided by steam user ralphienator **/
 Tooltip_PL = {
-Tooltip_BobbyPin_FMJ = "Jeœli masz umiejêtnoœæ œlusarstwa, mo¿esz u¿yæ spinki do w³osów i œrubokrêta, by otwieraæ zamki.",
-Tooltip_LockPickingMag_FMJ = "Naucz siê otwierania zamków u¿ywaj¹c spinki do w³osów i œrubokrêta oraz jak stworzyæ spinki do w³osów z drutu.",
+Tooltip_BobbyPin_FMJ = "Jeœli masz umiejêtnoœæ œlusarstwa, mo¿esz u¿yæ wytrychy i œrubokrêta, by otwieraæ zamki.",
+Tooltip_LockPickingMag_FMJ = "Naucz siê otwierania zamków u¿ywaj¹c wytrychy i œrubokrêta oraz jak stworzyæ wytrychy z drutu.",
 Tooltip_LockPickingMag2_FMJ = "Naucz siê niszczyæ zamki u¿ywaj¹c ³omu.",
-Tooltip_Screwdriver_FMJ = "Jeœli masz zdolnoœci œlusarskie, mo¿esz u¿yæ spinki do w³osów i œrubokrêta, by otwieraæ zamki",
+Tooltip_Screwdriver_FMJ = "Jeœli masz zdolnoœci œlusarskie, mo¿esz u¿yæ wytrychy i œrubokrêta, by otwieraæ zamki",
 Tooltip_Crowbar_FMJ = "Mo¿e byæ u¿yty do niszczenia zamków, jeœli masz umiejêtnoœæ œlusarstwa.",
 }

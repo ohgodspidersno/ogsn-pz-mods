@@ -1,0 +1,4 @@
+Recipes_TR = {
+  Recipe_Create_Hairpin = "Create Maymuncuk",
+  Recipe_Create_Lockpick = "Create Maymuncuk",
+}
