@@ -1,0 +1,18 @@
+UI_CH = {
+UI_trait_nimblefingers = "鎖匠",
+UI_trait_nimblefingersDesc = "基於撬鎖和開鎖的知識。撬鎖速度更快，成功率更高。",
+UI_Text_locklevel_veryeasy = "非常簡單",
+UI_Text_locklevel_easy = "簡單",
+UI_Text_locklevel_medium = "一般",
+UI_Text_locklevel_hard = "困難",
+UI_Text_locklevel_veryhard = "極難",
+UI_Text_locklevel_willbreak = "壞掉的",
+UI_Text_brokenLockModal = "無法撬開壞掉的鎖",
+UI_Text_contextBreakDoorLock = "破壞鎖",
+UI_Text_contextPickDoorLock = "開鎖",
+UI_Text_contextBreakWindowLock = "破壞鎖",
+UI_Text_BobbyStuck = "糟糕！髮夾卡住了！",
+UI_Text_BobbyBroken = "糟糕！我弄壞了髮夾！",
+UI_trait_BurglarDesc = "能短路點火啟動載具。能撬鎖和開鎖。弄壞窗戶插銷的概率更小。",
+UI_profdesc_burglar = "能短路點火啟動載具。能撬鎖和開鎖。弄壞窗戶插銷的概率更小。",
+}
