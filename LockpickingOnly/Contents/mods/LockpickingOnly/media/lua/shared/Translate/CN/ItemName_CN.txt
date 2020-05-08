@@ -1,0 +1,5 @@
+ItemName_CN = {
+ItemName_FMJ.BobbyPin = "发夹",
+ItemName_FMJ.LockPickingMag = "开锁手册, Vol. 1",
+ItemName_FMJ.LockPickingMag2 = "开锁手册, Vol. 2",
+}

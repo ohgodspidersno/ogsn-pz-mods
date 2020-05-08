@@ -1,0 +1,7 @@
+Tooltip_CN = {
+Tooltip_BobbyPin_FMJ = "只要你有锁匠技能，一个发夹和螺丝刀就可以用来撬锁。",
+Tooltip_LockPickingMag_FMJ = "学习如何使用发夹和螺丝刀来撬锁，以及如何使用金属线来制作发夹",
+Tooltip_LockPickingMag2_FMJ = "学习如何使用撬棍破坏锁",
+Tooltip_Screwdriver_FMJ = "只要你有锁匠技能，一个发夹和螺丝刀就可以用来撬锁。",
+Tooltip_Crowbar_FMJ = "只要你有锁匠技能，就能用来破坏锁。",
+}
