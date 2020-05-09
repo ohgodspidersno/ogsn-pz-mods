@@ -1,0 +1,38 @@
+module DistinctNames2 { imports {Base}
+item Jacket_Padded {
+Type = Clothing,
+DisplayName = Padded Jacket,
+ClothingItem = Jacket_Padded,
+BodyLocation = JacketHat,
+Icon = JacketPadded_White,
+BloodLocation = Jumper;FullHelmet,
+RunSpeedModifier = 0.89,
+CombatSpeedModifier = 0.96,
+ClothingItemExtra = Jacket_PaddedDOWN,
+ClothingItemExtraOption = DownHoodie,
+BiteDefense = 10,
+ScratchDefense = 20,
+Insulation = 0.95,
+WindResistance = 0.95,
+WaterResistance = 0.60,
+Weight = 3,
+}
+item PonchoYellow {
+Type = Clothing,
+DisplayName = Poncho,
+ClothingItem = PonchoYellow,
+BodyLocation = JacketHat,
+Icon = HoodieWhite,
+ColorRed = 228,
+ColorGreen = 195,
+ColorBlue = 88,
+BloodLocation = Shirt;FullHelmet;Trousers,
+RunSpeedModifier = 0.9,
+ClothingItemExtra = PonchoYellowDOWN,
+ClothingItemExtraOption = DownHoodie,
+ScratchDefense = 10,
+Insulation = 0.1,
+WindResistance = 0.75,
+WaterResistance = 1.0,
+}
+}

@@ -1,0 +1,26 @@
+module DistinctNames2 { imports {Base}
+item Scarf_White {
+Type = Clothing,
+DisplayName = Scarf,
+ClothingItem = Scarf_White,
+BodyLocation = Scarf,
+Icon = ScarfGeneric,
+Weight = 0.2,
+BloodLocation = Neck,
+ScratchDefense = 10,
+Insulation = 1.0,
+WindResistance = 1.0,
+}
+item Scarf_StripeBlackWhite {
+Type = Clothing,
+DisplayName = Striped Scarf,
+ClothingItem = Scarf_StripeBlackWhite,
+BodyLocation = Scarf,
+Icon = ScarfStripedBlack,
+Weight = 0.2,
+BloodLocation = Neck,
+ScratchDefense = 10,
+Insulation = 0.5,
+WindResistance = 0.55,
+}
+}

@@ -1,0 +1,49 @@
+module DistinctNames2 { imports {Base}
+item Tie_BowTieFull {
+Type = Clothing,
+DisplayName = Bow Tie,
+ClothingItem = Tie_BowTieFull,
+BodyLocation = Neck,
+Icon = TieBowBlack,
+}
+item Tie_BowTieWorn {
+Type = Clothing,
+DisplayName = Bow Tie (Clip-On),
+ClothingItem = Tie_BowTieWorn,
+BodyLocation = Neck,
+Icon = TieBowBlack,
+Weight = 0.1,
+}
+item Tie_Full {
+Type = Clothing,
+DisplayName = Tie,
+ClothingItem = Tie_Full,
+BodyLocation = Neck,
+IconsForTexture = TieBlack;TieBlue;TieBlueDot;TieBlueStripe;TieMulticolour;TieRed;TieRedDot;TieRedStripe;TieSpiffo,
+Weight = 0.1,
+}
+item Tie_Worn {
+Type = Clothing,
+DisplayName = Tie (Clip-on),
+ClothingItem = Tie_Worn,
+BodyLocation = Neck,
+IconsForTexture = TieBlack;TieBlue;TieBlueDot;TieBlueStripe;TieMulticolour;TieRed;TieRedDot;TieRedStripe;TieSpiffo,
+Weight = 0.1,
+}
+item Tie_Full_Spiffo {
+Type = Clothing,
+DisplayName = Tie - Colors,
+ClothingItem = Tie_Full_Spiffo,
+BodyLocation = Neck,
+Icon = TieMulticolour,
+Weight = 0.1,
+}
+item Tie_Worn_Spiffo {
+Type = Clothing,
+DisplayName = Tie - Colors (Clip-On),
+ClothingItem = Tie_Worn_Spiffo,
+BodyLocation = Neck,
+Icon = TieMulticolour,
+Weight = 0.1,
+}
+}
