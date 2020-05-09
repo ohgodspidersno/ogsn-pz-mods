@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>skinned\clothes\bob_jumpertanktop</m_MaleModel>
+	<m_FemaleModel>skinned\clothes\kate_jumpertanktop</m_FemaleModel>
+	<m_GUID>5dc2d355-847f-4bf9-b919-d405dcf571de</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<textureChoices>clothes\jumper\jumper_tanktop</textureChoices>
+</clothingItem>
