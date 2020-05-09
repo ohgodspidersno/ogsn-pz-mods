@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>media\models_X\Skinned\Clothes\Bob_HighVisVest.X</m_MaleModel>
+	<m_FemaleModel>media\models_X\Skinned\Clothes\Kate_HighVisVest.X</m_FemaleModel>
+	<m_GUID>8aff3b6a-08aa-425e-be41-e41ebe198a11</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_UnderlayMasksFolder>media/textures/Clothes/Vest/Masks</m_UnderlayMasksFolder>
+	<textureChoices>clothes\bulletvest\highvisvest</textureChoices>
+</clothingItem>

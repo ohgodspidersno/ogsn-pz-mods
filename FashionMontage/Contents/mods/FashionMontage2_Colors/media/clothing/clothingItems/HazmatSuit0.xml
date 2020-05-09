@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>skinned\clothes\bob_hazmat</m_MaleModel>
+	<m_FemaleModel>skinned\clothes\kate_hazmat</m_FemaleModel>
+	<m_GUID>430fb60d-a1be-48bd-a6c7-3a19b3116fe5</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_Masks>0</m_Masks>
+	<m_Masks>1</m_Masks>
+	<m_Masks>2</m_Masks>
+	<m_Masks>3</m_Masks>
+	<m_Masks>4</m_Masks>
+	<m_Masks>5</m_Masks>
+	<m_Masks>6</m_Masks>
+	<m_Masks>7</m_Masks>
+	<m_Masks>8</m_Masks>
+	<m_Masks>9</m_Masks>
+	<m_Masks>10</m_Masks>
+	<m_Masks>11</m_Masks>
+	<textureChoices>clothes\hazmat\hazmat_yellow</textureChoices>
+</clothingItem>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel></m_MaleModel>
+	<m_FemaleModel></m_FemaleModel>
+	<m_GUID>6fea1039-7404-4044-8c5b-2fc686ec21e4</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_DecalGroup>TShirtIndieStone</m_DecalGroup>
+	<m_BaseTextures>clothes\shirt_tshirt_textures\tshirt_white</m_BaseTextures>
+</clothingItem>

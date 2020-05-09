@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>skinned\clothes\bob_hospitalgown</m_MaleModel>
+	<m_FemaleModel>skinned\clothes\kate_hospitalgown</m_FemaleModel>
+	<m_GUID>ae2071bc-0d47-4041-b0a5-28c8cfa46c05</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<textureChoices>clothes\dress_textures\hospitalgown</textureChoices>
+</clothingItem>

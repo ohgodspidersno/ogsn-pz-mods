@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>static\clothes\m_footballhelmet</m_MaleModel>
+	<m_FemaleModel>static\clothes\f_footballhelmet</m_FemaleModel>
+	<m_GUID>0eb8a7ce-e04b-49e2-be62-0be158cb2588</m_GUID>
+	<m_Static>true</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone>Bip01_Head</m_AttachBone>
+	<m_HatCategory>Group02</m_HatCategory>
+	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
+	<textureChoices>footballhelmet_blue</textureChoices>
+	<textureChoices>footballhelmet_red</textureChoices>
+	<textureChoices>footballhelmet_white</textureChoices>
+</clothingItem>

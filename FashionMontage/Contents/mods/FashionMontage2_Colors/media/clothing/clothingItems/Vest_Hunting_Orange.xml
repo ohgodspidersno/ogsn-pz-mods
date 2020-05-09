@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clothingItem>
+	<m_MaleModel>x:skinned\clothes\bob_huntingvest</m_MaleModel>
+	<m_FemaleModel>x:skinned\clothes\kate_huntingvest</m_FemaleModel>
+	<m_GUID>b0d9f681-08f3-4e05-913e-75909a2203ce</m_GUID>
+	<m_Static>false</m_Static>
+	<m_AllowRandomHue>false</m_AllowRandomHue>
+	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AttachBone></m_AttachBone>
+	<m_Masks>13</m_Masks>
+	<m_Masks>14</m_Masks>
+	<m_UnderlayMasksFolder>media/textures/Clothes/BulletVest\Masks_HuntingVest</m_UnderlayMasksFolder>
+	<textureChoices>clothes\bulletvest\huntingvest_orange</textureChoices>
+</clothingItem>
