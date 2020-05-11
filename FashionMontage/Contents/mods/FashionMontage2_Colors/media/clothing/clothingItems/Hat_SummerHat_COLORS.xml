@@ -5,7 +5,7 @@
 	<m_GUID>b18b17cb-7d48-4484-b8bd-8697616d74fd</m_GUID>
 	<m_Static>true</m_Static>
 	<m_AllowRandomHue>false</m_AllowRandomHue>
-	<m_AllowRandomTint>false</m_AllowRandomTint>
+	<m_AllowRandomTint>true</m_AllowRandomTint>
 	<m_AttachBone>Bip01_Head</m_AttachBone>
 	<m_HatCategory>Group01</m_HatCategory>
 	<m_MasksFolder>media/textures/Clothes/Hat/Masks</m_MasksFolder>
