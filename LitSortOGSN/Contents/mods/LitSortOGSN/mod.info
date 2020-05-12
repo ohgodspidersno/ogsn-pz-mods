@@ -3,4 +3,3 @@ id=LitSortOGSN
 description=Renames all the maps, magazines, and skill books for a truly superlative organizational experience.
 description=Also lets you instantly 'mark' a book you've already found by reading the first page if it's too advanced.
 poster=poster.png
-require=LitSortOGSN_readOnePage
