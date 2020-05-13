@@ -1,4 +1,4 @@
-Recipes_EN = {
+Recipes_IT = {
   Recipe_Create_Hairpin = "Create Lockpick",
   Recipe_Create_Lockpick = "Create Lockpick",
 }
