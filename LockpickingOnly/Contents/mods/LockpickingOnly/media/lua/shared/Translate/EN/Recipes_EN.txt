@@ -1,3 +1,3 @@
 Recipes_EN = {
-  Recipe_Create_Hairpin = "Create lockpick"
+  Recipe_Create_Hairpin = "Create Lockpick"
 }

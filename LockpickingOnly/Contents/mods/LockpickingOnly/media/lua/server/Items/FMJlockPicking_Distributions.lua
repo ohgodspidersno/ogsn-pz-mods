@@ -87,32 +87,6 @@ table.insert(SuburbsDistributions["Bag_SurvivorBag"].items, 0.5);
 table.insert(SuburbsDistributions["Bag_SurvivorBag"].items, "FMJ.LockPickingMag2");
 table.insert(SuburbsDistributions["Bag_SurvivorBag"].items, 0.5);
 
-
-table.insert(SuburbsDistributions["bedroom"]["sidetable"].junk, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["bedroom"]["sidetable"].junk, 4);
-table.insert(SuburbsDistributions["all"]["dresser"].items, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["all"]["dresser"].items, 4);
-table.insert(SuburbsDistributions["all"]["inventorymale"].items, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.1);
-table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 3);
-table.insert(SuburbsDistributions["all"]["desk"].junk, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["all"]["desk"].junk, 4);
-table.insert(SuburbsDistributions["all"]["counter"].junk, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["all"]["counter"].junk, 1);
-table.insert(SuburbsDistributions["all"]["bin"].items, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["all"]["bin"].items, 1);
-table.insert(SuburbsDistributions["all"]["locker"].items, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["all"]["locker"].items, 3);
-table.insert(SuburbsDistributions["all"]["wardrobe"].items, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["all"]["wardrobe"].items, 2);
-table.insert(SuburbsDistributions["all"]["officedrawers"].items, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["all"]["officedrawers"].items, 1);
-table.insert(SuburbsDistributions["aesthetic"]["counter"].items, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["aesthetic"]["counter"].items, 5);
-table.insert(SuburbsDistributions["bathroom"]["counter"].items, "FMJ.BobbyPinRaw");
-table.insert(SuburbsDistributions["bathroom"]["counter"].items, 4);
-
 table.insert(SuburbsDistributions["shed"]["other"].items, "FMJ.BobbyPin");
 table.insert(SuburbsDistributions["shed"]["other"].items, 2.5);
 table.insert(SuburbsDistributions["shed"]["other"].items, "FMJ.BobbyPin");
