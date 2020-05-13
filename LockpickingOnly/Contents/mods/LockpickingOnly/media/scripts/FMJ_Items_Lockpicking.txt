@@ -10,9 +10,16 @@ module FMJ
 	{
 		Weight = 0.005,
 		Type = Normal,
+		DisplayName = Lockpick,
+		Icon = LockPick,
+		Tooltip = Tooltip_BobbyPin_FMJ
+	}
+	item BobbyPinRaw
+	{
+		Weight = 0.005,
+		Type = Normal,
 		DisplayName = Hairpin,
 		Icon = BobbyPin,
-		Tooltip = Tooltip_BobbyPin_FMJ
 	}
 	item LockPickingMag
 	{
