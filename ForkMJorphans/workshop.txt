@@ -1,21 +1,20 @@
 version=1
 id=2079001985
 title=Orphaned FMJ Mods
+description=[h1]Update[/h1]
+description=Craftable dairy has been added since it appears that SKL is not maintaining their version anymore.
+description=
 description=[h1]They're not my kids but they have nowhere else to go[/h1]
 description=My [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2056238799]lockpicking mod[/url] was forked from an older version by modder MeTaLAnGeR, that is no longer being maintained.
 description=That version included changes from several much older mods that were unrelated to the locksmithing mechanics, so I removed them from my version.
-description=
-description=One of those, [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1939995891]Craftable Dairy Products and is now being maintained here[/url]
-description=
 description=The rest of them will live here until someone else decides to give them a better home. They include:
 description=[list]
 description=[*]Forageables and Trapping - Originally [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1096904850]Wilhelm's Wilderness Improvements[/url]
 description=[*]Jarring Meats - Originally [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1537876121]Bottling of Meat[/url]
 description=[*]Super Garlic - Originally part of Forageables and Trapping but it rather overpowered so I felt compelled to split it into its own submod.
 description=[*]Two Additional Traits - Archer and Forager
+description=[*]Craftable Dairy Foods - This is the same as  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1939995891&tscn=1589405861]here[/url] however that version has not been updated in a while and so there are problems with its loot tables. My version is up to date as of 41.37.
 description=[/list]
 description=Please be aware that I am not terribly fond of any of these and don't use them in my own games. I will fix bugs and keep them compatible with IWBUMS, but I am not planning to improve or expand on them.
 description=
 description=Fork icon by Najaya Design from the Noun Project
-tags=
-visibility=public
