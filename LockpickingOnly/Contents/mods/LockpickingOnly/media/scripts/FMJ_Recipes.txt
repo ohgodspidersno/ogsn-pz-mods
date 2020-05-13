@@ -6,8 +6,17 @@ module FMJ
 	}
 	recipe Create Hairpin
 	{
+		Paperclip/BobbyPinRaw= 1,
+		Result: BobbyPin= 1,
+		Time: 50.0,
+		Category: Survivalist,
+		OnCreate: putInBox_OnCreate,
+		NeedToBeLearn: true,
+	}
+	recipe Create Lockpick from Wire
+	{
 		keep KitchenKnife/ButterKnife/BreadKnife/HuntingKnife/MeatCleaver/FlintKnife/Machete/Scissors,
-		Paperclip/Wire/BobbyPinRaw= 1,
+		Wire= 1,
 		Result: BobbyPin= 1,
 		Time: 50.0,
 		Category: Survivalist,
