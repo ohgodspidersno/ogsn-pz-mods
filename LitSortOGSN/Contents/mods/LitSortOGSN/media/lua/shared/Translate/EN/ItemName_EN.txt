@@ -2,12 +2,17 @@ ItemName_EN = {
 
 /************** MAPS **************/
 ItemName_Base.KnoxCountryMap = " Map of Knox Country",
-ItemName_Base.KnoxCountryMapSecret = " Map of Knox - Marked and Crumpled",
+ItemName_Base.KnoxCountryMapSecret = " Map of Knox Country (Crumpled)",
 ItemName_Base.March_Ridge_Map = " Map of March Ridge",
 ItemName_Base.Muldraugh_Map = " Map of Muldraugh",
 ItemName_Base.Rosewood_Map = " Map of Rosewood",
 ItemName_Base.Westpoint_Map = " Map of Westpoint",
 ItemName_Base.Riverside_Map = " Map of Riverside",
+
+/**** IMPROVED MAPS MOD ****/
+ItemName_Base.CrossroadsMallMap = " Map of Crossroads Mall",
+ItemName_Base.DixieMap = " Map of Dixie",
+ItemName_Base.ScenicGroveMap = " Map of Scenic Grove",
 
 /************** BOOKS **************/
 ItemName_Base.BookCarpentry1 = " Carpentry Vol.1: For Dummies",
