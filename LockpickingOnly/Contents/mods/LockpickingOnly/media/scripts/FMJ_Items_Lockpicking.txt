@@ -27,7 +27,7 @@ module FMJ
 		Type = Literature,
 		DisplayName = Locksmith's Handbook Vol. 1,
 		Icon = magazine_Lock_01,
-		TeachedRecipes = Lockpicking;Create Hairpin,
+		TeachedRecipes = Lockpicking;Create Hairpin;Create Lockpick,
 		ReplaceOnUse = LockPickingMag,
 		StaticModel = Magazine,
 		Tooltip = Tooltip_LockPickingMag_FMJ

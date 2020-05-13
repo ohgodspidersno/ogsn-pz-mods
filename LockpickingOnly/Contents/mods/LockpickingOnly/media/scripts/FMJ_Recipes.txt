@@ -13,7 +13,7 @@ module FMJ
 		OnCreate: putInBox_OnCreate,
 		NeedToBeLearn: true,
 	}
-	recipe Create Lockpick from Wire
+	recipe Create Lockpick
 	{
 		keep KitchenKnife/ButterKnife/BreadKnife/HuntingKnife/MeatCleaver/FlintKnife/Machete/Scissors,
 		Wire= 1,
