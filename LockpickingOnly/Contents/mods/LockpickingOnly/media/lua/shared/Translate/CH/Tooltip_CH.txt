@@ -1,7 +1,7 @@
 Tooltip_CH = {
-Tooltip_BobbyPin_FMJ = "只要你有鎖匠技能，一個髮夾和螺絲刀就可以用來撬鎖。",
-Tooltip_LockPickingMag_FMJ = "學習如何使用髮夾和螺絲刀來撬鎖，以及如何使用金屬線來製作髮夾",
+Tooltip_BobbyPin_FMJ = "只要你有鎖匠技能，一個鎖器和螺絲刀就可以用來撬鎖。",
+Tooltip_LockPickingMag_FMJ = "學習如何使用鎖器和螺絲刀來撬鎖，以及如何使用金屬線來製作鎖器",
 Tooltip_LockPickingMag2_FMJ = "學習如何使用撬棍破壞鎖",
-Tooltip_Screwdriver_FMJ = "只要你有鎖匠技能，一個髮夾和螺絲刀就可以用來撬鎖。",
+Tooltip_Screwdriver_FMJ = "只要你有鎖匠技能，一個鎖器和螺絲刀就可以用來撬鎖。",
 Tooltip_Crowbar_FMJ = "只要你有鎖匠技能，就能用來破壞鎖。",
 }
