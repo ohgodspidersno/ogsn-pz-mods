@@ -1,8 +1,8 @@
 /** Czech translation provided by steam user WaldaGamer **/
 Tooltip_CS = {
-Tooltip_BobbyPin_FMJ = "Sponka a šroubovák mohou být použity k odemknutí zámkù, pokud máš zámeènické dovednosti",
+Tooltip_BobbyPin_FMJ = "Šperhák a šroubovák mohou být použity k odemknutí zámkù, pokud máš zámeènické dovednosti",
 Tooltip_LockPickingMag_FMJ = "Nauè se odemykat zámky pomocí sponky, šroubováku, a také jak vytvoøit sponky pomocí drátu",
 Tooltip_LockPickingMag2_FMJ = "Nauè se jak rozbít zámky za použití páèidla",
-Tooltip_Screwdriver_FMJ = "Šroubovák a sponka mohou být využity k odemknutí zámkù, pokud máš zámeènické dovednosti",
+Tooltip_Screwdriver_FMJ = "Šroubovák a šperhák mohou být využity k odemknutí zámkù, pokud máš zámeènické dovednosti",
 Tooltip_Crowbar_FMJ = "Mùže být použito k rozbití zámkù, pokud máš zámeènické dovednosti",
 }
