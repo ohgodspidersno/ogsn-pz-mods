@@ -1,0 +1,16 @@
+Recipes_RU = {
+Recipe_Create_Medicinal_Tea_Blend = "Замесить лекарственные травы",
+Recipe_Create_Energizing_Tea_Blend = "Замесить бодрящие травы",
+Recipe_Brew_Cup_of_Common_Mallow_Tea = "Заварить чай из мальвы",
+Recipe_Brew_Cup_of_Lemon_Grass_Tea = "Заварить чай из лимонной травы",
+Recipe_Brew_Cup_of_Black_Sage_Tea = "Заварить чай из черной полыни",
+Recipe_Brew_Cup_of_Ginseng_Tea = "Заварить чай из женьшеня",
+Recipe_Brew_Cup_of_Medicinal_Blended_Tea = "Заварить лекарственные травы",
+Recipe_Brew_Cup_of_Energizing_Blended_Tea = "Заварить бодрящие травы",
+Recipe_Make_2_Bowls_of_Stir_Fry = "Наложить Стир-Фрай в 2 чашки",
+Recipe_Make_4_Bowls_of_Stir_Fry = "Наложить Стир-Фрай в 4 чашки",
+Recipe_Make_2_Bowls_of_Stir_Fry = "Наложить Стир-Фрай в 2 чашки",
+Recipe_Make_4_Bowls_of_Stir_Fry = "Наложить Стир-Фрай в 4 чашки",
+Recipe_Make_2_Bowls_of_Roasted_Vegetables = "Сделать 2 чашки запеканки",
+Recipe_Make_4_Bowls_of_Roasted_Vegetables = "Сделать 4 чашки запеканки",
+}

@@ -1,4 +1,10 @@
 ContextMenu_RU = {
   ContextMenu_FoodType_Herbal = "травяной",
   ContextMenu_EvolvedRecipe_OatmealEvolved = "овсяная каша",
+  ContextMenu_EvolvedRecipe_CommonMallowTeaEvolved = "Чай",
+  ContextMenu_EvolvedRecipe_LemonGrassTeaEvolved = "Чай",
+  ContextMenu_EvolvedRecipe_BlackSageTeaEvolved = "Чай",
+  ContextMenu_EvolvedRecipe_GinsengTeaEvolved = "Чай",
+  ContextMenu_EvolvedRecipe_MedicinalTeaEvolved = "Чай",
+  ContextMenu_EvolvedRecipe_EnergizingTeaEvolved = "Чай",
 }
