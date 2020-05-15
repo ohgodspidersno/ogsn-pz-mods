@@ -1,7 +1,7 @@
 /** Italian translation provided by steam user Ooijennnnnn **/
 UI_IT = {
 UI_trait_nimblefingers = "Fabbro",
-UI_trait_nimblefingersDesc = "Inizi con la conoscenza per rompere e scassinare le serrature.Scassinatura più veloce. Migliori possibilità di aprire una serratura.",
+UI_trait_nimblefingersDesc = "Inizi con la conoscenza per rompere e scassinare le serrature.<br>Scassinatura più veloce. Migliori possibilità di aprire una serratura.",
 UI_Text_locklevel_veryeasy = "Molto Facile",
 UI_Text_locklevel_easy = "Facile",
 UI_Text_locklevel_medium = "Medio",
@@ -12,8 +12,8 @@ UI_Text_brokenLockModal = "Non puoi scassinare una serratura rotta.",
 UI_Text_contextBreakDoorLock = "Rompi la serratura",
 UI_Text_contextPickDoorLock = "Scassina la serratura",
 UI_Text_contextBreakWindowLock = "Rompi la serratura",
-UI_Text_BobbyStuck = "Dannazione! La forcina si è incastrata!",
-UI_Text_BobbyBroken = "Dannazione! Ho rotto la forcina!",
-UI_trait_BurglarDesc = "Puoi rubare i veicoli. Puoi rompere e scassinare le serrature. Minori possibilità di rompere il chiavistello di una finestra.",
-UI_profdesc_burglar = "Puoi rubare i veicoli. Puoi rompere e scassinare le serrature. Minori possibilità di rompere il chiavistello di una finestra.",
+UI_Text_BobbyStuck = "Dannazione! Lo stecchino si è incastrata!",
+UI_Text_BobbyBroken = "Dannazione! Ho rotto lo stecchino!",
+UI_trait_BurglarDesc = "Puoi rubare i veicoli. Puoi rompere e scassinare le serrature.<br>Minori possibilità di rompere il chiavistello di una finestra.",
+UI_profdesc_burglar = "Puoi rubare i veicoli. Puoi rompere e scassinare le serrature.<br>Minori possibilità di rompere il chiavistello di una finestra.",
 }
