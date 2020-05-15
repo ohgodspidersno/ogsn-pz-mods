@@ -12,8 +12,8 @@ UI_ES = {
   UI_Text_contextBreakDoorLock = "Romper cerradura",
   UI_Text_contextPickDoorLock = "Forzar cerradura",
   UI_Text_contextBreakWindowLock = "Romper cerradura",
-  UI_Text_BobbyStuck = "Maldición! La horquilla se ah atascado!",
-  UI_Text_BobbyBroken = "Maldición! Se me rompió la horquilla!",
+  UI_Text_BobbyStuck = "Maldición! La ganzúa se ah atascado!",
+  UI_Text_BobbyBroken = "Maldición! Se me rompió la ganzúa!",
   UI_trait_BurglarDesc = "Puedes hacerle un puente al vehículo. Puedes romper y forzar cerraduras. Menos chances de romper el pestillo de una ventana.",
   UI_profdesc_burglar = " Puedes hacerle un puente al vehículo. Puedes romper y forzar cerraduras. Menos chances de romper el pestillo de una ventana.",
 }

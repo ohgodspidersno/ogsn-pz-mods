@@ -1,4 +1,4 @@
 Recipes_ES = {
-  Recipe_Create_Hairpin = "Create Lockpick",
-  Recipe_Create_Lockpick = "Create Lockpick",
+  Recipe_Create_Hairpin = "Crear ganzúa",
+  Recipe_Create_Lockpick = "Crear ganzúa",
 }
