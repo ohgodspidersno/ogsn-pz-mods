@@ -1,4 +1,4 @@
 Recipes_CN = {
-  Recipe_Create_Hairpin = "Create Lockpick",
-  Recipe_Create_Lockpick = "Create Lockpick",
+Recipe_Create_Hairpin = "制作开锁器",
+Recipe_Create_Lockpick = "制作开锁器",
 }
