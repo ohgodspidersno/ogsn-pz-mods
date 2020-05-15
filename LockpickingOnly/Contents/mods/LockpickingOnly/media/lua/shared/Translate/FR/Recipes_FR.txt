@@ -1,4 +1,4 @@
 Recipes_FR = {
-  Recipe_Create_Hairpin = "Create Lockpick",
-  Recipe_Create_Lockpick = "Create Lockpick",
+  Recipe_Create_Hairpin = "Créer crochet",
+  Recipe_Create_Lockpick = "Créer crochet",
 }
