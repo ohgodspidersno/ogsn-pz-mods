@@ -1,6 +1,4 @@
 ItemName_EN = {
 ItemName_FMJ.BobbyPin = "Lockpick"
 ItemName_FMJ.BobbyPinRaw = "Hairpin",
-ItemName_FMJ.LockPickingMag = "Locksmith's Handbook Vol. 1",
-ItemName_FMJ.LockPickingMag2 = "Locksmith's Handbook Vol. 2",
 }
