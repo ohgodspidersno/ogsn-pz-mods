@@ -39,6 +39,11 @@ TweakItem("Base.MechanicMag2","Icon","magazine_Mechanic_02");
 TweakItem("Base.MechanicMag3","Icon","magazine_Mechanic_03");
 TweakItem("Base.Journal","Icon","journalBlue");
 TweakItem("Base.Notebook","Weight","0.1");
+
+TweakItem("filcher.SFCookingMag1","Icon","magazine_Cook_04");
+TweakItem("filcher.SFCookingMag2","Icon","magazine_Cook_05");
+TweakItem("filcher.SFCookingMag3","Icon","magazine_Cook_06");
+
 -- TweakItem("Base.Book","Icon","________ICONNAME__");
 -- TweakItem("Base.Doodle","Icon","________ICONNAME__");
 -- TweakItem("Base.ComicBook","Icon","________ICONNAME__");

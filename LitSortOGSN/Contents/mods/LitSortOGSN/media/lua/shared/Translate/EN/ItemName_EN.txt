@@ -1,18 +1,19 @@
 ItemName_EN = {
 
 /************** MAPS **************/
-ItemName_Base.KnoxCountryMap = " Map of Knox Country",
-ItemName_Base.KnoxCountryMapSecret = " Map of Knox Country (Crumpled)",
-ItemName_Base.March_Ridge_Map = " Map of March Ridge",
-ItemName_Base.Muldraugh_Map = " Map of Muldraugh",
-ItemName_Base.Rosewood_Map = " Map of Rosewood",
-ItemName_Base.Westpoint_Map = " Map of Westpoint",
-ItemName_Base.Riverside_Map = " Map of Riverside",
+ItemName_Base.KnoxCountryMap = " Map of Knox Country",
+ItemName_Base.KnoxCountryMapSecret = " Map of Knox Country (Crumpled)",
+ItemName_Base.March_Ridge_Map = " Map of March Ridge",
+ItemName_Base.Muldraugh_Map = " Map of Muldraugh",
+ItemName_Base.Rosewood_Map = " Map of Rosewood",
+ItemName_Base.Westpoint_Map = " Map of Westpoint",
+ItemName_Base.Riverside_Map = " Map of Riverside",
 
 /**** IMPROVED MAPS MOD ****/
-ItemName_Base.CrossroadsMallMap = " Map of Crossroads Mall",
-ItemName_Base.DixieMap = " Map of Dixie",
-ItemName_Base.ScenicGroveMap = " Map of Scenic Grove",
+ItemName_Base.CrossroadsMallMap = " Map of Crossroads Mall",
+ItemName_Base.DixieMap = " Map of Dixie"
+ItemName_Base.ScenicGroveMap = " Map of Scenic Grove",
+ItemName_Base.BedfordMap = " Map of Bedford Falls",
 
 /************** BOOKS **************/
 ItemName_Base.BookCarpentry1 = " Carpentry Vol.1: For Dummies",
@@ -100,6 +101,9 @@ ItemName_FlameTrapMag.FlameTrapMagazine = " Engineer Magazine Vol. 3",
 ItemName_Base.CookingMag1 = " Good Cooking Magazine Vol. 1",
 ItemName_Base.CookingMag2 = " Good Cooking Magazine Vol. 2",
 ItemName_Base.DairyCookingMag = " Good Cooking Magazine Vol. 3",
+ItemName_filcher.SFCookingMag1 = " Good Cooking Magazine Vol. 4",
+ItemName_filcher.SFCookingMag2 = " Good Cooking Magazine Vol. 5",
+ItemName_filcher.SFCookingMag3 = " Good Cooking Magazine Vol. 6",
 ItemName_Radio.RadioMag1 = " Guerilla Radio Vol. 1",
 ItemName_Radio.RadioMag2 = " Guerilla Radio Vol. 2",
 ItemName_Radio.RadioMag3 = " Guerilla Radio Vol. 3",
@@ -118,6 +122,7 @@ ItemName_Base.SmithingMag3 = " Smithing Magazine Vol. 3",
 ItemName_Base.SmithingMag4 = " Smithing Magazine Vol. 4",
 
 /************** SKILL MAGS **************/
+ItemName_filcher.SFCookingGuide = " Complete Cooking Guide",
 ItemName_Base.FarmingMag1 = " Farming Almanac",
 ItemName_Base.HerbalistMag = " Herbalist's Guide",
 ItemName_Base.ElectronicsMag4 = " How to Use Generators",

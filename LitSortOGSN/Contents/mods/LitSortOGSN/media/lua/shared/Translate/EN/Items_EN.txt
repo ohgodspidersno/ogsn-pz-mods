@@ -1,0 +1,15 @@
+Items_EN = {
+DisplayName_Knox_Country_Map = " Map of Knox Country",
+DisplayName_Crumpled_Map = " Map of Knox Country (Crumpled)",
+DisplayName_March_Ridge_Map = " Map of March Ridge",
+DisplayName_Muldraugh_Map = " Map of Muldraugh",
+DisplayName_Rosewood_Map = " Map of Rosewood",
+DisplayName_Westpoint_Map = " Map of Westpoint",
+DisplayName_Riverside_Map = " Map of Riverside",
+
+/**** IMPROVED MAPS MOD ****/
+DisplayName_Crossroads_Mall_Map = " Map of Crossroads Mall",
+DisplayName_Dixie_Map = " Map of Dixie"
+DisplayName_Scenic_Grove_Map = " Map of Scenic Grove",
+DisplayName_Bedford_Falls_Map = " Map of Bedford Falls",
+}
