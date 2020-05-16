@@ -47,7 +47,7 @@ local function calculateChance(player, lockLevel)
         chance = chance - 5;
     end
 
-    return math.max(3, chance);
+    return math.max(4, chance);
 end
 
 -- ------------------------------------------------
