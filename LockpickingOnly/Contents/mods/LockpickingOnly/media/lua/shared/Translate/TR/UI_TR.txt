@@ -12,8 +12,8 @@ UI_Text_brokenLockModal = "Kýrýlmýþ bir kilidi maymuncukla açmaya çalýþamazsýnýz
 UI_Text_contextBreakDoorLock = "Kapý kilidini kýr",
 UI_Text_contextPickDoorLock = "Kapýyý maymuncukla",
 UI_Text_contextBreakWindowLock = "Kilidi Kýr",
-UI_Text_BobbyStuck = "Lanet Olsun! Saç tokasý sýkýþtý!",
-UI_Text_BobbyBroken = "Lanet Olsun! Saç tokasý kýrýldý!",
+UI_Text_BobbyStuck = "Lanet Olsun! Maymuncuk sýkýþtý!",
+UI_Text_BobbyBroken = "Lanet Olsun! Maymuncuk kýrýldý!",
 UI_trait_BurglarDesc = "Araçlara düz kontak yapabilirsiniz. Kilitleri kýrabilir veya maymuncukla açabilirsiniz. Pencere kilidini kýrma þansý da daha düþük.",
 UI_profdesc_burglar = "Araçlara düz kontak yapabilirsiniz. Kilitleri kýrabilir veya maymuncukla açabilirsiniz. Pencere kilidini kýrma þansý da daha düþük.",
 }

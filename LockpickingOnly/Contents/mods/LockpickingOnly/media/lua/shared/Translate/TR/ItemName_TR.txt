@@ -1,6 +1,7 @@
 /** Turkish translation provided by steam user Nox **/
 ItemName_TR = {
-ItemName_FMJ.BobbyPin = "Saç Tokasý",
+ItemName_FMJ.BobbyPin = "Maymuncuk",
+ItemName_FMJ.BobbyPinRaw = "Saç Tokasý",
 ItemName_FMJ.LockPickingMag = "Çilingirlik Kýlavuzu, Vol. 1",
 ItemName_FMJ.LockPickingMag2 = "Çilingirlik Kýlavuzu, Vol. 2",
 }
