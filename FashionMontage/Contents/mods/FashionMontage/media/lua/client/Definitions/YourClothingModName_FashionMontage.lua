@@ -6,12 +6,15 @@
 -- Add each of your items to the list that corresponds to its BodyPart
 -- If it does not have a unique DisplayName it will not appear in the dropdown
 
+
+-- This ensures the player won't get any error messages if they aren't using Fashion Montage
 if getActivatedMods():contains("FashionMontage") then
   require "Definitions/_OGSN_FashionMontage"
 else
   return
 end
 
+-- pointless statement is pointless
 ClothingSelectionDefinitions = ClothingSelectionDefinitions
 
 local clothing = {
