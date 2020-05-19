@@ -380,71 +380,304 @@ local listScarf = {
   "DistinctNames.Scarf_StripeRedWhite",
 }
 
-ClothingSelectionDefinitions.default.Male.Hat = {chance = 10, items = listHat}
-ClothingSelectionDefinitions.default.Male.TankTop = {chance = 10, items = listTankTop}
-ClothingSelectionDefinitions.default.Male.Tshirt = {chance = 0, items = listTshirt}
-ClothingSelectionDefinitions.default.Male.Shirt = {chance = 10, items = listShirt}
-ClothingSelectionDefinitions.default.Male.Socks = {chance = 0, items = listSocks}
-ClothingSelectionDefinitions.default.Male.Pants = {chance = 0, items = listPants}
-ClothingSelectionDefinitions.default.Male.Skirt = {chance = 0, items = listSkirt}
-ClothingSelectionDefinitions.default.Male.Dress = {chance = 0, items = listDress}
-ClothingSelectionDefinitions.default.Male.Shoes = {chance = 0, items = listShoes}
-ClothingSelectionDefinitions.default.Male.Eyes = {chance = 10, items = listEyes}
-ClothingSelectionDefinitions.default.Male.BeltExtra = {chance = 0, items = listBeltExtra}
-ClothingSelectionDefinitions.default.Male.Mask = {chance = 0, items = listMask}
-ClothingSelectionDefinitions.default.Male.MaskEyes = {chance = 0, items = listMaskEyes}
-ClothingSelectionDefinitions.default.Male.Underwear = {chance = 0, items = listUnderwear}
-ClothingSelectionDefinitions.default.Male.FullHat = {chance = 0, items = listFullHat}
-ClothingSelectionDefinitions.default.Male.Torso1Legs1 = {chance = 0, items = listTorso1Legs1}
-ClothingSelectionDefinitions.default.Male.Neck = {chance = 0, items = listNeck}
-ClothingSelectionDefinitions.default.Male.Hands = {chance = 0, items = listHands}
-ClothingSelectionDefinitions.default.Male.Legs1 = {chance = 0, items = listLegs1}
-ClothingSelectionDefinitions.default.Male.Sweater = {chance = 30, items = listSweater}
-ClothingSelectionDefinitions.default.Male.Jacket = {chance = 30, items = listJacket}
-ClothingSelectionDefinitions.default.Male.FullSuit = {chance = 0, items = listFullSuit}
-ClothingSelectionDefinitions.default.Male.FullSuitHead = {chance = 0, items = listFullSuitHead}
-ClothingSelectionDefinitions.default.Male.FullTop = {chance = 0, items = listFullTop}
-ClothingSelectionDefinitions.default.Male.BathRobe = {chance = 0, items = listBathRobe}
-ClothingSelectionDefinitions.default.Male.TorsoExtra = {chance = 0, items = listTorsoExtra}
-ClothingSelectionDefinitions.default.Male.Tail = {chance = 0, items = listTail}
-ClothingSelectionDefinitions.default.Male.Back = {chance = 0, items = listBack}
-ClothingSelectionDefinitions.default.Male.Scarf = {chance = 0, items = listScarf}
+ClothingSelectionDefinitions.default.Male.Hat = {}
+ClothingSelectionDefinitions.default.Male.TankTop = {}
+ClothingSelectionDefinitions.default.Male.Tshirt = {}
+ClothingSelectionDefinitions.default.Male.Shirt = {}
+ClothingSelectionDefinitions.default.Male.Socks = {}
+ClothingSelectionDefinitions.default.Male.Pants = {}
+ClothingSelectionDefinitions.default.Male.Skirt = {}
+ClothingSelectionDefinitions.default.Male.Dress = {}
+ClothingSelectionDefinitions.default.Male.Shoes = {}
+ClothingSelectionDefinitions.default.Male.Eyes = {}
+ClothingSelectionDefinitions.default.Male.BeltExtra = {}
+ClothingSelectionDefinitions.default.Male.Mask = {}
+ClothingSelectionDefinitions.default.Male.MaskEyes = {}
+ClothingSelectionDefinitions.default.Male.Underwear = {}
+ClothingSelectionDefinitions.default.Male.FullHat = {}
+ClothingSelectionDefinitions.default.Male.Torso1Legs1 = {}
+ClothingSelectionDefinitions.default.Male.Neck = {}
+ClothingSelectionDefinitions.default.Male.Hands = {}
+ClothingSelectionDefinitions.default.Male.Legs1 = {}
+ClothingSelectionDefinitions.default.Male.Sweater = {}
+ClothingSelectionDefinitions.default.Male.Jacket = {}
+ClothingSelectionDefinitions.default.Male.FullSuit = {}
+ClothingSelectionDefinitions.default.Male.FullSuitHead = {}
+ClothingSelectionDefinitions.default.Male.FullTop = {}
+ClothingSelectionDefinitions.default.Male.BathRobe = {}
+ClothingSelectionDefinitions.default.Male.TorsoExtra = {}
+ClothingSelectionDefinitions.default.Male.Tail = {}
+ClothingSelectionDefinitions.default.Male.Back = {}
+ClothingSelectionDefinitions.default.Male.Scarf = {}
+ClothingSelectionDefinitions.default.Female.Hat = {}
+ClothingSelectionDefinitions.default.Female.TankTop = {}
+ClothingSelectionDefinitions.default.Female.Tshirt = {}
+ClothingSelectionDefinitions.default.Female.Shirt = {}
+ClothingSelectionDefinitions.default.Female.Socks = {}
+ClothingSelectionDefinitions.default.Female.Pants = {}
+ClothingSelectionDefinitions.default.Female.Skirt = {}
+ClothingSelectionDefinitions.default.Female.Dress = {}
+ClothingSelectionDefinitions.default.Female.Shoes = {}
+ClothingSelectionDefinitions.default.Female.Eyes = {}
+ClothingSelectionDefinitions.default.Female.BeltExtra = {}
+ClothingSelectionDefinitions.default.Female.Mask = {}
+ClothingSelectionDefinitions.default.Female.MaskEyes = {}
+ClothingSelectionDefinitions.default.Female.Underwear = {}
+ClothingSelectionDefinitions.default.Female.FullHat = {}
+ClothingSelectionDefinitions.default.Female.Torso1Legs1 = {}
+ClothingSelectionDefinitions.default.Female.Neck = {}
+ClothingSelectionDefinitions.default.Female.Hands = {}
+ClothingSelectionDefinitions.default.Female.Legs1 = {}
+ClothingSelectionDefinitions.default.Female.Sweater = {}
+ClothingSelectionDefinitions.default.Female.Jacket = {}
+ClothingSelectionDefinitions.default.Female.FullSuit = {}
+ClothingSelectionDefinitions.default.Female.FullSuitHead = {}
+ClothingSelectionDefinitions.default.Female.FullTop = {}
+ClothingSelectionDefinitions.default.Female.BathRobe = {}
+ClothingSelectionDefinitions.default.Female.TorsoExtra = {}
+ClothingSelectionDefinitions.default.Female.Tail = {}
+ClothingSelectionDefinitions.default.Female.Back = {}
+ClothingSelectionDefinitions.default.Female.Scarf = {}
 
+if next(listHat) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Hat"].items,listHat);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Hat"].chance,0);
+end
+if next(listTankTop) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["TankTop"].items,listTankTop);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["TankTop"].chance,0);
+end
+if next(listTshirt) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Tshirt"].items,listTshirt);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Tshirt"].chance,0);
+end
+if next(listShirt) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Shirt"].items,listShirt);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Shirt"].chance,0);
+end
+if next(listSocks) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Socks"].items,listSocks);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Socks"].chance,0);
+end
+if next(listPants) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Pants"].items,listPants);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Pants"].chance,0);
+end
+if next(listSkirt) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Skirt"].items,listSkirt);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Skirt"].chance,0);
+end
+if next(listDress) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Dress"].items,listDress);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Dress"].chance,0);
+end
+if next(listShoes) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Shoes"].items,listShoes);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Shoes"].chance,0);
+end
+if next(listEyes) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Eyes"].items,listEyes);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Eyes"].chance,0);
+end
+if next(listBeltExtra) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["BeltExtra"].items,listBeltExtra);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["BeltExtra"].chance,0);
+end
+if next(listMask) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Mask"].items,listMask);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Mask"].chance,0);
+end
+if next(listMaskEyes) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["MaskEyes"].items,listMaskEyes);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["MaskEyes"].chance,0);
+end
+if next(listUnderwear) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Underwear"].items,listUnderwear);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Underwear"].chance,0);
+end
+if next(listFullHat) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullHat"].items,listFullHat);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullHat"].chance,0);
+end
+if next(listTorso1Legs1) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Torso1Legs1"].items,listTorso1Legs1);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Torso1Legs1"].chance,0);
+end
+if next(listNeck) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Neck"].items,listNeck);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Neck"].chance,0);
+end
+if next(listHands) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Hands"].items,listHands);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Hands"].chance,0);
+end
+if next(listLegs1) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Legs1"].items,listLegs1);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Legs1"].chance,0);
+end
+if next(listSweater) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Sweater"].items,listSweater);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Sweater"].chance,0);
+end
+if next(listJacket) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Jacket"].items,listJacket);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Jacket"].chance,0);
+end
+if next(listFullSuit) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullSuit"].items,listFullSuit);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullSuit"].chance,0);
+end
+if next(listFullSuitHead) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullSuitHead"].items,listFullSuitHead);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullSuitHead"].chance,0);
+end
+if next(listFullTop) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullTop"].items,listFullTop);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullTop"].chance,0);
+end
+if next(listBathRobe) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["BathRobe"].items,listBathRobe);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["BathRobe"].chance,0);
+end
+if next(listTorsoExtra) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["TorsoExtra"].items,listTorsoExtra);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["TorsoExtra"].chance,0);
+end
+if next(listTail) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Tail"].items,listTail);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Tail"].chance,0);
+end
+if next(listBack) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Back"].items,listBack);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Back"].chance,0);
+end
+if next(listScarf) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Scarf"].items,listScarf);
+  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Scarf"].chance,0);
+end
+if next(listHat) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Hat"].items,listHat);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Hat"].chance,0);
+end
+if next(listTankTop) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["TankTop"].items,listTankTop);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["TankTop"].chance,0);
+end
+if next(listTshirt) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Tshirt"].items,listTshirt);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Tshirt"].chance,0);
+end
+if next(listShirt) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Shirt"].items,listShirt);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Shirt"].chance,0);
+end
+if next(listSocks) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Socks"].items,listSocks);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Socks"].chance,0);
+end
+if next(listPants) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Pants"].items,listPants);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Pants"].chance,0);
+end
+if next(listSkirt) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Skirt"].items,listSkirt);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Skirt"].chance,0);
+end
+if next(listDress) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Dress"].items,listDress);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Dress"].chance,0);
+end
+if next(listShoes) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Shoes"].items,listShoes);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Shoes"].chance,0);
+end
+if next(listEyes) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Eyes"].items,listEyes);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Eyes"].chance,0);
+end
+if next(listBeltExtra) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["BeltExtra"].items,listBeltExtra);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["BeltExtra"].chance,0);
+end
+if next(listMask) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Mask"].items,listMask);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Mask"].chance,0);
+end
+if next(listMaskEyes) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["MaskEyes"].items,listMaskEyes);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["MaskEyes"].chance,0);
+end
+if next(listUnderwear) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Underwear"].items,listUnderwear);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Underwear"].chance,0);
+end
+if next(listFullHat) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullHat"].items,listFullHat);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullHat"].chance,0);
+end
+if next(listTorso1Legs1) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Torso1Legs1"].items,listTorso1Legs1);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Torso1Legs1"].chance,0);
+end
+if next(listNeck) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Neck"].items,listNeck);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Neck"].chance,0);
+end
+if next(listHands) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Hands"].items,listHands);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Hands"].chance,0);
+end
+if next(listLegs1) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Legs1"].items,listLegs1);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Legs1"].chance,0);
+end
+if next(listSweater) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Sweater"].items,listSweater);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Sweater"].chance,0);
+end
+if next(listJacket) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Jacket"].items,listJacket);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Jacket"].chance,0);
+end
+if next(listFullSuit) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullSuit"].items,listFullSuit);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullSuit"].chance,0);
+end
+if next(listFullSuitHead) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullSuitHead"].items,listFullSuitHead);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullSuitHead"].chance,0);
+end
+if next(listFullTop) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullTop"].items,listFullTop);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullTop"].chance,0);
+end
+if next(listBathRobe) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["BathRobe"].items,listBathRobe);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["BathRobe"].chance,0);
+end
+if next(listTorsoExtra) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["TorsoExtra"].items,listTorsoExtra);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["TorsoExtra"].chance,0);
+end
+if next(listTail) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Tail"].items,listTail);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Tail"].chance,0);
+end
+if next(listBack) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Back"].items,listBack);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Back"].chance,0);
+end
+if next(listScarf) ~= nil then
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Scarf"].items,listScarf);
+  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Scarf"].chance,0);
+end
 
-ClothingSelectionDefinitions.default.Female.Hat = {chance = 10, items = listHat}
-ClothingSelectionDefinitions.default.Female.TankTop = {chance = 10, items = listTankTop}
-ClothingSelectionDefinitions.default.Female.Tshirt = {chance = 0, items = listTshirt}
-ClothingSelectionDefinitions.default.Female.Shirt = {chance = 10, items = listShirt}
-ClothingSelectionDefinitions.default.Female.Socks = {chance = 0, items = listSocks}
-ClothingSelectionDefinitions.default.Female.Pants = {chance = 0, items = listPants}
-ClothingSelectionDefinitions.default.Female.Skirt = {chance = 0, items = listSkirt}
-ClothingSelectionDefinitions.default.Female.Dress = {chance = 0, items = listDress}
-ClothingSelectionDefinitions.default.Female.Shoes = {chance = 0, items = listShoes}
-ClothingSelectionDefinitions.default.Female.Eyes = {chance = 10, items = listEyes}
-ClothingSelectionDefinitions.default.Female.BeltExtra = {chance = 0, items = listBeltExtra}
-ClothingSelectionDefinitions.default.Female.Mask = {chance = 0, items = listMask}
-ClothingSelectionDefinitions.default.Female.MaskEyes = {chance = 0, items = listMaskEyes}
-ClothingSelectionDefinitions.default.Female.Underwear = {chance = 0, items = listUnderwear}
-ClothingSelectionDefinitions.default.Female.FullHat = {chance = 0, items = listFullHat}
-ClothingSelectionDefinitions.default.Female.Torso1Legs1 = {chance = 0, items = listTorso1Legs1}
-ClothingSelectionDefinitions.default.Female.Neck = {chance = 0, items = listNeck}
-ClothingSelectionDefinitions.default.Female.Hands = {chance = 0, items = listHands}
-ClothingSelectionDefinitions.default.Female.Legs1 = {chance = 0, items = listLegs1}
-ClothingSelectionDefinitions.default.Female.Sweater = {chance = 30, items = listSweater}
-ClothingSelectionDefinitions.default.Female.Jacket = {chance = 30, items = listJacket}
-ClothingSelectionDefinitions.default.Female.FullSuit = {chance = 0, items = listFullSuit}
-ClothingSelectionDefinitions.default.Female.FullSuitHead = {chance = 0, items = listFullSuitHead}
-ClothingSelectionDefinitions.default.Female.FullTop = {chance = 0, items = listFullTop}
-ClothingSelectionDefinitions.default.Female.BathRobe = {chance = 0, items = listBathRobe}
-ClothingSelectionDefinitions.default.Female.TorsoExtra = {chance = 0, items = listTorsoExtra}
-ClothingSelectionDefinitions.default.Female.Tail = {chance = 0, items = listTail}
-ClothingSelectionDefinitions.default.Female.Back = {chance = 0, items = listBack}
-ClothingSelectionDefinitions.default.Female.Scarf = {chance = 0, items = listScarf}
 
 -- startingOutfit --
-ClothingSelectionDefinitions.starting = ClothingSelectionDefinitions.starting or {}
-ClothingSelectionDefinitions.starting.Male = ClothingSelectionDefinitions.starting.Male or {}
-ClothingSelectionDefinitions.starting.Female = ClothingSelectionDefinitions.starting.Female or {}
+ClothingSelectionDefinitions.starting = {}
+ClothingSelectionDefinitions.starting.Male = {}
+ClothingSelectionDefinitions.starting.Female = {}
+
 ClothingSelectionDefinitions.starting.Male.Shoes = {chance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
 ClothingSelectionDefinitions.starting.Male.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
 ClothingSelectionDefinitions.starting.Male.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
