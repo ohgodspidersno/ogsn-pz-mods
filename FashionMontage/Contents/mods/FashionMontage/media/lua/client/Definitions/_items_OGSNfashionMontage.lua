@@ -378,240 +378,239 @@ local listScarf = {
   "DistinctNames.Scarf_StripeRedWhite",
 }
 
-ClothingSelectionDefinitions = {};
-ClothingSelectionDefinitions.default = {};
-ClothingSelectionDefinitions.default.Male = {};
-ClothingSelectionDefinitions.default.Female = {};
+-- ClothingSelectionDefinitions = ClothingSelectionDefinitions or {};
+-- ClothingSelectionDefinitions.default.Male = {};
+-- ClothingSelectionDefinitions.default.Female = {};
 
-ClothingSelectionDefinitions.default.Male.Hat = {}
+-- ClothingSelectionDefinitions.default.Male.Hat = {}
 ClothingSelectionDefinitions.default.Male.Hat.items = {}
 ClothingSelectionDefinitions.default.Male.Hat.chance = 25
 
-ClothingSelectionDefinitions.default.Male.TankTop = {}
+-- ClothingSelectionDefinitions.default.Male.TankTop = {}
 ClothingSelectionDefinitions.default.Male.TankTop.items = {}
 ClothingSelectionDefinitions.default.Male.TankTop.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Tshirt = {}
+-- ClothingSelectionDefinitions.default.Male.Tshirt = {}
 ClothingSelectionDefinitions.default.Male.Tshirt.items = {}
 ClothingSelectionDefinitions.default.Male.Tshirt.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Shirt = {}
+-- ClothingSelectionDefinitions.default.Male.Shirt = {}
 ClothingSelectionDefinitions.default.Male.Shirt.items = {}
 ClothingSelectionDefinitions.default.Male.Shirt.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Socks = {}
+-- ClothingSelectionDefinitions.default.Male.Socks = {}
 ClothingSelectionDefinitions.default.Male.Socks.items = {}
 ClothingSelectionDefinitions.default.Male.Socks.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Pants = {}
+-- ClothingSelectionDefinitions.default.Male.Pants = {}
 ClothingSelectionDefinitions.default.Male.Pants.items = {}
 ClothingSelectionDefinitions.default.Male.Pants.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Skirt = {}
+-- ClothingSelectionDefinitions.default.Male.Skirt = {}
 ClothingSelectionDefinitions.default.Male.Skirt.items = {}
 ClothingSelectionDefinitions.default.Male.Skirt.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Dress = {}
+-- ClothingSelectionDefinitions.default.Male.Dress = {}
 ClothingSelectionDefinitions.default.Male.Dress.items = {}
 ClothingSelectionDefinitions.default.Male.Dress.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Shoes = {}
+-- ClothingSelectionDefinitions.default.Male.Shoes = {}
 ClothingSelectionDefinitions.default.Male.Shoes.items = {}
 ClothingSelectionDefinitions.default.Male.Shoes.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Eyes = {}
+-- ClothingSelectionDefinitions.default.Male.Eyes = {}
 ClothingSelectionDefinitions.default.Male.Eyes.items = {}
 ClothingSelectionDefinitions.default.Male.Eyes.chance = 25
 
-ClothingSelectionDefinitions.default.Male.BeltExtra = {}
+-- ClothingSelectionDefinitions.default.Male.BeltExtra = {}
 ClothingSelectionDefinitions.default.Male.BeltExtra.items = {}
 ClothingSelectionDefinitions.default.Male.BeltExtra.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Mask = {}
+-- ClothingSelectionDefinitions.default.Male.Mask = {}
 ClothingSelectionDefinitions.default.Male.Mask.items = {}
 ClothingSelectionDefinitions.default.Male.Mask.chance = 25
 
-ClothingSelectionDefinitions.default.Male.MaskEyes = {}
+-- ClothingSelectionDefinitions.default.Male.MaskEyes = {}
 ClothingSelectionDefinitions.default.Male.MaskEyes.items = {}
 ClothingSelectionDefinitions.default.Male.MaskEyes.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Underwear = {}
+-- ClothingSelectionDefinitions.default.Male.Underwear = {}
 ClothingSelectionDefinitions.default.Male.Underwear.items = {}
 ClothingSelectionDefinitions.default.Male.Underwear.chance = 25
 
-ClothingSelectionDefinitions.default.Male.FullHat = {}
+-- ClothingSelectionDefinitions.default.Male.FullHat = {}
 ClothingSelectionDefinitions.default.Male.FullHat.items = {}
 ClothingSelectionDefinitions.default.Male.FullHat.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Torso1Legs1 = {}
+-- ClothingSelectionDefinitions.default.Male.Torso1Legs1 = {}
 ClothingSelectionDefinitions.default.Male.Torso1Legs1.items = {}
 ClothingSelectionDefinitions.default.Male.Torso1Legs1.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Neck = {}
+-- ClothingSelectionDefinitions.default.Male.Neck = {}
 ClothingSelectionDefinitions.default.Male.Neck.items = {}
 ClothingSelectionDefinitions.default.Male.Neck.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Hands = {}
+-- ClothingSelectionDefinitions.default.Male.Hands = {}
 ClothingSelectionDefinitions.default.Male.Hands.items = {}
 ClothingSelectionDefinitions.default.Male.Hands.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Legs1 = {}
+-- ClothingSelectionDefinitions.default.Male.Legs1 = {}
 ClothingSelectionDefinitions.default.Male.Legs1.items = {}
 ClothingSelectionDefinitions.default.Male.Legs1.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Sweater = {}
+-- ClothingSelectionDefinitions.default.Male.Sweater = {}
 ClothingSelectionDefinitions.default.Male.Sweater.items = {}
 ClothingSelectionDefinitions.default.Male.Sweater.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Jacket = {}
+-- ClothingSelectionDefinitions.default.Male.Jacket = {}
 ClothingSelectionDefinitions.default.Male.Jacket.items = {}
 ClothingSelectionDefinitions.default.Male.Jacket.chance = 25
 
-ClothingSelectionDefinitions.default.Male.FullSuit = {}
+-- ClothingSelectionDefinitions.default.Male.FullSuit = {}
 ClothingSelectionDefinitions.default.Male.FullSuit.items = {}
 ClothingSelectionDefinitions.default.Male.FullSuit.chance = 25
 
-ClothingSelectionDefinitions.default.Male.FullSuitHead = {}
+-- ClothingSelectionDefinitions.default.Male.FullSuitHead = {}
 ClothingSelectionDefinitions.default.Male.FullSuitHead.items = {}
 ClothingSelectionDefinitions.default.Male.FullSuitHead.chance = 25
 
-ClothingSelectionDefinitions.default.Male.FullTop = {}
+-- ClothingSelectionDefinitions.default.Male.FullTop = {}
 ClothingSelectionDefinitions.default.Male.FullTop.items = {}
 ClothingSelectionDefinitions.default.Male.FullTop.chance = 25
 
-ClothingSelectionDefinitions.default.Male.BathRobe = {}
+-- ClothingSelectionDefinitions.default.Male.BathRobe = {}
 ClothingSelectionDefinitions.default.Male.BathRobe.items = {}
 ClothingSelectionDefinitions.default.Male.BathRobe.chance = 25
 
-ClothingSelectionDefinitions.default.Male.TorsoExtra = {}
+-- ClothingSelectionDefinitions.default.Male.TorsoExtra = {}
 ClothingSelectionDefinitions.default.Male.TorsoExtra.items = {}
 ClothingSelectionDefinitions.default.Male.TorsoExtra.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Tail = {}
+-- ClothingSelectionDefinitions.default.Male.Tail = {}
 ClothingSelectionDefinitions.default.Male.Tail.items = {}
 ClothingSelectionDefinitions.default.Male.Tail.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Back = {}
+-- ClothingSelectionDefinitions.default.Male.Back = {}
 ClothingSelectionDefinitions.default.Male.Back.items = {}
 ClothingSelectionDefinitions.default.Male.Back.chance = 25
 
-ClothingSelectionDefinitions.default.Male.Scarf = {}
+-- ClothingSelectionDefinitions.default.Male.Scarf = {}
 ClothingSelectionDefinitions.default.Male.Scarf.items = {}
 ClothingSelectionDefinitions.default.Male.Scarf.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Hat = {}
+-- ClothingSelectionDefinitions.default.Female.Hat = {}
 ClothingSelectionDefinitions.default.Female.Hat.items = {}
 ClothingSelectionDefinitions.default.Female.Hat.chance = 25
 
-ClothingSelectionDefinitions.default.Female.TankTop = {}
+-- ClothingSelectionDefinitions.default.Female.TankTop = {}
 ClothingSelectionDefinitions.default.Female.TankTop.items = {}
 ClothingSelectionDefinitions.default.Female.TankTop.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Tshirt = {}
+-- ClothingSelectionDefinitions.default.Female.Tshirt = {}
 ClothingSelectionDefinitions.default.Female.Tshirt.items = {}
 ClothingSelectionDefinitions.default.Female.Tshirt.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Shirt = {}
+-- ClothingSelectionDefinitions.default.Female.Shirt = {}
 ClothingSelectionDefinitions.default.Female.Shirt.items = {}
 ClothingSelectionDefinitions.default.Female.Shirt.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Socks = {}
+-- ClothingSelectionDefinitions.default.Female.Socks = {}
 ClothingSelectionDefinitions.default.Female.Socks.items = {}
 ClothingSelectionDefinitions.default.Female.Socks.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Pants = {}
+-- ClothingSelectionDefinitions.default.Female.Pants = {}
 ClothingSelectionDefinitions.default.Female.Pants.items = {}
 ClothingSelectionDefinitions.default.Female.Pants.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Skirt = {}
+-- ClothingSelectionDefinitions.default.Female.Skirt = {}
 ClothingSelectionDefinitions.default.Female.Skirt.items = {}
 ClothingSelectionDefinitions.default.Female.Skirt.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Dress = {}
+-- ClothingSelectionDefinitions.default.Female.Dress = {}
 ClothingSelectionDefinitions.default.Female.Dress.items = {}
 ClothingSelectionDefinitions.default.Female.Dress.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Shoes = {}
+-- ClothingSelectionDefinitions.default.Female.Shoes = {}
 ClothingSelectionDefinitions.default.Female.Shoes.items = {}
 ClothingSelectionDefinitions.default.Female.Shoes.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Eyes = {}
+-- ClothingSelectionDefinitions.default.Female.Eyes = {}
 ClothingSelectionDefinitions.default.Female.Eyes.items = {}
 ClothingSelectionDefinitions.default.Female.Eyes.chance = 25
 
-ClothingSelectionDefinitions.default.Female.BeltExtra = {}
+-- ClothingSelectionDefinitions.default.Female.BeltExtra = {}
 ClothingSelectionDefinitions.default.Female.BeltExtra.items = {}
 ClothingSelectionDefinitions.default.Female.BeltExtra.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Mask = {}
+-- ClothingSelectionDefinitions.default.Female.Mask = {}
 ClothingSelectionDefinitions.default.Female.Mask.items = {}
 ClothingSelectionDefinitions.default.Female.Mask.chance = 25
 
-ClothingSelectionDefinitions.default.Female.MaskEyes = {}
+-- ClothingSelectionDefinitions.default.Female.MaskEyes = {}
 ClothingSelectionDefinitions.default.Female.MaskEyes.items = {}
 ClothingSelectionDefinitions.default.Female.MaskEyes.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Underwear = {}
+-- ClothingSelectionDefinitions.default.Female.Underwear = {}
 ClothingSelectionDefinitions.default.Female.Underwear.items = {}
 ClothingSelectionDefinitions.default.Female.Underwear.chance = 25
 
-ClothingSelectionDefinitions.default.Female.FullHat = {}
+-- ClothingSelectionDefinitions.default.Female.FullHat = {}
 ClothingSelectionDefinitions.default.Female.FullHat.items = {}
 ClothingSelectionDefinitions.default.Female.FullHat.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Torso1Legs1 = {}
+-- ClothingSelectionDefinitions.default.Female.Torso1Legs1 = {}
 ClothingSelectionDefinitions.default.Female.Torso1Legs1.items = {}
 ClothingSelectionDefinitions.default.Female.Torso1Legs1.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Neck = {}
+-- ClothingSelectionDefinitions.default.Female.Neck = {}
 ClothingSelectionDefinitions.default.Female.Neck.items = {}
 ClothingSelectionDefinitions.default.Female.Neck.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Hands = {}
+-- ClothingSelectionDefinitions.default.Female.Hands = {}
 ClothingSelectionDefinitions.default.Female.Hands.items = {}
 ClothingSelectionDefinitions.default.Female.Hands.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Legs1 = {}
+-- ClothingSelectionDefinitions.default.Female.Legs1 = {}
 ClothingSelectionDefinitions.default.Female.Legs1.items = {}
 ClothingSelectionDefinitions.default.Female.Legs1.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Sweater = {}
+-- ClothingSelectionDefinitions.default.Female.Sweater = {}
 ClothingSelectionDefinitions.default.Female.Sweater.items = {}
 ClothingSelectionDefinitions.default.Female.Sweater.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Jacket = {}
+-- ClothingSelectionDefinitions.default.Female.Jacket = {}
 ClothingSelectionDefinitions.default.Female.Jacket.items = {}
 ClothingSelectionDefinitions.default.Female.Jacket.chance = 25
 
-ClothingSelectionDefinitions.default.Female.FullSuit = {}
+-- ClothingSelectionDefinitions.default.Female.FullSuit = {}
 ClothingSelectionDefinitions.default.Female.FullSuit.items = {}
 ClothingSelectionDefinitions.default.Female.FullSuit.chance = 25
 
-ClothingSelectionDefinitions.default.Female.FullSuitHead = {}
+-- ClothingSelectionDefinitions.default.Female.FullSuitHead = {}
 ClothingSelectionDefinitions.default.Female.FullSuitHead.items = {}
 ClothingSelectionDefinitions.default.Female.FullSuitHead.chance = 25
 
-ClothingSelectionDefinitions.default.Female.FullTop = {}
+-- ClothingSelectionDefinitions.default.Female.FullTop = {}
 ClothingSelectionDefinitions.default.Female.FullTop.items = {}
 ClothingSelectionDefinitions.default.Female.FullTop.chance = 25
 
-ClothingSelectionDefinitions.default.Female.BathRobe = {}
+-- ClothingSelectionDefinitions.default.Female.BathRobe = {}
 ClothingSelectionDefinitions.default.Female.BathRobe.items = {}
 ClothingSelectionDefinitions.default.Female.BathRobe.chance = 25
 
-ClothingSelectionDefinitions.default.Female.TorsoExtra = {}
+-- ClothingSelectionDefinitions.default.Female.TorsoExtra = {}
 ClothingSelectionDefinitions.default.Female.TorsoExtra.items = {}
 ClothingSelectionDefinitions.default.Female.TorsoExtra.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Tail = {}
+-- ClothingSelectionDefinitions.default.Female.Tail = {}
 ClothingSelectionDefinitions.default.Female.Tail.items = {}
 ClothingSelectionDefinitions.default.Female.Tail.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Back = {}
+-- ClothingSelectionDefinitions.default.Female.Back = {}
 ClothingSelectionDefinitions.default.Female.Back.items = {}
 ClothingSelectionDefinitions.default.Female.Back.chance = 25
 
-ClothingSelectionDefinitions.default.Female.Scarf = {}
+-- ClothingSelectionDefinitions.default.Female.Scarf = {}
 ClothingSelectionDefinitions.default.Female.Scarf.items = {}
 ClothingSelectionDefinitions.default.Female.Scarf.chance = 25
 
