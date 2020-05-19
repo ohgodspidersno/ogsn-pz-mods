@@ -294,9 +294,6 @@ local clothingLists = {
         "DistinctNames.Jumper_VNeck",
         "DistinctNames.Jumper_TankTopTINT",
       },
-      listSweaterHat = {
-        "DistinctNames.HoodieUP_WhiteTINT",
-      },
       listJacket = {
         "DistinctNames.Jacket_WhiteTINT",
         "DistinctNames.Jacket_Black",
@@ -318,11 +315,6 @@ local clothingLists = {
         "DistinctNames.Suit_Jacket",
         "DistinctNames.WeddingJacket",
         "DistinctNames.Jacket_Varsity",
-      },
-      listJacketHat = {
-        "DistinctNames.Jacket_Padded",
-        "DistinctNames.PonchoGreen",
-        "DistinctNames.PonchoYellow",
       },
       listFullSuit = {
         "DistinctNames.Boilersuit",

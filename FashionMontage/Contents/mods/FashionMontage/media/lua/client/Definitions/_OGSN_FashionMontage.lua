@@ -126,24 +126,12 @@ ClothingSelectionDefinitions.default.Male.Sweater.chance = 20
 ClothingSelectionDefinitions.default.Female.Sweater = {}
 ClothingSelectionDefinitions.default.Female.Sweater.items = {}
 ClothingSelectionDefinitions.default.Female.Sweater.chance = 20
-ClothingSelectionDefinitions.default.Male.SweaterHat = {}
-ClothingSelectionDefinitions.default.Male.SweaterHat.items = {}
-ClothingSelectionDefinitions.default.Male.SweaterHat.chance = 20
-ClothingSelectionDefinitions.default.Female.SweaterHat = {}
-ClothingSelectionDefinitions.default.Female.SweaterHat.items = {}
-ClothingSelectionDefinitions.default.Female.SweaterHat.chance = 20
 ClothingSelectionDefinitions.default.Male.Jacket = {}
 ClothingSelectionDefinitions.default.Male.Jacket.items = {}
 ClothingSelectionDefinitions.default.Male.Jacket.chance = 20
 ClothingSelectionDefinitions.default.Female.Jacket = {}
 ClothingSelectionDefinitions.default.Female.Jacket.items = {}
 ClothingSelectionDefinitions.default.Female.Jacket.chance = 20
-ClothingSelectionDefinitions.default.Male.JacketHat = {}
-ClothingSelectionDefinitions.default.Male.JacketHat.items = {}
-ClothingSelectionDefinitions.default.Male.JacketHat.chance = 20
-ClothingSelectionDefinitions.default.Female.JacketHat = {}
-ClothingSelectionDefinitions.default.Female.JacketHat.items = {}
-ClothingSelectionDefinitions.default.Female.JacketHat.chance = 20
 ClothingSelectionDefinitions.default.Male.FullSuit = {}
 ClothingSelectionDefinitions.default.Male.FullSuit.items = {}
 ClothingSelectionDefinitions.default.Male.FullSuit.chance = 20
@@ -387,14 +375,6 @@ local function addClothing(clothingLists)
       merge_Old_New(maleItems,clothingLists.listSweater);
       merge_Old_New(femaleItems,clothingLists.listSweater);
     end
-    if clothingLists.listSweaterHat then
-      maleTable.SweaterHat.chance = 20;
-      femaleTable.SweaterHat.chance = 20;
-      local maleItems = maleTable.SweaterHat.items;
-      local femaleItems = femaleTable.SweaterHat.items;
-      merge_Old_New(maleItems,clothingLists.listSweaterHat);
-      merge_Old_New(femaleItems,clothingLists.listSweaterHat);
-    end
     if clothingLists.listJacket then
       maleTable.Jacket.chance = 20;
       femaleTable.Jacket.chance = 20;
@@ -402,14 +382,6 @@ local function addClothing(clothingLists)
       local femaleItems = femaleTable.Jacket.items;
       merge_Old_New(maleItems,clothingLists.listJacket);
       merge_Old_New(femaleItems,clothingLists.listJacket);
-    end
-    if clothingLists.listJacketHat then
-      maleTable.JacketHat.chance = 20;
-      femaleTable.JacketHat.chance = 20;
-      local maleItems = maleTable.JacketHat.items;
-      local femaleItems = femaleTable.JacketHat.items;
-      merge_Old_New(maleItems,clothingLists.listJacketHat);
-      merge_Old_New(femaleItems,clothingLists.listJacketHat);
     end
     if clothingLists.listFullSuit then
       maleTable.FullSuit.chance = 20;
