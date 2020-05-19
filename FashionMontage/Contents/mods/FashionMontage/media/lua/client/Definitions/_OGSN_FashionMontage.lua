@@ -1,6 +1,6 @@
 -- NOTE TO MODDERS: Do NOT overwrite this file.
 -- If you want to add new clothing, create a new .lua file using the
--- template I have created in media/lua/client/Definitions/modClothing_ExampleModName.lua
+-- template I have created in media/lua/client/Definitions/YourClothingModName_FashionMontage.lua
 
 -- This file creates empty dropdowns for all the possible BodyParts
 -- The other lua files in this folder add items to those dropdowns
