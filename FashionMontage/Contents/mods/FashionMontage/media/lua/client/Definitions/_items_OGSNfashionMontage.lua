@@ -1,4 +1,10 @@
--- Lists of all items --
+-- Lists of all vanilla items --
+
+-- NOTE TO MODDERS: Do NOT overwrite this file.
+-- If you want to add new clothing, create a new .lua file using the
+-- template I have created in media/lua/client/Definitions/items_ExampleModName.lua
+
+ClothingSelectionDefinitions = {};
 
 local listHat = {
   "DistinctNames.Hat_Bandana",
@@ -376,13 +382,13 @@ local listScarf = {
 
 ClothingSelectionDefinitions.default.Male.Hat = {chance = 10, items = listHat}
 ClothingSelectionDefinitions.default.Male.TankTop = {chance = 10, items = listTankTop}
-ClothingSelectionDefinitions.default.Male.Tshirt = {items = listTshirt}
+ClothingSelectionDefinitions.default.Male.Tshirt = {chance = 0, items = listTshirt}
 ClothingSelectionDefinitions.default.Male.Shirt = {chance = 10, items = listShirt}
 ClothingSelectionDefinitions.default.Male.Socks = {chance = 0, items = listSocks}
-ClothingSelectionDefinitions.default.Male.Pants = {items = listPants}
+ClothingSelectionDefinitions.default.Male.Pants = {chance = 0, items = listPants}
 ClothingSelectionDefinitions.default.Male.Skirt = {chance = 0, items = listSkirt}
 ClothingSelectionDefinitions.default.Male.Dress = {chance = 0, items = listDress}
-ClothingSelectionDefinitions.default.Male.Shoes = {items = listShoes}
+ClothingSelectionDefinitions.default.Male.Shoes = {chance = 0, items = listShoes}
 ClothingSelectionDefinitions.default.Male.Eyes = {chance = 10, items = listEyes}
 ClothingSelectionDefinitions.default.Male.BeltExtra = {chance = 0, items = listBeltExtra}
 ClothingSelectionDefinitions.default.Male.Mask = {chance = 0, items = listMask}
@@ -407,13 +413,13 @@ ClothingSelectionDefinitions.default.Male.Scarf = {chance = 0, items = listScarf
 
 ClothingSelectionDefinitions.default.Female.Hat = {chance = 10, items = listHat}
 ClothingSelectionDefinitions.default.Female.TankTop = {chance = 10, items = listTankTop}
-ClothingSelectionDefinitions.default.Female.Tshirt = {items = listTshirt}
+ClothingSelectionDefinitions.default.Female.Tshirt = {chance = 0, items = listTshirt}
 ClothingSelectionDefinitions.default.Female.Shirt = {chance = 10, items = listShirt}
 ClothingSelectionDefinitions.default.Female.Socks = {chance = 0, items = listSocks}
-ClothingSelectionDefinitions.default.Female.Pants = {items = listPants}
+ClothingSelectionDefinitions.default.Female.Pants = {chance = 0, items = listPants}
 ClothingSelectionDefinitions.default.Female.Skirt = {chance = 0, items = listSkirt}
 ClothingSelectionDefinitions.default.Female.Dress = {chance = 0, items = listDress}
-ClothingSelectionDefinitions.default.Female.Shoes = {items = listShoes}
+ClothingSelectionDefinitions.default.Female.Shoes = {chance = 0, items = listShoes}
 ClothingSelectionDefinitions.default.Female.Eyes = {chance = 10, items = listEyes}
 ClothingSelectionDefinitions.default.Female.BeltExtra = {chance = 0, items = listBeltExtra}
 ClothingSelectionDefinitions.default.Female.Mask = {chance = 0, items = listMask}
@@ -436,15 +442,15 @@ ClothingSelectionDefinitions.default.Female.Back = {chance = 0, items = listBack
 ClothingSelectionDefinitions.default.Female.Scarf = {chance = 0, items = listScarf}
 
 -- startingOutfit --
-ClothingSelectionDefinitions.starting =ClothingSelectionDefinitions.starting or {}
+ClothingSelectionDefinitions.starting = ClothingSelectionDefinitions.starting or {}
 ClothingSelectionDefinitions.starting.Male = ClothingSelectionDefinitions.starting.Male or {}
 ClothingSelectionDefinitions.starting.Female = ClothingSelectionDefinitions.starting.Female or {}
-ClothingSelectionDefinitions.starting.Male.Shoes = {shance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Male.Shoes = {chance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
 ClothingSelectionDefinitions.starting.Male.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
 ClothingSelectionDefinitions.starting.Male.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
 ClothingSelectionDefinitions.starting.Male.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
 
-ClothingSelectionDefinitions.starting.Female.Shoes = {shance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Female.Shoes = {chance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
 ClothingSelectionDefinitions.starting.Female.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
 ClothingSelectionDefinitions.starting.Female.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
 ClothingSelectionDefinitions.starting.Female.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
