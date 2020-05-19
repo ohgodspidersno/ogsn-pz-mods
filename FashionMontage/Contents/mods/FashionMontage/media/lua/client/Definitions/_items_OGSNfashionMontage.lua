@@ -378,429 +378,477 @@ local listScarf = {
   "DistinctNames.Scarf_StripeRedWhite",
 }
 
--- ClothingSelectionDefinitions = ClothingSelectionDefinitions or {};
--- ClothingSelectionDefinitions.default.Male = {};
--- ClothingSelectionDefinitions.default.Female = {};
-
+local function merge_Old_New(old,new)
+  for k,v in pairs(new) do old[k] = v end;
+end
 ClothingSelectionDefinitions.default.Male.Hat = {}
 ClothingSelectionDefinitions.default.Male.Hat.items = {}
-ClothingSelectionDefinitions.default.Male.Hat.chance = 25
-
-ClothingSelectionDefinitions.default.Male.TankTop = {}
-ClothingSelectionDefinitions.default.Male.TankTop.items = {}
-ClothingSelectionDefinitions.default.Male.TankTop.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Tshirt = {}
-ClothingSelectionDefinitions.default.Male.Tshirt.items = {}
-ClothingSelectionDefinitions.default.Male.Tshirt.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Shirt = {}
-ClothingSelectionDefinitions.default.Male.Shirt.items = {}
-ClothingSelectionDefinitions.default.Male.Shirt.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Socks = {}
-ClothingSelectionDefinitions.default.Male.Socks.items = {}
-ClothingSelectionDefinitions.default.Male.Socks.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Pants = {}
-ClothingSelectionDefinitions.default.Male.Pants.items = {}
-ClothingSelectionDefinitions.default.Male.Pants.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Skirt = {}
-ClothingSelectionDefinitions.default.Male.Skirt.items = {}
-ClothingSelectionDefinitions.default.Male.Skirt.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Dress = {}
-ClothingSelectionDefinitions.default.Male.Dress.items = {}
-ClothingSelectionDefinitions.default.Male.Dress.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Shoes = {}
-ClothingSelectionDefinitions.default.Male.Shoes.items = {}
-ClothingSelectionDefinitions.default.Male.Shoes.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Eyes = {}
-ClothingSelectionDefinitions.default.Male.Eyes.items = {}
-ClothingSelectionDefinitions.default.Male.Eyes.chance = 25
-
-ClothingSelectionDefinitions.default.Male.BeltExtra = {}
-ClothingSelectionDefinitions.default.Male.BeltExtra.items = {}
-ClothingSelectionDefinitions.default.Male.BeltExtra.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Mask = {}
-ClothingSelectionDefinitions.default.Male.Mask.items = {}
-ClothingSelectionDefinitions.default.Male.Mask.chance = 25
-
-ClothingSelectionDefinitions.default.Male.MaskEyes = {}
-ClothingSelectionDefinitions.default.Male.MaskEyes.items = {}
-ClothingSelectionDefinitions.default.Male.MaskEyes.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Underwear = {}
-ClothingSelectionDefinitions.default.Male.Underwear.items = {}
-ClothingSelectionDefinitions.default.Male.Underwear.chance = 25
-
-ClothingSelectionDefinitions.default.Male.FullHat = {}
-ClothingSelectionDefinitions.default.Male.FullHat.items = {}
-ClothingSelectionDefinitions.default.Male.FullHat.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Torso1Legs1 = {}
-ClothingSelectionDefinitions.default.Male.Torso1Legs1.items = {}
-ClothingSelectionDefinitions.default.Male.Torso1Legs1.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Neck = {}
-ClothingSelectionDefinitions.default.Male.Neck.items = {}
-ClothingSelectionDefinitions.default.Male.Neck.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Hands = {}
-ClothingSelectionDefinitions.default.Male.Hands.items = {}
-ClothingSelectionDefinitions.default.Male.Hands.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Legs1 = {}
-ClothingSelectionDefinitions.default.Male.Legs1.items = {}
-ClothingSelectionDefinitions.default.Male.Legs1.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Sweater = {}
-ClothingSelectionDefinitions.default.Male.Sweater.items = {}
-ClothingSelectionDefinitions.default.Male.Sweater.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Jacket = {}
-ClothingSelectionDefinitions.default.Male.Jacket.items = {}
-ClothingSelectionDefinitions.default.Male.Jacket.chance = 25
-
-ClothingSelectionDefinitions.default.Male.FullSuit = {}
-ClothingSelectionDefinitions.default.Male.FullSuit.items = {}
-ClothingSelectionDefinitions.default.Male.FullSuit.chance = 25
-
-ClothingSelectionDefinitions.default.Male.FullSuitHead = {}
-ClothingSelectionDefinitions.default.Male.FullSuitHead.items = {}
-ClothingSelectionDefinitions.default.Male.FullSuitHead.chance = 25
-
-ClothingSelectionDefinitions.default.Male.FullTop = {}
-ClothingSelectionDefinitions.default.Male.FullTop.items = {}
-ClothingSelectionDefinitions.default.Male.FullTop.chance = 25
-
-ClothingSelectionDefinitions.default.Male.BathRobe = {}
-ClothingSelectionDefinitions.default.Male.BathRobe.items = {}
-ClothingSelectionDefinitions.default.Male.BathRobe.chance = 25
-
-ClothingSelectionDefinitions.default.Male.TorsoExtra = {}
-ClothingSelectionDefinitions.default.Male.TorsoExtra.items = {}
-ClothingSelectionDefinitions.default.Male.TorsoExtra.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Tail = {}
-ClothingSelectionDefinitions.default.Male.Tail.items = {}
-ClothingSelectionDefinitions.default.Male.Tail.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Back = {}
-ClothingSelectionDefinitions.default.Male.Back.items = {}
-ClothingSelectionDefinitions.default.Male.Back.chance = 25
-
-ClothingSelectionDefinitions.default.Male.Scarf = {}
-ClothingSelectionDefinitions.default.Male.Scarf.items = {}
-ClothingSelectionDefinitions.default.Male.Scarf.chance = 25
-
+ClothingSelectionDefinitions.default.Male.Hat.chance = 20
 ClothingSelectionDefinitions.default.Female.Hat = {}
 ClothingSelectionDefinitions.default.Female.Hat.items = {}
-ClothingSelectionDefinitions.default.Female.Hat.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Hat.chance = 20
+ClothingSelectionDefinitions.default.Male.TankTop = {}
+ClothingSelectionDefinitions.default.Male.TankTop.items = {}
+ClothingSelectionDefinitions.default.Male.TankTop.chance = 20
 ClothingSelectionDefinitions.default.Female.TankTop = {}
 ClothingSelectionDefinitions.default.Female.TankTop.items = {}
-ClothingSelectionDefinitions.default.Female.TankTop.chance = 25
-
+ClothingSelectionDefinitions.default.Female.TankTop.chance = 20
+ClothingSelectionDefinitions.default.Male.Tshirt = {}
+ClothingSelectionDefinitions.default.Male.Tshirt.items = {}
+ClothingSelectionDefinitions.default.Male.Tshirt.chance = 20
 ClothingSelectionDefinitions.default.Female.Tshirt = {}
 ClothingSelectionDefinitions.default.Female.Tshirt.items = {}
-ClothingSelectionDefinitions.default.Female.Tshirt.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Tshirt.chance = 20
+ClothingSelectionDefinitions.default.Male.Shirt = {}
+ClothingSelectionDefinitions.default.Male.Shirt.items = {}
+ClothingSelectionDefinitions.default.Male.Shirt.chance = 20
 ClothingSelectionDefinitions.default.Female.Shirt = {}
 ClothingSelectionDefinitions.default.Female.Shirt.items = {}
-ClothingSelectionDefinitions.default.Female.Shirt.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Shirt.chance = 20
+ClothingSelectionDefinitions.default.Male.Socks = {}
+ClothingSelectionDefinitions.default.Male.Socks.items = {}
+ClothingSelectionDefinitions.default.Male.Socks.chance = 20
 ClothingSelectionDefinitions.default.Female.Socks = {}
 ClothingSelectionDefinitions.default.Female.Socks.items = {}
-ClothingSelectionDefinitions.default.Female.Socks.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Socks.chance = 20
+ClothingSelectionDefinitions.default.Male.Pants = {}
+ClothingSelectionDefinitions.default.Male.Pants.items = {}
+ClothingSelectionDefinitions.default.Male.Pants.chance = 20
 ClothingSelectionDefinitions.default.Female.Pants = {}
 ClothingSelectionDefinitions.default.Female.Pants.items = {}
-ClothingSelectionDefinitions.default.Female.Pants.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Pants.chance = 20
+ClothingSelectionDefinitions.default.Male.Skirt = {}
+ClothingSelectionDefinitions.default.Male.Skirt.items = {}
+ClothingSelectionDefinitions.default.Male.Skirt.chance = 20
 ClothingSelectionDefinitions.default.Female.Skirt = {}
 ClothingSelectionDefinitions.default.Female.Skirt.items = {}
-ClothingSelectionDefinitions.default.Female.Skirt.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Skirt.chance = 20
+ClothingSelectionDefinitions.default.Male.Dress = {}
+ClothingSelectionDefinitions.default.Male.Dress.items = {}
+ClothingSelectionDefinitions.default.Male.Dress.chance = 20
 ClothingSelectionDefinitions.default.Female.Dress = {}
 ClothingSelectionDefinitions.default.Female.Dress.items = {}
-ClothingSelectionDefinitions.default.Female.Dress.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Dress.chance = 20
+ClothingSelectionDefinitions.default.Male.Shoes = {}
+ClothingSelectionDefinitions.default.Male.Shoes.items = {}
+ClothingSelectionDefinitions.default.Male.Shoes.chance = 20
 ClothingSelectionDefinitions.default.Female.Shoes = {}
 ClothingSelectionDefinitions.default.Female.Shoes.items = {}
-ClothingSelectionDefinitions.default.Female.Shoes.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Shoes.chance = 20
+ClothingSelectionDefinitions.default.Male.Eyes = {}
+ClothingSelectionDefinitions.default.Male.Eyes.items = {}
+ClothingSelectionDefinitions.default.Male.Eyes.chance = 20
 ClothingSelectionDefinitions.default.Female.Eyes = {}
 ClothingSelectionDefinitions.default.Female.Eyes.items = {}
-ClothingSelectionDefinitions.default.Female.Eyes.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Eyes.chance = 20
+ClothingSelectionDefinitions.default.Male.BeltExtra = {}
+ClothingSelectionDefinitions.default.Male.BeltExtra.items = {}
+ClothingSelectionDefinitions.default.Male.BeltExtra.chance = 20
 ClothingSelectionDefinitions.default.Female.BeltExtra = {}
 ClothingSelectionDefinitions.default.Female.BeltExtra.items = {}
-ClothingSelectionDefinitions.default.Female.BeltExtra.chance = 25
-
+ClothingSelectionDefinitions.default.Female.BeltExtra.chance = 20
+ClothingSelectionDefinitions.default.Male.Mask = {}
+ClothingSelectionDefinitions.default.Male.Mask.items = {}
+ClothingSelectionDefinitions.default.Male.Mask.chance = 20
 ClothingSelectionDefinitions.default.Female.Mask = {}
 ClothingSelectionDefinitions.default.Female.Mask.items = {}
-ClothingSelectionDefinitions.default.Female.Mask.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Mask.chance = 20
+ClothingSelectionDefinitions.default.Male.MaskEyes = {}
+ClothingSelectionDefinitions.default.Male.MaskEyes.items = {}
+ClothingSelectionDefinitions.default.Male.MaskEyes.chance = 20
 ClothingSelectionDefinitions.default.Female.MaskEyes = {}
 ClothingSelectionDefinitions.default.Female.MaskEyes.items = {}
-ClothingSelectionDefinitions.default.Female.MaskEyes.chance = 25
-
+ClothingSelectionDefinitions.default.Female.MaskEyes.chance = 20
+ClothingSelectionDefinitions.default.Male.Underwear = {}
+ClothingSelectionDefinitions.default.Male.Underwear.items = {}
+ClothingSelectionDefinitions.default.Male.Underwear.chance = 20
 ClothingSelectionDefinitions.default.Female.Underwear = {}
 ClothingSelectionDefinitions.default.Female.Underwear.items = {}
-ClothingSelectionDefinitions.default.Female.Underwear.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Underwear.chance = 20
+ClothingSelectionDefinitions.default.Male.FullHat = {}
+ClothingSelectionDefinitions.default.Male.FullHat.items = {}
+ClothingSelectionDefinitions.default.Male.FullHat.chance = 20
 ClothingSelectionDefinitions.default.Female.FullHat = {}
 ClothingSelectionDefinitions.default.Female.FullHat.items = {}
-ClothingSelectionDefinitions.default.Female.FullHat.chance = 25
-
+ClothingSelectionDefinitions.default.Female.FullHat.chance = 20
+ClothingSelectionDefinitions.default.Male.Torso1Legs1 = {}
+ClothingSelectionDefinitions.default.Male.Torso1Legs1.items = {}
+ClothingSelectionDefinitions.default.Male.Torso1Legs1.chance = 20
 ClothingSelectionDefinitions.default.Female.Torso1Legs1 = {}
 ClothingSelectionDefinitions.default.Female.Torso1Legs1.items = {}
-ClothingSelectionDefinitions.default.Female.Torso1Legs1.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Torso1Legs1.chance = 20
+ClothingSelectionDefinitions.default.Male.Neck = {}
+ClothingSelectionDefinitions.default.Male.Neck.items = {}
+ClothingSelectionDefinitions.default.Male.Neck.chance = 20
 ClothingSelectionDefinitions.default.Female.Neck = {}
 ClothingSelectionDefinitions.default.Female.Neck.items = {}
-ClothingSelectionDefinitions.default.Female.Neck.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Neck.chance = 20
+ClothingSelectionDefinitions.default.Male.Hands = {}
+ClothingSelectionDefinitions.default.Male.Hands.items = {}
+ClothingSelectionDefinitions.default.Male.Hands.chance = 20
 ClothingSelectionDefinitions.default.Female.Hands = {}
 ClothingSelectionDefinitions.default.Female.Hands.items = {}
-ClothingSelectionDefinitions.default.Female.Hands.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Hands.chance = 20
+ClothingSelectionDefinitions.default.Male.Legs1 = {}
+ClothingSelectionDefinitions.default.Male.Legs1.items = {}
+ClothingSelectionDefinitions.default.Male.Legs1.chance = 20
 ClothingSelectionDefinitions.default.Female.Legs1 = {}
 ClothingSelectionDefinitions.default.Female.Legs1.items = {}
-ClothingSelectionDefinitions.default.Female.Legs1.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Legs1.chance = 20
+ClothingSelectionDefinitions.default.Male.Sweater = {}
+ClothingSelectionDefinitions.default.Male.Sweater.items = {}
+ClothingSelectionDefinitions.default.Male.Sweater.chance = 20
 ClothingSelectionDefinitions.default.Female.Sweater = {}
 ClothingSelectionDefinitions.default.Female.Sweater.items = {}
-ClothingSelectionDefinitions.default.Female.Sweater.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Sweater.chance = 20
+ClothingSelectionDefinitions.default.Male.SweaterHat = {}
+ClothingSelectionDefinitions.default.Male.SweaterHat.items = {}
+ClothingSelectionDefinitions.default.Male.SweaterHat.chance = 20
+ClothingSelectionDefinitions.default.Female.SweaterHat = {}
+ClothingSelectionDefinitions.default.Female.SweaterHat.items = {}
+ClothingSelectionDefinitions.default.Female.SweaterHat.chance = 20
+ClothingSelectionDefinitions.default.Male.Jacket = {}
+ClothingSelectionDefinitions.default.Male.Jacket.items = {}
+ClothingSelectionDefinitions.default.Male.Jacket.chance = 20
 ClothingSelectionDefinitions.default.Female.Jacket = {}
 ClothingSelectionDefinitions.default.Female.Jacket.items = {}
-ClothingSelectionDefinitions.default.Female.Jacket.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Jacket.chance = 20
+ClothingSelectionDefinitions.default.Male.JacketHat = {}
+ClothingSelectionDefinitions.default.Male.JacketHat.items = {}
+ClothingSelectionDefinitions.default.Male.JacketHat.chance = 20
+ClothingSelectionDefinitions.default.Female.JacketHat = {}
+ClothingSelectionDefinitions.default.Female.JacketHat.items = {}
+ClothingSelectionDefinitions.default.Female.JacketHat.chance = 20
+ClothingSelectionDefinitions.default.Male.FullSuit = {}
+ClothingSelectionDefinitions.default.Male.FullSuit.items = {}
+ClothingSelectionDefinitions.default.Male.FullSuit.chance = 20
 ClothingSelectionDefinitions.default.Female.FullSuit = {}
 ClothingSelectionDefinitions.default.Female.FullSuit.items = {}
-ClothingSelectionDefinitions.default.Female.FullSuit.chance = 25
-
+ClothingSelectionDefinitions.default.Female.FullSuit.chance = 20
+ClothingSelectionDefinitions.default.Male.FullSuitHead = {}
+ClothingSelectionDefinitions.default.Male.FullSuitHead.items = {}
+ClothingSelectionDefinitions.default.Male.FullSuitHead.chance = 20
 ClothingSelectionDefinitions.default.Female.FullSuitHead = {}
 ClothingSelectionDefinitions.default.Female.FullSuitHead.items = {}
-ClothingSelectionDefinitions.default.Female.FullSuitHead.chance = 25
-
+ClothingSelectionDefinitions.default.Female.FullSuitHead.chance = 20
+ClothingSelectionDefinitions.default.Male.FullTop = {}
+ClothingSelectionDefinitions.default.Male.FullTop.items = {}
+ClothingSelectionDefinitions.default.Male.FullTop.chance = 20
 ClothingSelectionDefinitions.default.Female.FullTop = {}
 ClothingSelectionDefinitions.default.Female.FullTop.items = {}
-ClothingSelectionDefinitions.default.Female.FullTop.chance = 25
-
+ClothingSelectionDefinitions.default.Female.FullTop.chance = 20
+ClothingSelectionDefinitions.default.Male.BathRobe = {}
+ClothingSelectionDefinitions.default.Male.BathRobe.items = {}
+ClothingSelectionDefinitions.default.Male.BathRobe.chance = 20
 ClothingSelectionDefinitions.default.Female.BathRobe = {}
 ClothingSelectionDefinitions.default.Female.BathRobe.items = {}
-ClothingSelectionDefinitions.default.Female.BathRobe.chance = 25
-
+ClothingSelectionDefinitions.default.Female.BathRobe.chance = 20
+ClothingSelectionDefinitions.default.Male.TorsoExtra = {}
+ClothingSelectionDefinitions.default.Male.TorsoExtra.items = {}
+ClothingSelectionDefinitions.default.Male.TorsoExtra.chance = 20
 ClothingSelectionDefinitions.default.Female.TorsoExtra = {}
 ClothingSelectionDefinitions.default.Female.TorsoExtra.items = {}
-ClothingSelectionDefinitions.default.Female.TorsoExtra.chance = 25
-
+ClothingSelectionDefinitions.default.Female.TorsoExtra.chance = 20
+ClothingSelectionDefinitions.default.Male.Tail = {}
+ClothingSelectionDefinitions.default.Male.Tail.items = {}
+ClothingSelectionDefinitions.default.Male.Tail.chance = 20
 ClothingSelectionDefinitions.default.Female.Tail = {}
 ClothingSelectionDefinitions.default.Female.Tail.items = {}
-ClothingSelectionDefinitions.default.Female.Tail.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Tail.chance = 20
+ClothingSelectionDefinitions.default.Male.Back = {}
+ClothingSelectionDefinitions.default.Male.Back.items = {}
+ClothingSelectionDefinitions.default.Male.Back.chance = 20
 ClothingSelectionDefinitions.default.Female.Back = {}
 ClothingSelectionDefinitions.default.Female.Back.items = {}
-ClothingSelectionDefinitions.default.Female.Back.chance = 25
-
+ClothingSelectionDefinitions.default.Female.Back.chance = 20
+ClothingSelectionDefinitions.default.Male.Scarf = {}
+ClothingSelectionDefinitions.default.Male.Scarf.items = {}
+ClothingSelectionDefinitions.default.Male.Scarf.chance = 20
 ClothingSelectionDefinitions.default.Female.Scarf = {}
 ClothingSelectionDefinitions.default.Female.Scarf.items = {}
-ClothingSelectionDefinitions.default.Female.Scarf.chance = 25
+ClothingSelectionDefinitions.default.Female.Scarf.chance = 20
+ClothingSelectionDefinitions.default.Female.Dress = {}
+ClothingSelectionDefinitions.default.Female.Dress.items = {}
+ClothingSelectionDefinitions.default.Female.Dress.chance = 0
+ClothingSelectionDefinitions.default.Male.Dress = {}
+ClothingSelectionDefinitions.default.Male.Dress.items = {}
+ClothingSelectionDefinitions.default.Male.Dress.chance = 0
+ClothingSelectionDefinitions.default.Male.Skirt = {}
+ClothingSelectionDefinitions.default.Male.Skirt.items = {}
+ClothingSelectionDefinitions.default.Male.Skirt.chance = 0
 
-if next(listHat) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Hat"].items,listHat);
+local maleTable = ClothingSelectionDefinitions.default.Male
+local femaleTable = ClothingSelectionDefinitions.default.Female
+
+if listHat then
+  maleTable.Hat.chance = 20;
+  femaleTable.Hat.chance = 20;
+  local maleItems = maleTable.Hat.items;
+  local femaleItems = femaleTable.Hat.items;
+  merge_Old_New(maleItems,listHat);
+  merge_Old_New(femaleItems,listHat);
 end
-if next(listTankTop) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["TankTop"].items,listTankTop);
+if listTankTop then
+  maleTable.TankTop.chance = 20;
+  femaleTable.TankTop.chance = 20;
+  local maleItems = maleTable.TankTop.items;
+  local femaleItems = femaleTable.TankTop.items;
+  merge_Old_New(maleItems,listTankTop);
+  merge_Old_New(femaleItems,listTankTop);
 end
-if next(listTshirt) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Tshirt"].items,listTshirt);
+if listTshirt then
+  maleTable.Tshirt.chance = 20;
+  femaleTable.Tshirt.chance = 20;
+  local maleItems = maleTable.Tshirt.items;
+  local femaleItems = femaleTable.Tshirt.items;
+  merge_Old_New(maleItems,listTshirt);
+  merge_Old_New(femaleItems,listTshirt);
 end
-if next(listShirt) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Shirt"].items,listShirt);
+if listShirt then
+  maleTable.Shirt.chance = 20;
+  femaleTable.Shirt.chance = 20;
+  local maleItems = maleTable.Shirt.items;
+  local femaleItems = femaleTable.Shirt.items;
+  merge_Old_New(maleItems,listShirt);
+  merge_Old_New(femaleItems,listShirt);
 end
-if next(listSocks) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Socks"].items,listSocks);
+if listSocks then
+  maleTable.Socks.chance = 20;
+  femaleTable.Socks.chance = 20;
+  local maleItems = maleTable.Socks.items;
+  local femaleItems = femaleTable.Socks.items;
+  merge_Old_New(maleItems,listSocks);
+  merge_Old_New(femaleItems,listSocks);
 end
-if next(listPants) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Pants"].items,listPants);
+if listPants then
+  maleTable.Pants.chance = 20;
+  femaleTable.Pants.chance = 20;
+  local maleItems = maleTable.Pants.items;
+  local femaleItems = femaleTable.Pants.items;
+  merge_Old_New(maleItems,listPants);
+  merge_Old_New(femaleItems,listPants);
 end
-if next(listSkirt) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Skirt"].items,listSkirt);
+if listSkirt then
+  maleTable.Skirt.chance = 0;
+  femaleTable.Skirt.chance = 20;
+  local maleItems = maleTable.Skirt.items;
+  local femaleItems = femaleTable.Skirt.items;
+  merge_Old_New(maleItems,listSkirt);
+  merge_Old_New(femaleItems,listSkirt);
 end
-if next(listDress) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Dress"].items,listDress);
+if listDress then
+  maleTable.Dress.chance = 0;
+  femaleTable.Dress.chance = 20;
+  local maleItems = maleTable.Dress.items;
+  local femaleItems = femaleTable.Dress.items;
+  merge_Old_New(maleItems,listDress);
+  merge_Old_New(femaleItems,listDress);
 end
-if next(listShoes) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Shoes"].items,listShoes);
+if listShoes then
+  maleTable.Shoes.chance = 20;
+  femaleTable.Shoes.chance = 20;
+  local maleItems = maleTable.Shoes.items;
+  local femaleItems = femaleTable.Shoes.items;
+  merge_Old_New(maleItems,listShoes);
+  merge_Old_New(femaleItems,listShoes);
 end
-if next(listEyes) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Eyes"].items,listEyes);
+if listEyes then
+  maleTable.Eyes.chance = 20;
+  femaleTable.Eyes.chance = 20;
+  local maleItems = maleTable.Eyes.items;
+  local femaleItems = femaleTable.Eyes.items;
+  merge_Old_New(maleItems,listEyes);
+  merge_Old_New(femaleItems,listEyes);
 end
-if next(listBeltExtra) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["BeltExtra"].items,listBeltExtra);
+if listBeltExtra then
+  maleTable.BeltExtra.chance = 20;
+  femaleTable.BeltExtra.chance = 20;
+  local maleItems = maleTable.BeltExtra.items;
+  local femaleItems = femaleTable.BeltExtra.items;
+  merge_Old_New(maleItems,listBeltExtra);
+  merge_Old_New(femaleItems,listBeltExtra);
 end
-if next(listMask) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Mask"].items,listMask);
+if listMask then
+  maleTable.Mask.chance = 20;
+  femaleTable.Mask.chance = 20;
+  local maleItems = maleTable.Mask.items;
+  local femaleItems = femaleTable.Mask.items;
+  merge_Old_New(maleItems,listMask);
+  merge_Old_New(femaleItems,listMask);
 end
-if next(listMaskEyes) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["MaskEyes"].items,listMaskEyes);
+if listMaskEyes then
+  maleTable.MaskEyes.chance = 20;
+  femaleTable.MaskEyes.chance = 20;
+  local maleItems = maleTable.MaskEyes.items;
+  local femaleItems = femaleTable.MaskEyes.items;
+  merge_Old_New(maleItems,listMaskEyes);
+  merge_Old_New(femaleItems,listMaskEyes);
 end
-if next(listUnderwear) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Underwear"].items,listUnderwear);
+if listUnderwear then
+  maleTable.Underwear.chance = 20;
+  femaleTable.Underwear.chance = 20;
+  local maleItems = maleTable.Underwear.items;
+  local femaleItems = femaleTable.Underwear.items;
+  merge_Old_New(maleItems,listUnderwear);
+  merge_Old_New(femaleItems,listUnderwear);
 end
-if next(listFullHat) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullHat"].items,listFullHat);
+if listFullHat then
+  maleTable.FullHat.chance = 20;
+  femaleTable.FullHat.chance = 20;
+  local maleItems = maleTable.FullHat.items;
+  local femaleItems = femaleTable.FullHat.items;
+  merge_Old_New(maleItems,listFullHat);
+  merge_Old_New(femaleItems,listFullHat);
 end
-if next(listTorso1Legs1) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Torso1Legs1"].items,listTorso1Legs1);
+if listTorso1Legs1 then
+  maleTable.Torso1Legs1.chance = 20;
+  femaleTable.Torso1Legs1.chance = 20;
+  local maleItems = maleTable.Torso1Legs1.items;
+  local femaleItems = femaleTable.Torso1Legs1.items;
+  merge_Old_New(maleItems,listTorso1Legs1);
+  merge_Old_New(femaleItems,listTorso1Legs1);
 end
-if next(listNeck) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Neck"].items,listNeck);
+if listNeck then
+  maleTable.Neck.chance = 20;
+  femaleTable.Neck.chance = 20;
+  local maleItems = maleTable.Neck.items;
+  local femaleItems = femaleTable.Neck.items;
+  merge_Old_New(maleItems,listNeck);
+  merge_Old_New(femaleItems,listNeck);
 end
-if next(listHands) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Hands"].items,listHands);
+if listHands then
+  maleTable.Hands.chance = 20;
+  femaleTable.Hands.chance = 20;
+  local maleItems = maleTable.Hands.items;
+  local femaleItems = femaleTable.Hands.items;
+  merge_Old_New(maleItems,listHands);
+  merge_Old_New(femaleItems,listHands);
 end
-if next(listLegs1) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Legs1"].items,listLegs1);
+if listLegs1 then
+  maleTable.Legs1.chance = 20;
+  femaleTable.Legs1.chance = 20;
+  local maleItems = maleTable.Legs1.items;
+  local femaleItems = femaleTable.Legs1.items;
+  merge_Old_New(maleItems,listLegs1);
+  merge_Old_New(femaleItems,listLegs1);
 end
-if next(listSweater) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Sweater"].items,listSweater);
+if listSweater then
+  maleTable.Sweater.chance = 20;
+  femaleTable.Sweater.chance = 20;
+  local maleItems = maleTable.Sweater.items;
+  local femaleItems = femaleTable.Sweater.items;
+  merge_Old_New(maleItems,listSweater);
+  merge_Old_New(femaleItems,listSweater);
 end
-if next(listJacket) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Jacket"].items,listJacket);
+if listSweaterHat then
+  maleTable.SweaterHat.chance = 20;
+  femaleTable.SweaterHat.chance = 20;
+  local maleItems = maleTable.SweaterHat.items;
+  local femaleItems = femaleTable.SweaterHat.items;
+  merge_Old_New(maleItems,listSweaterHat);
+  merge_Old_New(femaleItems,listSweaterHat);
 end
-if next(listFullSuit) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullSuit"].items,listFullSuit);
+if listJacket then
+  maleTable.Jacket.chance = 20;
+  femaleTable.Jacket.chance = 20;
+  local maleItems = maleTable.Jacket.items;
+  local femaleItems = femaleTable.Jacket.items;
+  merge_Old_New(maleItems,listJacket);
+  merge_Old_New(femaleItems,listJacket);
 end
-if next(listFullSuitHead) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullSuitHead"].items,listFullSuitHead);
+if listJacketHat then
+  maleTable.JacketHat.chance = 20;
+  femaleTable.JacketHat.chance = 20;
+  local maleItems = maleTable.JacketHat.items;
+  local femaleItems = femaleTable.JacketHat.items;
+  merge_Old_New(maleItems,listJacketHat);
+  merge_Old_New(femaleItems,listJacketHat);
 end
-if next(listFullTop) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["FullTop"].items,listFullTop);
+if listFullSuit then
+  maleTable.FullSuit.chance = 20;
+  femaleTable.FullSuit.chance = 20;
+  local maleItems = maleTable.FullSuit.items;
+  local femaleItems = femaleTable.FullSuit.items;
+  merge_Old_New(maleItems,listFullSuit);
+  merge_Old_New(femaleItems,listFullSuit);
 end
-if next(listBathRobe) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["BathRobe"].items,listBathRobe);
+if listFullSuitHead then
+  maleTable.FullSuitHead.chance = 20;
+  femaleTable.FullSuitHead.chance = 20;
+  local maleItems = maleTable.FullSuitHead.items;
+  local femaleItems = femaleTable.FullSuitHead.items;
+  merge_Old_New(maleItems,listFullSuitHead);
+  merge_Old_New(femaleItems,listFullSuitHead);
 end
-if next(listTorsoExtra) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["TorsoExtra"].items,listTorsoExtra);
+if listFullTop then
+  maleTable.FullTop.chance = 20;
+  femaleTable.FullTop.chance = 20;
+  local maleItems = maleTable.FullTop.items;
+  local femaleItems = femaleTable.FullTop.items;
+  merge_Old_New(maleItems,listFullTop);
+  merge_Old_New(femaleItems,listFullTop);
 end
-if next(listTail) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Tail"].items,listTail);
+if listBathRobe then
+  maleTable.BathRobe.chance = 20;
+  femaleTable.BathRobe.chance = 20;
+  local maleItems = maleTable.BathRobe.items;
+  local femaleItems = femaleTable.BathRobe.items;
+  merge_Old_New(maleItems,listBathRobe);
+  merge_Old_New(femaleItems,listBathRobe);
 end
-if next(listBack) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Back"].items,listBack);
+if listTorsoExtra then
+  maleTable.TorsoExtra.chance = 20;
+  femaleTable.TorsoExtra.chance = 20;
+  local maleItems = maleTable.TorsoExtra.items;
+  local femaleItems = femaleTable.TorsoExtra.items;
+  merge_Old_New(maleItems,listTorsoExtra);
+  merge_Old_New(femaleItems,listTorsoExtra);
 end
-if next(listScarf) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Male"]["Scarf"].items,listScarf);
+if listTail then
+  maleTable.Tail.chance = 20;
+  femaleTable.Tail.chance = 20;
+  local maleItems = maleTable.Tail.items;
+  local femaleItems = femaleTable.Tail.items;
+  merge_Old_New(maleItems,listTail);
+  merge_Old_New(femaleItems,listTail);
 end
-if next(listHat) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Hat"].items,listHat);
+if listBack then
+  maleTable.Back.chance = 20;
+  femaleTable.Back.chance = 20;
+  local maleItems = maleTable.Back.items;
+  local femaleItems = femaleTable.Back.items;
+  merge_Old_New(maleItems,listBack);
+  merge_Old_New(femaleItems,listBack);
 end
-if next(listTankTop) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["TankTop"].items,listTankTop);
-end
-if next(listTshirt) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Tshirt"].items,listTshirt);
-end
-if next(listShirt) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Shirt"].items,listShirt);
-end
-if next(listSocks) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Socks"].items,listSocks);
-end
-if next(listPants) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Pants"].items,listPants);
-end
-if next(listSkirt) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Skirt"].items,listSkirt);
-end
-if next(listDress) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Dress"].items,listDress);
-end
-if next(listShoes) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Shoes"].items,listShoes);
-end
-if next(listEyes) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Eyes"].items,listEyes);
-end
-if next(listBeltExtra) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["BeltExtra"].items,listBeltExtra);
-end
-if next(listMask) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Mask"].items,listMask);
-end
-if next(listMaskEyes) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["MaskEyes"].items,listMaskEyes);
-end
-if next(listUnderwear) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Underwear"].items,listUnderwear);
-end
-if next(listFullHat) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullHat"].items,listFullHat);
-end
-if next(listTorso1Legs1) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Torso1Legs1"].items,listTorso1Legs1);
-end
-if next(listNeck) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Neck"].items,listNeck);
-end
-if next(listHands) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Hands"].items,listHands);
-end
-if next(listLegs1) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Legs1"].items,listLegs1);
-end
-if next(listSweater) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Sweater"].items,listSweater);
-end
-if next(listJacket) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Jacket"].items,listJacket);
-end
-if next(listFullSuit) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullSuit"].items,listFullSuit);
-end
-if next(listFullSuitHead) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullSuitHead"].items,listFullSuitHead);
-end
-if next(listFullTop) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["FullTop"].items,listFullTop);
-end
-if next(listBathRobe) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["BathRobe"].items,listBathRobe);
-end
-if next(listTorsoExtra) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["TorsoExtra"].items,listTorsoExtra);
-end
-if next(listTail) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Tail"].items,listTail);
-end
-if next(listBack) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Back"].items,listBack);
-end
-if next(listScarf) ~= nil then
-  table.insert(ClothingSelectionDefinitions["default"]["Female"]["Scarf"].items,listScarf);
+if listScarf then
+  maleTable.Scarf.chance = 20;
+  femaleTable.Scarf.chance = 20;
+  local maleItems = maleTable.Scarf.items;
+  local femaleItems = femaleTable.Scarf.items;
+  merge_Old_New(maleItems,listScarf);
+  merge_Old_New(femaleItems,listScarf);
 end
 
+-- if listHat then
+--   maleTable.Hat.chance = 20
+--   femaleTable.Hat.chance = 20
+--   local maleItems = maleTable.Hat.items
+--   local femaleItems = femaleTable.Hat.items
+--   merge_Old_New(maleItems, listHat)
+--   merge_Old_New(femaleItems, listHat)
+-- end
 
 -- startingOutfit --
-ClothingSelectionDefinitions.starting = {}
-ClothingSelectionDefinitions.starting.Male = {}
-ClothingSelectionDefinitions.starting.Female = {}
-
-ClothingSelectionDefinitions.starting.Male.Shoes = {chance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
-ClothingSelectionDefinitions.starting.Male.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
-ClothingSelectionDefinitions.starting.Male.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
-ClothingSelectionDefinitions.starting.Male.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
-
-ClothingSelectionDefinitions.starting.Female.Shoes = {chance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
-ClothingSelectionDefinitions.starting.Female.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
-ClothingSelectionDefinitions.starting.Female.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
-ClothingSelectionDefinitions.starting.Female.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
+-- ClothingSelectionDefinitions.starting = {}
+-- ClothingSelectionDefinitions.starting.Male = {}
+-- ClothingSelectionDefinitions.starting.Female = {}
+--
+-- ClothingSelectionDefinitions.starting.Male.Shoes = {chance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
+-- ClothingSelectionDefinitions.starting.Male.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
+-- ClothingSelectionDefinitions.starting.Male.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
+-- ClothingSelectionDefinitions.starting.Male.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
+--
+-- ClothingSelectionDefinitions.starting.Female.Shoes = {chance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
+-- ClothingSelectionDefinitions.starting.Female.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
+-- ClothingSelectionDefinitions.starting.Female.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
+-- ClothingSelectionDefinitions.starting.Female.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
