@@ -6,7 +6,12 @@
 -- Add each of your items to the list that corresponds to its BodyPart
 -- If it does not have a unique DisplayName it will not appear in the dropdown
 
-require "Definitions/_OGSN_FashionMontage"
+if getActivatedMods():contains("FashionMontage") then
+  require "Definitions/_OGSN_FashionMontage"
+else
+  return
+end
+
 ClothingSelectionDefinitions = ClothingSelectionDefinitions
 
 local clothing = {
