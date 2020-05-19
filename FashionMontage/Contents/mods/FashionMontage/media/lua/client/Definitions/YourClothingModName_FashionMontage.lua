@@ -6,7 +6,7 @@
 -- Add each of your items to the list that corresponds to its BodyPart
 -- If it does not have a unique DisplayName it will not appear in the dropdown
 
-require "Definitions/_items_OGSNfashionMontage"
+require "Definitions/_OGSN_FashionMontage"
 ClothingSelectionDefinitions = ClothingSelectionDefinitions
 
 local clothing = {
