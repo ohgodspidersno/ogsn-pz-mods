@@ -13,9 +13,11 @@ description=[*]Forageables and Trapping - Originally [url=https://steamcommunity
 description=[*]Jarring Meats - Originally [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1537876121]Bottling of Meat[/url]
 description=[*]Super Garlic - Originally part of Forageables and Trapping but it rather overpowered so I felt compelled to split it into its own submod.
 description=[*]Two Additional Traits - Archer and Forager
-description=[*]Craftable Dairy Foods - Updated version of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1939995891&tscn=1589405861]this[/url]
-description=[*]Organized Storage - Updated version of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1939995891&tscn=1589405861]this[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1143998415]that[/url]
+description=[*]Craftable Dairy Foods - Updated version of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1939995891]this[/url]
+description=[*]Organized Storage - Updated version of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1777858254]this[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1143998415]that[/url]
 description=[/list]
 description=
 description= Please let me know if you find any bugs or conflicts.
 description=Fork icon by Najaya Design from the Noun Project
+tags=
+visibility=public
