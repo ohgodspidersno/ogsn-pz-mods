@@ -2,7 +2,7 @@
 -- If you want to add new clothing, create a new .lua file using the
 -- template I have created in media/lua/client/Definitions/YourClothingModName_FashionMontage.lua
 
--- This file creates empty dropdowns for all the possible BodyParts
+-- This file creates empty dropdowns for all the possible BodyLocation options
 -- The other lua files in this folder add items to those dropdowns
 
 -- Create a blank slate of empty dropdowns for Male and Female

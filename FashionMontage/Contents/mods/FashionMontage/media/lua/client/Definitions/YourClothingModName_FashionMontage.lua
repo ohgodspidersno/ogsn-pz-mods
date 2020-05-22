@@ -3,7 +3,7 @@
 -- Make sure this filename starts with an english letter --
 
 -- INSTRUCTIONS - ADDING YOUR ITEMS --
--- Add each of your items to the list that corresponds to its BodyPart
+-- Add each of your items to the list that corresponds to its BodyLocation
 -- If it does not have a unique DisplayName it will not appear in the dropdown
 
 
@@ -18,8 +18,8 @@ end
 ClothingSelectionDefinitions = ClothingSelectionDefinitions
 
 local clothing = {
-  -- these lists are named after the BodyPart of the item
-  -- If your item's BodyPart = Hat then put it in listHat
+  -- these lists are named after the BodyLocation of the item
+  -- If your item's BodyLocation = Hat then put it in listHat
   listHat = {
     -- "MyModule.MyNewHat",
   },
