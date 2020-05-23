@@ -201,7 +201,8 @@ ClothingSelectionDefinitions.starting.Female.Pants = {chance=100, items = {"Dist
 local function addClothing(clothingLists)
 
     local function merge_Old_New(old,new)
-      for k,v in pairs(new) do old[k] = v end;
+      local last_index = #old
+      for k,v in pairs(new) do old[last_index+k] = v end;
     end
 
     local maleTable = ClothingSelectionDefinitions.default.Male
