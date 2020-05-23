@@ -10,6 +10,7 @@
 -- This ensures the player won't get any error messages if they aren't using Fashion Montage
 if getActivatedMods():contains("FashionMontage") then
   require "Definitions/_OGSN_FashionMontage"
+  require "Definitions/_OGSN_FashionMontageVanillaClothes"
 else
   return
 end
