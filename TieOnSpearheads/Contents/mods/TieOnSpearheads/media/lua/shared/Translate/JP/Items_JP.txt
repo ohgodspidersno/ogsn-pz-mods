@@ -1,0 +1,3 @@
+Items_JP = {
+DisplayNameSpearChippedStone = "欠けた石の槍",
+}
