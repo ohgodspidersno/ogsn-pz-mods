@@ -1,0 +1,155 @@
+ItemName_RU = {
+
+ItemName_Base.KnoxCountryMap = "Карта округа Нокс",
+ItemName_Base.KnoxCountryMapSecret = "Карта округа Нокс (Помеченная)",
+ItemName_Base.March_Ridge_Map = "Карта Марч Риджа",
+ItemName_Base.Muldraugh_Map = "Карта Малдро",
+ItemName_Base.Rosewood_Map = "Карта Розвуда",
+ItemName_Base.Westpoint_Map = "Карта Вэст Поинта",
+ItemName_Base.Riverside_Map = "Карта Риверсайда",
+
+
+ItemName_Base.CrossroadsMallMap = "Карта торгового центра Кроссроудс",
+ItemName_Base.DixieMap = "Карта Дикси",
+ItemName_Base.ScenicGroveMap = "Карта Синик Гроув",
+
+
+ItemName_Base.BookCarpentry1 = "Книга 'Строительство' Том 1: Для чайников",
+ItemName_Base.BookCarpentry2 = "Книга 'Строительство' Том 2: Средний",
+ItemName_Base.BookCarpentry3 = "Книга 'Строительство' Том 3: Продвинутый",
+ItemName_Base.BookCarpentry4 = "Книга 'Строительство' Том 4: Эксперт",
+ItemName_Base.BookCarpentry5 = "Книга 'Строительство' Том 5: Мастер",
+
+ItemName_Base.BookCooking1 = "Книга 'Кулинария' Том 1: Для Чайников",
+ItemName_Base.BookCooking2 = "Книга 'Кулинария' Том 2: Средний",
+ItemName_Base.BookCooking3 = "Книга 'Кулинария' Том 3: Продвинутый",
+ItemName_Base.BookCooking4 = "Книга 'Кулинария' Том 4: Эксперт",
+ItemName_Base.BookCooking5 = "Книга 'Кулинария' Том 5: Мастер",
+
+ItemName_Base.BookElectrician1 = "Книга 'Электрика' Том 1: Для Чайников",
+ItemName_Base.BookElectrician2 = "Книга 'Электрика' Том 2: Средний",
+ItemName_Base.BookElectrician3 = "Книга 'Электрика' Том 3: Продвинутый",
+ItemName_Base.BookElectrician4 = "Книга 'Электрика' Том 4: Эксперт",
+ItemName_Base.BookElectrician5 = "Книга 'Электрика' Том 5: Мастер",
+
+ItemName_Base.BookFarming1 = "Книга 'Фермерство' Том 1: Для Чайников",
+ItemName_Base.BookFarming2 = "Книга 'Фермерство' Том 2: Средний",
+ItemName_Base.BookFarming3 = "Книга 'Фермерство' Том 3: Продвинутый",
+ItemName_Base.BookFarming4 = "Книга 'Фермерство' Том 4: Эксперт",
+ItemName_Base.BookFarming5 = "Книга 'Фермерство' Том 5: Мастер",
+
+ItemName_Base.BookFishing1 = "Книга 'Рыбалка' Том 1: Для Чайников",
+ItemName_Base.BookFishing2 = "Книга 'Рыбалка' Том 2: Средний",
+ItemName_Base.BookFishing3 = "Книга 'Рыбалка' Том 3: Продвинутый",
+ItemName_Base.BookFishing4 = "Книга 'Рыбалка' Том 4: Эксперт",
+ItemName_Base.BookFishing5 = "Книга 'Рыбалка' Том 5: Мастер",
+
+ItemName_Base.BookFirstAid1 = "Книга 'Первая помощь' Том 1: Для Чайников",
+ItemName_Base.BookFirstAid2 = "Книга 'Первая помощь' Том 2: Средний",
+ItemName_Base.BookFirstAid3 = "Книга 'Первая помощь' Том 3: Продвинутый",
+ItemName_Base.BookFirstAid4 = "Книга 'Первая помощь' Том 4: Эксперт",
+ItemName_Base.BookFirstAid5 = "Книга 'Первая помощь' Том 5: Мастер",
+
+ItemName_Base.BookForaging1 = "Книга 'Собирательство' Том 1: Для Чайников",
+ItemName_Base.BookForaging2 = "Книга 'Собирательство' Том 2: Средний",
+ItemName_Base.BookForaging3 = "Книга 'Собирательство' Том 3: Продвинутый",
+ItemName_Base.BookForaging4 = "Книга 'Собирательство' Том 4: Эксперт",
+ItemName_Base.BookForaging5 = "Книга 'Собирательство' Том 5: Мастер",
+
+ItemName_Base.BookMechanic1 = "Книга 'Механика' Том 1: Для Чайников",
+ItemName_Base.BookMechanic2 = "Книга 'Механика' Том 2: Средний",
+ItemName_Base.BookMechanic3 = "Книга 'Механика' Том 3: Продвинутый",
+ItemName_Base.BookMechanic4 = "Книга 'Механика' Том 4: Эксперт",
+ItemName_Base.BookMechanic5 = "Книга 'Механика' Том 5: Мастер",
+
+ItemName_Base.BookMetalWelding1 = "Книга 'Металлообработка' Том 1: Для Чайников",
+ItemName_Base.BookMetalWelding2 = "Книга 'Металлообработка' Том 2: Средний",
+ItemName_Base.BookMetalWelding3 = "Книга 'Металлообработка' Том 3: Продвинутый",
+ItemName_Base.BookMetalWelding4 = "Книга 'Металлообработка' Том 4: Эксперт",
+ItemName_Base.BookMetalWelding5 = "Книга 'Металлообработка' Том 5: Мастер",
+
+ItemName_Base.BookBlacksmith1 = "Книга 'Кузнечное дело' Том 1: Для Чайников'",
+ItemName_Base.BookBlacksmith2 = "Книга 'Кузнечное дело' Том 2: Средний'",
+ItemName_Base.BookBlacksmith3 = "Книга 'Кузнечное дело' Том 3: Продвинутый'",
+ItemName_Base.BookBlacksmith4 = "Книга 'Кузнечное дело' Том 4: Эксперт'",
+ItemName_Base.BookBlacksmith5 = "Книга 'Кузнечное дело' Том 5: Мастер'",
+
+ItemName_Base.BookTailoring1 = "Книга 'Шитьё' Том 1: Для Чайников'",
+ItemName_Base.BookTailoring2 = "Книга 'Шитьё' Том 2: Средний'",
+ItemName_Base.BookTailoring3 = "Книга 'Шитьё' Том 3: Продвинутый'",
+ItemName_Base.BookTailoring4 = "Книга 'Шитьё' Том 4: Эксперт'",
+ItemName_Base.BookTailoring5 = "Книга 'Шитьё' Том 5: Мастер'",
+
+ItemName_Base.BookTrapping1 = "Книга 'Ловушки' Том 1: Для Чайников',
+ItemName_Base.BookTrapping2 = "Книга 'Ловушки' Том 2: Средний'",
+ItemName_Base.BookTrapping3 = "Книга 'Ловушки' Том 3: Продвинутый'",
+ItemName_Base.BookTrapping4 = "Книга 'Ловушки' Том 4: Эксперт'",
+ItemName_Base.BookTrapping5 = "Книга 'Ловушки' Том 5: Мастер'",
+
+
+ItemName_Base.FishingMag1 = "Журнал 'Американский Рыбак' Издание 1",
+ItemName_Base.FishingMag2 = "Журнал 'Американский Рыбак' Издание 2",
+ItemName_Base.ElectronicsMag1 = "Журнал Электрика Издание 1",
+ItemName_Base.ElectronicsMag2 = "Журнал Электрика Издание 2",
+ItemName_Base.ElectronicsMag3 = "Журнал Электрика Издание 3",
+ItemName_Base.ElectronicsMag5 = "Журнал Электрика Издание 4",
+ItemName_Base.EngineerMagazine1 = "Журнал Инженера Издание 1",
+ItemName_Base.EngineerMagazine2 = "Журнал Инженера Издание 2",
+ItemName_FlameTrapMag.FlameTrapMagazine = "Журнал Инженера Издание 3",
+ItemName_Base.CookingMag1 = "Журнал Хорошего Повара Издание 1",
+ItemName_Base.CookingMag2 = "Журнал Хорошего Повара Издание 2",
+ItemName_Base.DairyCookingMag = "Журнал Хорошего Повара Издание 3",
+ItemName_Radio.RadioMag1 = "Журнал Партизанское Радио Издание 1",
+ItemName_Radio.RadioMag2 = "Журнал Партизанское Радио Издание 2",
+ItemName_Radio.RadioMag3 = "Журнал Партизанское Радио Издание 3",
+ItemName_Base.HuntingMag1 = "Журнал Охотника Издание 1",
+ItemName_Base.HuntingMag2 = "Журнал Охотника Издание 2",
+ItemName_Base.HuntingMag3 = "Журнал Охотника Издание 3",
+ItemName_FMJ.LockPickingMag = "Журнал Взломщика Издание 1",
+ItemName_FMJ.LockPickingMag2 = "Журнал Взломщика Издание 2",
+ItemName_Base.MetalworkMag1 = "Журнал Металлообработки Издание 1",
+ItemName_Base.MetalworkMag2 = "Журнал Металлообработки Издание 2",
+ItemName_Base.MetalworkMag3 = "Журнал Металлообработки Издание 3",
+ItemName_Base.MetalworkMag4 = "Журнал Металлообработки Издание 4",
+ItemName_Base.SmithingMag1 = "Журнал Кузнечного Дела Издание 1",
+ItemName_Base.SmithingMag2 = "Журнал Кузнечного Дела Издание 2",
+ItemName_Base.SmithingMag3 = "Журнал Кузнечного Дела Издание 3",
+ItemName_Base.SmithingMag4 = "Журнал Кузнечного Дела Издание 4",
+
+
+ItemName_Base.FarmingMag1 = "Журнал Фермера",
+ItemName_Base.HerbalistMag = "Журнал Травника",
+ItemName_Base.ElectronicsMag4 = "Журнал о генераторах",
+ItemName_Base.NutritionistMag = "Журнал Диетолога",
+
+
+ItemName_Base.MechanicMag1 = "Журнал 'Автомобили Лейнса' Издание 1: Стандартные модели"
+ItemName_Base.MechanicMag2 = "Журнал 'Автомобили Лэйнса' Издание 2: Грузовые модели",
+ItemName_Base.MechanicMag3 = "Журнал 'Автомобили Лэйнса' Издание 3: Спортивные модели",
+
+
+ItemName_Base.Book = "Книга",
+ItemName_Base.Doodle = "Рисунок",
+ItemName_filcher.ColoringBook = "Книга-раскраска",
+ItemName_Base.ComicBook = "Комикс",
+ItemName_filcher.Crosswords = "Кроссворды",
+ItemName_Base.Magazine = "Журнал",
+ItemName_filcher.MagazineX = "Журнал",
+ItemName_Base.Newspaper = "Газета",
+ItemName_filcher.NotesJokes = "Книга с шутками",
+ItemName_filcher.Novel = "Книга-новелла",
+
+
+ItemName_Base.Note = "Записка",
+ItemName_Base.Notebook = "Пустой блокнот",
+ItemName_Base.Journal = "Журнал",
+ItemName_Base.SheetPaper = "Листок бумаги",
+ItemName_Base.SheetPaper2 = "Листок бумаги",
+
+
+ItemName_filcher.GiftCard = "Подарочная открытка",
+ItemName_filcher.PostcardLocal = "Почтовая карточка",
+ItemName_filcher.PostcardOthers = "Почтовая карточка",
+ItemName_filcher.RippedPages = "Порванные страницы",
+
+}
