@@ -1,0 +1,5 @@
+/** Turkish translation provided by steam user Nox **/
+Items_TR = {
+DisplayName_Lockpick = "Maymuncuk",
+DisplayName_Hairpin = "Saç Tokasý",
+}

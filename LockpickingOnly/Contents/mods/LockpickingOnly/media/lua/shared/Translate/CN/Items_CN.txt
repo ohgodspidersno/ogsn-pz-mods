@@ -1,0 +1,4 @@
+Items_CN = {
+DisplayName_Locpick = "锁器",
+DisplayName_Hairpin = "发夹",
+}

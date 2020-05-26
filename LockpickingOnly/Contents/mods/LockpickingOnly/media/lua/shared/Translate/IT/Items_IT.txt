@@ -1,0 +1,5 @@
+/** Italian translation provided by steam user Ooijennnnnn **/
+Items_IT = {
+DisplayName_Lockpick = "Stecchino",
+DisplayName_Hairpin = "Forcina",
+}

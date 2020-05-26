@@ -1,0 +1,5 @@
+/** Spanish translation provided by steam user SilentSword 0Hz **/
+Items_ES = {
+DisplayName_Lockpick = "Ganzúa",
+DisplayName_Hairpin = "Horquilla",
+}

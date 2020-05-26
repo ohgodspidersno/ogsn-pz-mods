@@ -1,0 +1,5 @@
+/** Translation provided by steam user ralphienator **/
+Items_PL = {
+DisplayName_Lockpick = "Wytrych",
+DisplayName_Hairpin = "Spinka do w³osów",
+}
