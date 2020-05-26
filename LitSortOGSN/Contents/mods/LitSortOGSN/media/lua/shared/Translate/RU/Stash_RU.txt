@@ -1,5 +1,5 @@
 Stash_RU = {
-Stash_AnnotedMap = " СЃ РџРѕРјРµС‚РєР°РјРё",
-Stash_AnnotatedMap_Prefix = " РљР°СЂС‚Р°"
-Stash_AnnotedMap_Suffix = "- РџРѕРјРµС‡РµРЅРЅР°СЏ"
+Stash_AnnotedMap = " с Пометками",
+Stash_AnnotatedMap_Prefix = " Карта"
+Stash_AnnotedMap_Suffix = "- Помеченная"
 }

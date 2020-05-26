@@ -1,5 +1,5 @@
 IGUI_RU = {
-IGUI_PlayerText_FlaggedBook1 = "РЇ Р±СѓРґСѓ РёСЃРєР°С‚СЊ СЌС‚Рѕ.",
-IGUI_PlayerText_FlaggedBook2 = "РЇ РЅРµ Р·Р°Р±СѓРґСѓ, С‡С‚Рѕ РІРёРґРµР» СЌС‚Рѕ.",
-IGUI_PlayerText_FlaggedBook3 = "РЇ Р·Р°РїРѕРјРЅРёР» СЌС‚Рѕ.",
+IGUI_PlayerText_FlaggedBook1 = "Я буду искать это.",
+IGUI_PlayerText_FlaggedBook2 = "Я не забуду, что видел это.",
+IGUI_PlayerText_FlaggedBook3 = "Я запомнил это.",
 }
