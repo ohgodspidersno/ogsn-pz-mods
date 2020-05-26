@@ -1,0 +1,3 @@
+Items_CH = {
+DisplayNameSpearChippedStone = "裝上碎石的矛",
+}
