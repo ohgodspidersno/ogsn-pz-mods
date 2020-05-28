@@ -1,0 +1,19 @@
+Recipes_ES = {
+
+Recipe_Assemble_Plates = "Acoplar platos",
+Recipe_Unassemble_Plates = "Desmontar platos",
+Recipe_Open_Six_Pack_Beer = "Abrir pack de cervezas",
+Recipe_Wash_Dishes = "Lavar platos",
+Recipe_Open_MRE_Box = "Abrir caja MRE",
+Recipe_Break_Glass_Panel = "Romper panel de vidrio",
+Recipe_Make_Improvised_Shard_Of_Broken_Glass_Weapon = "Improvisar arma con vidrio roto",
+Recipe_Make_Aloe_Poultice = "Hacer cataplasma de aloe",
+Recipe_Make_Hot_Milk_Cuppa = "Preparar tazón de leche caliente",
+Recipe_Make_Cold_Milk_Cuppa = "Preparar tazón de leche",
+Recipe_Make_Hot_Camomile_Tea = "Preparar té de manzanilla caliente",
+Recipe_Make_Hot_Mint_Tea = "Preparar té de menta caliente",
+Recipe_Make_Hot_Ginger_Tea = "Preparar té de jengibre caliente",
+Recipe_Make_Hot_Lavender_Tea = "Preparar té de lavanda caliente",
+Recipe_Open_Plastic_Ice_Bag = "Abrir bolsa con hielo",
+
+}		

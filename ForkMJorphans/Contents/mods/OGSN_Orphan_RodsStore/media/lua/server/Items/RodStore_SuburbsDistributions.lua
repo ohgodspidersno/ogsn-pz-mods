@@ -1,0 +1,2051 @@
+require 'Items/SuburbsDistributions'
+
+
+table.insert(SuburbsDistributions["all"]["desk"].items, "RS.LunchBox");
+table.insert(SuburbsDistributions["all"]["desk"].items, 2);
+table.insert(SuburbsDistributions["all"]["locker"].items, "RS.LunchBox");
+table.insert(SuburbsDistributions["all"]["locker"].items, 1);
+
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.Briefcase");
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 1);
+table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, "RS.Briefcase");
+table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, 1);
+table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, "RS.Briefcase");
+table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, 1);
+table.insert(SuburbsDistributions["all"]["desk"].items, "RS.Briefcase");
+table.insert(SuburbsDistributions["all"]["desk"].items, 1);
+
+
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.Suitcase");
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 1);
+table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, "RS.Suitcase");
+table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, 1);
+table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, "RS.Suitcase");
+table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, 1);
+table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, "RS.Suitcase");
+table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["all"]["desk"].items, "RS.Suitcase");
+table.insert(SuburbsDistributions["all"]["desk"].items, 1);
+
+
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.SmallLeatherBag");
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 2);
+table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, "RS.SmallLeatherBag");
+table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, "RS.SmallLeatherBag");
+table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, 2);
+table.insert(SuburbsDistributions["changeroom"]["locker"].items, "RS.SmallLeatherBag");
+table.insert(SuburbsDistributions["changeroom"]["locker"].items, 2);
+
+
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.NormalBackpack");
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.8);
+table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, "RS.NormalBackpack");
+table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, 0.8);
+table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, "RS.NormalBackpack");
+table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, 0.8);
+table.insert(SuburbsDistributions["changeroom"]["locker"].items, "RS.NormalBackpack");
+table.insert(SuburbsDistributions["changeroom"]["locker"].items, 0.8);
+table.insert(SuburbsDistributions["sportstore"]["shelves"].items, "RS.NormalBackpack");
+table.insert(SuburbsDistributions["sportstore"]["shelves"].items, 0.8);
+table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, "RS.NormalBackpack");
+table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, 0.8);
+table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, "RS.NormalBackpack");
+table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, 0.8);
+table.insert(SuburbsDistributions["camping"]["all"].items, "RS.NormalBackpack");
+table.insert(SuburbsDistributions["camping"]["all"].items, 0.8);
+
+
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.HikingBackpack");
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.6);
+table.insert(SuburbsDistributions["clothesstore"]["counter"].items, "RS.HikingBackpack");
+table.insert(SuburbsDistributions["clothesstore"]["counter"].items, 0.5);
+table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, "RS.HikingBackpack");
+table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, 0.5);
+table.insert(SuburbsDistributions["changeroom"]["locker"].items, "RS.HikingBackpack");
+table.insert(SuburbsDistributions["changeroom"]["locker"].items, 0.5);
+table.insert(SuburbsDistributions["sportstore"]["shelves"].items, "RS.HikingBackpack");
+table.insert(SuburbsDistributions["sportstore"]["shelves"].items, 0.5);
+table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, "RS.HikingBackpack");
+table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, 0.5);
+table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, "RS.HikingBackpack");
+table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, 0.5);
+table.insert(SuburbsDistributions["camping"]["all"].items, "RS.HikingBackpack");
+table.insert(SuburbsDistributions["camping"]["all"].items, 0.5);
+
+
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.AliceBackpack");
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.04);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.AliceBackpack");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.01);
+table.insert(SuburbsDistributions["hunting"]["locker"].items, "RS.AliceBackpack");
+table.insert(SuburbsDistributions["hunting"]["locker"].items, 0.1);
+table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, "RS.AliceBackpack");
+table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, 0.5);
+
+
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.MolleBackpack");
+table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.01);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.MolleBackpack");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.01);
+table.insert(SuburbsDistributions["hunting"]["locker"].items, "RS.MolleBackpack");
+table.insert(SuburbsDistributions["hunting"]["locker"].items, 0.1);
+table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, "RS.MolleBackpack");
+table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, 0.5);
+
+
+	SuburbsDistributions["LunchBox"] = {
+		rolls = 1,
+			items = {
+				"Base.JuiceBox", 5,
+				"Base.Lollipop", 1,
+				"Base.MintCandy", 1,
+				"Base.CookieJelly", 1,
+				"Base.CookieChocolateChip", 1,
+				"Base.Modjeska", 1,
+				"Base.Pop", 5,
+				"Base.Pop2", 5,
+				"Base.Pop3", 5,
+				"Base.PopBottle", 5,
+				"Base.Crisps", 1,
+				"Base.Crisps2", 1,
+				"Base.Crisps3", 1,
+				"Base.Crisps4", 1,
+				"Base.Burger", 1,
+				"Base.CakeSlice", 1,
+				"Base.Pancakes", 1,
+				"Base.Corndog", 1,
+				"Base.Macandcheese", 1,
+				"Base.Hotdog", 1,
+				"Base.ChickenFried", 1,
+				"Base.Fries", 1,
+				"Base.Pie", 1,
+				"Base.PeanutButterSandwich", 1,
+				"Base.Pizza", 1,
+				"Base.PiePumpkin", 1,
+				"Base.Chocolate", 1,
+				"Base.Yoghurt", 1,
+				"Base.Milk", 1,
+				"Base.BellPepper", 1,
+				"Base.Tofu", 1,
+				"Base.BerryBlack", 1,
+				"Base.BerryBlue", 1,
+				"Base.BerryGeneric2", 1,
+				"Base.Banana", 1,
+				"Base.Apple", 1,
+				"Base.Grapes", 1,
+				"Base.Lemon", 1,
+				"Base.Orange", 1,
+				"Base.Pineapple", 1,
+				"Base.Peach", 1,
+				"Base.Strewberrie", 1,
+				"Base.Cherry", 1,
+},
+fillRand = 0,
+};	
+
+	SuburbsDistributions["Briefcase"] = {
+		rolls = 2,
+			items = {
+                "Battery", 1,
+                "Nails", 1,
+                "Lighter", 1,
+                "Torch", 1,
+                "Pen", 2,
+                "BluePen", 2,
+                "RedPen", 2,
+                "Pencil", 2,
+                "RubberBand", 2,
+                "Eraser", 2,
+                "Paperclip", 2,
+                "Paperclip", 2,
+                "Tissue", 2,
+                "WhiskeyFull", 2,
+                "Chocolate", 2,
+                "Pills", 1,
+                "PillsBeta", 1,
+                "PillsAntiDep", 1,
+                "PillsSleepingTablets", 1,
+                "Magazine", 2,
+                "Newspaper", 2,
+                "Book", 2,
+                "ComicBook", 2,
+                "MintCandy", 2,
+                "SheetPaper2", 2,
+                "Matches", 2,
+                "Notebook", 2,
+                "Razor", 1,
+                "PillsVitamins", 1,
+                "Lipstick", 1,
+                "MakeupEyeshadow", 1,
+                "MakeupFoundation", 1,
+                "Cologne", 1,
+                "Perfume", 1,
+                "CardDeck", 1,
+                "Comb", 1,
+                "Toothbrush", 1,
+                "Magazine", 1,
+                "Newspaper", 3,
+                "Book", 2,
+                "Notebook", 2,
+                "Scissors", 3,
+                "Cigarettes", 1,
+                "Radio.RadioBlack",1,
+                "Radio.RadioRed",1,
+                "LetterOpener",1,
+                "BookCarpentry1", 1,
+                "BookCarpentry2", 1,
+                "BookCarpentry3", 0.7,
+                "BookCarpentry4", 0.5,
+                "BookCarpentry5", 0.3,
+                "BookCooking1", 1,
+                "BookCooking2", 1,
+                "BookCooking3", 0.5,
+                "BookCooking4", 0.3,
+                "BookForaging1", 1,
+                "BookForaging2", 1,
+                "BookForaging3", 0.7,
+                "BookForaging4", 0.5,
+                "BookForaging5", 0.3,
+                "BookFarming1", 1,
+                "BookFarming2", 1,
+                "BookFarming3", 0.7,
+                "BookFarming4", 0.5,
+                "BookFarming5", 0.3,
+                "BookFishing1", 1,
+                "BookFishing2", 1,
+                "BookFishing3", 0.7,
+                "BookFishing4", 0.5,
+                "BookFishing5", 0.3,
+                "BookTrapping1", 1,
+                "BookTrapping2", 1,
+                "BookTrapping3", 0.7,
+                "BookTrapping4", 0.5,
+                "BookTrapping5", 0.3,
+                "BookFirstAid1", 1,
+                "BookFirstAid2", 1,
+                "BookFirstAid3", 0.7,
+                "BookFirstAid4", 0.5,
+                "BookFirstAid5", 0.3,
+                "BookMetalWelding1", 1,
+                "BookMetalWelding2", 1,
+                "BookMetalWelding3", 0.7,
+                "BookMetalWelding4", 0.5,
+                "BookMetalWelding5", 0.3,
+                "BookElectrician1", 1,
+                "BookElectrician2", 1,
+                "BookElectrician3", 0.7,
+                "BookElectrician4", 0.5,
+                "BookElectrician5", 0.3,
+                "BookMechanic1", 1,
+                "BookMechanic2", 1,
+                "BookMechanic3", 0.7,
+                "BookMechanic4", 0.5,
+                "BookMechanic5", 0.3,
+                "FishingMag1", 1,
+                "FishingMag2", 1,
+                "HuntingMag1", 1,
+                "HuntingMag2", 1,
+                "HuntingMag3", 1,
+                "HerbalistMag", 1,
+                "CookingMag1", 1,
+                "CookingMag2", 1,
+                "ElectronicsMag1", 1,
+                "ElectronicsMag2", 1,
+                "ElectronicsMag3", 1,
+                "ElectronicsMag4", 1,
+                "ElectronicsMag5", 1,
+                "MechanicMag1", 1,
+                "MechanicMag2", 1,
+                "MechanicMag3", 1,
+                "EngineerMagazine1", 1,
+                "EngineerMagazine2", 1,
+                "MetalworkMag1", 1,
+                "MetalworkMag2", 1,
+                "MetalworkMag3", 1,
+                "MetalworkMag4", 1,
+                "Journal", 2,				
+},
+fillRand = 1,
+};	
+
+	SuburbsDistributions["Suitcase"] = {
+		rolls = 1,
+			items = {
+				"Shirt", 3,
+				"Blouse", 3,
+				"Trousers", 3,
+				"Skirt", 3,
+				"Shoes", 3,
+                "Socks", 3,				
+				"Base.Vest", 3,
+				"Base.Underwear1", 3,
+				"Base.Underwear2", 3,
+				"Pills", 1,
+				"PillsBeta", 1,
+				"PillsAntiDep", 1,
+				"PillsSleepingTablets", 1,
+				"PillsVitamins", 1,
+				"FirstAidKit", 1,
+				"VideoGame", 1,
+                "Disc", 1,
+                "CDplayer", 1,
+                "Earbuds", 1,
+                "Headphones", 1,
+                "Belt", 3,		
+                "Newspaper", 1,
+                "Magazine", 1,
+                "FishingMag1", 0.8,
+                "FishingMag2", 0.8,
+                "HuntingMag1", 0.8,
+                "HuntingMag2", 0.8,
+                "HuntingMag3", 0.8,
+                "HerbalistMag", 0.8,
+                "CookingMag1", 0.8,
+                "CookingMag2", 0.8,
+                "ElectronicsMag1", 0.8,
+                "ElectronicsMag2", 0.8,
+                "ElectronicsMag3", 0.8,
+                "ElectronicsMag4", 0.8,
+                "ElectronicsMag5", 0.8,
+                "MechanicMag1", 0.8,
+                "MechanicMag2", 0.8,
+                "MechanicMag3", 0.8,
+                "EngineerMagazine1", 0.8,
+                "EngineerMagazine2", 0.8,
+                "MetalworkMag1", 0.8,
+                "MetalworkMag2", 0.8,
+                "MetalworkMag3", 0.8,
+                "MetalworkMag4", 0.8,
+                "Cigarettes", 1,	
+                "Cologne", 1,
+                "CreditCard", 1,	
+                "MuldraughMap", 0.8,
+                "WestpointMap", 0.8,
+                "MarchRidgeMap",0.8,
+                "RosewoodMap",0.8,
+                "DigitalWatch2", 1,
+                "Lipstick", 1,
+                "MakeupEyeshadow", 1,
+                "MakeupFoundation", 1,
+                "WeddingRing_Woman", 1,
+                "Earbuds", 1,
+                "Ring", 1,
+                "Earrings", 1,
+                "Necklacepearl", 1,
+                "Locket", 1,
+                "Comb", 1,
+                "Magazine", 1,
+                "Magazine", 1,
+                "Newspaper", 1,
+                "Book", 1,
+                "ComicBook", 1,
+                "SheetPaper2", 1,
+                "Notebook", 1,
+                "Lighter", 1,
+                "Torch", 1,
+                "HuntingKnife", 0.5,
+                "RiversideMap",0.1,
+                "DigitalWatch2", 1,
+                "ButterKnife", 1,
+                "KitchenKnife", 1,
+                "BaseballBat", 1,
+                "Axe", 1,
+                "WeddingRing_Man", 1,
+                "Wallet", 1,
+                "Wallet2", 1,
+                "Wallet3", 1,
+                "Wallet4", 1,				
+                "Radio.WalkieTalkie1",0.05,
+                "Radio.WalkieTalkie2",0.03,
+                "Radio.WalkieTalkie3",0.001,	
+				"RS.BabyFood", 0.2,
+                "RS.BabyFood2", 0.2,
+				"RS.BabyFood3", 0.2,
+				
+},
+fillRand = 2,
+};	
+
+	SuburbsDistributions["NormalBackpack"] = {
+		rolls = 1,
+			items = {
+                "HuntingKnife", 6,	
+                "Cigarettes", 2,
+                "Lighter", 2,	
+                "Magazine", 2,
+                "Newspaper", 2,
+                "Notebook", 2,
+                "ComicBook", 2,					
+},
+fillRand = 1,
+};	
+
+	SuburbsDistributions["HikingBackpack"] = {
+		rolls = 1,
+			items = {
+                "HuntingKnife", 3,	
+                "Cigarettes", 1,
+                "Lighter", 1,	
+                "Magazine", 1,
+                "Newspaper", 1,
+                "Notebook", 1,
+                "ComicBook", 1,		
+                "camping.TentPeg", 4,
+                "FishingRod", 3,
+                "FishingNet", 1,
+                "FishingTackle", 1,
+                "FishingTackle2", 1,
+                "FishingLine", 1,				
+},
+fillRand = 1,
+};	
+
+	SuburbsDistributions["AliceBackpack"] = {
+		rolls = 1,
+			items = {
+                "HuntingKnife", 5,
+                "Pistol", 5,
+                "BulletsBox", 3,
+                "BulletsBox", 3,
+                "Gunpowder", 3,				
+                "Radio.WalkieTalkie4",10,
+                "Radio.WalkieTalkie5",10,	
+                "RS.MediumMREPackage",2,	
+                "RS.MediumMREPackage",1,
+                "RS.MediumMREPackage",1,	
+                "RS.MREPackage",0.5,
+				"RS.KnuckleKnife",2,	
+				"RS.CombatKnife",1,	
+},
+fillRand = 0,
+};	
+
+	SuburbsDistributions["MolleBackpack"] = {
+		rolls = 1,
+			items = {
+                "HuntingKnife", 8,
+                "Pistol", 8,
+                "BulletsBox", 5,
+                "BulletsBox", 5,
+                "Gunpowder", 3,
+                "x2Scope", 4,
+                "x4Scope", 4,
+                "x8Scope", 5,
+                "AmmoStraps", 3,
+                "Sling", 4,
+                "FiberglassStock", 3,
+                "RecoilPad",  4,
+                "HuntingRifle", 3,
+                "VarmintRifle", 3,
+                "Shotgun", 3,
+                "ShotgunShellsBox", 10,
+                "223Box", 5,
+                "308Box", 5,
+                "223Box", 5,
+                "308Box", 5,
+                "Axe", 3,
+                "Radio.WalkieTalkie4",6,
+                "Radio.WalkieTalkie5",6,				
+                "Radio.WalkieTalkie4",10,
+                "Radio.WalkieTalkie5",10,	
+                "RS.MediumMREPackage",2,	
+                "RS.MediumMREPackage",1,
+                "RS.MediumMREPackage",1,	
+                "RS.MREPackage",1,
+                "RS.MREPackage",1,
+                "RS.MREPackage",0.5,
+                "RS.MREPackage",0.5,		
+                "RS.CombatKnife",2,				
+},
+fillRand = 0,
+};	
+
+
+
+
+table.insert(SuburbsDistributions["all"]["bin"].items, "RS.BeerBottleEmpty");
+table.insert(SuburbsDistributions["all"]["bin"].items, 1);
+table.insert(SuburbsDistributions["all"]["bin"].items, "RS.BeerCanEmpty");
+table.insert(SuburbsDistributions["all"]["bin"].items, 1);
+
+
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beer1");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.2);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beer1");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.2);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.08);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beer2");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beer2");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.1);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beer3");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beer3");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.1);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beercan1");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beercan1");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beercan2");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beercan2");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beercan3");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beercan3");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beercan4");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Beercan4");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.CakeSlice2");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Lime");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 1);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.BabyFood");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.5);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.BabyFood");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.3);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.BabyFood2");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.5);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.BabyFood2");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.3);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.BabyFood3");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.5);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.BabyFood3");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.3);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.BdayCakeSlice");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.05);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.FilledSmallTupperware");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.4);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.FilledMediumTupperware");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.2);
+table.insert(SuburbsDistributions["all"]["fridge"].items, "RS.Cream");
+table.insert(SuburbsDistributions["all"]["fridge"].items, 0.6);
+table.insert(SuburbsDistributions["all"]["freezer"].items, "RS.Icecubes");
+table.insert(SuburbsDistributions["all"]["freezer"].items, 1);
+table.insert(SuburbsDistributions["all"]["freezer"].items, "RS.Icecubes");
+table.insert(SuburbsDistributions["all"]["freezer"].items, 1);
+table.insert(SuburbsDistributions["all"]["freezer"].items, "RS.Icecubes");
+table.insert(SuburbsDistributions["all"]["freezer"].items, 1);
+table.insert(SuburbsDistributions["all"]["freezer"].items, "RS.Plasticicebag");
+table.insert(SuburbsDistributions["all"]["freezer"].items, 0.6);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "RS.Beer1");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.1);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "RS.Beer2");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.1);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "RS.Beer3");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.1);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.05);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.05);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.05);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "RS.Beercan1");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.2);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "RS.Beercan2");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.2);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "RS.Beercan3");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.2);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "RS.Beercan4");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.2);
+
+
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.Vanila");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "Base.BerryBlue");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "Base.BerryBlue");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "Base.BerryBlack");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "Base.BerryBlack");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.Almonds");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.Raisins");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.Raisins");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.Cream");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 1);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.Raisins");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.BakingMold");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 1);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.CookieMold");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 1);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "Base.BakingTray");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.MapleSyrup");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.CakeSlice2");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.CakeSlice2");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.BlueberryTartSlice");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.BlueberryTartSlice");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["counter"].items, "RS.CherriesJar");
+table.insert(SuburbsDistributions["bakery"]["counter"].items, 1);
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, "RS.Croissant");
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, 3);
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, "RS.Croissant");
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, 3);
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, "Base.CookieJelly");
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, 3);
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, "RS.CakeSlice2");
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, 3);
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, "RS.CakeSlice2");
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, 3);
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, "RS.BlueberryTartSlice");
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, 2);
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, "RS.BlueberryTartSlice");
+table.insert(SuburbsDistributions["bakery"]["displaycase"].items, 2);
+
+
+table.insert(SuburbsDistributions["bathroom"]["all"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["bathroom"]["all"].items, 0.05);
+table.insert(SuburbsDistributions["bathroom"]["all"].items, "RS.SmallGlassBottle");
+table.insert(SuburbsDistributions["bathroom"]["all"].items, 0.1);
+
+
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.MargaritaGlass");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 5); 
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.MargaritaGlass");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 1); 
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.MartiniGlass");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.MartiniGlass");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Glass");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 6);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Glass");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 6);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.CocktailSpoon");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 10);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.CocktailSpoon");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Shaker");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 20);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.GreenOlives");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 6);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.GreenOlives");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Mint");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 5);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Mint");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 5);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Mint");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 5);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Lime");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Lime");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Lime");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "Base.Cork");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "Base.Cork");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 2);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Shaker");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan1");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan1");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan2");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan2");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan2");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan3");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan3");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan3");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan4");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan4");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.Beercan4");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 5);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 5);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 5);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.RockGlass");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 5);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.RockGlass");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.ShotGlass");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.ShotGlass");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 3);
+table.insert(SuburbsDistributions["bar"]["counter"].items, "RS.BarSqueezer");
+table.insert(SuburbsDistributions["bar"]["counter"].items, 4);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.MargaritaGlass");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 4);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.MartiniGlass");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 4);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.Ginebra");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.Ginebra");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "Base.Cork");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.DryVermouth");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 4);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.DryVermouth");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.WhiteRum");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 5);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.WhiteRum");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.Rum");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.Rum");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.Aguaardiente");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.Aguaardiente");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.TripleSec");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 4);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.TripleSec");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.WhiteTequila");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.WhiteTequila");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.Vodka");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 4);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.Vodka");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.Cachaza");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.Cachaza");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.CoffeeLiquor");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 4);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.CoffeeLiquor");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "Base.Cork");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "Base.Cork");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "Base.Cork");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 4);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 5);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 5);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 5);
+table.insert(SuburbsDistributions["bar"]["shelves"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["bar"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["bar"]["bin"].items, "Base.WineEmpty2");
+table.insert(SuburbsDistributions["bar"]["bin"].items, 2);
+table.insert(SuburbsDistributions["bar"]["bin"].items, "Base.WineEmpty2");
+table.insert(SuburbsDistributions["bar"]["bin"].items, 2);
+table.insert(SuburbsDistributions["bar"]["bin"].items, "Base.WineEmpty");
+table.insert(SuburbsDistributions["bar"]["bin"].items, 2);
+table.insert(SuburbsDistributions["bar"]["bin"].items, "Base.WineEmpty");
+table.insert(SuburbsDistributions["bar"]["bin"].items, 2);
+table.insert(SuburbsDistributions["bar"]["bin"].items, "RS.SodaBottleEmpty");
+table.insert(SuburbsDistributions["bar"]["bin"].items, 2);
+table.insert(SuburbsDistributions["bar"]["bin"].items, "RS.SodaBottleEmpty");
+table.insert(SuburbsDistributions["bar"]["bin"].items, 2);
+table.insert(SuburbsDistributions["bar"]["bin"].items, "RS.BeerBottleEmpty");
+table.insert(SuburbsDistributions["bar"]["bin"].items, 2);
+table.insert(SuburbsDistributions["bar"]["bin"].items, "RS.BeerBottleEmpty");
+table.insert(SuburbsDistributions["bar"]["bin"].items, 2);
+table.insert(SuburbsDistributions["bar"]["bin"].items, "RS.BeerCanEmpty");
+table.insert(SuburbsDistributions["bar"]["bin"].items, 2);
+table.insert(SuburbsDistributions["bar"]["bin"].items, "RS.BeerCanEmpty");
+table.insert(SuburbsDistributions["bar"]["bin"].items, 2);
+
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.GreenOlives");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.CherriesJar");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, "RS.BarSqueezer");
+table.insert(SuburbsDistributions["barkitchen"]["shelves"].items, 5);
+
+
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.DirtyPlate");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.ButcherKnife");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.Plate");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.PileOfPlates");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.Wok");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.SoySauce");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.CookingOil");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.Wok");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.MetalBowl");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.Garlic");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.Strainer");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.ChoppingBoard");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.FryingBasket");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.Pepperoni");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "RS.Cream");
+table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, 0.8);
+table.insert(SuburbsDistributions["burgerkitchen"]["freezer"].items, "RS.Icecubes");
+table.insert(SuburbsDistributions["burgerkitchen"]["freezer"].items, 0.8);
+table.insert(SuburbsDistributions["burgerkitchen"]["freezer"].items, "RS.Plasticicebag");
+table.insert(SuburbsDistributions["burgerkitchen"]["freezer"].items, 0.8);
+
+
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Plate");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Plate");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Mint");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Mint");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Camomile");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Camomile");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Ginger");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Ginger");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Ginger");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Vanila");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Vanila");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Lavender");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 0.8);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Lavender");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 0.8);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.PileOfPlates");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "Base.Ginseng");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "Base.Ginseng");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "Base.CookieJelly");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 0.8);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "Base.CookieJelly");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 0.8);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Vodka");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Vodka");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Vodka");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "Base.WhiskeyFull");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Croissant");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Croissant");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Almonds");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Almonds");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.Almonds");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.CakeSlice2");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cafe"]["counter"].items, "RS.CherriesJar");
+table.insert(SuburbsDistributions["cafe"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, "RS.Croissant");
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, 5);
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, "RS.Croissant");
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, 5);
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, "RS.Croissant");
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, 5);
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, "RS.BlueberryTartSlice");
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, 3);
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, "RS.BlueberryTartSlice");
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, 2);
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, "RS.CakeSlice2");
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, 3);
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, "RS.CakeSlice2");
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, 2);
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["cafe"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["cafe"]["bin"].items, "RS.SodaBottleEmpty");
+table.insert(SuburbsDistributions["cafe"]["bin"].items, 2);
+table.insert(SuburbsDistributions["cafe"]["bin"].items, "RS.SodaBottleEmpty");
+table.insert(SuburbsDistributions["cafe"]["bin"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["bin"].items, "RS.BeerCanEmpty");
+table.insert(SuburbsDistributions["cafe"]["bin"].items, 1);
+table.insert(SuburbsDistributions["cafe"]["bin"].items, "RS.BeerCanEmpty");
+table.insert(SuburbsDistributions["cafe"]["bin"].items, 1);
+
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.Plate");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 2);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.Plate");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 1);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.PileOfPlates");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 1);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 2);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "Base.Ginseng");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "Base.Ginseng");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "Base.BerryBlue");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "Base.BerryBlue");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "Base.BerryBlack");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "Base.BerryBlack");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.Mint");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.Mint");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.Camomile");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.Camomile");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.Vanila");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.Ginger");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.Vodka");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.CakeSlice2");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 2);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.BlueberryTartSlice");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 2);
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, "RS.CherriesJar");
+table.insert(SuburbsDistributions["cafekitchen"]["all"].items, 1);
+
+
+table.insert(SuburbsDistributions["candystore"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["candystore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["candystore"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["candystore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["candystore"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["candystore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "Base.Modjeska");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "Base.Modjeska");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "Base.Modjeska");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "Base.CookieJelly");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "Base.CookieJelly");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "Base.CookieJelly");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["candystore"]["displaycase"].items, 4);
+
+table.insert(SuburbsDistributions["camping"]["all"].items, "RS.GardeningScissors");
+table.insert(SuburbsDistributions["camping"]["all"].items, 1);
+
+table.insert(SuburbsDistributions["conveniencestore"]["fridge"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["conveniencestore"]["fridge"].items, 3);
+table.insert(SuburbsDistributions["conveniencestore"]["fridge"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["conveniencestore"]["fridge"].items, 2);
+table.insert(SuburbsDistributions["conveniencestore"]["freezer"].items, "RS.Plasticicebag");
+table.insert(SuburbsDistributions["conveniencestore"]["freezer"].items, 4);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.MilkPowder");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.MilkPowder");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 0.8);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.MilkPowder2");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.MilkPowder2");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 0.8);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BabyFormula");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BabyFormula");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 0.8);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BabyFood");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BabyFood");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 0.5);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BabyFood2");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BabyFood2");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 0.5);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BabyFood3");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, "RS.BabyFood3");
+table.insert(SuburbsDistributions["conveniencestore"]["shelves"].items, 0.5);
+
+
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 1);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["cornerstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.CherriesJar");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, "RS.CherriesJar");
+table.insert(SuburbsDistributions["cornerstore"]["shelves"].items, 3);
+
+
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["fossoil"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.Beer1");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.Beer2");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.Beer3");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["fossoil"]["counter"].items, 3);
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, 2);
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, 1);
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["fossoil"]["crate"].items, 2);
+
+
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.SmallGlassBottle");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "Base.Cork");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.BeerBottleEmpty");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 1);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.2);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.2);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.2);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.MREBox");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.MREBox2");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.GlassPanel");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 1);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.GlassPanel");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 1);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.Machete");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 1);
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.GardeningScissors");
+table.insert(SuburbsDistributions["garagestorage"]["all"].items, 1);
+
+
+table.insert(SuburbsDistributions["generalstorestorage"]["other"].items, "RS.Pepperoni");
+table.insert(SuburbsDistributions["generalstorestorage"]["other"].items, 1);
+
+
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, "RS.Lime");
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, 3);
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, "RS.Lime");
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, 3);
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, "RS.Lime");
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, "RS.Garlic");
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, 1);
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, "RS.Garlic");
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, 1);
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, "RS.Garlic");
+table.insert(SuburbsDistributions["grocers"]["grocerstand"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, "RS.Lime");
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, "RS.Lime");
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, "RS.Lime");
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, "RS.Garlic");
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, 1);
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, "RS.Garlic");
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, 1);
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, "RS.Garlic");
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, 1);
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, 1);
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, 1);
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["grocers"]["smallbox"].items, 1);
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, 2);
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, "RS.Aloe");
+table.insert(SuburbsDistributions["grocers"]["smallcrate"].items, 2);
+
+
+table.insert(SuburbsDistributions["grocery"]["counter"].items, "RS.MapleSyrup");
+table.insert(SuburbsDistributions["grocery"]["counter"].items, 1);
+table.insert(SuburbsDistributions["grocery"]["shelves"].items, "RS.MapleSyrup");
+table.insert(SuburbsDistributions["grocery"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["grocery"]["shelves"].items, "RS.CherriesJar");
+table.insert(SuburbsDistributions["grocery"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["grocery"]["shelves"].items, "RS.SoySauce");
+table.insert(SuburbsDistributions["grocery"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["grocery"]["shelves"].items, "RS.DishWashingLiquid");
+table.insert(SuburbsDistributions["grocery"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["grocery"]["grocerstand"].items, "RS.Lime");
+table.insert(SuburbsDistributions["grocery"]["grocerstand"].items, 2);
+table.insert(SuburbsDistributions["grocery"]["grocerstand"].items, "RS.Lime");
+table.insert(SuburbsDistributions["grocery"]["grocerstand"].items, 2);
+table.insert(SuburbsDistributions["grocery"]["displaycase"].items, "RS.Lime");
+table.insert(SuburbsDistributions["grocery"]["displaycase"].items, 2);
+table.insert(SuburbsDistributions["grocery"]["displaycase"].items, "RS.Lime");
+table.insert(SuburbsDistributions["grocery"]["displaycase"].items, 2);
+
+
+table.insert(SuburbsDistributions["gasstore"]["fridge"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["gasstore"]["fridge"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["fridge"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["gasstore"]["fridge"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "Base.Cork");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "Base.Cork");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["gasstore"]["shelves"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 1);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 1);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["gasstore"]["counter"].items, 3);
+table.insert(SuburbsDistributions["gasstorage"]["metal_shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["gasstorage"]["metal_shelves"].items, 4);
+table.insert(SuburbsDistributions["gasstorage"]["metal_shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["gasstorage"]["metal_shelves"].items, 4);
+table.insert(SuburbsDistributions["gasstorage"]["metal_shelves"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["gasstorage"]["metal_shelves"].items, 4);
+
+
+table.insert(SuburbsDistributions["gunstore"]["counter"].items, "RS.PoliceKnife");
+table.insert(SuburbsDistributions["gunstore"]["counter"].items, 1);
+table.insert(SuburbsDistributions["gunstore"]["counter"].items, "RS.CombatKnife");
+table.insert(SuburbsDistributions["gunstore"]["counter"].items, 0.5);
+table.insert(SuburbsDistributions["gunstore"]["counter"].items, "RS.KnuckleKnife");
+table.insert(SuburbsDistributions["gunstore"]["counter"].items, 4);
+table.insert(SuburbsDistributions["gunstore"]["displaycase"].items, "RS.PoliceKnife");
+table.insert(SuburbsDistributions["gunstore"]["displaycase"].items, 1);
+table.insert(SuburbsDistributions["gunstore"]["displaycase"].items, "RS.CombatKnife");
+table.insert(SuburbsDistributions["gunstore"]["displaycase"].items, 0.5);
+table.insert(SuburbsDistributions["gunstore"]["displaycase"].items, "RS.KnuckleKnife");
+table.insert(SuburbsDistributions["gunstore"]["displaycase"].items, 4);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.PoliceKnife");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 4);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.PoliceKnife");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 2);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.PoliceKnife");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 2);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.CombatKnife");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 5);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.CombatKnife");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 5);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.CombatKnife");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 2);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.KnuckleKnife");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 5);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.KnuckleKnife");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 5);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.KnuckleKnife");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 2);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.MREBox");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 5);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.MREBox");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 3);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.MREBox");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 3);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.MREBox2");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 5);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.MREBox2");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 3);
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, "RS.MREBox2");
+table.insert(SuburbsDistributions["gunstore"]["metal_shelves"].items, 3);
+
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, "RS.Icecubes");
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, 4);
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, "RS.Icecubes");
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, 4);
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, "RS.Icecubes");
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, 4);
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, "RS.Plasticicebag");
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, 2);
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, "RS.Plasticicebag");
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, 2);
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, "RS.Plasticicebag");
+table.insert(SuburbsDistributions["icecreamkitchen"]["freezer"].items, 1);
+
+
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Plate");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Plate");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Plate");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.PileOfPlates");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Glass");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Glass");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.RockGlass");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.RockGlass");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.ShotGlass");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Shaker");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 0.2);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Camomile");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Mint");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.GreenOlives");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 0.4);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "Base.Ginseng");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 0.3);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Garlic");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 0.5);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Vanila");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 0.3);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.Ginger");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, "RS.CherriesJar");
+table.insert(SuburbsDistributions["kitchen"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.DirtyPlate");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Plate");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Plate");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.PileOfPlates");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "Base.BakingTray");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Glass");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Glass");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.RockGlass");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.RockGlass");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.ShotGlass");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Shaker");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.5);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Camomile");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Mint");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.GreenOlives");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.5);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.GreenOlives");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.5);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Vanila");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Vanila");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Ginger");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Ginger");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "Base.Ginseng");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "Base.CookieJelly");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "Base.CookieChocolateChip");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Ginebra");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.01);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Vodka");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.01);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Rum");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.01);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.WhiteRum");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.01);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.WhiteTequila");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.01);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Aguaardiente");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.01);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.DryVermouth");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.01);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.TripleSec");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.01);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.BakingMold");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.CookieMold");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.2);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Grater");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Garlic");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.2);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Almonds");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Almonds");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.5);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Raisins");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Raisins");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.5);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Pepperoni");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.4);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.MapleSyrup");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.ButcherKnife");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.MetalBowl");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Stir");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Wok");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.DishWashingLiquid");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 4);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.SoySauce");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.CookingOil");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.EmptySmallTuperware");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.EmptyMediumTuperware");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Squeezer");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.Strainer");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.FryingBasket");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.8);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.PizzaTray");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 0.2);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.ChoppingBoard");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, "RS.EmptyMediumTuperware");
+table.insert(SuburbsDistributions["kitchen"]["counter"].items, 1);
+
+
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.ButcherKnife");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "Base.BakingTray");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.BakingMold");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.CookieMold");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.Plate");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.PileOfPlates");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.Grater");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.Glass");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.DirtyPlate");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.DirtyPlate");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 0.8);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.PileOfPlates");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.Grater");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.Glass");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.MetalBowl");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.Stir");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 2);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.Wok");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.DishWashingLiquid");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 2);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.SoySauce");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.CookingOil");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.Squeezer");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.Strainer");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.ChoppingBoard");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, "RS.FryingBasket");
+table.insert(SuburbsDistributions["kitchen_crepe"]["counter"].items, 1);
+table.insert(SuburbsDistributions["kitchen_crepe"]["freezer"].items, "RS.Icecubes");
+table.insert(SuburbsDistributions["kitchen_crepe"]["freezer"].items, 2);
+table.insert(SuburbsDistributions["kitchen_crepe"]["freezer"].items, "RS.Plasticicebag");
+table.insert(SuburbsDistributions["kitchen_crepe"]["freezer"].items, 2);
+
+
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, "RS.ButcherKnife");
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, "RS.FryingBasket");
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, "RS.PizzaTray");
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, 5);
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, "RS.PizzaTray");
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, "RS.Pepperoni");
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, 5);
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, "Base.Cheese");
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, "RS.Pepperoni");
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, "Base.Cheese");
+table.insert(SuburbsDistributions["pizzakitchen"]["counter"].items, 5);
+table.insert(SuburbsDistributions["pizzakitchen"]["freezer"].items, "RS.Icecubes");
+table.insert(SuburbsDistributions["pizzakitchen"]["freezer"].items, 0.8);
+table.insert(SuburbsDistributions["pizzakitchen"]["freezer"].items, "RS.Plasticicebag");
+table.insert(SuburbsDistributions["pizzakitchen"]["freezer"].items, 1);
+
+
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.ButcherKnife");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "Base.BakingTray");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.BakingMold");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.CookieMold");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.Plate");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.PileOfPlates");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.Grater");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.Glass");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.RockGlass");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.ShotGlass");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.Squeezer");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.BarSqueezer");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 0.4);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.DirtyPlate");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.DirtyPlate");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 0.8);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.PileOfPlates");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.Grater");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.Glass");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.Squeezer");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.Strainer");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.ChoppingBoard");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.FryingBasket");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, "RS.Pepperoni");
+table.insert(SuburbsDistributions["restaurantkitchen"]["counter"].items, 3);
+
+
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.DirtyPlate");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.ButcherKnife");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.Plate");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.PileOfPlates");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.Wok");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.SoySauce");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.CookingOil");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.Wok");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.MetalBowl");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.Garlic");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.Squeezer");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.Strainer");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.ChoppingBoard");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 3);
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, "RS.FryingBasket");
+table.insert(SuburbsDistributions["spiffoskitchen"]["counter"].items, 5);
+table.insert(SuburbsDistributions["spiffoskitchen"]["freezer"].items, "RS.Icecubes");
+table.insert(SuburbsDistributions["spiffoskitchen"]["freezer"].items, 0.8);
+table.insert(SuburbsDistributions["spiffoskitchen"]["freezer"].items, "RS.Plasticicebag");
+table.insert(SuburbsDistributions["spiffoskitchen"]["freezer"].items, 0.8);
+
+table.insert(SuburbsDistributions["spiffosstorage"]["all"].items, "RS.Pepperoni");
+table.insert(SuburbsDistributions["spiffosstorage"]["all"].items, 2);
+table.insert(SuburbsDistributions["spiffosstorage"]["all"].items, "RS.Pepperoni");
+table.insert(SuburbsDistributions["spiffosstorage"]["all"].items, 5);
+
+table.insert(SuburbsDistributions["policestorage"]["all"].items, "RS.PoliceKnife");
+table.insert(SuburbsDistributions["policestorage"]["all"].items, 1);
+table.insert(SuburbsDistributions["policestorage"]["all"].items, "RS.CombatKnife");
+table.insert(SuburbsDistributions["policestorage"]["all"].items, 0.5);
+table.insert(SuburbsDistributions["policestorage"]["all"].items, "RS.KnuckleKnife");
+table.insert(SuburbsDistributions["policestorage"]["all"].items, 1);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.PoliceKnife");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 4);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.PoliceKnife");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 2);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.PoliceKnife");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 2);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.CombatKnife");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 0.5);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.CombatKnife");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 0.5);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.CombatKnife");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 0.5);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.KnuckleKnife");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 2);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.MREBox");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 2);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.MREBox");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 2);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.MREBox2");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 2);
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, "RS.MREBox2");
+table.insert(SuburbsDistributions["policestorage"]["metal_shelves"].items, 2);
+
+
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.SodaBottle");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 2);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 1);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 3);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 3);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 3);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 3);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 3);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 3);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 3);
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["theatrekitchen"]["counter"].items, 3);
+
+
+table.insert(SuburbsDistributions["toolstore"]["shelves"].items, "RS.GardeningScissors");
+table.insert(SuburbsDistributions["toolstore"]["shelves"].items, 1);
+
+
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.Beer1");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.Beer1");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.Beer2");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.Beer2");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.Beer3");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.Beer3");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["zippeestore"]["counter"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.MilkPowder");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.MilkPowder");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 0.8);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.MilkPowder2");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.MilkPowder2");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 0.8);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BabyFormula");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BabyFormula");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 0.8);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BabyFood");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BabyFood");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 0.5);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BabyFood2");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BabyFood2");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 0.5);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BabyFood3");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.BabyFood3");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 0.5);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.CherriesJar");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, "RS.CherriesJar");
+table.insert(SuburbsDistributions["zippeestore"]["shelves"].items, 0.8);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.BeerSixPack1");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 4);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.BeerSixPack2");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 4);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.BeerSixPack3");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 4);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.EnergyBar");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.ProteinBar");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.MintGum");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.BubbleGum");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 1);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.CandyBox");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.PackageCandy");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.ChocolateBox");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, "RS.ChocolatePackage");
+table.insert(SuburbsDistributions["zippeestore"]["crate"].items, 2);
+
+
+
+
