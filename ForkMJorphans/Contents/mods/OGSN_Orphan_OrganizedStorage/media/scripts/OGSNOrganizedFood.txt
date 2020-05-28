@@ -424,7 +424,7 @@ module GidOrganizedFood
 
 	recipe Pack 4 Rolls of Duct Tape
 	{
-		DuctTape=4,
+		DuctTape=16,
 
 		Result:OS4pkDuctTape,
 		Time:60.0,
