@@ -1,97 +1,98 @@
 require 'Items/SuburbsDistributions'
 
+-- NOTE from OGSN: I'm commenting out these distributions for the RS bags, because they aren't rigged for 41.37+
 
-table.insert(SuburbsDistributions["all"]["desk"].items, "RS.LunchBox");
-table.insert(SuburbsDistributions["all"]["desk"].items, 2);
-table.insert(SuburbsDistributions["all"]["locker"].items, "RS.LunchBox");
-table.insert(SuburbsDistributions["all"]["locker"].items, 1);
-
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.Briefcase");
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 1);
-table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, "RS.Briefcase");
-table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, 1);
-table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, "RS.Briefcase");
-table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, 1);
-table.insert(SuburbsDistributions["all"]["desk"].items, "RS.Briefcase");
-table.insert(SuburbsDistributions["all"]["desk"].items, 1);
-
-
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.Suitcase");
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 1);
-table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, "RS.Suitcase");
-table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, 1);
-table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, "RS.Suitcase");
-table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, 1);
-table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, "RS.Suitcase");
-table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, 1);
-table.insert(SuburbsDistributions["all"]["desk"].items, "RS.Suitcase");
-table.insert(SuburbsDistributions["all"]["desk"].items, 1);
-
-
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.SmallLeatherBag");
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 2);
-table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, "RS.SmallLeatherBag");
-table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, 2);
-table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, "RS.SmallLeatherBag");
-table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, 2);
-table.insert(SuburbsDistributions["changeroom"]["locker"].items, "RS.SmallLeatherBag");
-table.insert(SuburbsDistributions["changeroom"]["locker"].items, 2);
-
-
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.NormalBackpack");
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.8);
-table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, "RS.NormalBackpack");
-table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, 0.8);
-table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, "RS.NormalBackpack");
-table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, 0.8);
-table.insert(SuburbsDistributions["changeroom"]["locker"].items, "RS.NormalBackpack");
-table.insert(SuburbsDistributions["changeroom"]["locker"].items, 0.8);
-table.insert(SuburbsDistributions["sportstore"]["shelves"].items, "RS.NormalBackpack");
-table.insert(SuburbsDistributions["sportstore"]["shelves"].items, 0.8);
-table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, "RS.NormalBackpack");
-table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, 0.8);
-table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, "RS.NormalBackpack");
-table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, 0.8);
-table.insert(SuburbsDistributions["camping"]["all"].items, "RS.NormalBackpack");
-table.insert(SuburbsDistributions["camping"]["all"].items, 0.8);
-
-
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.HikingBackpack");
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.6);
-table.insert(SuburbsDistributions["clothesstore"]["counter"].items, "RS.HikingBackpack");
-table.insert(SuburbsDistributions["clothesstore"]["counter"].items, 0.5);
-table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, "RS.HikingBackpack");
-table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, 0.5);
-table.insert(SuburbsDistributions["changeroom"]["locker"].items, "RS.HikingBackpack");
-table.insert(SuburbsDistributions["changeroom"]["locker"].items, 0.5);
-table.insert(SuburbsDistributions["sportstore"]["shelves"].items, "RS.HikingBackpack");
-table.insert(SuburbsDistributions["sportstore"]["shelves"].items, 0.5);
-table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, "RS.HikingBackpack");
-table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, 0.5);
-table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, "RS.HikingBackpack");
-table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, 0.5);
-table.insert(SuburbsDistributions["camping"]["all"].items, "RS.HikingBackpack");
-table.insert(SuburbsDistributions["camping"]["all"].items, 0.5);
-
-
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.AliceBackpack");
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.04);
-table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.AliceBackpack");
-table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.01);
-table.insert(SuburbsDistributions["hunting"]["locker"].items, "RS.AliceBackpack");
-table.insert(SuburbsDistributions["hunting"]["locker"].items, 0.1);
-table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, "RS.AliceBackpack");
-table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, 0.5);
-
-
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.MolleBackpack");
-table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.01);
-table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.MolleBackpack");
-table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.01);
-table.insert(SuburbsDistributions["hunting"]["locker"].items, "RS.MolleBackpack");
-table.insert(SuburbsDistributions["hunting"]["locker"].items, 0.1);
-table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, "RS.MolleBackpack");
-table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, 0.5);
+-- table.insert(SuburbsDistributions["all"]["desk"].items, "RS.LunchBox");
+-- table.insert(SuburbsDistributions["all"]["desk"].items, 2);
+-- table.insert(SuburbsDistributions["all"]["locker"].items, "RS.LunchBox");
+-- table.insert(SuburbsDistributions["all"]["locker"].items, 1);
+--
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.Briefcase");
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 1);
+-- table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, "RS.Briefcase");
+-- table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, 1);
+-- table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, "RS.Briefcase");
+-- table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["all"]["desk"].items, "RS.Briefcase");
+-- table.insert(SuburbsDistributions["all"]["desk"].items, 1);
+--
+--
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.Suitcase");
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 1);
+-- table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, "RS.Suitcase");
+-- table.insert(SuburbsDistributions["motelbedroom"]["wardrobe"].items, 1);
+-- table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, "RS.Suitcase");
+-- table.insert(SuburbsDistributions["motelroomoccupied"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, "RS.Suitcase");
+-- table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, 1);
+-- table.insert(SuburbsDistributions["all"]["desk"].items, "RS.Suitcase");
+-- table.insert(SuburbsDistributions["all"]["desk"].items, 1);
+--
+--
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.SmallLeatherBag");
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 2);
+-- table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, "RS.SmallLeatherBag");
+-- table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, 2);
+-- table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, "RS.SmallLeatherBag");
+-- table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, 2);
+-- table.insert(SuburbsDistributions["changeroom"]["locker"].items, "RS.SmallLeatherBag");
+-- table.insert(SuburbsDistributions["changeroom"]["locker"].items, 2);
+--
+--
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.NormalBackpack");
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.8);
+-- table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, "RS.NormalBackpack");
+-- table.insert(SuburbsDistributions["clothesstore"]["shelves"].items, 0.8);
+-- table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, "RS.NormalBackpack");
+-- table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, 0.8);
+-- table.insert(SuburbsDistributions["changeroom"]["locker"].items, "RS.NormalBackpack");
+-- table.insert(SuburbsDistributions["changeroom"]["locker"].items, 0.8);
+-- table.insert(SuburbsDistributions["sportstore"]["shelves"].items, "RS.NormalBackpack");
+-- table.insert(SuburbsDistributions["sportstore"]["shelves"].items, 0.8);
+-- table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, "RS.NormalBackpack");
+-- table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, 0.8);
+-- table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, "RS.NormalBackpack");
+-- table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, 0.8);
+-- table.insert(SuburbsDistributions["camping"]["all"].items, "RS.NormalBackpack");
+-- table.insert(SuburbsDistributions["camping"]["all"].items, 0.8);
+--
+--
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.HikingBackpack");
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.6);
+-- table.insert(SuburbsDistributions["clothesstore"]["counter"].items, "RS.HikingBackpack");
+-- table.insert(SuburbsDistributions["clothesstore"]["counter"].items, 0.5);
+-- table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, "RS.HikingBackpack");
+-- table.insert(SuburbsDistributions["clothesstore"]["clothingrack"].items, 0.5);
+-- table.insert(SuburbsDistributions["changeroom"]["locker"].items, "RS.HikingBackpack");
+-- table.insert(SuburbsDistributions["changeroom"]["locker"].items, 0.5);
+-- table.insert(SuburbsDistributions["sportstore"]["shelves"].items, "RS.HikingBackpack");
+-- table.insert(SuburbsDistributions["sportstore"]["shelves"].items, 0.5);
+-- table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, "RS.HikingBackpack");
+-- table.insert(SuburbsDistributions["sportstore"]["clothingrack"].items, 0.5);
+-- table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, "RS.HikingBackpack");
+-- table.insert(SuburbsDistributions["sportstorage"]["metal_shelves"].items, 0.5);
+-- table.insert(SuburbsDistributions["camping"]["all"].items, "RS.HikingBackpack");
+-- table.insert(SuburbsDistributions["camping"]["all"].items, 0.5);
+--
+--
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.AliceBackpack");
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.04);
+-- table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.AliceBackpack");
+-- table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.01);
+-- table.insert(SuburbsDistributions["hunting"]["locker"].items, "RS.AliceBackpack");
+-- table.insert(SuburbsDistributions["hunting"]["locker"].items, 0.1);
+-- table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, "RS.AliceBackpack");
+-- table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, 0.5);
+--
+--
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, "RS.MolleBackpack");
+-- table.insert(SuburbsDistributions["bedroom"]["wardrobe"].items, 0.01);
+-- table.insert(SuburbsDistributions["garagestorage"]["all"].items, "RS.MolleBackpack");
+-- table.insert(SuburbsDistributions["garagestorage"]["all"].items, 0.01);
+-- table.insert(SuburbsDistributions["hunting"]["locker"].items, "RS.MolleBackpack");
+-- table.insert(SuburbsDistributions["hunting"]["locker"].items, 0.1);
+-- table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, "RS.MolleBackpack");
+-- table.insert(SuburbsDistributions["gunstorestorage"]["all"].items, 0.5);
 
 
 table.insert(SuburbsDistributions["all"]["bin"].items, "RS.BeerBottleEmpty");
