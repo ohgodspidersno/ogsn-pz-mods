@@ -54,6 +54,10 @@ table.insert(SuburbsDistributions["garagestorage"]["other"].items, "FMJ.LockPick
 table.insert(SuburbsDistributions["garagestorage"]["other"].items, 0.2);
 table.insert(SuburbsDistributions["garagestorage"]["other"].items, "FMJ.LockPickingMag2");
 table.insert(SuburbsDistributions["garagestorage"]["other"].items, 0.2);
+table.insert(SuburbsDistributions["garagestorage"]["crate"].items, "FMJ.LockPickingMag");
+table.insert(SuburbsDistributions["garagestorage"]["crate"].items, 0.2);
+table.insert(SuburbsDistributions["garagestorage"]["crate"].items, "FMJ.LockPickingMag2");
+table.insert(SuburbsDistributions["garagestorage"]["crate"].items, 0.2);
 table.insert(SuburbsDistributions["garage"]["metal_shelves"].items, "FMJ.LockPickingMag");
 table.insert(SuburbsDistributions["garage"]["metal_shelves"].items, 0.2);
 table.insert(SuburbsDistributions["garage"]["metal_shelves"].items, "FMJ.LockPickingMag2");

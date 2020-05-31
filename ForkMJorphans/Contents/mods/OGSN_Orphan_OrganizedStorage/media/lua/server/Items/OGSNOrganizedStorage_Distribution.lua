@@ -109,6 +109,8 @@ table.insert(SuburbsDistributions["medicaloffice"]["counter"].items, 0.2);
 table.insert(SuburbsDistributions["shed"]["other"].items, "GidOrganizedFood.OS4pkDuctTape");
 table.insert(SuburbsDistributions["shed"]["other"].items, 1);
 
+table.insert(SuburbsDistributions["garagestorage"]["crate"].items, "GidOrganizedFood.OS4pkDuctTape");
+table.insert(SuburbsDistributions["garagestorage"]["crate"].items, 1);
 table.insert(SuburbsDistributions["garagestorage"]["other"].items, "GidOrganizedFood.OS4pkDuctTape");
 table.insert(SuburbsDistributions["garagestorage"]["other"].items, 1);
 
