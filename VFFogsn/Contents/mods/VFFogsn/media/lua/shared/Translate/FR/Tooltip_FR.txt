@@ -1,0 +1,15 @@
+Tooltip_FR = {
+Tooltip_CommonMallowDried = "Mangez pour soulager les symptômes du rhume et de la grippe. Moins<br>efficace que lorsqu'il était frais.<br>Infuser comme du thé pour restituer son efficacité.",
+Tooltip_LemonGrassDried = "Mangez pour apaiser les crises d'intoxication alimentaire. Moins<br>efficace que lorsqu'il était frais.<br>Infuser comme du thé pour restituer son efficacité.",
+Tooltip_BlackSageDried = "Procure un léger soulagement de la douleur. Moins efficace<br>que lorsqu'il était frais.<br>Se prépare comme du thé pour restituer son efficacité.",
+Tooltip_GinsengDried = "Manger pour récupérer de l'endurance. Moins efficace que<br>lorsqu'il était frais.<br>Se prépare comme du thé pour restituer son efficacité.",
+Tooltip_Tea_CommonMallow = "Boire pour soulager les symptômes du rhume et de la grippe.",
+Tooltip_Tea_LemonGrass = "Boire pour apaiser les crises d'intoxication alimentaire.",
+Tooltip_Tea_BlackSage = "Procure un léger soulagement de la douleur.",
+Tooltip_Tea_Ginseng = "Boire pour récupérer de l'endurance.",
+Tooltip_Tea_Medicinal = "Boire pour soulager les symptômes du rhume, de la grippe<br>et des intoxications alimentaires.<br>Permet également de soulager la douleur.",
+Tooltip_Tea_Energizing = "Boire pour combattre la fatigue, la somnolence et la douleur.",
+Tooltip_Teabag_Medicinal = "Infuser comme du thé pour soulager les symptômes du rhume,<br>de la grippe et des intoxications alimentaires.<br>Also provides pain relief.",
+Tooltip_Teabag_Energizing = "Infuser comme du thé pour combattre la fatigue, la somnolence<br>et la douleur.",
+Tooltip_Comfrey = "Immangeable. Aide à la guérison des os cassés lorsqu'il est appliqué en cataplasme.",
+}

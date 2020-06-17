@@ -1,4 +1,3 @@
-/** French translation provided by steam user benobodys **/
 ItemName_FR = {
 ItemName_FMJ.BobbyPin = "Crochet",
 ItemName_FMJ.BobbyPinRaw = "Épingle",

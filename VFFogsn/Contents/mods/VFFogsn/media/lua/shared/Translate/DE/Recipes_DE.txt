@@ -1,0 +1,14 @@
+Recipes_DE = {
+Recipe_Create_Medicinal_Tea_Blend="Erstelle medizinische Teemischung",
+Recipe_Create_Energizing_Tea_Blend="Erstelle energiespendende Teemischung",
+Recipe_Brew_Cup_of_Common_Mallow_Tea="Braue eine Tasse gewöhnlichen Käsepappel Tee",
+Recipe_Brew_Cup_of_Lemon_Grass_Tea="Braue eine Tasse Zitronengras Tee",
+Recipe_Brew_Cup_of_Black_Sage_Tea="Braue eine Tasse schwarzer Salbeitee",
+Recipe_Brew_Cup_of_Ginseng_Tea="Braue eine Tasse Ginseng Tee",
+Recipe_Brew_Cup_of_Medicinal_Blended_Tea="Braue eine Tasse medizinischer Teemischung",
+Recipe_Brew_Cup_of_Energizing_Blended_Tea="Braue eine Tasse energiespendende Teemischung",
+Recipe_Make_2_Bowls_of_Stir_Fry="Koche 2 Schüssel mit Angebratenem",
+Recipe_Make_4_Bowls_of_Stir_Fry="Koche 4 Schüssel mit Angebratenem",
+Recipe_Make_2_Bowls_of_Roasted_Vegetables="Koche 2 Schalen mit geröstetem Gemüse",
+Recipe_Make_4_Bowls_of_Roasted_Vegetables="Koche 4 Schalen mit geröstetem Gemüse",
+}

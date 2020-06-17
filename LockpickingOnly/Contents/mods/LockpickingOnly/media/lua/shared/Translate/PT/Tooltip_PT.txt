@@ -1,0 +1,7 @@
+Tooltip_PT = {
+Tooltip_BobbyPin_FMJ = "Uma gazua e uma chave de fenda podem ser usadas para arrombar fechaduras, caso você possua as habilidades de um chaveiro.",
+Tooltip_LockPickingMag_FMJ = "Aprenda a arrombar fechaduras usando uma gazua e uma chave de fenda, e como montar uma gazua usando um clipe de papel ou um fio de cobre",
+Tooltip_LockPickingMag2_FMJ = "Aprenda a destruir fechaduras usando um pé de cabra",
+Tooltip_Screwdriver_FMJ = "Uma gazua e uma chave de fenda podem ser usadas para arrombar fechaduras, caso você possua as habilidades de um chaveiro.",
+Tooltip_Crowbar_FMJ = "Pode ser usado para destruir fechaduras, caso você possua as habilidades de um chaveiro",
+}

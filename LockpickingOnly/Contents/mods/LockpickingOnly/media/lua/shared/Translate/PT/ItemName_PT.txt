@@ -1,0 +1,6 @@
+ItemName_PT = {
+ItemName_FMJ.BobbyPin = "Gazua",
+ItemName_FMJ.BobbyPinRaw = "Grampo",
+ItemName_FMJ.LockPickingMag = "Lições sobre arrombamento de fechaduras, Vol. 1",
+ItemName_FMJ.LockPickingMag2 = "Lições sobre arrombamento de fechaduras, Vol. 2",
+}

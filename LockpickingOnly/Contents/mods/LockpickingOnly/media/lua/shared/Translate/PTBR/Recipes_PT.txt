@@ -1,0 +1,4 @@
+Recipes_PTBR = {
+Recipe_Create_Hairpin = "Montar uma Gazua",
+Recipe_Create_Lockpick = "Montar uma Gazua",
+}

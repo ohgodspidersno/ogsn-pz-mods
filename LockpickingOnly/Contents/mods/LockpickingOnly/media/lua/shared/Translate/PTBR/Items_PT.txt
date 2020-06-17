@@ -1,0 +1,4 @@
+Items_PTBR = {
+DisplayName_Lockpick = "Gazua",
+DisplayName_Hairpin = "Grampo",
+}

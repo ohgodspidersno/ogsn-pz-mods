@@ -1,4 +1,3 @@
-/** French translation provided by steam user benobodys **/
 Items_FR = {
 DisplayName_Lockpick = "Crochet",
 DisplayName_Hairpin = "Épingle",

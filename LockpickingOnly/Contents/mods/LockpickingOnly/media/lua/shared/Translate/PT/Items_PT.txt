@@ -1,0 +1,4 @@
+Items_PT = {
+DisplayName_Lockpick = "Gazua",
+DisplayName_Hairpin = "Grampo",
+}

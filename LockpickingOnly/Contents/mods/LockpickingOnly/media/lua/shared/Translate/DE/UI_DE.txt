@@ -1,0 +1,18 @@
+UI_DE = {
+UI_trait_nimblefingers = "Flinke Finger",
+UI_trait_nimblefingersDesc = "Starte mit Kenntnissen über das Knacken und Aufbrechen von Schlössern.<br>Schnelleres Schlösser Knacken. Bessere Chancen, ein Schloss zu öffnen.",
+UI_Text_locklevel_veryeasy = "Sehr einfach",
+UI_Text_locklevel_easy = "Einfach",
+UI_Text_locklevel_medium = "Durchschnittlich",
+UI_Text_locklevel_hard = "Schwer",
+UI_Text_locklevel_veryhard = "Sehr schwer",
+UI_Text_locklevel_willbreak = "Kaputt",
+UI_Text_brokenLockModal = "Ein kaputtes Schloss kann man nicht knacken."
+UI_Text_contextBreakDoorLock = "Schloss aufbrechen",
+UI_Text_contextPickDoorLock = "Schloss knacken",
+UI_Text_contextBreakWindowLock = "Fensterverriegelung aufbrechen",
+UI_Text_BobbyStuck = "Verdammt! Die Haarnadel klemmt!",
+UI_Text_BobbyBroken = "Verdammt! Ich habe die Haarnadel zerbrochen!",
+UI_trait_BurglarDesc = "Kann Fahrzeuge kurzschließen. Kann Schlösser aufbrechen und knacken.<br>Geringere Chance, den Riegel eines Fensters zu brechen.",
+UI_profdesc_burglar = "Kann Fahrzeuge kurzschließen. Kann Schlösser aufbrechen und knacken.<br>Geringere Chance, den Riegel eines Fensters zu brechen.",
+}

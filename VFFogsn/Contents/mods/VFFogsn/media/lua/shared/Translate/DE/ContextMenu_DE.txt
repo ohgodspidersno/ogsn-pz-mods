@@ -1,4 +1,10 @@
 ContextMenu_DE = {
-  ContextMenu_FoodType_Herbal = "Kr√§uter",
-  ContextMenu_EvolvedRecipe_OatmealEvolved = "Haferflocken",
+ContextMenu_FoodType_Herbal = "Kr‰uter",
+ContextMenu_EvolvedRecipe_OatmealEvolved = "Haferflocken",
+ContextMenu_EvolvedRecipe_CommonMallowTeaEvolved="Tee",
+ContextMenu_EvolvedRecipe_LemonGrassTeaEvolved="Tee",
+ContextMenu_EvolvedRecipe_BlackSageTeaEvolved="Tee",
+ContextMenu_EvolvedRecipe_GinsengTeaEvolved="Tee",
+ContextMenu_EvolvedRecipe_MedicinalTeaEvolved="Tee",
+ContextMenu_EvolvedRecipe_EnergizingTeaEvolved="Tee",
 }

@@ -38,7 +38,7 @@ end
 
 function MakeBowlOfStirFryGridle2_OnCreate(items, result, player)
     for i=0,items:size() - 1 do
-        if items:get(i):getType() == "GridlePanFriedVegetables" then
+        if items:get(i):getType() == "GriddlePanFriedVegetables" then
             result:setBaseHunger(items:get(i):getBaseHunger() / 2);
             result:setHungChange(items:get(i):getBaseHunger() / 2);
             result:setThirstChange(items:get(i):getThirstChange() / 2);
@@ -56,7 +56,7 @@ end
 
 function MakeBowlOfStirFryGridle4_OnCreate(items, result, player)
     for i=0,items:size() - 1 do
-        if items:get(i):getType() == "GridlePanFriedVegetables" then
+        if items:get(i):getType() == "GriddlePanFriedVegetables" then
             result:setBaseHunger(items:get(i):getBaseHunger() / 4);
             result:setHungChange(items:get(i):getBaseHunger() / 4);
             result:setThirstChange(items:get(i):getThirstChange() / 4);

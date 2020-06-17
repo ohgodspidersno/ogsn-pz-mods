@@ -315,7 +315,7 @@ module GidOrganizedFood
 	{
 		OS4pkCoffee,
 
-		Result:Coffee=4,
+		Result:Coffee2=4,
 		Time:60.0,
 		Category:Storage,
 		OnGiveXP:NoXP_OnGiveXP,

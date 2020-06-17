@@ -1,0 +1,14 @@
+Tooltip_DE = {
+Tooltip_CommonMallowDried="Essen, um Erkältungs und Grippesymptome zu lindern. Weniger stark als wenn es frisch wäre.<br>Als Tee brühen, um die Wirksamkeit wiederherzustellen.",
+Tooltip_LemonGrassDried="Essen, um Lebensmittelvergiftungen zu lindern. Weniger stark als wenn es frisch wäre.<br>Als Tee brühen, um die Wirksamkeit wiederherzustellen.",
+Tooltip_BlackSageDried="Bietet eine leichte Schmerzlinderung. Weniger stark als wenn es frisch wäre.<br>Als Tee brühen, um die Wirksamkeit wiederherzustellen.",
+Tooltip_GinsengDried="Essen, um Ausdauer wiederherzustellen. Weniger stark als wenn es frisch wäre.<br>Als Tee brühen, um die Wirksamkeit wiederherzustellen.",
+Tooltip_Tea_CommonMallow="Trinken, um Kälte und Grippesymptome zu lindern",
+Tooltip_Tea_LemonGrass="Trinke, zur Linderung von Lebensmittelvergiftungen",
+Tooltip_Tea_BlackSage="Bietet leichte Schmerzlinderung",
+Tooltip_Tea_Ginseng="Trinke, um Ausdauer wiederherzustellen",
+Tooltip_Tea_Medicinal="Trinke, um Kälte, Grippe und Lebensmittelvergiftungssymptome zu lindern.<br>Bietet auch Schmerzlinderung.",
+Tooltip_Tea_Energizing="Trinke, um Erschöpfung, Müdigkeit und Schmerzen zu bekämpfen.",
+Tooltip_Teabag_Medicinal="Als Tee aufbrühen, um Symptome von Erkältung, Grippe und Lebensmittelvergiftung zu lindern.<br>Bietet auch Schmerzlinderung.",
+Tooltip_Teabag_Energizing="Als Tee aufbrühen, um Erschöpfung, Müdigkeit und Schmerzen zu bekämpfen.",
+}

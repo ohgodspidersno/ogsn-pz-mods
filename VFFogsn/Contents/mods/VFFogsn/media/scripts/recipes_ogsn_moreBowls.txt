@@ -26,7 +26,7 @@ module Base
 
     recipe Make 2 Bowls of Stir Fry
     {
-       GridlePanFriedVegetables,
+       GriddlePanFriedVegetables,
        Bowl=2,
 
        Result:StirFryBowl=2,
@@ -38,7 +38,7 @@ module Base
 
     recipe Make 4 Bowls of Stir Fry
     {
-       GridlePanFriedVegetables,
+       GriddlePanFriedVegetables,
        Bowl=4,
 
        Result:StirFryBowl=4,

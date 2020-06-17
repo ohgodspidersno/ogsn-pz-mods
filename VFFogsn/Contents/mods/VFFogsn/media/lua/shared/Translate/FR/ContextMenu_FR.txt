@@ -1,4 +1,10 @@
 ContextMenu_FR = {
-  ContextMenu_FoodType_Herbal = "Herbe",
-  ContextMenu_EvolvedRecipe_OatmealEvolved = "Flocons d'avoine",
+ContextMenu_FoodType_Herbal = "Herbe",
+ContextMenu_EvolvedRecipe_OatmealEvolved = "Flocons d'avoine",
+ContextMenu_EvolvedRecipe_CommonMallowThéEvolved = "Thé",
+ContextMenu_EvolvedRecipe_LemonGrassThéEvolved = "Thé",
+ContextMenu_EvolvedRecipe_BlackSageThéEvolved = "Thé",
+ContextMenu_EvolvedRecipe_GinsengThéEvolved = "Thé",
+ContextMenu_EvolvedRecipe_MedicinalThéEvolved = "Thé",
+ContextMenu_EvolvedRecipe_EnergizingThéEvolved = "Thé",
 }

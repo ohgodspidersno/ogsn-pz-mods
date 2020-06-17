@@ -1,0 +1,4 @@
+Recipes_DE = {
+Recipe_Create_Hairpin = "Haarnadel herstellen",
+Recipe_Create_Lockpick = "Dietrich herstellen",
+}

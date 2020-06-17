@@ -1,0 +1,3 @@
+Recipes_FR {
+Downgrade_Sterilized_Rag_To_Ripped_Sheet  =  "Rétrograder le chiffon stérilisé en feuille déchirée",
+}

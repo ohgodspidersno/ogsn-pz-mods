@@ -1,0 +1,18 @@
+UI_PTBR = {
+UI_trait_nimblefingers = "Chaveiro",
+UI_trait_nimblefingersDesc = "Possui o conhecimento de arrombar fechaduras. Mais rápido em concluir o arrombamento de uma fechadura. Maiores chances de suceder ao tentar arrombar uma fechadura.",
+UI_Text_locklevel_veryeasy = "Muito Fácil",
+UI_Text_locklevel_easy = "Fácil",
+UI_Text_locklevel_medium = "Mediano",
+UI_Text_locklevel_hard = "Difícil",
+UI_Text_locklevel_veryhard = "Muito Difícil",
+UI_Text_locklevel_willbreak = "Quebrada",
+UI_Text_brokenLockModal = "Você não pode arrombar uma fechadura quebrada.",
+UI_Text_contextBreakDoorLock = "Quebrar a fechadura da porta",
+UI_Text_contextPickDoorLock = "Gazua",
+UI_Text_contextBreakWindowLock = "Quebrar a fechadura da janela",
+UI_Text_BobbyStuck = "Droga! A gazua está emperrada!",
+UI_Text_BobbyBroken = "Droga! Quebrei a gazua!",
+UI_trait_BurglarDesc = "Pode fazer ligação direta em um veículo. Pode quebrar fechaduras e arrombar, caso necessário. Menores de chances de quebrar o trinco da janela.",
+UI_profdesc_burglar = "Pode fazer ligação direta em um veículo. Pode quebrar fechaduras e arrombar, caso necessário. Menores de chances de quebrar o trinco da janela.",
+}

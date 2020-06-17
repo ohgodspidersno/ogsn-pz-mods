@@ -1,0 +1,7 @@
+Tooltip_DE = {
+Tooltip_BobbyPin_FMJ = "Mit einer Haarnadel kann man Schlösser knacken,<br>wenn man Schlosserfertigkeiten hat",
+Tooltip_LockPickingMag_FMJ = "Lerne, Schlösser mit einem Dietrich und einem Schraubenzieher zu knacken,<br>und wie man einen Dietrich mit Büroklammern oder Draht herstellt",
+Tooltip_LockPickingMag2_FMJ = "Lerne, Schlösser mit einem Brecheisen zu zerstören",
+Tooltip_Screwdriver_FMJ = "Mit einem Schraubenzieher oder einer Haarnadel können Schlössergeknackt werden,<br>wenn man über Schlosserkenntnisse verfügt",
+Tooltip_Crowbar_FMJ = "Kann zum Zerstören von Schlössern verwendet werden,<br>wenn du Schlosserfertigkeiten hast",
+}
