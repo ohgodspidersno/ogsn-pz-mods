@@ -42,6 +42,7 @@ function ISInventoryPane:createChildren()
 
   self.column2 = math.ceil(self.column2 * self.zoom);
   self.column3 = math.ceil(self.column3 * self.zoom);
+  self.column3 = self.column3 + 100;
 
   local categoryWid = math.max(100, self.column4 - self.column3 - 1)
   if self.column3 - 1 + categoryWid > self.width then
@@ -376,7 +377,6 @@ function ISInventoryPane:doButtons(y)
   self.contextButton2:setVisible(false);
   self.contextButton3:setVisible(false);
 
-  -- if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 or -- LetMeThink
   if getPlayerContextMenu(self.player):getIsVisible() or
   getSpecificPlayer(self.player):isAsleep() then
     return
@@ -481,29 +481,31 @@ function ISInventoryPane:doButtons(y)
       local ypos = ((y - 1) * self.itemHgt) + self.headerHgt;
       ypos = ypos + self:getYScroll();
 
-      if mode1 then
-        self.contextButton1:setTitle(label1)
-        self.contextButton1.mode = mode1
-        self.contextButton1:setWidthToTitle()
-        self.contextButton1:setX(self.column3)
-        self.contextButton1:setY(ypos)
-        self.contextButton1:setVisible(true)
-      end
-      if mode2 then
-        self.contextButton2:setTitle(label2)
-        self.contextButton2.mode = mode2
-        self.contextButton2:setWidthToTitle()
-        self.contextButton2:setX(self.contextButton1:getRight() + 1)
-        self.contextButton2:setY(ypos)
-        self.contextButton2:setVisible(true)
-      end
-      if mode3 then
-        self.contextButton3:setTitle(label3)
-        self.contextButton3.mode = mode3
-        self.contextButton3:setWidthToTitle()
-        self.contextButton3:setX(self.contextButton2:getRight() + 1)
-        self.contextButton3:setY(ypos)
-        self.contextButton3:setVisible(true)
+      if getCore():getGameMode() ~= "Tutorial" then
+        if mode1 then
+          self.contextButton1:setTitle(label1)
+          self.contextButton1.mode = mode1
+          self.contextButton1:setWidthToTitle()
+          self.contextButton1:setX(self.column3)
+          self.contextButton1:setY(ypos)
+          self.contextButton1:setVisible(true)
+        end
+        if mode2 then
+          self.contextButton2:setTitle(label2)
+          self.contextButton2.mode = mode2
+          self.contextButton2:setWidthToTitle()
+          self.contextButton2:setX(self.contextButton1:getRight() + 1)
+          self.contextButton2:setY(ypos)
+          self.contextButton2:setVisible(true)
+        end
+        if mode3 then
+          self.contextButton3:setTitle(label3)
+          self.contextButton3.mode = mode3
+          self.contextButton3:setWidthToTitle()
+          self.contextButton3:setX(self.contextButton2:getRight() + 1)
+          self.contextButton3:setY(ypos)
+          self.contextButton3:setVisible(true)
+        end
       end
 
       self.buttonOption = y;
@@ -547,12 +549,16 @@ function ISInventoryPane:transferItemsByWeight(items, container)
 end
 
 function ISInventoryPane:removeAll(player)
+  if self.removeAllDialog then
+    self.removeAllDialog:destroy()
+  end
   local width = 350;
   local x = getPlayerScreenLeft(player) + (getPlayerScreenWidth(player) - width) / 2
   local height = 120;
   local y = getPlayerScreenTop(player) + (getPlayerScreenHeight(player) - height) / 2
   local modal = ISModalDialog:new(x, y, width, height, getText("IGUI_ConfirmDeleteItems"), true, self, ISInventoryPane.onConfirmDelete, player);
   modal:initialise()
+  self.removeAllDialog = modal
   modal:addToUIManager()
   if JoypadState.players[player + 1] then
     modal.prevFocus = JoypadState.players[player + 1].focus
@@ -567,6 +573,7 @@ function ISInventoryPane:onConfirmDelete(button)
     local args = { x = object:getX(), y = object:getY(), z = object:getZ(), index = object:getObjectIndex() }
     sendClientCommand(playerObj, 'object', 'emptyTrash', args)
   end
+  self.removeAllDialog = nil
 end
 
 function ISInventoryPane:lootAll()
@@ -811,6 +818,11 @@ end
 
 function ISInventoryPane:onMouseDoubleClick(x, y)
   if not isShiftKeyDown() and self.items and self.mouseOverOption and self.previousMouseUp == self.mouseOverOption then
+    if getCore():getGameMode() == "Tutorial" then
+      if TutorialData.chosenTutorial.doubleClickInventory(self, x, y, self.mouseOverOption) then
+        return
+      end
+    end
     local playerObj = getSpecificPlayer(self.player)
     local playerInv = getPlayerInventory(self.player).inventory;
     local lootInv = getPlayerLoot(self.player).inventory;
@@ -835,18 +847,12 @@ function ISInventoryPane:onMouseDoubleClick(x, y)
             ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, v, v:getContainer(), playerInv))
           elseif k ~= 1 and v:getContainer() == playerInv and instanceof(v, "HandWeapon") then
             local tItem = v;
-            local equip = true;
-            if playerObj:getPrimaryHandItem() == tItem then
-              playerObj:setPrimaryHandItem(nil);
-              equip = false;
-            end
-            if playerObj:getSecondaryHandItem() == tItem then
-              playerObj:setSecondaryHandItem(nil);
-              equip = false;
-            end
-            if equip then
+            if playerObj:isHandItem(tItem) then
+              ISInventoryPaneContextMenu.unequipItem(tItem, self.player);
+            else
               ISInventoryPaneContextMenu.equipWeapon(tItem, true, tItem:isTwoHandWeapon(), self.player);
             end
+            break
           end
         end
       end
@@ -854,19 +860,11 @@ function ISInventoryPane:onMouseDoubleClick(x, y)
       if luautils.walkToContainer(item:getContainer(), self.player) then
         ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), playerInv))
       end
-    elseif item and item:getContainer() == playerInv and item.items and instanceof(item.items[1], "HandWeapon") then
-      local tItem = item.items[1];
-      local equip = true;
-      if playerObj:getPrimaryHandItem() == tItem then
-        playerObj:setPrimaryItem(nil);
-        equip = false;
-      end
-      if playerObj:getSecondaryHandItem() == tItem then
-        playerObj:setSecondaryItem(nil);
-        equip = false;
-      end
-      if equip then
-        ISInventoryPaneContextMenu.equipWeapon(tItem, true, tItem:isTwoHandWeapon(), self.player);
+    elseif item and item:getContainer() == playerInv and instanceof(item, "HandWeapon") then
+      if playerObj:isHandItem(item) then
+        ISInventoryPaneContextMenu.unequipItem(item, self.player);
+      else
+        ISInventoryPaneContextMenu.equipWeapon(item, true, item:isTwoHandWeapon(), self.player);
       end
     end
     self.previousMouseUp = nil;
@@ -900,6 +898,9 @@ function ISInventoryPane:onMouseUp(x, y)
   end
 
   if ISMouseDrag.dragging ~= nil and ISMouseDrag.draggingFocus ~= self and ISMouseDrag.draggingFocus ~= nil then
+    if getCore():getGameMode() == "Tutorial" then
+      return;
+    end
     if self:canPutIn() then
       local doWalk = true
       local items = {}
@@ -1036,10 +1037,6 @@ function ISInventoryPane:doGrabOnJoypadSelected()
 end
 
 function ISInventoryPane:doContextOnJoypadSelected()
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  -- 	return;
-  -- end
   if getSpecificPlayer(self.player):isAsleep() then return end
 
   local isInInv = self.inventory:isInCharacterInventory(getSpecificPlayer(self.player))
@@ -1407,6 +1404,9 @@ function ISInventoryPane:update()
   -- NOTE: This only works because update() is called after all the mouse-event handling, so other UIElements
   -- have already had a chance to accept the drag.
   if ISMouseDrag.dragging ~= nil and ISMouseDrag.draggingFocus == self and not isMouseButtonDown(0) then
+    if getCore():getGameMode() == "Tutorial" then
+      return;
+    end
     local dragContainsMovables = false;
     local dragContainsNonMovables = false;
     local mx = getMouseX()
@@ -1528,6 +1528,9 @@ function ISInventoryPane:refreshContainer()
       end
       if self.hotbar then
         inHotbar = self.hotbar:isInHotbar(item);
+        if inHotbar and not equipped then
+          itemName = "hotbar:"..itemName
+        end
       end
       if self.itemindex[itemName] == nil then
         self.itemindex[itemName] = {};
@@ -1604,7 +1607,7 @@ function ISInventoryPane:renderdetails(doDragged)
 
   if not doDragged then
     -- background of item icon
-    self:drawRectStatic(0, 0, self.column2, self.height, UIManager.isFBOActive() and 0.8 or 0.6, 0, 0, 0);
+    self:drawRectStatic(0, 0, self.column2, self.height, 0.6, 0, 0, 0);
   end
   local y = 0;
   local alt = false;
@@ -1615,6 +1618,7 @@ function ISInventoryPane:renderdetails(doDragged)
   local MOUSEY = self:getMouseY()
   local YSCROLL = self:getYScroll()
   local HEIGHT = self:getHeight()
+  local equippedLine = false
   -- Go through all the stacks of items.
   for k, v in ipairs(self.itemslist) do
     local count = 1;
@@ -1692,7 +1696,7 @@ function ISInventoryPane:renderdetails(doDragged)
             if not self.hotbar then
               self.hotbar = getPlayerHotbar(self.player);
             end
-            if not player:isEquipped(item) and self.hotbar:isInHotbar(item) then
+            if not player:isEquipped(item) and self.hotbar and self.hotbar:isInHotbar(item) then
               self:drawTexture(self.equippedInHotbar, (10 + auxDXY + xoff), (y * self.itemHgt) + self.headerHgt + auxDXY + yoff, 1, 1, 1, 1);
             end
             if item:isBroken() then
@@ -1736,9 +1740,7 @@ function ISInventoryPane:renderdetails(doDragged)
         end
         -- print("trace:g");
 
-        if UIManager.isFBOActive() and self.doController and self.joyselection == y then
-          self:drawRect(1 + xoff, (y * self.itemHgt) + self.headerHgt + yoff, self:getWidth() - 1, self.itemHgt, 0.05, 1.0, 1.0, 1.0);
-        elseif self.selected[y + 1] ~= nil and not self.highlightItem then -- clicked/dragged item
+        if self.selected[y + 1] ~= nil and not self.highlightItem then -- clicked/dragged item
           if false and (((instanceof(item, "Food") or instanceof(item, "DrainableComboItem")) and item:getHeat() ~= 1) or item:getItemHeat() ~= 1) then
             if (((instanceof(item, "Food") or instanceof(item, "DrainableComboItem")) and item:getHeat() > 1) or item:getItemHeat() > 1) then
               self:drawRect(1 + xoff, (y * self.itemHgt) + self.headerHgt + yoff, self.column4, self.itemHgt, 0.5, math.abs(item:getInvHeat()), 0.0, 0.0);
@@ -1794,13 +1796,9 @@ function ISInventoryPane:renderdetails(doDragged)
                 end
               else
                 if alt then
-                  if UIManager.isFBOActive() then
-                    self:drawRect(self.column2 + xoff, (y * self.itemHgt) + self.headerHgt + yoff, self.column4, self.itemHgt, 0.65, 0.0, 0.0, 0.0);
-                  else
-                    self:drawRect(self.column2 + xoff, (y * self.itemHgt) + self.headerHgt + yoff, self.column4, self.itemHgt, 0.02, 1.0, 1.0, 1.0);
-                  end
+                  self:drawRect(self.column2 + xoff, (y * self.itemHgt) + self.headerHgt + yoff, self.column4, self.itemHgt, 0.02, 1.0, 1.0, 1.0);
                 else
-                  self:drawRect(self.column2 + xoff, (y * self.itemHgt) + self.headerHgt + yoff, self.column4, self.itemHgt, UIManager.isFBOActive() and 0.75 or 0.2, 0.0, 0.0, 0.0);
+                  self:drawRect(self.column2 + xoff, (y * self.itemHgt) + self.headerHgt + yoff, self.column4, self.itemHgt, 0.2, 0.0, 0.0, 0.0);
                 end
               end
             end
@@ -1819,13 +1817,16 @@ function ISInventoryPane:renderdetails(doDragged)
         -- print("trace:h");
 
         -- divider between equipped and unequipped items
-        if (self.collapsed[v.name] or k2 == #v.items) and k < #self.itemslist and self.itemslist[k - 1] and not self.itemslist[k - 1].equipped and self.itemslist[k].equipped then
-          self:drawRect(1, ((y + 1) * self.itemHgt) + self.headerHgt - 1-self.itemHgt, self.column4, 1, 0.2, 1, 1, 1);
+        if v.equipped then
+          if not equippedLine and y > 0 then
+            self:drawRect(1, ((y + 1) * self.itemHgt) + self.headerHgt - 1-self.itemHgt, self.column4, 1, 0.2, 1, 1, 1);
+          end
+          equippedLine = true
         end
 
         if item:getJobDelta() > 0 and (count > 1 or self.collapsed[v.name]) then
-          local displayWid = self.column4
-          if self.vscroll and self.vscroll:getHeight() < self:getScrollHeight() then displayWid = displayWid - self.vscroll:getWidth() end
+          local scrollBarWid = self:isVScrollBarVisible() and 13 or 0
+          local displayWid = self.column4 - scrollBarWid
           self:drawRect(1 + xoff, (y * self.itemHgt) + self.headerHgt + yoff, displayWid * item:getJobDelta(), self.itemHgt, 0.2, 0.4, 1.0, 0.3);
         end
         -- print("trace:i");

@@ -27,6 +27,7 @@ local clothingLists = {
         "DistinctNames.Hat_BeretArmy",
         "DistinctNames.Hat_BonnieHat_CamoGreen",
         "DistinctNames.Hat_BonnieHat",
+        "Base.Hat_BucketHat",
         "DistinctNames.Hat_ChefHat",
         "DistinctNames.Hat_Cowboy",
         "DistinctNames.Hat_EarMuffs",
@@ -215,6 +216,7 @@ local clothingLists = {
         "DistinctNames.Shoes_BlackBoots",
         "DistinctNames.Shoes_ArmyBoots",
         "DistinctNames.Shoes_ArmyBootsDesert",
+        "Base.Shoes_FlipFlop",
         "DistinctNames.Shoes_Wellies",
         "DistinctNames.Shoes_RidingBoots",
         "DistinctNames.Shoes_Slippers",
@@ -287,12 +289,10 @@ local clothingLists = {
       },
       listSweater = {
         "DistinctNames.Jumper_DiamondPatternTINT",
-        "DistinctNames.Jumper_TankTopDiamondTINT",
         "DistinctNames.HoodieDOWN_WhiteTINT",
         "DistinctNames.Jumper_PoloNeck",
         "DistinctNames.Jumper_RoundNeck",
         "DistinctNames.Jumper_VNeck",
-        "DistinctNames.Jumper_TankTopTINT",
       },
       listJacket = {
         "DistinctNames.Jacket_WhiteTINT",
@@ -345,6 +345,8 @@ local clothingLists = {
         "DistinctNames.Vest_BulletCivilian",
         "DistinctNames.Vest_BulletPolice",
         "DistinctNames.Vest_BulletArmy",
+        "DistinctNames.Jumper_TankTopDiamondTINT",
+        "DistinctNames.Jumper_TankTopTINT",
         "DistinctNames.Vest_Waistcoat",
         "DistinctNames.Vest_Waistcoat_GigaMart",
         "DistinctNames.Vest_Foreman",
@@ -370,6 +372,12 @@ local clothingLists = {
         "DistinctNames.Scarf_StripeBlackWhite",
         "DistinctNames.Scarf_StripeBlueWhite",
         "DistinctNames.Scarf_StripeRedWhite",
+      },
+      listFannyPackBack= {
+        "Base.Bag_FannyPackBack",
+      },
+      listFannyPackFront= {
+        "Base.Bag_FannyPackFront",
       },
 }
 

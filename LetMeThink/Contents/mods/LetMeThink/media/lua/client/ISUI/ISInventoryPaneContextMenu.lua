@@ -8,14 +8,13 @@ ISInventoryPaneContextMenu = {}
 
 -- MAIN METHOD FOR CREATING RIGHT CLICK CONTEXT MENU FOR INVENTORY ITEMS
 ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, items, x, y, origin)
-
+  if getCore():getGameMode() == "Tutorial" then
+    Tutorial1.createInventoryContextMenu(player, isInPlayerInventory, items, x, y);
+    return;
+  end
   if ISInventoryPaneContextMenu.dontCreateMenu then return; end
 
-
-  -- LetMeThink
-  -- if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  -- 	return;
-  -- end
+  -- if the game is paused, we don't show the item context menu
 
   -- items is a list that could container either InventoryItem objects, OR a table with a list of InventoryItem objects in .items
   -- Also there is a duplicate entry first in the list, so ignore that.
@@ -48,6 +47,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   local waterContainer = nil;
   local canBeDry = nil;
   local canBeEquippedBack = false;
+  local canBeEquippedFannyPack = nil;
   local twoHandsItem = nil;
   local brokenObject = nil;
   local canBeRenamed = nil;
@@ -96,7 +96,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     if instanceof(testItem, "Key") or testItem:getType() == "KeyRing" then
       canBeRenamed = testItem;
     end
-    if instanceof(testItem, "Clothing") and testItem:getClothingItemExtraOption() then
+    if testItem:getClothingItemExtraOption() then
       clothingItemExtra = testItem;
     end
     if not testItem:isCanBandage() then
@@ -170,6 +170,9 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     if instanceof(testItem, "InventoryContainer") and testItem:canBeEquipped() == "Back" and not playerObj:isEquipped(testItem) then
       canBeEquippedBack = true;
     end
+    if instanceof(testItem, "InventoryContainer") and (testItem:canBeEquipped() == "FannyPackFront" or testItem:canBeEquipped() == "FannyPackBack") and not playerObj:isEquipped(testItem) then
+      canBeEquippedFannyPack = testItem;
+    end
     if instanceof(testItem, "InventoryContainer") then
       canBeRenamed = testItem;
     end
@@ -230,6 +233,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
       isReloadable = false;
       unequip = false;
       canBeEquippedBack = false;
+      canBeEquippedFannyPack = nil;
       brokenObject = nil;
     end
   end
@@ -352,6 +356,12 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   -- equip a backpack when you have nothing equipped already
   if canBeEquippedBack and not unequip and not getSpecificPlayer(player):getClothingItem_Back() then
     context:addOption(getText("ContextMenu_Equip_on_your_Back"), items, ISInventoryPaneContextMenu.onWearItems, player);
+  end
+  if canBeEquippedFannyPack and not unequip and not getSpecificPlayer(player):getWornItem(canBeEquippedFannyPack:getBodyLocation()) then
+    context:addOption(getText("ContextMenu_Wear"), items, ISInventoryPaneContextMenu.onWearItems, player);
+  end
+  if canBeEquippedFannyPack and not unequip and getSpecificPlayer(player):getWornItem(canBeEquippedFannyPack:getBodyLocation()) then
+    context:addOption(getText("ContextMenu_ReplaceClothing", getSpecificPlayer(player):getWornItem(canBeEquippedFannyPack:getBodyLocation()):getDisplayName(), canBeEquippedFannyPack:getDisplayName()), items, ISInventoryPaneContextMenu.onWearItems, player);
   end
   -- replace an existing bag
   if canBeEquippedBack and not unequip and getSpecificPlayer(player):getClothingItem_Back() then
@@ -665,12 +675,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     context:addOption(getText("ContextMenu_RenameFood") .. canBeRenamedFood:getName(), canBeRenamedFood, ISInventoryPaneContextMenu.onRenameFood, player);
   end
   if canBeWrite then
-    local editable
-    if getActivatedMods():contains("BanjoRDPAP") then
-      editable = getSpecificPlayer(player):getInventory():contains("Pencil") or getSpecificPlayer(player):getInventory():contains("Pen") or getSpecificPlayer(player):getInventory():contains("BluePen") or getSpecificPlayer(player):getInventory():contains("RedPen") or getSpecificPlayer(player):getInventory():contains("Crayons")
-    else
-      editable = getSpecificPlayer(player):getInventory():contains("Pencil") or getSpecificPlayer(player):getInventory():contains("Pen") or getSpecificPlayer(player):getInventory():contains("BluePen") or getSpecificPlayer(player):getInventory():contains("RedPen")
-    end
+    local editable = getSpecificPlayer(player):getInventory():contains("Pencil") or getSpecificPlayer(player):getInventory():contains("Pen")
     if canBeWrite:getLockedBy() and canBeWrite:getLockedBy() ~= getSpecificPlayer(player):getUsername() then
       editable = false
     end
@@ -704,8 +709,6 @@ end
 ISInventoryPaneContextMenu.createMenuNoItems = function(playerNum, isLoot, x, y)
 
   if ISInventoryPaneContextMenu.dontCreateMenu then return end
-
-  if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return end
 
   local playerObj = getSpecificPlayer(playerNum)
 
@@ -830,7 +833,7 @@ end
 ISInventoryPaneContextMenu.onInspectClothing = function(player, clothing)
   local playerNum = player:getPlayerNum()
   if ISGarmentUI.windows[playerNum] then
-    ISInventoryPaneContextMenu.garmentUI:close();
+    ISGarmentUI.windows[playerNum]:close();
   end
   local window = ISGarmentUI:new(-1, 500, player, clothing);
   window:initialise();
@@ -1126,6 +1129,10 @@ ISInventoryPaneContextMenu.doBulletMenu = function(playerObj, weapon, context)
   if bulletNumber <= 0 then
     insertOption.notAvailable = true;
   end
+
+  if weapon:getCurrentAmmoCount() > 0 then
+    context:addOption(getText("ContextMenu_UnloadRounds", weapon:getDisplayName()), playerObj, ISInventoryPaneContextMenu.onUnloadBulletsFromFirearm, weapon);
+  end
 end
 
 ISInventoryPaneContextMenu.doReloadMenuForWeapon = function(playerObj, weapon, context)
@@ -1171,7 +1178,7 @@ end
 
 ISInventoryPaneContextMenu.onEjectMagazine = function(playerObj, weapon)
   ISInventoryPaneContextMenu.equipWeapon(weapon, true, false, playerObj:getPlayerNum())
-  ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon, false));
+  ISTimedActionQueue.add(ISEjectMagazine:new(playerObj, weapon));
 end
 
 ISInventoryPaneContextMenu.onInsertMagazine = function(playerObj, weapon, magazine)
@@ -1183,6 +1190,11 @@ end
 ISInventoryPaneContextMenu.onRackGun = function(playerObj, weapon)
   ISInventoryPaneContextMenu.equipWeapon(weapon, true, false, playerObj:getPlayerNum())
   ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon, true));
+end
+
+ISInventoryPaneContextMenu.onUnloadBulletsFromFirearm = function(playerObj, weapon)
+  ISInventoryPaneContextMenu.equipWeapon(weapon, true, false, playerObj:getPlayerNum())
+  ISTimedActionQueue.add(ISUnloadBulletsFromFirearm:new(playerObj, weapon))
 end
 
 ISInventoryPaneContextMenu.doMagazineMenu = function(playerObj, magazine, context)
@@ -1203,7 +1215,7 @@ ISInventoryPaneContextMenu.doMagazineMenu = function(playerObj, magazine, contex
   end
 
   if magazine:getCurrentAmmoCount() > 0 then
-    context:addOption(getText("ContextMenu_UnloadMagazine"), playerObj, ISInventoryPaneContextMenu.onLoadBulletsInMagazine, magazine, - 1);
+    context:addOption(getText("ContextMenu_UnloadMagazine"), playerObj, ISInventoryPaneContextMenu.onUnloadBulletsFromMagazine, magazine);
   end
 end
 
@@ -1211,13 +1223,14 @@ ISInventoryPaneContextMenu.onLoadBulletsInMagazine = function(playerObj, magazin
   ISInventoryPaneContextMenu.transferIfNeeded(playerObj, magazine)
   local items = playerObj:getInventory():getSomeTypeRecurse(magazine:getAmmoType(), ammoCount)
   ISInventoryPaneContextMenu.transferIfNeeded(playerObj, items)
-  -- unload
-  if ammoCount == -1 then
-    ammoCount = magazine:getCurrentAmmoCount()
-    ISTimedActionQueue.add(ISLoadBulletsInMagazine:new(playerObj, magazine, true, ammoCount))
-  elseif ammoCount > 0 then
-    ISTimedActionQueue.add(ISLoadBulletsInMagazine:new(playerObj, magazine, false, ammoCount))
+  if ammoCount > 0 then
+    ISTimedActionQueue.add(ISLoadBulletsInMagazine:new(playerObj, magazine, ammoCount))
   end
+end
+
+ISInventoryPaneContextMenu.onUnloadBulletsFromMagazine = function(playerObj, magazine)
+  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, magazine)
+  ISTimedActionQueue.add(ISUnloadBulletsFromMagazine:new(playerObj, magazine))
 end
 
 ISInventoryPaneContextMenu.getEvoItemCategories = function(items)
@@ -1541,6 +1554,7 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
 end
 
 ISInventoryPaneContextMenu.onDyeHair = function(hairDye, playerObj, beard)
+  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, hairDye)
   ISTimedActionQueue.add(ISDyeHair:new(playerObj, hairDye, beard, 120));
 end
 
@@ -2379,6 +2393,9 @@ ISInventoryPaneContextMenu.onDropItems = function(items, player)
 end
 
 ISInventoryPaneContextMenu.dropItem = function(item, player)
+  if "Tutorial" == getCore():getGameMode() then
+    return;
+  end
   local playerObj = getSpecificPlayer(player)
   if true then
     -- Don't transfer items to the player's inventory first, since doing so
@@ -2534,8 +2551,13 @@ end
 -- The check is recursive to handle RemouladeFull -> RemouladeHalf -> RemouladeEmpty.
 ISInventoryPaneContextMenu.canReplaceStoreWater = function(item)
   --	print('testing ' .. item:getFullType())
-  if not item:getReplaceOnUse() then return false end
-  return ISInventoryPaneContextMenu.canReplaceStoreWater2(item:getModule()..'.'..item:getReplaceOnUse())
+  if item:getReplaceOnUse() then
+    return ISInventoryPaneContextMenu.canReplaceStoreWater2(item:getModule()..'.'..item:getReplaceOnUse())
+  end
+  if instanceof(item, "DrainableComboItem") and item:getReplaceOnDeplete() then
+    return ISInventoryPaneContextMenu.canReplaceStoreWater2(item:getModule()..'.'..item:getReplaceOnDeplete())
+  end
+  return false
 end
 
 ISInventoryPaneContextMenu.canReplaceStoreWater2 = function(itemType)
@@ -2545,9 +2567,15 @@ ISInventoryPaneContextMenu.canReplaceStoreWater2 = function(itemType)
   if item:getCanStoreWater() then
     return true
   end
-  if not item:getReplaceOnUse() then return false end
-  return ISInventoryPaneContextMenu.canReplaceStoreWater2(item:getModuleName()..'.'..item:getReplaceOnUse())
+  if item:getReplaceOnUse() then
+    return ISInventoryPaneContextMenu.canReplaceStoreWater2(item:getModuleName()..'.'..item:getReplaceOnUse())
+  end
+  if instanceof(item, "DrainableComboItem") and item:getReplaceOnDeplete() then
+    return ISInventoryPaneContextMenu.canReplaceStoreWater2(item:getModuleName()..'.'..item:getReplaceOnDeplete())
+  end
+  return false
 end
+
 
 ISInventoryPaneContextMenu.onDumpContents = function(items, item, time, player)
   if item ~= nil then
@@ -2601,21 +2629,20 @@ ISInventoryPaneContextMenu.doEquipOption = function(context, playerObj, isWeapon
   end
 end
 
-
-ISInventoryPaneContextMenu.onMakeUp = function(makeup, player)
-  if ISMakeUpUI.windows[player] then
-    ISMakeUpUI.windows[player]:setVisible(true);
-    ISMakeUpUI.windows[player].item = makeup;
-    ISMakeUpUI.windows[player]:reinit();
+ISInventoryPaneContextMenu.onMakeUp = function(makeup, playerObj)
+  local playerNum = playerObj:getPlayerNum()
+  if ISMakeUpUI.windows[playerNum + 1] then
+    ISMakeUpUI.windows[playerNum + 1]:setVisible(true);
+    ISMakeUpUI.windows[playerNum + 1].item = makeup;
+    ISMakeUpUI.windows[playerNum + 1]:reinit();
   else
-    ISMakeUpUI.windows[player] = ISMakeUpUI:new(0, 0, makeup, player);
-    ISMakeUpUI.windows[player]:initialise();
-    ISMakeUpUI.windows[player]:addToUIManager();
+    ISMakeUpUI.windows[playerNum + 1] = ISMakeUpUI:new(0, 0, makeup, playerObj);
+    ISMakeUpUI.windows[playerNum + 1]:initialise();
+    ISMakeUpUI.windows[playerNum + 1]:addToUIManager();
   end
-  local playerNum = player:getPlayerNum()
   if JoypadState.players[playerNum + 1] then
-    ISMakeUpUI.windows[player].prevFocus = JoypadState.players[playerNum + 1].focus
-    JoypadState.players[playerNum + 1].focus = ISMakeUpUI.windows[player]
+    ISMakeUpUI.windows[playerNum + 1].prevFocus = JoypadState.players[playerNum + 1].focus
+    JoypadState.players[playerNum + 1].focus = ISMakeUpUI.windows[playerNum + 1]
   end
 end
 
@@ -2763,6 +2790,10 @@ ISInventoryPaneContextMenu.onClothingItemExtra = function(clothing, newClothing,
   newClothing:getVisual():setBaseTexture(clothing:getVisual():getBaseTexture());
   newClothing:getVisual():setTextureChoice(clothing:getVisual():getTextureChoice());
   newClothing:getVisual():setDecal(clothing:getVisual():getDecal(clothing:getClothingItem()));
+  if instanceof(newClothing, "InventoryContainer") and instanceof(clothing, "InventoryContainer") then
+    print("set container!")
+    newClothing:getItemContainer():setItems(clothing:getItemContainer():getItems());
+  end
   --    newClothing:setDirtyness(clothing:getDirtyness());
   --    newClothing:setTexture(clothing:getTexture());
   newClothing:setColor(clothing:getColor());
@@ -2770,8 +2801,13 @@ ISInventoryPaneContextMenu.onClothingItemExtra = function(clothing, newClothing,
   newClothing:getVisual():copyBlood(clothing:getVisual());
   newClothing:getVisual():copyHoles(clothing:getVisual());
   newClothing:getVisual():copyPatches(clothing:getVisual());
-  clothing:copyPatchesTo(newClothing);
-  playerObj:setWornItem(newClothing:getBodyLocation(), newClothing);
+  if instanceof(newClothing, "InventoryContainer") and newClothing:canBeEquipped() ~= "" then
+    playerObj:setWornItem(newClothing:canBeEquipped(), newClothing);
+    getPlayerData(playerObj:getPlayerNum()).playerInventory:refreshBackpacks();
+  elseif instanceof(newClothing, "Clothing") then
+    clothing:copyPatchesTo(newClothing);
+    playerObj:setWornItem(newClothing:getBodyLocation(), newClothing);
+  end
   playerObj:getInventory():Remove(clothing);
   newClothing:synchWithVisual();
   newClothing:getContainer():setDrawDirty(true);

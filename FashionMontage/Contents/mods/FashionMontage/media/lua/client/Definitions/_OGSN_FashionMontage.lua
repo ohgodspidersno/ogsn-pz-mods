@@ -181,6 +181,20 @@ ClothingSelectionDefinitions.default.Female.Scarf = {}
 ClothingSelectionDefinitions.default.Female.Scarf.items = {}
 ClothingSelectionDefinitions.default.Female.Scarf.chance = 15
 
+ClothingSelectionDefinitions.default.Male.FannyPackBack = {}
+ClothingSelectionDefinitions.default.Male.FannyPackBack.items = {}
+ClothingSelectionDefinitions.default.Male.FannyPackBack.chance = 0
+ClothingSelectionDefinitions.default.Female.FannyPackBack = {}
+ClothingSelectionDefinitions.default.Female.FannyPackBack.items = {}
+ClothingSelectionDefinitions.default.Female.FannyPackBack.chance = 0
+
+ClothingSelectionDefinitions.default.Male.FannyPackFront = {}
+ClothingSelectionDefinitions.default.Male.FannyPackFront.items = {}
+ClothingSelectionDefinitions.default.Male.FannyPackFront.chance = 0
+ClothingSelectionDefinitions.default.Female.FannyPackFront = {}
+ClothingSelectionDefinitions.default.Female.FannyPackFront.items = {}
+ClothingSelectionDefinitions.default.Female.FannyPackFront.chance = 0
+
 
 -- Make the default starting outfit something really basic and easy for the player to replace
 ClothingSelectionDefinitions.starting = {}
@@ -381,6 +395,18 @@ local function addClothing(clothingLists)
       local femaleItems = femaleTable.Scarf.items;
       merge_Old_New(maleItems,clothingLists.listScarf);
       merge_Old_New(femaleItems,clothingLists.listScarf);
+    end
+    if clothingLists.listFannyPackBack then
+      local maleItems = maleTable.FannyPackBack.items;
+      local femaleItems = femaleTable.FannyPackBack.items;
+      merge_Old_New(maleItems,clothingLists.listFannyPackBack);
+      merge_Old_New(femaleItems,clothingLists.listFannyPackBack);
+    end
+    if clothingLists.listFannyPackFront then
+      local maleItems = maleTable.FannyPackFront.items;
+      local femaleItems = femaleTable.FannyPackFront.items;
+      merge_Old_New(maleItems,clothingLists.listFannyPackFront);
+      merge_Old_New(femaleItems,clothingLists.listFannyPackFront);
     end
 end
 

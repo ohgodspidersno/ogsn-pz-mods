@@ -180,8 +180,6 @@ function ISVehicleMechanics:createChildren()
 end
 
 function ISVehicleMechanics:onListMouseDown(x, y)
-  -- LetMeThink
-  -- if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 and not getDebug() then return; end
 
   self.parent.listbox.selected = 0;
   self.parent.bodyworklist.selected = 0;
@@ -203,8 +201,6 @@ function ISVehicleMechanics:onListRightMouseUp(x, y)
 end
 
 function ISVehicleMechanics:doPartContextMenu(part, x, y)
-  -- LetMeThink
-  -- if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return; end
 
   local playerObj = getSpecificPlayer(self.playerNum);
   self.context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
@@ -368,6 +364,7 @@ function ISVehicleMechanics:doPartContextMenu(part, x, y)
     end
     option = self.context:addOption("CHEAT: Repair Part", playerObj, ISVehicleMechanics.onCheatRepairPart, part)
     option = self.context:addOption("CHEAT: Repair Vehicle", playerObj, ISVehicleMechanics.onCheatRepair, self.vehicle)
+    option = self.context:addOption("CHEAT: Set Rust", playerObj, ISVehicleMechanics.onCheatSetRust, self.vehicle)
     option = self.context:addOption("CHEAT: Set Part Condition", playerObj, ISVehicleMechanics.onCheatSetCondition, part)
     if part:isContainer() and part:getContainerContentType() then
       option = self.context:addOption("CHEAT: Set Content Amount", playerObj, ISVehicleMechanics.onCheatSetContentAmount, part)
@@ -498,6 +495,23 @@ end
 
 function ISVehicleMechanics.onCheatRepair(playerObj, vehicle)
   sendClientCommand(playerObj, "vehicle", "repair", { vehicle = vehicle:getId() })
+end
+
+function ISVehicleMechanics.onCheatSetRustAux(target, button, playerObj, vehicle)
+  if button.internal ~= "OK" then return end
+  local text = button.parent.entry:getText()
+  local rust = tonumber(text)
+  if not rust then return end
+  rust = math.max(rust, 0.0)
+  rust = math.min(rust, 1.0)
+  sendClientCommand(playerObj, "vehicle", "setRust", { vehicle = vehicle:getId(), rust = rust })
+end
+
+function ISVehicleMechanics.onCheatSetRust(playerObj, vehicle)
+  local modal = ISTextBox:new(0, 0, 280, 180, "Rust (0-1):", tostring(vehicle:getRust()),
+  nil, ISVehicleMechanics.onCheatSetRustAux, playerObj:getPlayerNum(), playerObj, vehicle)
+  modal:initialise()
+  modal:addToUIManager()
 end
 
 function ISVehicleMechanics.onCheatRepairPart(playerObj, part)
@@ -899,8 +913,6 @@ function ISVehicleMechanics:onRightMouseUp(x, y)
     self:selectPart(part)
     self:doPartContextMenu(part, x, y)
   elseif ISVehicleMechanics.cheat or playerObj:getAccessLevel() ~= "None" then
-    -- LetMeThink
-    -- if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return; end
     self.context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
     if self.vehicle:getScript() and self.vehicle:getScript():getWheelCount() > 0 then
       self.context:addOption("CHEAT: Get Key", playerObj, ISVehicleMechanics.onCheatGetKey, self.vehicle)
@@ -917,6 +929,7 @@ function ISVehicleMechanics:onRightMouseUp(x, y)
         self.context:addOption("CHEAT: Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, false)
       end
       self.context:addOption("CHEAT: Repair Vehicle", playerObj, ISVehicleMechanics.onCheatRepair, self.vehicle)
+      self.context:addOption("CHEAT: Set Rust", playerObj, ISVehicleMechanics.onCheatSetRust, self.vehicle)
     end
     self.context:addOption("CHEAT: Remove Vehicle", playerObj, ISVehicleMechanics.onCheatRemove, self.vehicle)
   end
@@ -953,7 +966,7 @@ function ISVehicleMechanics:renderCarOverlayTooltip(partProps, part, carType)
         if part:getId() == "GasTank" and round(part:getContainerContentAmount(), 3) <= 0.1 then
           text = getText("Tooltip_outoffuel") .. " (0 / " .. part:getContainerCapacity() .. ")"
         else
-          local contents = round(part:getContainerContentAmount(), 3) .. " / " .. part:getContainerCapacity()
+          local contents = self:roundContainerContentAmount(part) .. " / " .. part:getContainerCapacity()
           text = getTextOrNull("IGUI_Vehicle_ContainerCapacity_" .. part:getContainerContentType(), contents)
           if not text then
             text = getText("IGUI_Vehicle_ContainerCapacity_Other", part:getContainerContentType(), contents)
@@ -984,6 +997,16 @@ function ISVehicleMechanics:startFlashGreen()
   self.flashTimer = 250;
   self.flashTimerAlpha = 1;
   self.flashTimerAlphaInc = false;
+end
+
+local ROUND_CONTENT_AMOUNT = {
+  Air = 1,
+  Gasoline = 3,
+}
+
+function ISVehicleMechanics:roundContainerContentAmount(part)
+  local amount = part:getContainerContentAmount()
+  return round(amount, ROUND_CONTENT_AMOUNT[part:getContainerContentType()] or 3)
 end
 
 function ISVehicleMechanics:prerender()
@@ -1115,7 +1138,7 @@ function ISVehicleMechanics:renderPartDetail(part)
     self:drawText(getText("IGUI_Item") .. ": " .. getText("IGUI_Missing"), x, y, 1, 0, 0, 1);
     y = y + lineHgt;
   end
-  local capacity = round(part:getContainerContentAmount(), 3) .. " / " .. part:getContainerCapacity();
+  local capacity = self:roundContainerContentAmount(part) .. " / " .. part:getContainerCapacity();
   if part:getItemContainer() then
     capacity = round(part:getItemContainer():getCapacityWeight(), 2) .. " / " .. part:getContainerCapacity(self.chr);
   end

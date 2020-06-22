@@ -38,9 +38,12 @@ function ISMenuContextWorld.new()
   end
 
   function self.createMenu( _playerNum, _object, _objects, _x, _y, _test )
+    if getCore():getGameMode() == "Tutorial" then
+      Tutorial1.createWorldContextMenu(_playerNum, _objects, _x, _y);
+      return;
+    end
     local playerObj = getSpecificPlayer(_playerNum);
-    if playerObj:isDead() or playerObj:isAsleep() then return end -- LetMeThink
-    -- if playerObj:isDead() or playerObj:isAsleep() or UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return end -- Vanilla
+    if playerObj:isDead() or playerObj:isAsleep() then return end
     self.reset(_playerNum);
     local context;
     if not _test then
@@ -223,7 +226,7 @@ function ISMenuContextWorld.new()
             end
         end
 
-		if playerObj:isAsleep() or UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return end
+		if playerObj:isAsleep() then return end
 
 		getCell():setDrag(nil, _playerNum);
 

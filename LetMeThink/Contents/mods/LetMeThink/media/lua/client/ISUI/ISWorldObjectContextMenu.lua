@@ -9,7 +9,6 @@ ISWorldObjectContextMenu.clearFetch = function()
   door = nil;
   clothingDryer = nil
   clothingWasher = nil
-  campfire = nil
   curtain = nil;
   body = nil;
   item = nil;
@@ -59,24 +58,6 @@ ISWorldObjectContextMenu.clearFetch = function()
   ISWorldObjectContextMenu.fetchSquares = {}
 end
 
-local function timeString(timeInMinutes)
-  local hourStr = getText("IGUI_Gametime_hour")
-  local minuteStr = getText("IGUI_Gametime_minute")
-  local hours = math.floor(timeInMinutes / 60)
-  local minutes = timeInMinutes % 60
-  if hours ~= 1 then hourStr = getText("IGUI_Gametime_hours") end
-  if minutes ~= 1 then minuteStr = getText("IGUI_Gametime_minutes") end
-  local str = ""
-  if hours ~= 0 then
-    str = hours .. ' ' .. hourStr
-  end
-  if str == '' or minutes ~= 0 then
-    if str ~= '' then str = str .. ', ' end
-    str = str .. minutes .. ' ' .. minuteStr
-  end
-  return str
-end
-
 local function predicateNotBroken(item)
   return not item:isBroken()
 end
@@ -87,6 +68,10 @@ end
 
 local function predicateNotFull(item)
   return item:getUsedDelta() < 1
+end
+
+local function predicateEmptySandbag(item)
+  return not instanceof(item, "InventoryContainer") or item:getInventory():isEmpty()
 end
 
 local CuttingToolTypes = { "WoodAxe", "Axe", "AxeStone", "HandAxe", "Machete", "HuntingKnife", "KitchenKnife" }
@@ -141,9 +126,6 @@ ISWorldObjectContextMenu.fetch = function(v, player, doSquare)
   end
   if instanceof(v, "IsoObject") then
     item = v;
-    if CCampfireSystem.instance:isValidIsoObject(v) then
-      campfire = v
-    end
   end
   if instanceof(v, "IsoSurvivor") then
     survivor = v;
@@ -374,11 +356,10 @@ end
 
 -- MAIN METHOD FOR CREATING RIGHT CLICK CONTEXT MENU FOR WORLD ITEMS
 ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
-
-  -- LetMeThink
-  -- if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  -- 	return;
-  -- end
+  if getCore():getGameMode() == "Tutorial" then
+    Tutorial1.createWorldContextMenu(player, worldobjects, x, y);
+    return;
+  end
 
   local playerObj = getSpecificPlayer(player)
   local playerInv = playerObj:getInventory()
@@ -703,20 +684,6 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     tooltip.maxLineWidth = 512
     option.toolTip = tooltip
   end
-
-  if campfire and playerObj:DistToSquared(campfire:getX() + 0.5, campfire:getY() + 0.5) < 2 * 2 then
-    if test == true then return true; end
-    local luaCampfire = CCampfireSystem.instance:getLuaObjectOnSquare(campfire:getSquare())
-    local option = context:addOption(getText("ContextMenu_CampfireInfo"), worldobjects, nil)
-    if playerObj:DistToSquared(campfire:getX() + 0.5, campfire:getY() + 0.5) < 2 * 2 then
-      option.toolTip = ISToolTip:new()
-      option.toolTip:initialise()
-      option.toolTip:setVisible(false)
-      option.toolTip:setName(getText("ContextMenu_CampfireInfo"))
-      option.toolTip.description = getText("IGUI_BBQ_FuelAmount", timeString(luautils.round(luaCampfire.fuelAmt)))
-    end
-  end
-
   -- wash clothing/yourself
   if storeWater then
     if not clothingDryer and not clothingWasher then --Stops being able to wash clothes in washing machines and dryers
@@ -727,36 +694,9 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   -- take water
   if storeWater and getCore():getGameMode() ~= "LastStand" then
     if test == true then return true; end
-    local pourInto = playerInv:getAllEvalRecurse(function(item)
-      -- our item can store water, but doesn't have water right now
-      if item:canStoreWater() and not item:isWaterSource() and not item:isBroken() then
-        return true
-      end
-
-      -- or our item can store water and is not full
-      if item:canStoreWater() and item:isWaterSource() and not item:isBroken() and instanceof(item, "DrainableComboItem") and item:getUsedDelta() < 1 then
-        return true
-      end
-
-      return false
-    end)
-    if not pourInto:isEmpty() then
-      if test == true then return true; end
-      local subMenuOption = context:addOption(getText("ContextMenu_Fill"), worldobjects, nil);
-      if not storeWater:getSquare() or not AdjacentFreeTileFinder.Find(storeWater:getSquare(), playerObj) then
-        subMenuOption.notAvailable = true;
-      end
-      local subMenu = context:getNew(context)
-      context:addSubMenu(subMenuOption, subMenu)
-      for i = 1, pourInto:size() do
-        local item = pourInto:get(i - 1)
-        suboption = subMenu:addOption(item:getName(), worldobjects, ISWorldObjectContextMenu.onTakeWater, storeWater, item, player);
-        if not storeWater:getSquare() or not AdjacentFreeTileFinder.Find(storeWater:getSquare(), playerObj) then
-          suboption.notAvailable = true;
-        end
-      end
-    end
+    ISWorldObjectContextMenu.doFillWaterMenu(storeWater, player, context);
   end
+
 
   -- This is a separate function because of the limit of 200 local variables per Lua function.
   if ISWorldObjectContextMenu.addWaterFromItem(test, context, worldobjects, playerObj, playerInv) then
@@ -902,7 +842,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       if not JoypadState.players[player + 1] then
         local tooltip = ISWorldObjectContextMenu.addToolTip()
         tooltip:setName(getText("ContextMenu_Info"))
-        tooltip.description = getText("Tooltip_Climb", getKeyName(getCore():getKey("Interact")));
+        tooltip.description = getText("Tooltip_TapKey", getKeyName(getCore():getKey("Interact")));
         climboption.toolTip = tooltip;
       end
     end
@@ -1061,7 +1001,11 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       if not JoypadState.players[player + 1] then
         local tooltip = ISWorldObjectContextMenu.addToolTip()
         tooltip:setName(getText("ContextMenu_Info"))
-        tooltip.description = getText("Tooltip_Climb", getKeyName(getCore():getKey("Interact")));
+        if window:isGlassRemoved() then
+          tooltip.description = getText("Tooltip_TapKey", getKeyName(getCore():getKey("Interact")));
+        else
+          tooltip.description = getText("Tooltip_Climb", getKeyName(getCore():getKey("Interact")));
+        end
         climboption.toolTip = tooltip;
       end
     end
@@ -1122,7 +1066,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       if not JoypadState.players[player + 1] then
         local tooltip = ISWorldObjectContextMenu.addToolTip()
         tooltip:setName(getText("ContextMenu_Info"))
-        tooltip.description = getText("Tooltip_Climb", getKeyName(getCore():getKey("Interact")))
+        tooltip.description = getText("Tooltip_TapKey", getKeyName(getCore():getKey("Interact")))
         climboption.toolTip = tooltip
       end
     end
@@ -1194,6 +1138,15 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       if playerInv:containsTypeRecurse("Sheet") then
         if test == true then return true; end
         context:addOption(getText("ContextMenu_Add_sheet"), worldobjects, ISWorldObjectContextMenu.onAddSheet, door, player);
+      end
+    end
+    if door:isHoppable() and door:canClimbOver(playerObj) then
+      local option = context:addOption(getText("ContextMenu_Climb_over"), worldobjects, ISWorldObjectContextMenu.onClimbOverFence, door, player);
+      if not JoypadState.players[player + 1] then
+        local tooltip = ISWorldObjectContextMenu.addToolTip()
+        tooltip:setName(getText("ContextMenu_Info"))
+        tooltip.description = getText("Tooltip_Climb", getKeyName(getCore():getKey("Interact")));
+        option.toolTip = tooltip;
       end
     end
   end
@@ -1363,11 +1316,13 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
 
   -- safehouse
   if safehouse and safehouse:playerAllowed(playerObj) then
+    if test == true then return true; end
     context:addOption(getText("ContextMenu_ViewSafehouse"), worldobjects, ISWorldObjectContextMenu.onViewSafeHouse, safehouse, playerObj);
   end
   if not safehouse and clickedSquare:getBuilding() and clickedSquare:getBuilding():getDef() then
     local reason = SafeHouse.canBeSafehouse(clickedSquare, playerObj);
     if reason then
+      if test == true then return true; end
       local option = context:addOption(getText("ContextMenu_SafehouseClaim"), worldobjects, ISWorldObjectContextMenu.onTakeSafeHouse, clickedSquare, player);
       if reason ~= "" then
         local toolTip = ISToolTip:new();
@@ -1422,27 +1377,13 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   --    end
 
   if firetile and extinguisher then
+    if test == true then return true; end
     context:addOption(getText("ContextMenu_ExtinguishFire"), worldobjects, ISWorldObjectContextMenu.onRemoveFire, firetile, extinguisher, playerObj);
   end
 
-  if compost then
-    local option = context:addOption(getText("ContextMenu_GetCompost") .. " (" .. math.floor(compost:getCompost()) .. getText("ContextMenu_FullPercent") .. ")",
-    worldobjects, ISWorldObjectContextMenu.onGetCompost, compost, playerObj)
-    option.notAvailable = compost:getCompost() < 10 or not playerInv:containsTypeRecurse("EmptySandbag")
-    option.toolTip = ISToolTip:new()
-    option.toolTip:initialise()
-    option.toolTip:setVisible(false)
-    option.toolTip:setName(getText("ContextMenu_Compost"))
-    local percent = math.floor(compost:getCompost())
-    option.toolTip.description = percent .. getText("ContextMenu_FullPercent")
-    if percent < 10 then
-      option.toolTip.description = "<RGB:1,0,0> " .. getText("ContextMenu_CompostPercentRequired", percent, 10)
-    end
-    if not playerInv:containsTypeRecurse("EmptySandbag") then
-      option.toolTip.description = option.toolTip.description .. " <LINE> <RGB:1,0,0> " .. getText("ContextMenu_EmptySandbagRequired")
-    end
+  if compost and ISWorldObjectContextMenu.handleCompost(test, context, worldobjects, playerObj, playerInv) then
+    return true
   end
-
 
   -- walk to
   if JoypadState.players[player + 1] == nil and not playerObj:getVehicle() then
@@ -1451,6 +1392,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   end
 
   if not playerObj:getVehicle() and not playerObj:isSitOnGround() then
+    if test == true then return true; end
     context:addOption(getText("ContextMenu_SitGround"), player, ISWorldObjectContextMenu.onSitOnGround);
   end
 
@@ -1461,6 +1403,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
 
   if context.numOptions == 1 then
     context:setVisible(false);
+    print("gah3")
   end
 
   return context;
@@ -1486,6 +1429,57 @@ function ISWorldObjectContextMenu.addWaterFromItem(test, context, worldobjects, 
       for _, item in ipairs(pourOut) do
         subMenu:addOption(item:getName(), worldobjects, ISWorldObjectContextMenu.onAddWaterFromItem, pourWaterInto, item, playerObj);
       end
+    end
+  end
+  return false
+end
+
+function ISWorldObjectContextMenu.handleCompost(test, context, worldobjects, playerObj, playerInv)
+  if test == true then return true; end
+  local option = context:addOption(getText("ContextMenu_GetCompost") .. " (" .. round(compost:getCompost(), 1) .. getText("ContextMenu_FullPercent") .. ")")
+  option.toolTip = ISToolTip:new()
+  option.toolTip:initialise()
+  option.toolTip:setVisible(false)
+  option.toolTip:setName(getText("ContextMenu_Compost"))
+  local percent = round(compost:getCompost(), 1)
+  option.toolTip.description = percent .. getText("ContextMenu_FullPercent")
+  local COMPOST_PER_BAG = 10
+  local compostBagScriptItem = ScriptManager.instance:FindItem("Base.CompostBag")
+  local USES_PER_BAG = 1.0 / compostBagScriptItem:getUseDelta()
+  local COMPOST_PER_USE = COMPOST_PER_BAG / USES_PER_BAG
+  if percent < COMPOST_PER_USE then
+    option.toolTip.description = "<RGB:1,0,0> " .. getText("ContextMenu_CompostPercentRequired", percent, COMPOST_PER_USE)
+    option.notAvailable = true
+  end
+  local compostBags = playerInv:getAllTypeEvalRecurse("CompostBag", predicateNotFull)
+  local sandBags = playerInv:getAllTypeEvalRecurse("EmptySandbag", predicateEmptySandbag)
+  if compostBags:isEmpty() and sandBags:isEmpty() then
+    option.toolTip.description = option.toolTip.description .. " <LINE> <RGB:1,0,0> " .. getText("ContextMenu_EmptySandbagRequired")
+    option.notAvailable = true
+  elseif not option.notAvailable then
+    local subMenu = context:getNew(context)
+    for i = 1, compostBags:size() do
+      local compostBag = compostBags:get(i - 1)
+      local availableUses = USES_PER_BAG - compostBag:getDrainableUsesInt()
+      subMenu:addOption(getText("ContextMenu_GetCompostItem", compostBag:getDisplayName(), math.min(percent, availableUses * COMPOST_PER_USE)), compost, ISWorldObjectContextMenu.onGetCompost, compostBag, playerObj)
+    end
+    for i = 1, sandBags:size() do
+      local sandBag = sandBags:get(i - 1)
+      subMenu:addOption(getText("ContextMenu_GetCompostItem", sandBag:getDisplayName(), math.min(percent, COMPOST_PER_BAG)), compost, ISWorldObjectContextMenu.onGetCompost, sandBag, playerObj)
+      break -- only 1 empty sandbag listed
+    end
+    option.subOption = subMenu.subOptionNums
+  end
+  if compost:getCompost() + COMPOST_PER_USE <= 100 then
+    local compostBags = playerInv:getAllTypeRecurse("CompostBag")
+    if not compostBags:isEmpty() then
+      local subMenu = context:getNew(context)
+      for i = 1, compostBags:size() do
+        local compostBag = compostBags:get(i - 1)
+        subMenu:addOption(getText("ContextMenu_AddCompostItem", compostBag:getDisplayName(), math.min(100 - percent, compostBag:getDrainableUsesInt() * COMPOST_PER_USE)), compost, ISWorldObjectContextMenu.onAddCompost, compostBag, playerObj)
+      end
+      local subMenuOption = context:addOption(getText("ContextMenu_AddCompost"))
+      context:addSubMenu(subMenuOption, subMenu)
     end
   end
   return false
@@ -1609,11 +1603,19 @@ ISWorldObjectContextMenu.onAddPlayerToSafehouse = function(worldobjects, safehou
   safehouse:addPlayer(player:getUsername());
 end
 
-ISWorldObjectContextMenu.onGetCompost = function(worldobjects, compost, player)
-  local sandbag = player:getInventory():getFirstTypeRecurse("EmptySandbag")
-  if luautils.walkAdj(player, compost:getSquare()) then
-    ISWorldObjectContextMenu.transferIfNeeded(player, sandbag)
-    ISTimedActionQueue.add(ISGetCompost:new(player, compost, sandbag, 100));
+ISWorldObjectContextMenu.onGetCompost = function(compost, item, playerObj)
+  if luautils.walkAdj(playerObj, compost:getSquare()) then
+    ISWorldObjectContextMenu.transferIfNeeded(playerObj, item)
+    ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), item, true, false)
+    ISTimedActionQueue.add(ISGetCompost:new(playerObj, compost, item, 100));
+  end
+end
+
+ISWorldObjectContextMenu.onAddCompost = function(compost, item, playerObj)
+  if luautils.walkAdj(playerObj, compost:getSquare()) then
+    ISWorldObjectContextMenu.transferIfNeeded(playerObj, item)
+    ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), item, true, false)
+    ISTimedActionQueue.add(ISAddCompost:new(playerObj, compost, item))
   end
 end
 
@@ -1905,10 +1907,11 @@ ISWorldObjectContextMenu.onWakeOther = function(worldobjects, player, otherPlaye
 end
 
 ISWorldObjectContextMenu.onScavenge = function(worldobjects, player, zone, clickedSquare)
-  if ISScavengeUI.instance then
-    ISScavengeUI.instance:removeFromUIManager();
+  if ISScavengeUI.windows[player + 1] then
+    ISScavengeUI.windows[player + 1]:removeFromUIManager();
   end
   local modal = ISScavengeUI:new(0, 0, 450, 270, player, zone, clickedSquare);
+  ISScavengeUI.windows[player + 1] = modal;
   modal:initialise()
   modal:addToUIManager()
   if JoypadState.players[player + 1] then
@@ -2418,6 +2421,51 @@ function ISWorldObjectContextMenu.compareClothingBlood(item1, item2)
   return ISWashClothing.GetRequiredSoap(item1) < ISWashClothing.GetRequiredSoap(item2)
 end
 
+ISWorldObjectContextMenu.doFillWaterMenu = function(sink, player, context)
+  local playerObj = getSpecificPlayer(player)
+  local playerInv = playerObj:getInventory()
+  local containerList = {}
+  local pourInto = playerInv:getAllEvalRecurse(function(item)
+    -- our item can store water, but doesn't have water right now
+    if item:canStoreWater() and not item:isWaterSource() and not item:isBroken() then
+      return true
+    end
+
+    -- or our item can store water and is not full
+    if item:canStoreWater() and item:isWaterSource() and not item:isBroken() and instanceof(item, "DrainableComboItem") and item:getUsedDelta() < 1 then
+      return true
+    end
+
+    return false
+  end)
+  if not pourInto:isEmpty() then
+    if test == true then return true; end
+    local subMenuOption = context:addOption(getText("ContextMenu_Fill"), worldobjects, nil);
+    if not sink:getSquare() or not AdjacentFreeTileFinder.Find(sink:getSquare(), playerObj) then
+      subMenuOption.notAvailable = true;
+    end
+
+    for i = 0, pourInto:size() - 1 do
+      local container = pourInto:get(i)
+      table.insert(containerList, container)
+    end
+
+
+    local subMenu = context:getNew(context)
+    context:addSubMenu(subMenuOption, subMenu)
+    if pourInto:size() > 1 then
+      suboption = subMenu:addOption(getText("ContextMenu_FillAll"), worldobjects, ISWorldObjectContextMenu.onTakeWater, sink, containerList, nil, player);
+    end
+    for i = 1, pourInto:size() do
+      local item = pourInto:get(i - 1)
+      suboption = subMenu:addOption(item:getName(), worldobjects, ISWorldObjectContextMenu.onTakeWater, sink, nil, item, player);
+      if not storeWater:getSquare() or not AdjacentFreeTileFinder.Find(storeWater:getSquare(), playerObj) then
+        suboption.notAvailable = true;
+      end
+    end
+  end
+end
+
 ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
   local playerObj = getSpecificPlayer(player)
   local playerInv = playerObj:getInventory()
@@ -2585,46 +2633,54 @@ ISWorldObjectContextMenu.onDrink = function(worldobjects, waterObject, player)
   local waterAvailable = waterObject:getWaterAmount()
   local waterNeeded = math.min(math.ceil(playerObj:getStats():getThirst() * 10), 10)
   local waterConsumed = math.min(waterNeeded, waterAvailable)
-  ISTimedActionQueue.add(ISTakeWaterAction:new(playerObj, nil, waterConsumed, waterObject, (waterConsumed * 10) + 15));
+  ISTimedActionQueue.add(ISTakeWaterAction:new(playerObj, nil, waterConsumed, waterObject, (waterConsumed * 10) + 15, nil));
 end
 
-ISWorldObjectContextMenu.onTakeWater = function(worldobjects, waterObject, waterContainer, player)
+ISWorldObjectContextMenu.onTakeWater = function(worldobjects, waterObject, waterContainerList, waterContainer, player)
   local playerObj = getSpecificPlayer(player)
   local playerInv = playerObj:getInventory()
   local waterAvailable = waterObject:getWaterAmount()
-  -- first case, fill an empty bottle
-  if waterContainer:canStoreWater() and not waterContainer:isWaterSource() then
-    if not waterObject:getSquare() or not luautils.walkAdj(playerObj, waterObject:getSquare(), true) then
-      return
-    end
-    -- we create the item wich contain our water
-    -- Probably we shouldn't create the new empty item in case ISTakeWaterAction() never happens.
-    local newItem = waterObject:replaceItem(waterContainer);
-    -- we empty it, so we gonna start to fill it in the timed action
-    newItem:setUsedDelta(0);
-    local returnToContainer = newItem:getContainer():isInCharacterInventory(playerObj) and newItem:getContainer()
-    --        ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), newItem, true)
-    ISWorldObjectContextMenu.transferIfNeeded(playerObj, newItem)
-    local destCapacity = 1 / newItem:getUseDelta()
-    local waterConsumed = math.min(math.floor(destCapacity + 0.001), waterAvailable)
-    ISTimedActionQueue.add(ISTakeWaterAction:new(playerObj, newItem, waterConsumed, waterObject, waterConsumed * 10));
-    if returnToContainer and (returnToContainer ~= playerInv) then
-      ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, newItem, playerInv, returnToContainer))
-    end
-  elseif waterContainer:canStoreWater() and waterContainer:isWaterSource() then -- second case, a bottle contain some water, we just fill it
-    if not waterObject:getSquare() or not luautils.walkAdj(playerObj, waterObject:getSquare(), true) then
-      return
-    end
-    local returnToContainer = waterContainer:getContainer():isInCharacterInventory(playerObj) and waterContainer:getContainer()
-    if playerObj:getPrimaryHandItem() ~= waterContainer and playerObj:getSecondaryHandItem() ~= waterContainer then
-      --			ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), waterContainer, true)
-    end
-    ISWorldObjectContextMenu.transferIfNeeded(playerObj, waterContainer)
-    local destCapacity = (1 - waterContainer:getUsedDelta()) / waterContainer:getUseDelta()
-    local waterConsumed = math.min(math.floor(destCapacity + 0.001), waterAvailable)
-    ISTimedActionQueue.add(ISTakeWaterAction:new(playerObj, waterContainer, waterConsumed, waterObject, waterConsumed * 10));
-    if returnToContainer then
-      ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, waterContainer, playerInv, returnToContainer))
+
+  if not waterContainerList then
+    waterContainerList = {};
+    table.insert(waterContainerList, waterContainer);
+  end
+
+  for i, item in ipairs(waterContainerList) do
+    -- first case, fill an empty bottle
+    if item:canStoreWater() and not item:isWaterSource() then
+      if not waterObject:getSquare() or not luautils.walkAdj(playerObj, waterObject:getSquare(), true) then
+        return
+      end
+
+      -- we create the item which contain our water
+      local newItemType = item:getReplaceOnUseOn();
+      newItemType = string.sub(newItemType, 13);
+      newItemType = item:getModule() .. "." .. newItemType;
+      local newItem = InventoryItemFactory.CreateItem(newItemType, 0);
+      newItem:setFavorite(item:isFavorite());
+      local returnToContainer = item:getContainer():isInCharacterInventory(playerObj) and item:getContainer()
+      ISWorldObjectContextMenu.transferIfNeeded(playerObj, item)
+      local destCapacity = 1 / newItem:getUseDelta()
+      local waterConsumed = math.min(math.floor(destCapacity + 0.001), waterAvailable)
+      ISTimedActionQueue.add(ISTakeWaterAction:new(playerObj, newItem, waterConsumed, waterObject, waterConsumed * 10, item));
+      if returnToContainer and (returnToContainer ~= playerInv) then
+        ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, playerInv, returnToContainer))
+      end
+    elseif item:canStoreWater() and item:isWaterSource() then -- second case, a bottle contain some water, we just fill it
+      if not waterObject:getSquare() or not luautils.walkAdj(playerObj, waterObject:getSquare(), true) then
+        return
+      end
+      local returnToContainer = item:getContainer():isInCharacterInventory(playerObj) and item:getContainer()
+      if playerObj:getPrimaryHandItem() ~= item and playerObj:getSecondaryHandItem() ~= item then
+      end
+      ISWorldObjectContextMenu.transferIfNeeded(playerObj, item)
+      local destCapacity = (1 - item:getUsedDelta()) / item:getUseDelta()
+      local waterConsumed = math.min(math.floor(destCapacity + 0.001), waterAvailable)
+      ISTimedActionQueue.add(ISTakeWaterAction:new(playerObj, item, waterConsumed, waterObject, waterConsumed * 10, nil));
+      if returnToContainer then
+        ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, playerInv, returnToContainer))
+      end
     end
   end
 end

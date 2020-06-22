@@ -41,9 +41,7 @@ function ISVehicleMenu.OnFillWorldObjectContextMenu(player, context, worldobject
 end
 
 function ISVehicleMenu.showRadialMenu(playerObj)
-  -- LetMeThink
-  -- local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-  -- if isPaused then return end
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
 
   local vehicle = playerObj:getVehicle()
   if not vehicle then
@@ -203,6 +201,7 @@ function ISVehicleMenu.showRadialMenu(playerObj)
   menu:addToUIManager()
 
   if JoypadState.players[playerObj:getPlayerNum() + 1] then
+    menu:setHideWhenButtonReleased(Joypad.DPadUp)
     setJoypadFocus(playerObj:getPlayerNum(), menu)
     playerObj:setJoypadIgnoreAimUntilCentered(true)
   end
@@ -304,6 +303,7 @@ function ISVehicleMenu.showRadialMenuOutside(playerObj)
   menu:setY(getPlayerScreenTop(playerIndex) + getPlayerScreenHeight(playerIndex) / 2 - menu:getHeight() / 2)
   menu:addToUIManager()
   if JoypadState.players[playerObj:getPlayerNum() + 1] then
+    menu:setHideWhenButtonReleased(Joypad.DPadUp)
     setJoypadFocus(playerObj:getPlayerNum(), menu)
     playerObj:setJoypadIgnoreAimUntilCentered(true)
   end
@@ -340,7 +340,7 @@ function ISVehicleMenu.FillMenuOutsideVehicle(player, context, vehicle, test)
     toolTip:setName(getText("ContextMenu_RemoveBurntVehicle"));
     toolTip.description = getText("Tooltip_removeBurntVehicle") .. " <LINE> <LINE> ";
 
-    if playerObj:getInventory():contains("WeldingMask") then
+    if playerObj:getInventory():containsTypeRecurse("WeldingMask") then
       toolTip.description = toolTip.description .. " <LINE> <RGB:1,1,1> " .. getItemNameFromFullType("Base.WeldingMask") .. " 1/1";
     else
       toolTip.description = toolTip.description .. " <LINE> <RGB:1,0,0> " .. getItemNameFromFullType("Base.WeldingMask") .. " 0/1";
@@ -362,6 +362,23 @@ function ISVehicleMenu.FillMenuOutsideVehicle(player, context, vehicle, test)
     end
   end
 
+  if ISWashVehicle.hasBlood(vehicle) then
+    local option = context:addOption(getText("ContextMenu_Vehicle_Wash"), playerObj, ISVehicleMenu.onWash, vehicle);
+    local toolTip = ISToolTip:new();
+    toolTip:initialise();
+    toolTip:setVisible(false);
+    toolTip:setName(getText("Tooltip_Vehicle_WashTitle"));
+    toolTip.description = getText("Tooltip_Vehicle_WashWaterRequired1", 100 / ISWashVehicle.BLOOD_PER_WATER);
+    local waterAvailable = ISWashVehicle.getWaterAmountForPlayer(playerObj);
+    option.notAvailable = waterAvailable <= 0
+    if waterAvailable == 1 then
+      toolTip.description = toolTip.description .. " <BR> " .. getText("Tooltip_Vehicle_WashWaterRequired2");
+    else
+      toolTip.description = toolTip.description .. " <BR> " .. getText("Tooltip_Vehicle_WashWaterRequired3", waterAvailable);
+    end
+    option.toolTip = toolTip;
+  end
+
   local vehicleMenu = nil
   if getCore():getDebug() or ISVehicleMechanics.cheat or (isClient() and isAdmin()) then
     local subOption = context:addOption("[DEBUG] Vehicle")
@@ -378,6 +395,8 @@ function ISVehicleMenu.FillMenuOutsideVehicle(player, context, vehicle, test)
     end
     vehicleMenu:addOption("Roadtrip UI", playerObj, ISVehicleMenu.onRoadtrip);
     vehicleMenu:addOption("Vehicle Angles UI", playerObj, ISVehicleMenu.onDebugAngles, vehicle);
+    vehicleMenu:addOption("Vehicle HSV UI", playerObj, ISVehicleMenu.onDebugColor, vehicle);
+    vehicleMenu:addOption("Vehicle Blood UI", playerObj, ISVehicleMenu.onDebugBlood, vehicle);
     vehicleMenu:addOption("Vehicle Editor", playerObj, ISVehicleMenu.onDebugEditor, vehicle);
     if not isClient() then
       ISVehicleMenu.addSetScriptMenu(vehicleMenu, playerObj, vehicle)
@@ -395,8 +414,11 @@ end
 
 function ISVehicleMenu.onRemoveBurntVehicle(player, vehicle)
   if luautils.walkAdj(player, vehicle:getSquare()) then
-    ISWorldObjectContextMenu.equip(player, player:getPrimaryHandItem(), "WeldingMask", true);
-    ISWorldObjectContextMenu.equip(player, player:getSecondaryHandItem(), predicateBlowTorch, false);
+    ISWorldObjectContextMenu.equip(player, player:getPrimaryHandItem(), predicateBlowTorch, true);
+    local mask = player:getInventory():getFirstTypeRecurse("WeldingMask");
+    if mask then
+      ISInventoryPaneContextMenu.wearItem(mask, player:getPlayerNum());
+    end
     ISTimedActionQueue.add(ISRemoveBurntVehicle:new(player, vehicle));
   end
 end
@@ -409,6 +431,14 @@ end
 
 function ISVehicleMenu.onDebugAngles(playerObj, vehicle)
   debugVehicleAngles(vehicle)
+end
+
+function ISVehicleMenu.onDebugColor(playerObj, vehicle)
+  debugVehicleColor(vehicle)
+end
+
+function ISVehicleMenu.onDebugBlood(playerObj, vehicle)
+  debugVehicleBloodUI(vehicle)
 end
 
 function ISVehicleMenu.onDebugEditor(playerObj, vehicle)
@@ -487,7 +517,7 @@ function ISVehicleMenu.onMechanic(playerObj, vehicle)
       ISTimedActionQueue.add(ISOpenVehicleDoor:new(playerObj, vehicle, engineHood))
     end
   end
-  ISTimedActionQueue.add(ISOpenMechanicsUIAction:new(playerObj, vehicle))
+  ISTimedActionQueue.add(ISOpenMechanicsUIAction:new(playerObj, vehicle, engineHood))
   --	local ui = ISVehicleMechanics:new(0,0,playerObj,vehicle);
   --	ui:initialise();
   --	ui:addToUIManager();
@@ -561,7 +591,7 @@ function ISVehicleMenu.FillPartMenu(playerIndex, context, slice, vehicle)
       if square and ((SandboxVars.AllowExteriorGenerator and square:haveElectricity()) or (SandboxVars.ElecShutModifier > - 1 and GameTime:getInstance():getNightsSurvived() < SandboxVars.ElecShutModifier)) then
         if square and part:getContainerContentAmount() < part:getContainerCapacity() then
           if slice then
-            slice:addSlice(getText("ContextMenu_VehicleRefuelFromPump"), getTexture("Item_Petrol"), ISVehiclePartMenu.onPumpGasoline, playerObj, part)
+            slice:addSlice(getText("ContextMenu_VehicleRefuelFromPump"), getTexture("media/ui/vehicles/vehicle_refuel_from_pump.png"), ISVehiclePartMenu.onPumpGasoline, playerObj, part)
           else
             context:addOption(getText("ContextMenu_VehicleRefuelFromPump"), playerObj, ISVehiclePartMenu.onPumpGasoline, part)
           end
@@ -675,6 +705,9 @@ function ISVehicleMenu.onOpenDoor(playerObj, part)
     end
   end
   ISTimedActionQueue.add(ISOpenVehicleDoor:new(playerObj, part:getVehicle(), part))
+  if part:getId() == "EngineDoor" then
+    ISTimedActionQueue.add(ISOpenMechanicsUIAction:new(playerObj, vehicle, part))
+  end
 end
 
 function ISVehicleMenu.onCloseDoor(playerObj, part)
@@ -687,6 +720,13 @@ end
 
 function ISVehicleMenu.onUnlockDoor(playerObj, part)
   ISTimedActionQueue.add(ISUnlockVehicleDoor:new(playerObj, part))
+end
+
+function ISVehicleMenu.onWash(playerObj, vehicle)
+  local area = ISWashVehicle.chooseArea(playerObj, vehicle)
+  if not area then return end
+  ISTimedActionQueue.add(ISPathFindAction:pathToVehicleArea(playerObj, vehicle, area.area))
+  ISTimedActionQueue.add(ISWashVehicle:new(playerObj, vehicle, area.id, area.area))
 end
 
 local SORTVARS = {
@@ -966,9 +1006,7 @@ function ISVehicleMenu.onExitAux(playerObj, seat)
 end
 
 function ISVehicleMenu.onShowSeatUI(playerObj, vehicle)
-  -- LetMeThink
-  -- local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-  -- if isPaused then return end
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
 
   local playerNum = playerObj:getPlayerNum()
   if not ISVehicleMenu.seatUI then

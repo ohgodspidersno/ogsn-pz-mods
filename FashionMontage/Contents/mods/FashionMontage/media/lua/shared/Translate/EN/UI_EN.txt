@@ -15,4 +15,6 @@ UI_EN = {
   UI_ClothingType_BathRobe = "Bath Robe",
   UI_ClothingType_Scarf = "Scarf",
   UI_ClothingType_Tail = "Tail",
+  UI_ClothingType_FannyPackBack = "Fanny Pack Back"
+  UI_ClothingType_FannyPackFront = "Fanny Pack Front"
 }

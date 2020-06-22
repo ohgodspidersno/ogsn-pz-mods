@@ -95,6 +95,31 @@ module DistinctNames {
       Insulation = 0.75,
       WindResistance = 0.45,
   }
+  item Jumper_TankTopDiamondTINT {
+      Type = Clothing,
+      DisplayName = Sweater Vest - Diamond-pattern,
+      ClothingItem = Jumper_TankTopDiamondTINT,
+      BodyLocation = TorsoExtra,
+      BloodLocation = JumperNoSleeves,
+      Icon = SweaterVestArgyle,
+      ScratchDefense = 10,
+      Insulation = 0.4,
+      WindResistance = 0.2,
+      FabricType = Cotton,
+  }
+  item Jumper_TankTopTINT {
+      Type = Clothing,
+      DisplayName = Sweater Vest - V-Neck,
+      ClothingItem = Jumper_TankTopTINT,
+      BodyLocation = TorsoExtra,
+      BloodLocation = JumperNoSleeves,
+      Icon = SweaterVestWhite,
+      ScratchDefense = 10,
+      Insulation = 0.45,
+      WindResistance = 0.15,
+      FabricType = Cotton,
+  }
+
   item Vest_Waistcoat {
       Type = Clothing,
       DisplayName = Waistcoat,
@@ -106,6 +131,7 @@ module DistinctNames {
       WindResistance = 0.25,
       FabricType = Cotton,
   }
+
   item Vest_Waistcoat_GigaMart {
       Type = Clothing,
       DisplayName = Waistcoat - GigaMart,

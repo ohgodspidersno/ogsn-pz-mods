@@ -236,10 +236,6 @@ local TurnOnOff = {
 }
 
 function ISInventoryPage:toggleStove()
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  -- 	return
-  -- end
 
   local object = self.inventoryPane.inventory:getParent()
   if not object then return end
@@ -271,7 +267,7 @@ function ISInventoryPage:syncToggleStove()
   if not containerButton then
     shouldBeVisible = false
   end
-  if isVisible ~= shouldBeVisible then
+  if isVisible ~= shouldBeVisible and getCore():getGameMode() ~= "Tutorial" then
     self.toggleStove:setVisible(shouldBeVisible)
   end
   if shouldBeVisible then
@@ -398,6 +394,19 @@ function ISInventoryPage:update()
   self:syncToggleStove()
 end
 
+function ISInventoryPage:setBlinkingContainer(blinking, containerType)
+  if blinking then
+    self.blinkContainer = true;
+    self.blinkContainerType = containerType;
+  else
+    self.blinkContainer = false;
+    self.blinkContainerType = nil;
+    for i, v in ipairs(self.backpacks) do
+      v.backgroundColor = {r = 0.7, g = 0.7, b = 0.7, a = 1.0 }
+    end
+  end
+end
+
 --************************************************************************--
 --** ISInventoryPage:render
 --**
@@ -407,20 +416,22 @@ function ISInventoryPage:prerender()
   if self.blinkContainer then
     if not self.blinkAlphaContainer then self.blinkAlphaContainer = 0.7; self.blinkAlphaIncreaseContainer = false; end
     if not self.blinkAlphaIncreaseContainer then
-      self.blinkAlphaContainer = self.blinkAlphaContainer - 0.02 * (UIManager.getMillisSinceLastRender() / 33.3);
+      self.blinkAlphaContainer = self.blinkAlphaContainer - 0.04 * (UIManager.getMillisSinceLastRender() / 33.3);
       if self.blinkAlphaContainer < 0.3 then
         self.blinkAlphaContainer = 0.3;
         self.blinkAlphaIncreaseContainer = true;
       end
     else
-      self.blinkAlphaContainer = self.blinkAlphaContainer + 0.02 * (UIManager.getMillisSinceLastRender() / 33.3);
+      self.blinkAlphaContainer = self.blinkAlphaContainer + 0.04 * (UIManager.getMillisSinceLastRender() / 33.3);
       if self.blinkAlphaContainer > 0.7 then
         self.blinkAlphaContainer = 0.7;
         self.blinkAlphaIncreaseContainer = false;
       end
     end
     for i, v in ipairs(self.backpacks) do
-      v.backgroundColor = {r = self.blinkAlphaContainer, g = self.blinkAlphaContainer, b = self.blinkAlphaContainer, a = 1.0};
+      if (self.blinkContainerType and v.inventory:getType() == self.blinkContainerType) or not self.blinkContainerType then
+        v.backgroundColor = {r = 1, g = 0, b = 0, a = self.blinkAlphaContainer};
+      end
     end
   end
 
@@ -490,7 +501,7 @@ function ISInventoryPage:prerender()
   self.transferAll:setX(self.pinButton:getX() - weightWid - getTextManager():MeasureStringX(UIFont.Small, getText("IGUI_invpage_Transfer_all")));
   if not self.onCharacter or self.width < 370 then
     self.transferAll:setVisible(false)
-  else
+  elseif not "Tutorial" == getCore():getGameMode() then
     self.transferAll:setVisible(true)
   end
 
@@ -581,6 +592,32 @@ function ISInventoryPage:nextUnlockedContainer(index, wrap)
   return wrap and self:nextUnlockedContainer(0, false) or - 1
 end
 
+function ISInventoryPage:selectPrevContainer()
+  local currentIndex = self:getCurrentBackpackIndex()
+  local unlockedIndex = self:prevUnlockedContainer(currentIndex, true)
+  if unlockedIndex == -1 then
+    return
+  end
+  local playerObj = getSpecificPlayer(self.player)
+  if playerObj and playerObj:getJoypadBind() ~= -1 then
+    self.backpackChoice = unlockedIndex
+  end
+  self:selectContainer(self.backpacks[unlockedIndex])
+end
+
+function ISInventoryPage:selectNextContainer()
+  local currentIndex = self:getCurrentBackpackIndex()
+  local unlockedIndex = self:nextUnlockedContainer(currentIndex, true)
+  if unlockedIndex == -1 then
+    return
+  end
+  local playerObj = getSpecificPlayer(self.player)
+  if playerObj and playerObj:getJoypadBind() ~= -1 then
+    self.backpackChoice = unlockedIndex
+  end
+  self:selectContainer(self.backpacks[unlockedIndex])
+end
+
 function ISInventoryPage:onJoypadDown(button)
   ISContextMenu.globalPlayerContext = self.player;
   local playerObj = getSpecificPlayer(self.player)
@@ -603,53 +640,58 @@ function ISInventoryPage:onJoypadDown(button)
     setJoypadFocus(self.player, nil);
   end
 
+  -- 1: left button affects inventory, right button affects loot
+  -- 2: both buttons affect same window
+  -- 3: left + d-pad affects inventory, right + dpad affects loot
+  local shoulderSwitch = getCore():getOptionShoulderButtonContainerSwitch()
   if button == Joypad.LBumper then
-    local inv = self -- getPlayerInventory(self.player);
-    inv.backpackChoice = inv:prevUnlockedContainer(inv.backpackChoice, true);
-
-    local but = inv.backpacks[inv.backpackChoice];
-    if but == nil or inv.backpackChoice > #inv.backpacks then
-      inv.backpackChoice = 1;
-      but = inv.backpacks[inv.backpackChoice];
+    if shoulderSwitch == 1 then
+      getPlayerInventory(self.player):selectNextContainer()
+    elseif shoulderSwitch == 2 then
+      self:selectPrevContainer()
+    elseif shoulderSwitch == 3 then
+      setJoypadFocus(self.player, getPlayerInventory(self.player))
     end
-    inv.inventoryPane.inventory = but.inventory;
-    inv.inventory = but.inventory;
-    inv.capacity = but.capacity
-    --inv.inventoryPane:refreshContainer();
-    inv:refreshBackpacks();
   end
   if button == Joypad.RBumper then
-    local inv = self -- getPlayerLoot(self.player);
-    inv.backpackChoice = inv:nextUnlockedContainer(inv.backpackChoice, true);
-
-    local but = inv.backpacks[inv.backpackChoice];
-    if but == nil then
-      inv.backpackChoice = 1;
-      but = inv.backpacks[inv.backpackChoice];
+    if shoulderSwitch == 1 then
+      getPlayerLoot(self.player):selectNextContainer()
+    elseif shoulderSwitch == 2 then
+      self:selectNextContainer()
+    elseif shoulderSwitch == 3 then
+      setJoypadFocus(self.player, getPlayerLoot(self.player))
     end
-    inv.inventoryPane.inventory = but.inventory;
-    inv.inventory = but.inventory;
-    if not but.inventory:isExplored() then
-      if not isClient() then
-        ItemPicker.fillContainer(but.inventory, playerObj);
-      else
-        but.inventory:requestServerItemsForContainer();
-      end
-
-      but.inventory:setExplored(true);
-    end
-    inv.capacity = but.capacity
-    -- inv.inventoryPane:refreshContainer();
-    inv:refreshBackpacks();
   end
 end
 
-function ISInventoryPage:onJoypadDirUp()
+function ISInventoryPage:onJoypadDirUp(joypadData)
+  local shoulderSwitch = getCore():getOptionShoulderButtonContainerSwitch()
+  if shoulderSwitch == 3 then
+    if isJoypadPressed(joypadData.id, Joypad.LBumper) then
+      getPlayerInventory(self.player):selectPrevContainer()
+      return
+    end
+    if isJoypadPressed(joypadData.id, Joypad.RBumper) then
+      getPlayerLoot(self.player):selectPrevContainer()
+      return
+    end
+  end
   self.inventoryPane.joyselection = self.inventoryPane.joyselection - 1;
   self:ensureVisible(self.inventoryPane.joyselection + 1)
 end
 
-function ISInventoryPage:onJoypadDirDown()
+function ISInventoryPage:onJoypadDirDown(joypadData)
+  local shoulderSwitch = getCore():getOptionShoulderButtonContainerSwitch()
+  if shoulderSwitch == 3 then
+    if isJoypadPressed(joypadData.id, Joypad.LBumper) then
+      getPlayerInventory(self.player):selectNextContainer()
+      return
+    end
+    if isJoypadPressed(joypadData.id, Joypad.RBumper) then
+      getPlayerLoot(self.player):selectNextContainer()
+      return
+    end
+  end
   self.inventoryPane.joyselection = self.inventoryPane.joyselection + 1;
   self:ensureVisible(self.inventoryPane.joyselection + 1)
 end
@@ -721,6 +763,9 @@ end
 function ISInventoryPage:selectContainer(button)
   local playerObj = getSpecificPlayer(self.player)
   if ISMouseDrag.dragging ~= nil then
+    if getCore():getGameMode() == "Tutorial" then
+      return;
+    end
     if self:canPutIn(false) then
       local doWalk = true
       local dragging = ISInventoryPane.getActualItems(ISMouseDrag.dragging)
@@ -856,7 +901,7 @@ function ISInventoryPage.loadWeight(inv)
       self.collapseCounter = 0;
       if self.isCollapsed and self:getMouseY() < self:titleBarHeight() then
         self.isCollapsed = false;
-        if isClient() then
+        if isClient() and not self.onCharacter then
           self.inventoryPane.inventory:requestSync();
         end
         self:clearMaxDrawHeight();
@@ -1036,6 +1081,7 @@ function ISInventoryPage.loadWeight(inv)
       end
     end
     button:forceImageSize(30, 30)
+    --	button.textureColor = {r=1, g=0.3, b=0.3, a=1.0};
     button.name = name
     button.tooltip = tooltip
     self:addChild(button)
@@ -1093,7 +1139,11 @@ function ISInventoryPage.loadWeight(inv)
         local item = it:get(i)
         if item:getCategory() == "Container" and playerObj:isEquipped(item) or item:getType() == "KeyRing" then
           -- found a container, so create a button for it...
-          containerButton = self:addContainerButton(item:getInventory(), item:getTex(), item:getName(), nil)
+          containerButton = self:addContainerButton(item:getInventory(), item:getTex(), item:getName(), item:getName())
+          if(item:getVisual() and item:getClothingItem()) then
+            local tint = item:getVisual():getTint(item:getClothingItem());
+            containerButton.textureColor = {r = tint:getRedFloat(), g = tint:getGreenFloat(), b = tint:getBlueFloat(), a = 1.0};
+          end
         end
       end
     elseif playerObj:getVehicle() then
@@ -1276,10 +1326,6 @@ function ISInventoryPage.loadWeight(inv)
 
     if isClient() and (not self.isCollapsed) and (self.inventoryPane.inventory ~= self.inventoryPane.lastinventory) then
       self.inventoryPane.inventory:requestSync()
-    end
-
-    if not found then
-      self.toggleStove:setVisible(false)
     end
 
     self.inventoryPane:bringToTop()
@@ -1524,8 +1570,7 @@ function ISInventoryPage.loadWeight(inv)
   end
 
   ISInventoryPage.onKeyPressed = function(key)
-    if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getPlayerInventory(0) then -- LetMeThnk
-    -- if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getGameSpeed() > 0 and getPlayerInventory(0) then
+    if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getGameSpeed() > 0 and getPlayerInventory(0) and getCore():getGameMode() ~= "Tutorial" then
       getPlayerInventory(0):setVisible(not getPlayerInventory(0):getIsVisible());
       getPlayerLoot(0):setVisible(getPlayerInventory(0):getIsVisible());
     end

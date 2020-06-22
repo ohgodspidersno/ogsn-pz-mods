@@ -52,6 +52,8 @@ local clothing = {
   listTail = {},        -- in
   listBack = {},        -- this
   listScarf = {},       -- file
+  listFannyPackFront = {},
+  listFannyPackBack = {},
 }
 
 

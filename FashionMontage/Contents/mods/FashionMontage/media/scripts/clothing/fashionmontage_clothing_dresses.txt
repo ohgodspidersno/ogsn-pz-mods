@@ -9,6 +9,7 @@ module DistinctNames {
       BodyLocation = Dress,
       BloodLocation = Trousers;Shirt,
       Icon = DressLongWhite,
+      FabricType = Cotton,
       RunSpeedModifier = 0.90,
       Insulation = 0.3,
       WindResistance = 0.2,
@@ -20,7 +21,8 @@ module DistinctNames {
 			BodyLocation = Dress,
 			BloodLocation = Trousers;Shirt,
 			Icon = DressMediumWhite,
-			RunSpeedModifier = 0.93,
+      FabricType = Cotton,
+      RunSpeedModifier = 0.93,
 			Insulation = 0.20,
 			WindResistance = 0.15,
 	}
@@ -31,7 +33,8 @@ module DistinctNames {
 			BodyLocation = Dress,
 			BloodLocation = ShortsShort;Shirt,
 			Icon = DressShortWhite,
-			Insulation = 0.15,
+      FabricType = Cotton,
+      Insulation = 0.15,
 			WindResistance = 0.1,
 	}
   item Dress_Short {
@@ -41,7 +44,8 @@ module DistinctNames {
 			BodyLocation = Dress,
 			BloodLocation = ShortsShort;Shirt,
 			Icon = DressShortWhite,
-			Insulation = 0.1,
+      FabricType = Cotton,
+      Insulation = 0.1,
 			WindResistance = 0.05,
 	}
   item HospitalGown {
@@ -51,7 +55,8 @@ module DistinctNames {
 			BodyLocation = Dress,
 			BloodLocation = Trousers;Shirt,
 			Icon = HospitalGown,
-			Insulation = 0.10,
+      FabricType = Cotton,
+      Insulation = 0.10,
 			WindResistance = 0.05,
 	}
 }

@@ -7,9 +7,7 @@ require "ISBaseObject"
 ISDPadWheels = {}
 
 function ISDPadWheels.onDisplayLeft(joypadData)
-  -- LetMeThnk
-  -- local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-  -- if isPaused then return end
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
 
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
@@ -28,14 +26,13 @@ function ISDPadWheels.onDisplayLeft(joypadData)
   menu:setX(getPlayerScreenLeft(playerIndex) + getPlayerScreenWidth(playerIndex) / 2 - menu:getWidth() / 2)
   menu:setY(getPlayerScreenTop(playerIndex) + getPlayerScreenHeight(playerIndex) / 2 - menu:getHeight() / 2)
   menu:addToUIManager()
+  menu:setHideWhenButtonReleased(Joypad.DPadLeft)
   setJoypadFocus(playerIndex, menu)
   playerObj:setJoypadIgnoreAimUntilCentered(true)
 end
 
 function ISDPadWheels.onDisplayRight(joypadData)
-  -- LetMeThnk
-  -- local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-  -- if isPaused then return end
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
 
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
@@ -46,6 +43,7 @@ function ISDPadWheels.onDisplayRight(joypadData)
   menu:setX(getPlayerScreenLeft(playerIndex) + getPlayerScreenWidth(playerIndex) / 2 - menu:getWidth() / 2)
   menu:setY(getPlayerScreenTop(playerIndex) + getPlayerScreenHeight(playerIndex) / 2 - menu:getHeight() / 2)
   menu:addToUIManager()
+  menu:setHideWhenButtonReleased(Joypad.DPadRight)
   setJoypadFocus(playerIndex, menu)
   playerObj:setJoypadIgnoreAimUntilCentered(true)
 end
@@ -55,9 +53,7 @@ function ISDPadWheels.onDisplayUp(joypadData)
 end
 
 function ISDPadWheels.onDisplayDown(joypadData)
-  -- LetMeThnk
-  -- local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-  -- if isPaused then return end
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
 
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
@@ -70,6 +66,7 @@ function ISDPadWheels.onDisplayDown(joypadData)
   menu:setX(getPlayerScreenLeft(playerIndex) + getPlayerScreenWidth(playerIndex) / 2 - menu:getWidth() / 2)
   menu:setY(getPlayerScreenTop(playerIndex) + getPlayerScreenHeight(playerIndex) / 2 - menu:getHeight() / 2)
   menu:addToUIManager()
+  menu:setHideWhenButtonReleased(Joypad.DPadDown)
   setJoypadFocus(playerIndex, menu)
   playerObj:setJoypadIgnoreAimUntilCentered(true)
 end

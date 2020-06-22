@@ -131,6 +131,15 @@ function ISButtonPrompt:prerender()
   end
 end
 
+function ISButtonPrompt:update()
+  if not self.player then return end
+  local joypadData = JoypadState.players[self.player + 1]
+  if not joypadData then return end
+  if isJoypadRBPressed(joypadData.id) then
+    ISFirearmRadialMenu.onRepeatRBumper(self)
+  end
+end
+
 function ISButtonPrompt:isLootIcon()
   return self.isLoot;
 end
@@ -256,12 +265,6 @@ function ISButtonPrompt:stopAction()
 end
 
 function ISButtonPrompt:getBestAButtonAction(dir)
-
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  --     self:setAPrompt(nil, nil, nil);
-  --     return;
-  -- end
 
   if dir == nil then
     self:setAPrompt(nil, nil, nil);
@@ -502,12 +505,6 @@ end
 
 function ISButtonPrompt:getBestBButtonAction(dir)
 
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  --     self:setBPrompt(nil, nil, nil);
-  --     return;
-  -- end
-
   if dir == nil then
     self:setBPrompt(nil, nil, nil);
   end
@@ -679,12 +676,6 @@ end
 
 function ISButtonPrompt:getBestYButtonAction(dir)
 
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  --     self:setYPrompt(nil, nil, nil);
-  --     return;
-  -- end
-
   if dir == nil then
     self:setYPrompt(nil, nil, nil);
   end
@@ -800,11 +791,6 @@ end
 
 
 function ISButtonPrompt:getBestXButtonAction(dir)
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  --     self:setXPrompt(nil, nil, nil);
-  --     return;
-  -- end
 
   if dir == nil then
     self:setXPrompt(nil, nil, nil);
@@ -936,33 +922,24 @@ function ISButtonPrompt:getXButtonObjects(dir)
 end
 
 function ISButtonPrompt:getBestLBButtonAction(dir)
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  --     self:setLBPrompt(nil, nil, nil);
-  --     return;
-  -- end
 
   if getCell():getDrag(self.player) then
     self:setLBPrompt(getCell():getDrag(self.player):getLBPrompt(), nil, nil);
+  elseif ISFirearmRadialMenu.getBestLBButtonAction(self) then
   else
     self:setLBPrompt(nil, nil, nil);
   end
 end
 
 function ISButtonPrompt:getBestRBButtonAction(dir)
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  --     self:setRBPrompt(nil, nil, nil);
-  --     return;
-  -- end
 
   if getCell():getDrag(self.player) then
     self:setRBPrompt(getCell():getDrag(self.player):getRBPrompt(), nil, nil);
+  elseif ISFirearmRadialMenu.getBestRBButtonAction(self) then
   else
     self:setRBPrompt(nil, nil, nil);
   end
 end
-
 
 function ISButtonPrompt:onAPress()
   if self.aFunc then
@@ -1034,6 +1011,10 @@ function ISButtonPrompt:setRBPrompt(str, func, param1, param2, param3, param4)
   self.rbPrompt = str;
   self.rbFunc = func;
   self.rbParams = {param1, param2, param3, param4}
+end
+
+function ISButtonPrompt:onJoypadButtonReleased(button)
+  ISFirearmRadialMenu.onJoypadButtonReleased(self, button)
 end
 
 --************************************************************************--

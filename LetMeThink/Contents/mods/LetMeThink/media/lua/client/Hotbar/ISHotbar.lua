@@ -121,6 +121,7 @@ end
 
 function ISHotbar.doMenuFromInventory(playerNum, item, context)
   local self = getPlayerHotbar(playerNum);
+  if self == nil then return end
   if self:isInHotbar(item) and item:getAttachmentType() and item:getAttachedSlot() ~= -1 then
     local slot = self.availableSlot[item:getAttachedSlot()]
     local slotName = getTextOrNull("IGUI_HotbarAttachment_" .. slot.slotType) or slot.name;
@@ -565,15 +566,23 @@ function ISHotbar:savePosition()
   end
 end
 
+function ISHotbar:getSlotForKey(key)
+  if key == getCore():getKey("Hotbar 1") then return 1; end
+  if key == getCore():getKey("Hotbar 2") then return 2; end
+  if key == getCore():getKey("Hotbar 3") then return 3; end
+  if key == getCore():getKey("Hotbar 4") then return 4; end
+  if key == getCore():getKey("Hotbar 5") then return 5; end
+  return - 1
+end
+
 ISHotbar.onKeyStartPressed = function(key)
   local playerObj = getSpecificPlayer(0)
-  if not playerObj or playerObj:isDead() then
+  if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
   end
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
-  -- 	return
-  -- end
+  local self = getPlayerHotbar(0)
+  local slotToCheck = self:getSlotForKey(key)
+  if slotToCheck == -1 then return end
   local radialMenu = getPlayerRadialMenu(0)
   if getCore():getOptionRadialMenuKeyToggle() and radialMenu:isReallyVisible() then
     getPlayerHotbar(0).radialWasVisible = true
@@ -586,13 +595,12 @@ end
 
 ISHotbar.onKeyPressed = function(key)
   local playerObj = getSpecificPlayer(0)
-  if not playerObj or playerObj:isDead() then
+  if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
   end
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
-  -- 	return
-  -- end
+  local self = getPlayerHotbar(0);
+  local slotToCheck = self:getSlotForKey(key)
+  if slotToCheck == -1 then return end
   local radialMenu = getPlayerRadialMenu(0)
   if radialMenu:isReallyVisible() or getPlayerHotbar(0).radialWasVisible then
     if not getCore():getOptionRadialMenuKeyToggle() then
@@ -603,8 +611,6 @@ ISHotbar.onKeyPressed = function(key)
   if playerObj:isAttacking() then
     return;
   end
-  local slotToCheck = -1;
-  local self = getPlayerHotbar(0);
 
   -- don't do hotkey if you're doing action
   local queue = ISTimedActionQueue.queues[playerObj];
@@ -612,17 +618,10 @@ ISHotbar.onKeyPressed = function(key)
     return;
   end
 
-  if key == getCore():getKey("Hotbar 1") then slotToCheck = 1; end
-  if key == getCore():getKey("Hotbar 2") then slotToCheck = 2; end
-  if key == getCore():getKey("Hotbar 3") then slotToCheck = 3; end
-  if key == getCore():getKey("Hotbar 4") then slotToCheck = 4; end
-  if key == getCore():getKey("Hotbar 5") then slotToCheck = 5; end
-  if slotToCheck ~= -1 then
-    for i, item in pairs(self.attachedItems) do
-      if item:getAttachedSlot() == slotToCheck then
-        self:equipItem(item);
-        return;
-      end
+  for i, item in pairs(self.attachedItems) do
+    if item:getAttachedSlot() == slotToCheck then
+      self:equipItem(item);
+      return;
     end
   end
 end
@@ -638,13 +637,9 @@ end
 
 ISHotbar.onKeyKeepPressed = function(key)
   local playerObj = getSpecificPlayer(0)
-  if not playerObj or playerObj:isDead() then
+  if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
   end
-  -- LetMeThink
-  -- if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
-  -- 	return
-  -- end
   if playerObj:isAttacking() then
     return
   end
@@ -655,16 +650,11 @@ ISHotbar.onKeyKeepPressed = function(key)
   if getPlayerHotbar(0).radialWasVisible then
     return
   end
-  local slotToCheck = -1;
-  if key == getCore():getKey("Hotbar 1") then slotToCheck = 1; end
-  if key == getCore():getKey("Hotbar 2") then slotToCheck = 2; end
-  if key == getCore():getKey("Hotbar 3") then slotToCheck = 3; end
-  if key == getCore():getKey("Hotbar 4") then slotToCheck = 4; end
-  if key == getCore():getKey("Hotbar 5") then slotToCheck = 5; end
+  local self = getPlayerHotbar(0);
+  local slotToCheck = self:getSlotForKey(key)
   if slotToCheck == -1 then
     return
   end
-  local self = getPlayerHotbar(0);
   local radialMenu = getPlayerRadialMenu(0)
   if self.availableSlot[slotToCheck] and (getTimestampMs() - self.keyPressedMS > 500) and not radialMenu:isReallyVisible() then
     radialMenu:clear()
