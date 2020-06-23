@@ -1,6 +1,6 @@
 require 'Items/SuburbsDistributions'
 
--- NOTE from OGSN: I'm commenting out these distributions for the RS bags, because they aren't rigged for 41.38+
+-- NOTE from OGSN: I'm commenting out these distributions for the RS bags, because they aren't rigged for 41.39+
 
 -- table.insert(SuburbsDistributions["all"]["desk"].items, "RS.LunchBox");
 -- table.insert(SuburbsDistributions["all"]["desk"].items, 2);

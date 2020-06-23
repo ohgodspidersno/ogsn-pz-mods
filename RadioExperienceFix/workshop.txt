@@ -16,5 +16,7 @@ description=
 description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
-tags=mod
+description=
+description=Tags:B41,B40,Bugfix,Tweak
+tags=Build 41;Build 40;Bugfix;Tweak
 visibility=public

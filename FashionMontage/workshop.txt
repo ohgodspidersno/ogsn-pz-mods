@@ -1,6 +1,6 @@
 version=1
 id=2020740322
-title=Fashion Montage - Start with any outfit [41.38+]
+title=Fashion Montage - Start with any outfit [41.39+]
 description=[h1]Update: Modded Clothing Support![/h1]
 description=I have created a framework to make it easy for modders to add new clothing to the dropdowns. Please encourage clothing modders to make their items compatible with Fashion Montage!
 description=
@@ -17,7 +17,7 @@ description=Modders: This is fairly easy to do; check the lua/client/Definitions
 description=
 description=[h1]Important Notes[/h1]
 description=[list]
-description=[*] This is for the beta branch (IWBUMS version 41.38)
+description=[*] This is for the beta branch (IWBUMS version 41.39)
 description=[*] Compatible with all other mods. Please let me know if you find any incompatibilities.
 description=[/list]
 description=
@@ -33,5 +33,7 @@ description=
 description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
-tags=
+description=
+description=Tags:B41,Interface,Clothes,Clothing,Framework,Realistic
+tags=Build 41;Interface;Clothing;Framework;Realistic
 visibility=public

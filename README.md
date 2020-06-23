@@ -8,19 +8,16 @@ The Project Zomboid mod uploader prevents you from putting .git folders inside y
 ##TODO List
 ###Knox Country World Map
 1. Might be missing some turn-offs on highway north of Rosewood.
-1. Make secret version of map only appear in some places, but at a higher rate
-    1. Small chance in police cars
-    1. Slightly higher chance in forest ranger cars
-    1. Small chance in military barracks and buildings
-    1. Guaranteed in radio news van
-    1. Guaranteed in Mystery Machine if that mod is loaded
-    1. Guaranteed in Military vehicles if those mods are loaded
 
 ###Lockpicking
 1. Add car lockpicking
+2. Bugfix: When  a two-wide door's lock jams, it should affect both tiles
 
-###An Exhilaratingly Organized Literature Mod
-1. other languages
+###Let Me Think
+1. Add support for game versions 39 and 40
+
+###Infinite Weather
+1. Remove thunderstorms from Ceaseless Snow (maybe make it optional)
 
 ##Ideas for New Mods
 Might pursue these...
@@ -62,7 +59,7 @@ Might pursue these...
 Increases the weight reduction of clothing that you're wearing. Wearing shoes and clothing doesn't weigh you down in real life, if anything it increases your carrying capacity.
 
 ###Mystery Machine
-Add the Scooby Doo van into the game using the art given to me by another modder
+Increase/fix spawn rate
 
 ###Remove Fuzzy Distortion Audio Filter from Hard of Hearing
 Hard of hearing should lower your hearing range, obviously, but it doesn't need to lower the player's enjoyment of the game by adding a fuzzy filter to every sound effect.
