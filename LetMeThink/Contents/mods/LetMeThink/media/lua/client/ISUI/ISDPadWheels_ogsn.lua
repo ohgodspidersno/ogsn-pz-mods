@@ -1,14 +1,3 @@
---***********************************************************
---**                    THE INDIE STONE                    **
---***********************************************************
-
-require "ISBaseObject"
-
-ISDPadWheels = {}
-
-local function isEquippedOrAttached(playerObj, item)
-  return playerObj:isEquipped(item) or playerObj:isAttachedItem(item)
-end
 
 function ISDPadWheels.onDisplayLeft(joypadData)
   local isPaused = UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0
@@ -73,10 +62,6 @@ function ISDPadWheels.onDisplayRight(joypadData)
   playerObj:setJoypadIgnoreAimUntilCentered(true)
 end
 
-function ISDPadWheels.onDisplayUp(joypadData)
-  ISVehicleMenu.showRadialMenu(getSpecificPlayer(joypadData.player))
-end
-
 function ISDPadWheels.onDisplayDown(joypadData)
   local isPaused = UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0
   if isPaused then return end
@@ -95,25 +80,4 @@ function ISDPadWheels.onDisplayDown(joypadData)
   menu:setHideWhenButtonReleased(Joypad.DPadDown)
   setJoypadFocus(playerIndex, menu)
   playerObj:setJoypadIgnoreAimUntilCentered(true)
-end
-
-function ISDPadWheels.onEquipPrimary(playerObj, item)
-  -- FIXME: ISInventoryPaneContextMenu checks for injured hands (code is broken though)
-  if item and item == playerObj:getPrimaryHandItem() then
-    ISTimedActionQueue.add(ISUnequipAction:new(playerObj, playerObj:getPrimaryHandItem(), 50));
-  else
-    ISTimedActionQueue.add(ISEquipWeaponAction:new(playerObj, item, 50, true, item:isTwoHandWeapon()));
-  end
-end
-
-function ISDPadWheels.onToggleLight(playerObj, item)
-  if not isEquippedOrAttached(playerObj, item) then
-    ISTimedActionQueue.add(ISEquipWeaponAction:new(playerObj, item, 50, false))
-  else
-    item:setActivated(not item:isActivated())
-  end
-end
-
-function ISDPadWheels.onShout(playerObj)
-  playerObj:Callout()
 end

@@ -1,23 +1,3 @@
---***********************************************************
---**                    THE INDIE STONE                    **
---***********************************************************
-
-require "ISUI/ISRadialMenu"
-
-ISBackButtonWheel = ISRadialMenu:derive("ISBackButtonWheel")
-
-function ISBackButtonWheel:center()
-  local x = getPlayerScreenLeft(self.playerNum)
-  local y = getPlayerScreenTop(self.playerNum)
-  local w = getPlayerScreenWidth(self.playerNum)
-  local h = getPlayerScreenHeight(self.playerNum)
-
-  x = x + w / 2
-  y = y + h / 2
-
-  self:setX(x - self:getWidth() / 2)
-  self:setY(y - self:getHeight() / 2)
-end
 
 function ISBackButtonWheel:addCommands()
   local playerObj = getSpecificPlayer(self.playerNum)
@@ -93,21 +73,6 @@ function ISBackButtonWheel:addCommands()
   end
 end
 
-function ISBackButtonWheel:onGainJoypadFocus(joypadData)
-  ISRadialMenu.onGainJoypadFocus(self, joypadData)
-  self.showPausedMessage = UIManager.isShowPausedMessage()
-  UIManager.setShowPausedMessage(false)
-end
-
-function ISBackButtonWheel:onLoseJoypadFocus(joypadData)
-  ISRadialMenu.onLoseJoypadFocus(self, joypadData)
-  UIManager.setShowPausedMessage(self.showPausedMessage)
-end
-
-function ISBackButtonWheel:onJoypadDown(button, joypadData)
-  ISRadialMenu.onJoypadDown(self, button, joypadData)
-end
-
 function ISBackButtonWheel:onCommand(command)
   local focus = nil
   local isPaused = UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0
@@ -156,13 +121,4 @@ function ISBackButtonWheel:onCommand(command)
   end
 
   setJoypadFocus(self.playerNum, focus)
-end
-
-function ISBackButtonWheel:new(playerNum)
-  local o = ISRadialMenu:new(0, 0, 100, 200, playerNum)
-  setmetatable(o, self)
-  self.__index = self
-  o.playerNum = playerNum
-  o:setHideWhenButtonReleased(Joypad.Back)
-  return o
 end
