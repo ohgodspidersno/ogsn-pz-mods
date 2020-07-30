@@ -30,5 +30,7 @@ description=
 description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
-tags=
+description=
+description=Tags:B41,Interface,Tweak
+tags=Build 41;Interface;Tweak
 visibility=public
