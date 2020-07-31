@@ -1,5 +1,10 @@
 
-local function onPauseButtonPressed(joypadData)
+local onPauseButtonPressed_original = onPauseButtonPressed
+local function onPauseButtonPressed(joypadData, ...)
+  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    onPauseButtonPressed_original(self, joypadData, ...)
+  end
+
   if UIManager.getSpeedControls|() and not isClient() then
     if UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 or getGameTime():getTrueMultiplier() > 1 then
       if MainScreen.instance and MainScreen.instance.inGame and MainScreen.instance:getIsVisible() then
@@ -41,7 +46,12 @@ local function onPauseButtonPressed(joypadData)
   end
 end
 
-function onJoypadPressButton(joypadIndex, joypadData, button)
+local onJoypadPressButton_original = onJoypadPressButton
+function onJoypadPressButton(joypadIndex, joypadData, button, ...)
+  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    onJoypadPressButton_original(self, joypadIndex, joypadData, button, ...)
+  end
+
   if MainScreen.instance and MainScreen.instance.inGame and MainScreen.instance:getIsVisible() then
     if button == Joypad.Start and joypadData.focus == MainScreen.instance then
       onPauseButtonPressed(joypadData)
@@ -51,7 +61,7 @@ function onJoypadPressButton(joypadIndex, joypadData, button)
     return
   end
 
-  if not joypadData.activeWhilePaused and UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 and button ~= Joypad.Start and button ~= Joypad.Back then
+  if not joypadData.activeWhilePaused and button ~= Joypad.Start and button ~= Joypad.Back then
     return;
   end
 

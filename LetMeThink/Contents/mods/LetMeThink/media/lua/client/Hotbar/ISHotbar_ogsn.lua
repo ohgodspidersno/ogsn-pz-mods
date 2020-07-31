@@ -1,7 +1,9 @@
 
-function ISHotbar:doMenu(slotIndex)
-  if UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
-    return;
+local ISHotbar_doMenu_original = ISHotbar.doMenu
+function ISHotbar:doMenu(slotIndex, ...)
+  if UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISHotbar_doMenu_original(self, slotIndex, ...)
+    return
   end
 
   local slot = self.availableSlot[slotIndex];
@@ -50,12 +52,14 @@ function ISHotbar:doMenu(slotIndex)
   end
 end
 
-ISHotbar.onKeyStartPressed = function(key)
+local ISHotbar_onKeyStartPressed_original = ISHotbar.onKeyStartPressed
+ISHotbar.onKeyStartPressed = function(key, ...)
   local playerObj = getSpecificPlayer(0)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
   end
-  if UIManager.getSpeedControls|() and (UIManager.getSpeedControls|():getCurrentGameSpeed() == 0) then
+  if UIManager.getSpeedControls|() and (UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0) then
+    ISHotbar_onKeyStartPressed_original(self, key, ...)
     return
   end
   local self = getPlayerHotbar(0)
@@ -71,12 +75,14 @@ ISHotbar.onKeyStartPressed = function(key)
   getPlayerHotbar(0).radialWasVisible = false
 end
 
-ISHotbar.onKeyPressed = function(key)
+local ISHotbar_onKeyPressed_original = ISHotbar.onKeyPressed
+ISHotbar.onKeyPressed = function(key, ...)
   local playerObj = getSpecificPlayer(0)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
   end
-  if UIManager.getSpeedControls|() and (UIManager.getSpeedControls|():getCurrentGameSpeed() == 0) then
+  if UIManager.getSpeedControls|() and (UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0) then
+    ISHotbar_onKeyPressed_original(self, key, ...)
     return
   end
   local self = getPlayerHotbar(0);
@@ -102,12 +108,14 @@ ISHotbar.onKeyPressed = function(key)
   self:activateSlot(slotToCheck);
 end
 
-ISHotbar.onKeyKeepPressed = function(key)
+local ISHotbar_onKeyKeepPressed_original = ISHotbar.onKeyKeepPressed
+ISHotbar.onKeyKeepPressed = function(key, ...)
   local playerObj = getSpecificPlayer(0)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
   end
-  if UIManager.getSpeedControls|() and (UIManager.getSpeedControls|():getCurrentGameSpeed() == 0) then
+  if UIManager.getSpeedControls|() and (UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0) then
+    ISHotbar_onKeyKeepPressed_original(self, key, ...)
     return
   end
   if playerObj:isAttacking() then

@@ -1,8 +1,9 @@
 
-function ISButtonPrompt:getBestAButtonAction(dir)
+local ISButtonPrompt_getBestAButtonAction_original = ISButtonPrompt.getBestAButtonAction
+function ISButtonPrompt:getBestAButtonAction(dir, ...)
 
-  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
-    self:setAPrompt(nil, nil, nil);
+  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISButtonPrompt_getBestAButtonAction_original(self, dir, ...)
     return;
   end
 
@@ -85,10 +86,11 @@ function ISButtonPrompt:getBestAButtonAction(dir)
   end
 end
 
-function ISButtonPrompt:getBestBButtonAction(dir)
+local ISButtonPrompt_getBestBButtonAction_original = ISButtonPrompt.getBestBButtonAction
+function ISButtonPrompt:getBestBButtonAction(dir, ...)
 
-  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
-    self:setBPrompt(nil, nil, nil);
+  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISButtonPrompt_getBestBButtonAction_original(self, dir, ...)
     return;
   end
 
@@ -189,10 +191,11 @@ function ISButtonPrompt:getBestBButtonAction(dir)
   end
 end
 
-function ISButtonPrompt:getBestYButtonAction(dir)
+local ISButtonPrompt_getBestYButtonAction_original = ISButtonPrompt.getBestYButtonAction
+function ISButtonPrompt:getBestYButtonAction(dir, ...)
 
-  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
-    self:setYPrompt(nil, nil, nil);
+  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISButtonPrompt_getBestYButtonAction_original(self, dir, ...)
     return;
   end
 
@@ -309,9 +312,10 @@ function ISButtonPrompt:getBestYButtonAction(dir)
   end
 end
 
-function ISButtonPrompt:getBestXButtonAction(dir)
-  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
-    self:setXPrompt(nil, nil, nil);
+local ISButtonPrompt_getBestXButtonAction_original = ISButtonPrompt.getBestXButtonAction
+function ISButtonPrompt:getBestXButtonAction(dir, ...)
+  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISButtonPrompt_getBestXButtonAction_original(self, dir, ...)
     return;
   end
 
@@ -340,10 +344,10 @@ function ISButtonPrompt:getBestXButtonAction(dir)
   self:setXPrompt(getText("IGUI_Controller_Interact"), ISButtonPrompt.interact, objects)
 end
 
-
-function ISButtonPrompt:getBestLBButtonAction(dir)
-  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
-    self:setLBPrompt(nil, nil, nil);
+local ISButtonPrompt_getBestLBButtonAction_original = ISButtonPrompt.getBestLBButtonAction
+function ISButtonPrompt:getBestLBButtonAction(dir, ...)
+  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISButtonPrompt_getBestLBButtonAction_original(self, dir, ...)
     return;
   end
 
@@ -355,9 +359,10 @@ function ISButtonPrompt:getBestLBButtonAction(dir)
   end
 end
 
-function ISButtonPrompt:getBestRBButtonAction(dir)
-  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
-    self:setRBPrompt(nil, nil, nil);
+local ISButtonPrompt_getBestRBButtonAction_original = ISButtonPrompt.getBestRBButtonAction
+function ISButtonPrompt:getBestRBButtonAction(dir, ...)
+  if UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISButtonPrompt_getBestRBButtonAction_original(self, dir, ...)
     return;
   end
 

@@ -3,13 +3,21 @@
 --**				  Author: turbotutone				   **
 --***********************************************************
 
-ISMenuContextWorld = {};
+local ISMenuContextWorld_new_original = ISMenuContextWorld.new
+function ISMenuContextWorld.new(...)
+  ISMenuContextWorld_new_original(self, ...)
 
-function ISMenuContextWorld.new()
+  local this = self
+  local self_createMenu_original = this.createMenu
 
-  function self.createMenu( _playerNum, _object, _objects, _x, _y, _test )
+  function this.createMenu( _playerNum, _object, _objects, _x, _y, _test, ... )
+    if UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
+      self_createMenu_original(self, _playerNum, _object, _objects, _x, _y, _test, ... )
+      return
+    end
+
     local playerObj = getSpecificPlayer(_playerNum);
-    if playerObj:isDead() or playerObj:isAsleep() or UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then return end
+    if playerObj:isDead() or playerObj:isAsleep() then return end
     self.reset(_playerNum);
     local context;
     if not _test then
@@ -66,5 +74,5 @@ function ISMenuContextWorld.new()
     return context;
   end
 
-  return self;
+  return this;
 end

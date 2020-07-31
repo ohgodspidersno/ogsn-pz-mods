@@ -1,9 +1,12 @@
 
-function ISSineWaveDisplay:update()
+local ISSineWaveDisplay_update_original = ISSineWaveDisplay.update
+function ISSineWaveDisplay:update(...)
   ISPanel.update(self);
 
   local isPaused = UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0
-  if isPaused then return end
+  if not isPaused then
+    ISSineWaveDisplay_update_original(self, ...)
+  end
 
   if self.isOn then
     local p, w, h = self.waveParams, self:getWidth(), self:getHeight();

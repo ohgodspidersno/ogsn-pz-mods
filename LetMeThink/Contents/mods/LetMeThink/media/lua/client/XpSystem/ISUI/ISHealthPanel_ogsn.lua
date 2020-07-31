@@ -1,7 +1,8 @@
 
-function ISHealthPanel:onBodyPartListRightMouseUp(x, y)
-  if UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
-    if not getDebug() then return end
+local ISHealthPanel_onBodyPartListRightMouseUp_original = ISHealthPanel.onBodyPartListRightMouseUp
+function ISHealthPanel:onBodyPartListRightMouseUp(x, y, ...)
+  if UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISHealthPanel_onBodyPartListRightMouseUp_original(self, x, y, ...)
   end
 
   local row = self:rowAt(x, y)

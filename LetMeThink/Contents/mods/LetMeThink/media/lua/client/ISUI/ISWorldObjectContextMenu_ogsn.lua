@@ -1,12 +1,15 @@
 
 -- MAIN METHOD FOR CREATING RIGHT CLICK CONTEXT MENU FOR WORLD ITEMS
+
+local ISWorldObjectContextMenu_createMenu_original = ISWorldObjectContextMenu.createMenu
 ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   if getCore():getGameMode() == "Tutorial" then
-    local context = Tutorial1.createWorldContextMenu(player, worldobjects, x, y);
+    local context = Tutorial1.createWorldContextMenu(player, worldobjects, x, y, ...);
     return context;
   end
   -- if the game is paused, we don't show the world context menu
-  if UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
+  if UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISWorldObjectContextMenu_createMenu_original(self, player, worldobjects, x, y, ...);
     return;
   end
 
@@ -1079,53 +1082,4 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   end
 
   return context;
-end
-
-function ISWorldObjectContextMenu.onSleepWalkToComplete(player, bed)
-  local playerObj = getSpecificPlayer(player)
-  ISTimedActionQueue.clear(playerObj)
-  local bedType = "badBed";
-  if bed then
-    bedType = bed:getProperties():Val("BedType") or "averageBed";
-  end
-  if isClient() and getServerOptions():getBoolean("SleepAllowed") then
-    playerObj:setAsleepTime(0.0)
-    playerObj:setAsleep(true)
-    UIManager.setFadeBeforeUI(player, true)
-    UIManager.FadeOut(player, 1)
-    return
-  end
-
-  playerObj:setBed(bed);
-  playerObj:setBedType(bedType);
-  local modal = nil;
-  local sleepFor = ZombRand(playerObj:getStats():getFatigue() * 10, playerObj:getStats():getFatigue() * 13) + 1;
-  if bedType == "goodBed" then
-    sleepFor = sleepFor - 1;
-  end
-  if bedType == "badBed" then
-    sleepFor = sleepFor + 1;
-  end
-  if playerObj:HasTrait("Insomniac") then
-    sleepFor = sleepFor * 0.5;
-  end
-  if sleepFor > 16 then sleepFor = 16; end
-  if sleepFor < 3 then sleepFor = 3; end
-  --    print("GONNA SLEEP " .. sleepHours .. " HOURS" .. " AND ITS " .. GameTime.getInstance():getTimeOfDay())
-  local sleepHours = sleepFor + GameTime.getInstance():getTimeOfDay()
-  if sleepHours >= 24 then
-    sleepHours = sleepHours - 24
-  end
-  playerObj:setForceWakeUpTime(tonumber(sleepHours))
-  playerObj:setAsleepTime(0.0)
-  playerObj:setAsleep(true)
-  getSleepingEvent():setPlayerFallAsleep(playerObj, sleepFor);
-
-  UIManager.setFadeBeforeUI(playerObj:getPlayerNum(), true)
-  UIManager.FadeOut(playerObj:getPlayerNum(), 1)
-
-  if IsoPlayer.allPlayersAsleep() then
-    UIManager.getSpeedControls|():SetCurrentGameSpeed(3)
-    save(true)
-  end
 end

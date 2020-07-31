@@ -1,5 +1,6 @@
 
-ISObjectClickHandler.doClick = function (object, x, y)
+local ISObjectClickHandler_doClick_original = ISObjectClickHandler.doClick
+ISObjectClickHandler.doClick = function (object, x, y, ...)
   local sq = object:getSquare();
   if instanceof(object, "IsoMovingObject") then
     sq = object:getCurrentSquare();
@@ -57,7 +58,10 @@ ISObjectClickHandler.doClick = function (object, x, y)
   end
 
   local isPaused = UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0
-  if getCore():getGameMode() ~= "Tutorial" and not isPaused and instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
+  if not isPaused then
+    ISObjectClickHandler_doClick_original(self, object, x, y, ...)
+  end
+  if getCore():getGameMode() ~= "Tutorial" and instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
   playerObj:getCurrentSquare() and object:getSquare() and
   playerObj:DistToSquared(object:getX() + 0.5, object:getY() + 0.5) < 1.5 * 1.5 and
   not playerObj:getCurrentSquare():isSomethingTo(object:getSquare()) then

@@ -1,7 +1,10 @@
 
-function ISVehicleMenu.showRadialMenu(playerObj)
+local ISVehicleMenu_showRadialMenu_original = ISVehicleMenu.showRadialMenu
+function ISVehicleMenu.showRadialMenu(playerObj, ...)
   local isPaused = UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0
-  if isPaused then return end
+  if not isPaused then
+    ISVehicleMenu_showRadialMenu_original(self, playerObj, ...)
+  end
 
   local vehicle = playerObj:getVehicle()
   if not vehicle then
@@ -170,9 +173,12 @@ function ISVehicleMenu.showRadialMenu(playerObj)
   end
 end
 
-function ISVehicleMenu.onShowSeatUI(playerObj, vehicle)
+local ISVehicleMenu_onShowSeatUI_original = ISVehicleMenu.onShowSeatUI
+function ISVehicleMenu.onShowSeatUI(playerObj, vehicle, ...)
   local isPaused = UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0
-  if isPaused then return end
+  if not isPaused then
+    ISVehicleMenu_onShowSeatUI_original(self, playerObj, vehicle, ...)
+  end
 
   local playerNum = playerObj:getPlayerNum()
   if not ISVehicleMenu.seatUI then

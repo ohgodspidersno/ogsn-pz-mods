@@ -1,6 +1,9 @@
 
-function ISVehicleMechanics:onListMouseDown(x, y)
-  if UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 and not getDebug() then return; end
+local ISVehicleMechanics_onListMouseDown_original = ISVehicleMechanics.onListMouseDown
+function ISVehicleMechanics:onListMouseDown(x, y, ...)
+  if UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISVehicleMechanics_onListMouseDown_original(self, x, y, ...)
+  end
 
   self.parent.listbox.selected = 0;
   self.parent.bodyworklist.selected = 0;
@@ -12,8 +15,11 @@ function ISVehicleMechanics:onListMouseDown(x, y)
   end
 end
 
-function ISVehicleMechanics:doPartContextMenu(part, x, y)
-  if UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then return; end
+local ISVehicleMechanics_doPartContextMenu_original = ISVehicleMechanics.doPartContextMenu
+function ISVehicleMechanics:doPartContextMenu(part, x, y, ...)
+  if UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISVehicleMechanics_doPartContextMenu_original(self, part, x, y, ...)
+  end
 
   local playerObj = getSpecificPlayer(self.playerNum);
   self.context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
@@ -202,7 +208,12 @@ function ISVehicleMechanics:doPartContextMenu(part, x, y)
   end
 end
 
-function ISVehicleMechanics:onRightMouseUp(x, y)
+local ISVehicleMechanics_onRightMouseUp_original = ISVehicleMechanics.onRightMouseUp
+function ISVehicleMechanics:onRightMouseUp(x, y, ...)
+  if UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISVehicleMechanics_onRightMouseUp_original(self, x, y, ...)
+  end
+
   local playerObj = getSpecificPlayer(self.playerNum)
   local part = self:getMouseOverPart(x, y)
   self.context = nil
@@ -210,7 +221,6 @@ function ISVehicleMechanics:onRightMouseUp(x, y)
     self:selectPart(part)
     self:doPartContextMenu(part, x, y)
   elseif ISVehicleMechanics.cheat or playerObj:getAccessLevel() ~= "None" then
-    if UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then return; end
     self.context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
     if self.vehicle:getScript() and self.vehicle:getScript():getWheelCount() > 0 then
       self.context:addOption("CHEAT: Get Key", playerObj, ISVehicleMechanics.onCheatGetKey, self.vehicle)

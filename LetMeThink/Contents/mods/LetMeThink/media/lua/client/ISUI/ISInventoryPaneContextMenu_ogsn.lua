@@ -1,13 +1,14 @@
 
-ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, items, x, y, origin)
+local ISInventoryPaneContextMenu_createMenu_original = ISInventoryPaneContextMenu.createMenu
+ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, items, x, y, origin, ...)
   if getCore():getGameMode() == "Tutorial" then
     Tutorial1.createInventoryContextMenu(player, isInPlayerInventory, items, x, y);
     return;
   end
   if ISInventoryPaneContextMenu.dontCreateMenu then return; end
 
-  -- if the game is paused, we don't show the item context menu
-  if UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then
+  if UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISInventoryPaneContextMenu_createMenu_original(self, player, isInPlayerInventory, items, x, y, origin, ...)
     return;
   end
 
@@ -707,11 +708,15 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   return context;
 end
 
-ISInventoryPaneContextMenu.createMenuNoItems = function(playerNum, isLoot, x, y)
+local ISInventoryPaneContextMenu_createMenuNoItems_original = ISInventoryPaneContextMenu_createMenuNoItems
+ISInventoryPaneContextMenu.createMenuNoItems = function(playerNum, isLoot, x, y, ...)
 
   if ISInventoryPaneContextMenu.dontCreateMenu then return end
 
-  if UIManager.getSpeedControls|():getCurrentGameSpeed() == 0 then return end
+  if UIManager.getSpeedControls|():getCurrentGameSpeed() ~= 0 then
+    ISInventoryPaneContextMenu_createMenuNoItems_original(self, playerNum, isLoot, x, y, ...)
+    return
+  end
 
   local playerObj = getSpecificPlayer(playerNum)
 

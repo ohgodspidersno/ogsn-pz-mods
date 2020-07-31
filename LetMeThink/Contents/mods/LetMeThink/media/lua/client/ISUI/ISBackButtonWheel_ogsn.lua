@@ -1,5 +1,5 @@
-
-function ISBackButtonWheel:addCommands()
+local ISBackButtonWheel_addCommands_original = ISBackButtonWheel.addCommands
+function ISBackButtonWheel:addCommands(...)
   local playerObj = getSpecificPlayer(self.playerNum)
 
   self:center()
@@ -8,20 +8,20 @@ function ISBackButtonWheel:addCommands()
 
   local isPaused = UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0
 
-  if isPaused then
-    self:addSlice(nil, nil, nil)
-    self:addSlice(nil, nil, nil)
+  if not isPaused then
+    ISBackButtonWheel_addCommands_original(self, ...)
+    return
+  end
+
+  if not ISBackButtonWheel.disablePlayerInfo then
+    self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
   else
-    if not ISBackButtonWheel.disablePlayerInfo then
-      self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
-    else
-      self:addSlice(nil, nil, nil)
-    end
-    if not ISBackButtonWheel.disableCrafting then
-      self:addSlice(getText("IGUI_BackButton_Crafting"), getTexture("media/ui/Carpentry_On.png"), self.onCommand, self, "Crafting")
-    else
-      self:addSlice(nil, nil, nil)
-    end
+    self:addSlice(nil, nil, nil)
+  end
+  if not ISBackButtonWheel.disableCrafting then
+    self:addSlice(getText("IGUI_BackButton_Crafting"), getTexture("media/ui/Carpentry_On.png"), self.onCommand, self, "Crafting")
+  else
+    self:addSlice(nil, nil, nil)
   end
 
   if getCore():isZoomEnabled() and not getCore():getAutoZoom(self.playerNum) then
@@ -66,27 +66,33 @@ function ISBackButtonWheel:addCommands()
     end
   end
 
-  if not isPaused and not playerObj:getVehicle() and not ISBackButtonWheel.disableMoveable then
+  if not playerObj:getVehicle() and not ISBackButtonWheel.disableMoveable then
     self:addSlice(getText("IGUI_BackButton_Movable"), getTexture("media/ui/Furniture_Off2.png"), self.onCommand, self, "MoveFurniture")
   else
     self:addSlice(nil, nil, nil)
   end
 end
 
-function ISBackButtonWheel:onCommand(command)
+local ISBackButtonWheel_onCommand_original = ISBackButtonWheel.onCommand
+function ISBackButtonWheel:onCommand(command, ...)
   local focus = nil
   local isPaused = UIManager.getSpeedControls|() and UIManager.getSpeedControls|():getCurrentGameSpeed() == 0
 
+  if not isPaused then
+    ISBackButtonWheel_onCommand_original(self, command, ...)
+    return
+  end
+
   local playerObj = getSpecificPlayer(self.playerNum)
 
-  if command == "PlayerInfo" and not isPaused then
+  if command == "PlayerInfo" then
     getPlayerInfoPanel(self.playerNum):setVisible(true)
     getPlayerInfoPanel(self.playerNum):addToUIManager()
     focus = getPlayerInfoPanel(self.playerNum).panel:getActiveView()
-  elseif command == "Crafting" and not isPaused then
+  elseif command == "Crafting" then
     getPlayerCraftingUI(self.playerNum):setVisible(true)
     focus = getPlayerCraftingUI(self.playerNum)
-  elseif command == "MoveFurniture" and not isPaused then
+  elseif command == "MoveFurniture" then
     local mo = ISMoveableCursor:new(getSpecificPlayer(self.playerNum));
     getCell():setDrag(mo, mo.player);
   elseif command == "ZoomPlus" and not getCore():getAutoZoom(self.playerNum) then

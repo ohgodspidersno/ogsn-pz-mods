@@ -1,7 +1,11 @@
 
-local function isRegulatorButtonPressed(joypadData)
+
+local_isRegulatorButtonPressed_original = local isRegulatorButtonPressed
+local function isRegulatorButtonPressed(joypadData, ...)
   local isPaused = UIManager.getSpeedControls|() and (UIManager.getSpeedControls|():getCurrentGameSpeed() == 0)
-  if isPaused then return false end
+  if not isPaused then
+    local_isRegulatorButtonPressed_original(self, joypadData, ...)
+  end
 
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
@@ -15,14 +19,17 @@ local function isRegulatorButtonPressed(joypadData)
   return true, playerObj, vehicle
 end
 
-function ISVehicleRegulator.onJoypadReleaseX(joypadData)
+local ISVehicleRegulator_onJoypadReleaseX_original = ISVehicleRegulator.onJoypadReleaseX
+function ISVehicleRegulator.onJoypadReleaseX(joypadData, ...)
   if not ISVehicleRegulator.xPressed[joypadData.id] then return end
   ISVehicleRegulator.xPressed[joypadData.id] = false
 
   if ISVehicleRegulator.changedSpeed[joypadData.id] then return end
 
   local isPaused = UIManager.getSpeedControls|() and (UIManager.getSpeedControls|():getCurrentGameSpeed() == 0)
-  if isPaused then return end
+  if not isPaused then
+    ISVehicleRegulator_onJoypadReleaseX_original(self, joypadData, ...)
+  end
 
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
