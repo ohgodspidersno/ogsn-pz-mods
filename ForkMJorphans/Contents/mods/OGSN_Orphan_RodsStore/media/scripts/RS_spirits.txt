@@ -1,493 +1,492 @@
 module RS
-{ 		
-   imports {Base}
-
-    
-    item Rum
-    {
-		Weight	=	1,
-		HungerChange	=	-10,
-		ThirstChange		= -40,
-		UnhappyChange	=	-30,
-		Type	=	Food,
-		DisplayName	=	Rum Bottle,
-		Icon	=	A01Rum,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	WhiskeyEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 4,
-	Calories = 2340,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 210,
-	Packaged = TRUE,
-    }
-
-    item WhiteRum
-    {
-		Weight	=	1,
-		HungerChange	=	-10,
-		ThirstChange		= -40,
-		UnhappyChange	=	-30,
-		Type	=	Food,
-		DisplayName	=	White Rum Bottle,
-		Icon	=	A02WhiteRum,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	WhiskeyEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 4,
-	Calories = 2340,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 210,
-	Packaged = TRUE,
-    }
-
-    item Vodka
-    {
-		Weight	=	1,
-		HungerChange	=	-30,
-		UnhappyChange	=	-35,
-		UnhappyChange	=	-30,
-		Type	=	Food,
-		DisplayName	=	Vodka Bottle,
-		Icon	=	A03Vodka,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	WineEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 2,
-	Calories = 1250,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 0,
-	Packaged = TRUE,
-    }
-
-    item Ginebra
-    {
-		Weight	=	1,
-		HungerChange	=	-7,
-		ThirstChange		= -40,
-		UnhappyChange	=	-15,
-		Type	=	Food,
-		DisplayName	=	Gin Bottle,
-		Icon	=	A04Gin,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	WhiskeyEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 3,
-	Calories = 2200,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 0,
-	Packaged = TRUE,
-    }
-
-    item TripleSec
-    {
-		Weight	=	1,
-		HungerChange	=	-10,
-		ThirstChange		= -15,
-		UnhappyChange	=	-15,
-		Type	=	Food,
-		DisplayName	=	Triple Sec Bottle,
-		Icon	=	A05TripleSec,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	WhiskeyEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 2,
-	Calories = 1500,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 84,
-	Packaged = TRUE,
-    }
-
-    item DryVermouth
-    {
-		Weight	=	1,
-		HungerChange	=	-17,
-		ThirstChange		= -25,
-		UnhappyChange	=	-15,
-		Type	=	Food,
-		DisplayName	=	Dry Vermouth,
-		Icon	=	A06DryVermouth,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	WineEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 2,
-	Calories = 1450,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 0,
-	Packaged = TRUE,
-    }
-
-    item WhiteTequila
-    {
-		Weight	=	1,
-		HungerChange	=	-20,
-		ThirstChange		= -30,
-		UnhappyChange	=	-30,
-		Type	=	Food,
-		DisplayName	=	White Tequila Bottle,
-		Icon	=	A07WhiteTequila,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	WhiskeyEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 5,
-	Calories = 2425,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 100,
-	Packaged = TRUE,
-    }
-
-    item Aguaardiente 
-    {
-		Weight	=	1,
-		HungerChange	=	-10,
-		ThirstChange		= -25,
-		UnhappyChange	=	-50,
-		StressChange	=	-30,
-		Type	=	Food,
-		DisplayName	=	Agua Ardiente Bottle,
-		Icon	=	A08Aguaardiente,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	WhiskeyEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 6,
-	Calories = 2150,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 180,
-	Packaged = TRUE,
-    }
-
-    item Beer1
-    {
-		Weight	=	0.6,
-		HungerChange	=	-5,
-		ThirstChange	=	-60,
-		UnhappyChange	=	-20,
-		Type	=	Food,
-		DisplayName	=	Black Beer Bottle,
-		Icon	=	A09Beer1,
-		CustomContextMenu = Drink,
-		CustomEatSound		= RS_OpenBeerBottle,
-		ReplaceOnUse	=	RS.BeerBottleEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 2,
-	Calories = 148,
-	Proteins = 1,
-	Lipids = 0,
-	Carbohydrates = 16,
-	Packaged = TRUE,
-    }
-
-    item BeerSixPack1
-    {
-		Weight	=	3.8,
-		Type	=	Normal,
-		DisplayName	=	Black Beer Six Pack,
-		Icon	=	A10Beersixpack1,
-    }
-
-    item Beer2
-    {
-		Weight	=	0.6,
-		HungerChange	=	-5,
-		ThirstChange	=	-60,
-		UnhappyChange	=	-15,
-		Type	=	Food,
-		DisplayName	=	Lemon Beer Bottle,
-		Icon	=	A11Beer2,
-		CustomContextMenu = Drink,
-		CustomEatSound		= RS_OpenBeerBottle,
-		ReplaceOnUse	=	RS.BeerBottleEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 1,
-	Calories = 92,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 0,
-	Packaged = TRUE,
-    }
-
-    item BeerSixPack2
-    {
-		Weight	=	3.8,
-		Type	=	Normal,
-		DisplayName	=	Lemon Beer Six Pack,
-		Icon	=	A12Beersixpack2,
-    }
-
-    item Beer3
-    {
-		Weight	=	0.6,
-		HungerChange	=	-5,
-		ThirstChange	=	-60,
-		UnhappyChange	=	-15,
-		Type	=	Food,
-		DisplayName	=	Amber Beer Bottle,
-		Icon	=	A13Beer3,
-		CustomContextMenu = Drink,
-		CustomEatSound		= RS_OpenBeerBottle,
-		ReplaceOnUse	=	RS.BeerBottleEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 1,
-	Calories = 110,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 0,
-	Packaged = TRUE,
-    }
-
-    item BeerSixPack3
-    {
-		Weight	=	3.8,
-		Type	=	Normal,
-		DisplayName	=	Amber Beer Six Pack,
-		Icon	=	A14Beersixpack3,
-		MetalValue = 20,
-    }
-
-    item Beercan1
-    {
-		Weight	=	0.4,
-		HungerChange	=	-5,
-		ThirstChange	=	-50,
-		UnhappyChange	=	-15,
-		Type	=	Food,
-		DisplayName	=	Beer Can,
-		Icon	=	A15Beercan1,
-		CustomContextMenu = Drink,
-		CustomEatSound		= RS_OpenBeerCan,
-		ReplaceOnUse	=	RS.BeerCanEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 1,
-	Calories = 109,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 0,
-	Packaged = TRUE,
-    }
-
-    item Beercan2
-    {
-		Weight	=	0.4,
-		HungerChange	=	-5,
-		ThirstChange	=	-50,
-		UnhappyChange	=	-15,
-		Type	=	Food,
-		DisplayName	=	Beer Can,
-		Icon	=	A16Beercan2,
-		CustomContextMenu = Drink,
-		CustomEatSound		= RS_OpenBeerCan,
-		ReplaceOnUse	=	RS.BeerCanEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 1,
-	Calories = 118,
-	Proteins = 1,
-	Lipids = 0,
-	Carbohydrates = 10,
-	Packaged = TRUE,
-    }
-
-    item Beercan3
-    {
-		Weight	=	0.4,
-		HungerChange	=	-5,
-		ThirstChange	=	-50,
-		UnhappyChange	=	-15,
-		Type	=	Food,
-		DisplayName	=	Beer Can,
-		Icon	=	A17Beercan3,
-		CustomContextMenu = Drink,
-		CustomEatSound		= RS_OpenBeerCan,
-		ReplaceOnUse	=	RS.BeerCanEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 1,
-	Calories = 132,
-	Proteins = 1,
-	Lipids = 0,
-	Carbohydrates = 19,
-	Packaged = TRUE,
-    }
-
-    item Beercan4
-    {
-		Weight	=	0.4,
-		HungerChange	=	-5,
-		ThirstChange	=	-50,
-		UnhappyChange	=	-15,
-		Type	=	Food,
-		DisplayName	=	Beer Can,
-		Icon	=	A18Beercan4,
-		CustomContextMenu = Drink,
-		CustomEatSound		= RS_OpenBeerCan,
-		ReplaceOnUse	=	RS.BeerCanEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 1,
-	Calories = 132,
-	Proteins = 1,
-	Lipids = 0,
-	Carbohydrates = 19,
-	Packaged = TRUE,
-    }
+{
+imports {Base}
 
 
-    item BeerBottleEmpty
-    {
-		Weight	=	0.2,
-		Type	=	Normal,
-		DisplayName	=	Empty Bottle,
-		Icon	=	A19BeerBottleEmpty,
-    }
+item Rum
+{
+Weight = 1,
+HungerChange = -10,
+ThirstChange = -40,
+UnhappyChange = -30,
+Type = Food,
+DisplayName = Rum Bottle,
+Icon = A01Rum,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = WhiskeyEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 4,
+Calories = 2340,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 210,
+Packaged = TRUE,
+}
 
-    item BeerCanEmpty
-    {
-		Weight	=	0.1,
-		Type	=	Normal,
-		DisplayName	=	Empty Can,
-		Icon	=	A20BeerCanEmpty,
-		MetalValue = 10,
-    }
+item WhiteRum
+{
+Weight = 1,
+HungerChange = -10,
+ThirstChange = -40,
+UnhappyChange = -30,
+Type = Food,
+DisplayName = White Rum Bottle,
+Icon = A02WhiteRum,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = WhiskeyEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 4,
+Calories = 2340,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 210,
+Packaged = TRUE,
+}
+
+item Vodka
+{
+Weight = 1,
+HungerChange = -30,
+UnhappyChange = -35,
+UnhappyChange = -30,
+Type = Food,
+DisplayName = Vodka Bottle,
+Icon = A03Vodka,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = WineEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 2,
+Calories = 1250,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 0,
+Packaged = TRUE,
+}
+
+item Ginebra
+{
+Weight = 1,
+HungerChange = -7,
+ThirstChange = -40,
+UnhappyChange = -15,
+Type = Food,
+DisplayName = Gin Bottle,
+Icon = A04Gin,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = WhiskeyEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 3,
+Calories = 2200,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 0,
+Packaged = TRUE,
+}
+
+item TripleSec
+{
+Weight = 1,
+HungerChange = -10,
+ThirstChange = -15,
+UnhappyChange = -15,
+Type = Food,
+DisplayName = Triple Sec Bottle,
+Icon = A05TripleSec,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = WhiskeyEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 2,
+Calories = 1500,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 84,
+Packaged = TRUE,
+}
+
+item DryVermouth
+{
+Weight = 1,
+HungerChange = -17,
+ThirstChange = -25,
+UnhappyChange = -15,
+Type = Food,
+DisplayName = Dry Vermouth,
+Icon = A06DryVermouth,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = WineEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 2,
+Calories = 1450,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 0,
+Packaged = TRUE,
+}
+
+item WhiteTequila
+{
+Weight = 1,
+HungerChange = -20,
+ThirstChange = -30,
+UnhappyChange = -30,
+Type = Food,
+DisplayName = White Tequila Bottle,
+Icon = A07WhiteTequila,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = WhiskeyEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 5,
+Calories = 2425,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 100,
+Packaged = TRUE,
+}
+
+item Aguaardiente
+{
+Weight = 1,
+HungerChange = -10,
+ThirstChange = -25,
+UnhappyChange = -50,
+StressChange = -30,
+Type = Food,
+DisplayName = Agua Ardiente Bottle,
+Icon = A08Aguaardiente,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = WhiskeyEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 6,
+Calories = 2150,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 180,
+Packaged = TRUE,
+}
+
+item Beer1
+{
+Weight = 0.6,
+HungerChange = -5,
+ThirstChange = -60,
+UnhappyChange = -20,
+Type = Food,
+DisplayName = Black Beer Bottle,
+Icon = A09Beer1,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = RS.BeerBottleEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 2,
+Calories = 148,
+Proteins = 1,
+Lipids = 0,
+Carbohydrates = 16,
+Packaged = TRUE,
+}
+
+item BeerSixPack1
+{
+Weight = 3.8,
+Type = Normal,
+DisplayName = Black Beer Six Pack,
+Icon = A10Beersixpack1,
+}
+
+item Beer2
+{
+Weight = 0.6,
+HungerChange = -5,
+ThirstChange = -60,
+UnhappyChange = -15,
+Type = Food,
+DisplayName = Lemon Beer Bottle,
+Icon = A11Beer2,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = RS.BeerBottleEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 1,
+Calories = 92,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 0,
+Packaged = TRUE,
+}
+
+item BeerSixPack2
+{
+Weight = 3.8,
+Type = Normal,
+DisplayName = Lemon Beer Six Pack,
+Icon = A12Beersixpack2,
+}
+
+item Beer3
+{
+Weight = 0.6,
+HungerChange = -5,
+ThirstChange = -60,
+UnhappyChange = -15,
+Type = Food,
+DisplayName = Amber Beer Bottle,
+Icon = A13Beer3,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = RS.BeerBottleEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 1,
+Calories = 110,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 0,
+Packaged = TRUE,
+}
+
+item BeerSixPack3
+{
+Weight = 3.8,
+Type = Normal,
+DisplayName = Amber Beer Six Pack,
+Icon = A14Beersixpack3,
+MetalValue = 20,
+}
+
+item Beercan1
+{
+Weight = 0.4,
+HungerChange = -5,
+ThirstChange = -50,
+UnhappyChange = -15,
+Type = Food,
+DisplayName = Beer Can,
+Icon = A15Beercan1,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = RS.BeerCanEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 1,
+Calories = 109,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 0,
+Packaged = TRUE,
+}
+
+item Beercan2
+{
+Weight = 0.4,
+HungerChange = -5,
+ThirstChange = -50,
+UnhappyChange = -15,
+Type = Food,
+DisplayName = Beer Can,
+Icon = A16Beercan2,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = RS.BeerCanEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 1,
+Calories = 118,
+Proteins = 1,
+Lipids = 0,
+Carbohydrates = 10,
+Packaged = TRUE,
+}
+
+item Beercan3
+{
+Weight = 0.4,
+HungerChange = -5,
+ThirstChange = -50,
+UnhappyChange = -15,
+Type = Food,
+DisplayName = Beer Can,
+Icon = A17Beercan3,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = RS.BeerCanEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 1,
+Calories = 132,
+Proteins = 1,
+Lipids = 0,
+Carbohydrates = 19,
+Packaged = TRUE,
+}
+
+item Beercan4
+{
+Weight = 0.4,
+HungerChange = -5,
+ThirstChange = -50,
+UnhappyChange = -15,
+Type = Food,
+DisplayName = Beer Can,
+Icon = A18Beercan4,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = RS.BeerCanEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 1,
+Calories = 132,
+Proteins = 1,
+Lipids = 0,
+Carbohydrates = 19,
+Packaged = TRUE,
+}
+
+item BeerBottleEmpty
+{
+Weight = 0.2,
+Type = Normal,
+DisplayName = Empty Bottle,
+Icon = A19BeerBottleEmpty,
+}
+
+item BeerCanEmpty
+{
+Weight = 0.1,
+Type = Normal,
+DisplayName = Empty Can,
+Icon = A20BeerCanEmpty,
+MetalValue = 10,
+}
 
 
-    item SodaBottleEmpty
-    {
-		Weight	=	0.1,
-		CanStoreWater	=	TRUE,
-		Type	=	Normal,
-		DisplayName	=	Empty Soda Bottle,
-		ReplaceOnUseOn	=	WaterSource-RS.WaterSodaBottle,
-		Icon	=	A21SodaBottleEmpty,
-    }
+item SodaBottleEmpty
+{
+Weight = 0.1,
+CanStoreWater = TRUE,
+Type = Normal,
+DisplayName = Empty Soda Bottle,
+ReplaceOnUseOn = WaterSource-RS.WaterSodaBottle,
+Icon = A21SodaBottleEmpty,
+}
 
-    item SodaBottle
-    {
-		Weight	=	0.8,
-		HungerChange	=	-8,
-		ThirstChange	=	-60,
-		Type	=	Food,
-		DisplayName	=	Soda Bottle,
-		Icon	=	A21SodaBottleFull,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	RS.SodaBottleEmpty,
+item SodaBottle
+{
+Weight = 0.8,
+HungerChange = -8,
+ThirstChange = -60,
+Type = Food,
+DisplayName = Soda Bottle,
+Icon = A21SodaBottleFull,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = RS.SodaBottleEmpty,
 
-    }
+}
 
-    item WaterSodaBottle
-    {
-		Weight	=	0.8,
-		IsWaterSource	=	TRUE,
-		CanStoreWater	=	TRUE,
-		Type	=	Drainable,
-		DisplayName	=	Water Bottle,
-		Icon	=	A21WaterSodaBottle,
-		UseDelta	=	0.1,
-		ReplaceOnDeplete	=	RS.SodaBottleEmpty,
-		ReplaceOnUseOn	=	WaterSource-RS.WaterSodaBottle,
+item WaterSodaBottle
+{
+Weight = 0.8,
+IsWaterSource = TRUE,
+CanStoreWater = TRUE,
+Type = Drainable,
+DisplayName = Water Bottle,
+Icon = A21WaterSodaBottle,
+UseDelta = 0.1,
+ReplaceOnDeplete = RS.SodaBottleEmpty,
+ReplaceOnUseOn = WaterSource-RS.WaterSodaBottle,
 
-    }
+}
 
-    item Icecubes
-    {
-	   	Weight	=	0.1,
-	    	HungerChange	=	-1,
-            	ThirstChange	=	-10,
-	    	Type	=	Food,
-	    	DisplayName	=	Ice Cubes,
-	    	Icon	=	A22Icecubes,
-        	DaysFresh	=	1,
-            	DaysTotallyRotten	=	1,
-        	ReplaceOnRotten = IcecubesMelted,
-    }
+item Icecubes
+{
+Weight = 0.1,
+HungerChange = -1,
+ ThirstChange = -10,
+Type = Food,
+DisplayName = Ice Cubes,
+Icon = A22Icecubes,
+DaysFresh = 1,
+ DaysTotallyRotten = 1,
+ReplaceOnRotten = IcecubesMelted,
+}
 
-    item IcecubesMelted
-    {
-	   	Weight	=	0.1,
-	    	HungerChange	=	-1,
-            	ThirstChange	=	-10,
-	    	Type	=	Food,
-	    	DisplayName	=	Melted Ice Cubes,
-	    	Icon	=	A22IcecubesMelted,
-    }
+item IcecubesMelted
+{
+Weight = 0.1,
+HungerChange = -1,
+ ThirstChange = -10,
+Type = Food,
+DisplayName = Melted Ice Cubes,
+Icon = A22IcecubesMelted,
+}
 
-    item Plasticicebag
-    {
-	   	Weight	=	0.5,
-	    	HungerChange	=	-2,
-            	ThirstChange	=	-80,
-	    	Type	=	Food,
-	    	DisplayName	=	Plastic Ice Bag,
-	    	Icon	=	A23Plasticicebag,
-        	DaysFresh	=	1,
-            	DaysTotallyRotten	=	1,
-        	ReplaceOnRotten = PlasticicebagMelted,
-    }
+item Plasticicebag
+{
+Weight = 0.5,
+HungerChange = -2,
+ ThirstChange = -80,
+Type = Food,
+DisplayName = Plastic Ice Bag,
+Icon = A23Plasticicebag,
+DaysFresh = 1,
+ DaysTotallyRotten = 1,
+ReplaceOnRotten = PlasticicebagMelted,
+}
 
-    item PlasticicebagMelted
-    {
-	   	Weight	=	0.5,
-	    	HungerChange	=	-2,
-            	ThirstChange	=	-80,
-	    	Type	=	Food,
-	    	DisplayName	=	Melted Plastic Ice Bag,
-	    	Icon	=	A23PlasticicebagMelted,
-    }
+item PlasticicebagMelted
+{
+Weight = 0.5,
+HungerChange = -2,
+ ThirstChange = -80,
+Type = Food,
+DisplayName = Melted Plastic Ice Bag,
+Icon = A23PlasticicebagMelted,
+}
 
-    item Cachaza
-    {
-		Weight	=	1,
-		HungerChange	=	-10,
-		ThirstChange		= -40,
-		UnhappyChange	=	-35,
-		Type	=	Food,
-		DisplayName	=	Cachaza Bottle,
-		Icon	=	A24Cachaza,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	WineEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 4,
-	Calories = 2611,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 246,
-	Packaged = TRUE,
-    }
+item Cachaza
+{
+Weight = 1,
+HungerChange = -10,
+ThirstChange = -40,
+UnhappyChange = -35,
+Type = Food,
+DisplayName = Cachaza Bottle,
+Icon = A24Cachaza,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = WineEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 4,
+Calories = 2611,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 246,
+Packaged = TRUE,
+}
 
-    item CoffeeLiquor
-    {
-		Weight	=	1,
-		HungerChange	=	-30,
-		ThirstChange		= -40,
-		UnhappyChange	=	-20,
-		Type	=	Food,
-		DisplayName	=	Coffee Liquor Bottle,
-		Icon	=	A25CoffeeLiquor,
-		CustomContextMenu = Drink,
-		CustomEatSound		= PZ_DrinkingFromBottle,
-		ReplaceOnUse	=	WineEmpty,
-		Alcoholic	=	TRUE,
-		AlcoholPower = 4,
-	Calories = 2805,
-	Proteins = 0,
-	Lipids = 0,
-	Carbohydrates = 310,
-	Packaged = TRUE,
-    }
+item CoffeeLiquor
+{
+Weight = 1,
+HungerChange = -30,
+ThirstChange = -40,
+UnhappyChange = -20,
+Type = Food,
+DisplayName = Coffee Liquor Bottle,
+Icon = A25CoffeeLiquor,
+CustomContextMenu = Drink,
+CustomEatSound = DrinkingFromBottle,
+ReplaceOnUse = WineEmpty,
+Alcoholic = TRUE,
+AlcoholPower = 4,
+Calories = 2805,
+Proteins = 0,
+Lipids = 0,
+Carbohydrates = 310,
+Packaged = TRUE,
+}
 
 
 }

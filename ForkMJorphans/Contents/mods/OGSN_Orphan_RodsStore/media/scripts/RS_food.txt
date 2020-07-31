@@ -1,767 +1,633 @@
 module RS
-{ 		
-   imports {Base}
+{
+imports {Base}
 
 
-    item Croissant
-    {
-		Weight	=	0.2,
-		HungerChange	=	-15,
-		UnhappyChange	=	-10,
-		Type	=	Food,
-		DisplayName	=	Croissant,
-		Icon	=	B01Croissant,
-		DaysFresh = 3,
-		DaysTotallyRotten	=	5,
-	Carbohydrates = 36,
-	Proteins = 3,
-	Lipids = 5,
-	Calories = 201,
-    }
+item Croissant
+{
+Weight = 0.2,
+HungerChange = -15,
+UnhappyChange = -10,
+Type = Food,
+DisplayName = Croissant,
+Icon = B01Croissant,
+DaysFresh = 3,
+DaysTotallyRotten = 5,
+Carbohydrates = 36,
+Proteins = 3,
+Lipids = 5,
+Calories = 201,
+}
 
-    item CakeSlice2
-    {
-		Weight	=	0.2,
-		HungerChange	=	-10,
-		UnhappyChange	=	-10,
-		Type	=	Food,
-		DisplayName	=	Chocolate Cake Slice,
-		Icon	=	B02CakeSlice,
-		DaysFresh = 3,
-		DaysTotallyRotten	=	5,
-	Carbohydrates = 40,
-	Proteins = 6,
-	Lipids = 10,
-	Calories = 342,
-    }
+item CakeSlice2
+{
+Weight = 0.2,
+HungerChange = -10,
+UnhappyChange = -10,
+Type = Food,
+DisplayName = Chocolate Cake Slice,
+Icon = B02CakeSlice,
+DaysFresh = 3,
+DaysTotallyRotten = 5,
+Carbohydrates = 40,
+Proteins = 6,
+Lipids = 10,
+Calories = 342,
+}
 
-    item BdayCakeSlice
-    {
-		Weight	=	0.2,
-		HungerChange	=	-15,
-		UnhappyChange	=	-30,
-		Type	=	Food,
-		DisplayName	=	Birth Day Cake Slice,
-		Icon	=	B03BDayCakeSlice,
-		DaysFresh = 4,
-		DaysTotallyRotten	=	6,
-	Carbohydrates = 45.19,
-	Proteins = 10.2,
-	Lipids = 13.8,
-	Calories = 437,
-    }
+item BdayCakeSlice
+{
+Weight = 0.2,
+HungerChange = -15,
+UnhappyChange = -30,
+Type = Food,
+DisplayName = Birth Day Cake Slice,
+Icon = B03BDayCakeSlice,
+DaysFresh = 4,
+DaysTotallyRotten = 6,
+Carbohydrates = 45.19,
+Proteins = 10.2,
+Lipids = 13.8,
+Calories = 437,
+}
 
-    item BlueberryTartSlice
-    {
-		Weight	=	0.2,
-		HungerChange	=	-10,
-		UnhappyChange	=	-10,
-		Type	=	Food,
-		DisplayName	=	Blueberry Tart Slice,
-		Icon	=	B04BlueBerryTartSlice,
-		DaysFresh = 3,
-		DaysTotallyRotten	=	5,
-	Carbohydrates = 26.93,
-	Proteins = 5.4,
-	Lipids = 14.71,
-	Calories = 238,
-    }
+item BlueberryTartSlice
+{
+Weight = 0.2,
+HungerChange = -10,
+UnhappyChange = -10,
+Type = Food,
+DisplayName = Blueberry Tart Slice,
+Icon = B04BlueBerryTartSlice,
+DaysFresh = 3,
+DaysTotallyRotten = 5,
+Carbohydrates = 26.93,
+Proteins = 5.4,
+Lipids = 14.71,
+Calories = 238,
+}
 
-    item MapleSyrup
-    {
-		Weight	=	0.4,
-		HungerChange	=	-20,
-		Type	=	Food,
-		DisplayName	=	Maple Syrup,
-		Icon	=	C01MapleSyrup,
-		CustomEatSound = PZ_DrinkingFromBottle,
-		CantBeFrozen = TRUE,
-	Carbohydrates = 228.2,
-	Proteins = 0,
-	Lipids = 1,
-	Calories = 888,
-	Packaged = TRUE,
-    }
+item MapleSyrup
+{
+Weight = 0.4,
+HungerChange = -20,
+Type = Food,
+DisplayName = Maple Syrup,
+Icon = C01MapleSyrup,
+CustomEatSound = DrinkingFromBottle,
+CantBeFrozen = TRUE,
+Carbohydrates = 228.2,
+Proteins = 0,
+Lipids = 1,
+Calories = 888,
+Packaged = TRUE,
+}
 
-    item SoySauce
-    {
-        	Weight	=	0.3,
-		Type	=	Drainable,
-        	DisplayName	=	Soy Sauce,
-		Icon	=	C02SoySauce,
-		UseWhileEquipped	=	FALSE,
-		UseDelta	=	0.1,
-		CantBeFrozen = TRUE,
-    }
+item SoySauce
+{
+Weight = 0.3,
+Type = Drainable,
+DisplayName = Soy Sauce,
+Icon = C02SoySauce,
+UseWhileEquipped = FALSE,
+UseDelta = 0.1,
+CantBeFrozen = TRUE,
+}
 
-    item CookingOil
-    {
-		Weight	=	0.8,
-		HungerChange	=	-10,
-		UnhappyChange	=	30,
-		Type	=	Food,
-		DisplayName	=	Cooking Oil,
-		Icon	=	C03CookingOil,
-		CustomEatSound = PZ_DrinkingFromBottle,
-		CantBeFrozen = TRUE,
-	Carbohydrates = 0,
-	Proteins = 0,
-	Lipids = 250,
-	Calories = 2210,
-	Packaged = TRUE,
+item CookingOil
+{
+Weight = 0.8,
+HungerChange = -10,
+UnhappyChange = 30,
+Type = Food,
+DisplayName = Cooking Oil,
+Icon = C03CookingOil,
+CustomEatSound = DrinkingFromBottle,
+CantBeFrozen = TRUE,
+Carbohydrates = 0,
+Proteins = 0,
+Lipids = 250,
+Calories = 2210,
+Packaged = TRUE,
 
-    }
+}
 
-    item MilkPowder
-    {
-		Weight	=	1.8,
-		Type	=	Drainable,
-		DisplayName	=	Milk Powder,
-		Icon	=	C04MilkPowder,
-		UseWhileEquipped	=	FALSE,
-		UseDelta	=	0.16,
-		CantBeFrozen = TRUE,
+item MilkPowder
+{
+Weight = 1.8,
+Type = Drainable,
+DisplayName = Milk Powder,
+Icon = C04MilkPowder,
+UseWhileEquipped = FALSE,
+UseDelta = 0.16,
+CantBeFrozen = TRUE,
 
-    }
+}
 
-    item MilkPowder2
-    {
-		Weight	=	3.0,
-		Type	=	Drainable,
-		DisplayName	=	Milk Powder Can,
-		Icon	=	C05MilkPowder2,
-		UseWhileEquipped	=	FALSE,
-		UseDelta	=	0.25,
-		CantBeFrozen = TRUE,
-    }
+item MilkPowder2
+{
+Weight = 3.0,
+Type = Drainable,
+DisplayName = Milk Powder Can,
+Icon = C05MilkPowder2,
+UseWhileEquipped = FALSE,
+UseDelta = 0.25,
+CantBeFrozen = TRUE,
+}
 
-    item BabyFormula
-    {
-		Weight	=	1.0,
-		Type	=	Drainable,
-		DisplayName	=	Baby Formula,
-		Icon	=	C06BabyFormula,
-		UseWhileEquipped	=	FALSE,
-		UseDelta	=	0.1,
-		CantBeFrozen = TRUE,
-    }
+item BabyFormula
+{
+Weight = 1.0,
+Type = Drainable,
+DisplayName = Baby Formula,
+Icon = C06BabyFormula,
+UseWhileEquipped = FALSE,
+UseDelta = 0.1,
+CantBeFrozen = TRUE,
+}
 
-    item BabyFood
-    {
-		Weight	=	0.5,
-		HungerChange	=	-15,
-		Type	=	Food,
-		DaysTotallyRotten	=	20,
-		DisplayName	=	Baby Food,
-		Icon	=	C07BabyFood,
-	Carbohydrates = 18,
-	Proteins = 2,
-	Lipids = 1,
-	Calories = 50,
-	Packaged = TRUE,
-    }
+item BabyFood
+{
+Weight = 0.5,
+HungerChange = -15,
+Type = Food,
+DaysTotallyRotten = 20,
+DisplayName = Baby Food,
+Icon = C07BabyFood,
+Carbohydrates = 18,
+Proteins = 2,
+Lipids = 1,
+Calories = 50,
+Packaged = TRUE,
+}
 
-    item BabyFood2
-    {
-		Weight	=	0.5,
-		HungerChange	=	-15,
-		Type	=	Food,
-		DaysTotallyRotten	=	20,
-		DisplayName	=	Baby Food,
-		Icon	=	C07BabyFood2,
-	Carbohydrates = 14,
-	Proteins = 5,
-	Lipids = 3,
-	Calories = 57,
-	Packaged = TRUE,
-    }
+item BabyFood2
+{
+Weight = 0.5,
+HungerChange = -15,
+Type = Food,
+DaysTotallyRotten = 20,
+DisplayName = Baby Food,
+Icon = C07BabyFood2,
+Carbohydrates = 14,
+Proteins = 5,
+Lipids = 3,
+Calories = 57,
+Packaged = TRUE,
+}
 
-    item BabyFood3
-    {
-		Weight	=	0.5,
-		HungerChange	=	-15,
-		Type	=	Food,
-		DaysTotallyRotten	=	20,
-		DisplayName	=	Baby Food,
-		Icon	=	C07BabyFood3,
-	Carbohydrates = 17,
-	Proteins = 3,
-	Lipids = 3,
-	Calories = 55,
-	Packaged = TRUE,
-    }
+item BabyFood3
+{
+Weight = 0.5,
+HungerChange = -15,
+Type = Food,
+DaysTotallyRotten = 20,
+DisplayName = Baby Food,
+Icon = C07BabyFood3,
+Carbohydrates = 17,
+Proteins = 3,
+Lipids = 3,
+Calories = 55,
+Packaged = TRUE,
+}
 
-    item GreenOlives
-    {
-		Weight	=	0.1,
-		HungerChange	=	-7,
-		Type	=	Food,
-		DisplayName	=	Green Olives,
-		Icon	=	D01GreenOlives,
-	Carbohydrates = 0,
-	Proteins = 0,
-	Lipids = 3,
-	Calories = 27,
-    }
+item GreenOlives
+{
+Weight = 0.1,
+HungerChange = -7,
+Type = Food,
+DisplayName = Green Olives,
+Icon = D01GreenOlives,
+Carbohydrates = 0,
+Proteins = 0,
+Lipids = 3,
+Calories = 27,
+}
 
-    item Raisins
-    {
-		Weight	=	0.1,
-		HungerChange	=	-10,
-		UnhappyChange	=	+20,
-		FatigueChange	=	-5,
-		Type	=	Food,
-		DisplayName	=	Raisins,
-		Icon	=	D02Raisins,
-	Carbohydrates = 10,
-	Proteins = 1,
-	Lipids = 0,
-	Calories = 44,
-    }
+item Raisins
+{
+Weight = 0.1,
+HungerChange = -10,
+UnhappyChange = +20,
+FatigueChange = -5,
+Type = Food,
+DisplayName = Raisins,
+Icon = D02Raisins,
+Carbohydrates = 10,
+Proteins = 1,
+Lipids = 0,
+Calories = 44,
+}
 
-    item Almonds
-    {
-		Weight	=	0.1,
-		HungerChange	=	-7,
-		Type	=	Food,
-		DisplayName	=	Almonds,
-		Icon	=	D03Almonds,
-	Carbohydrates = 1,
-	Proteins = 1,
-	Lipids = 2,
-	Calories = 26,
-    }
+item Almonds
+{
+Weight = 0.1,
+HungerChange = -7,
+Type = Food,
+DisplayName = Almonds,
+Icon = D03Almonds,
+Carbohydrates = 1,
+Proteins = 1,
+Lipids = 2,
+Calories = 26,
+}
 
-    item Garlic
-    {
-		Weight	=	0.2,
-		HungerChange	=	-6,
-		UnhappyChange	=	30,
-		ReduceInfectionPower     =   30,
-		Type	=	Food,
-		DisplayName	=	Garlic,
-		Icon	=	D04Garlic,
-		Tooltip = Tooltip_LemonGrass,
-	Carbohydrates = 1,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 4,
-    }
+item Garlic
+{
+Weight = 0.2,
+HungerChange = -6,
+UnhappyChange = 30,
+ReduceInfectionPower = 30,
+Type = Food,
+DisplayName = Garlic,
+Icon = D04Garlic,
+Tooltip = Tooltip_LemonGrass,
+Carbohydrates = 1,
+Proteins = 0,
+Lipids = 0,
+Calories = 4,
+}
 
-    item Vanila
-    {
-		Weight	=	0.1,
-		HungerChange	=	-2,
-		Type	=	Food,
-		DisplayName	=	Vanila,
-		Icon	=	D05Vanila,
-	Carbohydrates = 1,
-	Proteins = 1,
-	Lipids = 0,
-	Calories = 8,
-    }
+item Vanila
+{
+Weight = 0.1,
+HungerChange = -2,
+Type = Food,
+DisplayName = Vanila,
+Icon = D05Vanila,
+Carbohydrates = 1,
+Proteins = 1,
+Lipids = 0,
+Calories = 8,
+}
 
-    item Ginger
-    {
-		Weight	=	0.1,
-		HungerChange	=	-7,
-		EnduranceChange = 2,
-		Type	=	Food,
-		DisplayName	=	Ginger Root,
-		Icon	=	D06GingerRoot,
-		DaysFresh = 30,
-		DaysTotallyRotten	=	60,
-	Carbohydrates = 1,
-	Proteins = 3,
-	Lipids = 0,
-	Calories = 16,
-    }
+item Ginger
+{
+Weight = 0.1,
+HungerChange = -7,
+EnduranceChange = 2,
+Type = Food,
+DisplayName = Ginger Root,
+Icon = D06GingerRoot,
+DaysFresh = 30,
+DaysTotallyRotten = 60,
+Carbohydrates = 1,
+Proteins = 3,
+Lipids = 0,
+Calories = 16,
+}
 
-    item Camomile
-    {
-		Weight	=	0.1,
-		HungerChange	=	-2,
-		UnhappyChange	=	+10,
-		Type	=	Food,
-		DisplayName	=	Camomile,
-		Icon	=	D07Camomile,
-		DaysFresh = 9,
-		DaysTotallyRotten	=	10,
-	Carbohydrates = 1,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 4,
-    }
+item Camomile
+{
+Weight = 0.1,
+HungerChange = -2,
+UnhappyChange = +10,
+Type = Food,
+DisplayName = Camomile,
+Icon = D07Camomile,
+DaysFresh = 9,
+DaysTotallyRotten = 10,
+Carbohydrates = 1,
+Proteins = 0,
+Lipids = 0,
+Calories = 4,
+}
 
-    item Mint
-    {
-		Weight	=	0.1,
-		HungerChange	=	-2,
-		UnhappyChange	=	+10,
-		Type	=	Food,
-		DisplayName	=	Mint,
-		Icon	=	D08Mint,
-		DaysFresh = 9,
-		DaysTotallyRotten	=	10,
-	Carbohydrates = 1,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 4,
-    }
+item Mint
+{
+Weight = 0.1,
+HungerChange = -2,
+UnhappyChange = +10,
+Type = Food,
+DisplayName = Mint,
+Icon = D08Mint,
+DaysFresh = 9,
+DaysTotallyRotten = 10,
+Carbohydrates = 1,
+Proteins = 0,
+Lipids = 0,
+Calories = 4,
+}
 
-    item Aloe
-    {
-		Weight	=	0.1,
-		HungerChange	=	-2,
-		UnhappyChange	=	+25,
-		Type	=	Food,
-		DisplayName	=	Aloe Leaves,
-		Icon	=	D09AloeVera,
-		DaysFresh = 12,
-		DaysTotallyRotten	=	14,
-	Carbohydrates = 1,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 4,
-    }
+item Aloe
+{
+Weight = 0.1,
+HungerChange = -2,
+UnhappyChange = +25,
+Type = Food,
+DisplayName = Aloe Leaves,
+Icon = D09AloeVera,
+DaysFresh = 12,
+DaysTotallyRotten = 14,
+Carbohydrates = 1,
+Proteins = 0,
+Lipids = 0,
+Calories = 4,
+}
 
-    item AloeCataplasm
-    {
-		Weight	=	0.2,
-		HungerChange	=	-4,
-		UnhappyChange	=	+10,
-		ReduceInfectionPower     =   5,
-		Type	=	Food,
-		DisplayName	=	Aloe Poultice,
-		Icon	=	MashedHerbs,
-		Tooltip = Tooltip_Antibiotics,
-		DaysFresh = 2,
-		DaysTotallyRotten	=	3,
-	Carbohydrates = 1,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 4,
-    }
+item AloeCataplasm
+{
+Weight = 0.2,
+HungerChange = -4,
+UnhappyChange = +10,
+ReduceInfectionPower = 5,
+Type = Food,
+DisplayName = Aloe Poultice,
+Icon = MashedHerbs,
+Tooltip = Tooltip_Antibiotics,
+DaysFresh = 2,
+DaysTotallyRotten = 3,
+Carbohydrates = 1,
+Proteins = 0,
+Lipids = 0,
+Calories = 4,
+}
 
-    item Lavender
-    {
-		Weight	=	0.1,
-		HungerChange	=	-2,
-		UnhappyChange	=	+10,
-		Type	=	Food,
-		DisplayName	=	Lavender,
-		Icon	=	D10Lavender,
-		DaysFresh = 9,
-		DaysTotallyRotten	=	20,
-	Carbohydrates = 1,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 4,
-    }
+item Lavender
+{
+Weight = 0.1,
+HungerChange = -2,
+UnhappyChange = +10,
+Type = Food,
+DisplayName = Lavender,
+Icon = D10Lavender,
+DaysFresh = 9,
+DaysTotallyRotten = 20,
+Carbohydrates = 1,
+Proteins = 0,
+Lipids = 0,
+Calories = 4,
+}
 
-    item Lime
-    {
-		Weight	=	0.2,
-		HungerChange	=	-10,
-		ThirstChange	=	-5,
-		Type	=	Food,
-		FoodType    =   Fruits,
-		DisplayName	=	Lime,
-		Icon	=	E01Lime,
-		DaysFresh = 7,
-		DaysTotallyRotten	=	9,
-	Carbohydrates = 3.90,
-	Proteins = 0.58,
-	Lipids = 0.41,
-	Calories = 18,
-    }
+item Lime
+{
+Weight = 0.2,
+HungerChange = -10,
+ThirstChange = -5,
+Type = Food,
+FoodType = Fruits,
+DisplayName = Lime,
+Icon = E01Lime,
+DaysFresh = 7,
+DaysTotallyRotten = 9,
+Carbohydrates = 3.90,
+Proteins = 0.58,
+Lipids = 0.41,
+Calories = 18,
+}
 
-    item EnergyBar
-    {
-		Weight	=	0.2,
-		HungerChange	=	-15,
-		UnhappyChange	=	-5,
-		Type	=	Food,
-		DisplayName	=	Energy Bar,
-		Icon	=	C08EnergyBar,
-	Carbohydrates = 70,
-	Proteins = 5,
-	Lipids = 10,
-	Calories = 350,
-	Packaged = TRUE,
+item EnergyBar
+{
+Weight = 0.2,
+HungerChange = -15,
+UnhappyChange = -5,
+Type = Food,
+DisplayName = Energy Bar,
+Icon = C08EnergyBar,
+Carbohydrates = 70,
+Proteins = 5,
+Lipids = 10,
+Calories = 350,
+Packaged = TRUE,
 
-    }
+}
 
-    item ProteinBar
-    {
-		Weight	=	0.2,
-		HungerChange	=	-15,
-		UnhappyChange	=	-5,
-		Type	=	Food,
-		DisplayName	=	Protein Bar,
-		Icon	=	C09ProteinBar,
-	Carbohydrates = 51,
-	Proteins = 25,
-	Lipids = 13,
-	Calories = 414,
-	Packaged = TRUE,
+item ProteinBar
+{
+Weight = 0.2,
+HungerChange = -15,
+UnhappyChange = -5,
+Type = Food,
+DisplayName = Protein Bar,
+Icon = C09ProteinBar,
+Carbohydrates = 51,
+Proteins = 25,
+Lipids = 13,
+Calories = 414,
+Packaged = TRUE,
 
-    }
+}
 
-    item MintGum
-    {
-		Weight	=	0.1,
-		HungerChange	=	-18,
-		UnhappyChange	=	-8,
-		ThirstChange    =   12,
-		Type	=	Food,
-		RequireInHandOrInventory	=	ButterKnife,
-		OnEat = OnEat_Cigarettes,
-		StressChange	=	-15,
-		DisplayName	=	Mint Gum,
-		Icon	=	C10MintGum,
-		CustomEatSound = RS_ChewingGum,
-    }
+item MintGum
+{
+Weight = 0.1,
+HungerChange = -18,
+UnhappyChange = -8,
+ThirstChange = 12,
+Type = Food,
+RequireInHandOrInventory = ButterKnife,
+OnEat = OnEat_Cigarettes,
+StressChange = -15,
+DisplayName = Mint Gum,
+Icon = C10MintGum,
+CustomEatSound = RS_ChewingGum,
+}
 
-    item BubbleGum
-    {
-		Weight	=	0.2,
-		HungerChange	=	-20,        
-		ThirstChange    =   12,
-		UnhappyChange	=	-10,
-		StressChange	=	-20,
-	    PoisonPower = 5,
-		Type	=	Food,
-		DisplayName	=	Bubble Gum,
-		Icon	=	C11BubbleGum,
-		CustomEatSound = RS_ChewingGum,
-    }
+item BubbleGum
+{
+Weight = 0.2,
+HungerChange = -20,
+ThirstChange = 12,
+UnhappyChange = -10,
+StressChange = -20,
+PoisonPower = 5,
+Type = Food,
+DisplayName = Bubble Gum,
+Icon = C11BubbleGum,
+CustomEatSound = RS_ChewingGum,
+}
 
-    item CandyBox
-    {
-		Weight	=	0.1,
-		HungerChange	=	-6,
-		UnhappyChange	=	-10,
-		Type	=	Food,
-		DisplayName	=	Candy Box,
-		Icon	=	C12CandyBox,
-	Carbohydrates = 12,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 50,
-	Packaged = TRUE,
-    }
+item CandyBox
+{
+Weight = 0.1,
+HungerChange = -6,
+UnhappyChange = -10,
+Type = Food,
+DisplayName = Candy Box,
+Icon = C12CandyBox,
+Carbohydrates = 12,
+Proteins = 0,
+Lipids = 0,
+Calories = 50,
+Packaged = TRUE,
+}
 
-    item PackageCandy
-    {
-		Weight	=	0.1,
-		HungerChange	=	-5,
-		UnhappyChange	=	-10,
-		Type	=	Food,
-		DisplayName	=	Package Candy,
-		Icon	=	C13PackageCandy,
-	Carbohydrates = 15,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 60,
-    }
+item PackageCandy
+{
+Weight = 0.1,
+HungerChange = -5,
+UnhappyChange = -10,
+Type = Food,
+DisplayName = Package Candy,
+Icon = C13PackageCandy,
+Carbohydrates = 15,
+Proteins = 0,
+Lipids = 0,
+Calories = 60,
+}
 
-    item ChocolateBox
-    {
-		Weight	=	0.2,
-		HungerChange	=	-15,
-		UnhappyChange	=	-10,
-		Type	=	Food,
-		DisplayName	=	Peanut Chocolate Box,
-		Icon	=	C14ChocolateBox,
-	Carbohydrates = 80,
-	Proteins = 4,
-	Lipids = 20,
-	Calories = 366,
-	Packaged = TRUE,
-    }
+item ChocolateBox
+{
+Weight = 0.2,
+HungerChange = -15,
+UnhappyChange = -10,
+Type = Food,
+DisplayName = Peanut Chocolate Box,
+Icon = C14ChocolateBox,
+Carbohydrates = 80,
+Proteins = 4,
+Lipids = 20,
+Calories = 366,
+Packaged = TRUE,
+}
 
-    item ChocolatePackage
-    {
-		Weight	=	0.2,
-		HungerChange	=	-15,
-		UnhappyChange	=	-12,
-		Type	=	Food,
-		DisplayName	=	Colorful Chocolates,
-		Icon	=	C15ChocolatePackage,
-	Carbohydrates = 30,
-	Proteins = 2,
-	Lipids = 10,
-	Calories = 240,
-	Packaged = TRUE,
-    } 
+item ChocolatePackage
+{
+Weight = 0.2,
+HungerChange = -15,
+UnhappyChange = -12,
+Type = Food,
+DisplayName = Colorful Chocolates,
+Icon = C15ChocolatePackage,
+Carbohydrates = 30,
+Proteins = 2,
+Lipids = 10,
+Calories = 240,
+Packaged = TRUE,
+}
 
-    item MediumMREPackage
-    {
-		Weight	=	0.5,
-		HungerChange	=	-25,
-		Type	=	Food,
-		DisplayName	=	Medium MRE Package,
-		Icon	=	MI01MediumMREPackage,
-	Carbohydrates = 32,
-	Proteins = 7,
-	Lipids = 4.7,
-	Calories = 198,
-	Packaged = TRUE,
-    }
+item MediumMREPackage
+{
+Weight = 0.5,
+HungerChange = -25,
+Type = Food,
+DisplayName = Medium MRE Package,
+Icon = MI01MediumMREPackage,
+Carbohydrates = 32,
+Proteins = 7,
+Lipids = 4.7,
+Calories = 198,
+Packaged = TRUE,
+}
 
-    item MREPackage
-    {
-		Weight	=	0.9,
-		HungerChange	=	-40,
-		Type	=	Food,
-		DisplayName	=	MRE Package,
-		Icon	=	MI02MREPackage,
-	Carbohydrates = 25,
-	Proteins = 20,
-	Lipids = 10.35,
-	Calories = 310,
-	Packaged = TRUE,
-    }
+item MREPackage
+{
+Weight = 0.9,
+HungerChange = -40,
+Type = Food,
+DisplayName = MRE Package,
+Icon = MI02MREPackage,
+Carbohydrates = 25,
+Proteins = 20,
+Lipids = 10.35,
+Calories = 310,
+Packaged = TRUE,
+}
 
-    item MREBox
-    {
-		Weight	=	1.5,
-		Type	=	Normal,
-		DisplayName	=	Medium MRE Box,
-		Icon	=	MI03MREBox,
-    }
+item MREBox
+{
+Weight = 1.5,
+Type = Normal,
+DisplayName = Medium MRE Box,
+Icon = MI03MREBox,
+}
 
-    item MREBox2
-    {
-		Weight	=	3.5,
-		Type	=	Normal,
-		DisplayName	=	MRE Box,
-		Icon	=	MI03MREBox,
-    }
+item MREBox2
+{
+Weight = 3.5,
+Type = Normal,
+DisplayName = MRE Box,
+Icon = MI03MREBox,
+}
 
-    item ColdMilkCuppa
-    {
-		Weight	=	1,
-		HungerChange	=	-7,
-		ThirstChange	=	-50,
-		UnhappyChange	=	+5,
-		Type	=	Food,
-		DisplayName	=	Cold Milk Cuppa,
-		Icon	=	C16ColdMilkCuppa,
-		ReplaceOnUse	=	Mugl,
-		CustomContextMenu = Drink,
-		CustomEatSound = RS_Slurping,
-		DaysFresh 			=		4,
-		DaysTotallyRotten 	=	 	7,
-	Carbohydrates = 3,
-	Proteins = 0.5,
-	Lipids = 1,
-	Calories = 10,
-	CantBeFrozen = TRUE,
-    }
+item FilledSmallTupperware
+{
+Weight = 1,
+HungerChange = -15,
+Type = Food,
+DisplayName = Filled Small Tupperware,
+Icon = K21SmallTupperwareFilled,
+ReplaceOnUse = RS.EmptySmallTuperware,
+Type = Food,
+MinutesToCook = 15,
+MinutesToBurn = 25,
+GoodHot = true,
+BadCold = true,
+DaysFresh = 10,
+DaysTotallyRotten = 12,
+Carbohydrates = 70.24,
+Proteins = 20.19,
+Lipids = 10.97,
+Calories = 457,
+}
 
-    item HotMilkCuppa
-    {
-		Weight	=	1,
-		HungerChange	=	-7,
-		ThirstChange	=	-50,
-		UnhappyChange	=	-5,
-		StressChange	=	-10,
-		Type	=	Food,
-		DisplayName	=	Hot Milk Cuppa,
-		Icon	=	C16HotMilkCuppa,
-		ReplaceOnUse	=	Mugl,
-		CustomContextMenu = Drink,
-		CustomEatSound = RS_Slurping,
-		DaysFresh 			=		4,
-		DaysTotallyRotten 	=	 	7,
-	Carbohydrates = 3,
-	Proteins = 0.5,
-	Lipids = 1,
-	Calories = 10,
-	CantBeFrozen = TRUE,
-    }
+item FilledMediumTupperware
+{
+Weight = 1,
+HungerChange = -30,
+Type = Food,
+DisplayName = Filled Tupperware,
+Icon = K23MediumTupperwareFilled,
+ReplaceOnUse = RS.EmptyMediumTuperware,
+Type = Food,
+MinutesToCook = 15,
+MinutesToBurn = 25,
+GoodHot = true,
+BadCold = true,
+DaysFresh = 10,
+DaysTotallyRotten = 12,
+Carbohydrates = 92.75,
+Proteins = 35.62,
+Lipids = 26.04,
+Calories = 845,
+}
 
-    item HotCamomileCuppa
-    {
-		Weight	=	1,
-		HungerChange	=	-5,
-		ThirstChange	=	-50,
-		UnhappyChange	=	-10,
-		StressChange		= -10,
-		PainReduction	= 	10,
-		Type	=	Food,
-		DisplayName	=	Hot Camomile Tea,
-		Icon	=	C17HotTeaCuppa,
-		ReplaceOnUse	=	Mugl,
-		CustomContextMenu = Drink,
-		CustomEatSound = RS_Slurping,
-		Tooltip 	= Tooltip_BlackSage,
-	Carbohydrates = 2,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 5,
-	CantBeFrozen = TRUE,
-    }
+item Cream
+{
+Weight = 0.4,
+HungerChange = -10,
+ThirstChange = -20,
+Type = Food,
+DisplayName = Cream,
+Icon = C18Cream,
+DaysFresh = 4,
+DaysTotallyRotten = 7,
+Carbohydrates = 15,
+Proteins = 3.2,
+Lipids = 5,
+Calories = 160,
+CantBeFrozen = TRUE,
+}
 
-    item HotMintCuppa
-    {
-		Weight	=	1,
-		HungerChange	=	-5,
-		ThirstChange	=	-50,
-		UnhappyChange	=	-10,
-		StressChange		= -10,
-		ReduceFoodSickness = 20,
-		Type	=	Food,
-		DisplayName	=	Hot Mint Tea,
-		Icon	=	C17HotTeaCuppa,
-		ReplaceOnUse	=	Mugl,
-		CustomContextMenu = Drink,
-		CustomEatSound = RS_Slurping,
-		Tooltip = Tooltip_LemonGrass,
-	Carbohydrates = 2,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 5,
-	CantBeFrozen = TRUE,
-    }
+item CherriesJar
+{
+Weight = 0.5,
+HungerChange = -60,
+UnhappyChange = -20,
+Type = Food,
+DisplayName = Jar of Cherries,
+Icon = C19CherriesJar,
+Carbohydrates = 293,
+Proteins = 5.1,
+Lipids = 1.9,
+Calories = 820,
+Packaged = TRUE,
+CantBeFrozen = TRUE,
+}
 
-    item HotGingerCuppa
-    {
-		Weight	=	1,
-		HungerChange	=	-7,
-		ThirstChange	=	-50,
-		UnhappyChange	=	-5,
-		StressChange	=	-5,
-		FatigueChange		= -5,
-		EnduranceChange	= 6,
-		Type	=	Food,
-		DisplayName	=	Hot Ginger Tea,
-		Icon	=	C17HotTeaCuppa,
-		ReplaceOnUse	=	Mugl,
-		CustomContextMenu = Drink,
-		CustomEatSound = RS_Slurping,
-		Tooltip 	= Tooltip_Ginseng,
-	Carbohydrates = 2,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 5,
-	CantBeFrozen = TRUE,
-    }
-
-    item HotLavenderCuppa
-    {
-		Weight	=	1,
-		HungerChange	=	-5,
-		ThirstChange	=	-50,
-		UnhappyChange	=	-10,
-		StressChange	=	-15,
-		EnduranceChange	= 2,
-		PainReduction	= 	5,
-		Type	=	Food,
-		DisplayName	=	Hot Lavender Tea,
-		Icon	=	C17HotTeaCuppa,
-		ReplaceOnUse	=	Mugl,
-		CustomContextMenu = Drink,
-		CustomEatSound = RS_Slurping,
-		Tooltip 	= Tooltip_BlackSage,
-	Carbohydrates = 2,
-	Proteins = 0,
-	Lipids = 0,
-	Calories = 5,
-	CantBeFrozen = TRUE,
-    }
-
-    item FilledSmallTupperware
-    {
-		Weight	=	1,
-		HungerChange	=	-15,
-		Type	=	Food,
-		DisplayName	=	Filled Small Tupperware,
-		Icon	=	K21SmallTupperwareFilled,
-		ReplaceOnUse	=	RS.EmptySmallTuperware,
-		Type	=	Food,
-        	MinutesToCook	=	15,
-	        MinutesToBurn	=	25,
-        	GoodHot = true,
-        	BadCold = true,
-	        DaysFresh	=	10,
-	        DaysTotallyRotten	=	12,
-	Carbohydrates = 70.24,
-	Proteins = 20.19,
-	Lipids = 10.97,
-	Calories = 457,
-    }
-
-    item FilledMediumTupperware
-    {
-		Weight	=	1,
-		HungerChange	=	-30,
-		Type	=	Food,
-		DisplayName	=	Filled Tupperware,
-		Icon	=	K23MediumTupperwareFilled,
-		ReplaceOnUse	=	RS.EmptyMediumTuperware,
-		Type	=	Food,
-        	MinutesToCook	=	15,
-	        MinutesToBurn	=	25,
-        	GoodHot = true,
-        	BadCold = true,
-	        DaysFresh	=	10,
-	        DaysTotallyRotten	=	12,
-	Carbohydrates = 92.75,
-	Proteins = 35.62,
-	Lipids = 26.04,
-	Calories = 845,
-    }
-
-
-    item Cream
-    {
-		Weight	=	0.4,
-		HungerChange	=	-10,
-		ThirstChange	=	-20,
-		Type	=	Food,
-		DisplayName	=	Cream,
-		Icon	=	C18Cream,
-		DaysFresh = 4,
-		DaysTotallyRotten	=	7,
-	Carbohydrates = 15,
-	Proteins = 3.2,
-	Lipids = 5,
-	Calories = 160,
-  	CantBeFrozen = TRUE,
-    }
-
-    item CherriesJar
-    {
-		Weight	=	0.5,
-		HungerChange	=	-60,
-		UnhappyChange	=	-20,
-		Type	=	Food,
-		DisplayName	=	Jar of Cherries,
-		Icon	=	C19CherriesJar,
-	Carbohydrates = 293,
-	Proteins = 5.1,
-	Lipids = 1.9,
-	Calories = 820,
-	Packaged = TRUE,
-  	CantBeFrozen = TRUE,
-    }
-
-    item Pepperoni
-    {
-		Weight	=	0.3,
-		HungerChange	=	-20,
-		ThirstChange	=	10,
-		Type	=	Food,
-		DisplayName	=	Pepperoni,
-		Icon	=	C20Pepperoni,
-	Carbohydrates = 5.2,
-	Proteins = 16.9,
-	Lipids = 22.56,
-	Calories = 349.21,
-  	CantBeFrozen = TRUE,
-    }
+item Pepperoni
+{
+Weight = 0.3,
+HungerChange = -20,
+ThirstChange = 10,
+Type = Food,
+DisplayName = Pepperoni,
+Icon = C20Pepperoni,
+Carbohydrates = 5.2,
+Proteins = 16.9,
+Lipids = 22.56,
+Calories = 349.21,
+CantBeFrozen = TRUE,
+}
 
 }
