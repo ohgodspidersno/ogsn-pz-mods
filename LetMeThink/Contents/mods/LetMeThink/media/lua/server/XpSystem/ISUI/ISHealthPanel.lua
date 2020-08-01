@@ -128,6 +128,9 @@ function ISHealthPanel:setVisible(visible)
 end
 
 function ISHealthPanel:onBodyPartListRightMouseUp(x, y)
+  if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+    if not getDebug() then return end
+  end
 
   local row = self:rowAt(x, y)
   if row < 1 or row > #self.items then return end
@@ -825,7 +828,7 @@ function HealthPanelAction:perform()
   --    print(self.handler.Type .. "["..tostring(self.handler).. "].perform()")
   self.handler:perform(self, self.args[1], self.args[2], self.args[3], self.args[4], self.args[5], self.args[6], self.args[7], self.args[8])
 
-  -- needed to remove from queue / start next.
+  -- needed to remove from cue / start next.
   ISBaseTimedAction.perform(self)
 end
 
