@@ -329,6 +329,9 @@ local function onJoypadReload(buttonPrompt)
 end
 
 function ISFirearmRadialMenu.getBestRBButtonAction(buttonPrompt)
+  if JoypadState.disableReload then
+    return false;
+  end
   local playerObj = getSpecificPlayer(buttonPrompt.player)
   if playerObj:isAiming() or playerObj:isLookingWhileInVehicle() then return false end
   local queue = ISTimedActionQueue.queues[playerObj]

@@ -1266,9 +1266,6 @@ function ISVehicleMechanics:setVisible(bVisible, joypadData)
 
   self:setEnabled(bVisible);
 
-  if self.vehicle then
-    GameKeyboard.setDoLuaKeyPressed(not bVisible);
-  end
   self.javaObject:setVisible(bVisible);
   if self.visibleTarget and self.visibleFunction then
     self.visibleFunction(self.visibleTarget, self);
@@ -1412,21 +1409,24 @@ function ISVehicleMechanics:new(x, y, character, vehicle)
   o.flashTimer = 0;
   o.flashTimerAlpha = 1;
   o.flashTimerAlphaInc = false;
+  o:setWantKeyEvents(true)
   return o
 end
 
-ISVehicleMechanics.onPressKey = function(key)
-  local ui = getPlayerMechanicsUI(0);
-  if not ui or not ui:isReallyVisible() then return; end
+function ISVehicleMechanics:isKeyConsumed(key)
+  return true
+end
+
+function ISVehicleMechanics:onKeyRelease(key)
   if key == Keyboard.KEY_ESCAPE then
-    if isPlayerDoingActionThatCanBeCancelled(ui.chr) then
-      ui.chr:StopAllActionQueue();
+    if isPlayerDoingActionThatCanBeCancelled(self.chr) then
+      self.chr:StopAllActionQueue();
     else
-      ui:close()
+      self:close()
     end
   end
   if key == getCore():getKey("VehicleMechanics") then
-    ui:close();
+    self:close();
   end
   SpeedControlsHandler.onKeyPressed(key);
 end
@@ -1456,5 +1456,4 @@ ISVehicleMechanics.OnMechanicActionDone = function(chr, success, vehicleId, part
   end
 end
 
-Events.OnCustomUIKey.Add(ISVehicleMechanics.onPressKey);
 Events.OnMechanicActionDone.Add(ISVehicleMechanics.OnMechanicActionDone);

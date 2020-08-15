@@ -197,10 +197,12 @@ function ISButtonPrompt:openWindow(window)
   local player = getSpecificPlayer(self.player);
   player:openWindow(window);
 end
+
 function ISButtonPrompt:closeWindow(window)
   local player = getSpecificPlayer(self.player);
-  window:ToggleWindow(player);
+  player:closeWindow(window);
 end
+
 function ISButtonPrompt:openDoor(door)
   local player = getSpecificPlayer(self.player);
   door:ToggleDoor(player);
@@ -603,51 +605,50 @@ end
 
 function ISButtonPrompt:testBButtonAction(dir)
 
+  if self.bPrompt then return end
+
   local playerObj = getSpecificPlayer(self.player)
-  local square1 = playerObj:getCurrentSquare()
-  local square2 = square1:getAdjacentSquare(dir)
-  if square2 == nil then return end
 
-  if self.bPrompt == nil then
-    local win = square1:getWindowTo(square2);
-    if win ~= nil and (square1:getX() == square2:getX() or square1:getY() == square2:getY()) then
-      if win:canClimbThrough(playerObj) then
-        self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, win);
-      else
-        local barricade = win:getBarricadeForCharacter(playerObj)
-        if not win:IsOpen() and not win:isSmashed() and not barricade then
-          self:setBPrompt(getText("ContextMenu_Smash_window"), ISButtonPrompt.smashWindow, win);
-        end
+  local obj = playerObj:getContextDoorOrWindowOrWindowFrame(dir)
+
+  if instanceof(obj, "IsoWindow") then
+    if obj:canClimbThrough(playerObj) and not playerObj:isIgnoreContextKey() then
+      self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, obj)
+      return
+    else
+      local barricade = obj:getBarricadeForCharacter(playerObj)
+      if not obj:IsOpen() and not obj:isSmashed() and not barricade and not JoypadState.disableSmashWindow then
+        self:setBPrompt(getText("ContextMenu_Smash_window"), ISButtonPrompt.smashWindow, obj)
+        return
       end
     end
   end
 
-  if self.bPrompt == nil then
-    if square1:getWindowThumpableTo(square2) then
-      local thump = square1:getWindowThumpableTo(square2)
-      if thump:isWindow() and thump:canClimbThrough(playerObj) then
-        self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, thump)
-      elseif thump:isHoppable() and thump:canClimbOver(playerObj) then
-        self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, thump)
-      end
+  if instanceof(obj, "IsoThumpable") then
+    if obj:isWindow() and obj:canClimbThrough(playerObj) and not playerObj:isIgnoreContextKey() then
+      self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, obj)
+      return
+    elseif obj:isHoppable() and obj:canClimbOver(playerObj) and not playerObj:isIgnoreContextKey() then
+      self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, obj)
+      return
     end
   end
 
-  if self.bPrompt == nil then
-    if square1:getWindowFrameTo(square2) then
-      local wf = square1:getWindowFrameTo(square2)
-      if IsoWindowFrame.canClimbThrough(wf, playerObj) then
-        self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, wf)
-      end
+  if IsoWindowFrame.isWindowFrame(obj) then
+    if IsoWindowFrame.canClimbThrough(obj, playerObj) and not playerObj:isIgnoreContextKey() then
+      self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, obj)
+      return
     end
   end
 
-  if self.bPrompt == nil and playerObj:hopFence(dir, true) then
+  if playerObj:hopFence(dir, true) and not playerObj:isIgnoreContextKey() and not JoypadState.disableClimbOver then
     self:setBPrompt(getText("ContextMenu_Climb_over"), ISButtonPrompt.climbFence);
+    return
   end
 
-  if self.bPrompt == nil and playerObj:canClimbOverWall(dir) then
+  if playerObj:canClimbOverWall(dir) and not playerObj:isIgnoreContextKey() and not JoypadState.disableClimbOver then
     self:setBPrompt(getText("ContextMenu_Climb_over"), ISButtonPrompt.climbOverWall, dir)
+    return
   end
 end
 
@@ -657,17 +658,17 @@ function ISButtonPrompt:doBButtonDoorOrWindowOrWindowFrame(dir, obj)
   local square1 = playerObj:getCurrentSquare()
   local square2 = square1:getAdjacentSquare(dir)
 
-  if instanceof(obj, "IsoWindow") and obj:canClimbThrough(playerObj) then
+  if instanceof(obj, "IsoWindow") and obj:canClimbThrough(playerObj) and not playerObj:isIgnoreContextKey() then
     self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, obj)
     return
   end
 
-  if instanceof(obj, "IsoThumpable") and obj:isWindow() and obj:canClimbThrough(playerObj) then
+  if instanceof(obj, "IsoThumpable") and obj:isWindow() and obj:canClimbThrough(playerObj) and not playerObj:isIgnoreContextKey() then
     self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, obj)
     return
   end
 
-  if IsoWindowFrame.isWindowFrame(obj) and IsoWindowFrame.canClimbThrough(obj, playerObj) then
+  if IsoWindowFrame.isWindowFrame(obj) and IsoWindowFrame.canClimbThrough(obj, playerObj) and not playerObj:isIgnoreContextKey() then
     self:setBPrompt(getText("ContextMenu_Climb_through"), ISButtonPrompt.climbInWindow, obj)
     return
   end

@@ -210,7 +210,7 @@ ISWorldObjectContextMenu.fetch = function(v, player, doSquare)
     canClimbThrough = true;
   end
   local rod = ISWorldObjectContextMenu.getFishingRode(playerObj)
-  if instanceof(v, "IsoObject") and v:getSprite() and v:getSprite():getProperties() and v:getSprite():getProperties():Is(IsoFlagType.water) and v:getSquare():DistToProper(playerObj:getSquare()) < 10 then
+  if instanceof(v, "IsoObject") and v:getSprite() and v:getSprite():getProperties() and v:getSprite():getProperties():Is(IsoFlagType.water) and v:getSquare():DistToProper(playerObj:getSquare()) < 10 and (not playerObj:isSitOnGround()) then
     canFish = true;
   end
   local hasCuttingTool = playerInv:containsEvalRecurse(predicateCuttingTool)
@@ -677,7 +677,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   end
 
   -- sleep into a bed
-  if bed and not ISWorldObjectContextMenu.isSomethingTo(bed, player) then
+  if (bed and not ISWorldObjectContextMenu.isSomethingTo(bed, player)) or playerObj:getStats():getFatigue() > 0.90 then
     if not isClient() or getServerOptions():getBoolean("SleepAllowed") then
       if test == true then return true; end
       ISWorldObjectContextMenu.doSleepOption(context, bed, player, playerObj);
@@ -2016,15 +2016,19 @@ function ISWorldObjectContextMenu.onConfirmSleep(this, button, player, bed)
   if button.internal == "YES" then
     local playerObj = getSpecificPlayer(player)
     ISTimedActionQueue.clear(playerObj)
-    if AdjacentFreeTileFinder.isTileOrAdjacent(playerObj:getCurrentSquare(), bed:getSquare()) then
-      ISWorldObjectContextMenu.onSleepWalkToComplete(player, bed)
-    else
-      local adjacent = AdjacentFreeTileFinder.Find(bed:getSquare(), playerObj)
-      if adjacent ~= nil then
-        local action = ISWalkToTimedAction:new(playerObj, adjacent)
-        action:setOnComplete(ISWorldObjectContextMenu.onSleepWalkToComplete, player, bed)
-        ISTimedActionQueue.add(action)
+    if bed then
+      if AdjacentFreeTileFinder.isTileOrAdjacent(playerObj:getCurrentSquare(), bed:getSquare()) then
+        ISWorldObjectContextMenu.onSleepWalkToComplete(player, bed)
+      else
+        local adjacent = AdjacentFreeTileFinder.Find(bed:getSquare(), playerObj)
+        if adjacent ~= nil then
+          local action = ISWalkToTimedAction:new(playerObj, adjacent)
+          action:setOnComplete(ISWorldObjectContextMenu.onSleepWalkToComplete, player, bed)
+          ISTimedActionQueue.add(action)
+        end
       end
+    else
+      ISWorldObjectContextMenu.onSleepWalkToComplete(player, bed)
     end
   end
 end
@@ -2035,6 +2039,8 @@ function ISWorldObjectContextMenu.onSleepWalkToComplete(player, bed)
   local bedType = "badBed";
   if bed then
     bedType = bed:getProperties():Val("BedType") or "averageBed";
+  else
+    bedType = "floor";
   end
   if isClient() and getServerOptions():getBoolean("SleepAllowed") then
     playerObj:setAsleepTime(0.0)
@@ -2053,6 +2059,9 @@ function ISWorldObjectContextMenu.onSleepWalkToComplete(player, bed)
   end
   if bedType == "badBed" then
     sleepFor = sleepFor + 1;
+  end
+  if bedType == "floor" then
+    sleepFor = sleepFor * 0.7;
   end
   if playerObj:HasTrait("Insomniac") then
     sleepFor = sleepFor * 0.5;
@@ -3300,17 +3309,19 @@ ISWorldObjectContextMenu.doSleepOption = function(context, bed, player, playerOb
     tooltip.description = getText("IGUI_Sleep_NotTiredEnough");
     sleepOption.toolTip = tooltip;
     --Player outside.
-  elseif (playerObj:isOutside()) and RainManager:isRaining() then
-    local square = getCell():getGridSquare(bed:getX(), bed:getY(), bed:getZ() + 1);
-    if square == nil or square:getFloor() == nil then
-      if bed:getName() ~= "Tent" then
-        sleepOption.notAvailable = true;
-        local tooltip = ISWorldObjectContextMenu.addToolTip();
-        tooltip:setName(getText("ContextMenu_Sleeping"));
-        tooltip.description = getText("IGUI_Sleep_OutsideRain");
-        sleepOption.toolTip = tooltip;
-      end
-    end
+    --[[
+    elseif bed and (playerObj:isOutside()) and RainManager:isRaining() then
+        local square = getCell():getGridSquare(bed:getX(), bed:getY(), bed:getZ() + 1);
+        if square == nil or square:getFloor() == nil then
+            if bed:getName() ~= "Tent" then
+                sleepOption.notAvailable = true;
+                local tooltip = ISWorldObjectContextMenu.addToolTip();
+                tooltip:setName(getText("ContextMenu_Sleeping"));
+                tooltip.description = getText("IGUI_Sleep_OutsideRain");
+                sleepOption.toolTip = tooltip;
+            end
+        end
+--]]
   end
 
   -- Sleeping pills counter those sleeping problems

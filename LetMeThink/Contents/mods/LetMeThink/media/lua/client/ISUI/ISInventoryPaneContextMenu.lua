@@ -275,7 +275,8 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
 
   if(isInPlayerInventory and loot.inventory ~= nil and loot.inventory:getType() ~= "floor" ) and playerObj:getJoypadBind() == -1 then
     if ISInventoryPaneContextMenu.isAnyAllowed(loot.inventory, items) and not ISInventoryPaneContextMenu.isAllFav(items) then
-      context:addOption(getText("ContextMenu_Put_in_Container"), items, ISInventoryPaneContextMenu.onPutItems, player);
+      local label = loot.title and getText("ContextMenu_PutInContainer", loot.title) or getText("ContextMenu_Put_in_Container")
+      context:addOption(label, items, ISInventoryPaneContextMenu.onPutItems, player);
     end
   end
 
@@ -1804,6 +1805,9 @@ ISInventoryPaneContextMenu.onCheckMap = function(map, player)
   --    mapUI:addToUIManager();
   local wrap = mapUI:wrapInCollapsableWindow(map:getName(), false);
   wrap:setInfo(getText("IGUI_Map_Info"));
+  wrap:setWantKeyEvents(true);
+  wrap.isKeyConsumed = function(self, key) return self.mapUI:isKeyConsumed(key) end;
+  wrap.onKeyRelease = function(self, key) self.mapUI:onKeyRelease(key) end;
   mapUI.wrap = wrap;
   wrap.render = ISMap.renderWrap;
   wrap.prerender = ISMap.prerenderWrap;

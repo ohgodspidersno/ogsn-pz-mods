@@ -176,6 +176,9 @@ function ISVehicleMenu.showRadialMenu(playerObj)
     if playerObj:getStats():getFatigue() <= 0.3 then
       menu:addSlice(getText("IGUI_Sleep_NotTiredEnough"), getTexture("media/ui/vehicles/vehicle_sleep.png"), nil, playerObj, vehicle)
       doSleep = false;
+    elseif vehicle:getCurrentSpeedKmHour() > 1 or vehicle:getCurrentSpeedKmHour() < - 1 then
+      menu:addSlice(getText("IGUI_PlayerText_CanNotSleepInMovingCar"), getTexture("media/ui/vehicles/vehicle_sleep.png"), nil, playerObj, vehicle)
+      doSleep = false;
     else
       -- Sleeping pills counter those sleeping problems
       if playerObj:getSleepingTabletEffect() < 2000 then
@@ -693,6 +696,10 @@ function ISVehicleMenu.onInfo(playerObj, vehicle)
 end
 
 function ISVehicleMenu.onSleep(playerObj, vehicle)
+  if vehicle:getCurrentSpeedKmHour() > 1 or vehicle:getCurrentSpeedKmHour() < - 1 then
+    playerObj:Say(getText("IGUI_PlayerText_CanNotSleepInMovingCar"))
+    return;
+  end
   local playerNum = playerObj:getPlayerNum()
   local modal = ISModalDialog:new(0, 0, 250, 150, getText("IGUI_ConfirmSleep"), true, nil, ISVehicleMenu.onConfirmSleep, playerNum, playerNum, nil);
   modal:initialise()
