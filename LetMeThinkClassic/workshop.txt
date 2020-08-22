@@ -1,0 +1,36 @@
+version=1
+id=2033451936
+title=Let Me Think - Open Menus and Queue Tasks While Paused [v38,v39,v40]
+description=[h1]Legacy Support for Older Versions of the Game[/h1]
+description=This contains three sub-mods that support older versions of the game. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2033451936]Click here for the IWBUMS version[/url].
+description=[h1]Description[/h1]
+description=Project Zomboid isn't a fast-paced shooter or a precision platformer. You should be allowed some time to open menus and queue up tasks for your character while the game is paused.
+description=
+description=This mod makes it so that most right-click context menus now work even when the game is paused.
+description=
+description=[h1]Important - What This Mod Does, and What It Doesn't Do[/h1]
+description=To clarify, this does not let your character actually [i]do[/i] anything while the game is paused. It just lets you add tasks to the queue. Your character won't actually start doing them until you unpause.
+description=
+description=Like in [i]The Sims[/i], or [i]Rimworld[/i]
+description=
+description=[h1]Troubleshooting[/h1]
+description=[olist]
+description=[*]Check to make sure you are playing version 41. If you are not sure, then you probably aren't.
+description=[*]If it still does not work, please post your modlist in the bugs discussion or in the comments. You can find your modlist here:
+description=[/olist]
+description=[code]
+description=PC Location:
+description=C:\users\your_login_name_here\Zomboid\mods\default.txt
+description=
+description=Mac Location:
+description=/Users/your_login_name_here/Zomboid/mods/default.txt
+description=[/code]
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
+tags=
+visibility=public
