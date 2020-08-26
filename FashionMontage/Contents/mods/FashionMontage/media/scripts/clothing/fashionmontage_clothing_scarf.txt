@@ -14,6 +14,7 @@ module DistinctNames
       ScratchDefense = 10,
       Insulation = 1.0,
       WindResistance = 1.0,
+      FabricType = Cotton,
   }
   item Scarf_StripeBlackWhite {
       Type = Clothing,
@@ -26,6 +27,7 @@ module DistinctNames
       ScratchDefense = 10,
       Insulation = 0.5,
       WindResistance = 0.55,
+      FabricType = Cotton,
   }
   item Scarf_StripeBlueWhite {
       Type = Clothing,
@@ -38,6 +40,7 @@ module DistinctNames
       ScratchDefense = 10,
       Insulation = 0.4,
       WindResistance = 0.3,
+      FabricType = Cotton,
   }
   item Scarf_StripeRedWhite {
       Type = Clothing,
@@ -50,5 +53,6 @@ module DistinctNames
       ScratchDefense = 10,
       Insulation = 0.75,
       WindResistance = 0.75,
+      FabricType = Cotton,
   }
 }
