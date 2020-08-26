@@ -40,7 +40,7 @@ module DistinctNames
       Weight = 0.1,
       Insulation = 0.75,
       WindResistance = 0.75,
-      FabricType = Cotton,
+      FabricType = Leather,
   }
   item Gloves_LongWomenGloves {
       Type = Clothing,
