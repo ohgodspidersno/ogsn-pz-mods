@@ -2,7 +2,74 @@ module DistinctNames {
   imports {
       Base
   }
-  item Name {
-
-	}
+  item NecklaceLong_Gold
+  {
+  Type = Clothing,
+  DisplayName = Long Gold Necklace,
+  ClothingItem = NecklaceLong_Gold,
+  BodyLocation = Necklace_Long,
+  Icon = NecklaceLong_Gold,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item NecklaceLong_GoldDiamond
+  {
+  Type = Clothing,
+  DisplayName = Long Gold Necklace with Diamond,
+  ClothingItem = NecklaceLong_GoldDiamond,
+  BodyLocation = Necklace_Long,
+  Icon = NecklaceLong_GoldDiamond,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item NecklaceLong_Silver
+  {
+  Type = Clothing,
+  DisplayName = Long Silver Necklace,
+  ClothingItem = NecklaceLong_Silver,
+  BodyLocation = Necklace_Long,
+  Icon = NecklaceLong_Silver,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item NecklaceLong_SilverEmerald
+  {
+  Type = Clothing,
+  DisplayName = Long Silver Necklace with Emerald,
+  ClothingItem = NecklaceLong_SilverEmerald,
+  BodyLocation = Necklace_Long,
+  Icon = NecklaceLong_SilverEmerald,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item NecklaceLong_SilverSapphire
+  {
+  Type = Clothing,
+  DisplayName = Long Silver Necklace with Sapphire Stone,
+  ClothingItem = NecklaceLong_SilverSapphire,
+  BodyLocation = Necklace_Long,
+  Icon = NecklaceLong_SilverSapphire,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item NecklaceLong_SilverDiamond
+  {
+  Type = Clothing,
+  DisplayName = Long Silver Necklace with Diamond,
+  ClothingItem = NecklaceLong_SilverDiamond,
+  BodyLocation = Necklace_Long,
+  Icon = NecklaceLong_SilverDiamond,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item NecklaceLong_Amber
+  {
+  Type = Clothing,
+  DisplayName = Long Necklace with Amber Stone,
+  ClothingItem = NecklaceLong_Amber,
+  BodyLocation = Necklace_Long,
+  Icon = NecklaceLong_Amber,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
 }
