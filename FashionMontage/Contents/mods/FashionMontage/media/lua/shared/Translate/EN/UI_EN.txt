@@ -17,4 +17,15 @@ UI_EN = {
   UI_ClothingType_Tail = "Tail",
   UI_ClothingType_FannyPackBack = "Fanny Pack Back"
   UI_ClothingType_FannyPackFront = "Fanny Pack Front"
+  UI_ClothingType_Necklace = "Necklace"
+  UI_ClothingType_Necklace_Long = "Necklace (Long)"
+  UI_ClothingType_Nose = "Nose"
+  UI_ClothingType_Ears = "Ears"
+  UI_ClothingType_EarTop = "Ear Top"
+  UI_ClothingType_RightWrist = "Right Wrist"
+  UI_ClothingType_Right_RingFinger = "Right Ring Finger"
+  UI_ClothingType_Right_MiddleFinger = "Right Middle Finger"
+  UI_ClothingType_LeftWrist = "Left Wrist"
+  UI_ClothingType_Left_RingFinger = "Left Ring Finger"
+  UI_ClothingType_Left_MiddleFinger = "Left Middle Finger"
 }
