@@ -1,6 +1,5 @@
 version=1
-id=2033451936
-title=Let Me Think - Open Menus and Queue Tasks While Paused [v38,v39,v40]
+title=Let Me Think Classic - v38,v39,v40
 description=[h1]Legacy Support for Older Versions of the Game[/h1]
 description=This contains three sub-mods that support older versions of the game. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2033451936]Click here for the IWBUMS version[/url].
 description=[h1]Description[/h1]
