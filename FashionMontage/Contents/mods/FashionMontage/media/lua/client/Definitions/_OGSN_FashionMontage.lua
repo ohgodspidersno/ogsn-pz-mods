@@ -278,15 +278,15 @@ ClothingSelectionDefinitions.starting = {}
 ClothingSelectionDefinitions.starting.Male = {}
 ClothingSelectionDefinitions.starting.Female = {}
 
-ClothingSelectionDefinitions.starting.Male.Shoes = {chance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
-ClothingSelectionDefinitions.starting.Male.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
-ClothingSelectionDefinitions.starting.Male.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
-ClothingSelectionDefinitions.starting.Male.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
+ClothingSelectionDefinitions.starting.Male.Shoes = {chance=100, items = {"Base.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Male.TankTop = {chance=100, items = {"Base.Vest_DefaultTEXTURE_TINT"}}
+ClothingSelectionDefinitions.starting.Male.Socks = {chance=100, items = {"Base.Socks_Ankle"}}
+ClothingSelectionDefinitions.starting.Male.Pants = {chance=100, items = {"Base.Trousers_WhiteTINT"}}
 
-ClothingSelectionDefinitions.starting.Female.Shoes = {chance=100, items = {"DistinctNames2.Shoes_TrainerTINT"}}
-ClothingSelectionDefinitions.starting.Female.TankTop = {chance=100, items = {"DistinctNames2.Vest_DefaultTEXTURE_TINT"}}
-ClothingSelectionDefinitions.starting.Female.Socks = {chance=100, items = {"DistinctNames2.Socks_Ankle"}}
-ClothingSelectionDefinitions.starting.Female.Pants = {chance=100, items = {"DistinctNames2.Trousers_WhiteTINT"}}
+ClothingSelectionDefinitions.starting.Female.Shoes = {chance=100, items = {"Base.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Female.TankTop = {chance=100, items = {"Base.Vest_DefaultTEXTURE_TINT"}}
+ClothingSelectionDefinitions.starting.Female.Socks = {chance=100, items = {"Base.Socks_Ankle"}}
+ClothingSelectionDefinitions.starting.Female.Pants = {chance=100, items = {"Base.Trousers_WhiteTINT"}}
 
 -- Define the function that will add lists of clothing, vanilla or modded, to the dropdowns
 local function addClothing(clothingLists)
