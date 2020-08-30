@@ -50,46 +50,4 @@ module DistinctNames
       Icon = TieSpiffo,
       Weight = 0.1,
   }
-
-
-  item Necklace_Choker
-{
-Type = Clothing,
-DisplayName = Black Choker,
-ClothingItem = Necklace_Choker,
-BodyLocation = Neck,
-Icon = Necklace_Choker,
-Weight = 0.1,
-Cosmetic = TRUE,
-}
-item Necklace_Choker_Sapphire
-{
-Type = Clothing,
-DisplayName = Choker with Sapphire Stone,
-ClothingItem = Necklace_Choker_Sapphire,
-BodyLocation = Neck,
-Icon = Necklace_Choker_Sapphire,
-Weight = 0.1,
-Cosmetic = TRUE,
-}
-item Necklace_Choker_Amber
-{
-Type = Clothing,
-DisplayName = Choker with Amber Stone,
-ClothingItem = Necklace_Choker_Amber,
-BodyLocation = Neck,
-Icon = Necklace_Choker_Amber,
-Weight = 0.1,
-Cosmetic = TRUE,
-}
-item Necklace_Choker_Diamond
-{
-Type = Clothing,
-DisplayName = Choker with Diamond,
-ClothingItem = Necklace_Choker_Diamond,
-BodyLocation = Neck,
-Icon = Necklace_Choker_Diamond,
-Weight = 0.1,
-Cosmetic = TRUE,
-}
 }

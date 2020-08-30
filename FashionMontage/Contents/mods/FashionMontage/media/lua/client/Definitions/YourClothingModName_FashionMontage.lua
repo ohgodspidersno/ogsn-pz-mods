@@ -54,7 +54,17 @@ local clothing = {
   listScarf = {},       -- file
   listFannyPackFront = {},
   listFannyPackBack = {},
+  listNecklace = {},
+  listNecklace_Long = {},
+  listNose = {},
+  listLeftWrist = {},
+  listRightWrist = {},
+  listRight_RingFinger = {},
+  listLeft_RingFinger = {},
+  listRight_MiddleFinger = {},
+  listLeft_MiddleFinger = {},
+  listEars = {},
+  listEarTop = {},
 }
-
 
 _OGSN_FashionMontage.addClothing(clothing);
