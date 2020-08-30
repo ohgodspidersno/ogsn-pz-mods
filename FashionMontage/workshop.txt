@@ -1,6 +1,6 @@
 version=1
 id=2020740322
-title=Fashion Montage - Start with any outfit [41.39+]
+title=Fashion Montage - Start with any outfit [41.41+]
 description=[h1]Update: Modded Clothing Support![/h1]
 description=I have created a framework to make it easy for modders to add new clothing to the dropdowns. Please encourage clothing modders to make their items compatible with Fashion Montage!
 description=
@@ -34,6 +34,6 @@ description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
 description=
-description=Tags:B41,Interface,Clothes,Clothing,Framework,Realistic
+description=Tags:B41,Interface,Clothing,Framework,Realistic
 tags=Build 41;Interface;Clothing;Framework;Realistic
 visibility=public
