@@ -185,6 +185,7 @@ module DistinctNames {
       CombatSpeedModifier = 0.96,
       ClothingItemExtra = DistinctNames.Jacket_Padded,
       ClothingItemExtraOption = UpHoodie,
+      clothingExtraSubmenu = DownHoodie,
       BiteDefense = 10,
       ScratchDefense = 20,
       NeckProtectionModifier = 0.5,
@@ -242,6 +243,7 @@ module DistinctNames {
       RunSpeedModifier = 0.9,
       ClothingItemExtra = DistinctNames.PonchoGreen,
       ClothingItemExtraOption = UpHoodie,
+      clothingExtraSubmenu = DownHoodie,
       ScratchDefense = 10,
       NeckProtectionModifier = 0.5,
       Insulation = 0.15,
@@ -262,6 +264,7 @@ module DistinctNames {
       RunSpeedModifier = 0.9,
       ClothingItemExtra = DistinctNames.PonchoYellow,
       ClothingItemExtraOption = UpHoodie,
+      clothingExtraSubmenu = DownHoodie,
       NeckProtectionModifier = 0.5,
       Insulation = 0.15,
       WindResistance = 0.8,
@@ -282,6 +285,7 @@ module DistinctNames {
       Insulation = 0.9,
       WindResistance = 0.6,
       Weight = 3,
+      FabricType = Cotton,
   }
   item JacketLong_SantaGreen {
       Type = Clothing,
@@ -298,6 +302,7 @@ module DistinctNames {
       Insulation = 0.9,
       WindResistance = 0.6,
       Weight = 3,
+      FabricType = Cotton,
   }
   item Suit_Jacket {
       Type = Clothing,

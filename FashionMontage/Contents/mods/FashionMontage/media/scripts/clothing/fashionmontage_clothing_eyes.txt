@@ -11,6 +11,7 @@ module DistinctNames
       IconsForTexture = GlassesBlack;GlassesBlue;GlassesRed,
       Weight = 0.1,
       ChanceToFall = 50,
+      Cosmetic = TRUE
   }
   item Glasses_Reading {
       Type = Clothing,
@@ -20,6 +21,7 @@ module DistinctNames
       IconsForTexture = GlassesReading;GlassesReading;GlassesReading,
       Weight = 0.1,
       ChanceToFall = 50,
+      Cosmetic = TRUE
   }
   item Glasses_SafetyGoggles {
       Type = Clothing,
@@ -29,6 +31,7 @@ module DistinctNames
       Icon = SafetyGoggles,
       Weight = 0.1,
       ChanceToFall = 20,
+      Cosmetic = TRUE
   }
   item Glasses_Shooting {
       Type = Clothing,
@@ -38,6 +41,7 @@ module DistinctNames
       Icon = ShootingGlasses,
       Weight = 0.1,
       ChanceToFall = 20,
+      Cosmetic = TRUE
   }
   item Glasses_SkiGoggles {
       Type = Clothing,
@@ -47,6 +51,7 @@ module DistinctNames
       IconsForTexture = SkiGogglesBlack;SkiGogglesWhite,
       Weight = 0.1,
       ChanceToFall = 20,
+      Cosmetic = TRUE
   }
 
   item Glasses_SwimmingGoggles {
@@ -57,6 +62,7 @@ module DistinctNames
       Icon = SwimmingGoggles,
       Weight = 0.1,
       ChanceToFall = 30,
+      Cosmetic = TRUE
   }
   item Glasses_Sun {
       Type = Clothing,
@@ -66,6 +72,7 @@ module DistinctNames
       Icon = GlassesSun,
       Weight = 0.1,
       ChanceToFall = 50,
+      Cosmetic = TRUE
   }
   item Glasses_Aviators {
       Type = Clothing,
@@ -75,6 +82,7 @@ module DistinctNames
       Icon = GlassesAviator,
       Weight = 0.1,
       ChanceToFall = 50,
+      Cosmetic = TRUE
   }
   item Glasses {
       Type = Clothing,
@@ -84,5 +92,6 @@ module DistinctNames
       Icon = Glasses,
       Weight = 0.1,
       ChanceToFall = 50,
+      Cosmetic = TRUE
   }
 }

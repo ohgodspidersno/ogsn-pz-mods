@@ -16,6 +16,7 @@ module DistinctNames {
 			ScratchDefense = 10,
 			Insulation = 0.65,
 			WindResistance = 0.45,
+			FabricType = Cotton,
 	}
 	item Boilersuit_BlueRed {
 			Type = Clothing,
@@ -28,6 +29,7 @@ module DistinctNames {
 			ScratchDefense = 10,
 			Insulation = 0.65,
 			WindResistance = 0.45,
+			FabricType = Cotton
 	}
 	item Boilersuit_Flying {
 			Type = Clothing,
@@ -40,6 +42,7 @@ module DistinctNames {
 			ScratchDefense = 10,
 			Insulation = 0.75,
 			WindResistance = 0.55,
+			FabricType = Cotton
 	}
 	item Boilersuit_PrisonerKhaki {
 			Type = Clothing,
@@ -52,6 +55,7 @@ module DistinctNames {
 			ScratchDefense = 10,
 			Insulation = 0.40,
 			WindResistance = 0.30,
+			FabricType = Cotton
 	}
 	item Boilersuit_Prisoner {
 			Type = Clothing,
@@ -64,6 +68,7 @@ module DistinctNames {
 			ScratchDefense = 10,
 			Insulation = 0.45,
 			WindResistance = 0.35,
+			FabricType = Cotton
 	}
 	item SpiffoSuit {
 			Type = Clothing,

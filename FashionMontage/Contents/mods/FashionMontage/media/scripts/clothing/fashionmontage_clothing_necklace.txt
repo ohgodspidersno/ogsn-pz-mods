@@ -1,0 +1,115 @@
+module DistinctNames {
+  imports {
+      Base
+  }
+  item Necklace_DogTag
+  {
+  Type = Clothing,
+  DisplayName = Dog tags,
+  ClothingItem = Necklace_DogTag,
+  BodyLocation = Necklace,
+  Icon = Necklace_Dogtags,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item Necklace_Gold
+  {
+  Type = Clothing,
+  DisplayName = Gold Necklace,
+  ClothingItem = Necklace_Gold,
+  BodyLocation = Necklace,
+  Icon = Necklace_Gold,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item Necklace_GoldRuby
+  {
+  Type = Clothing,
+  DisplayName = Gold Necklace with Ruby Stone,
+  ClothingItem = Necklace_GoldRuby,
+  BodyLocation = Necklace,
+  Icon = Necklace_GoldRuby,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item Necklace_GoldDiamond
+  {
+  Type = Clothing,
+  DisplayName = Gold Necklace with Diamond,
+  ClothingItem = Necklace_GoldDiamond,
+  BodyLocation = Necklace,
+  Icon = Necklace_GoldDiamond,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item Necklace_Silver
+  {
+  Type = Clothing,
+  DisplayName = Silver Necklace,
+  ClothingItem = Necklace_Silver,
+  BodyLocation = Necklace,
+  Icon = Necklace_Silver,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item Necklace_SilverSapphire
+  {
+  Type = Clothing,
+  DisplayName = Silver Necklace with Saphire Stone,
+  ClothingItem = Necklace_SilverSapphire,
+  BodyLocation = Necklace,
+  Icon = Necklace_SilverSapphire,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item Necklace_SilverCrucifix
+  {
+  Type = Clothing,
+  DisplayName = Silver Necklace with Crucifix,
+  ClothingItem = Necklace_SilverCrucifix,
+  BodyLocation = Necklace,
+  Icon = Necklace_SilverCrucifix,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item Necklace_SilverDiamond
+  {
+  Type = Clothing,
+  DisplayName = Silver Necklace with Diamond,
+  ClothingItem = Necklace_SilverDiamond,
+  BodyLocation = Necklace,
+  Icon = Necklace_SilverDiamond,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item Necklace_Crucifix
+  {
+  Type = Clothing,
+  DisplayName = Necklace with Crucifix,
+  ClothingItem = Necklace_Crucifix,
+  BodyLocation = Necklace,
+  Icon = Necklace_Crucifix,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item Necklace_YingYang
+  {
+  Type = Clothing,
+  DisplayName = Necklace with Ying and Yang Symbol,
+  ClothingItem = Necklace_YingYang,
+  BodyLocation = Necklace,
+  Icon = Necklace_YinYang,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+  item Necklace_Pearl
+  {
+  Type = Clothing,
+  DisplayName = Pearl Necklace,
+  ClothingItem = Necklace_Pearl,
+  BodyLocation = Necklace,
+  Icon = Necklacepearl,
+  Weight = 0.1,
+  Cosmetic = TRUE,
+  }
+}

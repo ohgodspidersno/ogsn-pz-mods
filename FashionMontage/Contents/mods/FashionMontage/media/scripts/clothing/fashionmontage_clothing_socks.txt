@@ -23,5 +23,6 @@ module DistinctNames {
       Insulation = 0.55,
       WindResistance = 0.65,
       Weight = 0.1,
+      FabricType = Cotton,
   }
 }

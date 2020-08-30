@@ -250,6 +250,7 @@ module DistinctNames {
       ScratchDefense = 10,
       Insulation = 0.9,
       WindResistance = 0.6,
+      FabricType = Cotton,
   }
   item Trousers_SantaGReen {
       Type = Clothing,
@@ -261,6 +262,7 @@ module DistinctNames {
       ScratchDefense = 10,
       Insulation = 0.9,
       WindResistance = 0.6,
+      FabricType = Cotton,
   }
   item Trousers_Scrubs {
       Type = Clothing,
@@ -332,8 +334,8 @@ module DistinctNames {
       BloodLocation = Trousers,
       Insulation = 0.5,
       WindResistance = 0.3,
-      FabricType = Cotton,
       WaterResistance = 0.3,
+      FabricType = Cotton,
   }
   item Shorts_ShortDenim {
       Type = Clothing,
