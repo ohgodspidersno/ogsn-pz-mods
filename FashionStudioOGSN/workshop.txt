@@ -1,0 +1,4 @@
+title=Fashion Studio - OGSN Clothing Retextures
+description=Just a handful of fun changes to some of the vanilla clothing items. Each change can be toggled individually.
+description=
+description=Just includes two outfits at the moment, but I may add more later.
