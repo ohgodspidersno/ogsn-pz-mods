@@ -12,7 +12,7 @@ module DistinctNames {
   }
   item Bikini_Pattern01 {
       Type = Clothing,
-      DisplayName = Polka Dot Bikini,
+      DisplayName = Patterned Bikini,
       ClothingItem = Bikini_Pattern01,
       BodyLocation = Underwear,
       Icon = Bikini_OrangePolkaDot,

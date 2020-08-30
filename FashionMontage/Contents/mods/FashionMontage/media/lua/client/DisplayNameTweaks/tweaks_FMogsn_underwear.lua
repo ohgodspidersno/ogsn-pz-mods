@@ -3,7 +3,7 @@ require("ItemTweaker_Copy_ogsn");
 
 -- Some of these aren't necessary but I will do them all anyway
 TweakItem("Base.Bikini_TINT","DisplayName","Bikini");
-TweakItem("Base.Bikini_Pattern01","DisplayName","Polka Dot Bikini");
+TweakItem("Base.Bikini_Pattern01","DisplayName","Patterned Bikini");
 TweakItem("Base.SwimTrunks_Blue","DisplayName","Swim Trunks Blue");
 TweakItem("Base.SwimTrunks_Green","DisplayName","Swim Trunks Green");
 TweakItem("Base.SwimTrunks_Red","DisplayName","Swim Trunks Red");
