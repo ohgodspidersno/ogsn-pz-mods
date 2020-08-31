@@ -1,4 +1,4 @@
-ItemName_EN = {
+ItemName_FR = {
 ItemName_Base.LongCoat_Bathrobe = "Bath Robe"
 ItemName_Base.Belt2 = "Belt"
 ItemName_Base.HolsterSimple = "Holster"
