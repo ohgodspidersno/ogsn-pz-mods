@@ -1,0 +1,5 @@
+IG_UI_EN = {
+IGUI_anim_Idle = "Strike a Pose",
+IGUI_anim_Walk = "Sashay",
+IGUI_anim_Run = "Flounce",
+}
