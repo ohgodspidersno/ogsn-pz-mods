@@ -1,4 +1,4 @@
-UI_EN = {
+UI_DE = {
 UI_ClothingType_Back = "Backpack",
 UI_ClothingType_FullHat = "Full Helmet",
 UI_ClothingType_MaskEyes = "Full Mask",
