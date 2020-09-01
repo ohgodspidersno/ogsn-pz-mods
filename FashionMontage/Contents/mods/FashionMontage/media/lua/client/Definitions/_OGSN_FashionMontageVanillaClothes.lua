@@ -377,9 +377,9 @@ local clothingLists = {
         "Base.Scarf_StripeBlueWhite",
         "Base.Scarf_StripeRedWhite",
       },
-      listFannyPackBack= {
-        "Base.Bag_FannyPackBack",
-      },
+      -- listFannyPackBack= {
+      --   "Base.Bag_FannyPackBack",
+      -- },
       listFannyPackFront= {
         "Base.Bag_FannyPackFront",
       },
