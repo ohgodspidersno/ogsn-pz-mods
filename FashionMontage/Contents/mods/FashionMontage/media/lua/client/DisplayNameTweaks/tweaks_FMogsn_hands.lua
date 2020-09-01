@@ -3,7 +3,7 @@ require("ItemTweaker_Copy_ogsn");
 
 -- Some of these aren't necessary but I will do them all anyway
 TweakItem("Base.Gloves_FingerlessGloves","DisplayName","Gloves - Fingerless");
-TweakItem("Base.Gloves_LeatherGloves","DisplayName","Gloves - Fingerless");
-TweakItem("Base.Gloves_LeatherGlovesBlack","DisplayName","Gloves - Fingerless");
-TweakItem("Base.Gloves_LongWomenGloves","DisplayName","Gloves - Fingerless");
-TweakItem("Base.Gloves_WhiteTINT","DisplayName","Gloves - Fingerless");
+TweakItem("Base.Gloves_LeatherGloves","DisplayName","Gloves - Brown Leather");
+TweakItem("Base.Gloves_LeatherGlovesBlack","DisplayName","Gloves - Black Leather");
+TweakItem("Base.Gloves_LongWomenGloves","DisplayName","Gloves - Long");
+TweakItem("Base.Gloves_WhiteTINT","DisplayName","Gloves - Wool");
