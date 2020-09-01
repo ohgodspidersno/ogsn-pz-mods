@@ -1,9 +1,9 @@
 version=1
 id=2215782660
-title=Fashion Studio - OGSN Clothing Retextures
+title=Weird Closet - OGSN Clothing Retextures
 description=Just a handful of fun changes to some of the vanilla clothing items. Each change can be toggled individually.
 description=
-description=Just includes two outfits at the moment, but I may add more later.
+description=Just includes three changes at the moment, but I may add more later.
 description=
 description=Tags:B41,B40,Textures,Clothing,Tweak
 tags=Build 41;Build 40;Textures;Clothing;Tweak
