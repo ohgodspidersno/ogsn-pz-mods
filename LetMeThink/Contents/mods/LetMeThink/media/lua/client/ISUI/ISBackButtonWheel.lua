@@ -26,8 +26,6 @@ function ISBackButtonWheel:addCommands()
 
   self:clear()
 
-  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-
   if not ISBackButtonWheel.disablePlayerInfo then
     self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
   else
@@ -81,7 +79,7 @@ function ISBackButtonWheel:addCommands()
     end
   end
 
-  if not isPaused and not playerObj:getVehicle() and not ISBackButtonWheel.disableMoveable then
+  if not playerObj:getVehicle() and not ISBackButtonWheel.disableMoveable then
     self:addSlice(getText("IGUI_BackButton_Movable"), getTexture("media/ui/Furniture_Off2.png"), self.onCommand, self, "MoveFurniture")
   else
     self:addSlice(nil, nil, nil)
@@ -105,8 +103,6 @@ end
 
 function ISBackButtonWheel:onCommand(command)
   local focus = nil
-  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-
   local playerObj = getSpecificPlayer(self.playerNum)
 
   if command == "PlayerInfo" then

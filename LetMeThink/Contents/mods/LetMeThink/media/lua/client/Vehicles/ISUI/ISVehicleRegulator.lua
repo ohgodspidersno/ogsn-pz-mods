@@ -7,7 +7,6 @@ ISVehicleRegulator.xPressed = {}
 ISVehicleRegulator.changedSpeed = {}
 
 local function isRegulatorButtonPressed(joypadData)
-
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 

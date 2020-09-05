@@ -266,7 +266,6 @@ function ISButtonPrompt:stopAction()
 end
 
 function ISButtonPrompt:getBestAButtonAction(dir)
-
   if dir == nil then
     self:setAPrompt(nil, nil, nil);
   end
@@ -505,7 +504,6 @@ function ISButtonPrompt:doAButtonDoorOrWindowOrWindowFrame(dir, obj)
 end
 
 function ISButtonPrompt:getBestBButtonAction(dir)
-
   if dir == nil then
     self:setBPrompt(nil, nil, nil);
   end
@@ -675,7 +673,6 @@ function ISButtonPrompt:doBButtonDoorOrWindowOrWindowFrame(dir, obj)
 end
 
 function ISButtonPrompt:getBestYButtonAction(dir)
-
   if dir == nil then
     self:setYPrompt(nil, nil, nil);
   end
@@ -791,7 +788,6 @@ end
 
 
 function ISButtonPrompt:getBestXButtonAction(dir)
-
   if dir == nil then
     self:setXPrompt(nil, nil, nil);
   end
@@ -922,7 +918,6 @@ function ISButtonPrompt:getXButtonObjects(dir)
 end
 
 function ISButtonPrompt:getBestLBButtonAction(dir)
-
   if getCell():getDrag(self.player) then
     self:setLBPrompt(getCell():getDrag(self.player):getLBPrompt(), nil, nil);
   elseif ISFirearmRadialMenu.getBestLBButtonAction(self) then
@@ -932,7 +927,6 @@ function ISButtonPrompt:getBestLBButtonAction(dir)
 end
 
 function ISButtonPrompt:getBestRBButtonAction(dir)
-
   if getCell():getDrag(self.player) then
     self:setRBPrompt(getCell():getDrag(self.player):getRBPrompt(), nil, nil);
   elseif ISFirearmRadialMenu.getBestRBButtonAction(self) then

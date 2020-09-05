@@ -77,6 +77,28 @@ function ISHealthBodyPartPanel:new(character, x, y)
   return o
 end
 
+-----
+
+ISHealthBodyPartListBox = ISScrollingListBox:derive("ISHealthBodyPartListBox")
+
+function ISHealthBodyPartListBox:onMouseUp(x, y)
+  ISScrollingListBox.onMouseUp(self, x, y)
+  local row = self:rowAt(x, y)
+  local listItem = self.items[row]
+  if not listItem then return end
+  if ISMouseDrag.dragging and (#ISMouseDrag.dragging > 0) then
+    local dragging = ISInventoryPane.getActualItems(ISMouseDrag.dragging)
+    self.parent:dropItemsOnBodyPart(listItem.item.bodyPart, dragging)
+  end
+end
+
+function ISHealthBodyPartListBox:new(x, y, width, height)
+  local o = ISScrollingListBox.new(self, x, y, width, height)
+  return o
+end
+
+-----
+
 --************************************************************************--
 --** ISPanel:initialise
 --**
@@ -93,7 +115,7 @@ function ISHealthPanel:createChildren()
   self.healthPanel:setVisible(true)
   self:addChild(self.healthPanel)
 
-  self.listbox = ISScrollingListBox:new(180 - 15, 59, self.width - (180 - 15), self.height);
+  self.listbox = ISHealthBodyPartListBox:new(180 - 15, 59, self.width - (180 - 15), self.height);
   self.listbox:initialise();
   self.listbox:instantiate();
   self.listbox:setAnchorLeft(true);
@@ -104,8 +126,6 @@ function ISHealthPanel:createChildren()
   self.listbox.drawBorder = false
   self.listbox.backgroundColor.a = 0
   self.listbox.drawText = ISHealthPanel.drawText;
-  self.listbox.doDrawItem = ISHealthPanel.doDrawItem;
-  self.listbox.onRightMouseUp = ISHealthPanel.onBodyPartListRightMouseUp
   self:addChild(self.listbox)
 
   self.bodyPartPanel = ISHealthBodyPartPanel:new(self.character, 0, 8);
@@ -127,8 +147,7 @@ function ISHealthPanel:setVisible(visible)
   --    ISHealthPanel.cheat = self.character:getAccessLevel() ~= "None";
 end
 
-function ISHealthPanel:onBodyPartListRightMouseUp(x, y)
-
+function ISHealthBodyPartListBox:onRightMouseUp(x, y)
   local row = self:rowAt(x, y)
   if row < 1 or row > #self.items then return end
   self.selected = row
@@ -396,8 +415,6 @@ end
 function ISHealthPanel:updateBodyPartList()
   -- These aid in reloading the .lua when debugging
   self.listbox.drawText = self.drawText
-  self.listbox.doDrawItem = self.doDrawItem
-  self.listbox.onRightMouseUp = ISHealthPanel.onBodyPartListRightMouseUp
 
   local damagedParts = self:getDamagedParts()
   local changed = false
@@ -434,7 +451,7 @@ function ISHealthPanel:drawText(str, x, y, r, g, b, a, font)
   self.textRight = math.max(self.textRight or 0, x + width)
 end
 
-function ISHealthPanel:doDrawItem(y, item, alt)
+function ISHealthBodyPartListBox:doDrawItem(y, item, alt)
   local healthPanel = self.parent
   local bodyPart = item.item.bodyPart;
   local bodyPartAction = healthPanel.bodyPartAction and healthPanel.bodyPartAction[bodyPart]
@@ -443,8 +460,15 @@ function ISHealthPanel:doDrawItem(y, item, alt)
   local fgBar = {r = 0.5, g = 0.5, b = 0.5, a = 0.5}
   if item.itemindex == self.selected then
     self:drawRect(0, y, self:getWidth(), item.height, 0.1, 1.0, 1.0, 1.0);
+    local selectedBp = self.parent.bodyPartPanel.selectedBp
+    if selectedBp and (bodyPart == selectedBp.bodyPart) then
+      self:drawRectBorder(0, y, self:getWidth() - 1, item.height, 1.0, 1.0, 1.0, 1.0);
+    end
   elseif item.itemindex == self.mouseoverselected then
     self:drawRect(0, y, self:getWidth(), item.height, 0.05, 1.0, 1.0, 1.0);
+    if ISMouseDrag.dragging and (#ISMouseDrag.dragging > 0) then
+      self:drawRectBorder(0, y, self:getWidth() - 1, item.height, 1.0, 1.0, 1.0, 1.0);
+    end
   end
   if ISHealthPanel.cheat then
     self:drawText(BodyPartType.getDisplayName(bodyPart:getType()) .. " (health=" .. round(bodyPart:getHealth(), 4) .. ")", x - 15, y, 1, 1, 1, 1, UIFont.Small);

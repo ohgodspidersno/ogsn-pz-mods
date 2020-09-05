@@ -93,7 +93,6 @@ function ISHotbar:getSlotDefReplacement(slot)
 end
 
 function ISHotbar:doMenu(slotIndex)
-
   local slot = self.availableSlot[slotIndex];
   local slotDef = slot.def;
   local context = ISContextMenu.get(self.playerNum, getMouseX(), getMouseY());
@@ -623,9 +622,6 @@ ISHotbar.onKeyStartPressed = function(key)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
   end
-  -- if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
-  -- 	return
-  -- end
   local self = getPlayerHotbar(0)
   local slotToCheck = self:getSlotForKey(key)
   if slotToCheck == -1 then return end
@@ -644,9 +640,6 @@ ISHotbar.onKeyPressed = function(key)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
   end
-  -- if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
-  -- 	return
-  -- end
   local self = getPlayerHotbar(0);
   local slotToCheck = self:getSlotForKey(key)
   if slotToCheck == -1 then return end
@@ -684,9 +677,6 @@ ISHotbar.onKeyKeepPressed = function(key)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
   end
-  -- if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
-  -- 	return
-  -- end
   if playerObj:isAttacking() then
     return
   end

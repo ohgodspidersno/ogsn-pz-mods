@@ -56,7 +56,6 @@ ISWorldObjectContextMenu.clearFetch = function()
   compost = nil;
   graves = nil;
   canBeWaterPiped = nil;
-  shovel = nil;
   building = nil;
   ISWorldObjectContextMenu.fetchSquares = {}
 end
@@ -77,25 +76,21 @@ local function predicateEmptySandbag(item)
   return not instanceof(item, "InventoryContainer") or item:getInventory():isEmpty()
 end
 
-local CuttingToolTypes = { "WoodAxe", "Axe", "AxeStone", "HandAxe", "Machete", "HuntingKnife", "KitchenKnife" }
-local CuttingToolTypeMap = {}
-for _, type in ipairs(CuttingToolTypes) do
-  CuttingToolTypeMap[type] = 1
-end
-
-local function predicateCuttingTool(item)
-  return not item:isBroken() and (CuttingToolTypeMap[item:getType()] ~= nil)
+local function predicateCutPlant(item)
+  return not item:isBroken() and item:hasTag("CutPlant")
 end
 
 local function predicateClearAshes(item)
-  return not item:isBroken() and ISInventoryBuildMenu.shovelTypeMap[item:getFullType()] ~= nil
+  return not item:isBroken() and item:hasTag("ClearAshes")
+end
+
+local function predicateDigGrave(item)
+  return not item:isBroken() and item:hasTag("DigGrave")
 end
 
 ISWorldObjectContextMenu.fetch = function(v, player, doSquare)
   local playerObj = getSpecificPlayer(player)
   local playerInv = playerObj:getInventory()
-
-  shovel = ISFarmingMenu.getShovel(playerObj);
 
   if v:getSquare() then
     local worldItems = v:getSquare():getWorldObjects();
@@ -213,7 +208,7 @@ ISWorldObjectContextMenu.fetch = function(v, player, doSquare)
   if instanceof(v, "IsoObject") and v:getSprite() and v:getSprite():getProperties() and v:getSprite():getProperties():Is(IsoFlagType.water) and v:getSquare():DistToProper(playerObj:getSquare()) < 10 and (not playerObj:isSitOnGround()) then
     canFish = true;
   end
-  local hasCuttingTool = playerInv:containsEvalRecurse(predicateCuttingTool)
+  local hasCuttingTool = playerInv:containsEvalRecurse(predicateCutPlant)
   if v:getSprite() and v:getSprite():getProperties() and v:getSprite():getProperties():Is(IsoFlagType.canBeCut) and hasCuttingTool then
     canBeCut = v:getSquare();
   end
@@ -352,8 +347,8 @@ function ISWorldObjectContextMenu.setTest()
   return true
 end
 
-local function predicateNotBrokenAxe(item)
-  return not item:isBroken() and item:getScriptItem():getCategories():contains("Axe")
+local function predicateChopTree(item)
+  return not item:isBroken() and item:hasTag("ChopTree")
 end
 
 local function predicateBlowTorch(item)
@@ -412,45 +407,8 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   end
 
   -- Grab a world item
-  if worldItem and getCore():getGameMode() ~= "LastStand" then
-    if test == true then return true; end
-    local itemList = {}
-    local doneSquare = {}
-    for i, v in ipairs(worldobjects) do
-      if v:getSquare() and not doneSquare[v:getSquare()] then
-        doneSquare[v:getSquare()] = true
-        for n = 0, v:getSquare():getWorldObjects():size() - 1 do
-          local item = v:getSquare():getWorldObjects():get(n)
-          local itemName = item:getName() or (item:getItem():getName() or "???")
-          if not itemList[itemName] then itemList[itemName] = {} end
-          table.insert(itemList[itemName], item)
-        end
-      end
-    end
-    local grabOption = context:addOption(getText("ContextMenu_Grab"), worldobjects, nil)
-    local subMenuGrab = ISContextMenu:getNew(context)
-    context:addSubMenu(grabOption, subMenuGrab)
-    for name, items in pairs(itemList) do
-      if #items > 1 then
-        name = name..' ('..#items..')'
-      end
-      if #items > 2 then
-        local itemOption = subMenuGrab:addOption(name, worldobjects, nil)
-        local subMenuItem = ISContextMenu:getNew(subMenuGrab)
-        subMenuGrab:addSubMenu(itemOption, subMenuItem)
-        subMenuItem:addOption(getText("ContextMenu_Grab_one"), worldobjects, ISWorldObjectContextMenu.onGrabWItem, items[1], player);
-        subMenuItem:addOption(getText("ContextMenu_Grab_half"), worldobjects, ISWorldObjectContextMenu.onGrabHalfWItems, items, player);
-        subMenuItem:addOption(getText("ContextMenu_Grab_all"), worldobjects, ISWorldObjectContextMenu.onGrabAllWItems, items, player);
-      elseif #items > 1 and items[1]:getItem():getActualWeight() >= 3 then
-        local itemOption = subMenuGrab:addOption(name, worldobjects, nil)
-        local subMenuItem = ISContextMenu:getNew(subMenuGrab)
-        subMenuGrab:addSubMenu(itemOption, subMenuItem)
-        subMenuItem:addOption(getText("ContextMenu_Grab_one"), worldobjects, ISWorldObjectContextMenu.onGrabWItem, items[1], player);
-        subMenuItem:addOption(getText("ContextMenu_Grab_all"), worldobjects, ISWorldObjectContextMenu.onGrabAllWItems, items, player);
-      else
-        subMenuGrab:addOption(name, worldobjects, ISWorldObjectContextMenu.onGrabAllWItems, items, player)
-      end
-    end
+  if ISWorldObjectContextMenu.handleGrabWorldItem(x, y, test, context, worldobjects, playerObj, playerInv) then
+    return true
   end
 
   if ashes then
@@ -458,6 +416,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     context:addOption(getText("ContextMenu_Clear_Ashes"), worldobjects, ISWorldObjectContextMenu.onClearAshes, player, ashes);
   end
 
+  local shovel = playerInv:getFirstEvalRecurse(predicateDigGrave);
   if (JoypadState.players[player + 1] or ISEmptyGraves.canDigHere(worldobjects)) and not playerObj:getVehicle() and shovel then
     if test == true then return true; end
     context:addOption(getText("ContextMenu_DigGraves"), worldobjects, ISWorldObjectContextMenu.onDigGraves, player, shovel);
@@ -677,15 +636,23 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   end
 
   -- sleep into a bed
-  if (bed and not ISWorldObjectContextMenu.isSomethingTo(bed, player)) or playerObj:getStats():getFatigue() > 0.90 then
+  local tent = nil
+  for i, v in ipairs(worldobjects) do
+    tent = camping.getCurrentTent(v:getSquare())
+    if tent then break end
+  end
+  if tent then
+    -- See ISCampingMenu.  Avoid duplicate Sleep option when clicking on a tent.
+  elseif (bed and not ISWorldObjectContextMenu.isSomethingTo(bed, player)) or playerObj:getStats():getFatigue() > 0.90 then
     if not isClient() or getServerOptions():getBoolean("SleepAllowed") then
       if test == true then return true; end
       ISWorldObjectContextMenu.doSleepOption(context, bed, player, playerObj);
     end
-    if playerObj:getStats():getEndurance() < 1 then
-      if test == true then return true; end
-      context:addOption(getText("ContextMenu_Rest"), bed, ISWorldObjectContextMenu.onRest, player);
-    end
+  end
+
+  if bed and not ISWorldObjectContextMenu.isSomethingTo(bed, player) and (playerObj:getStats():getEndurance() < 1) then
+    if test == true then return true; end
+    context:addOption(getText("ContextMenu_Rest"), bed, ISWorldObjectContextMenu.onRest, player);
   end
 
   if rainCollectorBarrel and playerObj:DistToSquared(rainCollectorBarrel:getX() + 0.5, rainCollectorBarrel:getY() + 0.5) < 2 * 2 then
@@ -711,6 +678,9 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       tooltip.description = getText("IGUI_RemainingPercent", 100)
     else
       tooltip.description = getText("IGUI_RemainingPercent", round((waterDispenser:getWaterAmount() / waterMax) * 100))
+    end
+    if waterDispenser:isTaintedWater() then
+      tooltip.description = tooltip.description .. " <BR> <RGB:1,0.5,0.5> " .. getText("Tooltip_item_TaintedWater")
     end
     tooltip.maxLineWidth = 512
     option.toolTip = tooltip
@@ -888,7 +858,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     end
   end
 
-  local hasHammer = playerInv:containsTypeEvalRecurse("Hammer", predicateNotBroken) or playerInv:containsTypeEvalRecurse("HammerStone", predicateNotBroken)
+  local hasHammer = playerInv:containsTagEvalRecurse("Hammer", predicateNotBroken)
 
   -- created thumpable item interaction
   if thump ~= nil and not invincibleWindow then
@@ -1203,8 +1173,8 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     --context:addOption("Talk to", worldobjects, ISWorldObjectContextMenu.onTalkTo, survivor);
   end
   if tree then
-    local axe = playerInv:getFirstEvalRecurse(predicateNotBrokenAxe)
-    if axe and axe:getCondition() > 0 then
+    local axe = playerInv:getFirstEvalRecurse(predicateChopTree)
+    if axe then
       if test == true then return true; end
       context:addOption(getText("ContextMenu_Chop_Tree"), worldobjects, ISWorldObjectContextMenu.onChopTree, playerObj, tree)
     end
@@ -1268,7 +1238,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   -- cut little trees
   if canBeCut then
     if test == true then return true; end
-    context:addOption(getText("ContextMenu_RemoveBush"), worldobjects, ISWorldObjectContextMenu.onRemoveTree, canBeCut, false, player);
+    context:addOption(getText("ContextMenu_RemoveBush"), worldobjects, ISWorldObjectContextMenu.onRemovePlant, canBeCut, false, player);
   end
   -- remove grass
   if canBeRemoved then
@@ -1278,7 +1248,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   -- remove wall vine
   if wallVine then
     if test == true then return true; end
-    context:addOption(getText("ContextMenu_RemoveWallVine"), worldobjects, ISWorldObjectContextMenu.onRemoveTree, wallVine, true, player);
+    context:addOption(getText("ContextMenu_RemoveWallVine"), worldobjects, ISWorldObjectContextMenu.onRemovePlant, wallVine, true, player);
   end
 
   if carBatteryCharger and ISWorldObjectContextMenu.handleCarBatteryCharger(test, context, worldobjects, playerObj, playerInv) then
@@ -1436,6 +1406,114 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   end
 
   return context;
+end
+
+function ISWorldObjectContextMenu.getSquaresInRadius(worldX, worldY, worldZ, radius, doneSquares, squares)
+  local minX = math.floor(worldX - radius)
+  local maxX = math.ceil(worldX + radius)
+  local minY = math.floor(worldY - radius)
+  local maxY = math.ceil(worldY + radius)
+  for y = minY, maxY do
+    for x = minX, maxX do
+      local square = getCell():getGridSquare(x, y, worldZ)
+      if square and not doneSquares[square] then
+        doneSquares[square] = true
+        table.insert(squares, square)
+      end
+    end
+  end
+end
+
+function ISWorldObjectContextMenu.getWorldObjectsInRadius(playerNum, screenX, screenY, squares, radius, worldObjects)
+  radius = 48 / getCore():getZoom(playerNum)
+  for _, square in ipairs(squares) do
+    local squareObjects = square:getWorldObjects()
+    for i = 1, squareObjects:size() do
+      local worldObject = squareObjects:get(i - 1)
+      local dist = IsoUtils.DistanceToSquared(screenX, screenY,
+      worldObject:getScreenPosX(playerNum), worldObject:getScreenPosY(playerNum))
+      if dist <= radius * radius then
+        table.insert(worldObjects, worldObject)
+      end
+    end
+  end
+end
+
+function ISWorldObjectContextMenu.handleGrabWorldItem(x, y, test, context, worldobjects, playerObj, playerInv)
+  --	if not worldItem then return false end
+  if getCore():getGameMode() == "LastStand" then return false end -- FIXME: Why?
+  if test == true then return true; end
+
+  local playerNum = playerObj:getPlayerNum()
+  local player = playerNum
+
+  local squares = {}
+  local doneSquare = {}
+  for i, v in ipairs(worldobjects) do
+    if v:getSquare() and not doneSquare[v:getSquare()] then
+      doneSquare[v:getSquare()] = true
+      table.insert(squares, v:getSquare())
+    end
+  end
+
+  if #squares == 0 then return false end
+
+  local worldObjects = {}
+  if JoypadState.players[playerNum + 1] then
+    for _, square in ipairs(squares) do
+      for i = 1, square:getWorldObjects():size() do
+        local worldObject = square:getWorldObjects():get(i - 1)
+        table.insert(worldObjects, worldObject)
+      end
+    end
+  else
+    local squares2 = {}
+    for k, v in pairs(squares) do
+      squares2[k] = v
+    end
+    local radius = 1
+    for _, square in ipairs(squares2) do
+      local worldX = screenToIsoX(playerNum, x, y, square:getZ())
+      local worldY = screenToIsoY(playerNum, x, y, square:getZ())
+      ISWorldObjectContextMenu.getSquaresInRadius(worldX, worldY, square:getZ(), radius, doneSquare, squares)
+    end
+    ISWorldObjectContextMenu.getWorldObjectsInRadius(playerNum, x, y, squares, radius, worldObjects)
+  end
+
+  if #worldObjects == 0 then return false end
+
+  local itemList = {}
+  for _, worldObject in ipairs(worldObjects) do
+    local itemName = worldObject:getName() or (worldObject:getItem():getName() or "???")
+    if not itemList[itemName] then itemList[itemName] = {} end
+    table.insert(itemList[itemName], worldObject)
+  end
+
+  local grabOption = context:addOption(getText("ContextMenu_Grab"), worldobjects, nil)
+  local subMenuGrab = ISContextMenu:getNew(context)
+  context:addSubMenu(grabOption, subMenuGrab)
+  for name, items in pairs(itemList) do
+    if #items > 1 then
+      name = name..' ('..#items..')'
+    end
+    if #items > 2 then
+      local itemOption = subMenuGrab:addOption(name, worldobjects, nil)
+      local subMenuItem = ISContextMenu:getNew(subMenuGrab)
+      subMenuGrab:addSubMenu(itemOption, subMenuItem)
+      subMenuItem:addOption(getText("ContextMenu_Grab_one"), worldobjects, ISWorldObjectContextMenu.onGrabWItem, items[1], player);
+      subMenuItem:addOption(getText("ContextMenu_Grab_half"), worldobjects, ISWorldObjectContextMenu.onGrabHalfWItems, items, player);
+      subMenuItem:addOption(getText("ContextMenu_Grab_all"), worldobjects, ISWorldObjectContextMenu.onGrabAllWItems, items, player);
+    elseif #items > 1 and items[1]:getItem():getActualWeight() >= 3 then
+      local itemOption = subMenuGrab:addOption(name, worldobjects, nil)
+      local subMenuItem = ISContextMenu:getNew(subMenuGrab)
+      subMenuGrab:addSubMenu(itemOption, subMenuItem)
+      subMenuItem:addOption(getText("ContextMenu_Grab_one"), worldobjects, ISWorldObjectContextMenu.onGrabWItem, items[1], player);
+      subMenuItem:addOption(getText("ContextMenu_Grab_all"), worldobjects, ISWorldObjectContextMenu.onGrabAllWItems, items, player);
+    else
+      subMenuGrab:addOption(name, worldobjects, ISWorldObjectContextMenu.onGrabAllWItems, items, player)
+    end
+  end
+  return false
 end
 
 -- Pour water from an item in inventory into an IsoObject
@@ -1772,8 +1850,8 @@ ISWorldObjectContextMenu.onTakeGenerator = function(worldobjects, generator, pla
 end
 
 ISWorldObjectContextMenu.onFishing = function(worldobjects, player)
-  if ISFishingUI.instance then
-    ISFishingUI.instance:removeFromUIManager();
+  if ISFishingUI.instance and ISFishingUI.instance[player:getPlayerNum() + 1] then
+    ISFishingUI.instance[player:getPlayerNum() + 1]:removeFromUIManager();
   end
   local modal = ISFishingUI:new(0, 0, 450, 270, player, worldobjects[1]);
   modal:initialise()
@@ -1901,9 +1979,9 @@ ISWorldObjectContextMenu.doChopTree = function(playerObj, tree)
   if not tree or tree:getObjectIndex() == -1 then return end
   if luautils.walkAdj(playerObj, tree:getSquare(), true) then
     local handItem = playerObj:getPrimaryHandItem()
-    if not handItem or not predicateNotBrokenAxe(handItem) then
-      handItem = playerObj:getInventory():getFirstEvalRecurse(predicateNotBrokenAxe)
-      if not handItem or handItem:getCondition() <= 0 then return end
+    if not handItem or not predicateChopTree(handItem) then
+      handItem = playerObj:getInventory():getFirstEvalRecurse(predicateChopTree)
+      if not handItem then return end
       local primary = true
       local twoHands = not playerObj:getSecondaryHandItem()
       ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), handItem, primary, twoHands)
@@ -2240,6 +2318,24 @@ end
 
 ISWorldObjectContextMenu.onToggleLight = function(worldobjects, light, player)
   local playerObj = getSpecificPlayer(player)
+  if light:getObjectIndex() == -1 then return end
+  local dir = nil
+  local props = light:getSprite() and light:getSprite():getProperties()
+  if props and props:Is(IsoFlagType.attachedN) then dir = IsoDirections.N
+  elseif props and props:Is(IsoFlagType.attachedS) then dir = IsoDirections.S
+  elseif props and props:Is(IsoFlagType.attachedW) then dir = IsoDirections.W
+  elseif props and props:Is(IsoFlagType.attachedE) then dir = IsoDirections.E
+  end
+  if dir then
+    local adjacent = AdjacentFreeTileFinder.FindEdge(light:getSquare(), dir, playerObj, true)
+    if adjacent then
+      if adjacent ~= playerObj:getCurrentSquare() then
+        ISTimedActionQueue.add(ISWalkToTimedAction:new(playerObj, adjacent))
+      end
+      ISTimedActionQueue.add(ISToggleLightAction:new(playerObj, light))
+      return
+    end
+  end
   if light:getSquare() and luautils.walkAdj(playerObj, light:getSquare()) then
     ISTimedActionQueue.add(ISToggleLightAction:new(playerObj, light))
   end
@@ -2732,6 +2828,7 @@ ISWorldObjectContextMenu.onTakeWater = function(worldobjects, waterObject, water
       newItemType = string.sub(newItemType, 13);
       newItemType = item:getModule() .. "." .. newItemType;
       local newItem = InventoryItemFactory.CreateItem(newItemType, 0);
+      newItem:setCondition(item:getCondition());
       newItem:setFavorite(item:isFavorite());
       local returnToContainer = item:getContainer():isInCharacterInventory(playerObj) and item:getContainer()
       ISWorldObjectContextMenu.transferIfNeeded(playerObj, item)
@@ -2793,11 +2890,9 @@ end
 ISWorldObjectContextMenu.onUnbarricade = function(worldobjects, window, player)
   local playerObj = getSpecificPlayer(player)
   if luautils.walkAdjWindowOrDoor(playerObj, window:getSquare(), window) then
-    if playerObj:getInventory():containsTypeEvalRecurse("Hammer", predicateNotBroken) then
-      ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), "Hammer", true);
-    else
-      ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), "HammerStone", true);
-    end
+    local hammer = playerObj:getInventory():getFirstTagEvalRecurse("Hammer", predicateNotBroken)
+    if not hammer then return end
+    ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), hammer, true);
     ISTimedActionQueue.add(ISUnbarricadeAction:new(playerObj, window, (100 - (playerObj:getPerkLevel(Perks.Woodwork) * 5))));
   end
 end
@@ -2907,7 +3002,7 @@ ISWorldObjectContextMenu.onBarricade = function(worldobjects, window, player)
   local playerObj = getSpecificPlayer(player)
   local playerInv = playerObj:getInventory()
   -- we must check these otherwise ISEquipWeaponAction will get a null item
-  local hammer = playerInv:getFirstTypeEvalRecurse("Hammer", predicateNotBroken) or playerInv:getFirstTypeEvalRecurse("HammerStone", predicateNotBroken)
+  local hammer = playerInv:getFirstTagEvalRecurse("Hammer", predicateNotBroken)
   if not hammer then return end
   if not playerInv:containsTypeRecurse("Plank") then return end
   if playerInv:getItemCountRecurse("Base.Nails") < 2 then return end
@@ -3177,7 +3272,7 @@ function ISWorldObjectContextMenu.doCleanBlood(playerObj, square)
   end
 end
 
-ISWorldObjectContextMenu.onRemoveTree = function(worldobjects, square, wallVine, player)
+ISWorldObjectContextMenu.onRemovePlant = function(worldobjects, square, wallVine, player)
   local playerObj = getSpecificPlayer(player);
   local playerInv = playerObj:getInventory()
   if wallVine then
@@ -3186,14 +3281,10 @@ ISWorldObjectContextMenu.onRemoveTree = function(worldobjects, square, wallVine,
     if not luautils.walkAdj(playerObj, square) then return end
   end
   local handItem = playerObj:getPrimaryHandItem()
-  if not handItem or not predicateCuttingTool(handItem) then
-    for _, type in ipairs(CuttingToolTypes) do
-      handItem = playerInv:getFirstTypeEvalRecurse(type, predicateNotBroken)
-      if handItem then
-        ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), handItem, true)
-        break
-      end
-    end
+  if not handItem or not predicateCutPlant(handItem) then
+    handItem = playerInv:getFirstEvalRecurse(predicateCutPlant)
+    if not handItem then return end
+    ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), handItem, true)
   end
   ISTimedActionQueue.add(ISRemoveBush:new(playerObj, square, wallVine));
 end

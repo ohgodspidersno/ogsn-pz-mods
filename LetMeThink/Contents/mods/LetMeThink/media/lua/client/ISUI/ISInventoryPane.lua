@@ -1008,7 +1008,6 @@ function ISInventoryPane:doContextOnJoypadSelected()
   if JoypadState.disableInvInteraction then
     return;
   end
-
   local playerObj = getSpecificPlayer(self.player)
   if playerObj:isAsleep() then return end
 
@@ -1589,6 +1588,7 @@ function ISInventoryPane:renderdetails(doDragged)
         end
       end
       -- print("trace:b");
+      local isDragging = false
       if self.dragging ~= nil and self.selected[y + 1] ~= nil and self.dragStarted then
         xoff = MOUSEX - self.draggingX;
         yoff = MOUSEY - self.draggingY;
@@ -1596,6 +1596,7 @@ function ISInventoryPane:renderdetails(doDragged)
           doIt = false;
         else
           self:suspendStencil();
+          isDragging = true
         end
       else
         if doDragged then
@@ -1603,7 +1604,7 @@ function ISInventoryPane:renderdetails(doDragged)
         end
       end
       local topOfItem = y * self.itemHgt + YSCROLL
-      if (topOfItem + self.itemHgt < 0) or (topOfItem > HEIGHT) then
+      if not isDragging and ((topOfItem + self.itemHgt < 0) or (topOfItem > HEIGHT)) then
         doIt = false
       end
       -- print("trace:c");

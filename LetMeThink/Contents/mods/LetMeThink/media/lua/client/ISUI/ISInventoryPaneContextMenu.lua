@@ -1953,9 +1953,9 @@ ISInventoryPaneContextMenu.onWearItems = function(items, player)
   items = ISInventoryPane.getActualItems(items)
   local typeDone = {}; -- we keep track of what type of clothes we already wear to avoid wearind 2 times the same type (click on a stack of socks, select wear and you'll wear them 1 by 1 otherwise)
   for i, k in pairs(items) do
-    if not typeDone[k:getType()] then
+    if not typeDone[k:getName()] then
       ISInventoryPaneContextMenu.wearItem(k, player)
-      typeDone[k:getType()] = true;
+      typeDone[k:getName()] = true;
     end
   end
 end
@@ -2712,6 +2712,8 @@ ISInventoryPaneContextMenu.onTransferWater = function(items, itemFrom, itemTo, p
     newItemType = itemTo:getModule() .. "." .. newItemType;
 
     local newItem = InventoryItemFactory.CreateItem(newItemType, 0);
+    newItem:setFavorite(itemTo:isFavorite());
+    newItem:setCondition(itemTo:getCondition());
     playerObj:getInventory():AddItem(newItem);
     if playerObj:getPrimaryHandItem() == itemTo then
       playerObj:setPrimaryHandItem(newItem)

@@ -88,6 +88,104 @@ ISObjectClickHandler.doDoubleClick = function (object, x, y)
   end
 end
 
+function ISObjectClickHandler.doClickCurtain(object, playerNum, playerObj)
+  if not object:canInteractWith(playerObj) then return false end
+  object:ToggleDoor(playerObj)
+  return true
+end
+
+function ISObjectClickHandler.doClickDoor(object, playerNum, playerObj)
+  if false then
+    ISWorldObjectContextMenu.onOpenCloseDoor(nil, object, playerNum)
+    return true
+  end
+  local playerSq = playerObj:getCurrentSquare()
+  if object:getSquare():getZ() ~= playerSq:getZ() then return false end
+  if not object:isAdjacentToSquare(playerSq) then return false end
+  if isKeyDown(Keyboard.KEY_LSHIFT) then
+    if object:HasCurtains() and (playerSq == object:getSheetSquare()) then
+      object:toggleCurtain()
+    end
+    return true
+  end
+  object:ToggleDoor(playerObj)
+  return true
+end
+
+function ISObjectClickHandler.doClickLightSwitch(object, playerNum, playerObj)
+  if false then
+    ISWorldObjectContextMenu.onToggleLight(nil, object, playerNum)
+    return true
+  end
+  local playerSq = playerObj:getCurrentSquare()
+  if object:getSquare():DistToProper(playerObj) >= 2 then return false end
+  if playerSq:isWallTo(object:getSquare()) then return false end
+  object:toggle()
+  return true
+end
+
+function ISObjectClickHandler.doClickThumpable(object, playerNum, playerObj)
+  local playerSq = playerObj:getCurrentSquare()
+  if object:getSquare():getZ() ~= playerSq:getZ() then return false end
+  if not object:isDoor() then return false end
+  if not object:isAdjacentToSquare(playerSq) then return false end
+  object:ToggleDoor(playerObj)
+  return true
+end
+
+function ISObjectClickHandler.doClickWindow(object, playerNum, playerObj)
+  if isKeyDown(Keyboard.KEY_LSHIFT) then
+    local curtain = object:HasCurtains()
+    if curtain and curtain:canInteractWith(playerObj) then
+      curtain:ToggleDoorSilent()
+    end
+    return true
+  end
+  if object:isInvincible() then return true end
+  local playerSq = playerObj:getCurrentSquare()
+  if (playerSq ~= object:getSquare()) and (playerSq ~= object:getOppositeSquare()) then return true end
+  if object:getBarricadeForCharacter(playerObj) then return true end
+  if object:isDestroyed() then
+    if not object:isBarricaded() then
+      playerObj:climbThroughWindow(object)
+    end
+    return true
+  end
+  if object:IsOpen() then
+    playerObj:closeWindow(object)
+  else
+    playerObj:openWindow(object)
+  end
+  return true
+end
+
+function ISObjectClickHandler.doClickSpecificObject(object, playerNum, playerObj)
+  if not playerObj or playerObj:isDead() then return false end
+
+  if not playerObj:getCurrentSquare() then return false end
+
+  if playerObj:isAiming() then return false end
+
+  if playerObj:isIgnoreContextKey() then return false end
+
+  if instanceof(object, "IsoCurtain") then
+    return ISObjectClickHandler.doClickCurtain(object, playerNum, playerObj)
+  end
+  if instanceof(object, "IsoDoor") then
+    return ISObjectClickHandler.doClickDoor(object, playerNum, playerObj)
+  end
+  if instanceof(object, "IsoLightSwitch") then
+    return ISObjectClickHandler.doClickLightSwitch(object, playerNum, playerObj)
+  end
+  if instanceof(object, "IsoThumpable") then
+    return ISObjectClickHandler.doClickThumpable(object, playerNum, playerObj)
+  end
+  if instanceof(object, "IsoWindow") then
+    return ISObjectClickHandler.doClickWindow(object, playerNum, playerObj)
+  end
+  return false
+end
+
 ISObjectClickHandler.doClick = function (object, x, y)
   local sq = object:getSquare();
   if instanceof(object, "IsoMovingObject") then
@@ -98,7 +196,16 @@ ISObjectClickHandler.doClick = function (object, x, y)
     return;
   end
 
-  local playerObj = getSpecificPlayer(0)
+  local playerNum = 0
+  local playerObj = getSpecificPlayer(playerNum)
+
+  if getCore():getGameMode() ~= "Tutorial"and instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
+  playerObj:getCurrentSquare() and object:getSquare() and
+  playerObj:DistToSquared(object:getX() + 0.5, object:getY() + 0.5) < 1.5 * 1.5 and
+  not playerObj:getCurrentSquare():isSomethingTo(object:getSquare()) then
+    ISRadioWindow.activate(playerObj, object)
+    return
+  end
 
   if isClient() and SafeHouse.isSafeHouse(sq, playerObj:getUsername(), true) and
   not getServerOptions():getBoolean("SafehouseAllowLoot") then
@@ -144,18 +251,14 @@ ISObjectClickHandler.doClick = function (object, x, y)
       end
     end
   end
-
-  if getCore():getGameMode() ~= "Tutorial" and instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
-  playerObj:getCurrentSquare() and object:getSquare() and
-  playerObj:DistToSquared(object:getX() + 0.5, object:getY() + 0.5) < 1.5 * 1.5 and
-  not playerObj:getCurrentSquare():isSomethingTo(object:getSquare()) then
-    ISRadioWindow.activate(playerObj, object)
-  end
 end
 
 -- master function for handling object clicks
 ISObjectClickHandler.onObjectLeftMouseButtonDown = function(object, x, y)
-  if not getSpecificPlayer(0) or getSpecificPlayer(0):isDead() then
+  local playerNum = 0
+  local playerObj = getSpecificPlayer(playerNum)
+
+  if not playerObj or playerObj:isDead() then
     return
   end
 
@@ -174,6 +277,10 @@ ISObjectClickHandler.onObjectLeftMouseButtonDown = function(object, x, y)
   if object ~= nil then
 
     self.downObject = object;
+
+    if ISObjectClickHandler.doClickSpecificObject(object, playerNum, playerObj) then
+      return
+    end
 
     --doOldContainerUI(object, x, y);
   end

@@ -180,7 +180,6 @@ function ISVehicleMechanics:createChildren()
 end
 
 function ISVehicleMechanics:onListMouseDown(x, y)
-
   self.parent.listbox.selected = 0;
   self.parent.bodyworklist.selected = 0;
 
@@ -201,7 +200,6 @@ function ISVehicleMechanics:onListRightMouseUp(x, y)
 end
 
 function ISVehicleMechanics:doPartContextMenu(part, x, y)
-
   local playerObj = getSpecificPlayer(self.playerNum);
   self.context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
   local option;
