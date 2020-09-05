@@ -199,7 +199,7 @@ ISObjectClickHandler.doClick = function (object, x, y)
   local playerNum = 0
   local playerObj = getSpecificPlayer(playerNum)
 
-  if getCore():getGameMode() ~= "Tutorial"and instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
+  if getCore():getGameMode() ~= "Tutorial" and instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
   playerObj:getCurrentSquare() and object:getSquare() and
   playerObj:DistToSquared(object:getX() + 0.5, object:getY() + 0.5) < 1.5 * 1.5 and
   not playerObj:getCurrentSquare():isSomethingTo(object:getSquare()) then
