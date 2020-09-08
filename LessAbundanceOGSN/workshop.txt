@@ -1,0 +1,19 @@
+version=1
+title=Less Abundance - Customizable Forageable Item Respawn Rate
+tags=Build 41;Build 40;Harder;Tweak
+visibility=public
+description=[h1]Fixes "Nature's Abundance" Sandbox Setting[/h1]
+description=In the vanilla game, scavenge zones refill ridiculously quickly (a few days) even when you set the "Nature's Abundance" setting to the lowest setting.
+description=
+description=How dreary!
+description=
+description=This aims to add a bit of realism and fun by letting you increase the time it takes for a forageable area to refill. Now you might have to actually leave your backyard to find greener pastures!
+description=
+description=Poster art created using assets from [url="www.nounproject.com"]The Noun Project[/url]:
+description=[list]
+description=[*]"Blueberry" by monkik
+description=[*]"Time" by Shmidt Sergey
+description=[*]"Slow Down" by Travis Avery
+description=[/list]
+description=
+description=Special Thanks to Sr. Grafo for the idea of this mod
