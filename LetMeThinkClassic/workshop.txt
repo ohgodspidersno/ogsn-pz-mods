@@ -1,4 +1,5 @@
 version=1
+id=2214424537
 title=Let Me Think Classic - v38,v39,v40
 description=[h1]Legacy Support for Older Versions of the Game[/h1]
 description=This contains three sub-mods that support older versions of the game. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2033451936]Click here for the IWBUMS version[/url].
@@ -31,5 +32,7 @@ description=
 description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
-tags=
+description=
+description=Tags:B40,Interface,Tweak
+tags=Build 40;Interface;Tweak
 visibility=public
