@@ -1,7 +1,6 @@
 version=1
+id=2223626084
 title=Less Abundance - Customizable Forageable Item Respawn Rate
-tags=Build 41;Build 40;Harder;Tweak
-visibility=public
 description=[h1]Fixes "Nature's Abundance" Sandbox Setting[/h1]
 description=In the vanilla game, scavenge zones refill ridiculously quickly (a few days) even when you set the "Nature's Abundance" setting to the lowest setting.
 description=
@@ -17,3 +16,7 @@ description=[*]"Slow Down" by Travis Avery
 description=[/list]
 description=
 description=Special Thanks to Sr. Grafo for the idea of this mod
+description=
+description=Tags:B41,B40,Food,Tweak,Hard,Harder,Realistic
+tags=Build 41;Build 40;Food;Tweak;Harder;Realistic
+visibility=public
