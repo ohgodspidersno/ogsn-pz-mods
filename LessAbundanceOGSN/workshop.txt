@@ -19,6 +19,13 @@ description=[/list]
 description=
 description=Special Thanks to Sr. Grafo for the idea of this mod
 description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
+description=
 description=Tags:B41,B40,Food,Tweak,Hard,Harder,Realistic
 tags=Build 41;Build 40;Food;Tweak;Harder;Realistic
 visibility=public

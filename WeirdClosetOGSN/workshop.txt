@@ -15,6 +15,19 @@ description=[*]Waistcoats can be any color
 description=[*]Medical scrubs can be any color
 description=[/list]
 description=
+description=Poster created using images from [url=www.thenounproject.com]The Noun Project[/url]
+description=[list]
+description=[*]Clothing by ProSymbols
+description=[*]Closet by iconcheese
+description=[/list]
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
+description=
 description=Tags:B41,B40,Textures,Clothing,Tweak
 tags=Build 41;Build 40;Textures;Clothing;Tweak
 visibility=public
