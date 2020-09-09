@@ -1,9 +1,10 @@
 version=1
 id=2215782660
 title=Weird Closet - More Vanilla Clothing Options
+description=[h1]A Little Splash of Color[/h1]
 description=Adds additional, vanilla-friendly options to some clothing items.
-description=Color pickers for clothing items that already [i]should[/i] have them, like Long Gloves.
-description=More choices for items with multiple types, for instance varsity jackets from other schools.
+description=Gives color pickers to clothing items that already "should" have one, like Long Gloves.
+description=Or new dropdown menu options, like varsity jackets from more schools.
 description=
 description=[b]Current List of Changes[/b]
 description=[list]

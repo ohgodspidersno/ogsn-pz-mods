@@ -2,10 +2,16 @@ version=1
 id=2079001985
 title=Orphanage for Abandoned Mods
 description=[h1]Update[/h1]
-description=Gid's "Organized Storage", and its fork by ImAnonymous, have been added.
-description=I fixed two bugs: First, items now spawn properly in 41.39. Second, taking the shrink wrap off a food package no longer gives cooking XP.
+description=I've decided to start adding "Foster Kids" submods.
+description=These will sparingly tweak other existing, maintained mods.
+description=
+description=They will NOT be replacements and will require the user to have the other mod enabled.
+description=
+description=The first one has been uploaded and makes it so that spray paint cans and chalk from the Spray Paint mod weigh 0.1 instead of the prohibitively cumbersome 0.5
 description=
 description=[h1]They're not my kids but they have nowhere else to go[/h1]
+description=
+description=[h2]Orphans[/h2]
 description=A collection of other people's mods that have been temporarily or permanently abandoned.
 description=I keep them compatible with the latest IWBUMS branch, and also fix any bugs and mod conflicts I find.
 description=[list]
@@ -17,9 +23,22 @@ description=[*]Craftable Dairy Foods - Updated version of [url=https://steamcomm
 description=[*]Organized Storage - Updated version of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1777858254]this[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1143998415]that[/url]
 description=[/list]
 description=
-description= Please let me know if you find any bugs or conflicts.
-description=Fork icon by Najaya Design from the Noun Project
+description=[h2]Foster Kids[/h2]
+description=These tweak existing maintained mods. They are patches and require that you have the original mod enabled as well.
+description=[list]
+description=[*]Spray Paint weight reduction. Cans and chalk now weigh 0.1 instead of 0.5
+description=The Spray Paint mod itself has four parts needed for the full experience:
+description=[olist]
+description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=499153179]Spray Paint base mod[/url]
+description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2003093385]Spraypaint v41 Update[/url]
+description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029478510]More Spraypaint Letters[/url]
+description=[*][url=https://steamcommunity.com/workshop/filedetails/?id=503640135]bcutils framework[/url]
+description=[/olist]
+description=[/list]
 description=
+description=Please let me know if you find any bugs or conflicts.
+description=Fork icon by Najaya Design from the Noun Project
+
 description=Tags:B41,Items,Food,Health,Medical,Traits,Tweak
 tags=Build 41;Items;Food;Medical;Traits;Tweak
 visibility=public
