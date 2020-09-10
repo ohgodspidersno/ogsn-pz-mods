@@ -24,6 +24,7 @@ TweakItem("Base.Butter","EvolvedRecipe","Sandwich:5;Stir fry Griddle Pan:5;Stir 
 TweakItem("Base.Peanuts","EvolvedRecipe","RicePot:8;RicePan:8;Salad:8;FruitSalad:8;OatmealEvolved:8");
 TweakItem("Base.Honey","EvolvedRecipe","Cake:5;Sandwich:5;Salad:5;Roasted Vegetables:5;Stir fry Griddle Pan:5;Stir fry:5;HotDrink:5;OatmealEvolved:5");
 TweakItem("Base.Modjeska","EvolvedRecipe","Salad:10;FruitSalad:10;OatmealEvolved:10");
+TweakItem("Base.Ham","EvolvedRecipe","Sandwich:10;Burger:10;Salad:10;RicePot:10;RicePan:10;PastaPot:10;PastaPan:10;Stir fry:10;Stir fry Griddle Pan:10");
 
 if getActivatedMods():contains("AAApoc") then
     TweakItem("Base.AAAVanillaExtract","EvolvedRecipe", "Soup:1;Stew:1;Pie:1;Stir fry Griddle Pan:1;Stir fry:1;Burger:1;Salad:1;Roasted Vegetables:1;RicePot:1;RicePan:1;PastaPot:1;PastaPan:1;OatmealEvolved:1");
