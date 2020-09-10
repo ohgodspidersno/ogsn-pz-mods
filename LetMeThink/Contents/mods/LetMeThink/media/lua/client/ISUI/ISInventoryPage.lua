@@ -1,4 +1,4 @@
-
+-- LetMeThink relevant file
 --***********************************************************
 --**               LEMMY/ROBERT JOHNSON                    **
 --***********************************************************
@@ -235,7 +235,7 @@ local TurnOnOff = {
   }
 }
 
-function ISInventoryPage:toggleStove()
+function ISInventoryPage:toggleStove() -- LMT
   local object = self.inventoryPane.inventory:getParent()
   if not object then return end
   local className = object:getObjectName()
@@ -935,6 +935,10 @@ function ISInventoryPage.loadWeight(inv)
           break;
         end
       end
+      local playerObj = getSpecificPlayer(self.player)
+      if playerObj and playerObj:isAiming() then
+        self.collapseCounter = 1000
+      end
       if ISMouseDrag.dragging and #ISMouseDrag.dragging > 0 then
         bDo = false;
       end
@@ -1581,7 +1585,7 @@ function ISInventoryPage.loadWeight(inv)
     self.inventoryPane:SaveLayout(name, layout)
   end
 
-  ISInventoryPage.onKeyPressed = function(key)
+  ISInventoryPage.onKeyPressed = function(key) -- LMT
     if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getPlayerInventory(0) and getCore():getGameMode() ~= "Tutorial" then
       getPlayerInventory(0):setVisible(not getPlayerInventory(0):getIsVisible());
       getPlayerLoot(0):setVisible(getPlayerInventory(0):getIsVisible());

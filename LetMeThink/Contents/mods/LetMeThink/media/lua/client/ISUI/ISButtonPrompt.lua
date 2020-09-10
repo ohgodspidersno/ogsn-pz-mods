@@ -265,7 +265,7 @@ function ISButtonPrompt:stopAction()
   playerObj:StopAllActionQueue()
 end
 
-function ISButtonPrompt:getBestAButtonAction(dir)
+function ISButtonPrompt:getBestAButtonAction(dir) -- LMT
   if dir == nil then
     self:setAPrompt(nil, nil, nil);
   end
@@ -503,7 +503,7 @@ function ISButtonPrompt:doAButtonDoorOrWindowOrWindowFrame(dir, obj)
   end
 end
 
-function ISButtonPrompt:getBestBButtonAction(dir)
+function ISButtonPrompt:getBestBButtonAction(dir) -- LMT
   if dir == nil then
     self:setBPrompt(nil, nil, nil);
   end
@@ -672,7 +672,7 @@ function ISButtonPrompt:doBButtonDoorOrWindowOrWindowFrame(dir, obj)
   end
 end
 
-function ISButtonPrompt:getBestYButtonAction(dir)
+function ISButtonPrompt:getBestYButtonAction(dir) -- LMT
   if dir == nil then
     self:setYPrompt(nil, nil, nil);
   end
@@ -787,7 +787,7 @@ function ISButtonPrompt:getBestYButtonAction(dir)
 end
 
 
-function ISButtonPrompt:getBestXButtonAction(dir)
+function ISButtonPrompt:getBestXButtonAction(dir) -- LMT
   if dir == nil then
     self:setXPrompt(nil, nil, nil);
   end
@@ -917,7 +917,7 @@ function ISButtonPrompt:getXButtonObjects(dir)
   end
 end
 
-function ISButtonPrompt:getBestLBButtonAction(dir)
+function ISButtonPrompt:getBestLBButtonAction(dir) -- LMT
   if getCell():getDrag(self.player) then
     self:setLBPrompt(getCell():getDrag(self.player):getLBPrompt(), nil, nil);
   elseif ISFirearmRadialMenu.getBestLBButtonAction(self) then
@@ -926,7 +926,7 @@ function ISButtonPrompt:getBestLBButtonAction(dir)
   end
 end
 
-function ISButtonPrompt:getBestRBButtonAction(dir)
+function ISButtonPrompt:getBestRBButtonAction(dir) -- LMT
   if getCell():getDrag(self.player) then
     self:setRBPrompt(getCell():getDrag(self.player):getRBPrompt(), nil, nil);
   elseif ISFirearmRadialMenu.getBestRBButtonAction(self) then
@@ -1033,12 +1033,12 @@ function ISButtonPrompt:new (player)
   o.player = player;
   o.anchorTop = true;
   o.anchorBottom = false;
-  o.buttonA = getTexture("media/ui/abutton.png");
-  o.buttonB = getTexture("media/ui/bbutton.png");
-  o.buttonX = getTexture("media/ui/xbutton.png");
-  o.buttonY = getTexture("media/ui/ybutton.png");
-  o.buttonLB = getTexture("media/ui/leftBumper.png");
-  o.buttonRB = getTexture("media/ui/rightBumper.png");
+  o.buttonA = Joypad.Texture.AButton;
+  o.buttonB = Joypad.Texture.BButton;
+  o.buttonX = Joypad.Texture.XButton;
+  o.buttonY = Joypad.Texture.YButton;
+  o.buttonLB = Joypad.Texture.LBumper;
+  o.buttonRB = Joypad.Texture.RBumper;
 
   o.movableIconPickup = getTexture("media/ui/Furniture_Pickup.png");
   o.movableIconPlace = getTexture("media/ui/Furniture_Place.png");

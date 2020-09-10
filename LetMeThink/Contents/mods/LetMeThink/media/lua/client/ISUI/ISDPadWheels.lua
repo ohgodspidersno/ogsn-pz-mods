@@ -10,7 +10,7 @@ local function isEquippedOrAttached(playerObj, item)
   return playerObj:isEquipped(item) or playerObj:isAttachedItem(item)
 end
 
-function ISDPadWheels.onDisplayLeft(joypadData)
+function ISDPadWheels.onDisplayLeft(joypadData) -- LMT
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 
@@ -52,7 +52,7 @@ function ISDPadWheels.onDisplayLeft(joypadData)
   playerObj:setJoypadIgnoreAimUntilCentered(true)
 end
 
-function ISDPadWheels.onDisplayRight(joypadData)
+function ISDPadWheels.onDisplayRight(joypadData) -- LMT
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 
@@ -71,7 +71,7 @@ function ISDPadWheels.onDisplayUp(joypadData)
   ISVehicleMenu.showRadialMenu(getSpecificPlayer(joypadData.player))
 end
 
-function ISDPadWheels.onDisplayDown(joypadData)
+function ISDPadWheels.onDisplayDown(joypadData) -- LMT
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 

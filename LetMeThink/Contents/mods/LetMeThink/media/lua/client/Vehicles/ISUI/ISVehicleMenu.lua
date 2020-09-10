@@ -40,7 +40,7 @@ function ISVehicleMenu.OnFillWorldObjectContextMenu(player, context, worldobject
   end
 end
 
-function ISVehicleMenu.showRadialMenu(playerObj)
+function ISVehicleMenu.showRadialMenu(playerObj) -- LMT
   local vehicle = playerObj:getVehicle()
   if not vehicle then
     ISVehicleMenu.showRadialMenuOutside(playerObj)
@@ -61,7 +61,7 @@ function ISVehicleMenu.showRadialMenu(playerObj)
   menu:setX(getPlayerScreenLeft(playerObj:getPlayerNum()) + getPlayerScreenWidth(playerObj:getPlayerNum()) / 2 - menu:getWidth() / 2)
   menu:setY(getPlayerScreenTop(playerObj:getPlayerNum()) + getPlayerScreenHeight(playerObj:getPlayerNum()) / 2 - menu:getHeight() / 2)
 
-  local texture = getTexture("media/ui/abutton.png")
+  local texture = Joypad.Texture.AButton
 
   local seat = vehicle:getSeat(playerObj)
 
@@ -1024,7 +1024,7 @@ function ISVehicleMenu.onExitAux(playerObj, seat)
   end
 end
 
-function ISVehicleMenu.onShowSeatUI(playerObj, vehicle)
+function ISVehicleMenu.onShowSeatUI(playerObj, vehicle) -- LMT
   local playerNum = playerObj:getPlayerNum()
   if not ISVehicleMenu.seatUI then
     ISVehicleMenu.seatUI = {}

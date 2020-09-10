@@ -9,7 +9,7 @@ ISInventoryPaneContextMenu.tooltipPool = {}
 ISInventoryPaneContextMenu.tooltipsUsed = {}
 
 -- MAIN METHOD FOR CREATING RIGHT CLICK CONTEXT MENU FOR INVENTORY ITEMS
-ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, items, x, y, origin)
+ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, items, x, y, origin) -- LMT
   if getCore():getGameMode() == "Tutorial" then
     Tutorial1.createInventoryContextMenu(player, isInPlayerInventory, items, x, y);
     return;
@@ -555,13 +555,8 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   end
   -->> Stormy
 
-  if waterContainer and getSpecificPlayer(player):getStats():getThirst() > 0.1 then
-    local drinkOption = context:addOption(getText("ContextMenu_Drink"), items, nil)
-    local subMenuDrink = context:getNew(context)
-    context:addSubMenu(drinkOption, subMenuDrink)
-    subMenuDrink:addOption(getText("ContextMenu_Eat_All"), items, ISInventoryPaneContextMenu.onDrink, waterContainer, 1, player)
-    subMenuDrink:addOption(getText("ContextMenu_Eat_Half"), items, ISInventoryPaneContextMenu.onDrink, waterContainer, 0.5, player)
-    subMenuDrink:addOption(getText("ContextMenu_Eat_Quarter"), items, ISInventoryPaneContextMenu.onDrink, waterContainer, 0.25, player)
+  if waterContainer and (playerObj:getStats():getThirst() > 0.1) then
+    ISInventoryPaneContextMenu.doDrinkForThirstMenu(context, playerObj, waterContainer)
   end
 
   -- Crowley
@@ -713,7 +708,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   return context;
 end
 
-ISInventoryPaneContextMenu.createMenuNoItems = function(playerNum, isLoot, x, y)
+ISInventoryPaneContextMenu.createMenuNoItems = function(playerNum, isLoot, x, y) -- LMT
 
   if ISInventoryPaneContextMenu.dontCreateMenu then return end
 
@@ -1182,17 +1177,17 @@ ISInventoryPaneContextMenu.doReloadMenuForMagazine = function(playerObj, magazin
 end
 
 ISInventoryPaneContextMenu.doBulletMenu = function(playerObj, weapon, context)
-  local bullets = playerObj:getInventory():getItemsFromType(weapon:getAmmoType());
-  local bulletNumber = weapon:getMaxAmmo() - weapon:getCurrentAmmoCount();
-  local bulletName = InventoryItemFactory.CreateItem(weapon:getAmmoType()):getDisplayName();
-  if bullets:isEmpty() then
-    bulletNumber = 0;
+  local bulletAvail = playerObj:getInventory():getItemCountRecurse(weapon:getAmmoType());
+  local bulletNeeded = weapon:getMaxAmmo() - weapon:getCurrentAmmoCount();
+  local bulletName = getScriptManager():FindItem(weapon:getAmmoType()):getDisplayName();
+  if bullets == 0 then
+    bulletNeeded = 0;
   end
-  if bulletNumber > bullets:size() then
-    bulletNumber = bullets:size();
+  if bulletNeeded > bulletAvail then
+    bulletNeeded = bulletAvail;
   end
-  local insertOption = context:addOption(getText("ContextMenu_InsertBullets", bulletNumber, bulletName, weapon:getDisplayName()), playerObj, ISInventoryPaneContextMenu.onInsertMagazine, weapon);
-  if bulletNumber <= 0 then
+  local insertOption = context:addOption(getText("ContextMenu_InsertBullets", bulletNeeded, bulletName, weapon:getDisplayName()), playerObj, ISInventoryPaneContextMenu.onLoadBulletsIntoFirearm, weapon);
+  if bulletNeeded <= 0 then
     insertOption.notAvailable = true;
   end
 
@@ -1247,6 +1242,16 @@ ISInventoryPaneContextMenu.onEjectMagazine = function(playerObj, weapon)
   ISTimedActionQueue.add(ISEjectMagazine:new(playerObj, weapon));
 end
 
+ISInventoryPaneContextMenu.transferBullets = function(playerObj, ammoType, currentAmmo, maxAmmo)
+  local inventory = playerObj:getInventory()
+  local ammoCount = inventory:getItemCountRecurse(ammoType)
+  ammoCount = math.min(ammoCount, maxAmmo - currentAmmo)
+  if ammoCount <= 0 then return 0 end
+  local items = inventory:getSomeTypeRecurse(ammoType, ammoCount)
+  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, items)
+  return ammoCount
+end
+
 ISInventoryPaneContextMenu.onInsertMagazine = function(playerObj, weapon, magazine)
   ISInventoryPaneContextMenu.transferIfNeeded(playerObj, magazine)
   ISInventoryPaneContextMenu.equipWeapon(weapon, true, false, playerObj:getPlayerNum())
@@ -1255,7 +1260,13 @@ end
 
 ISInventoryPaneContextMenu.onRackGun = function(playerObj, weapon)
   ISInventoryPaneContextMenu.equipWeapon(weapon, true, false, playerObj:getPlayerNum())
-  ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon, true));
+  ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon, true, nil));
+end
+
+ISInventoryPaneContextMenu.onLoadBulletsIntoFirearm = function(playerObj, weapon)
+  ISInventoryPaneContextMenu.transferBullets(playerObj, weapon:getAmmoType(), weapon:getCurrentAmmoCount(), weapon:getMaxAmmo())
+  ISInventoryPaneContextMenu.equipWeapon(weapon, true, false, playerObj:getPlayerNum())
+  ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon, false, nil));
 end
 
 ISInventoryPaneContextMenu.onUnloadBulletsFromFirearm = function(playerObj, weapon)
@@ -1552,6 +1563,35 @@ end
 ISInventoryPaneContextMenu.OnResetRemoteControlID = function(item, player)
   local playerObj = getSpecificPlayer(player)
   item:setRemoteControlID(-1)
+end
+
+ISInventoryPaneContextMenu.doDrinkForThirstMenu = function(context, playerObj, waterContainer)
+  local thirst = playerObj:getStats():getThirst()
+  local units = math.floor((thirst + 0.005) / 0.1)
+  units = math.min(units, waterContainer:getDrainableUsesInt())
+  local option = context:addOption(getText("ContextMenu_DrinkForThirst"), waterContainer, ISInventoryPaneContextMenu.onDrinkForThirst, playerObj)
+  local tooltip = ISInventoryPaneContextMenu.addToolTip()
+  local tx = getTextManager():MeasureStringX(tooltip.font, getText("Tooltip_food_Thirst") .. ":") + 20
+  tooltip.description = string.format("%s: <SETX:%d> -%d / %d <LINE> %d%s",
+    getText("Tooltip_food_Thirst"), tx, math.min(units * 10, thirst * 100), thirst * 100,
+  waterContainer:getUsedDelta() * 100, getText("ContextMenu_FullPercent"))
+  option.toolTip = tooltip
+  --[[
+    local drinkOption = context:addOption(getText("ContextMenu_Drink"), items, nil)
+    local subMenuDrink = context:getNew(context)
+    context:addSubMenu(drinkOption, subMenuDrink)
+    subMenuDrink:addOption(getText("ContextMenu_Eat_All"), items, ISInventoryPaneContextMenu.onDrink, waterContainer, 1, player)
+    subMenuDrink:addOption(getText("ContextMenu_Eat_Half"), items, ISInventoryPaneContextMenu.onDrink, waterContainer, 0.5, player)
+    subMenuDrink:addOption(getText("ContextMenu_Eat_Quarter"), items, ISInventoryPaneContextMenu.onDrink, waterContainer, 0.25, player)
+--]]
+end
+
+ISInventoryPaneContextMenu.onDrinkForThirst = function(waterContainer, playerObj)
+  local thirst = playerObj:getStats():getThirst()
+  local units = math.floor((thirst + 0.075) / 0.1)
+  units = math.min(units, waterContainer:getDrainableUsesInt())
+  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, waterContainer)
+  ISTimedActionQueue.add(ISDrinkFromBottle:new(playerObj, waterContainer, units))
 end
 
 ISInventoryPaneContextMenu.onDrink = function(items, waterContainer, percentage, player)

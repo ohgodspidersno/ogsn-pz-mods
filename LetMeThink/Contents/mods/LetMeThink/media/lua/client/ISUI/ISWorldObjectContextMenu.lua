@@ -356,7 +356,7 @@ local function predicateBlowTorch(item)
 end
 
 -- MAIN METHOD FOR CREATING RIGHT CLICK CONTEXT MENU FOR WORLD ITEMS
-ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
+ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test) -- LMT
   if getCore():getGameMode() == "Tutorial" then
     local context = Tutorial1.createWorldContextMenu(player, worldobjects, x, y);
     return context;

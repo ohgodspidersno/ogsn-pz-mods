@@ -19,12 +19,13 @@ function ISBackButtonWheel:center()
   self:setY(y - self:getHeight() / 2)
 end
 
-function ISBackButtonWheel:addCommands()
+function ISBackButtonWheel:addCommands() -- LMT
   local playerObj = getSpecificPlayer(self.playerNum)
 
   self:center()
 
   self:clear()
+
 
   if not ISBackButtonWheel.disablePlayerInfo then
     self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
@@ -36,6 +37,7 @@ function ISBackButtonWheel:addCommands()
   else
     self:addSlice(nil, nil, nil)
   end
+
 
   if getCore():isZoomEnabled() and not getCore():getAutoZoom(self.playerNum) then
     if ISBackButtonWheel.disableZoomIn then
@@ -68,7 +70,7 @@ function ISBackButtonWheel:addCommands()
   end
 
   if Core.isLastStand() then
-    self:addSlice(getText("IGUI_BackButton_LastStand"), getTexture("media/ui/abutton.png"), self.onCommand, self, "LastStand")
+    self:addSlice(getText("IGUI_BackButton_LastStand"), Joypad.Texture.AButton, self.onCommand, self, "LastStand")
   end
 
   if getCore():isZoomEnabled() and not getCore():getAutoZoom(self.playerNum) then
@@ -101,7 +103,7 @@ function ISBackButtonWheel:onJoypadDown(button, joypadData)
   ISRadialMenu.onJoypadDown(self, button, joypadData)
 end
 
-function ISBackButtonWheel:onCommand(command)
+function ISBackButtonWheel:onCommand(command) -- LMT
   local focus = nil
   local playerObj = getSpecificPlayer(self.playerNum)
 

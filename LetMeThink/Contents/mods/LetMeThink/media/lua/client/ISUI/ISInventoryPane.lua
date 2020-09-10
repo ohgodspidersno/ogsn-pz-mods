@@ -359,14 +359,13 @@ function ISInventoryPane:hideButtons()
   self.contextButton3:setVisible(false);
 end
 
-function ISInventoryPane:doButtons(y)
+function ISInventoryPane:doButtons(y) -- LMT
 
   self.contextButton1:setVisible(false);
   self.contextButton2:setVisible(false);
   self.contextButton3:setVisible(false);
 
-  if getPlayerContextMenu(self.player):isAnyVisible() or
-  getSpecificPlayer(self.player):isAsleep() then
+  if getPlayerContextMenu(self.player):isAnyVisible() or getSpecificPlayer(self.player):isAsleep() then
     return
   end
 
@@ -1004,7 +1003,7 @@ function ISInventoryPane:doGrabOnJoypadSelected()
   end
 end
 
-function ISInventoryPane:doContextOnJoypadSelected()
+function ISInventoryPane:doContextOnJoypadSelected() -- LMT
   if JoypadState.disableInvInteraction then
     return;
   end
@@ -1275,13 +1274,24 @@ function ISInventoryPane:rendericons()
   end
 end
 
+local function isSelectAllPossible(page)
+  if not page then return false end
+  if not page:isVisible() then return false end
+  if page.isCollapsed then return false end
+  if not page:isMouseOver() then return false end
+  for _, v in pairs(page.inventoryPane.selected) do
+    return true
+  end
+  return false
+end
+
 function ISInventoryPane:update()
 
   local playerObj = getSpecificPlayer(self.player)
 
   if self.doController then
     --print("do controller!")
-    self.selected = {}
+    table.wipe(self.selected)
     if self.joyselection == nil then
       self.joyselection = 0;
     end
@@ -1375,30 +1385,67 @@ function ISInventoryPane:update()
     end
   end
 
-  if isCtrlKeyDown() and isKeyDown(Keyboard.KEY_A) then
-    if self.inventoryPage:isMouseOver() then
-      local selectAllItems = false;
-      if not self.inventoryPage.isCollapsed then
-        for k, v in pairs(self.items) do
-          if self.selected[k] ~= nil then
-            selectAllItems = true
-            break;
-          end
-        end
-
-        if selectAllItems then
-          self.selected = {}
-          for k, v in pairs(self.items) do
-            self.selected[k] = v
-          end
-          getCore():setIsSelectingAll(true)
-        end
-      end
-    else
-      self.selected = {}
-    end
+  if self.doController then
+    return
   end
 
+  local page1 = getPlayerInventory(0)
+  local page2 = getPlayerLoot(0)
+  if not page1 or not page2 then
+    return
+  end
+  if isCtrlKeyDown() and (isSelectAllPossible(page1) or isSelectAllPossible(page2)) then
+    getCore():setIsSelectingAll(true)
+  else
+    getCore():setIsSelectingAll(false)
+  end
+  if isCtrlKeyDown() and isKeyDown(Keyboard.KEY_A) and isSelectAllPossible(self.parent) then
+    table.wipe(self.selected)
+    for k, v in ipairs(self.items) do
+      self.selected[k] = v
+    end
+  end
+end
+
+function ISInventoryPane:saveSelection(selected)
+  for _, v in pairs(self.selected) do
+    if instanceof(v, "InventoryItem") then
+      selected[v] = selected[v] or "item"
+    else
+      selected[v.items[1]] = "group"
+    end
+  end
+  -- Hack for the selection being cleared while dragging items.
+  if ISMouseDrag.dragging and (ISMouseDrag.draggingFocus == self) then
+    for _, v in ipairs(ISMouseDrag.dragging) do
+      if instanceof(v, "InventoryItem") then
+        selected[v] = selected[v] or "item"
+      else
+        selected[v.items[1]] = "group"
+      end
+    end
+  end
+  return selected
+end
+
+function ISInventoryPane:restoreSelection(selected)
+  local row = 1
+  for _, v in ipairs(self.itemslist) do
+    local item = v.items[1]
+    if selected[item] == "group" then
+      self.selected[row] = item
+    end
+    row = row + 1
+    if not self.collapsed[v.name] then
+      for j = 2, #v.items do
+        local item2 = v.items[j]
+        if selected[item2] then
+          self.selected[row] = item2
+        end
+        row = row + 1
+      end
+    end
+  end
 end
 
 function ISInventoryPane:refreshContainer()
@@ -1412,14 +1459,7 @@ function ISInventoryPane:refreshContainer()
     self.selected = {}
   end
 
-  local selected = {}
-  for _, v in pairs(self.selected) do
-    if instanceof(v, "InventoryItem") then
-      selected[v] = true
-    else
-      selected[v.items[1]] = true
-    end
-  end
+  local selected = self:saveSelection({})
   table.wipe(self.selected)
 
   local playerObj = getSpecificPlayer(self.player)
@@ -1503,9 +1543,6 @@ function ISInventoryPane:refreshContainer()
       if self.collapsed[v.name] == nil then
         self.collapsed[v.name] = true;
       end
-      if selected[v.items[1]] then
-        self.selected[#self.itemindex] = v.items[1]
-      end
     end
   end
 
@@ -1517,12 +1554,11 @@ function ISInventoryPane:refreshContainer()
   for k, v in ipairs(self.itemslist) do
     local item = v.items[1];
     table.insert(v.items, 1, item);
-
   end
 
-  -- if self.inventoryPage ~= nil then
-  --     self.inventoryPage:refreshBackpacks();
-  -- end
+  self:restoreSelection(selected);
+  table.wipe(selected);
+
   self:updateScrollbars();
   self.inventory:setDrawDirty(false);
 

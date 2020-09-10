@@ -6,7 +6,7 @@ ISVehicleRegulator = {}
 ISVehicleRegulator.xPressed = {}
 ISVehicleRegulator.changedSpeed = {}
 
-local function isRegulatorButtonPressed(joypadData)
+local function isRegulatorButtonPressed(joypadData) -- LMT
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 
@@ -53,7 +53,7 @@ function ISVehicleRegulator.onJoypadPressX(buttonPrompt, joypadData)
   ISVehicleRegulator.changedSpeed[joypadData.id] = false
 end
 
-function ISVehicleRegulator.onJoypadReleaseX(joypadData)
+function ISVehicleRegulator.onJoypadReleaseX(joypadData) -- LMT
   if not ISVehicleRegulator.xPressed[joypadData.id] then return end
   ISVehicleRegulator.xPressed[joypadData.id] = false
 

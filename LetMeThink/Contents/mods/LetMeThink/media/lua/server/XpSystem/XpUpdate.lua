@@ -114,7 +114,7 @@ xpUpdate.onMakeItem = function(item, resultItem, recipe)
 end
 
 -- if we press the toggle skill panel key we gonna display the character info screen
-xpUpdate.displayCharacterInfo = function(key)
+xpUpdate.displayCharacterInfo = function(key) -- LMT
   local playerObj = getSpecificPlayer(0)
   if not playerObj or playerObj:isDead() then
     return;

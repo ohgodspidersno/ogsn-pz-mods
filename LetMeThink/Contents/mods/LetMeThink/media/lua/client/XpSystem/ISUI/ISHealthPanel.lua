@@ -147,7 +147,7 @@ function ISHealthPanel:setVisible(visible)
   --    ISHealthPanel.cheat = self.character:getAccessLevel() ~= "None";
 end
 
-function ISHealthBodyPartListBox:onRightMouseUp(x, y)
+function ISHealthBodyPartListBox:onRightMouseUp(x, y) -- LMT
   local row = self:rowAt(x, y)
   if row < 1 or row > #self.items then return end
   self.selected = row
@@ -817,7 +817,7 @@ function ISHealthPanel:new (player, x, y, width, height)
   --    o.healthPanel:setVisible(true);
   o.doctorLevel = player:getPerkLevel(Perks.Doctor);
   o:noBackground();
-  o.abutton = getTexture("media/ui/abutton.png")
+  o.abutton = Joypad.Texture.AButton
   o.damagedParts = {}
   ISHealthPanel.instance = o;
   return o;

@@ -179,7 +179,7 @@ function ISVehicleMechanics:createChildren()
   self:initParts();
 end
 
-function ISVehicleMechanics:onListMouseDown(x, y)
+function ISVehicleMechanics:onListMouseDown(x, y) -- LMT
   self.parent.listbox.selected = 0;
   self.parent.bodyworklist.selected = 0;
 
@@ -1412,7 +1412,8 @@ function ISVehicleMechanics:new(x, y, character, vehicle)
 end
 
 function ISVehicleMechanics:isKeyConsumed(key)
-  return true
+  return key == Keyboard.KEY_ESCAPE or
+  key == getCore():getKey("VehicleMechanics")
 end
 
 function ISVehicleMechanics:onKeyRelease(key)
@@ -1426,7 +1427,6 @@ function ISVehicleMechanics:onKeyRelease(key)
   if key == getCore():getKey("VehicleMechanics") then
     self:close();
   end
-  SpeedControlsHandler.onKeyPressed(key);
 end
 
 ISVehicleMechanics.OnMechanicActionDone = function(chr, success, vehicleId, partId, itemId, installing)

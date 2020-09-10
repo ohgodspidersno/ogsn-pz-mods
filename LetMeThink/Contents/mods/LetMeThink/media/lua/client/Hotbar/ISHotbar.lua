@@ -15,6 +15,10 @@ local FONT_HGT_SMALL = getTextManager():getFontHeight(UIFont.Small)
 --************************************************************************--
 
 function ISHotbar:render()
+  if JoypadState.players[1] then
+    self:setVisible(false);
+    self:removeFromUIManager();
+  end
   self:drawRectBorderStatic(0, 0, self.width, self.height, self.borderColor.a, self.borderColor.r, self.borderColor.g, self.borderColor.b);
 
   local mouseOverSlotIndex = self:getSlotIndexAt(self:getMouseX(), self:getMouseY())
@@ -92,7 +96,7 @@ function ISHotbar:getSlotDefReplacement(slot)
   return slot;
 end
 
-function ISHotbar:doMenu(slotIndex)
+function ISHotbar:doMenu(slotIndex)  -- LMT
   local slot = self.availableSlot[slotIndex];
   local slotDef = slot.def;
   local context = ISContextMenu.get(self.playerNum, getMouseX(), getMouseY());
@@ -617,9 +621,12 @@ function ISHotbar:getSlotForKey(key)
   return - 1
 end
 
-ISHotbar.onKeyStartPressed = function(key)
+ISHotbar.onKeyStartPressed = function(key) -- LMT
   local playerObj = getSpecificPlayer(0)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
+    return
+  end
+  if JoypadState.players[1] then
     return
   end
   local self = getPlayerHotbar(0)
@@ -635,9 +642,12 @@ ISHotbar.onKeyStartPressed = function(key)
   getPlayerHotbar(0).radialWasVisible = false
 end
 
-ISHotbar.onKeyPressed = function(key)
+ISHotbar.onKeyPressed = function(key) -- LMT
   local playerObj = getSpecificPlayer(0)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
+    return
+  end
+  if JoypadState.players[1] then
     return
   end
   local self = getPlayerHotbar(0);
@@ -672,9 +682,12 @@ function ISHotbar:onRadialRemove(item)
   self:removeItem(item, true)
 end
 
-ISHotbar.onKeyKeepPressed = function(key)
+ISHotbar.onKeyKeepPressed = function(key) -- LMT
   local playerObj = getSpecificPlayer(0)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
+    return
+  end
+  if JoypadState.players[1] then
     return
   end
   if playerObj:isAttacking() then

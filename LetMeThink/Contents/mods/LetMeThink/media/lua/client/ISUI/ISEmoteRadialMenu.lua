@@ -182,7 +182,7 @@ STATE[2] = {}
 STATE[3] = {}
 STATE[4] = {}
 
-function ISEmoteRadialMenu.checkKey(key)
+function ISEmoteRadialMenu.checkKey(key) -- LMT
   if not (key == getCore():getKey("Emote") or key == getCore():getKey("Shout")) then
     return false
   end

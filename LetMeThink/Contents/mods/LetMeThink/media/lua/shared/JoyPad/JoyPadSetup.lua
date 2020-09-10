@@ -22,6 +22,20 @@ Joypad.DPadRight = 101
 Joypad.DPadUp = 102
 Joypad.DPadDown = 103
 
+Joypad.Texture = {}
+Joypad.Texture.AButton = getTexture("media/ui/xbox/XBOX_A.png")
+Joypad.Texture.BButton = getTexture("media/ui/xbox/XBOX_B.png")
+Joypad.Texture.XButton = getTexture("media/ui/xbox/XBOX_X.png")
+Joypad.Texture.YButton = getTexture("media/ui/xbox/XBOX_Y.png")
+Joypad.Texture.LBumper = getTexture("media/ui/xbox/xbox_lb.png")
+Joypad.Texture.RBumper = getTexture("media/ui/xbox/xbox_rb.png")
+Joypad.Texture.DPadLeft = getTexture("media/ui/xbox/XBOX_dpad_left.png")
+Joypad.Texture.DPadRight = getTexture("media/ui/xbox/XBOX_dpad_right.png")
+Joypad.Texture.DPadUp = getTexture("media/ui/xbox/XBOX_dpad_up.png")
+Joypad.Texture.DPadDown = getTexture("media/ui/xbox/XBOX_dpad_down.png")
+Joypad.Texture.LTrigger = getTexture("media/ui/xbox/xbox_lefttrigger.png")
+Joypad.Texture.RTrigger = getTexture("media/ui/xbox/xbox_righttrigger.png")
+
 joypad = {}
 joypad.wantNoise = getDebug()
 local noise = function(msg)
@@ -102,7 +116,7 @@ function JoypadState.getUserNameCallback(target, button, playerObj, joypadData)
   end
 end
 
-local function onPauseButtonPressed(joypadData)
+local function onPauseButtonPressed(joypadData) -- LMT
   if UIManager.getSpeedControls() and not isClient() then
     if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 or getGameTime():getTrueMultiplier() > 1 then
       if MainScreen.instance and MainScreen.instance.inGame and MainScreen.instance:getIsVisible() then
@@ -144,7 +158,7 @@ local function onPauseButtonPressed(joypadData)
   end
 end
 
-function onJoypadPressButton(joypadIndex, joypadData, button)
+function onJoypadPressButton(joypadIndex, joypadData, button) -- LMT
   if MainScreen.instance and MainScreen.instance.inGame and MainScreen.instance:getIsVisible() then
     if button == Joypad.Start and joypadData.focus == MainScreen.instance then
       onPauseButtonPressed(joypadData)
@@ -153,7 +167,7 @@ function onJoypadPressButton(joypadIndex, joypadData, button)
     end
     return
   end
-
+  
   if joypadData.player and getCell() and getCell():getDrag(joypadData.player) then
     getCell():getDrag(joypadData.player):onJoypadPressButton(joypadIndex, joypadData, button);
     return;

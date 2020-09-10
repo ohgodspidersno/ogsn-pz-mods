@@ -159,7 +159,7 @@ function ISObjectClickHandler.doClickWindow(object, playerNum, playerObj)
   return true
 end
 
-function ISObjectClickHandler.doClickSpecificObject(object, playerNum, playerObj)
+function ISObjectClickHandler.doClickSpecificObject(object, playerNum, playerObj) -- LMT
   if not playerObj or playerObj:isDead() then return false end
 
   if not playerObj:getCurrentSquare() then return false end
@@ -186,7 +186,7 @@ function ISObjectClickHandler.doClickSpecificObject(object, playerNum, playerObj
   return false
 end
 
-ISObjectClickHandler.doClick = function (object, x, y)
+ISObjectClickHandler.doClick = function (object, x, y) -- LMT
   local sq = object:getSquare();
   if instanceof(object, "IsoMovingObject") then
     sq = object:getCurrentSquare();
