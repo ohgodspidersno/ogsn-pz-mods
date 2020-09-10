@@ -19,6 +19,7 @@ TweakItem("Base.Orange","EvolvedRecipe","Cake:8;FruitSalad:8;OatmealEvolved:8");
 TweakItem("Base.Apple","EvolvedRecipe","Cake:8;Salad:8;FruitSalad:8;OatmealEvolved:8");
 TweakItem("Base.Banana","EvolvedRecipe","Cake:10;FruitSalad:10;OatmealEvolved:10");
 TweakItem("Base.Milk","EvolvedRecipe","HotDrink:2;OatmealEvolved:2");
+TweakItem("farming.Milk","EvolvedRecipe","HotDrink:2;OatmealEvolved:2");
 TweakItem("Base.Butter","EvolvedRecipe","Sandwich:5;Stir fry Griddle Pan:5;Stir fry:5;Roasted Vegetables:5;PastaPot:5;PastaPan:5;OatmealEvolved:5");
 TweakItem("Base.Peanuts","EvolvedRecipe","RicePot:8;RicePan:8;Salad:8;FruitSalad:8;OatmealEvolved:8");
 TweakItem("Base.Honey","EvolvedRecipe","Cake:5;Sandwich:5;Salad:5;Roasted Vegetables:5;Stir fry Griddle Pan:5;Stir fry:5;HotDrink:5;OatmealEvolved:5");
