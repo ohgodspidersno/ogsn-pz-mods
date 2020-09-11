@@ -1,6 +1,6 @@
 version=1
 id=1954803538
-title=Television XP works even when game is running in fast-forward [41.34+]
+title=Television Experience Point Glitch Fix: Gain XP even when game is in fast-forward [41.34+]
 description=In the normal game, you cannot get XP points from the television if the game is running in fast-forward. You only get XP points if the game is running slow.
 description=
 description=Now you get points even when you have the game in fast-forward.
@@ -10,6 +10,11 @@ description=It does this by granting all of the experience in one tick, instead 
 description=
 description=In other words, this mod is not the perfect solution, but it [i]does work perfectly[/i].
 description=
+description=Poster art create using icons from [url=www.thenounproject]The Noun Project[/url]
+description=[list]
+description=[*]Television by Wira Wianda
+description=[*]Cowboy Hat by Kick
+description=[*]Hammer by Atif Arshad
 description=[h1]If you enjoy this mod please like and favorite[/h1]
 description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
 description=
