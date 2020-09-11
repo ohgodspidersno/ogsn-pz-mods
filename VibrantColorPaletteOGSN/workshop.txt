@@ -6,6 +6,6 @@ description=Brings back vibrant, super-saturated clothing colors.
 description=
 description=Honestly, the devs knew what they were doing when they took this out, but hey sometimes you wanna vibe.
 description=
-description=Tags:B41,Interface,Textures,Clothes,Clothing,Tweak
+description=Tags:B41,Interface,Textures,Clothing,Tweak
 tags=Build 41;Interface;Textures;Clothing;Tweak
 visibility=public
