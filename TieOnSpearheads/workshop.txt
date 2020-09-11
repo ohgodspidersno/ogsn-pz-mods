@@ -52,6 +52,8 @@ description=[*]Русский
 description=[*]한국어
 description=[/list]
 description=
+description=Poster art created using "Spear" Icon by Anthony Ledoux from [url=www.thenounproject.com]The Noun Project[/url].
+description=
 description=[h1]If you enjoy this mod please like and favorite[/h1]
 description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
 description=
