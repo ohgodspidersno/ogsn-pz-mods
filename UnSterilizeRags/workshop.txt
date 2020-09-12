@@ -1,6 +1,6 @@
 version=1
 id=2036923155
-title=Desterilize Rags (To Use Them In Other Recipes)
+title=Desterilize Rags - Use Them In Other Recipes
 description=[h1]For When You Decide You'd Rather Use that Sheet for Something Else[/h1]
 description=Many recipes call for ripped sheets and do not let you use sterilized rags. This lets you turn them back into ripped sheets if you want to use them for something else. Useful if you've fully upgraded your medical supplies to bandages.
 description=
