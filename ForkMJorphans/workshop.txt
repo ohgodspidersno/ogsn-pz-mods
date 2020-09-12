@@ -37,8 +37,20 @@ description=[/olist]
 description=[/list]
 description=
 description=Please let me know if you find any bugs or conflicts.
-description=Fork icon by Najaya Design from the Noun Project
-
-description=Tags:B41,Items,Food,Health,Medical,Traits,Tweak
-tags=Build 41;Items;Food;Medical;Traits;Tweak
+description=Poster art created using icons from [url=www.thenounproject.com]The Noun Project[/url].
+description=[list]
+description=[*]Boy and Girl by Xinh Studio
+description=[*]Spray Paint by  Dániel Aczél
+description=[*]Supermarket by monkikT
+description=[*]Consolidation by lastspark
+description=[*]caffeine molecule by Stephanie Leeson from the Noun Project
+description=[*]bullet clip by Andrei Yushchenko from the Noun Project
+description=[*]robin hood hat by Benjamin Janot from the Noun Project
+description=[*]Garlic by Creative Stall from the Noun Project
+description=[*]
+description=[*]
+description=[/list]
+description=
+description=Tags:B41,Items,Weapons,Food,Health,Medical,Traits,Tweak
+tags=Build 41;Items;Weapons;Food;Medical;Traits;Tweak
 visibility=public
