@@ -1,7 +1,7 @@
 version=1
 id=2215782660
-title=Weird Closet - More Vanilla Clothing Options
-description=[h1]A Little Splash of Color[/h1]
+title=Deeply Closeted - More Vanilla Clothing Options
+description=[h1]An Extra Set of Options[/h1]
 description=Adds additional, vanilla-friendly options to some clothing items.
 description=Gives color pickers to clothing items that already "should" have one, like Long Gloves.
 description=Or new dropdown menu options, like varsity jackets from more schools.
