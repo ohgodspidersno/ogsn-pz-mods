@@ -1,6 +1,6 @@
 require "Farming/ScavengeDefinition"
 
-scavenges.medicinalPlants = {};
+scavenges.medicinalPlants = scavenges.medicinalPlants or {};
 
 local Camomile = {};
 Camomile.type = "RS.Camomile";
