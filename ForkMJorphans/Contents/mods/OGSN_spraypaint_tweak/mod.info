@@ -4,3 +4,4 @@ description=What's the point of a cool spray paint mod if it's too heavy to ever
 require=spraypaint
 poster=poster.png
 id=OGSN_spraypaint_tweak
+require=spraypaint,bcUtils,spraypaintIWBUMS,spraypaintletters
