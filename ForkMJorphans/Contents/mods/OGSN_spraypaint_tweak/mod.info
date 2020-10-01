@@ -1,7 +1,0 @@
-name=OGSN Foster Home - Spraypaint Weight Tweak
-description=For those using the spraypaint mod, this lowers the weight of all spraypaint and chalk items from 0.5 to 0.1
-description=What's the point of a cool spray paint mod if it's too heavy to ever justify lugging around?
-require=spraypaint
-poster=poster.png
-id=OGSN_spraypaint_tweak
-require=spraypaint,bcUtils,spraypaintIWBUMS,spraypaintletters
