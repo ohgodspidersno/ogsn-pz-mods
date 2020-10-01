@@ -1,0 +1,24 @@
+version=1
+id=2245110380
+title=Small Tweaks to Popular Mods
+description=These tweak existing maintained mods. They are patches and require that you have the original mod enabled as well.
+description=[list]
+description=[*]Spray Paint weight reduction. Cans and chalk now weigh 0.1 instead of 0.5
+description=The Spray Paint mod itself has four parts needed for the full experience:
+description=[olist]
+description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=499153179]Spray Paint base mod[/url]
+description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2003093385]Spraypaint v41 Update[/url]
+description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029478510]More Spraypaint Letters[/url]
+description=[*][url=https://steamcommunity.com/workshop/filedetails/?id=503640135]bcutils framework[/url]
+description=[/olist]
+description=[/list]
+description=
+description=Please let me know if you find any bugs or conflicts.
+description=Poster art created using icons from [url=www.thenounproject.com]The Noun Project[/url].
+description=[list]
+description=[*]Change by Vectlab
+description=[/list]
+description=
+description=Tags:B41,Tweak
+tags=Build 41;Tweak
+visibility=public
