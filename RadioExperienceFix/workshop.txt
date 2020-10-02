@@ -15,6 +15,7 @@ description=[list]
 description=[*]Television by Wira Wianda
 description=[*]Cowboy Hat by Kick
 description=[*]Hammer by Atif Arshad
+description=
 description=[h1]If you enjoy this mod please like and favorite[/h1]
 description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
 description=

@@ -4,6 +4,13 @@ title=Scooby Doo Mystery Machine
 description=Zoinks! Like, I'm totally a zombie, Scoobs! Ruh roh!
 description=Van art created by gflewis2018, mod coding by Oh God Spiders No
 description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
+description=
 description=Tags:B41,B40,Textures,Cars,Vehicles
 tags=Build 41;Build 40;Textures;Vehicles
 visibility=public

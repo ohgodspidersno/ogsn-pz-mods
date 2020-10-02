@@ -6,6 +6,13 @@ description=Brings back vibrant, super-saturated clothing colors.
 description=
 description=Honestly, the devs knew what they were doing when they took this out, but hey sometimes you wanna vibe.
 description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
+description=
 description=Tags:B41,Interface,Textures,Clothing,Tweak
 tags=Build 41;Interface;Textures;Clothing;Tweak
 visibility=public

@@ -1,23 +1,39 @@
 version=1
 id=2245110380
 title=Small Tweaks to Popular Mods
-description=These tweak existing maintained mods. They are patches and require that you have the original mod enabled as well.
-description=[list]
+description=[h1]Like, really [i]really[/i] small[/h1]
+description=This will be a collection of submods that make extremely small changes to other modders' work. Stuff like adjusting an item's weight or spawn chance. It may also include similarly minor changes to the vanilla game.
+description=
+description=Each of these changes has its own submod that can be enabled individually, so you are free to pick and choose which ones you want to use.
+description=
+description=[h2]List of Patches (you can choose which ones you want to use)[/h2]
+description=At the moment, there is only one:
+description=[olist]
 description=[*]Spray Paint weight reduction. Cans and chalk now weigh 0.1 instead of 0.5
 description=The Spray Paint mod itself has four parts needed for the full experience:
-description=[olist]
+description=[list]
 description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=499153179]Spray Paint base mod[/url]
 description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2003093385]Spraypaint v41 Update[/url]
 description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029478510]More Spraypaint Letters[/url]
 description=[*][url=https://steamcommunity.com/workshop/filedetails/?id=503640135]bcutils framework[/url]
-description=[/olist]
 description=[/list]
+description=[/olist]
 description=
 description=Please let me know if you find any bugs or conflicts.
 description=Poster art created using icons from [url=www.thenounproject.com]The Noun Project[/url].
 description=[list]
 description=[*]Change by Vectlab
+description=[*]Spray Paint By Dániel Aczél
 description=[/list]
+description=
+description=[h1]If you enjoy this mod please like and favorite[/h1]
+description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
+description=
+description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
+description=
+description=[img=]https://i.imgur.com/jEczML7.png[/img]
+description=Workshop ID: 2245110380
+description=Mod ID: OGSN_spraypaint_tweak
 description=
 description=Tags:B41,Tweak
 tags=Build 41;Tweak
