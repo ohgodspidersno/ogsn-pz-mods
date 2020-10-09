@@ -1,4 +1,4 @@
--- LetMeThink relevant file
+
 --***********************************************************
 --**               LEMMY/ROBERT JOHNSON                    **
 --***********************************************************
@@ -235,7 +235,7 @@ local TurnOnOff = {
   }
 }
 
-function ISInventoryPage:toggleStove() -- LMT
+function ISInventoryPage:toggleStove()
   local object = self.inventoryPane.inventory:getParent()
   if not object then return end
   local className = object:getObjectName()
@@ -401,7 +401,11 @@ function ISInventoryPage:setBlinkingContainer(blinking, containerType)
     self.blinkContainer = false;
     self.blinkContainerType = nil;
     for i, v in ipairs(self.backpacks) do
-      v.backgroundColor = {r = 0.7, g = 0.7, b = 0.7, a = 1.0 }
+      if v.inventory == self.inventoryPane.inventory then
+        v:setBackgroundRGBA(0.7, 0.7, 0.7, 1.0)
+      else
+        v:setBackgroundRGBA(0.0, 0.0, 0.0, 0.0)
+      end
     end
   end
 end
@@ -429,7 +433,7 @@ function ISInventoryPage:prerender()
     end
     for i, v in ipairs(self.backpacks) do
       if (self.blinkContainerType and v.inventory:getType() == self.blinkContainerType) or not self.blinkContainerType then
-        v.backgroundColor = {r = 1, g = 0, b = 0, a = self.blinkAlphaContainer};
+        v:setBackgroundRGBA(1, 0, 0, self.blinkAlphaContainer);
       end
     end
   end
@@ -768,6 +772,7 @@ function ISInventoryPage:selectContainer(button)
     end
     if self:canPutIn(false) then
       local doWalk = true
+      local items = {}
       local dragging = ISInventoryPane.getActualItems(ISMouseDrag.dragging)
       for i, v in ipairs(dragging) do
         local transfer = v:getContainer() and not button.inventory:isInside(v)
@@ -782,9 +787,10 @@ function ISInventoryPage:selectContainer(button)
             end
             doWalk = false
           end
-          ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, v, v:getContainer(), button.inventory))
+          table.insert(items, v)
         end
       end
+      self.inventoryPane:transferItemsByWeight(items, button.inventory)
       self.inventoryPane.selected = {};
       getPlayerLoot(self.player).inventoryPane.selected = {};
       getPlayerInventory(self.player).inventoryPane.selected = {};
@@ -850,10 +856,10 @@ function ISInventoryPage:setNewContainer(inventory)
   -- highlight the container if it is in the list
   for i, containerButton in ipairs(self.backpacks) do
     if containerButton.inventory == inventory then
-      containerButton.backgroundColor = {r = 0.7, g = 0.7, b = 0.7, a = 1.0}
+      containerButton:setBackgroundRGBA(0.7, 0.7, 0.7, 1.0)
       self.title = containerButton.name;
     else
-      containerButton.backgroundColor.a = 0.0
+      containerButton:setBackgroundRGBA(0.0, 0.0, 0.0, 0.0)
     end
   end
 
@@ -895,6 +901,17 @@ function ISInventoryPage.loadWeight(inv)
       self:setX(self.x + dx);
       self:setY(self.y + dy);
 
+    end
+
+    if not isGamePaused() then
+      if self.isCollapsed and self.player and getSpecificPlayer(self.player) and getSpecificPlayer(self.player):isAiming() then
+        return
+      end
+    end
+
+    local panCameraKey = getCore():getKey("PanCamera")
+    if self.isCollapsed and panCameraKey ~= 0 and isKeyDown(panCameraKey) then
+      return
     end
 
     if not isMouseButtonDown(0) and not isMouseButtonDown(1) and not isMouseButtonDown(2) then
@@ -1063,18 +1080,32 @@ function ISInventoryPage.loadWeight(inv)
     local titleBarHeight = self:titleBarHeight()
     local playerObj = getSpecificPlayer(self.player)
     local c = #self.backpacks + 1
-    local button = ISButton:new(self.width - 32, ((c - 1) * 32) + titleBarHeight - 1, 32, 32, "", self, ISInventoryPage.selectContainer, ISInventoryPage.onBackpackMouseDown, true)
-    button.borderColor.a = 0.0
-    button.backgroundColor.a = 0.0
-    button.backgroundColorMouseOver = {r = 0.3, g = 0.3, b = 0.3, a = 1.0}
-    button.anchorLeft = false
-    button.anchorTop = false
-    button.anchorRight = true
-    button.anchorBottom = false
+    local x = self.width - 32
+    local y = ((c - 1) * 32) + titleBarHeight - 1
+    local button
+    if #self.buttonPool > 0 then
+      button = table.remove(self.buttonPool, 1)
+      button:setX(x)
+      button:setY(y)
+    else
+      button = ISButton:new(x, y, 32, 32, "", self, ISInventoryPage.selectContainer, ISInventoryPage.onBackpackMouseDown, true)
+      button.anchorLeft = false
+      button.anchorTop = false
+      button.anchorRight = true
+      button.anchorBottom = false
+      button:initialise()
+      button:forceImageSize(30, 30)
+    end
+    button:setBackgroundRGBA(0.0, 0.0, 0.0, 0.0)
+    button:setBackgroundColorMouseOverRGBA(0.3, 0.3, 0.3, 1.0)
+    button:setBorderRGBA(0.7, 0.7, 0.7, 0.0)
+    button:setTextureRGBA(1.0, 1.0, 1.0, 1.0)
+    button.textureOverride = nil
+    button.inventory = container
+    button.onclick = ISInventoryPage.selectContainer
+    button.onmousedown = ISInventoryPage.onBackpackMouseDown
     button:setOnMouseOverFunction(ISInventoryPage.onMouseOverButton)
     button:setOnMouseOutFunction(ISInventoryPage.onMouseOutButton)
-    button:initialise()
-    button.inventory = container
     button.capacity = container:getEffectiveCapacity(playerObj)
     if instanceof(texture, "Texture") then
       button:setImage(texture)
@@ -1085,8 +1116,6 @@ function ISInventoryPage.loadWeight(inv)
         button:setImage(self.conDefault)
       end
     end
-    button:forceImageSize(30, 30)
-    --	button.textureColor = {r=1, g=0.3, b=0.3, a=1.0};
     button.name = name
     button.tooltip = tooltip
     self:addChild(button)
@@ -1107,8 +1136,10 @@ function ISInventoryPage.loadWeight(inv)
   end
 
   function ISInventoryPage:refreshBackpacks()
+    self.buttonPool = self.buttonPool or {}
     for i, v in ipairs(self.backpacks) do
       self:removeChild(v)
+      table.insert(self.buttonPool, i, v)
     end
 
     if ISInventoryPage.floorContainer == nil then
@@ -1147,7 +1178,7 @@ function ISInventoryPage.loadWeight(inv)
           containerButton = self:addContainerButton(item:getInventory(), item:getTex(), item:getName(), item:getName())
           if(item:getVisual() and item:getClothingItem()) then
             local tint = item:getVisual():getTint(item:getClothingItem());
-            containerButton.textureColor = {r = tint:getRedFloat(), g = tint:getGreenFloat(), b = tint:getBlueFloat(), a = 1.0};
+            containerButton:setTextureRGBA(tint:getRedFloat(), tint:getGreenFloat(), tint:getBlueFloat(), 1.0);
           end
         end
       end
@@ -1347,10 +1378,10 @@ function ISInventoryPage.loadWeight(inv)
     for k, containerButton in ipairs(self.backpacks) do
       if containerButton.inventory == self.inventory then
         self.selectedButton = containerButton;
-        containerButton.backgroundColor = {r = 0.7, g = 0.7, b = 0.7, a = 1.0}
+        containerButton:setBackgroundRGBA(0.7, 0.7, 0.7, 1.0)
         self.title = containerButton.name
       else
-        containerButton.backgroundColor.a = 0
+        containerButton:setBackgroundRGBA(0.0, 0.0, 0.0, 0.0)
       end
     end
 
@@ -1585,7 +1616,7 @@ function ISInventoryPage.loadWeight(inv)
     self.inventoryPane:SaveLayout(name, layout)
   end
 
-  ISInventoryPage.onKeyPressed = function(key) -- LMT
+  ISInventoryPage.onKeyPressed = function(key)
     if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getPlayerInventory(0) and getCore():getGameMode() ~= "Tutorial" then
       getPlayerInventory(0):setVisible(not getPlayerInventory(0):getIsVisible());
       getPlayerLoot(0):setVisible(getPlayerInventory(0):getIsVisible());

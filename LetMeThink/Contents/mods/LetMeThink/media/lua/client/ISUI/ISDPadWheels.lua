@@ -10,7 +10,7 @@ local function isEquippedOrAttached(playerObj, item)
   return playerObj:isEquipped(item) or playerObj:isAttachedItem(item)
 end
 
-function ISDPadWheels.onDisplayLeft(joypadData) -- LMT
+function ISDPadWheels.onDisplayLeft(joypadData)
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 
@@ -52,7 +52,7 @@ function ISDPadWheels.onDisplayLeft(joypadData) -- LMT
   playerObj:setJoypadIgnoreAimUntilCentered(true)
 end
 
-function ISDPadWheels.onDisplayRight(joypadData) -- LMT
+function ISDPadWheels.onDisplayRight(joypadData)
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 
@@ -71,21 +71,12 @@ function ISDPadWheels.onDisplayUp(joypadData)
   ISVehicleMenu.showRadialMenu(getSpecificPlayer(joypadData.player))
 end
 
-function ISDPadWheels.onDisplayDown(joypadData) -- LMT
+function ISDPadWheels.onDisplayDown(joypadData)
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 
-  local menu = getPlayerRadialMenu(playerIndex)
-  menu:clear()
-
-  menu:addSlice("Shout", getTexture("media/ui/Traits/trait_talkative.png"), ISDPadWheels.onShout, playerObj)
-
-  menu:setX(getPlayerScreenLeft(playerIndex) + getPlayerScreenWidth(playerIndex) / 2 - menu:getWidth() / 2)
-  menu:setY(getPlayerScreenTop(playerIndex) + getPlayerScreenHeight(playerIndex) / 2 - menu:getHeight() / 2)
-  menu:addToUIManager()
-  menu:setHideWhenButtonReleased(Joypad.DPadDown)
-  setJoypadFocus(playerIndex, menu)
-  playerObj:setJoypadIgnoreAimUntilCentered(true)
+  local erm = ISEmoteRadialMenu:new(playerObj)
+  erm:fillMenu()
 end
 
 function ISDPadWheels.onEquipPrimary(playerObj, item)

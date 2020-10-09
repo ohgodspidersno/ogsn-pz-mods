@@ -15,7 +15,7 @@ local FONT_HGT_SMALL = getTextManager():getFontHeight(UIFont.Small)
 --************************************************************************--
 
 function ISHotbar:render()
-  if JoypadState.players[1] then
+  if JoypadState.players[self.playerNum + 1] then
     self:setVisible(false);
     self:removeFromUIManager();
   end
@@ -96,7 +96,7 @@ function ISHotbar:getSlotDefReplacement(slot)
   return slot;
 end
 
-function ISHotbar:doMenu(slotIndex)  -- LMT
+function ISHotbar:doMenu(slotIndex)
   local slot = self.availableSlot[slotIndex];
   local slotDef = slot.def;
   local context = ISContextMenu.get(self.playerNum, getMouseX(), getMouseY());
@@ -621,7 +621,7 @@ function ISHotbar:getSlotForKey(key)
   return - 1
 end
 
-ISHotbar.onKeyStartPressed = function(key) -- LMT
+ISHotbar.onKeyStartPressed = function(key)
   local playerObj = getSpecificPlayer(0)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
@@ -642,7 +642,7 @@ ISHotbar.onKeyStartPressed = function(key) -- LMT
   getPlayerHotbar(0).radialWasVisible = false
 end
 
-ISHotbar.onKeyPressed = function(key) -- LMT
+ISHotbar.onKeyPressed = function(key)
   local playerObj = getSpecificPlayer(0)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return
@@ -682,7 +682,7 @@ function ISHotbar:onRadialRemove(item)
   self:removeItem(item, true)
 end
 
-ISHotbar.onKeyKeepPressed = function(key) -- LMT
+ISHotbar.onKeyKeepPressed = function(key)
   local playerObj = getSpecificPlayer(0)
   if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
     return

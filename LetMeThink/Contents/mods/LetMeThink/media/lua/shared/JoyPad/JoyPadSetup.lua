@@ -116,7 +116,7 @@ function JoypadState.getUserNameCallback(target, button, playerObj, joypadData)
   end
 end
 
-local function onPauseButtonPressed(joypadData) -- LMT
+local function onPauseButtonPressed(joypadData)
   if UIManager.getSpeedControls() and not isClient() then
     if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 or getGameTime():getTrueMultiplier() > 1 then
       if MainScreen.instance and MainScreen.instance.inGame and MainScreen.instance:getIsVisible() then
@@ -158,7 +158,7 @@ local function onPauseButtonPressed(joypadData) -- LMT
   end
 end
 
-function onJoypadPressButton(joypadIndex, joypadData, button) -- LMT
+function onJoypadPressButton(joypadIndex, joypadData, button)
   if MainScreen.instance and MainScreen.instance.inGame and MainScreen.instance:getIsVisible() then
     if button == Joypad.Start and joypadData.focus == MainScreen.instance then
       onPauseButtonPressed(joypadData)
@@ -167,7 +167,7 @@ function onJoypadPressButton(joypadIndex, joypadData, button) -- LMT
     end
     return
   end
-  
+
   if joypadData.player and getCell() and getCell():getDrag(joypadData.player) then
     getCell():getDrag(joypadData.player):onJoypadPressButton(joypadIndex, joypadData, button);
     return;

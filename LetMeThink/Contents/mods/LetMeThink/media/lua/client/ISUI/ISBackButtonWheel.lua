@@ -19,7 +19,7 @@ function ISBackButtonWheel:center()
   self:setY(y - self:getHeight() / 2)
 end
 
-function ISBackButtonWheel:addCommands() -- LMT
+function ISBackButtonWheel:addCommands()
   local playerObj = getSpecificPlayer(self.playerNum)
 
   self:center()
@@ -103,7 +103,7 @@ function ISBackButtonWheel:onJoypadDown(button, joypadData)
   ISRadialMenu.onJoypadDown(self, button, joypadData)
 end
 
-function ISBackButtonWheel:onCommand(command) -- LMT
+function ISBackButtonWheel:onCommand(command)
   local focus = nil
   local playerObj = getSpecificPlayer(self.playerNum)
 

@@ -179,7 +179,7 @@ function ISVehicleMechanics:createChildren()
   self:initParts();
 end
 
-function ISVehicleMechanics:onListMouseDown(x, y) -- LMT
+function ISVehicleMechanics:onListMouseDown(x, y)
   self.parent.listbox.selected = 0;
   self.parent.bodyworklist.selected = 0;
 
@@ -528,7 +528,7 @@ function ISVehicleMechanics.onCheatSetConditionAux(target, button, playerObj, pa
 end
 
 function ISVehicleMechanics.onCheatSetCondition(playerObj, part)
-  local modal = ISTextBox:new(0, 0, 280, 180, "Condition (0-100):", tostring(part:getContainerContentAmount()),
+  local modal = ISTextBox:new(0, 0, 280, 180, "Condition (0-100):", tostring(part:getCondition()),
   nil, ISVehicleMechanics.onCheatSetConditionAux, playerObj:getPlayerNum(), playerObj, part)
   modal:initialise()
   modal:addToUIManager()

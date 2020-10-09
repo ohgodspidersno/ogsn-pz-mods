@@ -107,6 +107,11 @@ function ISEmoteRadialMenu:display()
   local menu = getPlayerRadialMenu(self.playerNum)
   self:center()
   menu:addToUIManager()
+  if JoypadState.players[self.playerNum + 1] then
+    menu:setHideWhenButtonReleased(Joypad.DPadDown)
+    setJoypadFocus(self.playerNum, menu)
+    self.character:setJoypadIgnoreAimUntilCentered(true)
+  end
 end
 
 function ISEmoteRadialMenu:center()
@@ -182,7 +187,7 @@ STATE[2] = {}
 STATE[3] = {}
 STATE[4] = {}
 
-function ISEmoteRadialMenu.checkKey(key) -- LMT
+function ISEmoteRadialMenu.checkKey(key)
   if not (key == getCore():getKey("Emote") or key == getCore():getKey("Shout")) then
     return false
   end

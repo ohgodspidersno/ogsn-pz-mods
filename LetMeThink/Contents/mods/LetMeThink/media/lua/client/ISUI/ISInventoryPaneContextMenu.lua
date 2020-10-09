@@ -8,8 +8,12 @@ ISInventoryPaneContextMenu = {}
 ISInventoryPaneContextMenu.tooltipPool = {}
 ISInventoryPaneContextMenu.tooltipsUsed = {}
 
+local function predicateNotBroken(item)
+  return not item:isBroken()
+end
+
 -- MAIN METHOD FOR CREATING RIGHT CLICK CONTEXT MENU FOR INVENTORY ITEMS
-ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, items, x, y, origin) -- LMT
+ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, items, x, y, origin)
   if getCore():getGameMode() == "Tutorial" then
     Tutorial1.createInventoryContextMenu(player, isInPlayerInventory, items, x, y);
     return;
@@ -72,6 +76,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   local makeup = nil;
 
   local playerObj = getSpecificPlayer(player)
+  local playerInv = playerObj:getInventory()
 
   ISInventoryPaneContextMenu.removeToolTip();
 
@@ -425,7 +430,8 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   end
   -- weapon upgrades
   isWeapon = isHandWeapon -- to allow upgrading broken weapons
-  if isWeapon and instanceof(isWeapon, "HandWeapon") and getSpecificPlayer(player):getInventory():getItemFromType("Screwdriver") then
+  local hasScrewdriver = playerInv:containsTagEvalRecurse("Screwdriver", predicateNotBroken)
+  if isWeapon and instanceof(isWeapon, "HandWeapon") and hasScrewdriver then
     -- add parts
     local weaponParts = getSpecificPlayer(player):getInventory():getItemsFromCategory("WeaponPart");
     if weaponParts and not weaponParts:isEmpty() then
@@ -463,7 +469,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
       end
     end
     -- remove parts
-    if getSpecificPlayer(player):getInventory():getItemFromType("Screwdriver") and (isWeapon:getScope() or isWeapon:getClip() or isWeapon:getSling() or isWeapon:getStock() or isWeapon:getCanon() or isWeapon:getRecoilpad()) then
+    if hasScrewdriver and (isWeapon:getScope() or isWeapon:getClip() or isWeapon:getSling() or isWeapon:getStock() or isWeapon:getCanon() or isWeapon:getRecoilpad()) then
       local removeUpgradeOption = context:addOption(getText("ContextMenu_Remove_Weapon_Upgrade"), items, nil);
       local subMenuRemove = context:getNew(context);
       context:addSubMenu(removeUpgradeOption, subMenuRemove);
@@ -578,7 +584,12 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
         if instanceof(item, "DrainableComboItem") then
           local subOption = subMenu:addOption(item:getName(), items, ISInventoryPaneContextMenu.onTransferWater, waterContainer, item, player);
           local tooltip = ISInventoryPaneContextMenu.addToolTip()
-          tooltip.description = math.floor(item:getUsedDelta() * 100) .. getText("ContextMenu_FullPercent")
+          local tx = getTextManager():MeasureStringX(tooltip.font, getText("ContextMenu_WaterName") .. ":") + 20
+          tooltip.description = string.format("%s: <SETX:%d> %d / %d",
+          getText("ContextMenu_WaterName"), tx, item:getDrainableUsesInt(), 1.0 / item:getUseDelta() + 0.0001)
+          if item:isTaintedWater() then
+            tooltip.description = tooltip.description .. " <BR> <RGB:1,0.5,0.5> " .. getText("Tooltip_item_TaintedWater")
+          end
           subOption.toolTip = tooltip
         else
           subMenu:addOption(item:getName(), items, ISInventoryPaneContextMenu.onTransferWater, waterContainer, item, player);
@@ -708,7 +719,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   return context;
 end
 
-ISInventoryPaneContextMenu.createMenuNoItems = function(playerNum, isLoot, x, y) -- LMT
+ISInventoryPaneContextMenu.createMenuNoItems = function(playerNum, isLoot, x, y)
 
   if ISInventoryPaneContextMenu.dontCreateMenu then return end
 
@@ -790,7 +801,7 @@ function ISInventoryPaneContextMenu.doBandageMenu(context, items, player)
 end
 
 function ISInventoryPaneContextMenu.canRipItem(playerObj, item)
-  if playerObj:isEquippedClothing(item) then
+  if playerObj:isEquippedClothing(item) or item:isFavorite() then
     return false
   end
   if item:getFabricType() and instanceof(item, "Clothing") then
@@ -815,6 +826,13 @@ ISInventoryPaneContextMenu.doClothingRecipeMenu = function(playerObj, clothing, 
   -- check if we need tools for this
   if clothing:getFabricType() and instanceof(clothing, "Clothing") then
     local option = context:addOption(getRecipeDisplayName("Rip clothing"), playerObj, ISInventoryPaneContextMenu.onRipClothing, items)
+    -- Item is favourited, add tooltip
+    if clothing:isFavorite() then
+      local tooltip = ISInventoryPaneContextMenu.addToolTip();
+      tooltip.description = getText("ContextMenu_CantRipFavourite");
+      option.toolTip = tooltip;
+    end
+    -- Tool is needed
     local tools = ClothingRecipesDefinitions["FabricType"][clothing:getFabricType()].tools;
     if tools and not playerObj:getInventory():getItemFromType(tools, true, true) then
       option.notAvailable = true;
@@ -1202,7 +1220,7 @@ ISInventoryPaneContextMenu.doReloadMenuForWeapon = function(playerObj, weapon, c
       context:addOption(getText("ContextMenu_EjectMagazine"), playerObj, ISInventoryPaneContextMenu.onEjectMagazine, weapon);
     else -- insert a new clip
       local clip = weapon:getBestMagazine(playerObj);
-      local insertOption = context:addOption(getText("ContextMenu_InsertMagazine"), playerObj, ISInventoryPaneContextMenu.onInsertMagazine, weapon);
+      local insertOption = context:addOption(getText("ContextMenu_InsertMagazine"), playerObj, ISInventoryPaneContextMenu.onInsertMagazine, weapon, clip);
       if not clip then
         local clip = InventoryItemFactory.CreateItem(weapon:getMagazineType());
         insertOption.notAvailable = true;
@@ -1217,7 +1235,8 @@ ISInventoryPaneContextMenu.doReloadMenuForWeapon = function(playerObj, weapon, c
   if weapon:isJammed() then -- unjam
     context:addOption(getText("ContextMenu_Unjam", weapon:getDisplayName()), playerObj, ISInventoryPaneContextMenu.onRackGun, weapon);
   elseif ISReloadWeaponAction.canRack(weapon) then
-    context:addOption(getText("ContextMenu_Rack", weapon:getDisplayName()), playerObj, ISInventoryPaneContextMenu.onRackGun, weapon);
+    local text = weapon:haveChamber() and "ContextMenu_Rack" or "ContextMenu_UnloadRoundFrom"
+    context:addOption(getText(text, weapon:getDisplayName()), playerObj, ISInventoryPaneContextMenu.onRackGun, weapon);
   end
 end
 
@@ -1255,18 +1274,18 @@ end
 ISInventoryPaneContextMenu.onInsertMagazine = function(playerObj, weapon, magazine)
   ISInventoryPaneContextMenu.transferIfNeeded(playerObj, magazine)
   ISInventoryPaneContextMenu.equipWeapon(weapon, true, false, playerObj:getPlayerNum())
-  ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon, false, magazine));
+  ISTimedActionQueue.add(ISInsertMagazine:new(playerObj, weapon, magazine));
 end
 
 ISInventoryPaneContextMenu.onRackGun = function(playerObj, weapon)
   ISInventoryPaneContextMenu.equipWeapon(weapon, true, false, playerObj:getPlayerNum())
-  ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon, true, nil));
+  ISTimedActionQueue.add(ISRackFirearm:new(playerObj, weapon));
 end
 
 ISInventoryPaneContextMenu.onLoadBulletsIntoFirearm = function(playerObj, weapon)
   ISInventoryPaneContextMenu.transferBullets(playerObj, weapon:getAmmoType(), weapon:getCurrentAmmoCount(), weapon:getMaxAmmo())
   ISInventoryPaneContextMenu.equipWeapon(weapon, true, false, playerObj:getPlayerNum())
-  ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon, false, nil));
+  ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon));
 end
 
 ISInventoryPaneContextMenu.onUnloadBulletsFromFirearm = function(playerObj, weapon)
@@ -1359,11 +1378,12 @@ ISInventoryPaneContextMenu.onCraftSheetRope = function(playerObj, items)
 end
 
 ISInventoryPaneContextMenu.addItemInEvoRecipe = function(subMenuRecipe, baseItem, evoItem, extraInfo, evorecipe2, player)
-  local txt = getText("ContextMenu_From_Ingredient");
+  local txt = getText("ContextMenu_From_Ingredient", evoItem:getName(), extraInfo);
   if evorecipe2:isResultItem(baseItem) then
-    txt = getText("ContextMenu_Add_Ingredient");
+    txt = getText("ContextMenu_Add_Ingredient", evoItem:getName(), extraInfo);
   end
-  local option = subMenuRecipe:addOption(txt .. evoItem:getName() .. extraInfo, evorecipe2, ISInventoryPaneContextMenu.onAddItemInEvoRecipe, baseItem, evoItem, player);
+  txt = string.trim(txt)
+  local option = subMenuRecipe:addOption(txt, evorecipe2, ISInventoryPaneContextMenu.onAddItemInEvoRecipe, baseItem, evoItem, player);
   if instanceof(evoItem, "Food") and evoItem:getFreezingTime() > 0 then
     option.notAvailable = true;
     local tooltip = ISInventoryPaneContextMenu.addToolTip();
@@ -1449,7 +1469,7 @@ ISInventoryPaneContextMenu.doEatOption = function(context, cmd, items, player, p
     local required = "";
     for i = 0, list:size() - 1 do
       local fullType = moduleDotType(foodItems[1]:getModule(), list:get(i))
-      if playerObj:getInventory():contains(fullType, false) then
+      if playerObj:getInventory():containsTypeRecurse(fullType) then
         found = true;
         break;
       end
@@ -1567,14 +1587,19 @@ end
 
 ISInventoryPaneContextMenu.doDrinkForThirstMenu = function(context, playerObj, waterContainer)
   local thirst = playerObj:getStats():getThirst()
-  local units = math.floor((thirst + 0.005) / 0.1)
+  local units = math.min(math.ceil(thirst / 0.1), 10)
   units = math.min(units, waterContainer:getDrainableUsesInt())
-  local option = context:addOption(getText("ContextMenu_DrinkForThirst"), waterContainer, ISInventoryPaneContextMenu.onDrinkForThirst, playerObj)
+  local option = context:addOption(getText("ContextMenu_Drink"), waterContainer, ISInventoryPaneContextMenu.onDrinkForThirst, playerObj)
   local tooltip = ISInventoryPaneContextMenu.addToolTip()
-  local tx = getTextManager():MeasureStringX(tooltip.font, getText("Tooltip_food_Thirst") .. ":") + 20
-  tooltip.description = string.format("%s: <SETX:%d> -%d / %d <LINE> %d%s",
+  local tx1 = getTextManager():MeasureStringX(tooltip.font, getText("Tooltip_food_Thirst") .. ":") + 20
+  local tx2 = getTextManager():MeasureStringX(tooltip.font, getText("ContextMenu_WaterName") .. ":") + 20
+  local tx = math.max(tx1, tx2)
+  tooltip.description = string.format("%s: <SETX:%d> -%d / %d <LINE> %s: <SETX:%d> %d / %d",
     getText("Tooltip_food_Thirst"), tx, math.min(units * 10, thirst * 100), thirst * 100,
-  waterContainer:getUsedDelta() * 100, getText("ContextMenu_FullPercent"))
+  getText("ContextMenu_WaterName"), tx, waterContainer:getDrainableUsesInt(), 1.0 / waterContainer:getUseDelta() + 0.0001)
+  if waterContainer:isTaintedWater() then
+    tooltip.description = tooltip.description .. " <BR> <RGB:1,0.5,0.5> " .. getText("Tooltip_item_TaintedWater")
+  end
   option.toolTip = tooltip
   --[[
     local drinkOption = context:addOption(getText("ContextMenu_Drink"), items, nil)
@@ -1588,7 +1613,7 @@ end
 
 ISInventoryPaneContextMenu.onDrinkForThirst = function(waterContainer, playerObj)
   local thirst = playerObj:getStats():getThirst()
-  local units = math.floor((thirst + 0.075) / 0.1)
+  local units = math.min(math.ceil(thirst / 0.1), 10)
   units = math.min(units, waterContainer:getDrainableUsesInt())
   ISInventoryPaneContextMenu.transferIfNeeded(playerObj, waterContainer)
   ISTimedActionQueue.add(ISDrinkFromBottle:new(playerObj, waterContainer, units))
@@ -1726,566 +1751,576 @@ ISInventoryPaneContextMenu.addFixerSubOption = function(brokenObject, player, fi
 end
 
 ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer, vehiclePart)
-  ISTimedActionQueue.add(ISFixAction:new(getSpecificPlayer(player), brokenObject, 60, fixing, fixer, vehiclePart));
-end
+  local playerObj = getSpecificPlayer(player);
+  local playerInv = playerObj:getInventory();
 
-ISInventoryPaneContextMenu.onDyeHair = function(hairDye, playerObj, beard)
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, hairDye)
-  ISTimedActionQueue.add(ISDyeHair:new(playerObj, hairDye, beard, 120));
-end
-
-ISInventoryPaneContextMenu.onDryMyself = function(towels, player)
-  towels = ISInventoryPane.getActualItems(towels)
-  for i, k in ipairs(towels) do
-    ISInventoryPaneContextMenu.dryMyself(k, player)
-    break
+  if not vehiclePart then
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, brokenObject);
   end
-end
 
-ISInventoryPaneContextMenu.onSetBombTimer = function(trap, player)
-  local text = getText("IGUI_TimerSecondsBeforeExplosion");
-  if trap:getSensorRange() > 0 then
-    text = getText("IGUI_TimerSecondsBeforeActivation");
-  end
-  local modal = ISBombTimerDialog:new(0, 0, 280, 180, text, trap:getExplosionTimer(), getSpecificPlayer(player), nil, ISInventoryPaneContextMenu.onSetBombTimerClick, getSpecificPlayer(player), trap);
-  modal:initialise();
-  modal:addToUIManager();
-  if JoypadState.players[player + 1] then
-    modal.prevFocus = JoypadState.players[player + 1].focus
-    JoypadState.players[player + 1].focus = modal;
-  end
-end
+  local items = fixing:getRequiredItems(playerObj, fixer, brokenObject);
+  if not items then return end;
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, items);
 
-function ISInventoryPaneContextMenu:onSetBombTimerClick(button, player, item)
-  if button.internal == "OK" then
-    local seconds = button.parent:getTime()
-    if seconds > 0 then
-      item:setExplosionTimer(seconds)
+    ISTimedActionQueue.add(ISFixAction:new(playerObj, brokenObject, 60, fixing, fixer, vehiclePart));
+  end
+
+  ISInventoryPaneContextMenu.onDyeHair = function(hairDye, playerObj, beard)
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, hairDye)
+    ISTimedActionQueue.add(ISDyeHair:new(playerObj, hairDye, beard, 120));
+  end
+
+  ISInventoryPaneContextMenu.onDryMyself = function(towels, player)
+    towels = ISInventoryPane.getActualItems(towels)
+    for i, k in ipairs(towels) do
+      ISInventoryPaneContextMenu.dryMyself(k, player)
+      break
     end
   end
-end
 
-ISInventoryPaneContextMenu.onStopAlarm = function(alarm, player)
-  local playerObj = getSpecificPlayer(player);
-  local sq = alarm:getAlarmSquare()
-  if playerObj == nil or sq == nil then
-    alarm:stopRinging()
-    return
+  ISInventoryPaneContextMenu.onSetBombTimer = function(trap, player)
+    local text = getText("IGUI_TimerSecondsBeforeExplosion");
+    if trap:getSensorRange() > 0 then
+      text = getText("IGUI_TimerSecondsBeforeActivation");
+    end
+    local modal = ISBombTimerDialog:new(0, 0, 280, 180, text, trap:getExplosionTimer(), getSpecificPlayer(player), nil, ISInventoryPaneContextMenu.onSetBombTimerClick, getSpecificPlayer(player), trap);
+    modal:initialise();
+    modal:addToUIManager();
+    if JoypadState.players[player + 1] then
+      modal.prevFocus = JoypadState.players[player + 1].focus
+      JoypadState.players[player + 1].focus = modal;
+    end
   end
-  if alarm:isInPlayerInventory() or luautils.walkAdj(playerObj, sq) then
+
+  function ISInventoryPaneContextMenu:onSetBombTimerClick(button, player, item)
+    if button.internal == "OK" then
+      local seconds = button.parent:getTime()
+      if seconds > 0 then
+        item:setExplosionTimer(seconds)
+      end
+    end
+  end
+
+  ISInventoryPaneContextMenu.onStopAlarm = function(alarm, player)
+    local playerObj = getSpecificPlayer(player);
+    local sq = alarm:getAlarmSquare()
+    if playerObj == nil or sq == nil then
+      alarm:stopRinging()
+      return
+    end
+    if alarm:isInPlayerInventory() or luautils.walkAdj(playerObj, sq) then
+      if not alarm:getWorldItem() and (alarm:getContainer() ~= playerObj:getInventory()) then
+        ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, alarm, alarm:getContainer(), playerObj:getInventory()))
+      end
+      ISTimedActionQueue.add(ISStopAlarmClockAction:new(playerObj, alarm, 20));
+    end
+  end
+
+  ISInventoryPaneContextMenu.onSetAlarm = function(alarm, player)
+    local playerObj = getSpecificPlayer(player);
     if not alarm:getWorldItem() and (alarm:getContainer() ~= playerObj:getInventory()) then
-      ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, alarm, alarm:getContainer(), playerObj:getInventory()))
+      local action = ISInventoryTransferAction:new(playerObj, alarm, alarm:getContainer(), playerObj:getInventory())
+      action:setOnComplete(ISInventoryPaneContextMenu.onSetAlarm, alarm, player)
+      ISTimedActionQueue.add(action)
+      return
     end
-    ISTimedActionQueue.add(ISStopAlarmClockAction:new(playerObj, alarm, 20));
-  end
-end
-
-ISInventoryPaneContextMenu.onSetAlarm = function(alarm, player)
-  local playerObj = getSpecificPlayer(player);
-  if not alarm:getWorldItem() and (alarm:getContainer() ~= playerObj:getInventory()) then
-    local action = ISInventoryTransferAction:new(playerObj, alarm, alarm:getContainer(), playerObj:getInventory())
-    action:setOnComplete(ISInventoryPaneContextMenu.onSetAlarm, alarm, player)
-    ISTimedActionQueue.add(action)
-    return
-  end
-  local modal = ISAlarmClockDialog:new(0, 0, 230, 160, player, alarm);
-  modal:initialise();
-  modal:addToUIManager();
-  if JoypadState.players[player + 1] then
-    modal.prevFocus = getPlayerInventory(player)
-    setJoypadFocus(player, modal)
-  end
-end
-
-ISInventoryPaneContextMenu.onRenameMap = function(map, player)
-  local modal = ISTextBox:new(0, 0, 280, 180, getText("ContextMenu_NameThisBag"), map:getName(), nil, ISInventoryPaneContextMenu.onRenameBagClick, player, getSpecificPlayer(player), map);
-  modal:initialise();
-  modal:addToUIManager();
-  if JoypadState.players[player + 1] then
-    setJoypadFocus(player, modal)
-  end
-end
-
-ISInventoryPaneContextMenu.onRenameBag = function(bag, player)
-  local modal = ISTextBox:new(0, 0, 280, 180, getText("ContextMenu_NameThisBag"), bag:getName(), nil, ISInventoryPaneContextMenu.onRenameBagClick, player, getSpecificPlayer(player), bag);
-  modal:initialise();
-  modal:addToUIManager();
-  if JoypadState.players[player + 1] then
-    setJoypadFocus(player, modal)
-  end
-end
-
-ISInventoryPaneContextMenu.onRenameFood = function(food, player)
-  local modal = ISTextBox:new(0, 0, 280, 180, getText("ContextMenu_RenameFood") .. food:getName(), food:getDisplayName(), nil, ISInventoryPaneContextMenu.onRenameFoodClick, player, getSpecificPlayer(player), food);
-  modal:initialise();
-  modal:addToUIManager();
-  if JoypadState.players[player + 1] then
-    setJoypadFocus(player, modal)
-  end
-end
-
-ISInventoryPaneContextMenu.onCheckMap = function(map, player)
-  local playerObj = getSpecificPlayer(player)
-  if luautils.haveToBeTransfered(playerObj, map) then
-    local action = ISInventoryTransferAction:new(playerObj, map, map:getContainer(), playerObj:getInventory())
-    action:setOnComplete(ISInventoryPaneContextMenu.onCheckMap, map, player)
-    ISTimedActionQueue.add(action)
-    return
-  end
-
-  if JoypadState.players[player + 1] then
-    local inv = getPlayerInventory(player)
-    local loot = getPlayerLoot(player)
-    inv:setVisible(false)
-    loot:setVisible(false)
-  end
-
-  local mapUI = ISMap:new(0, 0, 0, 0, map, player);
-  mapUI:initialise();
-  --    mapUI:addToUIManager();
-  local wrap = mapUI:wrapInCollapsableWindow(map:getName(), false);
-  wrap:setInfo(getText("IGUI_Map_Info"));
-  wrap:setWantKeyEvents(true);
-  wrap.isKeyConsumed = function(self, key) return self.mapUI:isKeyConsumed(key) end;
-  wrap.onKeyRelease = function(self, key) self.mapUI:onKeyRelease(key) end;
-  mapUI.wrap = wrap;
-  wrap.render = ISMap.renderWrap;
-  wrap.prerender = ISMap.prerenderWrap;
-  wrap.setVisible = ISMap.setWrapVisible;
-  wrap.close = ISMap.closeWrap;
-  wrap.mapUI = mapUI;
-  mapUI.render = ISMap.noRender;
-  mapUI.prerender = ISMap.noRender;
-  map:doBuildingtStash();
-  wrap:setVisible(true);
-  wrap:addToUIManager();
-  if JoypadState.players[player + 1] then
-    setJoypadFocus(player, mapUI)
-  end
-end
-
-ISInventoryPaneContextMenu.onWriteSomething = function(notebook, editable, player)
-  local fontHgt = getTextManager():getFontFromEnum(UIFont.Small):getLineHeight()
-  local height = 110 + (15 * fontHgt);
-  local modal = ISUIWriteJournal:new(0, 0, 280, height, nil, ISInventoryPaneContextMenu.onWriteSomethingClick, getSpecificPlayer(player), notebook, notebook:seePage(1), notebook:getName(), 15, editable, notebook:getPageToWrite());
-  modal:initialise();
-  modal:addToUIManager();
-  if JoypadState.players[player + 1] then
-    setJoypadFocus(player, modal)
-  end
-end
-
-function ISInventoryPaneContextMenu:onWriteSomethingClick(button)
-  if button.internal == "OK" then
-    for i, v in ipairs(button.parent.newPage) do
-      button.parent.notebook:addPage(i, v);
-    end
-    button.parent.notebook:setName(button.parent.title:getText());
-    button.parent.notebook:setCustomName(true);
-  end
-end
-
-function ISInventoryPaneContextMenu:onRenameFoodClick(button, player, item)
-  local playerNum = player:getPlayerNum()
-  if button.internal == "OK" then
-    if button.parent.entry:getText() and button.parent.entry:getText() ~= "" then
-      item:setName(button.parent.entry:getText());
-      item:setCustomName(true);
-      local pdata = getPlayerData(playerNum);
-      pdata.playerInventory:refreshBackpacks();
-      pdata.lootInventory:refreshBackpacks();
+    local modal = ISAlarmClockDialog:new(0, 0, 230, 160, player, alarm);
+    modal:initialise();
+    modal:addToUIManager();
+    if JoypadState.players[player + 1] then
+      modal.prevFocus = getPlayerInventory(player)
+      setJoypadFocus(player, modal)
     end
   end
-  if JoypadState.players[playerNum + 1] then
-    setJoypadFocus(playerNum, getPlayerInventory(playerNum))
-  end
-end
 
-function ISInventoryPaneContextMenu:onRenameBagClick(button, player, item)
-  local playerNum = player:getPlayerNum()
-  if button.internal == "OK" then
-    if button.parent.entry:getText() and button.parent.entry:getText() ~= "" then
-      item:setName(button.parent.entry:getText());
-      local pdata = getPlayerData(playerNum);
-      pdata.playerInventory:refreshBackpacks();
-      pdata.lootInventory:refreshBackpacks();
+  ISInventoryPaneContextMenu.onRenameMap = function(map, player)
+    local modal = ISTextBox:new(0, 0, 280, 180, getText("ContextMenu_NameThisBag"), map:getName(), nil, ISInventoryPaneContextMenu.onRenameBagClick, player, getSpecificPlayer(player), map);
+    modal:initialise();
+    modal:addToUIManager();
+    if JoypadState.players[player + 1] then
+      setJoypadFocus(player, modal)
     end
   end
-  if JoypadState.players[playerNum + 1] then
-    setJoypadFocus(playerNum, getPlayerInventory(playerNum))
-  end
-end
 
-ISInventoryPaneContextMenu.dryMyself = function(item, player)
-  -- if towel isn't in main inventory, put it there first.
-  local playerObj = getSpecificPlayer(player)
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
-  -- dry yourself
-  -- how many use left on the towel
-  local useLeft = math.ceil(item:getUsedDelta() * 10);
-  ISTimedActionQueue.add(ISDryMyself:new(playerObj, item, (useLeft * 20) + 20));
-end
-
-ISInventoryPaneContextMenu.onApplyBandage = function(bandages, bodyPart, player)
-  bandages = ISInventoryPane.getActualItems(bandages)
-  for i, k in ipairs(bandages) do
-    ISInventoryPaneContextMenu.applyBandage(k, bodyPart, player)
-    break
-  end
-end
-
--- apply a bandage on a body part, loot it first if it's not in the player's inventory
-ISInventoryPaneContextMenu.applyBandage = function(item, bodyPart, player)
-  -- if bandage isn't in main inventory, put it there first.
-  local playerObj = getSpecificPlayer(player)
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
-  -- apply bandage
-  ISTimedActionQueue.add(ISApplyBandage:new(playerObj, playerObj, item, bodyPart, true));
-end
-
--- look for any damaged body part on the player
-ISInventoryPaneContextMenu.haveDamagePart = function(playerId)
-  local result = {};
-  local bodyParts = getSpecificPlayer(playerId):getBodyDamage():getBodyParts();
-  -- fetch all the body part
-  for i = 0, BodyPartType.ToIndex(BodyPartType.MAX) - 1 do
-    local bodyPart = bodyParts:get(i);
-    -- if it's damaged
-    if bodyPart:scratched() or bodyPart:deepWounded() or bodyPart:bitten() or bodyPart:stitched() or bodyPart:bleeding() or bodyPart:isBurnt() and not bodyPart:bandaged() then
-      table.insert(result, bodyPart);
+  ISInventoryPaneContextMenu.onRenameBag = function(bag, player)
+    local modal = ISTextBox:new(0, 0, 280, 180, getText("ContextMenu_NameThisBag"), bag:getName(), nil, ISInventoryPaneContextMenu.onRenameBagClick, player, getSpecificPlayer(player), bag);
+    modal:initialise();
+    modal:addToUIManager();
+    if JoypadState.players[player + 1] then
+      setJoypadFocus(player, modal)
     end
   end
-  return result;
-end
 
-ISInventoryPaneContextMenu.onLiteratureItems = function(items, player)
-  items = ISInventoryPane.getActualItems(items)
-  for i, k in ipairs(items) do
-    ISInventoryPaneContextMenu.readItem(k, player)
-    break;
-  end
-end
-
--- read a book, loot it first if it's not in the player's inventory
-ISInventoryPaneContextMenu.readItem = function(item, player)
-  local playerObj = getSpecificPlayer(player)
-  if item:getContainer() == nil then
-    return
-  end
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
-  -- read
-  ISTimedActionQueue.add(ISReadABook:new(playerObj, item, 150));
-end
-
-ISInventoryPaneContextMenu.onUnEquip = function(items, player)
-  items = ISInventoryPane.getActualItems(items)
-  for i, k in ipairs(items) do
-    ISInventoryPaneContextMenu.unequipItem(k, player)
-  end
-end
-
-ISInventoryPaneContextMenu.unequipItem = function(item, player)
-  if not getSpecificPlayer(player):isEquipped(item) then return end
-  ISTimedActionQueue.add(ISUnequipAction:new(getSpecificPlayer(player), item, 50));
-end
-
-ISInventoryPaneContextMenu.onWearItems = function(items, player)
-  items = ISInventoryPane.getActualItems(items)
-  local typeDone = {}; -- we keep track of what type of clothes we already wear to avoid wearind 2 times the same type (click on a stack of socks, select wear and you'll wear them 1 by 1 otherwise)
-  for i, k in pairs(items) do
-    if not typeDone[k:getName()] then
-      ISInventoryPaneContextMenu.wearItem(k, player)
-      typeDone[k:getName()] = true;
+  ISInventoryPaneContextMenu.onRenameFood = function(food, player)
+    local modal = ISTextBox:new(0, 0, 280, 180, getText("ContextMenu_RenameFood") .. food:getName(), food:getDisplayName(), nil, ISInventoryPaneContextMenu.onRenameFoodClick, player, getSpecificPlayer(player), food);
+    modal:initialise();
+    modal:addToUIManager();
+    if JoypadState.players[player + 1] then
+      setJoypadFocus(player, modal)
     end
   end
-end
 
-ISInventoryPaneContextMenu.onActivateItem = function(light, player)
-  light:setActivated(not light:isActivated());
-end
+  ISInventoryPaneContextMenu.onCheckMap = function(map, player)
+    local playerObj = getSpecificPlayer(player)
+    if luautils.haveToBeTransfered(playerObj, map) then
+      local action = ISInventoryTransferAction:new(playerObj, map, map:getContainer(), playerObj:getInventory())
+      action:setOnComplete(ISInventoryPaneContextMenu.onCheckMap, map, player)
+      ISTimedActionQueue.add(action)
+      return
+    end
 
--- Wear a clothe, loot it first if it's not in the player's inventory
-ISInventoryPaneContextMenu.wearItem = function(item, player)
-  -- if clothing isn't in main inventory, put it there first.
-  local playerObj = getSpecificPlayer(player)
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
-  -- wear the clothe
-  ISTimedActionQueue.add(ISWearClothing:new(playerObj, item, 50));
-end
+    if JoypadState.players[player + 1] then
+      local inv = getPlayerInventory(player)
+      local loot = getPlayerLoot(player)
+      inv:setVisible(false)
+      loot:setVisible(false)
+    end
 
-ISInventoryPaneContextMenu.onPutItems = function(items, player)
-  local playerObj = getSpecificPlayer(player)
-  local playerInv = getPlayerInventory(player).inventory
-  local playerLoot = getPlayerLoot(player).inventory
-  items = ISInventoryPane.getActualItems(items)
-  local doWalk = true
-  for i, k in ipairs(items) do
-    if playerLoot:isItemAllowed(k) and not k:isFavorite() then
-      if doWalk then
-        if not luautils.walkToContainer(playerLoot, player) then
-          break
+    local mapUI = ISMap:new(0, 0, 0, 0, map, player);
+    mapUI:initialise();
+    --    mapUI:addToUIManager();
+    local wrap = mapUI:wrapInCollapsableWindow(map:getName(), false);
+    wrap:setInfo(getText("IGUI_Map_Info"));
+    wrap:setWantKeyEvents(true);
+    wrap.isKeyConsumed = function(self, key) return self.mapUI:isKeyConsumed(key) end;
+    wrap.onKeyRelease = function(self, key) self.mapUI:onKeyRelease(key) end;
+    mapUI.wrap = wrap;
+    wrap.render = ISMap.renderWrap;
+    wrap.prerender = ISMap.prerenderWrap;
+    wrap.setVisible = ISMap.setWrapVisible;
+    wrap.close = ISMap.closeWrap;
+    wrap.mapUI = mapUI;
+    mapUI.render = ISMap.noRender;
+    mapUI.prerender = ISMap.noRender;
+    map:doBuildingtStash();
+    wrap:setVisible(true);
+    wrap:addToUIManager();
+    if JoypadState.players[player + 1] then
+      setJoypadFocus(player, mapUI)
+    end
+  end
+
+  ISInventoryPaneContextMenu.onWriteSomething = function(notebook, editable, player)
+    local fontHgt = getTextManager():getFontFromEnum(UIFont.Small):getLineHeight()
+    local height = 110 + (15 * fontHgt);
+    local modal = ISUIWriteJournal:new(0, 0, 280, height, nil, ISInventoryPaneContextMenu.onWriteSomethingClick, getSpecificPlayer(player), notebook, notebook:seePage(1), notebook:getName(), 15, editable, notebook:getPageToWrite());
+    modal:initialise();
+    modal:addToUIManager();
+    if JoypadState.players[player + 1] then
+      setJoypadFocus(player, modal)
+    end
+  end
+
+  function ISInventoryPaneContextMenu:onWriteSomethingClick(button)
+    if button.internal == "OK" then
+      for i, v in ipairs(button.parent.newPage) do
+        button.parent.notebook:addPage(i, v);
+      end
+      button.parent.notebook:setName(button.parent.title:getText());
+      button.parent.notebook:setCustomName(true);
+    end
+  end
+
+  function ISInventoryPaneContextMenu:onRenameFoodClick(button, player, item)
+    local playerNum = player:getPlayerNum()
+    if button.internal == "OK" then
+      if button.parent.entry:getText() and button.parent.entry:getText() ~= "" then
+        item:setName(button.parent.entry:getText());
+        item:setCustomName(true);
+        local pdata = getPlayerData(playerNum);
+        pdata.playerInventory:refreshBackpacks();
+        pdata.lootInventory:refreshBackpacks();
+      end
+    end
+    if JoypadState.players[playerNum + 1] then
+      setJoypadFocus(playerNum, getPlayerInventory(playerNum))
+    end
+  end
+
+  function ISInventoryPaneContextMenu:onRenameBagClick(button, player, item)
+    local playerNum = player:getPlayerNum()
+    if button.internal == "OK" then
+      if button.parent.entry:getText() and button.parent.entry:getText() ~= "" then
+        item:setName(button.parent.entry:getText());
+        local pdata = getPlayerData(playerNum);
+        pdata.playerInventory:refreshBackpacks();
+        pdata.lootInventory:refreshBackpacks();
+      end
+    end
+    if JoypadState.players[playerNum + 1] then
+      setJoypadFocus(playerNum, getPlayerInventory(playerNum))
+    end
+  end
+
+  ISInventoryPaneContextMenu.dryMyself = function(item, player)
+    -- if towel isn't in main inventory, put it there first.
+    local playerObj = getSpecificPlayer(player)
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+    -- dry yourself
+    -- how many use left on the towel
+    local useLeft = math.ceil(item:getUsedDelta() * 10);
+    ISTimedActionQueue.add(ISDryMyself:new(playerObj, item, (useLeft * 20) + 20));
+  end
+
+  ISInventoryPaneContextMenu.onApplyBandage = function(bandages, bodyPart, player)
+    bandages = ISInventoryPane.getActualItems(bandages)
+    for i, k in ipairs(bandages) do
+      ISInventoryPaneContextMenu.applyBandage(k, bodyPart, player)
+      break
+    end
+  end
+
+  -- apply a bandage on a body part, loot it first if it's not in the player's inventory
+  ISInventoryPaneContextMenu.applyBandage = function(item, bodyPart, player)
+    -- if bandage isn't in main inventory, put it there first.
+    local playerObj = getSpecificPlayer(player)
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+    -- apply bandage
+    ISTimedActionQueue.add(ISApplyBandage:new(playerObj, playerObj, item, bodyPart, true));
+  end
+
+  -- look for any damaged body part on the player
+  ISInventoryPaneContextMenu.haveDamagePart = function(playerId)
+    local result = {};
+    local bodyParts = getSpecificPlayer(playerId):getBodyDamage():getBodyParts();
+    -- fetch all the body part
+    for i = 0, BodyPartType.ToIndex(BodyPartType.MAX) - 1 do
+      local bodyPart = bodyParts:get(i);
+      -- if it's damaged
+      if bodyPart:scratched() or bodyPart:deepWounded() or bodyPart:bitten() or bodyPart:stitched() or bodyPart:bleeding() or bodyPart:isBurnt() and not bodyPart:bandaged() then
+        table.insert(result, bodyPart);
+      end
+    end
+    return result;
+  end
+
+  ISInventoryPaneContextMenu.onLiteratureItems = function(items, player)
+    items = ISInventoryPane.getActualItems(items)
+    for i, k in ipairs(items) do
+      ISInventoryPaneContextMenu.readItem(k, player)
+      break;
+    end
+  end
+
+  -- read a book, loot it first if it's not in the player's inventory
+  ISInventoryPaneContextMenu.readItem = function(item, player)
+    local playerObj = getSpecificPlayer(player)
+    if item:getContainer() == nil then
+      return
+    end
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+    -- read
+    ISTimedActionQueue.add(ISReadABook:new(playerObj, item, 150));
+  end
+
+  ISInventoryPaneContextMenu.onUnEquip = function(items, player)
+    items = ISInventoryPane.getActualItems(items)
+    for i, k in ipairs(items) do
+      ISInventoryPaneContextMenu.unequipItem(k, player)
+    end
+  end
+
+  ISInventoryPaneContextMenu.unequipItem = function(item, player)
+    if not getSpecificPlayer(player):isEquipped(item) then return end
+    ISTimedActionQueue.add(ISUnequipAction:new(getSpecificPlayer(player), item, 50));
+  end
+
+  ISInventoryPaneContextMenu.onWearItems = function(items, player)
+    items = ISInventoryPane.getActualItems(items)
+    local typeDone = {}; -- we keep track of what type of clothes we already wear to avoid wearind 2 times the same type (click on a stack of socks, select wear and you'll wear them 1 by 1 otherwise)
+    for i, k in pairs(items) do
+      if not typeDone[k:getName()] then
+        ISInventoryPaneContextMenu.wearItem(k, player)
+        typeDone[k:getName()] = true;
+      end
+    end
+  end
+
+  ISInventoryPaneContextMenu.onActivateItem = function(light, player)
+    light:setActivated(not light:isActivated());
+  end
+
+  -- Wear a clothe, loot it first if it's not in the player's inventory
+  ISInventoryPaneContextMenu.wearItem = function(item, player)
+    -- if clothing isn't in main inventory, put it there first.
+    local playerObj = getSpecificPlayer(player)
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+    -- wear the clothe
+    ISTimedActionQueue.add(ISWearClothing:new(playerObj, item, 50));
+  end
+
+  ISInventoryPaneContextMenu.onPutItems = function(items, player)
+    local playerObj = getSpecificPlayer(player)
+    local playerLoot = getPlayerLoot(player).inventory
+    items = ISInventoryPane.getActualItems(items)
+    local doWalk = true
+    for i, k in ipairs(items) do
+      if playerLoot:isItemAllowed(k) and not k:isFavorite() then
+        if doWalk then
+          if not luautils.walkToContainer(playerLoot, player) then
+            break
+          end
+          doWalk = false
         end
-        doWalk = false
-      end
-      ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, k, playerInv, playerLoot))
-    end
-  end
-end
-
-ISInventoryPaneContextMenu.canMoveTo = function(items, dest, player)
-  local playerObj = getSpecificPlayer(player)
-  if instanceof(dest, "InventoryContainer") then
-    local container = dest:getInventory()
-    for i, item in ipairs(items) do
-      if item == dest then return nil end
-      if container:contains(item) then return nil end
-      if not container:isItemAllowed(item) then return nil end
-      if item:isFavorite() and not container:isInCharacterInventory(playerObj) then return nil end
-    end
-    return dest
-  end
-  if instanceof(dest, "ItemContainer") and dest:getType() == "floor" then
-    for i, item in ipairs(items) do
-      if item == dest then return nil end
-      if dest:getItems():contains(item) then return nil end
-      if item:isFavorite() and not dest:isInCharacterInventory(playerObj) then return nil end
-    end
-    return dest
-  end
-  return nil
-end
-
-ISInventoryPaneContextMenu.canUnpack = function(items, player)
-  local playerObj = getSpecificPlayer(player)
-  for i, item in ipairs(items) do
-    if playerObj:getInventory():contains(item) then return false end
-    if not playerObj:getInventory():contains(item, true) then return false end
-    --        if not item:getContainer():isInCharacterInventory(playerObj) then return false end
-    --        if item:isFavorite() then return false; end
-  end
-  return true
-end
-
-ISInventoryPaneContextMenu.onFavorite = function(items, item2, fav)
-  for i, item in ipairs(items) do
-    item:setFavorite(fav);
-  end
-end
-
-ISInventoryPaneContextMenu.onMoveItemsTo = function(items, dest, player)
-  if dest:getType() == "floor" then
-    return ISInventoryPaneContextMenu.onDropItems(items, player)
-  end
-  local playerObj = getSpecificPlayer(player)
-  if not luautils.walkToContainer(dest, player) then
-    return
-  end
-  for i, item in ipairs(items) do
-    if playerObj:isEquipped(item) then
-      ISTimedActionQueue.add(ISUnequipAction:new(playerObj, item, 50));
-    end
-    ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), dest))
-  end
-end
-
-ISInventoryPaneContextMenu.canAddManyItems = function(recipe, selectedItem, playerObj)
-  local container = selectedItem:getContainer();
-  if not recipe:isCanBeDoneFromFloor() then
-    container = playerObj:getInventory()
-  end
-  if isClient() and not instanceof(container:getParent(), "IsoGameCharacter") and getServerOptions():getInteger("ItemNumbersLimitPerContainer") > 0 and selectedItem:getContainer() then
-    local createdItem = InventoryItemFactory.CreateItem(recipe:getResult():getFullType())
-    if createdItem then
-      local totalCount = createdItem:getCount() * recipe:getResult():getCount()
-      if totalCount + container:getItems():size() + 1 > getServerOptions():getInteger("ItemNumbersLimitPerContainer") then
-        return false;
+        ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, k, k:getContainer(), playerLoot))
       end
     end
   end
-  --        end
-  return true;
-end
 
------ ----- ----- ----- -----
-
-local FONT_HGT_SMALL = getTextManager():getFontHeight(UIFont.Small)
-local IMAGE_SIZE = 20
-
-local CraftTooltip = ISToolTip:derive("CraftTooltip")
-CraftTooltip.tooltipPool = {}
-CraftTooltip.tooltipsUsed = {}
-
-function CraftTooltip:addText(x, y, text)
-  local width = getTextManager():MeasureStringX(UIFont.Small, text)
-  table.insert(self.contents, { type = "text", x = x, y = y, width = width, height = FONT_HGT_SMALL, text = text })
-end
-
-function CraftTooltip:addImage(x, y, textureName)
-  table.insert(self.contents, { type = "image", x = x, y = y, width = IMAGE_SIZE, height = IMAGE_SIZE, texture = getTexture(textureName) })
-end
-
-function CraftTooltip:getSingleSourceText(source)
-  local txt = ""
-  if source:isDestroy() then
-    txt = getText("IGUI_CraftUI_SourceDestroy")
-    -- Hack for "Refill Propane Torch" and similar
-    local itemFullType = source:getItems():get(0)
-    local resultFullType = self.recipe:getResult():getFullType()
-    if itemFullType == resultFullType then
-      txt = getText("IGUI_CraftUI_SourceKeep")
+  ISInventoryPaneContextMenu.canMoveTo = function(items, dest, player)
+    local playerObj = getSpecificPlayer(player)
+    if instanceof(dest, "InventoryContainer") then
+      local container = dest:getInventory()
+      for i, item in ipairs(items) do
+        if item == dest then return nil end
+        if container:contains(item) then return nil end
+        if not container:isItemAllowed(item) then return nil end
+        if item:isFavorite() and not container:isInCharacterInventory(playerObj) then return nil end
+      end
+      return dest
     end
-    -- Hack for "Clean Bandage" / "Sterilize Bandage"
-    if string.contains(itemFullType, "Bandage") and string.contains(resultFullType, "Bandage") then
-      txt = getText("IGUI_CraftUI_SourceUse")
+    if instanceof(dest, "ItemContainer") and dest:getType() == "floor" then
+      for i, item in ipairs(items) do
+        if item == dest then return nil end
+        if dest:getItems():contains(item) then return nil end
+        if item:isFavorite() and not dest:isInCharacterInventory(playerObj) then return nil end
+      end
+      return dest
     end
-    -- Hack for "Clean Rag" / "Sterilize Rag"
-    if string.contains(itemFullType, "RippedSheets") and string.contains(resultFullType, "RippedSheets") then
-      txt = getText("IGUI_CraftUI_SourceUse")
-    end
-    -- Hack for "Clean Denim/Leather Strips" / "Sterilize Denim/Leather Strips"
-    if string.contains(itemFullType, "LeatherStrips") and string.contains(resultFullType, "LeatherStrips") or (string.contains(itemFullType, "DenimStrips") and string.contains(resultFullType, "DenimStrips")) then
-      txt = getText("IGUI_CraftUI_SourceUse")
-    end
-  elseif source:isKeep() then
-    txt = getText("IGUI_CraftUI_SourceKeep")
-  else
-    txt = getText("IGUI_CraftUI_SourceUse")
+    return nil
   end
-  return txt
-end
 
--- Return true if item2's type is in item1's getClothingExtraItem() list.
-function CraftTooltip:isExtraClothingItemOf(item1, item2)
-  local scriptItem = getScriptManager():FindItem(item1.fullType)
-  if not scriptItem then
-    return false
-  end
-  local extras = scriptItem:getClothingItemExtra()
-  if not extras then
-    return false
-  end
-  local moduleName = scriptItem:getModule():getName()
-  for i = 1, extras:size() do
-    local extra = extras:get(i - 1)
-    local fullType = moduleDotType(moduleName, extra)
-    if item2.fullType == fullType then
-      return true
+  ISInventoryPaneContextMenu.canUnpack = function(items, player)
+    local playerObj = getSpecificPlayer(player)
+    for i, item in ipairs(items) do
+      if playerObj:getInventory():contains(item) then return false end
+      if not playerObj:getInventory():contains(item, true) then return false end
+      --        if not item:getContainer():isInCharacterInventory(playerObj) then return false end
+      --        if item:isFavorite() then return false; end
     end
+    return true
   end
-  return false
-end
 
-function CraftTooltip:layoutContents(x, y)
-  if self.contents then
-    return self.contentsWidth, self.contentsHeight
-  end
-  self.contents = {}
-  local marginLeft = 20
-  local marginTop = 10
-  local marginBottom = 10
-  local y1 = y + marginTop
-  local lineHeight = math.max(FONT_HGT_SMALL, 20 + 2)
-  local textDY = (lineHeight - FONT_HGT_SMALL) / 2
-  local imageDY = (lineHeight - IMAGE_SIZE) / 2
-  local singleSources = {}
-  local multiSources = {}
-  local allSources = {}
-
-  for j = 1, self.recipe:getSource():size() do
-    local source = self.recipe:getSource():get(j - 1)
-    if source:getItems():size() == 1 then
-      table.insert(singleSources, source)
-    else
-      table.insert(multiSources, source)
+  ISInventoryPaneContextMenu.onFavorite = function(items, item2, fav)
+    for i, item in ipairs(items) do
+      item:setFavorite(fav);
     end
   end
 
-  -- Display singleSources before multiSources
-  for _, source in ipairs(singleSources) do
-    table.insert(allSources, source)
+  ISInventoryPaneContextMenu.onMoveItemsTo = function(items, dest, player)
+    if dest:getType() == "floor" then
+      return ISInventoryPaneContextMenu.onDropItems(items, player)
+    end
+    local playerObj = getSpecificPlayer(player)
+    if not luautils.walkToContainer(dest, player) then
+      return
+    end
+    for i, item in ipairs(items) do
+      if playerObj:isEquipped(item) then
+        ISTimedActionQueue.add(ISUnequipAction:new(playerObj, item, 50));
+      end
+      ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), dest))
+    end
   end
 
-  for _, source in ipairs(multiSources) do
-    table.insert(allSources, source)
+  ISInventoryPaneContextMenu.canAddManyItems = function(recipe, selectedItem, playerObj)
+    local container = selectedItem:getContainer();
+    if not recipe:isCanBeDoneFromFloor() then
+      container = playerObj:getInventory()
+    end
+    if isClient() and not instanceof(container:getParent(), "IsoGameCharacter") and getServerOptions():getInteger("ItemNumbersLimitPerContainer") > 0 and selectedItem:getContainer() then
+      local createdItem = InventoryItemFactory.CreateItem(recipe:getResult():getFullType())
+      if createdItem then
+        local totalCount = createdItem:getCount() * recipe:getResult():getCount()
+        if totalCount + container:getItems():size() + 1 > getServerOptions():getInteger("ItemNumbersLimitPerContainer") then
+          return false;
+        end
+      end
+    end
+    --        end
+    return true;
   end
 
-  local maxSingleSourceLabelWidth = 0
-  for _, source in ipairs(singleSources) do
-    local txt = self:getSingleSourceText(source)
-    local width = getTextManager():MeasureStringX(UIFont.Small, txt)
-    maxSingleSourceLabelWidth = math.max(maxSingleSourceLabelWidth, width)
+  ----- ----- ----- ----- -----
+
+  local FONT_HGT_SMALL = getTextManager():getFontHeight(UIFont.Small)
+  local IMAGE_SIZE = 20
+
+  local CraftTooltip = ISToolTip:derive("CraftTooltip")
+  CraftTooltip.tooltipPool = {}
+  CraftTooltip.tooltipsUsed = {}
+
+  function CraftTooltip:addText(x, y, text)
+    local width = getTextManager():MeasureStringX(UIFont.Small, text)
+    table.insert(self.contents, { type = "text", x = x, y = y, width = width, height = FONT_HGT_SMALL, text = text })
   end
 
-  for _, source in ipairs(allSources) do
+  function CraftTooltip:addImage(x, y, textureName)
+    table.insert(self.contents, { type = "image", x = x, y = y, width = IMAGE_SIZE, height = IMAGE_SIZE, texture = getTexture(textureName) })
+  end
+
+  function CraftTooltip:getSingleSourceText(source)
     local txt = ""
-    local x1 = x + marginLeft
-    if source:getItems():size() > 1 then
-      if source:isDestroy() then
-        txt = getText("IGUI_CraftUI_SourceDestroyOneOf")
-      elseif source:isKeep() then
-        txt = getText("IGUI_CraftUI_SourceKeepOneOf")
-      else
-        txt = getText("IGUI_CraftUI_SourceUseOneOf")
+    if source:isDestroy() then
+      txt = getText("IGUI_CraftUI_SourceDestroy")
+      -- Hack for "Refill Propane Torch" and similar
+      local itemFullType = source:getItems():get(0)
+      local resultFullType = self.recipe:getResult():getFullType()
+      if itemFullType == resultFullType then
+        txt = getText("IGUI_CraftUI_SourceKeep")
       end
-      self:addText(x1, y1 + textDY, txt)
-      y1 = y1 + lineHeight
+      -- Hack for "Clean Bandage" / "Sterilize Bandage"
+      if string.contains(itemFullType, "Bandage") and string.contains(resultFullType, "Bandage") then
+        txt = getText("IGUI_CraftUI_SourceUse")
+      end
+      -- Hack for "Clean Rag" / "Sterilize Rag"
+      if string.contains(itemFullType, "RippedSheets") and string.contains(resultFullType, "RippedSheets") then
+        txt = getText("IGUI_CraftUI_SourceUse")
+      end
+      -- Hack for "Clean Denim/Leather Strips" / "Sterilize Denim/Leather Strips"
+      if string.contains(itemFullType, "LeatherStrips") and string.contains(resultFullType, "LeatherStrips") or (string.contains(itemFullType, "DenimStrips") and string.contains(resultFullType, "DenimStrips")) then
+        txt = getText("IGUI_CraftUI_SourceUse")
+      end
+    elseif source:isKeep() then
+      txt = getText("IGUI_CraftUI_SourceKeep")
     else
-      txt = self:getSingleSourceText(source)
-      self:addText(x1, y1 + textDY, txt)
-      x1 = x1 + maxSingleSourceLabelWidth + 10
+      txt = getText("IGUI_CraftUI_SourceUse")
+    end
+    return txt
+  end
+
+  -- Return true if item2's type is in item1's getClothingExtraItem() list.
+  function CraftTooltip:isExtraClothingItemOf(item1, item2)
+    local scriptItem = getScriptManager():FindItem(item1.fullType)
+    if not scriptItem then
+      return false
+    end
+    local extras = scriptItem:getClothingItemExtra()
+    if not extras then
+      return false
+    end
+    local moduleName = scriptItem:getModule():getName()
+    for i = 1, extras:size() do
+      local extra = extras:get(i - 1)
+      local fullType = moduleDotType(moduleName, extra)
+      if item2.fullType == fullType then
+        return true
+      end
+    end
+    return false
+  end
+
+  function CraftTooltip:layoutContents(x, y)
+    if self.contents then
+      return self.contentsWidth, self.contentsHeight
+    end
+    self.contents = {}
+    local marginLeft = 20
+    local marginTop = 10
+    local marginBottom = 10
+    local y1 = y + marginTop
+    local lineHeight = math.max(FONT_HGT_SMALL, 20 + 2)
+    local textDY = (lineHeight - FONT_HGT_SMALL) / 2
+    local imageDY = (lineHeight - IMAGE_SIZE) / 2
+    local singleSources = {}
+    local multiSources = {}
+    local allSources = {}
+
+    for j = 1, self.recipe:getSource():size() do
+      local source = self.recipe:getSource():get(j - 1)
+      if source:getItems():size() == 1 then
+        table.insert(singleSources, source)
+      else
+        table.insert(multiSources, source)
+      end
     end
 
-    local itemDataList = {}
+    -- Display singleSources before multiSources
+    for _, source in ipairs(singleSources) do
+      table.insert(allSources, source)
+    end
 
-    for k = 1, source:getItems():size() do
-      local itemData = {}
-      itemData.fullType = source:getItems():get(k - 1)
-      local item = nil
-      if itemData.fullType == "Water" then
-        item = ISInventoryPaneContextMenu.getItemInstance("Base.WaterDrop")
-      else
-        item = ISInventoryPaneContextMenu.getItemInstance(itemData.fullType)
-      end
-      itemData.texture = ""
-      if item then
-        itemData.texture = item:getTex():getName()
-        if itemData.fullType == "Water" then
-          if source:getCount() == 1 then
-            itemData.name = getText("IGUI_CraftUI_CountOneUnit", getText("ContextMenu_WaterName"))
-          else
-            itemData.name = getText("IGUI_CraftUI_CountUnits", getText("ContextMenu_WaterName"), source:getCount())
-          end
-        elseif source:getItems():size() > 1 then -- no units
-          itemData.name = item:getDisplayName()
-        elseif not source:isDestroy() and item:IsDrainable() then
-          if source:getCount() == 1 then
-            itemData.name = getText("IGUI_CraftUI_CountOneUnit", item:getDisplayName())
-          else
-            itemData.name = getText("IGUI_CraftUI_CountUnits", item:getDisplayName(), source:getCount())
-          end
-        elseif not source:isDestroy() and source:getUse() > 0 then -- food
-          if source:getUse() == 1 then
-            itemData.name = getText("IGUI_CraftUI_CountOneUnit", item:getDisplayName())
-          else
-            itemData.name = getText("IGUI_CraftUI_CountUnits", item:getDisplayName(), source:getUse())
-          end
-        elseif source:getCount() > 1 then
-          itemData.name = getText("IGUI_CraftUI_CountNumber", item:getDisplayName(), source:getCount())
+    for _, source in ipairs(multiSources) do
+      table.insert(allSources, source)
+    end
+
+    local maxSingleSourceLabelWidth = 0
+    for _, source in ipairs(singleSources) do
+      local txt = self:getSingleSourceText(source)
+      local width = getTextManager():MeasureStringX(UIFont.Small, txt)
+      maxSingleSourceLabelWidth = math.max(maxSingleSourceLabelWidth, width)
+    end
+
+    for _, source in ipairs(allSources) do
+      local txt = ""
+      local x1 = x + marginLeft
+      if source:getItems():size() > 1 then
+        if source:isDestroy() then
+          txt = getText("IGUI_CraftUI_SourceDestroyOneOf")
+        elseif source:isKeep() then
+          txt = getText("IGUI_CraftUI_SourceKeepOneOf")
         else
-          itemData.name = item:getDisplayName()
+          txt = getText("IGUI_CraftUI_SourceUseOneOf")
         end
+        self:addText(x1, y1 + textDY, txt)
+        y1 = y1 + lineHeight
       else
-        itemData.name = itemData.fullType
+        txt = self:getSingleSourceText(source)
+        self:addText(x1, y1 + textDY, txt)
+        x1 = x1 + maxSingleSourceLabelWidth + 10
       end
-      table.insert(itemDataList, itemData)
-    end
 
-    table.sort(itemDataList, function(a, b) return not string.sort(a.name, b.name) end)
+      local itemDataList = {}
 
-    -- Hack for "Dismantle Digital Watch" and similar recipes.
-    -- Recipe sources include both left-hand and right-hand versions of the same item.
-    -- We only want to display one of them.
-    ---[[
+      for k = 1, source:getItems():size() do
+        local itemData = {}
+        itemData.fullType = source:getItems():get(k - 1)
+        local item = nil
+        if itemData.fullType == "Water" then
+          item = ISInventoryPaneContextMenu.getItemInstance("Base.WaterDrop")
+        else
+          item = ISInventoryPaneContextMenu.getItemInstance(itemData.fullType)
+        end
+        itemData.texture = ""
+        if item then
+          itemData.texture = item:getTex():getName()
+          if itemData.fullType == "Water" then
+            if source:getCount() == 1 then
+              itemData.name = getText("IGUI_CraftUI_CountOneUnit", getText("ContextMenu_WaterName"))
+            else
+              itemData.name = getText("IGUI_CraftUI_CountUnits", getText("ContextMenu_WaterName"), source:getCount())
+            end
+          elseif source:getItems():size() > 1 then -- no units
+            itemData.name = item:getDisplayName()
+          elseif not source:isDestroy() and item:IsDrainable() then
+            if source:getCount() == 1 then
+              itemData.name = getText("IGUI_CraftUI_CountOneUnit", item:getDisplayName())
+            else
+              itemData.name = getText("IGUI_CraftUI_CountUnits", item:getDisplayName(), source:getCount())
+            end
+          elseif not source:isDestroy() and source:getUse() > 0 then -- food
+            if source:getUse() == 1 then
+              itemData.name = getText("IGUI_CraftUI_CountOneUnit", item:getDisplayName())
+            else
+              itemData.name = getText("IGUI_CraftUI_CountUnits", item:getDisplayName(), source:getUse())
+            end
+          elseif source:getCount() > 1 then
+            itemData.name = getText("IGUI_CraftUI_CountNumber", item:getDisplayName(), source:getCount())
+          else
+            itemData.name = item:getDisplayName()
+          end
+        else
+          itemData.name = itemData.fullType
+        end
+        table.insert(itemDataList, itemData)
+      end
+
+      table.sort(itemDataList, function(a, b) return not string.sort(a.name, b.name) end)
+
+      -- Hack for "Dismantle Digital Watch" and similar recipes.
+      -- Recipe sources include both left-hand and right-hand versions of the same item.
+      -- We only want to display one of them.
+      ---[[
 		for j=1,#itemDataList do
 			local item = itemDataList[j]
 			for k=#itemDataList,j+1,-1 do
@@ -2297,95 +2332,138 @@ function CraftTooltip:layoutContents(x, y)
 		end
 		--]]
 
-    for i, itemData in ipairs(itemDataList) do
-      local x2 = x1
-      if source:getItems():size() > 1 then
-        x2 = x2 + 20
-      end
-      if itemData.texture ~= "" then
-        self:addImage(x2, y1 + imageDY, itemData.texture)
-        x2 = x2 + IMAGE_SIZE + 6
-      end
-      self:addText(x2, y1 + textDY, itemData.name)
-      y1 = y1 + lineHeight
+      for i, itemData in ipairs(itemDataList) do
+        local x2 = x1
+        if source:getItems():size() > 1 then
+          x2 = x2 + 20
+        end
+        if itemData.texture ~= "" then
+          self:addImage(x2, y1 + imageDY, itemData.texture)
+          x2 = x2 + IMAGE_SIZE + 6
+        end
+        self:addText(x2, y1 + textDY, itemData.name)
+        y1 = y1 + lineHeight
 
-      if i == 10 and i < #itemDataList then
-        self:addText(x2, y1 + textDY, getText("Tooltip_AndNMore", #itemDataList - i))
-        break
+        if i == 10 and i < #itemDataList then
+          self:addText(x2, y1 + textDY, getText("Tooltip_AndNMore", #itemDataList - i))
+          break
+        end
       end
+    end
+
+    self.contentsX = x
+    self.contentsY = y
+    self.contentsWidth = 0
+    self.contentsHeight = 0
+    for _, v in ipairs(self.contents) do
+      self.contentsWidth = math.max(self.contentsWidth, v.x + v.width - x)
+      self.contentsHeight = math.max(self.contentsHeight, v.y + v.height + marginBottom - y)
+    end
+    return self.contentsWidth, self.contentsHeight
+  end
+
+  function CraftTooltip:renderContents()
+    for _, v in ipairs(self.contents) do
+      if v.type == "image" then
+        self:drawTextureScaledAspect(v.texture, v.x, v.y, v.width, v.height, 1, 1, 1, 1)
+      elseif v.type == "text" then
+        self:drawText(v.text, v.x, v.y, 1, 1, 1, 1, UIFont.Small)
+      end
+    end
+    if false then
+      self:drawRectBorder(self.contentsX, self.contentsY, self.contentsWidth, self.contentsHeight, self.height, 0.5, 0.9, 0.9, 1)
     end
   end
 
-  self.contentsX = x
-  self.contentsY = y
-  self.contentsWidth = 0
-  self.contentsHeight = 0
-  for _, v in ipairs(self.contents) do
-    self.contentsWidth = math.max(self.contentsWidth, v.x + v.width - x)
-    self.contentsHeight = math.max(self.contentsHeight, v.y + v.height + marginBottom - y)
+  function CraftTooltip:reset()
+    ISToolTip.reset(self)
+    self.contents = nil
   end
-  return self.contentsWidth, self.contentsHeight
-end
 
-function CraftTooltip:renderContents()
-  for _, v in ipairs(self.contents) do
-    if v.type == "image" then
-      self:drawTextureScaledAspect(v.texture, v.x, v.y, v.width, v.height, 1, 1, 1, 1)
-    elseif v.type == "text" then
-      self:drawText(v.text, v.x, v.y, 1, 1, 1, 1, UIFont.Small)
+  function CraftTooltip:new()
+    local o = ISToolTip.new(self)
+    return o
+  end
+
+  function CraftTooltip.addToolTip()
+    local pool = CraftTooltip.tooltipPool
+    if #pool == 0 then
+      table.insert(pool, CraftTooltip:new())
     end
+    local tooltip = table.remove(pool, #pool)
+    tooltip:reset()
+    table.insert(CraftTooltip.tooltipsUsed, tooltip)
+    return tooltip;
   end
-  if false then
-    self:drawRectBorder(self.contentsX, self.contentsY, self.contentsWidth, self.contentsHeight, self.height, 0.5, 0.9, 0.9, 1)
-  end
-end
 
-function CraftTooltip:reset()
-  ISToolTip.reset(self)
-  self.contents = nil
-end
+  ----- ----- ----- ----- -----
 
-function CraftTooltip:new()
-  local o = ISToolTip.new(self)
-  return o
-end
+  ISInventoryPaneContextMenu.addDynamicalContextMenu = function(selectedItem, context, recipeList, player, containerList)
+    for _, tooltip in ipairs(CraftTooltip.tooltipsUsed) do
+      table.insert(CraftTooltip.tooltipPool, tooltip)
+    end
+    --    print('reused ',#CraftTooltip.tooltipsUsed,' craft tooltips')
+    table.wipe(CraftTooltip.tooltipsUsed)
 
-function CraftTooltip.addToolTip()
-  local pool = CraftTooltip.tooltipPool
-  if #pool == 0 then
-    table.insert(pool, CraftTooltip:new())
-  end
-  local tooltip = table.remove(pool, #pool)
-  tooltip:reset()
-  table.insert(CraftTooltip.tooltipsUsed, tooltip)
-  return tooltip;
-end
+    local playerObj = getSpecificPlayer(player)
+    for i = 0, recipeList:size() - 1 do
+      local recipe = recipeList:get(i)
+      -- check if we have multiple item like this
+      local numberOfTimes = RecipeManager.getNumberOfTimesRecipeCanBeDone(recipe, playerObj, containerList, selectedItem)
+      local resultItem = InventoryItemFactory.CreateItem(recipe:getResult():getFullType());
+      local option = nil;
+      local subMenuCraft = nil;
+      if numberOfTimes ~= 1 then
+        subMenuCraft = context:getNew(context);
+        option = context:addOption(recipe:getName(), selectedItem, nil);
+        context:addSubMenu(option, subMenuCraft);
+        if playerObj:isDriving() then
+          option.notAvailable = true;
+        else
+          local subOption = subMenuCraft:addOption(getText("ContextMenu_One"), selectedItem, ISInventoryPaneContextMenu.OnCraft, recipe, player, false);
+          local tooltip = CraftTooltip.addToolTip();
+          tooltip.recipe = recipe
+          -- add it to our current option
+          tooltip:setName(recipe:getName());
+          if resultItem:getTexture() and resultItem:getTexture():getName() ~= "Question_On" then
+            tooltip:setTexture(resultItem:getTexture():getName());
+          end
+          subOption.toolTip = tooltip;
 
------ ----- ----- ----- -----
-
-ISInventoryPaneContextMenu.addDynamicalContextMenu = function(selectedItem, context, recipeList, player, containerList)
-  for _, tooltip in ipairs(CraftTooltip.tooltipsUsed) do
-    table.insert(CraftTooltip.tooltipPool, tooltip)
-  end
-  --    print('reused ',#CraftTooltip.tooltipsUsed,' craft tooltips')
-  table.wipe(CraftTooltip.tooltipsUsed)
-
-  local playerObj = getSpecificPlayer(player)
-  for i = 0, recipeList:size() - 1 do
-    local recipe = recipeList:get(i)
-    -- check if we have multiple item like this
-    local numberOfTimes = RecipeManager.getNumberOfTimesRecipeCanBeDone(recipe, playerObj, containerList, selectedItem)
-    local resultItem = InventoryItemFactory.CreateItem(recipe:getResult():getFullType());
-    local option = nil;
-    local subMenuCraft = nil;
-    if numberOfTimes ~= 1 then
-      subMenuCraft = context:getNew(context);
-      option = context:addOption(recipe:getName(), selectedItem, nil);
-      context:addSubMenu(option, subMenuCraft);
+          if numberOfTimes > 1 then
+            subOption = subMenuCraft:addOption(getText("ContextMenu_AllWithCount", numberOfTimes), selectedItem, ISInventoryPaneContextMenu.OnCraft, recipe, player, true);
+          else
+            subOption = subMenuCraft:addOption(getText("ContextMenu_All"), selectedItem, ISInventoryPaneContextMenu.OnCraft, recipe, player, true);
+          end
+          subOption.toolTip = tooltip;
+        end
+      else
+        option = context:addOption(recipe:getName(), selectedItem, ISInventoryPaneContextMenu.OnCraft, recipe, player, false);
+      end
+      -- limit doing a recipe that add multiple items if the dest container has an item limit
+      if not ISInventoryPaneContextMenu.canAddManyItems(recipe, selectedItem, playerObj) then
+        option.notAvailable = true;
+        if subMenuCraft then
+          for i, v in ipairs(subMenuCraft.options) do
+            v.notAvailable = true;
+            local tooltip = ISInventoryPaneContextMenu.addToolTip();
+            tooltip.description = getText("Tooltip_CantCraftDriving");
+            v.toolTip = tooltip;
+          end
+        end
+        local tooltip = ISInventoryPaneContextMenu.addToolTip();
+        tooltip.description = getText("Tooltip_CantCraftDriving");
+        option.toolTip = tooltip;
+        return;
+      end
       if playerObj:isDriving() then
         option.notAvailable = true;
-      else
-        local subOption = subMenuCraft:addOption(getText("ContextMenu_One"), selectedItem, ISInventoryPaneContextMenu.OnCraft, recipe, player, false);
+        local tooltip = ISInventoryPaneContextMenu.addToolTip();
+        tooltip.description = getText("Tooltip_CantCraftDriving");
+        option.toolTip = tooltip;
+        return
+      end
+      if recipe:getNumberOfNeededItem() > 0 then
         local tooltip = CraftTooltip.addToolTip();
         tooltip.recipe = recipe
         -- add it to our current option
@@ -2393,648 +2471,623 @@ ISInventoryPaneContextMenu.addDynamicalContextMenu = function(selectedItem, cont
         if resultItem:getTexture() and resultItem:getTexture():getName() ~= "Question_On" then
           tooltip:setTexture(resultItem:getTexture():getName());
         end
-        subOption.toolTip = tooltip;
-
-        if numberOfTimes > 1 then
-          subOption = subMenuCraft:addOption(getText("ContextMenu_AllWithCount", numberOfTimes), selectedItem, ISInventoryPaneContextMenu.OnCraft, recipe, player, true);
-        else
-          subOption = subMenuCraft:addOption(getText("ContextMenu_All"), selectedItem, ISInventoryPaneContextMenu.OnCraft, recipe, player, true);
-        end
-        subOption.toolTip = tooltip;
+        option.toolTip = tooltip;
       end
-    else
-      option = context:addOption(recipe:getName(), selectedItem, ISInventoryPaneContextMenu.OnCraft, recipe, player, false);
     end
-    -- limit doing a recipe that add multiple items if the dest container has an item limit
-    if not ISInventoryPaneContextMenu.canAddManyItems(recipe, selectedItem, playerObj) then
-      option.notAvailable = true;
-      if subMenuCraft then
-        for i, v in ipairs(subMenuCraft.options) do
-          v.notAvailable = true;
-          local tooltip = ISInventoryPaneContextMenu.addToolTip();
-          tooltip.description = getText("Tooltip_CantCraftDriving");
-          v.toolTip = tooltip;
+  end
+
+  ISInventoryPaneContextMenu.addToolTip = function()
+    local pool = ISInventoryPaneContextMenu.tooltipPool
+    if #pool == 0 then
+      table.insert(pool, ISToolTip:new())
+    end
+    local tooltip = table.remove(pool, #pool)
+    tooltip:reset()
+    table.insert(ISInventoryPaneContextMenu.tooltipsUsed, tooltip)
+    return tooltip;
+  end
+
+  ISInventoryPaneContextMenu.OnCraft = function(selectedItem, recipe, player, all)
+    local playerObj = getSpecificPlayer(player)
+    local containers = ISInventoryPaneContextMenu.getContainers(playerObj)
+    local container = selectedItem:getContainer()
+    if not recipe:isCanBeDoneFromFloor() then
+      container = playerObj:getInventory()
+    end
+    local items = RecipeManager.getAvailableItemsNeeded(recipe, playerObj, containers, selectedItem, nil)
+    if not recipe:isCanBeDoneFromFloor() then
+      for i = 1, items:size() do
+        local item = items:get(i - 1)
+        if item:getContainer() ~= playerObj:getInventory() then
+          ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), playerObj:getInventory(), nil))
         end
       end
-      local tooltip = ISInventoryPaneContextMenu.addToolTip();
-      tooltip.description = getText("Tooltip_CantCraftDriving");
-      option.toolTip = tooltip;
+    end
+    local action = ISCraftAction:new(playerObj, selectedItem, recipe:getTimeToMake(), recipe, container, containers)
+    if all then
+      action:setOnComplete(ISInventoryPaneContextMenu.OnCraftComplete, action, recipe, playerObj, container, containers, selectedItem)
+    end
+    ISTimedActionQueue.add(action)
+  end
+
+  ISInventoryPaneContextMenu.OnCraftComplete = function(completedAction, recipe, playerObj, container, containers, selectedItem)
+    if not RecipeManager.IsRecipeValid(recipe, playerObj, nil, containers) then return end
+    local items = RecipeManager.getAvailableItemsNeeded(recipe, playerObj, containers, nil, nil)
+    if items:isEmpty() then return end
+    if not ISInventoryPaneContextMenu.canAddManyItems(recipe, items:get(0), playerObj) then
       return;
     end
-    if playerObj:isDriving() then
-      option.notAvailable = true;
-      local tooltip = ISInventoryPaneContextMenu.addToolTip();
-      tooltip.description = getText("Tooltip_CantCraftDriving");
-      option.toolTip = tooltip;
-      return
-    end
-    if recipe:getNumberOfNeededItem() > 0 then
-      local tooltip = CraftTooltip.addToolTip();
-      tooltip.recipe = recipe
-      -- add it to our current option
-      tooltip:setName(recipe:getName());
-      if resultItem:getTexture() and resultItem:getTexture():getName() ~= "Question_On" then
-        tooltip:setTexture(resultItem:getTexture():getName());
-      end
-      option.toolTip = tooltip;
-    end
-  end
-end
-
-ISInventoryPaneContextMenu.addToolTip = function()
-  local pool = ISInventoryPaneContextMenu.tooltipPool
-  if #pool == 0 then
-    table.insert(pool, ISToolTip:new())
-  end
-  local tooltip = table.remove(pool, #pool)
-  tooltip:reset()
-  table.insert(ISInventoryPaneContextMenu.tooltipsUsed, tooltip)
-  return tooltip;
-end
-
-ISInventoryPaneContextMenu.OnCraft = function(selectedItem, recipe, player, all)
-  local playerObj = getSpecificPlayer(player)
-  local containers = ISInventoryPaneContextMenu.getContainers(playerObj)
-  local container = selectedItem:getContainer()
-  if not recipe:isCanBeDoneFromFloor() then
-    container = playerObj:getInventory()
-  end
-  local items = RecipeManager.getAvailableItemsNeeded(recipe, playerObj, containers, selectedItem, nil)
-  if not recipe:isCanBeDoneFromFloor() then
-    for i = 1, items:size() do
-      local item = items:get(i - 1)
-      if item:getContainer() ~= playerObj:getInventory() then
-        ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), playerObj:getInventory(), nil))
-      end
-    end
-  end
-  local action = ISCraftAction:new(playerObj, selectedItem, recipe:getTimeToMake(), recipe, container, containers)
-  if all then
-    action:setOnComplete(ISInventoryPaneContextMenu.OnCraftComplete, action, recipe, playerObj, container, containers, selectedItem)
-  end
-  ISTimedActionQueue.add(action)
-end
-
-ISInventoryPaneContextMenu.OnCraftComplete = function(completedAction, recipe, playerObj, container, containers, selectedItem)
-  if not RecipeManager.IsRecipeValid(recipe, playerObj, nil, containers) then return end
-  local items = RecipeManager.getAvailableItemsNeeded(recipe, playerObj, containers, nil, nil)
-  if items:isEmpty() then return end
-  if not ISInventoryPaneContextMenu.canAddManyItems(recipe, items:get(0), playerObj) then
-    return;
-  end
-  local previousAction = completedAction
-  if not recipe:isCanBeDoneFromFloor() then
-    for i = 1, items:size() do
-      local item = items:get(i - 1)
-      if item:getContainer() ~= playerObj:getInventory() then
-        local action = ISInventoryTransferAction:new(playerObj, item, item:getContainer(), playerObj:getInventory(), nil)
-        if not action.ignoreAction then
-          ISTimedActionQueue.addAfter(previousAction, action)
-          previousAction = action
+    local previousAction = completedAction
+    if not recipe:isCanBeDoneFromFloor() then
+      for i = 1, items:size() do
+        local item = items:get(i - 1)
+        if item:getContainer() ~= playerObj:getInventory() then
+          local action = ISInventoryTransferAction:new(playerObj, item, item:getContainer(), playerObj:getInventory(), nil)
+          if not action.ignoreAction then
+            ISTimedActionQueue.addAfter(previousAction, action)
+            previousAction = action
+          end
         end
       end
     end
+    local action = ISCraftAction:new(playerObj, items:get(0), recipe:getTimeToMake(), recipe, container, containers)
+    action:setOnComplete(ISInventoryPaneContextMenu.OnCraftComplete, action, recipe, playerObj, container, containers)
+    ISTimedActionQueue.addAfter(previousAction, action)
   end
-  local action = ISCraftAction:new(playerObj, items:get(0), recipe:getTimeToMake(), recipe, container, containers)
-  action:setOnComplete(ISInventoryPaneContextMenu.OnCraftComplete, action, recipe, playerObj, container, containers)
-  ISTimedActionQueue.addAfter(previousAction, action)
-end
 
-ISInventoryPaneContextMenu.eatItem = function(item, percentage, player)
-  --	if not player then
-  local playerObj = getSpecificPlayer(player);
-  --	end
-  -- if food isn't in main inventory, put it there first.
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
-  -- Then eat it.
-  ISTimedActionQueue.add(ISEatFoodAction:new(playerObj, item, percentage));
-end
+  ISInventoryPaneContextMenu.eatItem = function(item, percentage, player)
+    --	if not player then
+    local playerObj = getSpecificPlayer(player);
+    --	end
+    -- if food isn't in main inventory, put it there first.
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+    -- Transfer required items.
+    if item:getRequireInHandOrInventory() then
+      local itemRequired = nil
+      local types = item:getRequireInHandOrInventory()
+      for i = 1, types:size() do
+        local fullType = moduleDotType(item:getModule(), types:get(i - 1))
+        itemRequired = playerObj:getInventory():getFirstTypeRecurse(fullType)
+        if itemRequired then
+          ISInventoryPaneContextMenu.transferIfNeeded(playerObj, itemRequired)
+          break
+        end
+      end
+      if not itemRequired then return end
+    end
+    -- Then eat it.
+    ISTimedActionQueue.add(ISEatFoodAction:new(playerObj, item, percentage));
+  end
 
--- Function that unequip primary weapon and equip the selected weapon
-ISInventoryPaneContextMenu.OnPrimaryWeapon = function(items, player)
-  items = ISInventoryPane.getActualItems(items)
-  for i, k in ipairs(items) do
-    if (instanceof(k, "HandWeapon") and k:getCondition() > 0) or (instanceof(k, "InventoryItem") and not instanceof(k, "HandWeapon")) then
-      ISInventoryPaneContextMenu.equipWeapon(k, true, false, player)
+  -- Function that unequip primary weapon and equip the selected weapon
+  ISInventoryPaneContextMenu.OnPrimaryWeapon = function(items, player)
+    items = ISInventoryPane.getActualItems(items)
+    for i, k in ipairs(items) do
+      if (instanceof(k, "HandWeapon") and k:getCondition() > 0) or (instanceof(k, "InventoryItem") and not instanceof(k, "HandWeapon")) then
+        ISInventoryPaneContextMenu.equipWeapon(k, true, false, player)
+        break
+      end
+    end
+  end
+
+  --> Stormy
+  -- Function that unequip primary weapon and equip the selected weapon
+  ISInventoryPaneContextMenu.OnReload = function(items, player)
+    -- if the item you've selected is not the header
+    local weapon = items[1];
+    -- if it's a header, we get our first item (the selected one)
+    if not instanceof(items[1], "InventoryItem") then
+      weapon = items[1].items[1];
+    end
+    -- do reload
+    ReloadManager[player + 1]:startReloadFromUi(weapon);
+  end
+  -->> Stormy
+
+  -- Function that goes through all pills selected and take them.
+  ISInventoryPaneContextMenu.onPillsItems = function(items, player)
+    items = ISInventoryPane.getActualItems(items)
+    for i, k in ipairs(items) do
+      ISInventoryPaneContextMenu.takePill(k, player)
       break
     end
   end
-end
 
---> Stormy
--- Function that unequip primary weapon and equip the selected weapon
-ISInventoryPaneContextMenu.OnReload = function(items, player)
-  -- if the item you've selected is not the header
-  local weapon = items[1];
-  -- if it's a header, we get our first item (the selected one)
-  if not instanceof(items[1], "InventoryItem") then
-    weapon = items[1].items[1];
+  -- Take a pill, loot it first if it's not in the player's inventory
+  ISInventoryPaneContextMenu.takePill = function(item, player)
+    local playerObj = getSpecificPlayer(player);
+    -- if pill isn't in main inventory, put it there first.
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+    -- take the pill
+    ISTimedActionQueue.add(ISTakePillAction:new(playerObj, item, 165));
   end
-  -- do reload
-  ReloadManager[player + 1]:startReloadFromUi(weapon);
-end
--->> Stormy
 
--- Function that goes through all pills selected and take them.
-ISInventoryPaneContextMenu.onPillsItems = function(items, player)
-  items = ISInventoryPane.getActualItems(items)
-  for i, k in ipairs(items) do
-    ISInventoryPaneContextMenu.takePill(k, player)
-    break
-  end
-end
-
--- Take a pill, loot it first if it's not in the player's inventory
-ISInventoryPaneContextMenu.takePill = function(item, player)
-  local playerObj = getSpecificPlayer(player);
-  -- if pill isn't in main inventory, put it there first.
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
-  -- take the pill
-  ISTimedActionQueue.add(ISTakePillAction:new(playerObj, item, 165));
-end
-
-ISInventoryPaneContextMenu.OnTwoHandsEquip = function(items, player)
-  items = ISInventoryPane.getActualItems(items)
-  for _, item in ipairs(items) do
-    ISInventoryPaneContextMenu.equipWeapon(item, false, true, player)
-    break
-  end
-end
-
--- Function that unequip second weapon and equip the selected weapon
-ISInventoryPaneContextMenu.OnSecondWeapon = function(items, player)
-  items = ISInventoryPane.getActualItems(items)
-  for _, item in ipairs(items) do
-    ISInventoryPaneContextMenu.equipWeapon(item, false, false, player)
-    break
-  end
-end
-
--- Function that equip the selected weapon
-ISInventoryPaneContextMenu.equipWeapon = function(weapon, primary, twoHands, player)
-  local playerObj = getSpecificPlayer(player)
-  -- Drop corpse or generator
-  if isForceDropHeavyItem(playerObj:getPrimaryHandItem()) then
-    ISTimedActionQueue.add(ISUnequipAction:new(playerObj, playerObj:getPrimaryHandItem(), 50));
-  end
-  -- if weapon isn't in main inventory, put it there first.
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, weapon)
-  -- Then equip it.
-  ISTimedActionQueue.add(ISEquipWeaponAction:new(playerObj, weapon, 50, primary, twoHands));
-end
-
-ISInventoryPaneContextMenu.onInformationItems = function(items)
-  items = ISInventoryPane.getActualItems(items)
-  for i, k in pairs(items) do
-    ISInventoryPaneContextMenu.information(k)
-    break
-  end
-end
-
-ISInventoryPaneContextMenu.information = function(item)
-  --~ 	local tooltip = ObjectTooltip.new();
-  --~ 	item:DoTooltip(tooltip);
-  ISInventoryPaneContextMenu.removeToolTip();
-  ISInventoryPaneContextMenu.toolRender = ISToolTipInv:new(item);
-  ISInventoryPaneContextMenu.toolRender:initialise();
-  ISInventoryPaneContextMenu.toolRender:addToUIManager();
-  ISInventoryPaneContextMenu.toolRender:setVisible(true);
-end
-
-ISInventoryPaneContextMenu.removeToolTip = function()
-  if ISInventoryPaneContextMenu.toolRender then
-    ISInventoryPaneContextMenu.toolRender:removeFromUIManager();
-    ISInventoryPaneContextMenu.toolRender:setVisible(false);
-  end
-end
-
--- Function that goes through all items selected and eats them.
--- eat only 1 of the item list
-ISInventoryPaneContextMenu.onEatItems = function(items, percentage, player)
-  items = ISInventoryPane.getActualItems(items)
-  for i, k in ipairs(items) do
-    ISInventoryPaneContextMenu.eatItem(k, percentage, player)
-    break
-  end
-end
-
-ISInventoryPaneContextMenu.onPlaceTrap = function(weapon, player)
-  ISTimedActionQueue.add(ISPlaceTrap:new(player, weapon, 50));
-end
-
-ISInventoryPaneContextMenu.onRemoveUpgradeWeapon = function(weapon, part, playerObj)
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, weapon)
-  if playerObj:getInventory():contains("Screwdriver") then
-    ISInventoryPaneContextMenu.equipWeapon(playerObj:getInventory():getItemFromType("Screwdriver"), true, false, playerObj:getPlayerNum());
-    ISTimedActionQueue.add(ISRemoveWeaponUpgrade:new(playerObj, weapon, part, 50));
-  end
-end
-
-ISInventoryPaneContextMenu.onUpgradeWeapon = function(weapon, part, player)
-  ISInventoryPaneContextMenu.transferIfNeeded(player, weapon)
-  ISInventoryPaneContextMenu.transferIfNeeded(player, part)
-  if player:getInventory():contains("Screwdriver") then
-    ISInventoryPaneContextMenu.equipWeapon(part, false, false, player:getPlayerNum());
-    ISInventoryPaneContextMenu.equipWeapon(player:getInventory():getItemFromType("Screwdriver"), true, false, player:getPlayerNum());
-    ISTimedActionQueue.add(ISUpgradeWeapon:new(player, weapon, part, 50));
-  end
-end
-
-ISInventoryPaneContextMenu.onDropItems = function(items, player)
-  local playerObj = getSpecificPlayer(player)
-  items = ISInventoryPane.getActualItems(items)
-  --	ISInventoryPaneContextMenu.transferItems(items, playerObj:getInventory(), player, true)
-  for _, item in ipairs(items) do
-    if not item:isFavorite() then
-      ISInventoryPaneContextMenu.dropItem(item, player)
+  ISInventoryPaneContextMenu.OnTwoHandsEquip = function(items, player)
+    items = ISInventoryPane.getActualItems(items)
+    for _, item in ipairs(items) do
+      ISInventoryPaneContextMenu.equipWeapon(item, false, true, player)
+      break
     end
   end
-end
 
-ISInventoryPaneContextMenu.dropItem = function(item, player)
-  if "Tutorial" == getCore():getGameMode() then
-    return;
+  -- Function that unequip second weapon and equip the selected weapon
+  ISInventoryPaneContextMenu.OnSecondWeapon = function(items, player)
+    items = ISInventoryPane.getActualItems(items)
+    for _, item in ipairs(items) do
+      ISInventoryPaneContextMenu.equipWeapon(item, false, false, player)
+      break
+    end
   end
-  local playerObj = getSpecificPlayer(player)
-  if true then
-    -- Don't transfer items to the player's inventory first, since doing so
-    -- breaks ISInventoryTransferAction's multi-item transfer thing.
-    ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), ISInventoryPage.floorContainer[player + 1]))
-    return
+
+  -- Function that equip the selected weapon
+  ISInventoryPaneContextMenu.equipWeapon = function(weapon, primary, twoHands, player)
+    local playerObj = getSpecificPlayer(player)
+    -- Drop corpse or generator
+    if isForceDropHeavyItem(playerObj:getPrimaryHandItem()) then
+      ISTimedActionQueue.add(ISUnequipAction:new(playerObj, playerObj:getPrimaryHandItem(), 50));
+    end
+    -- if weapon isn't in main inventory, put it there first.
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, weapon)
+    -- Then equip it.
+    ISTimedActionQueue.add(ISEquipWeaponAction:new(playerObj, weapon, 50, primary, twoHands));
   end
-  -- if item isn't in main inventory, put it there first.
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
-  ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, playerObj:getInventory(), ISInventoryPage.floorContainer[player + 1]));
-end
 
-ISInventoryPaneContextMenu.onGrabItems = function(items, player)
-  local playerInv = getPlayerInventory(player).inventory;
-  ISInventoryPaneContextMenu.transferItems(items, playerInv, player)
-end
+  ISInventoryPaneContextMenu.onInformationItems = function(items)
+    items = ISInventoryPane.getActualItems(items)
+    for i, k in pairs(items) do
+      ISInventoryPaneContextMenu.information(k)
+      break
+    end
+  end
 
-ISInventoryPaneContextMenu.transferItems = function(items, playerInv, player, dontWalk)
-  local playerObj = getSpecificPlayer(player)
-  items = ISInventoryPane.getActualItems(items)
-  for i, k in ipairs(items) do
-    if k:getContainer() ~= playerInv and k:getContainer() ~= nil then
-      if not dontWalk then
+  ISInventoryPaneContextMenu.information = function(item)
+    --~ 	local tooltip = ObjectTooltip.new();
+    --~ 	item:DoTooltip(tooltip);
+    ISInventoryPaneContextMenu.removeToolTip();
+    ISInventoryPaneContextMenu.toolRender = ISToolTipInv:new(item);
+    ISInventoryPaneContextMenu.toolRender:initialise();
+    ISInventoryPaneContextMenu.toolRender:addToUIManager();
+    ISInventoryPaneContextMenu.toolRender:setVisible(true);
+  end
+
+  ISInventoryPaneContextMenu.removeToolTip = function()
+    if ISInventoryPaneContextMenu.toolRender then
+      ISInventoryPaneContextMenu.toolRender:removeFromUIManager();
+      ISInventoryPaneContextMenu.toolRender:setVisible(false);
+    end
+  end
+
+  -- Function that goes through all items selected and eats them.
+  -- eat only 1 of the item list
+  ISInventoryPaneContextMenu.onEatItems = function(items, percentage, player)
+    items = ISInventoryPane.getActualItems(items)
+    for i, k in ipairs(items) do
+      ISInventoryPaneContextMenu.eatItem(k, percentage, player)
+      break
+    end
+  end
+
+  ISInventoryPaneContextMenu.onPlaceTrap = function(weapon, player)
+    ISTimedActionQueue.add(ISPlaceTrap:new(player, weapon, 50));
+  end
+
+  ISInventoryPaneContextMenu.onRemoveUpgradeWeapon = function(weapon, part, playerObj)
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, weapon)
+    local screwdriver = playerObj:getInventory():getFirstTagEvalRecurse("Screwdriver", predicateNotBroken)
+    if screwdriver then
+      ISInventoryPaneContextMenu.equipWeapon(screwdriver, true, false, playerObj:getPlayerNum());
+      ISTimedActionQueue.add(ISRemoveWeaponUpgrade:new(playerObj, weapon, part, 50));
+    end
+  end
+
+  ISInventoryPaneContextMenu.onUpgradeWeapon = function(weapon, part, player)
+    ISInventoryPaneContextMenu.transferIfNeeded(player, weapon)
+    ISInventoryPaneContextMenu.transferIfNeeded(player, part)
+    local screwdriver = player:getInventory():getFirstTagEvalRecurse("Screwdriver", predicateNotBroken)
+    if screwdriver then
+      ISInventoryPaneContextMenu.equipWeapon(part, false, false, player:getPlayerNum());
+      ISInventoryPaneContextMenu.equipWeapon(screwdriver, true, false, player:getPlayerNum());
+      ISTimedActionQueue.add(ISUpgradeWeapon:new(player, weapon, part, 50));
+    end
+  end
+
+  ISInventoryPaneContextMenu.onDropItems = function(items, player)
+    local playerObj = getSpecificPlayer(player)
+    items = ISInventoryPane.getActualItems(items)
+    --	ISInventoryPaneContextMenu.transferItems(items, playerObj:getInventory(), player, true)
+    for _, item in ipairs(items) do
+      if not item:isFavorite() then
+        ISInventoryPaneContextMenu.dropItem(item, player)
+      end
+    end
+  end
+
+  ISInventoryPaneContextMenu.dropItem = function(item, player)
+    if "Tutorial" == getCore():getGameMode() then
+      return;
+    end
+    local playerObj = getSpecificPlayer(player)
+    if true then
+      -- Don't transfer items to the player's inventory first, since doing so
+      -- breaks ISInventoryTransferAction's multi-item transfer thing.
+      ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), ISInventoryPage.floorContainer[player + 1]))
+      return
+    end
+    -- if item isn't in main inventory, put it there first.
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+    ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, playerObj:getInventory(), ISInventoryPage.floorContainer[player + 1]));
+  end
+
+  ISInventoryPaneContextMenu.onGrabItems = function(items, player)
+    local playerInv = getPlayerInventory(player).inventory;
+    ISInventoryPaneContextMenu.transferItems(items, playerInv, player)
+  end
+
+  ISInventoryPaneContextMenu.transferItems = function(items, playerInv, player, dontWalk)
+    local playerObj = getSpecificPlayer(player)
+    items = ISInventoryPane.getActualItems(items)
+    for i, k in ipairs(items) do
+      if k:getContainer() ~= playerInv and k:getContainer() ~= nil then
+        if not dontWalk then
+          if not luautils.walkToContainer(k:getContainer(), player) then
+            return
+          end
+          dontWalk = true
+        end
+        ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, k, k:getContainer(), playerInv))
+      end
+    end
+  end
+
+  ISInventoryPaneContextMenu.onGrabHalfItems = function(items, player)
+    local playerObj = getSpecificPlayer(player)
+    local playerInv = getPlayerInventory(player).inventory;
+    local doWalk = true
+    for i, k in ipairs(items) do
+      if not instanceof(k, "InventoryItem") then
+        local count = math.floor((#k.items - 1) / 2)
+        -- first in a list is a dummy duplicate, so ignore it.
+        for i2 = 1, count do
+          local k2 = k.items[i2 + 1]
+          if k2:getContainer() ~= playerInv then
+            if doWalk then
+              if not luautils.walkToContainer(k2:getContainer(), player) then
+                return
+              end
+              doWalk = false
+            end
+            ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, k2, k2:getContainer(), playerInv))
+          end
+        end
+      elseif k:getContainer() ~= playerInv then
+        if doWalk then
+          if not luautils.walkToContainer(k2:getContainer(), player) then
+            return
+          end
+          doWalk = false
+        end
+        ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, k, k:getContainer(), playerInv))
+      end
+    end
+  end
+
+  ISInventoryPaneContextMenu.onEditItem = function(items, player, item)
+    local ui = ISItemEditorUI:new(50, 50, 600, 600, player, item);
+    ui:initialise();
+    ui:addToUIManager();
+  end
+
+  ISInventoryPaneContextMenu.onGrabOneItems = function(items, player)
+    items = ISInventoryPane.getActualItems(items)
+    local playerObj = getSpecificPlayer(player);
+    local playerInv = getPlayerInventory(player).inventory;
+    for i, k in ipairs(items) do
+      if k:getContainer() ~= playerInv then
         if not luautils.walkToContainer(k:getContainer(), player) then
           return
         end
-        dontWalk = true
+        ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, k, k:getContainer(), playerInv));
+        return;
       end
-      ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, k, k:getContainer(), playerInv))
     end
   end
-end
 
-ISInventoryPaneContextMenu.onGrabHalfItems = function(items, player)
-  local playerObj = getSpecificPlayer(player)
-  local playerInv = getPlayerInventory(player).inventory;
-  local doWalk = true
-  for i, k in ipairs(items) do
-    if not instanceof(k, "InventoryItem") then
-      local count = math.floor((#k.items - 1) / 2)
-      -- first in a list is a dummy duplicate, so ignore it.
-      for i2 = 1, count do
-        local k2 = k.items[i2 + 1]
-        if k2:getContainer() ~= playerInv then
-          if doWalk then
-            if not luautils.walkToContainer(k2:getContainer(), player) then
-              return
-            end
-            doWalk = false
-          end
-          ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, k2, k2:getContainer(), playerInv))
-        end
-      end
-    elseif k:getContainer() ~= playerInv then
-      if doWalk then
-        if not luautils.walkToContainer(k2:getContainer(), player) then
-          return
-        end
-        doWalk = false
-      end
-      ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, k, k:getContainer(), playerInv))
-    end
-  end
-end
-
-ISInventoryPaneContextMenu.onEditItem = function(items, player, item)
-  local ui = ISItemEditorUI:new(50, 50, 600, 600, player, item);
-  ui:initialise();
-  ui:addToUIManager();
-end
-
-ISInventoryPaneContextMenu.onGrabOneItems = function(items, player)
-  items = ISInventoryPane.getActualItems(items)
-  local playerObj = getSpecificPlayer(player);
-  local playerInv = getPlayerInventory(player).inventory;
-  for i, k in ipairs(items) do
-    if k:getContainer() ~= playerInv then
-      if not luautils.walkToContainer(k:getContainer(), player) then
-        return
-      end
-      ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, k, k:getContainer(), playerInv));
-      return;
-    end
-  end
-end
-
--- Crowley
--- Pours water from one container into another.
-ISInventoryPaneContextMenu.onTransferWater = function(items, itemFrom, itemTo, player)
-  --print("Moving water from " .. itemFrom:getName() .. " to " .. itemTo:getName());
-  local playerObj = getSpecificPlayer(player)
-  if not itemTo:isWaterSource() then
-    local newItemType = itemTo:getReplaceOnUseOn();
-    newItemType = string.sub(newItemType, 13);
-    newItemType = itemTo:getModule() .. "." .. newItemType;
-
-    local newItem = InventoryItemFactory.CreateItem(newItemType, 0);
-    newItem:setFavorite(itemTo:isFavorite());
-    newItem:setCondition(itemTo:getCondition());
-    playerObj:getInventory():AddItem(newItem);
-    if playerObj:getPrimaryHandItem() == itemTo then
-      playerObj:setPrimaryHandItem(newItem)
-    end
-    if playerObj:getSecondaryHandItem() == itemTo then
-      playerObj:setSecondaryHandItem(newItem)
-    end
-    playerObj:getInventory():Remove(itemTo);
-
-    itemTo = newItem;
-  end
-  --
-  local waterStorageAvailable = (1 - itemTo:getUsedDelta()) / itemTo:getUseDelta();
-  local waterStorageNeeded = itemFrom:getUsedDelta() / itemFrom:getUseDelta();
-
-  local itemFromEndingDelta = 0;
-  local itemToEndingDelta = nil;
-  --
-  if waterStorageAvailable >= waterStorageNeeded then
-    --Transfer all water to the the second container.
-    local waterInA = itemTo:getUsedDelta() / itemTo:getUseDelta();
-    local waterInB = itemFrom:getUsedDelta() / itemFrom:getUseDelta();
-    local totalWater = waterInA + waterInB;
-
-    itemToEndingDelta = totalWater * itemTo:getUseDelta();
-    itemFromEndingDelta = 0;
-  end
-
-  if waterStorageAvailable < waterStorageNeeded then
-    --Transfer what we can. Leave the rest in the container.
-    local waterInB = itemFrom:getUsedDelta() / itemFrom:getUseDelta();
-    local waterRemainInB = waterInB - waterStorageAvailable;
-
-    itemFromEndingDelta = waterRemainInB * itemFrom:getUseDelta();
-    itemToEndingDelta = 1;
-  end
-
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, itemFrom)
-
-  ISTimedActionQueue.add(ISTransferWaterAction:new(getSpecificPlayer(player), itemFrom, itemTo, itemFromEndingDelta, itemToEndingDelta));
-end
---/Crowley
-
--- Crowley
--- Empties a water container
-ISInventoryPaneContextMenu.onEmptyWaterContainer = function(items, waterSource, player)
-  if waterSource ~= nil then
+  -- Crowley
+  -- Pours water from one container into another.
+  ISInventoryPaneContextMenu.onTransferWater = function(items, itemFrom, itemTo, player)
+    --print("Moving water from " .. itemFrom:getName() .. " to " .. itemTo:getName());
     local playerObj = getSpecificPlayer(player)
-    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, waterSource)
-    ISTimedActionQueue.add(ISDumpWaterAction:new(playerObj, waterSource));
-  end
-end
---/Crowley
+    if not itemTo:isWaterSource() then
+      local newItemType = itemTo:getReplaceOnUseOn();
+      newItemType = string.sub(newItemType, 13);
+      newItemType = itemTo:getModule() .. "." .. newItemType;
 
--- Return true if the given item's ReplaceOnUse type can hold water.
--- The check is recursive to handle RemouladeFull -> RemouladeHalf -> RemouladeEmpty.
-ISInventoryPaneContextMenu.canReplaceStoreWater = function(item)
-  --	print('testing ' .. item:getFullType())
-  if item:getReplaceOnUse() then
-    itemType = moduleDotType(item:getModule(), item:getReplaceOnUse())
-    return ISInventoryPaneContextMenu.canReplaceStoreWater2(itemType)
-  end
-  if instanceof(item, "DrainableComboItem") and item:getReplaceOnDeplete() then
-    itemType = moduleDotType(item:getModule(), item:getReplaceOnDeplete())
-    return ISInventoryPaneContextMenu.canReplaceStoreWater2(itemType)
-  end
-  return false
-end
+      local newItem = InventoryItemFactory.CreateItem(newItemType, 0);
+      newItem:setFavorite(itemTo:isFavorite());
+      newItem:setCondition(itemTo:getCondition());
+      playerObj:getInventory():AddItem(newItem);
+      if playerObj:getPrimaryHandItem() == itemTo then
+        playerObj:setPrimaryHandItem(newItem)
+      end
+      if playerObj:getSecondaryHandItem() == itemTo then
+        playerObj:setSecondaryHandItem(newItem)
+      end
+      playerObj:getInventory():Remove(itemTo);
 
-ISInventoryPaneContextMenu.canReplaceStoreWater2 = function(itemType)
-  --	print('testing ' .. itemType)
-  local item = ScriptManager.instance:FindItem(itemType)
-  if item == nil then return false end
-  if item:getCanStoreWater() then
-    return true
+      itemTo = newItem;
+    end
+    --
+    local waterStorageAvailable = (1 - itemTo:getUsedDelta()) / itemTo:getUseDelta();
+    local waterStorageNeeded = itemFrom:getUsedDelta() / itemFrom:getUseDelta();
+
+    local itemFromEndingDelta = 0;
+    local itemToEndingDelta = nil;
+    --
+    if waterStorageAvailable >= waterStorageNeeded then
+      --Transfer all water to the the second container.
+      local waterInA = itemTo:getUsedDelta() / itemTo:getUseDelta();
+      local waterInB = itemFrom:getUsedDelta() / itemFrom:getUseDelta();
+      local totalWater = waterInA + waterInB;
+
+      itemToEndingDelta = totalWater * itemTo:getUseDelta();
+      itemFromEndingDelta = 0;
+    end
+
+    if waterStorageAvailable < waterStorageNeeded then
+      --Transfer what we can. Leave the rest in the container.
+      local waterInB = itemFrom:getUsedDelta() / itemFrom:getUseDelta();
+      local waterRemainInB = waterInB - waterStorageAvailable;
+
+      itemFromEndingDelta = waterRemainInB * itemFrom:getUseDelta();
+      itemToEndingDelta = 1;
+    end
+
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, itemFrom)
+
+    ISTimedActionQueue.add(ISTransferWaterAction:new(getSpecificPlayer(player), itemFrom, itemTo, itemFromEndingDelta, itemToEndingDelta));
   end
-  if item:getReplaceOnUse() then
-    itemType = moduleDotType(item:getModuleName(), item:getReplaceOnUse())
-    return ISInventoryPaneContextMenu.canReplaceStoreWater2(itemType)
+  --/Crowley
+
+  -- Crowley
+  -- Empties a water container
+  ISInventoryPaneContextMenu.onEmptyWaterContainer = function(items, waterSource, player)
+    if waterSource ~= nil then
+      local playerObj = getSpecificPlayer(player)
+      ISInventoryPaneContextMenu.transferIfNeeded(playerObj, waterSource)
+      ISTimedActionQueue.add(ISDumpWaterAction:new(playerObj, waterSource));
+    end
   end
-  if (item:getType() == Type.Drainable) and item:getReplaceOnDeplete() then
-    itemType = moduleDotType(item:getModuleName(), item:getReplaceOnDeplete())
-    return ISInventoryPaneContextMenu.canReplaceStoreWater2(itemType)
+  --/Crowley
+
+  -- Return true if the given item's ReplaceOnUse type can hold water.
+  -- The check is recursive to handle RemouladeFull -> RemouladeHalf -> RemouladeEmpty.
+  ISInventoryPaneContextMenu.canReplaceStoreWater = function(item)
+    --	print('testing ' .. item:getFullType())
+    if item:getReplaceOnUse() then
+      itemType = moduleDotType(item:getModule(), item:getReplaceOnUse())
+      return ISInventoryPaneContextMenu.canReplaceStoreWater2(itemType)
+    end
+    if instanceof(item, "DrainableComboItem") and item:getReplaceOnDeplete() then
+      itemType = moduleDotType(item:getModule(), item:getReplaceOnDeplete())
+      return ISInventoryPaneContextMenu.canReplaceStoreWater2(itemType)
+    end
+    return false
   end
-  return false
-end
+
+  ISInventoryPaneContextMenu.canReplaceStoreWater2 = function(itemType)
+    --	print('testing ' .. itemType)
+    local item = ScriptManager.instance:FindItem(itemType)
+    if item == nil then return false end
+    if item:getCanStoreWater() then
+      return true
+    end
+    if item:getReplaceOnUse() then
+      itemType = moduleDotType(item:getModuleName(), item:getReplaceOnUse())
+      return ISInventoryPaneContextMenu.canReplaceStoreWater2(itemType)
+    end
+    if (item:getType() == Type.Drainable) and item:getReplaceOnDeplete() then
+      itemType = moduleDotType(item:getModuleName(), item:getReplaceOnDeplete())
+      return ISInventoryPaneContextMenu.canReplaceStoreWater2(itemType)
+    end
+    return false
+  end
 
 
-ISInventoryPaneContextMenu.onDumpContents = function(items, item, time, player)
-  if item ~= nil then
-    local playerObj = getSpecificPlayer(player)
-    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
-    ISTimedActionQueue.add(ISDumpContentsAction:new(playerObj, item, time));
+  ISInventoryPaneContextMenu.onDumpContents = function(items, item, time, player)
+    if item ~= nil then
+      local playerObj = getSpecificPlayer(player)
+      ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+      ISTimedActionQueue.add(ISDumpContentsAction:new(playerObj, item, time));
+    end
   end
-end
 
-ISInventoryPaneContextMenu.startWith = function(String, Start)
-  return string.sub(String, 1, string.len(Start)) == Start;
-end
-
-ISInventoryPaneContextMenu.getRealEvolvedItemUse = function(evoItem, evorecipe2, cookingLvl)
-  if not evoItem or not evorecipe2 or not evorecipe2:getItemRecipe(evoItem) then return; end
-  local use = evorecipe2:getItemRecipe(evoItem):getUse();
-  if use > math.abs(evoItem:getHungerChange() * 100) then
-    use = math.floor(math.abs(evoItem:getHungerChange() * 100));
+  ISInventoryPaneContextMenu.startWith = function(String, Start)
+    return string.sub(String, 1, string.len(Start)) == Start;
   end
-  if evoItem:isRotten() then
-    local baseHunger = evoItem:getBaseHunger() * 100
-    if cookingLvl == 7 or cookingLvl == 8 then
-      use = math.abs(round(baseHunger - (baseHunger - ((5 / 100) * baseHunger)), 1));
+
+  ISInventoryPaneContextMenu.getRealEvolvedItemUse = function(evoItem, evorecipe2, cookingLvl)
+    if not evoItem or not evorecipe2 or not evorecipe2:getItemRecipe(evoItem) then return; end
+    local use = evorecipe2:getItemRecipe(evoItem):getUse();
+    if use > math.abs(evoItem:getHungerChange() * 100) then
+      use = math.floor(math.abs(evoItem:getHungerChange() * 100));
+    end
+    if evoItem:isRotten() then
+      local baseHunger = evoItem:getBaseHunger() * 100
+      if cookingLvl == 7 or cookingLvl == 8 then
+        use = math.abs(round(baseHunger - (baseHunger - ((5 / 100) * baseHunger)), 1));
+      else
+        use = math.abs(round(baseHunger - (baseHunger - ((10 / 100) * baseHunger)), 1));
+      end
+    end
+    return use;
+  end
+
+  ISInventoryPaneContextMenu.doEquipOption = function(context, playerObj, isWeapon, items, player)
+    -- check if hands if not heavy damaged
+    if (not playerObj:isPrimaryHandItem(isWeapon) or (playerObj:isPrimaryHandItem(isWeapon) and playerObj:isSecondaryHandItem(isWeapon))) and not getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):isDeepWounded() and (getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):getFractureTime() == 0 or getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):getSplintFactor() > 0) then
+      -- forbid reequipping skinned items to avoid multiple problems for now
+      local add = true;
+      if playerObj:getSecondaryHandItem() == isWeapon and isWeapon:getScriptItem():getReplaceWhenUnequip() then
+        add = false;
+      end
+      if add then
+        context:addOption(getText("ContextMenu_Equip_Primary"), items, ISInventoryPaneContextMenu.OnPrimaryWeapon, player);
+      end
+    end
+    if (not playerObj:isSecondaryHandItem(isWeapon) or (playerObj:isPrimaryHandItem(isWeapon) and playerObj:isSecondaryHandItem(isWeapon))) and not getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):isDeepWounded() and (getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):getFractureTime() == 0 or getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):getSplintFactor() > 0) then
+      -- forbid reequipping skinned items to avoid multiple problems for now
+      local add = true;
+      if playerObj:getPrimaryHandItem() == isWeapon and isWeapon:getScriptItem():getReplaceWhenUnequip() then
+        add = false;
+      end
+      if add then
+        context:addOption(getText("ContextMenu_Equip_Secondary"), items, ISInventoryPaneContextMenu.OnSecondWeapon, player);
+      end
+    end
+  end
+
+  ISInventoryPaneContextMenu.equipHeavyItem = function(playerObj, item)
+    if not luautils.walkToContainer(item:getContainer(), playerObj:getPlayerNum()) then
+      return
+    end
+    if playerObj:getPrimaryHandItem() then
+      ISTimedActionQueue.add(ISUnequipAction:new(playerObj, playerObj:getPrimaryHandItem(), 50));
+    end
+    if playerObj:getSecondaryHandItem() and playerObj:getSecondaryHandItem() ~= playerObj:getPrimaryHandItem() then
+      ISTimedActionQueue.add(ISUnequipAction:new(playerObj, playerObj:getSecondaryHandItem(), 50));
+    end
+    ISTimedActionQueue.add(ISEquipHeavyItem:new(playerObj, item, 100));
+  end
+
+  ISInventoryPaneContextMenu.onMakeUp = function(makeup, playerObj)
+    local playerNum = playerObj:getPlayerNum()
+    if ISMakeUpUI.windows[playerNum + 1] then
+      ISMakeUpUI.windows[playerNum + 1]:setVisible(true);
+      ISMakeUpUI.windows[playerNum + 1].item = makeup;
+      ISMakeUpUI.windows[playerNum + 1]:reinit();
     else
-      use = math.abs(round(baseHunger - (baseHunger - ((10 / 100) * baseHunger)), 1));
+      ISMakeUpUI.windows[playerNum + 1] = ISMakeUpUI:new(0, 0, makeup, playerObj);
+      ISMakeUpUI.windows[playerNum + 1]:initialise();
+      ISMakeUpUI.windows[playerNum + 1]:addToUIManager();
+    end
+    if JoypadState.players[playerNum + 1] then
+      ISMakeUpUI.windows[playerNum + 1].prevFocus = JoypadState.players[playerNum + 1].focus
+      JoypadState.players[playerNum + 1].focus = ISMakeUpUI.windows[playerNum + 1]
     end
   end
-  return use;
-end
 
-ISInventoryPaneContextMenu.doEquipOption = function(context, playerObj, isWeapon, items, player)
-  -- check if hands if not heavy damaged
-  if (not playerObj:isPrimaryHandItem(isWeapon) or (playerObj:isPrimaryHandItem(isWeapon) and playerObj:isSecondaryHandItem(isWeapon))) and not getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):isDeepWounded() and (getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):getFractureTime() == 0 or getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_R):getSplintFactor() > 0) then
-    -- forbid reequipping skinned items to avoid multiple problems for now
-    local add = true;
-    if playerObj:getSecondaryHandItem() == isWeapon and isWeapon:getScriptItem():getReplaceWhenUnequip() then
-      add = false;
-    end
-    if add then
-      context:addOption(getText("ContextMenu_Equip_Primary"), items, ISInventoryPaneContextMenu.OnPrimaryWeapon, player);
-    end
-  end
-  if (not playerObj:isSecondaryHandItem(isWeapon) or (playerObj:isPrimaryHandItem(isWeapon) and playerObj:isSecondaryHandItem(isWeapon))) and not getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):isDeepWounded() and (getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):getFractureTime() == 0 or getSpecificPlayer(player):getBodyDamage():getBodyPart(BodyPartType.Hand_L):getSplintFactor() > 0) then
-    -- forbid reequipping skinned items to avoid multiple problems for now
-    local add = true;
-    if playerObj:getPrimaryHandItem() == isWeapon and isWeapon:getScriptItem():getReplaceWhenUnequip() then
-      add = false;
-    end
-    if add then
-      context:addOption(getText("ContextMenu_Equip_Secondary"), items, ISInventoryPaneContextMenu.OnSecondWeapon, player);
-    end
-  end
-end
-
-ISInventoryPaneContextMenu.equipHeavyItem = function(playerObj, item)
-  if not luautils.walkToContainer(item:getContainer(), playerObj:getPlayerNum()) then
-    return
-  end
-  if playerObj:getPrimaryHandItem() then
-    ISTimedActionQueue.add(ISUnequipAction:new(playerObj, playerObj:getPrimaryHandItem(), 50));
-  end
-  if playerObj:getSecondaryHandItem() and playerObj:getSecondaryHandItem() ~= playerObj:getPrimaryHandItem() then
-    ISTimedActionQueue.add(ISUnequipAction:new(playerObj, playerObj:getSecondaryHandItem(), 50));
-  end
-  ISTimedActionQueue.add(ISEquipHeavyItem:new(playerObj, item, 100));
-end
-
-ISInventoryPaneContextMenu.onMakeUp = function(makeup, playerObj)
-  local playerNum = playerObj:getPlayerNum()
-  if ISMakeUpUI.windows[playerNum + 1] then
-    ISMakeUpUI.windows[playerNum + 1]:setVisible(true);
-    ISMakeUpUI.windows[playerNum + 1].item = makeup;
-    ISMakeUpUI.windows[playerNum + 1]:reinit();
-  else
-    ISMakeUpUI.windows[playerNum + 1] = ISMakeUpUI:new(0, 0, makeup, playerObj);
-    ISMakeUpUI.windows[playerNum + 1]:initialise();
-    ISMakeUpUI.windows[playerNum + 1]:addToUIManager();
-  end
-  if JoypadState.players[playerNum + 1] then
-    ISMakeUpUI.windows[playerNum + 1].prevFocus = JoypadState.players[playerNum + 1].focus
-    JoypadState.players[playerNum + 1].focus = ISMakeUpUI.windows[playerNum + 1]
-  end
-end
-
-function ISInventoryPaneContextMenu.doGrabMenu(context, items, player)
-  for i, k in pairs(items) do
-    if not instanceof(k, "InventoryItem") then
-      if isForceDropHeavyItem(k.items[1]) then
+  function ISInventoryPaneContextMenu.doGrabMenu(context, items, player)
+    for i, k in pairs(items) do
+      if not instanceof(k, "InventoryItem") then
+        if isForceDropHeavyItem(k.items[1]) then
+          -- corpse or generator
+        elseif #k.items > 2 then
+          context:addOption(getText("ContextMenu_Grab_one"), items, ISInventoryPaneContextMenu.onGrabOneItems, player);
+          context:addOption(getText("ContextMenu_Grab_half"), items, ISInventoryPaneContextMenu.onGrabHalfItems, player);
+          context:addOption(getText("ContextMenu_Grab_all"), items, ISInventoryPaneContextMenu.onGrabItems, player);
+        else
+          context:addOption(getText("ContextMenu_Grab"), items, ISInventoryPaneContextMenu.onGrabItems, player);
+        end
+        break;
+      elseif isForceDropHeavyItem(k) then
         -- corpse or generator
-      elseif #k.items > 2 then
-        context:addOption(getText("ContextMenu_Grab_one"), items, ISInventoryPaneContextMenu.onGrabOneItems, player);
-        context:addOption(getText("ContextMenu_Grab_half"), items, ISInventoryPaneContextMenu.onGrabHalfItems, player);
-        context:addOption(getText("ContextMenu_Grab_all"), items, ISInventoryPaneContextMenu.onGrabItems, player);
       else
         context:addOption(getText("ContextMenu_Grab"), items, ISInventoryPaneContextMenu.onGrabItems, player);
+        break;
       end
-      break;
-    elseif isForceDropHeavyItem(k) then
-      -- corpse or generator
-    else
-      context:addOption(getText("ContextMenu_Grab"), items, ISInventoryPaneContextMenu.onGrabItems, player);
-      break;
     end
   end
-end
 
-function ISInventoryPaneContextMenu.doEvorecipeMenu(context, items, player, evorecipe, baseItem, containerList)
-  for i = 0, evorecipe:size() - 1 do
-    local listOfAddedItems = {};
-    local evorecipe2 = evorecipe:get(i);
-    local items = evorecipe2:getItemsCanBeUse(getSpecificPlayer(player), baseItem, containerList);
-    if items:size() == 0 then
-      break;
-    end
-    -- check for every item category to add a "add random category" in top of the list
-    local catList = ISInventoryPaneContextMenu.getEvoItemCategories(items);
-    local cookingLvl = getSpecificPlayer(player):getPerkLevel(Perks.Cooking);
-    local subOption = nil;
-    if evorecipe2:isResultItem(baseItem) then
-      subOption = context:addOption(getText("ContextMenu_EvolvedRecipe_" .. evorecipe2:getUntranslatedName()), nil);
-    else
-      subOption = context:addOption(getText("ContextMenu_Create_From_Ingredient") .. getText("ContextMenu_EvolvedRecipe_" .. evorecipe2:getUntranslatedName()), nil);
-    end
-    local subMenuRecipe = context:getNew(context);
-    context:addSubMenu(subOption, subMenuRecipe);
-
-    for i, v in pairs(catList) do
-      if getText("ContextMenu_FoodType_"..i) ~= "ContextMenu_FoodType_"..i then
-        local txt = getText("ContextMenu_FromRandom", getText("ContextMenu_FoodType_"..i));
-        if evorecipe2:isResultItem(baseItem) then
-          txt = getText("ContextMenu_AddRandom", getText("ContextMenu_FoodType_"..i));
-        end
-        subMenuRecipe:addOption(txt, evorecipe2, ISInventoryPaneContextMenu.onAddItemInEvoRecipe, baseItem, catList[i][ZombRand(1, #catList[i] + 1)], player);
+  function ISInventoryPaneContextMenu.doEvorecipeMenu(context, items, player, evorecipe, baseItem, containerList)
+    for i = 0, evorecipe:size() - 1 do
+      local listOfAddedItems = {};
+      local evorecipe2 = evorecipe:get(i);
+      local items = evorecipe2:getItemsCanBeUse(getSpecificPlayer(player), baseItem, containerList);
+      if items:size() == 0 then
+        break;
       end
-    end
-    for i = 0, items:size() - 1 do
-      local evoItem = items:get(i);
-      local extraInfo = "";
-      if instanceof(evoItem, "Food") then
-        if evoItem:isSpice() then
-          extraInfo = getText("ContextMenu_EvolvedRecipe_Spice");
-        elseif evoItem:getPoisonLevelForRecipe() then
-          if evoItem:getHerbalistType() and evoItem:getHerbalistType() ~= "" and getSpecificPlayer(player):getKnownRecipes():contains("Herbalist") then
-            extraInfo = getText("ContextMenu_EvolvedRecipe_Poison");
+      -- check for every item category to add a "add random category" in top of the list
+      local catList = ISInventoryPaneContextMenu.getEvoItemCategories(items);
+      local cookingLvl = getSpecificPlayer(player):getPerkLevel(Perks.Cooking);
+      local subOption = nil;
+      local fromName = getText("ContextMenu_EvolvedRecipe_" .. evorecipe2:getUntranslatedName())
+      if evorecipe2:isResultItem(baseItem) then
+        subOption = context:addOption(fromName, nil);
+      else
+        subOption = context:addOption(getText("ContextMenu_Create_From_Ingredient", fromName), nil);
+      end
+      local subMenuRecipe = context:getNew(context);
+      context:addSubMenu(subOption, subMenuRecipe);
+
+      for i, v in pairs(catList) do
+        if getText("ContextMenu_FoodType_"..i) ~= "ContextMenu_FoodType_"..i then
+          local txt = getText("ContextMenu_FromRandom", getText("ContextMenu_FoodType_"..i));
+          if evorecipe2:isResultItem(baseItem) then
+            txt = getText("ContextMenu_AddRandom", getText("ContextMenu_FoodType_"..i));
           end
-          local use = ISInventoryPaneContextMenu.getRealEvolvedItemUse(evoItem, evorecipe2, cookingLvl);
-          if use then
-            extraInfo = extraInfo .. " (" .. use .. ")";
-          end
-        elseif not evoItem:isPoison() then
-          local use = ISInventoryPaneContextMenu.getRealEvolvedItemUse(evoItem, evorecipe2, cookingLvl);
-          extraInfo = " (" .. use .. ")";
-          if listOfAddedItems[evoItem:getType()] and listOfAddedItems[evoItem:getType()] == use then
-            evoItem = nil;
-          else
-            listOfAddedItems[evoItem:getType()] = use;
-          end
+          subMenuRecipe:addOption(txt, evorecipe2, ISInventoryPaneContextMenu.onAddItemInEvoRecipe, baseItem, catList[i][ZombRand(1, #catList[i] + 1)], player);
         end
       end
-      if evoItem then
-        ISInventoryPaneContextMenu.addItemInEvoRecipe(subMenuRecipe, baseItem, evoItem, extraInfo, evorecipe2, player);
-      end
-    end
-  end
-end
-
-ISInventoryPaneContextMenu.doMakeUpMenu = function(context, makeup, playerObj)
-  local option = context:addOption(getText("IGUI_MakeUp"), makeup, ISInventoryPaneContextMenu.onMakeUp, playerObj);
-  local mirror = false;
-
-  -- check for mirror in inventory
-  if playerObj:getInventory():contains("Mirror") then
-    mirror = true;
-  end
-
-  -- check for world mirror
-  if not mirror then
-    for x = playerObj:getCurrentSquare():getX() - 1, playerObj:getCurrentSquare():getX() + 2 do
-      for y = playerObj:getCurrentSquare():getY() - 1, playerObj:getCurrentSquare():getY() + 2 do
-        local sq = getCell():getGridSquare(x, y, playerObj:getCurrentSquare():getZ())
-        if sq then
-          for i = 0, sq:getObjects():size() - 1 do
-            local object = sq:getObjects():get(i);
-            local sprite = object:getSprite();
-            if not sq:isWallTo(playerObj:getCurrentSquare()) and sprite:getProperties():Is("IsMirror") then
-              mirror = true;
-              break;
+      for i = 0, items:size() - 1 do
+        local evoItem = items:get(i);
+        local extraInfo = "";
+        if instanceof(evoItem, "Food") then
+          if evoItem:isSpice() then
+            extraInfo = getText("ContextMenu_EvolvedRecipe_Spice");
+          elseif evoItem:getPoisonLevelForRecipe() then
+            if evoItem:getHerbalistType() and evoItem:getHerbalistType() ~= "" and getSpecificPlayer(player):getKnownRecipes():contains("Herbalist") then
+              extraInfo = getText("ContextMenu_EvolvedRecipe_Poison");
             end
-            if object:getAttachedAnimSprite() then
-              for j = 0, object:getAttachedAnimSprite():size() - 1 do
-                local sprite = object:getAttachedAnimSprite():get(j):getParentSprite();
-                if not sq:isWallTo(playerObj:getCurrentSquare()) and sprite:getProperties():Is("IsMirror") then
-                  mirror = true;
-                  break;
+            local use = ISInventoryPaneContextMenu.getRealEvolvedItemUse(evoItem, evorecipe2, cookingLvl);
+            if use then
+              extraInfo = extraInfo .. "(" .. use .. ")";
+            end
+          elseif not evoItem:isPoison() then
+            local use = ISInventoryPaneContextMenu.getRealEvolvedItemUse(evoItem, evorecipe2, cookingLvl);
+            extraInfo = "(" .. use .. ")";
+            if listOfAddedItems[evoItem:getType()] and listOfAddedItems[evoItem:getType()] == use then
+              evoItem = nil;
+            else
+              listOfAddedItems[evoItem:getType()] = use;
+            end
+          end
+        end
+        if evoItem then
+          ISInventoryPaneContextMenu.addItemInEvoRecipe(subMenuRecipe, baseItem, evoItem, extraInfo, evorecipe2, player);
+        end
+      end
+    end
+  end
+
+  ISInventoryPaneContextMenu.doMakeUpMenu = function(context, makeup, playerObj)
+    local option = context:addOption(getText("IGUI_MakeUp"), makeup, ISInventoryPaneContextMenu.onMakeUp, playerObj);
+    local mirror = false;
+
+    -- check for mirror in inventory
+    if playerObj:getInventory():contains("Mirror") then
+      mirror = true;
+    end
+
+    -- check for world mirror
+    if not mirror then
+      for x = playerObj:getCurrentSquare():getX() - 1, playerObj:getCurrentSquare():getX() + 2 do
+        for y = playerObj:getCurrentSquare():getY() - 1, playerObj:getCurrentSquare():getY() + 2 do
+          local sq = getCell():getGridSquare(x, y, playerObj:getCurrentSquare():getZ())
+          if sq then
+            for i = 0, sq:getObjects():size() - 1 do
+              local object = sq:getObjects():get(i);
+              local sprite = object:getSprite();
+              if not sq:isWallTo(playerObj:getCurrentSquare()) and sprite:getProperties():Is("IsMirror") then
+                mirror = true;
+                break;
+              end
+              if object:getAttachedAnimSprite() then
+                for j = 0, object:getAttachedAnimSprite():size() - 1 do
+                  local sprite = object:getAttachedAnimSprite():get(j):getParentSprite();
+                  if not sq:isWallTo(playerObj:getCurrentSquare()) and sprite:getProperties():Is("IsMirror") then
+                    mirror = true;
+                    break;
+                  end
                 end
               end
             end
@@ -3042,68 +3095,67 @@ ISInventoryPaneContextMenu.doMakeUpMenu = function(context, makeup, playerObj)
         end
       end
     end
-  end
 
-  if not mirror then
-    local tooltip = ISInventoryPaneContextMenu.addToolTip();
-    option.notAvailable = true;
-    tooltip.description = getText("Tooltip_NeedMirror");
-    option.toolTip = tooltip;
-  end
-end
-
-local function getWornItemInLocation(playerObj, location)
-  local wornItems = playerObj:getWornItems()
-  local bodyLocationGroup = wornItems:getBodyLocationGroup()
-  for i = 1, wornItems:size() do
-    local wornItem = wornItems:get(i - 1)
-    if (wornItem:getLocation() == location) or bodyLocationGroup:isExclusive(wornItem:getLocation(), location) then
-      return wornItem:getItem()
-    end
-  end
-  return nil
-end
-
-function ISInventoryPaneContextMenu.getItemInstance(type)
-  local self = ISInventoryPaneContextMenu
-  if not self.ItemInstances then self.ItemInstances = {} end
-  local item = self.ItemInstances[type]
-  if not item then
-    item = InventoryItemFactory.CreateItem(type)
-    if item then
-      self.ItemInstances[type] = item
-      self.ItemInstances[item:getFullType()] = item
-    end
-  end
-  return item
-end
-
-ISInventoryPaneContextMenu.doClothingItemExtraMenu = function(context, clothingItemExtra, playerObj)
-  if (clothingItemExtra:IsClothing() or clothingItemExtra:IsInventoryContainer()) and clothingItemExtra:getClothingExtraSubmenu() then
-    local option = context:addOption(getText("ContextMenu_Wear"));
-    local subMenu = context:getNew(context);
-    context:addSubMenu(option, subMenu);
-    context = subMenu;
-
-    local location = clothingItemExtra:IsClothing() and clothingItemExtra:getBodyLocation() or clothingItemExtra:canBeEquipped()
-    local existingItem = getWornItemInLocation(playerObj, location)
-    if existingItem ~= clothingItemExtra then
-      local text = getText("ContextMenu_" .. clothingItemExtra:getClothingExtraSubmenu());
-      local option = context:addOption(text, clothingItemExtra, ISInventoryPaneContextMenu.onClothingItemExtra, clothingItemExtra:getType(), playerObj);
-      ISInventoryPaneContextMenu.doWearClothingTooltip(playerObj, clothingItemExtra, clothingItemExtra, option);
+    if not mirror then
+      local tooltip = ISInventoryPaneContextMenu.addToolTip();
+      option.notAvailable = true;
+      tooltip.description = getText("Tooltip_NeedMirror");
+      option.toolTip = tooltip;
     end
   end
 
-  for i = 0, clothingItemExtra:getClothingItemExtraOption():size() - 1 do
-    local text = getText("ContextMenu_" .. clothingItemExtra:getClothingItemExtraOption():get(i));
-    local itemType = moduleDotType(clothingItemExtra:getModule(), clothingItemExtra:getClothingItemExtra():get(i));
-    local item = ISInventoryPaneContextMenu.getItemInstance(itemType);
-    local option = context:addOption(text, clothingItemExtra, ISInventoryPaneContextMenu.onClothingItemExtra, itemType, playerObj);
-    ISInventoryPaneContextMenu.doWearClothingTooltip(playerObj, item, clothingItemExtra, option);
+  local function getWornItemInLocation(playerObj, location)
+    local wornItems = playerObj:getWornItems()
+    local bodyLocationGroup = wornItems:getBodyLocationGroup()
+    for i = 1, wornItems:size() do
+      local wornItem = wornItems:get(i - 1)
+      if (wornItem:getLocation() == location) or bodyLocationGroup:isExclusive(wornItem:getLocation(), location) then
+        return wornItem:getItem()
+      end
+    end
+    return nil
   end
-end
 
-ISInventoryPaneContextMenu.onClothingItemExtra = function(item, extra, playerObj)
-  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
-  ISTimedActionQueue.add(ISClothingExtraAction:new(playerObj, item, extra))
-end
+  function ISInventoryPaneContextMenu.getItemInstance(type)
+    local self = ISInventoryPaneContextMenu
+    if not self.ItemInstances then self.ItemInstances = {} end
+    local item = self.ItemInstances[type]
+    if not item then
+      item = InventoryItemFactory.CreateItem(type)
+      if item then
+        self.ItemInstances[type] = item
+        self.ItemInstances[item:getFullType()] = item
+      end
+    end
+    return item
+  end
+
+  ISInventoryPaneContextMenu.doClothingItemExtraMenu = function(context, clothingItemExtra, playerObj)
+    if (clothingItemExtra:IsClothing() or clothingItemExtra:IsInventoryContainer()) and clothingItemExtra:getClothingExtraSubmenu() then
+      local option = context:addOption(getText("ContextMenu_Wear"));
+      local subMenu = context:getNew(context);
+      context:addSubMenu(option, subMenu);
+      context = subMenu;
+
+      local location = clothingItemExtra:IsClothing() and clothingItemExtra:getBodyLocation() or clothingItemExtra:canBeEquipped()
+      local existingItem = getWornItemInLocation(playerObj, location)
+      if existingItem ~= clothingItemExtra then
+        local text = getText("ContextMenu_" .. clothingItemExtra:getClothingExtraSubmenu());
+        local option = context:addOption(text, clothingItemExtra, ISInventoryPaneContextMenu.onClothingItemExtra, clothingItemExtra:getType(), playerObj);
+        ISInventoryPaneContextMenu.doWearClothingTooltip(playerObj, clothingItemExtra, clothingItemExtra, option);
+      end
+    end
+
+    for i = 0, clothingItemExtra:getClothingItemExtraOption():size() - 1 do
+      local text = getText("ContextMenu_" .. clothingItemExtra:getClothingItemExtraOption():get(i));
+      local itemType = moduleDotType(clothingItemExtra:getModule(), clothingItemExtra:getClothingItemExtra():get(i));
+      local item = ISInventoryPaneContextMenu.getItemInstance(itemType);
+      local option = context:addOption(text, clothingItemExtra, ISInventoryPaneContextMenu.onClothingItemExtra, itemType, playerObj);
+      ISInventoryPaneContextMenu.doWearClothingTooltip(playerObj, item, clothingItemExtra, option);
+    end
+  end
+
+  ISInventoryPaneContextMenu.onClothingItemExtra = function(item, extra, playerObj)
+    ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
+    ISTimedActionQueue.add(ISClothingExtraAction:new(playerObj, item, extra))
+  end

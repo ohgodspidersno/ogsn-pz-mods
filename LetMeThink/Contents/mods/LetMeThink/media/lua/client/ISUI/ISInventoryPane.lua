@@ -359,13 +359,14 @@ function ISInventoryPane:hideButtons()
   self.contextButton3:setVisible(false);
 end
 
-function ISInventoryPane:doButtons(y) -- LMT
+function ISInventoryPane:doButtons(y)
 
   self.contextButton1:setVisible(false);
   self.contextButton2:setVisible(false);
   self.contextButton3:setVisible(false);
 
-  if getPlayerContextMenu(self.player):isAnyVisible() or getSpecificPlayer(self.player):isAsleep() then
+  if getPlayerContextMenu(self.player):isAnyVisible() or
+  getSpecificPlayer(self.player):isAsleep() then
     return
   end
 
@@ -1003,10 +1004,11 @@ function ISInventoryPane:doGrabOnJoypadSelected()
   end
 end
 
-function ISInventoryPane:doContextOnJoypadSelected() -- LMT
+function ISInventoryPane:doContextOnJoypadSelected()
   if JoypadState.disableInvInteraction then
     return;
   end
+
   local playerObj = getSpecificPlayer(self.player)
   if playerObj:isAsleep() then return end
 

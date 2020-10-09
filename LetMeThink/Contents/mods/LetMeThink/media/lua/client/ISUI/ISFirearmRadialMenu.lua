@@ -52,7 +52,7 @@ function CInsertMagazine:invoke()
   if weapon:isContainsClip() then return end
   local magazine = weapon:getBestMagazine(self.character)
   if not magazine then return end
-  ISTimedActionQueue.add(ISReloadWeaponAction:new(self.character, weapon, false))
+  ISTimedActionQueue.add(ISInsertMagazine:new(self.character, weapon, magazine))
 end
 
 -----
@@ -165,7 +165,7 @@ function CLoadRounds:invoke()
   if weapon:getCurrentAmmoCount() >= weapon:getMaxAmmo() then return end
   if not self:hasBullets(weapon) then return end
   ISInventoryPaneContextMenu.transferBullets(self.character, weapon:getAmmoType(), weapon:getCurrentAmmoCount(), weapon:getMaxAmmo())
-  ISTimedActionQueue.add(ISReloadWeaponAction:new(self.character, weapon, false))
+  ISTimedActionQueue.add(ISReloadWeaponAction:new(self.character, weapon))
 end
 
 -----
@@ -229,7 +229,7 @@ function CRack:invoke()
   local weapon = self:getWeapon()
   if not weapon then return end
   if not ISReloadWeaponAction.canRack(weapon) then return end
-  ISTimedActionQueue.add(ISReloadWeaponAction:new(self.character, weapon, true))
+  ISTimedActionQueue.add(ISRackFirearm:new(self.character, weapon))
 end
 
 -----
@@ -381,15 +381,14 @@ function ISFirearmRadialMenu.onJoypadButtonReleased(buttonPrompt, button)
     if getTimestampMs() - rbPressedMS < 500 then
       local playerObj = getSpecificPlayer(buttonPrompt.player)
       local weapon = playerObj:getPrimaryHandItem()
-      ISReloadWeaponAction.checkMagazines(playerObj, weapon)
-      ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon, false))
+      ISReloadWeaponAction.BeginAutomaticReload(playerObj, weapon)
     end
   end
 end
 
 -----
 
-function ISFirearmRadialMenu.checkKey(key) -- LMT
+function ISFirearmRadialMenu.checkKey(key)
   if key ~= getCore():getKey("ReloadWeapon") then
     return false
   end
@@ -469,8 +468,7 @@ function ISFirearmRadialMenu.onKeyReleased(key)
   if getTimestampMs() - STATE[1].keyPressedMS < 500 then
     local playerObj = getSpecificPlayer(0)
     local weapon = playerObj:getPrimaryHandItem()
-    ISReloadWeaponAction.checkMagazines(playerObj, weapon)
-    ISTimedActionQueue.add(ISReloadWeaponAction:new(playerObj, weapon, false))
+    ISReloadWeaponAction.BeginAutomaticReload(playerObj, weapon)
   end
 end
 

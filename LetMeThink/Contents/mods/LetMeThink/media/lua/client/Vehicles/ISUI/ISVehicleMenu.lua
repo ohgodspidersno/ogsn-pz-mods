@@ -40,7 +40,7 @@ function ISVehicleMenu.OnFillWorldObjectContextMenu(player, context, worldobject
   end
 end
 
-function ISVehicleMenu.showRadialMenu(playerObj) -- LMT
+function ISVehicleMenu.showRadialMenu(playerObj)
   local vehicle = playerObj:getVehicle()
   if not vehicle then
     ISVehicleMenu.showRadialMenuOutside(playerObj)
@@ -1024,7 +1024,7 @@ function ISVehicleMenu.onExitAux(playerObj, seat)
   end
 end
 
-function ISVehicleMenu.onShowSeatUI(playerObj, vehicle) -- LMT
+function ISVehicleMenu.onShowSeatUI(playerObj, vehicle)
   local playerNum = playerObj:getPlayerNum()
   if not ISVehicleMenu.seatUI then
     ISVehicleMenu.seatUI = {}

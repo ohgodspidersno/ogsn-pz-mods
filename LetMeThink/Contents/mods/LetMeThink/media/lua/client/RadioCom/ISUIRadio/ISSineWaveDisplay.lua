@@ -13,8 +13,9 @@ end
 function ISSineWaveDisplay:createChildren()
 end
 
-function ISSineWaveDisplay:update() -- LMT
+function ISSineWaveDisplay:update()
   ISPanel.update(self);
+
   if self.isOn then
     local p, w, h = self.waveParams, self:getWidth(), self:getHeight();
     -- sine wave

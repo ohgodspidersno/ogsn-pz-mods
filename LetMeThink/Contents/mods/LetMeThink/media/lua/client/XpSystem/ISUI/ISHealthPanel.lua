@@ -24,6 +24,20 @@ function ISNewHealthPanel:instantiate()
   self.javaObject:setAnchorBottom(self.anchorBottom)
 end
 
+function ISNewHealthPanel:onClick(button)
+  if button.internal == "FITNESS" then
+    if ISFishingUI.instance and ISFishingUI.instance[self.character:getPlayerNum() + 1] then
+      ISFishingUI.instance[self.character:getPlayerNum() + 1]:removeFromUIManager();
+    end
+    local modal = ISFitnessUI:new(0, 0, 600, 350, self.character);
+    modal:initialise()
+    modal:addToUIManager()
+    if JoypadState.players[self.character:getPlayerNum() + 1] then
+      setJoypadFocus(self.character:getPlayerNum(), modal)
+    end
+  end
+end
+
 function ISNewHealthPanel:new(x, y, character)
   local o = ISUIElement:new(x, y, 123, 123)
   setmetatable(o, self)
@@ -147,7 +161,7 @@ function ISHealthPanel:setVisible(visible)
   --    ISHealthPanel.cheat = self.character:getAccessLevel() ~= "None";
 end
 
-function ISHealthBodyPartListBox:onRightMouseUp(x, y) -- LMT
+function ISHealthBodyPartListBox:onRightMouseUp(x, y)
   local row = self:rowAt(x, y)
   if row < 1 or row > #self.items then return end
   self.selected = row
@@ -405,7 +419,7 @@ function ISHealthPanel:getDamagedParts()
   for i = 1, bodyParts:size() do
     local bodyPart = bodyParts:get(i - 1)
     local bodyPartAction = self.bodyPartAction and self.bodyPartAction[bodyPart]
-    if ISHealthPanel.cheat or bodyPart:HasInjury() or bodyPart:bandaged() or bodyPart:stitched() or bodyPart:getSplintFactor() > 0 or bodyPart:getAdditionalPain() > 10 then
+    if ISHealthPanel.cheat or bodyPart:HasInjury() or bodyPart:bandaged() or bodyPart:stitched() or bodyPart:getSplintFactor() > 0 or bodyPart:getAdditionalPain() > 10 or bodyPart:getStiffness() > 5 then
       table.insert(result, bodyPart)
     end
   end
@@ -581,6 +595,14 @@ function ISHealthBodyPartListBox:doDrawItem(y, item, alt)
     y = y + fontHgt;
     if ISHealthPanel.cheat then
       self:drawText("     - additional pain " .. round(bodyPart:getAdditionalPain(), 2), x, y, 0.89, 0.28, 0.28, 1, UIFont.Small);
+      y = y + fontHgt;
+    end
+  end
+  if bodyPart:getStiffness() > 5 then
+    self:drawText("- " .. getText("IGUI_health_Stiffness"), x, y, 1, 0.58, 0, 1, UIFont.Small);
+    y = y + fontHgt;
+    if ISHealthPanel.cheat then
+      self:drawText("     - exercise fatigue " .. round(bodyPart:getStiffness(), 2), x, y, 0.89, 0.28, 0.28, 1, UIFont.Small);
       y = y + fontHgt;
     end
   end

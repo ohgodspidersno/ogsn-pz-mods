@@ -88,6 +88,30 @@ local function predicateDigGrave(item)
   return not item:isBroken() and item:hasTag("DigGrave")
 end
 
+local function predicateFishingLure(item)
+  return item:isFishingLure()
+end
+
+local function predicateFishingRodOrSpear(item, playerObj)
+  if item:isBroken() then return false end
+  if not item:hasTag("FishingRod") and not item:hasTag("FishingSpear") then return false end
+  return ISWorldObjectContextMenu.getFishingLure(playerObj, item)
+end
+
+local function getMoveableDisplayName(obj)
+  if not obj then return nil end
+  if not obj:getSprite() then return nil end
+  local props = obj:getSprite():getProperties()
+  if props:Is("CustomName") then
+    local name = props:Val("CustomName")
+    if props:Is("GroupName") then
+      name = props:Val("GroupName") .. " " .. name
+    end
+    return Translator.getMoveableDisplayName(name)
+  end
+  return nil
+end
+
 ISWorldObjectContextMenu.fetch = function(v, player, doSquare)
   local playerObj = getSpecificPlayer(player)
   local playerInv = playerObj:getInventory()
@@ -356,7 +380,7 @@ local function predicateBlowTorch(item)
 end
 
 -- MAIN METHOD FOR CREATING RIGHT CLICK CONTEXT MENU FOR WORLD ITEMS
-ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test) -- LMT
+ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   if getCore():getGameMode() == "Tutorial" then
     local context = Tutorial1.createWorldContextMenu(player, worldobjects, x, y);
     return context;
@@ -495,8 +519,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
 
   if canBeWaterPiped then
     if test == true then return true; end
-    local props = canBeWaterPiped:getSprite():getProperties();
-    local name = (props:Is("CustomName") and props:Val("CustomName")) or (props:Is("GroupName") and props:Val("GroupName")) or "";
+    local name = getMoveableDisplayName(canBeWaterPiped) or "";
     local option = context:addOption(getText("ContextMenu_PlumbItem", name), worldobjects, ISWorldObjectContextMenu.onPlumbItem, player, canBeWaterPiped);
     if not playerInv:containsTypeEvalRecurse("Wrench", predicateNotBroken) then
       option.notAvailable = true;
@@ -660,7 +683,8 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     local option = context:addOption(getText("ContextMenu_Rain_Collector_Barrel"), worldobjects, nil)
     local tooltip = ISWorldObjectContextMenu.addToolTip()
     tooltip:setName(getText("ContextMenu_Rain_Collector_Barrel"))
-    tooltip.description = getText("IGUI_RemainingPercent", round((rainCollectorBarrel:getWaterAmount() / rainCollectorBarrel:getModData()["waterMax"]) * 100))
+    local tx = getTextManager():MeasureStringX(tooltip.font, getText("ContextMenu_WaterName") .. ":") + 20
+    tooltip.description = string.format("%s: <SETX:%d> %d / %d", getText("ContextMenu_WaterName"), tx, rainCollectorBarrel:getWaterAmount(), rainCollectorBarrel:getWaterMax())
     if rainCollectorBarrel:isTaintedWater() then
       tooltip.description = tooltip.description .. " <BR> <RGB:1,0.5,0.5> " .. getText("Tooltip_item_TaintedWater")
     end
@@ -673,12 +697,8 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     local option = context:addOption(getText("ContextMenu_Water_Dispenser"), worldobjects, nil)
     local tooltip = ISWorldObjectContextMenu.addToolTip()
     tooltip:setName(getText("ContextMenu_Water_Dispenser"))
-    local waterMax = waterDispenser:getModData()["waterMax"]
-    if waterMax == nil then
-      tooltip.description = getText("IGUI_RemainingPercent", 100)
-    else
-      tooltip.description = getText("IGUI_RemainingPercent", round((waterDispenser:getWaterAmount() / waterMax) * 100))
-    end
+    local tx = getTextManager():MeasureStringX(tooltip.font, getText("ContextMenu_WaterName") .. ":") + 20
+    tooltip.description = string.format("%s: <SETX:%d> %d / %d", getText("ContextMenu_WaterName"), tx, waterDispenser:getWaterAmount(), waterDispenser:getWaterMax())
     if waterDispenser:isTaintedWater() then
       tooltip.description = tooltip.description .. " <BR> <RGB:1,0.5,0.5> " .. getText("Tooltip_item_TaintedWater")
     end
@@ -706,9 +726,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
 
   if storeWater and getCore():getGameMode() ~= "LastStand" then
     if test == true then return true; end
-    if not clothingDryer and not clothingWasher then
-      context:addOption(getText("ContextMenu_Drink"), worldobjects, ISWorldObjectContextMenu.onDrink, storeWater, player);
-    end
+    ISWorldObjectContextMenu.doDrinkWaterMenu(storeWater, player, context);
   end
 
   if ISWorldObjectContextMenu.toggleClothingDryer(context, worldobjects, player, clothingDryer) then
@@ -754,7 +772,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       -- if not modified yet, give option to modify this lamp so it uses battery instead of power
       if not lightSwitch:getUseBattery() then
         if playerObj:getPerkLevel(Perks.Electricity) >= ISLightActions.perkLevel then
-          if playerInv:containsTypeEvalRecurse("Screwdriver", predicateNotBroken) and playerInv:containsTypeRecurse("ElectronicsScrap") then
+          if playerInv:containsTagEvalRecurse("Screwdriver", predicateNotBroken) and playerInv:containsTypeRecurse("ElectronicsScrap") then
             context:addOption(getText("ContextMenu_CraftBatConnector"), worldobjects, ISWorldObjectContextMenu.onLightModify, lightSwitch, player);
           end
         end
@@ -1391,6 +1409,14 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     context:addOption(getText("ContextMenu_Walk_to"), worldobjects, ISWorldObjectContextMenu.onWalkTo, item, player);
   end
 
+  local doFitness = true;
+  if ISFitnessUI.instance and ISFitnessUI.instance[player + 1] and ISFitnessUI.instance[player + 1]:isVisible() then
+    doFitness = false;
+  end
+  if doFitness then
+    local option = context:addOption(getText("ContextMenu_Fitness"), worldobjects, ISWorldObjectContextMenu.onFitness, playerObj);
+  end
+
   if not playerObj:getVehicle() and not playerObj:isSitOnGround() then
     if test == true then return true; end
     context:addOption(getText("ContextMenu_SitGround"), player, ISWorldObjectContextMenu.onSitOnGround);
@@ -1540,7 +1566,12 @@ function ISWorldObjectContextMenu.addWaterFromItem(test, context, worldobjects, 
         local subOption = subMenu:addOption(item:getName(), worldobjects, ISWorldObjectContextMenu.onAddWaterFromItem, pourWaterInto, item, playerObj);
         if item:IsDrainable() then
           local tooltip = ISWorldObjectContextMenu.addToolTip()
-          tooltip.description = math.floor(item:getUsedDelta() * 100) .. getText("ContextMenu_FullPercent")
+          local tx = getTextManager():MeasureStringX(tooltip.font, getText("ContextMenu_WaterName") .. ":") + 20
+          tooltip.description = string.format("%s: <SETX:%d> %d / %d",
+          getText("ContextMenu_WaterName"), tx, item:getDrainableUsesInt(), 1.0 / item:getUseDelta() + 0.0001)
+          if item:isTaintedWater() then
+            tooltip.description = tooltip.description .. " <BR> <RGB:1,0.5,0.5> " .. getText("Tooltip_item_TaintedWater")
+          end
           subOption.toolTip = tooltip
         end
       end
@@ -1645,7 +1676,7 @@ function ISWorldObjectContextMenu.handleCarBatteryCharger(test, context, worldob
         option.toolTip.description = getText("IGUI_RadioRequiresPowerNearby")
       end
     end
-    local label = getText("ContextMenu_Remove_Battery").." (" .. math.floor(carBatteryCharger:getBattery():getUsedDelta() * 100) .. "%)"
+    local label = getText("ContextMenu_CarBatteryCharger_RemoveBattery").." (" .. math.floor(carBatteryCharger:getBattery():getUsedDelta() * 100) .. "%)"
     context:addOption(label, carBatteryCharger, onCarBatteryCharger_RemoveBattery, playerObj)
   else
     local batteryList = playerInv:getAllTypeEvalRecurse("CarBattery1", predicateNotFull)
@@ -1796,7 +1827,7 @@ ISWorldObjectContextMenu.onTakeFuel = function(worldobjects, playerObj, square)
     petrolCan = playerObj:getInventory():getFirstTypeRecurse("EmptyPetrolCan")
   end
   if petrolCan and luautils.walkAdj(playerObj, square) then
-    ISInventoryPaneContextMenu.equipWeapon(petrolCan, true, false, playerObj:getPlayerNum())
+    ISInventoryPaneContextMenu.equipWeapon(petrolCan, false, false, playerObj:getPlayerNum())
     ISTimedActionQueue.add(ISTakeFuel:new(playerObj, square, petrolCan, 100))
   end
 end
@@ -1832,6 +1863,7 @@ end
 ISWorldObjectContextMenu.onAddFuel = function(worldobjects, petrolCan, generator, player)
   local playerObj = getSpecificPlayer(player)
   if luautils.walkAdj(playerObj, generator:getSquare()) then
+    ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), petrolCan, true, false);
     ISTimedActionQueue.add(ISAddFuel:new(player, generator, petrolCan, 70 + (petrolCan:getUsedDelta() * 40)));
   end
 end
@@ -1861,6 +1893,21 @@ ISWorldObjectContextMenu.onFishing = function(worldobjects, player)
   end
 end
 
+ISWorldObjectContextMenu.onFitness = function(worldobjects, player)
+  if ISFishingUI.instance and ISFishingUI.instance[player:getPlayerNum() + 1] then
+    ISFishingUI.instance[player:getPlayerNum() + 1]:removeFromUIManager();
+  end
+  if ISFitnessUI.instance and ISFitnessUI.instance[player:getPlayerNum() + 1] and ISFitnessUI.instance[player:getPlayerNum() + 1]:isVisible() then
+    return;
+  end
+  local modal = ISFitnessUI:new(0, 0, 600, 350, player);
+  modal:initialise()
+  modal:addToUIManager()
+  if JoypadState.players[player:getPlayerNum() + 1] then
+    setJoypadFocus(player:getPlayerNum(), modal)
+  end
+end
+
 ISWorldObjectContextMenu.onFishingNet = function(worldobjects, player)
   local net = fishingNet:new(player);
   getCell():setDrag(net, player:getPlayerNum());
@@ -1881,50 +1928,18 @@ ISWorldObjectContextMenu.getFishingLure = function(player, rod)
   if WeaponType.getWeaponType(rod) == WeaponType.spear then
     return true
   end
-  if player:getSecondaryHandItem() and player:getSecondaryHandItem():isFishingLure() then
+  if player:getSecondaryHandItem() and predicateFishingLure(player:getSecondaryHandItem()) then
     return player:getSecondaryHandItem();
   end
-  for i = 0, player:getInventory():getItems():size() - 1 do
-    local item = player:getInventory():getItems():get(i);
-    if item:isFishingLure() then
-      return item;
-    end
-  end
-  return nil;
+  return player:getInventory():getFirstEvalRecurse(predicateFishingLure)
 end
 
-ISWorldObjectContextMenu.getFishingRode = function(player)
-  local types = {
-    CraftedFishingRod = true,
-    CraftedFishingRodTwineLine = true,
-    FishingRod = true,
-    FishingRodTwineLine = true,
-    SpearCrafted = true,
-    SpearBreadKnife = true,
-    SpearButterKnife = true,
-    SpearFork = true,
-    SpearLetterOpener = true,
-    SpearScalpel = true,
-    SpearSpoon = true,
-    SpearScissors = true,
-    SpearHandFork = true,
-    SpearScrewdriver = true,
-    SpearKnife = true,
-    SpearHuntingKnife = true,
-    SpearMachete = true,
-    SpearIcePick = true,
-  }
-  local handItem = player:getPrimaryHandItem()
-  if handItem and types[handItem:getType()] and ISWorldObjectContextMenu.getFishingLure(player, handItem) then
+ISWorldObjectContextMenu.getFishingRode = function(playerObj)
+  local handItem = playerObj:getPrimaryHandItem()
+  if handItem and predicateFishingRodOrSpear(handItem, playerObj) then
     return handItem
   end
-  for i = 0, player:getInventory():getItems():size() - 1 do
-    local item = player:getInventory():getItems():get(i)
-    if not item:isBroken() and (types[item:getType()] or (instanceof(item, "HandWeapon") and WeaponType.getWeaponType(item) == WeaponType.spear)) and ISWorldObjectContextMenu.getFishingLure(player, item) then
-      return item
-    end
-  end
-  return nil
+  return playerObj:getInventory():getFirstEvalArgRecurse(predicateFishingRodOrSpear, playerObj)
 end
 
 ISWorldObjectContextMenu.onDestroy = function(worldobjects, player, sledgehammer)
@@ -2208,20 +2223,6 @@ ISWorldObjectContextMenu.haveWaterContainer = function(playerId)
   return nil;
 end
 
-local function getMoveableDisplayName(obj)
-  if not obj then return nil end
-  if not obj:getSprite() then return nil end
-  local props = obj:getSprite():getProperties()
-  if props:Is("CustomName") then
-    local name = props:Val("CustomName")
-    if props:Is("GroupName") then
-      name = props:Val("GroupName") .. " " .. name
-    end
-    return Translator.getMoveableDisplayName(name)
-  end
-  return nil
-end
-
 function ISWorldObjectContextMenu.toggleClothingDryer(context, worldobjects, playerId, object)
   local playerObj = getSpecificPlayer(playerId)
 
@@ -2357,7 +2358,7 @@ ISWorldObjectContextMenu.onLightModify = function(worldobjects, light, player, s
   local playerObj = getSpecificPlayer(player)
   local playerInv = playerObj:getInventory()
   if light:getSquare() and luautils.walkAdj(playerObj, light:getSquare()) then
-    local screwdriver = playerInv:getFirstTypeEvalRecurse("Screwdriver", predicateNotBroken)
+    local screwdriver = playerInv:getFirstTagEvalRecurse("Screwdriver", predicateNotBroken)
     local scrapItem = playerInv:getFirstTypeRecurse("ElectronicsScrap")
     if not screwdriver or not scrapItem then return end
     ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), screwdriver, true, false)
@@ -2629,11 +2630,46 @@ ISWorldObjectContextMenu.doFillWaterMenu = function(sink, player, context)
       end
       if item:IsDrainable() then
         local tooltip = ISWorldObjectContextMenu.addToolTip()
-        tooltip.description = math.floor(item:getUsedDelta() * 100) .. getText("ContextMenu_FullPercent")
+        local tx = getTextManager():MeasureStringX(tooltip.font, getText("ContextMenu_WaterName") .. ":") + 20
+        tooltip.description = string.format("%s: <SETX:%d> %d / %d",
+        getText("ContextMenu_WaterName"), tx, item:getDrainableUsesInt(), 1.0 / item:getUseDelta() + 0.0001)
+        if item:isTaintedWater() then
+          tooltip.description = tooltip.description .. " <BR> <RGB:1,0.5,0.5> " .. getText("Tooltip_item_TaintedWater")
+        end
         suboption.toolTip = tooltip
       end
     end
   end
+end
+
+local function formatWaterAmount(setX, amount, max)
+  -- Water tiles have waterAmount=9999
+  -- Piped water has waterAmount=10000
+  if max >= 9999 then
+    return string.format("%s: <SETX:%d> %s", getText("ContextMenu_WaterName"), setX, getText("Tooltip_WaterUnlimited"))
+  end
+  return string.format("%s: <SETX:%d> %d / %d", getText("ContextMenu_WaterName"), setX, amount, max)
+end
+
+ISWorldObjectContextMenu.doDrinkWaterMenu = function(object, player, context)
+  local playerObj = getSpecificPlayer(player)
+  if instanceof(object, "IsoClothingDryer") then return end
+  if instanceof(object, "IsoClothingWasher") then return end
+  local option = context:addOption(getText("ContextMenu_Drink"), worldobjects, ISWorldObjectContextMenu.onDrink, storeWater, player);
+  local thirst = playerObj:getStats():getThirst()
+  local units = math.min(math.ceil(thirst / 0.1), 10)
+  units = math.min(units, storeWater:getWaterAmount())
+  local tooltip = ISWorldObjectContextMenu.addToolTip()
+  local tx1 = getTextManager():MeasureStringX(tooltip.font, getText("Tooltip_food_Thirst") .. ":") + 20
+  local tx2 = getTextManager():MeasureStringX(tooltip.font, getText("ContextMenu_WaterName") .. ":") + 20
+  local tx = math.max(tx1, tx2)
+  tooltip.description = string.format("%s: <SETX:%d> -%d / %d <LINE> %s",
+    getText("Tooltip_food_Thirst"), tx, math.min(units * 10, thirst * 100), thirst * 100,
+  formatWaterAmount(tx, storeWater:getWaterAmount(), storeWater:getWaterMax()))
+  if object:isTaintedWater() then
+    tooltip.description = tooltip.description .. " <BR> <RGB:1,0.5,0.5> " .. getText("Tooltip_item_TaintedWater")
+  end
+  option.toolTip = tooltip
 end
 
 ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
@@ -2684,6 +2720,15 @@ ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
       if washEquipment == false then
         washEquipment = true
       end
+      table.insert(washList, item)
+    end
+  end
+
+  local clothingInventory = playerInv:getItemsFromCategory("Container")
+  for i = 0, clothingInventory:size() - 1 do
+    local item = clothingInventory:get(i)
+    if not item:isHidden() and (item:hasBlood() or item:hasDirt()) then
+      washEquipment = true
       table.insert(washList, item)
     end
   end
@@ -2801,7 +2846,8 @@ ISWorldObjectContextMenu.onDrink = function(worldobjects, waterObject, player)
     return
   end
   local waterAvailable = waterObject:getWaterAmount()
-  local waterNeeded = math.min(math.ceil(playerObj:getStats():getThirst() * 10), 10)
+  local thirst = playerObj:getStats():getThirst()
+  local waterNeeded = math.floor((thirst + 0.005) / 0.1)
   local waterConsumed = math.min(waterNeeded, waterAvailable)
   ISTimedActionQueue.add(ISTakeWaterAction:new(playerObj, nil, waterConsumed, waterObject, (waterConsumed * 10) + 15, nil));
 end
