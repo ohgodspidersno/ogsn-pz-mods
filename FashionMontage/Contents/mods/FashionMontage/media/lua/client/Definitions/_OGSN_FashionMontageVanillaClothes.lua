@@ -247,6 +247,8 @@ local clothingLists = {
       },
       listMaskEyes = {
         "Base.Hat_GasMask",
+      },
+      listMaskFull = {
         "Base.WeldingMask",
       },
       listUnderwear = {
@@ -370,6 +372,7 @@ local clothingLists = {
         "Base.Bag_NormalHikingBag",
         "Base.Bag_DuffelBagTINT",
         "Base.Bag_Schoolbag",
+        "Base.Bag_Satchel",
       },
       listScarf = {
         "Base.Scarf_White",

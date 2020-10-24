@@ -377,6 +377,12 @@ local function addClothing(clothingLists)
       merge_Old_New(maleItems,clothingLists.listMaskEyes);
       merge_Old_New(femaleItems,clothingLists.listMaskEyes);
     end
+    if clothingLists.listMaskFull then
+      local maleItems = maleTable.MaskFull.items;
+      local femaleItems = femaleTable.MaskFull.items;
+      merge_Old_New(maleItems,clothingLists.listMaskFull);
+      merge_Old_New(femaleItems,clothingLists.listMaskFull);
+    end
     if clothingLists.listUnderwear then
       local maleItems = maleTable.Underwear.items;
       local femaleItems = femaleTable.Underwear.items;
