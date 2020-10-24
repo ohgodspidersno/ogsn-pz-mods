@@ -1,6 +1,6 @@
 version=1
 id=2033451936
-title=Let Me Think - Open Menus and Queue Tasks While Paused [41.43]
+title=Let Me Think - Open Menus and Queue Tasks While Paused [41.45]
 description=[h1]Description[/h1]
 description=Project Zomboid isn't a fast-paced shooter or a precision platformer. You should be allowed some time to open menus and queue up tasks for your character while the game is paused.
 description=
@@ -13,7 +13,8 @@ description=Like in [i]The Sims[/i], or [i]Rimworld[/i]
 description=
 description=[h1]Troubleshooting[/h1]
 description=[olist]
-description=[*]Check to make sure you are playing version 41. If you are not sure, then you probably aren't.
+description=[*]Check to make sure you are playing IWBUMS Beta version 41. You have to opt into that manually, so if you are not sure, then you probably aren't.
+description=[*]If you are playing the stable release, or an even older version, use this mod instead: https://steamcommunity.com/sharedfiles/filedetails/?id=2214424537
 description=[*]If it still does not work, please post your modlist in the bugs discussion or in the comments. You can find your modlist here:
 description=[/olist]
 description=[code]
