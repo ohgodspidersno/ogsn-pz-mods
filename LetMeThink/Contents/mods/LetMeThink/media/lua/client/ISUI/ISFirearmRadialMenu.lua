@@ -52,6 +52,7 @@ function CInsertMagazine:invoke()
   if weapon:isContainsClip() then return end
   local magazine = weapon:getBestMagazine(self.character)
   if not magazine then return end
+  ISInventoryPaneContextMenu.transferIfNeeded(self.character, magazine)
   ISTimedActionQueue.add(ISInsertMagazine:new(self.character, weapon, magazine))
 end
 
@@ -101,7 +102,7 @@ end
 function CLoadBulletsInMagazine:getMagazine(weapon)
   if not weapon:getMagazineType() then return nil end
   local inventory = self.character:getInventory()
-  return inventory:getBestEvalArg(predicateNotFullMagazine, predicateFullestMagazine, weapon:getMagazineType())
+  return inventory:getBestEvalArgRecurse(predicateNotFullMagazine, predicateFullestMagazine, weapon:getMagazineType())
 end
 
 function CLoadBulletsInMagazine:hasBulletsForMagazine(magazine)

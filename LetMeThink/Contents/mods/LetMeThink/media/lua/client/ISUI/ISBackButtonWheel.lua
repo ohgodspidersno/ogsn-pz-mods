@@ -26,7 +26,6 @@ function ISBackButtonWheel:addCommands()
 
   self:clear()
 
-
   if not ISBackButtonWheel.disablePlayerInfo then
     self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
   else
@@ -37,7 +36,6 @@ function ISBackButtonWheel:addCommands()
   else
     self:addSlice(nil, nil, nil)
   end
-
 
   if getCore():isZoomEnabled() and not getCore():getAutoZoom(self.playerNum) then
     if ISBackButtonWheel.disableZoomIn then

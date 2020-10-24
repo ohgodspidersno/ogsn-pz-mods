@@ -1260,6 +1260,10 @@ function ISInventoryPage.loadWeight(inv)
             if o:getItem() and o:getItem():getCategory() == "Container" then
               local item = o:getItem()
               containerButton = self:addContainerButton(item:getInventory(), item:getTex(), item:getName(), nil)
+              if item:getVisual() and item:getClothingItem() then
+                local tint = item:getVisual():getTint(item:getClothingItem());
+                containerButton:setTextureRGBA(tint:getRedFloat(), tint:getGreenFloat(), tint:getBlueFloat(), 1.0);
+              end
             end
           end
 

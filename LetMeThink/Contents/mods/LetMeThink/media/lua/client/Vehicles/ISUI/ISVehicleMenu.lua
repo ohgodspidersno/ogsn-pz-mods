@@ -809,7 +809,7 @@ function ISVehicleMenu.moveItemsOnSeat(seat, newSeat, playerObj, moveThem, itemL
   for i = itemListIndex, seat:getItemContainer():getItems():size() - 1 do
     local item = seat:getItemContainer():getItems():get(i);
     actualWeight = actualWeight + item:getUnequippedWeight();
-    if actualWeight < newSeat:getItemContainer():getEffectiveCapacity(playerObj) then
+    if newSeat:getItemContainer():hasRoomFor(playerObj, actualWeight) then
       table.insert(itemList, item);
     else
       break;

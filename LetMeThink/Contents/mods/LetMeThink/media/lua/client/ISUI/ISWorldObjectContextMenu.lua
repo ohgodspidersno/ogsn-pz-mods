@@ -57,7 +57,7 @@ ISWorldObjectContextMenu.clearFetch = function()
   graves = nil;
   canBeWaterPiped = nil;
   building = nil;
-  ISWorldObjectContextMenu.fetchSquares = {}
+  table.wipe(ISWorldObjectContextMenu.fetchSquares)
 end
 
 local function predicateNotBroken(item)
@@ -303,7 +303,7 @@ ISWorldObjectContextMenu.fetch = function(v, player, doSquare)
   if ISWorldObjectContextMenu.canCleanBlood(playerObj, v:getSquare()) then
     haveBlood = v:getSquare();
   end
-  if instanceof(v, "IsoPlayer") then
+  if instanceof(v, "IsoPlayer") and (v ~= playerObj) then
     clickedPlayer = v;
   end
 
@@ -335,10 +335,8 @@ ISWorldObjectContextMenu.fetch = function(v, player, doSquare)
         if sq then
           for i = 0, sq:getMovingObjects():size() - 1 do
             local o = sq:getMovingObjects():get(i)
-            -- Medical check
-            --            if JoypadState.players[player+1] and instanceof(o, "IsoPlayer") then
-            if instanceof(o, "IsoPlayer") then
-              ISWorldObjectContextMenu.fetch(o, player, false)
+            if instanceof(o, "IsoPlayer") and (o ~= playerObj) then
+              clickedPlayer = o
             end
           end
         end
@@ -379,13 +377,16 @@ local function predicateBlowTorch(item)
   return item:getType() == "BlowTorch" and item:getDrainableUsesInt() > 3
 end
 
+local function predicateRemoveBarricade(item)
+  return item:hasTag("RemoveBarricade") and not item:isBroken()
+end
+
 -- MAIN METHOD FOR CREATING RIGHT CLICK CONTEXT MENU FOR WORLD ITEMS
 ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   if getCore():getGameMode() == "Tutorial" then
     local context = Tutorial1.createWorldContextMenu(player, worldobjects, x, y);
     return context;
   end
-
   local playerObj = getSpecificPlayer(player)
   local playerInv = playerObj:getInventory()
   if playerObj:isAsleep() then return end
@@ -709,6 +710,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   if storeWater then
     if not clothingDryer and not clothingWasher then --Stops being able to wash clothes in washing machines and dryers
       ISWorldObjectContextMenu.doWashClothingMenu(storeWater, player, context);
+      ISWorldObjectContextMenu.doRecipeUsingWaterMenu(storeWater, player, context);
     end
   end
 
@@ -877,6 +879,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
   end
 
   local hasHammer = playerInv:containsTagEvalRecurse("Hammer", predicateNotBroken)
+  local hasRemoveBarricadeTool = playerInv:containsTagEvalRecurse("RemoveBarricade", predicateNotBroken)
 
   -- created thumpable item interaction
   if thump ~= nil and not invincibleWindow then
@@ -911,7 +914,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
           if test == true then return true; end
           context:addOption(getText("ContextMenu_Barricade"), worldobjects, ISWorldObjectContextMenu.onBarricade, thump, player);
         end
-        if (barricade and barricade:getNumPlanks() > 0) and hasHammer then
+        if (barricade and barricade:getNumPlanks() > 0) and hasRemoveBarricadeTool then
           if test == true then return true; end
           context:addOption(getText("ContextMenu_Unbarricade"), worldobjects, ISWorldObjectContextMenu.onUnbarricade, thump, player);
         end
@@ -968,7 +971,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       context:addOption(getText("ContextMenu_Barricade"), worldobjects, ISWorldObjectContextMenu.onBarricade, window, player);
     end
     -- unbarricade (hammer on 1st hand and window barricaded)
-    if (barricade and barricade:getNumPlanks() > 0) and hasHammer then
+    if (barricade and barricade:getNumPlanks() > 0) and hasRemoveBarricadeTool then
       if test == true then return true; end
       context:addOption(getText("ContextMenu_Unbarricade"), worldobjects, ISWorldObjectContextMenu.onUnbarricade, window, player);
     end
@@ -1128,7 +1131,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       if test == true then return true; end
       context:addOption(getText("ContextMenu_Barricade"), worldobjects, ISWorldObjectContextMenu.onBarricade, door, player);
     end
-    if (barricade and barricade:getNumPlanks() > 0) and hasHammer then
+    if (barricade and barricade:getNumPlanks() > 0) and hasRemoveBarricadeTool then
       if test == true then return true; end
       context:addOption(getText("ContextMenu_Unbarricade"), worldobjects, ISWorldObjectContextMenu.onUnbarricade, door, player);
     end
@@ -1302,7 +1305,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       end
     else
       local option = context:addOption(getText("ContextMenu_GeneratorPlug"), worldobjects, ISWorldObjectContextMenu.onPlugGenerator, generator, player, true);
-      if not playerObj:getKnownRecipes():contains("Generator") then
+      if not playerObj:isRecipeKnown("Generator") then
         local tooltip = ISWorldObjectContextMenu.addToolTip();
         option.notAvailable = true;
         tooltip.description = getText("ContextMenu_GeneratorPlugTT");
@@ -1315,7 +1318,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     end
     if not generator:isActivated() and generator:getCondition() < 100 then
       local option = context:addOption(getText("ContextMenu_GeneratorFix"), worldobjects, ISWorldObjectContextMenu.onFixGenerator, generator, player);
-      if not playerObj:getKnownRecipes():contains("Generator") then
+      if not playerObj:isRecipeKnown("Generator") then
         local tooltip = ISWorldObjectContextMenu.addToolTip();
         option.notAvailable = true;
         tooltip.description = getText("ContextMenu_GeneratorPlugTT");
@@ -1409,13 +1412,14 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
     context:addOption(getText("ContextMenu_Walk_to"), worldobjects, ISWorldObjectContextMenu.onWalkTo, item, player);
   end
 
-  local doFitness = true;
-  if ISFitnessUI.instance and ISFitnessUI.instance[player + 1] and ISFitnessUI.instance[player + 1]:isVisible() then
-    doFitness = false;
-  end
-  if doFitness then
-    local option = context:addOption(getText("ContextMenu_Fitness"), worldobjects, ISWorldObjectContextMenu.onFitness, playerObj);
-  end
+  -- RJ: Moved to health panel
+  --	local doFitness = true;
+  --	if ISFitnessUI.instance and ISFitnessUI.instance[player+1] and ISFitnessUI.instance[player+1]:isVisible() then
+  --		doFitness = false;
+  --	end
+  --	if doFitness then
+  --		local option = context:addOption(getText("ContextMenu_Fitness"), worldobjects, ISWorldObjectContextMenu.onFitness, playerObj);
+  --	end
 
   if not playerObj:getVehicle() and not playerObj:isSitOnGround() then
     if test == true then return true; end
@@ -2132,6 +2136,8 @@ function ISWorldObjectContextMenu.onSleepWalkToComplete(player, bed)
   local bedType = "badBed";
   if bed then
     bedType = bed:getProperties():Val("BedType") or "averageBed";
+  elseif playerObj:getVehicle() then
+    bedType = "averageBed";
   else
     bedType = "floor";
   end
@@ -2159,9 +2165,16 @@ function ISWorldObjectContextMenu.onSleepWalkToComplete(player, bed)
   if playerObj:HasTrait("Insomniac") then
     sleepFor = sleepFor * 0.5;
   end
+  if playerObj:HasTrait("NeedsLessSleep") then
+    sleepFor = sleepFor * 0.75;
+  end
+  if playerObj:HasTrait("NeedsMoreSleep") then
+    sleepFor = sleepFor * 1.18;
+  end
+
   if sleepFor > 16 then sleepFor = 16; end
   if sleepFor < 3 then sleepFor = 3; end
-  --    print("GONNA SLEEP " .. sleepHours .. " HOURS" .. " AND ITS " .. GameTime.getInstance():getTimeOfDay())
+  --print("GONNA SLEEP " .. sleepFor .. " HOURS" .. " AND ITS " .. GameTime.getInstance():getTimeOfDay())
   local sleepHours = sleepFor + GameTime.getInstance():getTimeOfDay()
   if sleepHours >= 24 then
     sleepHours = sleepHours - 24
@@ -2840,6 +2853,153 @@ ISWorldObjectContextMenu.onWashYourself = function(playerObj, sink, soapList)
   ISTimedActionQueue.add(ISWashYourself:new(playerObj, sink, soapList));
 end
 
+-----
+
+local CleanBandages = {}
+
+function CleanBandages.onCleanOne(playerObj, type, waterObject, recipe)
+  local playerInv = playerObj:getInventory()
+  local item = playerInv:getFirstTypeRecurse(type)
+  if not item then return end
+  ISTimedActionQueue.add(ISCleanBandage:new(playerObj, item, waterObject, recipe))
+end
+
+function CleanBandages.onCleanMultiple(playerObj, type, waterObject, recipe)
+  local playerInv = playerObj:getInventory()
+  local items = playerInv:getSomeTypeRecurse(type, waterObject:getWaterAmount())
+  if items:isEmpty() then return end
+  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, items)
+  for i = 1, items:size() do
+    local item = items:get(i - 1)
+    ISTimedActionQueue.add(ISCleanBandage:new(playerObj, item, waterObject, recipe))
+  end
+end
+
+function CleanBandages.onCleanAll(playerObj, waterObject, itemData)
+  local waterRemaining = waterObject:getWaterAmount()
+  if waterRemaining < 1 then return end
+  local playerInv = playerObj:getInventory()
+  local items = ArrayList.new()
+  local itemToRecipe = {}
+  for _, data in ipairs(itemData) do
+    local first = items:size()
+    playerInv:getSomeTypeRecurse(data.itemType, waterRemaining - items:size(), items)
+    for i = first, items:size() - 1 do
+      itemToRecipe[items:get(i)] = data.recipe
+    end
+    if waterRemaining <= items:size() then
+      break
+    end
+  end
+  if items:isEmpty() then return end
+  ISInventoryPaneContextMenu.transferIfNeeded(playerObj, items)
+  for i = 1, items:size() do
+    local item = items:get(i - 1)
+    local recipe = itemToRecipe[item]
+    ISTimedActionQueue.add(ISCleanBandage:new(playerObj, item, waterObject, recipe))
+  end
+end
+
+function CleanBandages.getAvailableItems(items, playerObj, recipeName, itemType)
+  local recipe = getScriptManager():getRecipe(recipeName)
+  if not recipe then return nil end
+  local playerInv = playerObj:getInventory()
+  local count = playerInv:getCountTypeRecurse(itemType)
+  if count == 0 then return end
+  table.insert(items, { itemType = itemType, count = count, recipe = recipe })
+end
+
+function CleanBandages.setSubmenu(subMenu, item, waterObject)
+  local itemType = item.itemType
+  local count = item.count
+  local recipe = item.recipe
+  local waterRemaining = waterObject:getWaterAmount()
+
+  local tooltip = nil
+  local notAvailable = false
+  if waterObject:isTaintedWater() then
+    tooltip = ISWorldObjectContextMenu.addToolTip()
+    tooltip.description = " <RGB:1,0.5,0.5> " .. getText("Tooltip_item_TaintedWater")
+    tooltip.maxLineWidth = 512
+    notAvailable = true
+  else
+    tooltip = ISRecipeTooltip.addToolTip()
+    tooltip.recipe = recipe
+    tooltip:setName(recipe:getName())
+    local resultItem = getScriptManager():FindItem(recipe:getResult():getFullType())
+    if resultItem and resultItem:getNormalTexture() and resultItem:getNormalTexture():getName() ~= "Question_On" then
+      tooltip:setTexture(resultItem:getNormalTexture():getName())
+    end
+  end
+
+  if count > 1 then
+    local subOption = subMenu:addOption(recipe:getName())
+    local subMenu2 = ISContextMenu:getNew(subMenu)
+    subMenu:addSubMenu(subOption, subMenu2)
+
+    local option1 = subMenu2:addActionsOption(getText("ContextMenu_One"), CleanBandages.onCleanOne, itemType, waterObject, recipe)
+    option1.toolTip = tooltip
+    option1.notAvailable = notAvailable
+
+    local option2 = subMenu2:addActionsOption(getText("ContextMenu_AllWithCount", math.min(count, waterRemaining)), CleanBandages.onCleanMultiple, itemType, waterObject, recipe)
+    option2.toolTip = tooltip
+    option2.notAvailable = notAvailable
+  else
+    local option = subMenu:addActionsOption(recipe:getName(), CleanBandages.onCleanOne, itemType, waterObject, recipe)
+    option.toolTip = tooltip
+    option.notAvailable = notAvailable
+  end
+end
+
+ISWorldObjectContextMenu.doRecipeUsingWaterMenu = function(waterObject, playerNum, context)
+  local playerObj = getSpecificPlayer(playerNum)
+  local playerInv = playerObj:getInventory()
+
+  local waterRemaining = waterObject:getWaterAmount()
+  if waterRemaining < 1 then return end
+
+  -- It would perhaps be better to allow *any* recipes that require water to take water from a clicked-on
+  -- water-containing object.  This would be similar to how RecipeManager.isNearItem() works.
+  -- We would need to pass the water-containing object to RecipeManager, or pick one in isNearItem().
+
+  local items = {}
+  CleanBandages.getAvailableItems(items, playerObj, "Base.Clean Bandage", "Base.BandageDirty")
+  CleanBandages.getAvailableItems(items, playerObj, "Base.Clean Denim Strips", "Base.DenimStripsDirty")
+  CleanBandages.getAvailableItems(items, playerObj, "Base.Clean Leather Strips", "Base.LeatherStripsDirty")
+  CleanBandages.getAvailableItems(items, playerObj, "Base.Clean Rag", "Base.RippedSheetsDirty")
+
+  if #items == 0 then return end
+
+  ISRecipeTooltip.releaseAll()
+
+  -- If there's a single item type, don't display the extra submenu.
+  if #items == 1 then
+    CleanBandages.setSubmenu(context, items[1], waterObject)
+    return
+  end
+
+  local subMenu = ISContextMenu:getNew(context)
+  local subOption = context:addOption(getText("ContextMenu_CleanBandageEtc"))
+  context:addSubMenu(subOption, subMenu)
+
+  local numItems = 0
+  for _, item in ipairs(items) do
+    numItems = numItems + item.count
+  end
+  local option = subMenu:addActionsOption(getText("ContextMenu_AllWithCount", math.min(numItems, waterRemaining)), CleanBandages.onCleanAll, waterObject, items)
+  if waterObject:isTaintedWater() then
+    tooltip = ISWorldObjectContextMenu.addToolTip()
+    tooltip.description = " <RGB:1,0.5,0.5> " .. getText("Tooltip_item_TaintedWater")
+    tooltip.maxLineWidth = 512
+    option.toolTip = tooltip
+    option.notAvailable = true
+  end
+
+  for _, item in ipairs(items) do
+    CleanBandages.setSubmenu(subMenu, item, waterObject)
+  end
+end
+
 ISWorldObjectContextMenu.onDrink = function(worldobjects, waterObject, player)
   local playerObj = getSpecificPlayer(player)
   if not waterObject:getSquare() or not luautils.walkAdj(playerObj, waterObject:getSquare(), true) then
@@ -2936,10 +3096,9 @@ end
 ISWorldObjectContextMenu.onUnbarricade = function(worldobjects, window, player)
   local playerObj = getSpecificPlayer(player)
   if luautils.walkAdjWindowOrDoor(playerObj, window:getSquare(), window) then
-    local hammer = playerObj:getInventory():getFirstTagEvalRecurse("Hammer", predicateNotBroken)
-    if not hammer then return end
-    ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), hammer, true);
-    ISTimedActionQueue.add(ISUnbarricadeAction:new(playerObj, window, (100 - (playerObj:getPerkLevel(Perks.Woodwork) * 5))));
+    if ISWorldObjectContextMenu.equip(playerObj, playerObj:getPrimaryHandItem(), predicateRemoveBarricade, true) then
+      ISTimedActionQueue.add(ISUnbarricadeAction:new(playerObj, window, (200 - (playerObj:getPerkLevel(Perks.Woodwork) * 5))))
+    end
   end
 end
 
@@ -3436,17 +3595,16 @@ ISWorldObjectContextMenu.checkBlowTorchForBarricade = function(chr)
 end
 
 ISWorldObjectContextMenu.doSleepOption = function(context, bed, player, playerObj)
-  local sleepOption = context:addOption(getText("ContextMenu_Sleep"), bed, ISWorldObjectContextMenu.onSleep, player);
+  local text = getText(bed and "ContextMenu_Sleep" or "ContextMenu_SleepOnGround")
+  local sleepOption = context:addOption(text, bed, ISWorldObjectContextMenu.onSleep, player);
+  local tooltipText = nil
   -- Not tired enough
   local sleepNeeded = not isClient() or getServerOptions():getBoolean("SleepNeeded")
   if sleepNeeded and playerObj:getStats():getFatigue() <= 0.3 then
     sleepOption.notAvailable = true;
-    local tooltip = ISWorldObjectContextMenu.addToolTip();
-    tooltip:setName(getText("ContextMenu_Sleeping"));
-    tooltip.description = getText("IGUI_Sleep_NotTiredEnough");
-    sleepOption.toolTip = tooltip;
-    --Player outside.
+    tooltipText = getText("IGUI_Sleep_NotTiredEnough");
     --[[
+    --Player outside.
     elseif bed and (playerObj:isOutside()) and RainManager:isRaining() then
         local square = getCell():getGridSquare(bed:getX(), bed:getY(), bed:getZ() + 1);
         if square == nil or square:getFloor() == nil then
@@ -3466,25 +3624,35 @@ ISWorldObjectContextMenu.doSleepOption = function(context, bed, player, playerOb
     -- In pain, can still sleep if really tired
     if playerObj:getMoodles():getMoodleLevel(MoodleType.Pain) >= 2 and playerObj:getStats():getFatigue() <= 0.85 then
       sleepOption.notAvailable = true;
-      local tooltip = ISWorldObjectContextMenu.addToolTip();
-      tooltip:setName(getText("ContextMenu_Sleeping"));
-      tooltip.description = getText("ContextMenu_PainNoSleep");
-      sleepOption.toolTip = tooltip;
+      tooltipText = getText("ContextMenu_PainNoSleep");
       -- In panic
     elseif playerObj:getMoodles():getMoodleLevel(MoodleType.Panic) >= 1 then
       sleepOption.notAvailable = true;
-      local tooltip = ISWorldObjectContextMenu.addToolTip();
-      tooltip:setName(getText("ContextMenu_Sleeping"));
-      tooltip.description = getText("ContextMenu_PanicNoSleep");
-      sleepOption.toolTip = tooltip;
+      tooltipText = getText("ContextMenu_PanicNoSleep");
       -- tried to sleep not so long ago
     elseif sleepNeeded and (playerObj:getHoursSurvived() - playerObj:getLastHourSleeped()) <= 1 then
       sleepOption.notAvailable = true;
-      local sleepTooltip = ISWorldObjectContextMenu.addToolTip();
-      sleepTooltip:setName(getText("ContextMenu_Sleeping"));
-      sleepTooltip.description = getText("ContextMenu_NoSleepTooEarly");
-      sleepOption.toolTip = sleepTooltip;
+      tooltipText = getText("ContextMenu_NoSleepTooEarly");
     end
+  end
+
+  if bed then
+    local bedType = bed:getProperties():Val("BedType") or "averageBed";
+    local bedTypeXln = getTextOrNull("Tooltip_BedType_" .. bedType)
+    if bedTypeXln then
+      if tooltipText then
+        tooltipText = tooltipText .. " <BR> " .. getText("Tooltip_BedType", bedTypeXln)
+      else
+        tooltipText = getText("Tooltip_BedType", bedTypeXln)
+      end
+    end
+  end
+
+  if tooltipText then
+    local sleepTooltip = ISWorldObjectContextMenu.addToolTip();
+    sleepTooltip:setName(getText("ContextMenu_Sleeping"));
+    sleepTooltip.description = tooltipText;
+    sleepOption.toolTip = sleepTooltip;
   end
 end
 

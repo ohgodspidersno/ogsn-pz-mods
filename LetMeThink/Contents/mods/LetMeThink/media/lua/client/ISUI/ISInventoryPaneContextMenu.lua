@@ -615,7 +615,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   if isAllLiterature and not getSpecificPlayer(player):getTraits():isIlliterate() then
     ISInventoryPaneContextMenu.doLiteratureMenu(context, items, player)
   end
-  if clothing and clothing:getCoveredParts():size() > 0 and clothing:isInPlayerInventory() then
+  if clothing and clothing:getCoveredParts():size() > 0 then
     context:addOption(getText("IGUI_invpanel_Inspect"), playerObj, ISInventoryPaneContextMenu.onInspectClothing, clothing);
     --        ISInventoryPaneContextMenu.doClothingPatchMenu(player, clothing, context);
   end
@@ -852,7 +852,17 @@ ISInventoryPaneContextMenu.doClothingRecipeMenu = function(playerObj, clothing, 
   context:addOption(getRecipeDisplayName("Craft Sheet Rope"), playerObj, ISInventoryPaneContextMenu.onCraftSheetRope, items)
 end
 
-ISInventoryPaneContextMenu.onInspectClothing = function(player, clothing)
+ISInventoryPaneContextMenu.onInspectClothing = function(playerObj, clothing)
+  if luautils.haveToBeTransfered(playerObj, clothing) then
+    local action = ISInventoryTransferAction:new(playerObj, clothing, clothing:getContainer(), playerObj:getInventory())
+    action:setOnComplete(ISInventoryPaneContextMenu.onInspectClothingUI, playerObj, clothing)
+    ISTimedActionQueue.add(action)
+  else
+    ISInventoryPaneContextMenu.onInspectClothingUI(playerObj, clothing)
+  end
+end
+
+ISInventoryPaneContextMenu.onInspectClothingUI = function(player, clothing)
   local playerNum = player:getPlayerNum()
   if ISGarmentUI.windows[playerNum] then
     ISGarmentUI.windows[playerNum]:close();
@@ -2150,6 +2160,8 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
   CraftTooltip.tooltipPool = {}
   CraftTooltip.tooltipsUsed = {}
 
+  ISRecipeTooltip = CraftTooltip
+
   function CraftTooltip:addText(x, y, text)
     local width = getTextManager():MeasureStringX(UIFont.Small, text)
     table.insert(self.contents, { type = "text", x = x, y = y, width = width, height = FONT_HGT_SMALL, text = text })
@@ -2396,15 +2408,18 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
     return tooltip;
   end
 
-  ----- ----- ----- ----- -----
-
-  ISInventoryPaneContextMenu.addDynamicalContextMenu = function(selectedItem, context, recipeList, player, containerList)
+  function CraftTooltip.releaseAll()
     for _, tooltip in ipairs(CraftTooltip.tooltipsUsed) do
       table.insert(CraftTooltip.tooltipPool, tooltip)
     end
     --    print('reused ',#CraftTooltip.tooltipsUsed,' craft tooltips')
     table.wipe(CraftTooltip.tooltipsUsed)
+  end
 
+  ----- ----- ----- ----- -----
+
+  ISInventoryPaneContextMenu.addDynamicalContextMenu = function(selectedItem, context, recipeList, player, containerList)
+    CraftTooltip.releaseAll()
     local playerObj = getSpecificPlayer(player)
     for i = 0, recipeList:size() - 1 do
       local recipe = recipeList:get(i)
@@ -2447,12 +2462,12 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
           for i, v in ipairs(subMenuCraft.options) do
             v.notAvailable = true;
             local tooltip = ISInventoryPaneContextMenu.addToolTip();
-            tooltip.description = getText("Tooltip_CantCraftDriving");
+            tooltip.description = getText("Tooltip_CantCraftDriving"); -- FIXME: wrong translation
             v.toolTip = tooltip;
           end
         end
         local tooltip = ISInventoryPaneContextMenu.addToolTip();
-        tooltip.description = getText("Tooltip_CantCraftDriving");
+        tooltip.description = getText("Tooltip_CantCraftDriving"); -- FIXME: wrong translation
         option.toolTip = tooltip;
         return;
       end
@@ -2463,7 +2478,7 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
         option.toolTip = tooltip;
         return
       end
-      if recipe:getNumberOfNeededItem() > 0 then
+      if subMenuCraft == nil and recipe:getNumberOfNeededItem() > 0 then
         local tooltip = CraftTooltip.addToolTip();
         tooltip.recipe = recipe
         -- add it to our current option
@@ -3035,7 +3050,7 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
           if evoItem:isSpice() then
             extraInfo = getText("ContextMenu_EvolvedRecipe_Spice");
           elseif evoItem:getPoisonLevelForRecipe() then
-            if evoItem:getHerbalistType() and evoItem:getHerbalistType() ~= "" and getSpecificPlayer(player):getKnownRecipes():contains("Herbalist") then
+            if evoItem:getHerbalistType() and evoItem:getHerbalistType() ~= "" and getSpecificPlayer(player):isRecipeKnown("Herbalist") then
               extraInfo = getText("ContextMenu_EvolvedRecipe_Poison");
             end
             local use = ISInventoryPaneContextMenu.getRealEvolvedItemUse(evoItem, evorecipe2, cookingLvl);

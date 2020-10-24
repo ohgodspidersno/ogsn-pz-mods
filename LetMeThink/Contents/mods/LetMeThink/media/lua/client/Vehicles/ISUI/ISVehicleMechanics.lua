@@ -273,7 +273,7 @@ function ISVehicleMechanics:doPartContextMenu(part, x, y)
 
   if part:isContainer() and part:getContainerContentType() == "Air" and part:getInventoryItem() then
     option = self.context:addOption(getText("IGUI_InflateTire"), playerObj, ISVehiclePartMenu.onInflateTire, part)
-    if part:getContainerContentAmount() >= part:getContainerCapacity() then
+    if part:getContainerContentAmount() >= part:getContainerCapacity() + 5 then
       option.notAvailable = true
     end
     local tirePump = InventoryItemFactory.CreateItem("Base.TirePump");
@@ -693,7 +693,7 @@ function ISVehicleMechanics:doMenuTooltip(part, option, lua, name)
   -- recipes
   if keyvalues.recipes and keyvalues.recipes ~= "" then
     for _, recipe in ipairs(keyvalues.recipes:split(";")) do
-      if not self.chr:getKnownRecipes():contains(recipe) then
+      if not self.chr:isRecipeKnown(recipe) then
         tooltip.description = tooltip.description .. " <RGB:1,0,0> " .. getText("Tooltip_vehicle_requireRecipe", getRecipeDisplayName(recipe)) .. " <LINE>";
       else
         tooltip.description = tooltip.description .. " <RGB:1,1,1> " .. getText("Tooltip_vehicle_requireRecipe", getRecipeDisplayName(recipe)) .. " <LINE>";

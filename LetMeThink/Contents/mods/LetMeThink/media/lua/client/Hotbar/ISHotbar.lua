@@ -17,7 +17,8 @@ local FONT_HGT_SMALL = getTextManager():getFontHeight(UIFont.Small)
 function ISHotbar:render()
   if JoypadState.players[self.playerNum + 1] then
     self:setVisible(false);
-    self:removeFromUIManager();
+    -- Don't remove this from the screen, we need update() to call refresh().
+    --		self:removeFromUIManager();
   end
   self:drawRectBorderStatic(0, 0, self.width, self.height, self.borderColor.a, self.borderColor.r, self.borderColor.g, self.borderColor.b);
 

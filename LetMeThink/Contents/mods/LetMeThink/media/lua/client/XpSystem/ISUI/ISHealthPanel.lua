@@ -29,6 +29,9 @@ function ISNewHealthPanel:onClick(button)
     if ISFishingUI.instance and ISFishingUI.instance[self.character:getPlayerNum() + 1] then
       ISFishingUI.instance[self.character:getPlayerNum() + 1]:removeFromUIManager();
     end
+    if ISFitnessUI.instance and ISFitnessUI.instance[self.character:getPlayerNum() + 1] and ISFitnessUI.instance[self.character:getPlayerNum() + 1]:isVisible() then
+      return;
+    end
     local modal = ISFitnessUI:new(0, 0, 600, 350, self.character);
     modal:initialise()
     modal:addToUIManager()
@@ -150,6 +153,17 @@ function ISHealthPanel:createChildren()
   --    self.bodyPartPanel:overrideNodeTexture( BodyPartType.Torso_Upper, "media/ui/BodyParts/bps_node_big", "media/ui/BodyParts/bps_node_big_outline" );
   --    self.bodyPartPanel:setColorScheme(self.colorScheme);
   self:addChild(self.bodyPartPanel);
+
+  self.fitness = ISButton:new(self.healthPanel.x + 165, self.healthPanel.y, 100, 20, getText("ContextMenu_Fitness"), self, ISNewHealthPanel.onClick);
+  self.fitness.internal = "FITNESS";
+  self.fitness.anchorTop = false
+  self.fitness.anchorBottom = true
+  self.fitness:initialise();
+  self.fitness:instantiate();
+  --    self.fitness.borderColor = self.buttonBorderColor;
+  self:addChild(self.fitness);
+
+  print "instant";
 
 end
 
@@ -345,6 +359,10 @@ function ISHealthPanel:render()
 
   local fontHgt = getTextManager():getFontHeight(UIFont.Small);
   local y = self.healthPanel.y;
+
+  self.fitness:setY(y);
+
+  y = y + 30;
 
   self:drawText(getText("IGUI_health_Overall_Body_Status"), self.healthPanel.x + 165, y, 1.0, 1.0, 1.0, 1.0, UIFont.Small)
   y = y + fontHgt

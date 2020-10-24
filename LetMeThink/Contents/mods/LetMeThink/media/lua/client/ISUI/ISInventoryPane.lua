@@ -1008,7 +1008,6 @@ function ISInventoryPane:doContextOnJoypadSelected()
   if JoypadState.disableInvInteraction then
     return;
   end
-
   local playerObj = getSpecificPlayer(self.player)
   if playerObj:isAsleep() then return end
 
@@ -1476,7 +1475,7 @@ function ISInventoryPane:refreshContainer()
     if add then
       local itemName = item:getName();
       if instanceof(item, "Food") and item:getHerbalistType() and item:getHerbalistType() ~= "" then
-        if playerObj:getKnownRecipes():contains("Herbalist") then
+        if playerObj:isRecipeKnown("Herbalist") then
           if item:getHerbalistType() == "Berry" then
             itemName = (item:getPoisonPower() > 0) and getText("IGUI_PoisonousBerry") or getText("IGUI_Berry")
           end
