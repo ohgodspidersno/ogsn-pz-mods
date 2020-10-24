@@ -1,7 +1,8 @@
-UI_PTBR = {
+UI_PT = {
 UI_ClothingType_Back = "Mochila",
 UI_ClothingType_FullHat = "Capacete Completo",
 UI_ClothingType_MaskEyes = "Máscara Completa",
+UI_ClothingType_MaskFull = "Máscara Completa 2",
 UI_ClothingType_Mask = "mascarar",
 UI_ClothingType_FullTop = "Escudo exterior",
 UI_ClothingType_Dress = "Vestir",

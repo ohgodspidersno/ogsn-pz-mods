@@ -2,6 +2,7 @@ UI_CH = {
 UI_ClothingType_Back = "背包",
 UI_ClothingType_FullHat = "全盔",
 UI_ClothingType_MaskEyes = "全面罩",
+UI_ClothingType_MaskFull = "全面罩 2",
 UI_ClothingType_Mask = "面具",
 UI_ClothingType_FullTop = "外殼",
 UI_ClothingType_Dress = "連衣裙",

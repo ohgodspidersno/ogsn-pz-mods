@@ -65,6 +65,7 @@ local clothing = {
   listLeft_MiddleFinger = {},
   listEars = {},
   listEarTop = {},
+  listMaskFull = {},
 }
 
 _OGSN_FashionMontage.addClothing(clothing);

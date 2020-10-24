@@ -1,0 +1,21 @@
+module DistinctNames
+{
+  imports {
+      Base
+  }
+  item WeldingMask {
+      Type = Clothing,
+      DisplayName = Welder Mask,
+      ClothingItem = Hat_WeldersMask,
+      BodyLocation = MaskFull,
+      Icon = WeldingMask,
+      BloodLocation = Head,
+      CanHaveHoles = false,
+      BloodLocation = Head,
+      BiteDefense = 30,
+      ScratchDefense = 50,
+      ChanceToFall = 30,
+      Insulation = 0.25,
+      WindResistance = 0.55,
+  }
+}

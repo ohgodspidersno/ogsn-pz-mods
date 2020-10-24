@@ -2,6 +2,7 @@ UI_RU = {
 UI_ClothingType_Back = "Рюкзак",
 UI_ClothingType_FullHat = "Полный шлем",
 UI_ClothingType_MaskEyes = "Полная маска",
+UI_ClothingType_MaskFull = "Полная маска 2",
 UI_ClothingType_Mask = "Маска",
 UI_ClothingType_FullTop = "Внешняя оболочка",
 UI_ClothingType_Dress = "Платье",

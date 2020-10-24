@@ -2,6 +2,7 @@ UI_JP = {
 UI_ClothingType_Back = "バックパック",
 UI_ClothingType_FullHat = "フルヘルメット",
 UI_ClothingType_MaskEyes = "フルマスク",
+UI_ClothingType_MaskFull = "フルマスク 2",
 UI_ClothingType_Mask = "マスク",
 UI_ClothingType_FullTop = "外殻",
 UI_ClothingType_Dress = "ドレス",

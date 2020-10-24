@@ -2,6 +2,7 @@ UI_EN = {
 UI_ClothingType_Back = "Backpack",
 UI_ClothingType_FullHat = "Full Helmet",
 UI_ClothingType_MaskEyes = "Full Mask",
+UI_ClothingType_MaskFull = "Full Mask 2",
 UI_ClothingType_Mask = "Mask",
 UI_ClothingType_FullTop = "Outer Shell",
 UI_ClothingType_Dress = "Dress",

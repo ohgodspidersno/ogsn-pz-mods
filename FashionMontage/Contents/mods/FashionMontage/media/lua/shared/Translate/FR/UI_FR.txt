@@ -2,6 +2,7 @@ UI_FR = {
 UI_ClothingType_Back = "Sac à dos",
 UI_ClothingType_FullHat = "Casque intégral",
 UI_ClothingType_MaskEyes = "Masque complet",
+UI_ClothingType_MaskFull = "Masque complet 2",
 UI_ClothingType_Mask = "Masque",
 UI_ClothingType_FullTop = "Coque extérieure",
 UI_ClothingType_Dress = "Robe",

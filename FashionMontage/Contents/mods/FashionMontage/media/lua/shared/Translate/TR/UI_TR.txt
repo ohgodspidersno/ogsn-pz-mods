@@ -2,6 +2,7 @@ UI_TR = {
 UI_ClothingType_Back = "Sýrt çantasý",
 UI_ClothingType_FullHat = "Tam Kask",
 UI_ClothingType_MaskEyes = "Tam Maske",
+UI_ClothingType_MaskFull = "Tam Maske 2",
 UI_ClothingType_Mask = "Maske",
 UI_ClothingType_FullTop = "Dýþ kabuk",
 UI_ClothingType_Dress = "Elbise",
