@@ -1,0 +1,60 @@
+--  pl:getStats():setPanic(100); -- 0 to 100
+-- if not player:HasTrait(trait) then break end
+-- local c = clim:getClimateColor(COLOR_GLOBAL_LIGHT):getAdminValue():getInterior();
+--         local r = _slider.customData=="LightSliderR_int" and self.sliderLightR_intSlider:getCurrentValue()/255 or c:getRedFloat();
+--         local g = _slider.customData=="LightSliderG_int" and self.sliderLightG_intSlider:getCurrentValue()/255 or c:getGreenFloat();
+--         local b = _slider.customData=="LightSliderB_int" and self.sliderLightB_intSlider:getCurrentValue()/255 or c:getBlueFloat();
+--         local a = _slider.customData=="LightSliderA_int" and self.sliderLightA_intSlider:getCurrentValue()/255 or c:getAlphaFloat();
+
+
+-- local square = self.square
+-- local light = getCell():getLightSourceAt(self.squareX, self.squareY, self.squareZ)
+--   if light then
+--     local building = light:getLocalToBuilding()
+--     self:addLine("light  active = %s  hydro = %s  localToBuilding = %d", light:isActive(), light:isHydroPowered(), building and building:getID() or -1)
+--   end
+
+--
+-- if square then
+-- 		self:addLine("seen = %s  couldSee = %s  canSee = %s", square:getSeen(pn), square:isCouldSee(pn), square:getCanSee(pn))
+-- 		self:addLine("darkMulti = %.4f  targetDarkMulti = %.4f", square:getDarkMulti(pn), square:getTargetDarkMulti(pn))
+-- 		self:addLine("getVertLight() = %x, %x, %x, %x" , square:getVertLight(0, pn), square:getVertLight(1, pn), square:getVertLight(2, pn), square:getVertLight(3, pn))
+-- --		self:addLine("cutaway = " .. tostring(square:getPlayerCutawayFlags(pn))
+-- 		self:addLine("puddles = %.4f", square:getPuddlesInGround(), 4)
+-- 		if square:getRoom() then
+-- 			local roomDef = square:getRoom():getRoomDef()
+-- 			self:addLine("buildingID = %d", square:getBuilding():getID())
+-- 			self:addLine("roomID = %d", square:getRoomID())
+-- 			self:addLine("roomDef.name = %s", roomDef:getName())
+-- 			self:addLine("bExplored = %s", roomDef:isExplored())
+-- 			self:addLine("alarm = %s", square:getBuilding():getDef():isAlarmed())
+-- 			local switches = square:getRoom():getLightSwitches()
+-- 			local switchCount = switches:size()
+-- 			self:addLine("#switches = %d", switchCount)
+-- 		else
+-- 			local roomDef = getWorld():getMetaGrid():getRoomAt(square:getX(), square:getY(), square:getZ())
+-- 			if roomDef then
+-- 				self:addLine("roomDef.ID = %d", roomDef:getID())
+-- 				self:addLine("roomDef.name = %s", roomDef:getName())
+-- 			else
+-- 				self:addLine("roomID = %d  room = nil", square:getRoomID())
+-- 			end
+-- 		end
+-- 		local building = square:getRoofHideBuilding()
+-- 		if building then
+-- 			self:addLine("roof-hide building = %d", building:getDef():getID())
+-- 		end
+-- 		local light = getCell():getLightSourceAt(self.squareX, self.squareY, self.squareZ)
+-- 		if light then
+-- 			local building = light:getLocalToBuilding()
+-- 			self:addLine("light  active = %s  hydro = %s  localToBuilding = %d", light:isActive(), light:isHydroPowered(), building and building:getID() or -1)
+-- 		end
+-- 		self:addLine("exterior = %s", square:Is(IsoFlagType.exterior))
+-- 		self:addLine("haveElectricity = %s", square:haveElectricity())
+-- 		self:addLine("TreatAsSolidFloor = %s", square:TreatAsSolidFloor())
+-- 		self:addLine("solid = %s", square:Is(IsoFlagType.solid))
+-- 		self:addLine("solidTrans = %s", square:Is(IsoFlagType.solidtrans))
+-- 		self:addLine("burning = %s", square:Is(IsoFlagType.burning))
+-- 		self:addLine("burntOut = %s", square:Is(IsoFlagType.burntOut))
+-- 		self:addLine("HasRaindrop = %s", square:Is(IsoFlagType.HasRaindrop))
+-- 	end
