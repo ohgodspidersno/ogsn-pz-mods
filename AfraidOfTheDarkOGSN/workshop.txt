@@ -1,0 +1,7 @@
+version=1
+title=Afraid of the Dark - Nyctophobic Trait
+description=Adds a new negative trait, nyctophobic a.k.a. afraid of the dark.
+description=Your character will quickly become panicked in dark areas, and will not be able to use the Cat Eyes positive trait.
+description=
+tags=mod
+visibility=public
