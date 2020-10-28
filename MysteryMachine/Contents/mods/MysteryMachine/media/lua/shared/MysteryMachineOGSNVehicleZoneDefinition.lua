@@ -19,6 +19,5 @@ VehicleZoneDistribution.ambulance.vehicles["Base.VanMysteryMachine"] = {index = 
 VehicleZoneDistribution.radio.vehicles["Base.VanMysteryMachine"] = {index = -1, spawnChance = 1};
 VehicleZoneDistribution.fossoil.vehicles["Base.VanMysteryMachine"] = {index = -1, spawnChance = 1};
 
-VehicleZoneDistribution.farm.vehicles["Base.VanMysteryMachine"] = {index = -1, spawnChance = 1};
 
 end
