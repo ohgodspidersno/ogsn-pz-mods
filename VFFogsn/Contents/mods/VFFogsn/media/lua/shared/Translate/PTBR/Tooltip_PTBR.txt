@@ -1,0 +1,14 @@
+Tooltip_PTBR = {
+Tooltip_CommonMallowDried = "Coma para aliviar os sintomas do resfriado e da gripe. Menos potente do que fresco. <br> Prepare como chá para restaurar a potência.",
+Tooltip_LemonGrassDried = "Coma para acalmar crises de intoxicação alimentar. Menos potente do que fresco. <br> Prepare como chá para restaurar a potência.",
+Tooltip_BlackSageDried = "Fornece um leve alívio da dor. Menos potente do que era fresco. <br> Prepare como chá para restaurar a potência.",
+Tooltip_GinsengDried = "Coma para restaurar a resistência. Menos potente do que era fresco. <br> Prepare como chá para restaurar a potência.",
+Tooltip_Tea_CommonMallow = "Beba para aliviar os sintomas de resfriado e gripe",
+Tooltip_Tea_LemonGrass = "Beba para acalmar crises de intoxicação alimentar",
+Tooltip_Tea_BlackSage = "Fornece alívio da dor leve",
+Tooltip_Tea_Ginseng = "Beba para restaurar a resistência",
+Tooltip_Tea_Medicinal = "Beba para aliviar resfriado, gripe e sintomas de intoxicação alimentar. <br> Também fornece alívio da dor.",
+Tooltip_Tea_Energizing = "Beba para combater a fadiga, sonolência e dor.",
+Tooltip_Teabag_Medicinal = "Preparar como chá para aliviar sintomas de resfriado, gripe e intoxicação alimentar. <br> Também fornece alívio da dor.",
+Tooltip_Teabag_Energizing = "Preparar como chá para combater a fadiga, sonolência e dor.",
+}

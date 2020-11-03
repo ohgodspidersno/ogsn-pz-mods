@@ -1,0 +1,5 @@
+Stash_KO = {
+Stash_AnnotedMap = " 지도 - 메모됨",
+Stash_AnnotatedMap_Prefix = " 지도 -"
+Stash_AnnotedMap_Suffix = "- 메모됨"
+}

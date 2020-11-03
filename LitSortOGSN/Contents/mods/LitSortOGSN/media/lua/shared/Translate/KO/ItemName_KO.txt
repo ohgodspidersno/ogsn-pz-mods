@@ -1,0 +1,174 @@
+ItemName_KO = {
+
+ItemName_Base.KnoxCountryMap = " 지도 - Knox Country",
+ItemName_Base.KnoxCountryMapSecret = " 지도 - Knox Country(구겨짐)",
+ItemName_Base.March_Ridge_Map = " 지도 - March Ridge",
+ItemName_Base.Muldraugh_Map = " 지도 - Muldraugh",
+ItemName_Base.Rosewood_Map = " 지도 - Rosewood",
+ItemName_Base.Westpoint_Map = " 지도 - Westpoint",
+ItemName_Base.Riverside_Map = " 지도 - Riverside",
+
+
+ItemName_Base.CrossroadsMallMap = " 지도 - Crossroads Mall",
+ItemName_Base.DixieMap = " 지도 - Dixie",
+ItemName_Base.ScenicGroveMap = " 지도 - Scenic Grove",
+ItemName_Base.BedfordMap = " 지도 - Bedfor Falls",
+
+
+ItemName_Base.BookCarpentry1 = " 목공 Vol.1: 초급",
+ItemName_Base.BookCarpentry2 = " 목공 Vol.2: 중급",
+ItemName_Base.BookCarpentry3 = " 목공 Vol.3: 상급",
+ItemName_Base.BookCarpentry4 = " 목공 Vol.4: 고급",
+ItemName_Base.BookCarpentry5 = " 목공 Vol.5: 장인",
+
+ItemName_Base.BookCooking1 = " 요리 Vol.1: 초급",
+ItemName_Base.BookCooking2 = " 요리 Vol.2: 중급",
+ItemName_Base.BookCooking3 = " 요리 Vol.3: 상급",
+ItemName_Base.BookCooking4 = " 요리 Vol.4: 고급",
+ItemName_Base.BookCooking5 = " 요리 Vol.5: 장인",
+
+ItemName_Base.BookElectrician1 = " 전기공학 Vol.1: 초급",
+ItemName_Base.BookElectrician2 = " 전기공학 Vol.2: 중급",
+ItemName_Base.BookElectrician3 = " 전기공학 Vol.3: 상급",
+ItemName_Base.BookElectrician4 = " 전기공학 Vol.4: 고급",
+ItemName_Base.BookElectrician5 = " 전기공학 Vol.5: 장인",
+
+ItemName_Base.BookFarming1 = " 농사 Vol.1: 초급",
+ItemName_Base.BookFarming2 = " 농사 Vol.2: 중급",
+ItemName_Base.BookFarming3 = " 농사 Vol.3: 상급",
+ItemName_Base.BookFarming4 = " 농사 Vol.4: 고급",
+ItemName_Base.BookFarming5 = " 농사 Vol.5: 장인",
+
+ItemName_Base.BookFishing1 = " 낚시 Vol.1: 초급",
+ItemName_Base.BookFishing2 = " 낚시 Vol.2: 중급",
+ItemName_Base.BookFishing3 = " 낚시 Vol.3: 상급",
+ItemName_Base.BookFishing4 = " 낚시 Vol.4: 고급",
+ItemName_Base.BookFishing5 = " 낚시 Vol.5: 장인",
+
+ItemName_Base.BookFirstAid1 = " 의료 Vol.1: 초급",
+ItemName_Base.BookFirstAid2 = " 의료 Vol.2: 중급",
+ItemName_Base.BookFirstAid3 = " 의료 Vol.3: 상급",
+ItemName_Base.BookFirstAid4 = " 의료 Vol.4: 고급",
+ItemName_Base.BookFirstAid5 = " 의료 Vol.5: 장인",
+
+ItemName_Base.BookForaging1 = " 채집 Vol.1: 초급",
+ItemName_Base.BookForaging2 = " 채집 Vol.2: 중급",
+ItemName_Base.BookForaging3 = " 채집 Vol.3: 상급",
+ItemName_Base.BookForaging4 = " 채집 Vol.4: 고급",
+ItemName_Base.BookForaging5 = " 채집 Vol.5: 장인",
+
+ItemName_Base.BookMechanic1 = " 차량정비 Vol.1: 초급",
+ItemName_Base.BookMechanic2 = " 차량정비 Vol.2: 중급",
+ItemName_Base.BookMechanic3 = " 차량정비 Vol.3: 상급",
+ItemName_Base.BookMechanic4 = " 차량정비 Vol.4: 고급",
+ItemName_Base.BookMechanic5 = " 차량정비 Vol.5: 장인",
+
+ItemName_Base.BookMetalWelding1 = " 금속용접 Vol.1: 초급",
+ItemName_Base.BookMetalWelding2 = " 금속용접 Vol.2: 중급",
+ItemName_Base.BookMetalWelding3 = " 금속용접 Vol.3: 상급",
+ItemName_Base.BookMetalWelding4 = " 금속용접 Vol.4: 고급",
+ItemName_Base.BookMetalWelding5 = " 금속용접 Vol.5: 장인",
+
+ItemName_Base.BookBlacksmith1 = " 대장일 Vol.1: 초급",
+ItemName_Base.BookBlacksmith2 = " 대장일 Vol.2: 중급",
+ItemName_Base.BookBlacksmith3 = " 대장일 Vol.3: 상급",
+ItemName_Base.BookBlacksmith4 = " 대장일 Vol.4: 고급",
+ItemName_Base.BookBlacksmith5 = " 대장일 Vol.5: 장인",
+
+ItemName_Base.BookTailoring1 = " 재단술 Vol.1: 초급",
+ItemName_Base.BookTailoring2 = " 재단술 Vol.2: 중급",
+ItemName_Base.BookTailoring3 = " 재단술 Vol.3: 상급",
+ItemName_Base.BookTailoring4 = " 재단술 Vol.4: 고급",
+ItemName_Base.BookTailoring5 = " 재단술 Vol.5: 장인",
+
+ItemName_Base.BookTrapping1 = " 함정 Vol.1: 초급",
+ItemName_Base.BookTrapping2 = " 함정 Vol.2: 중급",
+ItemName_Base.BookTrapping3 = " 함정 Vol.3: 상급",
+ItemName_Base.BookTrapping4 = " 함정 Vol.4: 고급",
+ItemName_Base.BookTrapping5 = " 함정 Vol.5: 장인",
+
+
+ItemName_Base.FishingMag1 = " 낚시꾼 - 미국 잡지 Vol. 1",
+ItemName_Base.FishingMag2 = " 낚시꾼 - 미국 잡지 Vol. 2",
+ItemName_Base.ElectronicsMag1 = " 전자 잡지 Vol. 1",
+ItemName_Base.ElectronicsMag2 = " 전자 잡지 Vol. 2",
+ItemName_Base.ElectronicsMag3 = " 전자 잡지 Vol. 3",
+ItemName_Base.ElectronicsMag5 = " 전자 잡지 Vol. 4",
+ItemName_Base.EngineerMagazine1 = " 기술자 잡지 Vol. 1",
+ItemName_Base.EngineerMagazine2 = " 기술자 잡지 Vol. 2",
+ItemName_FlameTrapMag.FlameTrapMagazine = " 기술자 잡지 Vol. 3",
+ItemName_Base.CookingMag1 = " 좋은 요리 잡지 Vol. 1",
+ItemName_Base.CookingMag2 = " 좋은 요리 잡지 Vol. 2",
+ItemName_Base.DairyCookingMag = " 좋은 요리 잡지 Vol. 3",
+ItemName_Radio.RadioMag1 = " 비정규 무선통신 Vol. 1",
+ItemName_Radio.RadioMag2 = " 비정규 무선통신 Vol. 2",
+ItemName_Radio.RadioMag3 = " 비정규 무선통신 Vol. 3",
+ItemName_Base.HuntingMag1 = " 사냥꾼 잡지 Vol. 1",
+ItemName_Base.HuntingMag2 = " 사냥꾼 잡지 Vol. 2",
+ItemName_Base.HuntingMag3 = " 사냥꾼 잡지 Vol. 3",
+ItemName_FMJ.LockPickingMag = " 자물쇠 제조 안내서 Vol. 1",
+ItemName_FMJ.LockPickingMag2 = " 자물쇠 제조 안내서 Vol. 2",
+ItemName_Base.MetalworkMag1 = " 금속용접 잡지 Vol. 1",
+ItemName_Base.MetalworkMag2 = " 금속용접 잡지 Vol. 2",
+ItemName_Base.MetalworkMag3 = " 금속용접 잡지 Vol. 3",
+ItemName_Base.MetalworkMag4 = " 금속용접 잡지 Vol. 4",
+ItemName_Base.SmithingMag1 = " 대장장이 잡지 Vol. 1",
+ItemName_Base.SmithingMag2 = " 대장장이 잡지 Vol. 2",
+ItemName_Base.SmithingMag3 = " 대장장이 잡지 Vol. 3",
+ItemName_Base.SmithingMag4 = " 대장장이 잡지 Vol. 4",
+
+
+ItemName_Base.FarmingMag1 = " 농사 연감",
+ItemName_Base.HerbalistMag = " 약초학 안내서",
+ItemName_Base.ElectronicsMag4 = " 발전기 사용법",
+ItemName_Base.NutritionistMag = " 영약학 안내서",
+
+
+ItemName_Base.MechanicMag1 = " Laines 차량 Vol. 1: 일반",
+ItemName_Base.MechanicMag2 = " Laines 차량 Vol. 2: 구형",
+ItemName_Base.MechanicMag3 = " Laines 차량 Vol. 3: 신형",
+
+
+ItemName_Base.Book = "책",
+ItemName_Base.Doodle = "낙서",
+ItemName_filcher.ColoringBook = "책(컬러링)",
+ItemName_Base.ComicBook = "책(만화)",
+ItemName_filcher.Crosswords = "책(십자말풀이)",
+ItemName_Base.Magazine = "책(잡지)",
+ItemName_filcher.MagazineX = "책(잡지)",
+ItemName_Base.Newspaper = "신문",
+ItemName_filcher.NotesJokes = "노트: 라임 농담",
+ItemName_filcher.Novel = "책(소설)",
+
+
+ItemName_Base.Note = "노트",
+ItemName_Base.Notebook = "노트(빈)",
+ItemName_Base.Journal = "일기장",
+ItemName_Base.SheetPaper = "종이",
+ItemName_Base.SheetPaper2 = "종이",
+
+
+ItemName_filcher.GiftCard = "기프트 카드",
+ItemName_filcher.PostcardLocal = "엽서",
+ItemName_filcher.PostcardOthers = "엽서",
+ItemName_filcher.RippedPages = "페이지(찢어짐)",
+
+}
+
+/** These are in alphabetical order **/
+/** Horizontal Tab: >	<             **/
+/** Normal Space: > <               **/
+/** En quad: > <                    **/
+/** En Space: > <                   **/
+/** Em Quad: > <                    **/
+/** Em Space: > <                   **/
+/** Thick Space: > <                **/
+/** Mid Space: > <                  **/
+/** Sixth Space: > <                **/
+/** Figure Space: > <               **/
+/** Punctuation Space: > <          **/
+/** Thin Space: > <                 **/
+/** Hair Space: > <                 **/
+/** Narrow No-Break Space: > <      **/
+/** Medium Mathematical Space: > <  **/
+/** Ideographic Space: >　<          **/

@@ -1,4 +1,8 @@
 ContextMenu_PT = {
-  ContextMenu_FoodType_Herbal = "Ervas",
-  ContextMenu_EvolvedRecipe_OatmealEvolved = "Aveia",
+ContextMenu_EvolvedRecipe_CommonMallowTeaEvolved = "Ch�",
+ContextMenu_EvolvedRecipe_LemonGrassTeaEvolved = "Ch�",
+ContextMenu_EvolvedRecipe_BlackSageTeaEvolved = "Ch�",
+ContextMenu_EvolvedRecipe_GinsengTeaEvolved = "Ch�",
+ContextMenu_EvolvedRecipe_MedicinalTeaEvolved = "Ch�",
+ContextMenu_EvolvedRecipe_EnergizingTeaEvolved = "Ch�",
 }

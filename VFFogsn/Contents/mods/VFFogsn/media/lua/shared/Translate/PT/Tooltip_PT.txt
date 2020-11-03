@@ -1,0 +1,14 @@
+Tooltip_PT = {
+Tooltip_CommonMallowDried = "Coma para aliviar os sintomas do resfriado e da gripe. Menos potente do que fresco. <br> Prepare como ch� para restaurar a pot�ncia.",
+Tooltip_LemonGrassDried = "Coma para acalmar crises de intoxica��o alimentar. Menos potente do que fresco. <br> Prepare como ch� para restaurar a pot�ncia.",
+Tooltip_BlackSageDried = "Fornece um leve al�vio da dor. Menos potente do que era fresco. <br> Prepare como ch� para restaurar a pot�ncia.",
+Tooltip_GinsengDried = "Coma para restaurar a resist�ncia. Menos potente do que era fresco. <br> Prepare como ch� para restaurar a pot�ncia.",
+Tooltip_Tea_CommonMallow = "Beba para aliviar os sintomas de resfriado e gripe",
+Tooltip_Tea_LemonGrass = "Beba para acalmar crises de intoxica��o alimentar",
+Tooltip_Tea_BlackSage = "Fornece al�vio da dor leve",
+Tooltip_Tea_Ginseng = "Beba para restaurar a resist�ncia",
+Tooltip_Tea_Medicinal = "Beba para aliviar resfriado, gripe e sintomas de intoxica��o alimentar. <br> Tamb�m fornece al�vio da dor.",
+Tooltip_Tea_Energizing = "Beba para combater a fadiga, sonol�ncia e dor.",
+Tooltip_Teabag_Medicinal = "Preparar como ch� para aliviar sintomas de resfriado, gripe e intoxica��o alimentar. <br> Tamb�m fornece al�vio da dor.",
+Tooltip_Teabag_Energizing = "Preparar como ch� para combater a fadiga, sonol�ncia e dor.",
+}

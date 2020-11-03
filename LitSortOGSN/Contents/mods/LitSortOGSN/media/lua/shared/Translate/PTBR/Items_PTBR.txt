@@ -1,7 +1,7 @@
 Items_PTBR = {
 /************** MAPS **************/
 DisplayName_Knox_Country_Map = " Mapa do Pais Knox",
-DisplayName_Crumpled_Map = " Mapa do Knox Country (Enrugado)",
+DisplayName_Crumpled_Map = " Mapa do Pais Knox (Amassado)",
 DisplayName_March_Ridge_Map = " Mapa de March Ridge",
 DisplayName_Muldraugh_Map = " Mapa de Muldraugh",
 DisplayName_Rosewood_Map = " Mapa de Rosewood",

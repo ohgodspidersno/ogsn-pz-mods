@@ -1,0 +1,14 @@
+Items_KO = {
+DisplayName_Knox_Country_Map = " 지도 - Knox Country",
+DisplayName_Crumpled_Map = " 지도 - Knox Country(구겨짐)",
+DisplayName_March_Ridge_Map = " 지도 - March Ridge",
+DisplayName_Muldraugh_Map = " 지도 - Muldraugh",
+DisplayName_Rosewood_Map = " 지도 - Rosewood",
+DisplayName_Westpoint_Map = " 지도 - Westpoint",
+DisplayName_Riverside_Map = " 지도 - Riverside",
+
+DisplayName_Crossroads_Mall_Map = " 지도 - Crossroads Mall",
+DisplayName_Dixie_Map = " 지도 - Dixie",
+DisplayName_Scenic_Grove_Map = " 지도 - Scenic Grove",
+DisplayName_Bedford_Falls_Map = " 지도 - Bedford Falls",
+}

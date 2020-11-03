@@ -1,0 +1,173 @@
+ItemName_PL = {
+
+
+ItemName_Base.KnoxCountryMap = " Mapa Knox Country",
+ItemName_Base.KnoxCountryMapSecret = " Mapa Knox Country (Pogniecona)",
+ItemName_Base.March_Ridge_Map = " Mapa March Ridge",
+ItemName_Base.Muldraugh_Map = " Mapa Muldraugh",
+ItemName_Base.Rosewood_Map = " Mapa Rosewood",
+ItemName_Base.Westpoint_Map = " Mapa Westpoint",
+ItemName_Base.Riverside_Map = " Mapa Riverside",
+
+
+ItemName_Base.CrossroadsMallMap = " Mapa Crossroads Mall",
+ItemName_Base.DixieMap = " Mapa Dixie",
+ItemName_Base.ScenicGroveMap = " Mapa Scenic Grove",
+
+
+ItemName_Base.BookCarpentry1 = " Stolarstwo Vol.1: Dla glupkow",
+ItemName_Base.BookCarpentry2 = " Stolarstwo Vol.2: Sredni",
+ItemName_Base.BookCarpentry3 = " Stolarstwo Vol.3: Zaawansowany",
+ItemName_Base.BookCarpentry4 = " Stolarstwo Vol.4: Ekspert",
+ItemName_Base.BookCarpentry5 = " Stolarstwo Vol.5: Mistrz",
+
+ItemName_Base.BookCooking1 = " Gotowanie Vol.1: Dla glupkow",
+ItemName_Base.BookCooking2 = " Gotowanie Vol.2: Sredni",
+ItemName_Base.BookCooking3 = " Gotowanie Vol.3: Zaawansowany",
+ItemName_Base.BookCooking4 = " Gotowanie Vol.4: Ekspert",
+ItemName_Base.BookCooking5 = " Gotowanie Vol.5: Mistrz",
+
+ItemName_Base.BookElectrician1 = " Elektryka Vol.1: Dla glupkow",
+ItemName_Base.BookElectrician2 = " Elektryka Vol.2: Sredni",
+ItemName_Base.BookElectrician3 = " Elektryka Vol.3: Zaawansowany",
+ItemName_Base.BookElectrician4 = " Elektryka Vol.4: Ekspert",
+ItemName_Base.BookElectrician5 = " Elektryka Vol.5: Mistrz",
+
+ItemName_Base.BookFarming1 = " Rolnictwo Vol.1: Dla glupkow",
+ItemName_Base.BookFarming2 = " Rolnictwo Vol.2: Sredni",
+ItemName_Base.BookFarming3 = " Rolnictwo Vol.3: Zaawansowany",
+ItemName_Base.BookFarming4 = " Rolnictwo Vol.4: Ekspert",
+ItemName_Base.BookFarming5 = " Rolnictwo Vol.5: Mistrz",
+
+ItemName_Base.BookFishing1 = " Rybactwo Vol.1: Dla glupkow",
+ItemName_Base.BookFishing2 = " Rybactwo Vol.2: Sredni",
+ItemName_Base.BookFishing3 = " Rybactwo Vol.3: Zaawansowany",
+ItemName_Base.BookFishing4 = " Rybactwo Vol.4: Ekspert",
+ItemName_Base.BookFishing5 = " Rybactwo Vol.5: Mistrz",
+
+ItemName_Base.BookFirstAid1 = " Pierwsza pomoc Vol.1: Dla glupkow",
+ItemName_Base.BookFirstAid2 = " Pierwsza pomoc Vol.2: Sredni",
+ItemName_Base.BookFirstAid3 = " Pierwsza pomoc Vol.3: Zaawansowany",
+ItemName_Base.BookFirstAid4 = " Pierwsza pomoc Vol.4: Ekspert",
+ItemName_Base.BookFirstAid5 = " Pierwsza pomoc Vol.5: Mistrz",
+
+ItemName_Base.BookForaging1 = " Zbieractwo Vol.1: Dla glupkow",
+ItemName_Base.BookForaging2 = " Zbieractwo Vol.2: Sredni",
+ItemName_Base.BookForaging3 = " Zbieractwo Vol.3: Zaawansowany",
+ItemName_Base.BookForaging4 = " Zbieractwo Vol.4: Ekspert",
+ItemName_Base.BookForaging5 = " Zbieractwo Vol.5: Mistrz",
+
+ItemName_Base.BookMechanic1 = " Mechanika Vol.1: Dla glupkow",
+ItemName_Base.BookMechanic2 = " Mechanika Vol.2: Sredni",
+ItemName_Base.BookMechanic3 = " Mechanika Vol.3: Zaawansowany",
+ItemName_Base.BookMechanic4 = " Mechanika Vol.4: Ekspert",
+ItemName_Base.BookMechanic5 = " Mechanika Vol.5: Mistrz",
+
+ItemName_Base.BookMetalWelding1 = " Praca z metalu Vol.1: Dla glupkow",
+ItemName_Base.BookMetalWelding2 = " Praca z metalu Vol.2: Sredni",
+ItemName_Base.BookMetalWelding3 = " Praca z metalu Vol.3: Zaawansowany",
+ItemName_Base.BookMetalWelding4 = " Praca z metalu Vol.4: Ekspert",
+ItemName_Base.BookMetalWelding5 = " Praca z metalu Vol.5: Mistrz",
+
+ItemName_Base.BookBlacksmith1 = " Spawanie Vol.1: Dla glupkow",
+ItemName_Base.BookBlacksmith2 = " Spawanie Vol.2: Sredni",
+ItemName_Base.BookBlacksmith3 = " Spawanie Vol.3: Zaawansowany",
+ItemName_Base.BookBlacksmith4 = " Spawanie Vol.4: Ekspert",
+ItemName_Base.BookBlacksmith5 = " Spawanie Vol.5: Mistrz",
+
+ItemName_Base.BookTailoring1 = " Krawiectwo Vol.1: Dla glupkow",
+ItemName_Base.BookTailoring2 = " Krawiectwo Vol.2: Sredni",
+ItemName_Base.BookTailoring3 = " Krawiectwo Vol.3: Zaawansowany",
+ItemName_Base.BookTailoring4 = " Krawiectwo Vol.4: Ekspert",
+ItemName_Base.BookTailoring5 = " Krawiectwo Vol.5: Mistrz",
+
+ItemName_Base.BookTrapping1 = " Pulapki Vol.1: Dla glupkow",
+ItemName_Base.BookTrapping2 = " Pulapki Vol.2: Sredni",
+ItemName_Base.BookTrapping3 = " Pulapki Vol.3: Zaawansowany",
+ItemName_Base.BookTrapping4 = " Pulapki Vol.4: Ekspert",
+ItemName_Base.BookTrapping5 = " Pulapki Vol.5: Mistrz",
+
+
+ItemName_Base.FishingMag1 = " Wedkarz USA Magazyn Vol. 1",
+ItemName_Base.FishingMag2 = " Wedkarz USA Magazyn Vol. 2",
+ItemName_Base.ElectronicsMag1 = " Magazyn o elektryce Vol. 1",
+ItemName_Base.ElectronicsMag2 = " Magazyn o elektryce Vol. 2",
+ItemName_Base.ElectronicsMag3 = " Magazyn o elektryce Vol. 3",
+ItemName_Base.ElectronicsMag5 = " Magazyn o elektryce Vol. 4",
+ItemName_Base.EngineerMagazine1 = " Magazyn o inzynierii Vol. 1",
+ItemName_Base.EngineerMagazine2 = " Magazyn o inzynierii Vol. 2",
+ItemName_FlameTrapMag.FlameTrapMagazine = " Magazyn o inzynierii Vol. 3",
+ItemName_Base.CookingMag1 = " Magazyn Dobre Gotowanie Vol. 1",
+ItemName_Base.CookingMag2 = " Magazyn Dobre Gotowanie Vol. 2",
+ItemName_Base.DairyCookingMag = " Magazyn Dobre Gotowanie Vol. 3",
+ItemName_Radio.RadioMag1 = " Partyzantskie Radio Vol. 1",
+ItemName_Radio.RadioMag2 = " Partyzantskie Radio Vol. 2",
+ItemName_Radio.RadioMag3 = " Partyzantskie Radio Vol. 3",
+ItemName_Base.HuntingMag1 = " Magazyn o polowaniu Vol. 1",
+ItemName_Base.HuntingMag2 = " Magazyn o polowaniu Vol. 2",
+ItemName_Base.HuntingMag3 = " Magazyn o polowaniu Vol. 3",
+ItemName_FMJ.LockPickingMag = " Podrecznik slusarza Vol. 1",
+ItemName_FMJ.LockPickingMag2 = " Podrecznik slusarza Vol. 2",
+ItemName_Base.MetalworkMag1 = " Magazyn o pracy z metalem Vol. 1",
+ItemName_Base.MetalworkMag2 = " Magazyn o pracy z metalem Vol. 2",
+ItemName_Base.MetalworkMag3 = " Magazyn o pracy z metalem Vol. 3",
+ItemName_Base.MetalworkMag4 = " Magazyn o pracy z metalem Vol. 4",
+ItemName_Base.SmithingMag1 = " Magazyn o spawaniu Vol. 1",
+ItemName_Base.SmithingMag2 = " Magazyn o spawaniu Vol. 2",
+ItemName_Base.SmithingMag3 = " Magazyn o spawaniu Vol. 3",
+ItemName_Base.SmithingMag4 = " Magazyn o spawaniu Vol. 4",
+
+
+ItemName_Base.FarmingMag1 = " Farmerski Almanach",
+ItemName_Base.HerbalistMag = " Poradnik zielarza",
+ItemName_Base.ElectronicsMag4 = " Jak uzywac generatorow",
+ItemName_Base.NutritionistMag = " Podrecznik dietetyka",
+
+
+ItemName_Base.MechanicMag1 = " Laines Auto Vol. 1: Podstawowe modele",
+ItemName_Base.MechanicMag2 = " Laines Auto Vol. 2: Reklamowe modele",
+ItemName_Base.MechanicMag3 = " Laines Auto Vol. 3: Wydajne modele.",
+
+
+ItemName_Base.Book = " Ksiazka",
+ItemName_Base.Doodle = " Bazgraj",
+ItemName_filcher.ColoringBook = " Kolorowanka",
+ItemName_Base.ComicBook = " Komiks",
+ItemName_filcher.Crosswords = " Krzyzowka",
+ItemName_Base.Magazine = " Magazyn",
+ItemName_filcher.MagazineX = " Magazyn",
+ItemName_Base.Newspaper = " Gazeta",
+ItemName_filcher.NotesJokes = " Notatki o rymujacych sie zartach",
+ItemName_filcher.Novel = " Nowela",
+
+
+ItemName_Base.Note = " Notatka",
+ItemName_Base.Notebook = " Pusty podrecznik",
+ItemName_Base.Journal = " Dziennik",
+ItemName_Base.SheetPaper = " Kawalek papieru",
+ItemName_Base.SheetPaper2 = " Kawalek papieru",
+
+
+ItemName_filcher.GiftCard = " Karta podarunkowa",
+ItemName_filcher.PostcardLocal = " Pocztowka",
+ItemName_filcher.PostcardOthers = " Pocztowka",
+ItemName_filcher.RippedPages = " Podarte strony",
+}
+
+/** These are in alphabetical order **/
+/** Horizontal Tab: >	<             **/
+/** Normal Space: > <               **/
+/** En quad: > <                    **/
+/** En Space: > <                   **/
+/** Em Quad: > <                    **/
+/** Em Space: > <                   **/
+/** Thick Space: > <                **/
+/** Mid Space: > <                  **/
+/** Sixth Space: > <                **/
+/** Figure Space: > <               **/
+/** Punctuation Space: > <          **/
+/** Thin Space: > <                 **/
+/** Hair Space: > <                 **/
+/** Narrow No-Break Space: > <      **/
+/** Medium Mathematical Space: > <  **/
+/** Ideographic Space: >　<          **/

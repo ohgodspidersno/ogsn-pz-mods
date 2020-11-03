@@ -1,5 +1,5 @@
 IGUI_PTBR = {
-IGUI_PlayerText_FlaggedBook1 = "Eu vou me lembrar disso.",
-IGUI_PlayerText_FlaggedBook2 = "Vou ter certeza que ja vi.",
-IGUI_PlayerText_FlaggedBook3 = "Eu escrevi isso.",
+IGUI_PlayerText_FlaggedBook1 = "Vou acompanhar isso.",
+IGUI_PlayerText_FlaggedBook2 = "Vou me lembrar de que já vi este antes.",
+IGUI_PlayerText_FlaggedBook3 = "Anotei isso.",
 }

@@ -1,0 +1,5 @@
+IGUI_KO = {
+IGUI_PlayerText_FlaggedBook1 = "이걸 기록할거야.",
+IGUI_PlayerText_FlaggedBook2 = "이것을 이전에 봤다는 걸 기억할거야.",
+IGUI_PlayerText_FlaggedBook3 = "이걸 기록했어.",
+}

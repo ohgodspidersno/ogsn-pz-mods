@@ -1,6 +1,6 @@
 ItemName_DE = {
 ItemName_FMJ.BobbyPin = "Haarnadel",
 ItemName_FMJ.BobbyPinRaw = "Haarnadel roh",
-ItemName_FMJ.LockPickingMag = "SchlÃ¶sserknacken Band 1",
-ItemName_FMJ.LockPickingMag2 = "SchlÃ¶sserknacken Band 2",
+ItemName_FMJ.LockPickingMag = "Schlösserknacken Band 1",
+ItemName_FMJ.LockPickingMag2 = "Schlösserknacken Band 2",
 }

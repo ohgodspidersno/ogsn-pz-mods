@@ -1,0 +1,16 @@
+Recipes_PTBR = {
+Recipe_Create_Medicinal_Tea_Blend = "Criar Mistura de Chá Medicinal",
+Recipe_Create_Energizing_Tea_Blend = "Criar Mistura Energizante de Chá",
+Recipe_Brew_Cup_of_Common_Mallow_Tea = "Chávena de chá de malva comum",
+Recipe_Brew_Cup_of_Lemon_Grass_Tea = "Chávena de chá de capim-limão",
+Recipe_Brew_Cup_of_Black_Sage_Tea = "Copo de chá de sálvia preta",
+Recipe_Brew_Cup_of_Ginseng_Tea = "Chávena de chá de Ginseng",
+Recipe_Brew_Cup_of_Medicinal_Blended_Tea = "Copo de Chá Medicinal Misturado",
+Recipe_Brew_Cup_of_Energizing_Blended_Tea = "Copo de Chá Energizante Misturado",
+Recipe_Make_2_Bowls_of_Stir_Fry = "Faça 2 tigelas de Stir Fry",
+Recipe_Make_4_Bowls_of_Stir_Fry = "Faça 4 tigelas de refogado",
+Recipe_Make_2_Bowls_of_Stir_Fry = "Faça 2 tigelas de Stir Fry",
+Recipe_Make_4_Bowls_of_Stir_Fry = "Faça 4 tigelas de refogado",
+Recipe_Make_2_Bowls_of_Roasted_Vegetables = "Faça 2 tigelas de vegetais assados",
+Recipe_Make_4_Bowls_of_Roasted_Vegetables = "Faça 4 tigelas de vegetais assados",
+}

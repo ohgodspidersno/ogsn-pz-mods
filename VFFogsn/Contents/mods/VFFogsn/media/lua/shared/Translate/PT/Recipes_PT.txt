@@ -1,0 +1,16 @@
+Recipes_PT = {
+Recipe_Create_Medicinal_Tea_Blend = "Criar Mistura de Ch� Medicinal",
+Recipe_Create_Energizing_Tea_Blend = "Criar Mistura Energizante de Ch�",
+Recipe_Brew_Cup_of_Common_Mallow_Tea = "Ch�vena de ch� de malva comum",
+Recipe_Brew_Cup_of_Lemon_Grass_Tea = "Ch�vena de ch� de capim-lim�o",
+Recipe_Brew_Cup_of_Black_Sage_Tea = "Copo de ch� de s�lvia preta",
+Recipe_Brew_Cup_of_Ginseng_Tea = "Ch�vena de ch� de Ginseng",
+Recipe_Brew_Cup_of_Medicinal_Blended_Tea = "Copo de Ch� Medicinal Misturado",
+Recipe_Brew_Cup_of_Energizing_Blended_Tea = "Copo de Ch� Energizante Misturado",
+Recipe_Make_2_Bowls_of_Stir_Fry = "Fa�a 2 tigelas de Stir Fry",
+Recipe_Make_4_Bowls_of_Stir_Fry = "Fa�a 4 tigelas de refogado",
+Recipe_Make_2_Bowls_of_Stir_Fry = "Fa�a 2 tigelas de Stir Fry",
+Recipe_Make_4_Bowls_of_Stir_Fry = "Fa�a 4 tigelas de refogado",
+Recipe_Make_2_Bowls_of_Roasted_Vegetables = "Fa�a 2 tigelas de vegetais assados",
+Recipe_Make_4_Bowls_of_Roasted_Vegetables = "Fa�a 4 tigelas de vegetais assados",
+}
