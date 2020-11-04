@@ -10,7 +10,6 @@ module FMJ
 		Result: BobbyPin= 1,
 		Time: 50.0,
 		Category: Survivalist,
-		OnCreate: putInBox_OnCreate,
 		NeedToBeLearn: true,
 	}
 	recipe Create Lockpick
@@ -20,7 +19,6 @@ module FMJ
 		Result: BobbyPin= 1,
 		Time: 50.0,
 		Category: Survivalist,
-		OnCreate: putInBox_OnCreate,
 		NeedToBeLearn: true,
 	}
 }
