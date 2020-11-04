@@ -1,3 +1,10 @@
+-- Events.EveryTenMinutes.Add(NakedAndAfraid.EveryTenMinutes);
+-- NakedAndAfraid.EveryTenMinutes = function()
+-- 	if pillowmod.brutalstart
+-- 		then NakedAndAfraid.BuildingAlarmCheck();
+-- 	else end
+-- end -- every 10 mins
+
 --  pl:getStats():setPanic(100); -- 0 to 100
 -- if not player:HasTrait(trait) then break end
 -- local c = clim:getClimateColor(COLOR_GLOBAL_LIGHT):getAdminValue():getInterior();
