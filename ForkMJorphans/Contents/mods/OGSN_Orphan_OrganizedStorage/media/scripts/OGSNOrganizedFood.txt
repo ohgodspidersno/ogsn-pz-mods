@@ -314,8 +314,16 @@ module GidOrganizedFood
 	recipe Unpack 4 Instant Coffee Mix
 	{
 		OS4pkCoffee,
-
 		Result:Coffee2=4,
+		Time:60.0,
+		Category:Storage,
+		OnGiveXP:NoXP_OnGiveXP,
+	}
+
+	recipe Pack 4 Instant Coffee Mix
+	{
+		Coffee2=4,
+		Result:OS4pkCoffee,
 		Time:60.0,
 		Category:Storage,
 		OnGiveXP:NoXP_OnGiveXP,
