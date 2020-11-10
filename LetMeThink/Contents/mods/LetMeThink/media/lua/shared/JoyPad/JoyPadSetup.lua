@@ -168,6 +168,10 @@ function onJoypadPressButton(joypadIndex, joypadData, button)
     return
   end
 
+  if not joypadData.activeWhilePaused and button ~= Joypad.Start and button ~= Joypad.Back then
+    return;
+  end
+
   if joypadData.player and getCell() and getCell():getDrag(joypadData.player) then
     getCell():getDrag(joypadData.player):onJoypadPressButton(joypadIndex, joypadData, button);
     return;
