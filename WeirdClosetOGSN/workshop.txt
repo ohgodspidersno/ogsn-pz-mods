@@ -1,6 +1,6 @@
 version=1
 id=2215782660
-title=Deeply Closeted - More Vanilla Clothing Options
+title=Deeply Closeted - More Vanilla Clothing Options [41.45]
 description=[h1]An Extra Set of Options[/h1]
 description=Adds additional, vanilla-friendly options to some clothing items.
 description=Gives color pickers to clothing items that already "should" have one, like Long Gloves.
@@ -28,6 +28,6 @@ description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
 description=
-description=Tags:B41,B40,Textures,Clothing,Tweak
-tags=Build 41;Build 40;Textures;Clothing;Tweak
+description=Tags:B41,Textures,Clothing,Tweak
+tags=Build 41;Textures;Clothing;Tweak
 visibility=public
