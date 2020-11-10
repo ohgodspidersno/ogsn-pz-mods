@@ -62,7 +62,7 @@ Chinese (CH) – Big-5
 Czech (CS), Polish (PL) – Windows-1250
 Russian (RU) – Windows-1251
 Turkish(TR) - Windows-1254
-Korean (KO) - UTF-16 LE
+Korean (KO) - UTF-16 BE
 
 --------------------
 

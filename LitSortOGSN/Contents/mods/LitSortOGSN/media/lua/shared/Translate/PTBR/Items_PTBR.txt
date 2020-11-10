@@ -10,7 +10,7 @@ DisplayName_Riverside_Map = " Mapa de Riverside",
 
 /**** IMPROVED MAPS MOD ****/
 DisplayName_Crossroads_Mall_Map = " Mapa de Crossroads Mall",
-DisplayName_Dixie_Map = " Mapa de Dixie"
+DisplayName_Dixie_Map = " Mapa de Dixie",
 DisplayName_Scenic_Grove_Map = " Mapa de Scenic Grove",
 DisplayName_Bedford_Falls_Map = " Mapa de Bedford Falls",
 }

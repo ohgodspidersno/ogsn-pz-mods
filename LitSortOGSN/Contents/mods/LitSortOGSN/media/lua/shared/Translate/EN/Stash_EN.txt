@@ -1,5 +1,5 @@
 Stash_EN = {
     Stash_AnnotedMap = " Map - Annotated",
-    Stash_AnnotatedMap_Prefix = " Map of"
-    Stash_AnnotedMap_Suffix = "- Annotated"
+    Stash_AnnotatedMap_Prefix = " Map of",
+    Stash_AnnotedMap_Suffix = "- Annotated",
 }

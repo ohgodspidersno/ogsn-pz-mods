@@ -1,5 +1,5 @@
 Stash_PTBR = {
 Stash_AnnotedMap = " Map - Anotado",
-Stash_AnnotatedMap_Prefix = " Mapa de"
-Stash_AnnotedMap_Suffix = "- Anotado"
+Stash_AnnotatedMap_Prefix = " Mapa de",
+Stash_AnnotedMap_Suffix = "- Anotado",
 }
