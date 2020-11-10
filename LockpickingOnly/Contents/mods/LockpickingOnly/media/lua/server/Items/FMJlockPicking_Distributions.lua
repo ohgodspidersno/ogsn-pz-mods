@@ -80,10 +80,10 @@ table.insert(SuburbsDistributions["cornerstore"]["shelvesmag"].items, "FMJ.LockP
 table.insert(SuburbsDistributions["cornerstore"]["shelvesmag"].items, 0.2);
 table.insert(SuburbsDistributions["cornerstore"]["shelvesmag"].items, "FMJ.LockPickingMag2");
 table.insert(SuburbsDistributions["cornerstore"]["shelvesmag"].items, 0.2);
-table.insert(SuburbsDistributions["camping"]["all"].items, "FMJ.LockPickingMag");
-table.insert(SuburbsDistributions["camping"]["all"].items, 0.2);
-table.insert(SuburbsDistributions["camping"]["all"].items, "FMJ.LockPickingMag2");
-table.insert(SuburbsDistributions["camping"]["all"].items, 0.2);
+table.insert(SuburbsDistributions["camping"]["shelves"].items, "FMJ.LockPickingMag");
+table.insert(SuburbsDistributions["camping"]["shelves"].items, 0.2);
+table.insert(SuburbsDistributions["camping"]["shelves"].items, "FMJ.LockPickingMag2");
+table.insert(SuburbsDistributions["camping"]["shelves"].items, 0.2);
 table.insert(SuburbsDistributions["Bag_InmateEscapedBag"].items, "FMJ.LockPickingMag");
 table.insert(SuburbsDistributions["Bag_InmateEscapedBag"].items, 3);
 table.insert(SuburbsDistributions["Bag_InmateEscapedBag"].items, "FMJ.LockPickingMag2");
