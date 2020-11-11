@@ -1,4 +1,4 @@
 Recipes_RU = {
-Recipe_Create_Hairpin = "Сделать отмычку",
-Recipe_Create_Lockpick = "Cделать отмычку",
+	Recipe_Create_Hairpin = "Сделать шпильку",
+	Recipe_Create_Lockpick = "Сделать отмычку",
 }

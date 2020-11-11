@@ -1,7 +1,7 @@
 /* Russian translation provided by Steam player, York */
 ItemName_RU = {
-  ItemName_FMJ.BobbyPin = "Отмычка",
-  ItemName_FMJ.BobbyPinRaw = "Шпилька",
-  ItemName_FMJ.LockPickingMag = "Журнал взломщика Vol. 1",
-  ItemName_FMJ.LockPickingMag2 = "Журнал взломщика Vol. 2",
+	ItemName_FMJ.BobbyPin = "Отмычка",
+	ItemName_FMJ.BobbyPinRaw = "Шпилька",
+	ItemName_FMJ.LockPickingMag = "Журнал взломщика Том. 1",
+	ItemName_FMJ.LockPickingMag2 = "Журнал взломщика Том. 2",
 }
