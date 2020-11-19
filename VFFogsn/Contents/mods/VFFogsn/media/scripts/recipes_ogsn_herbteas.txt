@@ -5,7 +5,7 @@ module Base {
       destroy CommonMallow/CommonMallowDried,
 
       Time:30.0,
-      OnGiveXP:Give1CookingXP,
+      OnGiveXP:Recipe.OnGiveXP.Cooking1,
       CanBeDoneFromFloor:true,
       Category:Cooking,
       Result:Tea_CommonMallow,
@@ -17,7 +17,7 @@ module Base {
       destroy LemonGrass/LemonGrassDried,
 
       Time:30.0,
-      OnGiveXP:Give1CookingXP,
+      OnGiveXP:Recipe.OnGiveXP.Cooking1,
       CanBeDoneFromFloor:true,
       Category:Cooking,
       Result:Tea_LemonGrass,
@@ -29,7 +29,7 @@ module Base {
       destroy BlackSage/BlackSageDried,
 
       Time:30.0,
-      OnGiveXP:Give1CookingXP,
+      OnGiveXP:Recipe.OnGiveXP.Cooking1,
       CanBeDoneFromFloor:true,
       Category:Cooking,
       Result:Tea_BlackSage,
@@ -41,7 +41,7 @@ module Base {
       destroy Ginseng/GinsengDried,
 
       Time:30.0,
-      OnGiveXP:Give1CookingXP,
+      OnGiveXP:Recipe.OnGiveXP.Cooking1,
       CanBeDoneFromFloor:true,
       Category:Cooking,
       Result:Tea_Ginseng,
@@ -53,7 +53,7 @@ module Base {
       destroy Teabag_Medicinal/Teabag_MedicinalDried,
 
       Time:30.0,
-      OnGiveXP:Give1CookingXP,
+      OnGiveXP:Recipe.OnGiveXP.Cooking1,
       CanBeDoneFromFloor:true,
       Category:Cooking,
       Result:Tea_Medicinal,
@@ -65,7 +65,7 @@ module Base {
       destroy Teabag_Energizing/Teabag_EnergizingDried,
 
       Time:30.0,
-      OnGiveXP:Give1CookingXP,
+      OnGiveXP:Recipe.OnGiveXP.Cooking1,
       CanBeDoneFromFloor:true,
       Category:Cooking,
       Result:Tea_Energizing,
