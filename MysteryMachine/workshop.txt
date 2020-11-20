@@ -4,6 +4,8 @@ title=Scooby Doo Mystery Machine
 description=Zoinks! Like, I'm totally a zombie, Scoobs! Ruh roh!
 description=Van art created by gflewis2018, mod coding by Oh God Spiders No
 description=
+description=If  you want to spawn it manually, the internal id name of the car is [code]Base.VanMysterymachine[/code]
+description=
 description=[h1]If you enjoy this mod please like and favorite[/h1]
 description=[b]Fake internet points are easy to give, totally free, and I enjoy them immensely![/b]
 description=
@@ -12,5 +14,7 @@ description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
 description=
 description=Tags:B41,B40,Textures,Cars,Vehicles
+description=Workshop ID: 2074510647
+description=Mod ID: MysteryMachineOGSN
 tags=Build 41;Build 40;Textures;Vehicles
 visibility=public
