@@ -29,4 +29,7 @@ UI_ClothingType_Right_MiddleFinger = "Dedo médio direito",
 UI_ClothingType_LeftWrist = "Pulso esquerdo",
 UI_ClothingType_Left_RingFinger = "Dedo anular esquerdo",
 UI_ClothingType_Left_MiddleFinger = "Dedo médio esquerdo",
+UI_ClothingType_LeftEye = "Olho esquerdo",
+UI_ClothingType_RightEye = "Olho direito",
+UI_ClothingType_AmmoStrap = "Correia de munição",
 }

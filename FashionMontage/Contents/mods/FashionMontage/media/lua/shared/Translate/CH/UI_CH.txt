@@ -29,4 +29,7 @@ UI_ClothingType_Right_MiddleFinger = "右中指",
 UI_ClothingType_LeftWrist = "左手腕",
 UI_ClothingType_Left_RingFinger = "左無名指",
 UI_ClothingType_Left_MiddleFinger = "左中指",
+UI_ClothingType_LeftEye = "左眼",
+UI_ClothingType_RightEye = "右眼",
+UI_ClothingType_AmmoStrap = "彈藥帶",
 }

@@ -29,4 +29,7 @@ UI_ClothingType_Right_MiddleFinger = "Right Middle Finger",
 UI_ClothingType_LeftWrist = "Left Wrist",
 UI_ClothingType_Left_RingFinger = "Left Ring Finger",
 UI_ClothingType_Left_MiddleFinger = "Left Middle Finger",
+UI_ClothingType_LeftEye = "Left Eye",
+UI_ClothingType_RightEye = "Right Eye",
+UI_ClothingType_AmmoStrap = "Ammo Strap",
 }

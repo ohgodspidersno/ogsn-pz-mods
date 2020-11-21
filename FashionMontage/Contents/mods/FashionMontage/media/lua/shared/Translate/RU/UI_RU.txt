@@ -29,4 +29,7 @@ UI_ClothingType_Right_MiddleFinger = "Правый средний палец",
 UI_ClothingType_LeftWrist = "Левое запястье",
 UI_ClothingType_Left_RingFinger = "Левый безымянный палец",
 UI_ClothingType_Left_MiddleFinger = "Левый средний палец",
+UI_ClothingType_LeftEye = "Левый глаз",
+UI_ClothingType_RightEye = "Правый глаз",
+UI_ClothingType_AmmoStrap = "Ремешок для боеприпасов",
 }

@@ -66,12 +66,30 @@ ClothingSelectionDefinitions.default.Male.Eyes.chance = 20
 ClothingSelectionDefinitions.default.Female.Eyes = {}
 ClothingSelectionDefinitions.default.Female.Eyes.items = {}
 ClothingSelectionDefinitions.default.Female.Eyes.chance = 20
+ClothingSelectionDefinitions.default.Male.LeftEye = {}
+ClothingSelectionDefinitions.default.Male.LeftEye.items = {}
+ClothingSelectionDefinitions.default.Male.LeftEye.chance = 20
+ClothingSelectionDefinitions.default.Female.LeftEye = {}
+ClothingSelectionDefinitions.default.Female.LeftEye.items = {}
+ClothingSelectionDefinitions.default.Female.LeftEye.chance = 20
+ClothingSelectionDefinitions.default.Male.RightEye = {}
+ClothingSelectionDefinitions.default.Male.RightEye.items = {}
+ClothingSelectionDefinitions.default.Male.RightEye.chance = 20
+ClothingSelectionDefinitions.default.Female.RightEye = {}
+ClothingSelectionDefinitions.default.Female.RightEye.items = {}
+ClothingSelectionDefinitions.default.Female.RightEye.chance = 20
 ClothingSelectionDefinitions.default.Male.BeltExtra = {}
 ClothingSelectionDefinitions.default.Male.BeltExtra.items = {}
 ClothingSelectionDefinitions.default.Male.BeltExtra.chance = 0
 ClothingSelectionDefinitions.default.Female.BeltExtra = {}
 ClothingSelectionDefinitions.default.Female.BeltExtra.items = {}
 ClothingSelectionDefinitions.default.Female.BeltExtra.chance = 0
+ClothingSelectionDefinitions.default.Male.AmmoStrap = {}
+ClothingSelectionDefinitions.default.Male.AmmoStrap.items = {}
+ClothingSelectionDefinitions.default.Male.AmmoStrap.chance = 0
+ClothingSelectionDefinitions.default.Female.AmmoStrap = {}
+ClothingSelectionDefinitions.default.Female.AmmoStrap.items = {}
+ClothingSelectionDefinitions.default.Female.AmmoStrap.chance = 0
 ClothingSelectionDefinitions.default.Male.Mask = {}
 ClothingSelectionDefinitions.default.Male.Mask.items = {}
 ClothingSelectionDefinitions.default.Male.Mask.chance = 20
@@ -365,11 +383,33 @@ local function addClothing(clothingLists)
       merge_Old_New(maleItems,clothingLists.listEyes);
       merge_Old_New(femaleItems,clothingLists.listEyes);
     end
+
+    if clothingLists.listLeftEye then
+      local maleItems = maleTable.LeftEye.items;
+      local femaleItems = femaleTable.LeftEye.items;
+      merge_Old_New(maleItems,clothingLists.listLeftEye);
+      merge_Old_New(femaleItems,clothingLists.listLeftEye);
+    end
+
+
+    if clothingLists.listRightEye then
+      local maleItems = maleTable.RightEye.items;
+      local femaleItems = femaleTable.RightEye.items;
+      merge_Old_New(maleItems,clothingLists.listRightEye);
+      merge_Old_New(femaleItems,clothingLists.listRightEye);
+    end
+
     if clothingLists.listBeltExtra then
       local maleItems = maleTable.BeltExtra.items;
       local femaleItems = femaleTable.BeltExtra.items;
       merge_Old_New(maleItems,clothingLists.listBeltExtra);
       merge_Old_New(femaleItems,clothingLists.listBeltExtra);
+    end
+    if clothingLists.listAmmoStrap then
+      local maleItems = maleTable.AmmoStrap.items;
+      local femaleItems = femaleTable.AmmoStrap.items;
+      merge_Old_New(maleItems,clothingLists.listAmmoStrap);
+      merge_Old_New(femaleItems,clothingLists.listAmmoStrap);
     end
     if clothingLists.listMask then
       local maleItems = maleTable.Mask.items;

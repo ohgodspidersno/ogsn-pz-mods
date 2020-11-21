@@ -50,6 +50,7 @@ TweakItem("Base.Hat_JockeyHelmet04","DisplayName","Helmet - Jockey #4");
 TweakItem("Base.Hat_JockeyHelmet05","DisplayName","Helmet - Jockey #5");
 TweakItem("Base.Hat_JockeyHelmet06","DisplayName","Helmet - Jockey #6");
 TweakItem("Base.Hat_RidingHelmet","DisplayName","Helmet - Riding");
+TweakItem("Base.Hat_PartyHat_TINT","DisplayName","Party Hat");
 TweakItem("Base.Hat_PeakedCapArmy","DisplayName","Peaked Cap - Army");
 TweakItem("Base.Hat_Raccoon","DisplayName","Raccoon Skin Hat");
 TweakItem("Base.Hat_FastFood","DisplayName","Server Hat - Fast Food");

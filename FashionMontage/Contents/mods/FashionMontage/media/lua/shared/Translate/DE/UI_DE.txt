@@ -29,4 +29,7 @@ UI_ClothingType_Right_MiddleFinger = "Rechter Mittelfinger",
 UI_ClothingType_LeftWrist = "Linkes Handgelenk",
 UI_ClothingType_Left_RingFinger = "Linker Ringfinger",
 UI_ClothingType_Left_MiddleFinger = "Linker Mittelfinger",
+UI_ClothingType_LeftEye = "Linkes Auge",
+UI_ClothingType_RightEye = "Rechtes Auge",
+UI_ClothingType_AmmoStrap = "Munitionsgurt",
 }

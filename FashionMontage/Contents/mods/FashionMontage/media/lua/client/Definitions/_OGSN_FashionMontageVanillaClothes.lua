@@ -59,6 +59,9 @@ local clothingLists = {
         "Base.Hat_JockeyHelmet06",
         "Base.Hat_RidingHelmet",
         "Base.Hat_PeakedCapArmy",
+        "Base.Hat_NewspaperHat",
+        "Base.Hat_PartyHat_TINT",
+        "Base.Hat_PartyHat_Stars",
         "Base.Hat_Raccoon",
         "Base.Hat_FastFood",
         "Base.Hat_FastFood_IceCream",
@@ -70,12 +73,13 @@ local clothingLists = {
         "Base.Hat_SurgicalCap_Blue",
         "Base.Hat_SurgicalCap_Green",
         "Base.Hat_Sweatband",
-        "Base.Hat_WeddingVeil",
-        "Base.Hat_WinterHat",
-        "Base.Hat_WoolyHat",
+        "Base.Hat_TinFoilHat",
         "Base.Hat_Visor_WhiteTINT",
         "Base.Hat_VisorBlack",
         "Base.Hat_VisorRed",
+        "Base.Hat_WeddingVeil",
+        "Base.Hat_WinterHat",
+        "Base.Hat_WoolyHat",
       },
       listTankTop = {
         "Base.Vest_DefaultTEXTURE_TINT",
@@ -232,9 +236,19 @@ local clothingLists = {
         "Base.Glasses_Aviators",
         "Base.Glasses",
       },
+      listLeftEye = {
+        "Glasses_Eyepatch_Left",
+      },
+      listRightEye = {
+        "Glasses_Eyepatch_Right",
+      },
       listBeltExtra = {
         "Base.HolsterSimple",
         "Base.HolsterDouble",
+      },
+      listAmmoStrap = {
+        "Base.AmmoStrap_Bullets",
+        "Base.AmmoStrap_Shells",
       },
       listMask = {
         "Base.Hat_BalaclavaFull",
@@ -247,6 +261,7 @@ local clothingLists = {
       },
       listMaskEyes = {
         "Base.Hat_GasMask",
+        "Base.Hat_HockeyMask",
       },
       listMaskFull = {
         "Base.WeldingMask",
@@ -289,6 +304,7 @@ local clothingLists = {
         "Base.Gloves_LeatherGlovesBlack",
         "Base.Gloves_LongWomenGloves",
         "Base.Gloves_WhiteTINT",
+        "Base.Gloves_Surgical",
       },
       listLegs1 = {
         "Base.LongJohns_Bottoms"

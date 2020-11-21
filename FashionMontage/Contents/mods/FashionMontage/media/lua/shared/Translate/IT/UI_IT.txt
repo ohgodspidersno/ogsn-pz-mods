@@ -29,4 +29,7 @@ UI_ClothingType_Right_MiddleFinger = "Dito medio destro",
 UI_ClothingType_LeftWrist = "Polso sinistro",
 UI_ClothingType_Left_RingFinger = "Anulare sinistro",
 UI_ClothingType_Left_MiddleFinger = "Dito medio sinistro",
+UI_ClothingType_LeftEye = "Occhio sinistro",
+UI_ClothingType_RightEye = "Occhio destro",
+UI_ClothingType_AmmoStrap = "Cinturino per munizioni",
 }

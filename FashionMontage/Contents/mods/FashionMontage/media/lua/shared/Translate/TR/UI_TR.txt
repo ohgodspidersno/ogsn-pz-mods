@@ -29,4 +29,7 @@ UI_ClothingType_Right_MiddleFinger = "Sað Orta Parmak",
 UI_ClothingType_LeftWrist = "Sol bilek",
 UI_ClothingType_Left_RingFinger = "Sol Yüzük Parmaðý",
 UI_ClothingType_Left_MiddleFinger = "Sol Orta Parmak",
+UI_ClothingType_LeftEye = "Sol göz",
+UI_ClothingType_RightEye = "Sað göz",
+UI_ClothingType_AmmoStrap = "Cephane Kayýþý",
 }
