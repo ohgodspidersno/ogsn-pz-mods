@@ -632,7 +632,7 @@ function ISInventoryPage:onJoypadDown(button)
 
   if button == Joypad.BButton then
     if isPlayerDoingActionThatCanBeCancelled(playerObj) then
-      playerObj:StopAllActionQueue()
+      stopDoingActionThatCanBeCancelled(playerObj)
       return
     end
     self.inventoryPane:doJoypadExpandCollapse()
@@ -903,10 +903,8 @@ function ISInventoryPage.loadWeight(inv)
 
     end
 
-    if not isGamePaused() then
-      if self.isCollapsed and self.player and getSpecificPlayer(self.player) and getSpecificPlayer(self.player):isAiming() then
-        return
-      end
+    if self.isCollapsed and self.player and getSpecificPlayer(self.player) and getSpecificPlayer(self.player):isAiming() then
+      return
     end
 
     local panCameraKey = getCore():getKey("PanCamera")
@@ -1512,6 +1510,7 @@ function ISInventoryPage.loadWeight(inv)
       SeatFrontRight = o.conseat;
       TruckBed = o.contrunk;
       TruckBedOpen = o.contrunk;
+      TrailerTrunk = o.contrunk;
       clothingdryer = o.clothingdryer;
       clothingwasher = o.clothingwasher;
     }

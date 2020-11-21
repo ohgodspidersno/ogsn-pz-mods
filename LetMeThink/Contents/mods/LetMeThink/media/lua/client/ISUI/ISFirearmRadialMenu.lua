@@ -473,6 +473,10 @@ function ISFirearmRadialMenu.onKeyReleased(key)
   end
 end
 
-Events.OnKeyStartPressed.Add(ISFirearmRadialMenu.onKeyPressed)
-Events.OnKeyKeepPressed.Add(ISFirearmRadialMenu.onKeyRepeat)
-Events.OnKeyPressed.Add(ISFirearmRadialMenu.onKeyReleased)
+local function OnGameStart()
+  Events.OnKeyStartPressed.Add(ISFirearmRadialMenu.onKeyPressed)
+  Events.OnKeyKeepPressed.Add(ISFirearmRadialMenu.onKeyRepeat)
+  Events.OnKeyPressed.Add(ISFirearmRadialMenu.onKeyReleased)
+end
+
+Events.OnGameStart.Add(OnGameStart)

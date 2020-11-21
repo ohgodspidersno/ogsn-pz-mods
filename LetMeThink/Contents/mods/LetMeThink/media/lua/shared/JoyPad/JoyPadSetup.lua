@@ -168,7 +168,7 @@ function onJoypadPressButton(joypadIndex, joypadData, button)
     return
   end
 
-  if not joypadData.activeWhilePaused and button ~= Joypad.Start and button ~= Joypad.Back then
+  if not joypadData.activeWhilePaused and UIManager.getSpeedControls() and button ~= Joypad.Start and button ~= Joypad.Back then
     return;
   end
 

@@ -26,6 +26,8 @@ function ISBackButtonWheel:addCommands()
 
   self:clear()
 
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+
   if not ISBackButtonWheel.disablePlayerInfo then
     self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
   else
@@ -103,6 +105,8 @@ end
 
 function ISBackButtonWheel:onCommand(command)
   local focus = nil
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+
   local playerObj = getSpecificPlayer(self.playerNum)
 
   if command == "PlayerInfo" then

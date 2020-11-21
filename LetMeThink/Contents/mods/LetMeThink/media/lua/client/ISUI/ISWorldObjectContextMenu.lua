@@ -1032,9 +1032,15 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
       end
     end
     -- remove glass if no barricade on player's side
-    if window:isSmashed() and not window:isGlassRemoved() and playerObj:getPrimaryHandItem() and not barricade then
+    if window:isSmashed() and not window:isGlassRemoved() and not barricade then
       if test == true then return true; end
-      context:addOption(getText("ContextMenu_RemoveBrokenGlass"), worldobjects, ISWorldObjectContextMenu.onRemoveBrokenGlass, window, player);
+      local option = context:addOption(getText("ContextMenu_RemoveBrokenGlass"), worldobjects, ISWorldObjectContextMenu.onRemoveBrokenGlass, window, player);
+      if not playerObj:getPrimaryHandItem() then
+        option.notAvailable = true
+        local tooltip = ISWorldObjectContextMenu.addToolTip()
+        tooltip.description = getText("Tooltip_RemoveBrokenGlassNoItem")
+        option.toolTip = tooltip
+      end
     end
   end
 
@@ -2861,6 +2867,7 @@ function CleanBandages.onCleanOne(playerObj, type, waterObject, recipe)
   local playerInv = playerObj:getInventory()
   local item = playerInv:getFirstTypeRecurse(type)
   if not item then return end
+  if not luautils.walkAdj(playerObj, waterObject:getSquare(), true) then return end
   ISTimedActionQueue.add(ISCleanBandage:new(playerObj, item, waterObject, recipe))
 end
 
@@ -2869,6 +2876,7 @@ function CleanBandages.onCleanMultiple(playerObj, type, waterObject, recipe)
   local items = playerInv:getSomeTypeRecurse(type, waterObject:getWaterAmount())
   if items:isEmpty() then return end
   ISInventoryPaneContextMenu.transferIfNeeded(playerObj, items)
+  if not luautils.walkAdj(playerObj, waterObject:getSquare(), true) then return end
   for i = 1, items:size() do
     local item = items:get(i - 1)
     ISTimedActionQueue.add(ISCleanBandage:new(playerObj, item, waterObject, recipe))
@@ -2893,6 +2901,7 @@ function CleanBandages.onCleanAll(playerObj, waterObject, itemData)
   end
   if items:isEmpty() then return end
   ISInventoryPaneContextMenu.transferIfNeeded(playerObj, items)
+  if not luautils.walkAdj(playerObj, waterObject:getSquare(), true) then return end
   for i = 1, items:size() do
     local item = items:get(i - 1)
     local recipe = itemToRecipe[item]
@@ -2924,6 +2933,7 @@ function CleanBandages.setSubmenu(subMenu, item, waterObject)
     notAvailable = true
   else
     tooltip = ISRecipeTooltip.addToolTip()
+    tooltip.character = getSpecificPlayer(subMenu.player)
     tooltip.recipe = recipe
     tooltip:setName(recipe:getName())
     local resultItem = getScriptManager():FindItem(recipe:getResult():getFullType())

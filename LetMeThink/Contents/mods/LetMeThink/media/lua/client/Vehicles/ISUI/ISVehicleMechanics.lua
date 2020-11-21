@@ -347,18 +347,20 @@ function ISVehicleMechanics:doPartContextMenu(part, x, y)
 	end
 --]]
   if ISVehicleMechanics.cheat or playerObj:getAccessLevel() ~= "None" then
-    option = self.context:addOption("CHEAT: Get Key", playerObj, ISVehicleMechanics.onCheatGetKey, self.vehicle)
-    if self.vehicle:isHotwired() then
-      self.context:addOption("CHEAT: Remove Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, false, false)
-      --[[
-			if self.vehicle:isHotwiredBroken() then
-				self.context:addOption("CHEAT: Fix Broken Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, false)
-			else
-				self.context:addOption("CHEAT: Break Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, true)
-			end
-			--]]
-    else
-      self.context:addOption("CHEAT: Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, false)
+    if self.vehicle:getPartById("Engine") then
+      option = self.context:addOption("CHEAT: Get Key", playerObj, ISVehicleMechanics.onCheatGetKey, self.vehicle)
+      if self.vehicle:isHotwired() then
+        self.context:addOption("CHEAT: Remove Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, false, false)
+        --[[
+				if self.vehicle:isHotwiredBroken() then
+					self.context:addOption("CHEAT: Fix Broken Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, false)
+				else
+					self.context:addOption("CHEAT: Break Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, true)
+				end
+				--]]
+      else
+        self.context:addOption("CHEAT: Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, false)
+      end
     end
     option = self.context:addOption("CHEAT: Repair Part", playerObj, ISVehicleMechanics.onCheatRepairPart, part)
     option = self.context:addOption("CHEAT: Repair Vehicle", playerObj, ISVehicleMechanics.onCheatRepair, self.vehicle)
@@ -913,18 +915,20 @@ function ISVehicleMechanics:onRightMouseUp(x, y)
   elseif ISVehicleMechanics.cheat or playerObj:getAccessLevel() ~= "None" then
     self.context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
     if self.vehicle:getScript() and self.vehicle:getScript():getWheelCount() > 0 then
-      self.context:addOption("CHEAT: Get Key", playerObj, ISVehicleMechanics.onCheatGetKey, self.vehicle)
-      if self.vehicle:isHotwired() then
-        self.context:addOption("CHEAT: Remove Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, false, false)
-        --[[
-				if self.vehicle:isHotwiredBroken() then
-					self.context:addOption("CHEAT: Fix Broken Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, false)
-				else
-					self.context:addOption("CHEAT: Break Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, true)
-				end
-				--]]
-      else
-        self.context:addOption("CHEAT: Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, false)
+      if self.vehicle:getPartById("Engine") then
+        self.context:addOption("CHEAT: Get Key", playerObj, ISVehicleMechanics.onCheatGetKey, self.vehicle)
+        if self.vehicle:isHotwired() then
+          self.context:addOption("CHEAT: Remove Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, false, false)
+          --[[
+					if self.vehicle:isHotwiredBroken() then
+						self.context:addOption("CHEAT: Fix Broken Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, false)
+					else
+						self.context:addOption("CHEAT: Break Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, true)
+					end
+					--]]
+        else
+          self.context:addOption("CHEAT: Hotwire", playerObj, ISVehicleMechanics.onCheatHotwire, self.vehicle, true, false)
+        end
       end
       self.context:addOption("CHEAT: Repair Vehicle", playerObj, ISVehicleMechanics.onCheatRepair, self.vehicle)
       self.context:addOption("CHEAT: Set Rust", playerObj, ISVehicleMechanics.onCheatSetRust, self.vehicle)
@@ -1051,7 +1055,9 @@ function ISVehicleMechanics:render()
   y = y + lineHgt;
   self:drawText(getText("IGUI_char_Weight") .. ": " .. self.vehicle:getMass(), x, y, self.partCatRGB.r, self.partCatRGB.g, self.partCatRGB.b, self.partCatRGB.a, UIFont.Small);
   y = y + lineHgt;
-  self:drawText(getText("IGUI_EnginePower") .. ": " .. (self.vehicle:getEnginePower() / 10) .. " hp", x, y, self.partCatRGB.r, self.partCatRGB.g, self.partCatRGB.b, self.partCatRGB.a, UIFont.Small);
+  if self.vehicle:getPartById("Engine") then
+    self:drawText(getText("IGUI_EnginePower") .. ": " .. (self.vehicle:getEnginePower() / 10) .. " hp", x, y, self.partCatRGB.r, self.partCatRGB.g, self.partCatRGB.b, self.partCatRGB.a, UIFont.Small);
+  end
   --	y = y + lineHgt;
   --	self:drawText("Ignition :", x, y, self.partCatRGB.r, self.partCatRGB.g, self.partCatRGB.b, self.partCatRGB.a, UIFont.Small);
   --	if self.checkEngine then
@@ -1419,7 +1425,7 @@ end
 function ISVehicleMechanics:onKeyRelease(key)
   if key == Keyboard.KEY_ESCAPE then
     if isPlayerDoingActionThatCanBeCancelled(self.chr) then
-      self.chr:StopAllActionQueue();
+      stopDoingActionThatCanBeCancelled(self.chr)
     else
       self:close()
     end

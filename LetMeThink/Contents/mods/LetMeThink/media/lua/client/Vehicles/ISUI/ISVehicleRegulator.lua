@@ -7,6 +7,7 @@ ISVehicleRegulator.xPressed = {}
 ISVehicleRegulator.changedSpeed = {}
 
 local function isRegulatorButtonPressed(joypadData)
+  local isPaused = UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0)
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 
@@ -59,6 +60,7 @@ function ISVehicleRegulator.onJoypadReleaseX(joypadData)
 
   if ISVehicleRegulator.changedSpeed[joypadData.id] then return end
 
+  local isPaused = UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0)
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 

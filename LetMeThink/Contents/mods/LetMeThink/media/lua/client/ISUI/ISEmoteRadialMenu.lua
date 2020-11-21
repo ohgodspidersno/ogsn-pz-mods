@@ -268,6 +268,10 @@ function ISEmoteRadialMenu.onKeyReleased(key)
   end
 end
 
-Events.OnKeyStartPressed.Add(ISEmoteRadialMenu.onKeyPressed)
-Events.OnKeyKeepPressed.Add(ISEmoteRadialMenu.onKeyRepeat)
-Events.OnKeyPressed.Add(ISEmoteRadialMenu.onKeyReleased)
+local function OnGameStart()
+  Events.OnKeyStartPressed.Add(ISEmoteRadialMenu.onKeyPressed)
+  Events.OnKeyKeepPressed.Add(ISEmoteRadialMenu.onKeyRepeat)
+  Events.OnKeyPressed.Add(ISEmoteRadialMenu.onKeyReleased)
+end
+
+Events.OnGameStart.Add(OnGameStart)

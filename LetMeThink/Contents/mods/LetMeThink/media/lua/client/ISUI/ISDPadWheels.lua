@@ -11,6 +11,7 @@ local function isEquippedOrAttached(playerObj, item)
 end
 
 function ISDPadWheels.onDisplayLeft(joypadData)
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 
@@ -53,6 +54,7 @@ function ISDPadWheels.onDisplayLeft(joypadData)
 end
 
 function ISDPadWheels.onDisplayRight(joypadData)
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 
@@ -72,6 +74,7 @@ function ISDPadWheels.onDisplayUp(joypadData)
 end
 
 function ISDPadWheels.onDisplayDown(joypadData)
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
   local playerIndex = joypadData.player
   local playerObj = getSpecificPlayer(playerIndex)
 

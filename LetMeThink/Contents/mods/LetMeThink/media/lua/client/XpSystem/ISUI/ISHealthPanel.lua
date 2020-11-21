@@ -26,8 +26,12 @@ end
 
 function ISNewHealthPanel:onClick(button)
   if button.internal == "FITNESS" then
-    if ISFishingUI.instance and ISFishingUI.instance[self.character:getPlayerNum() + 1] then
-      ISFishingUI.instance[self.character:getPlayerNum() + 1]:removeFromUIManager();
+    if JoypadState.players[self.playerNum + 1] then
+      getPlayerInfoPanel(self.playerNum):toggleView(xpSystemText.health)
+    end
+    if ISFitnessUI.instance and ISFitnessUI.instance[self.character:getPlayerNum() + 1] then
+      ISFitnessUI.instance[self.character:getPlayerNum() + 1]:removeFromUIManager();
+      ISFitnessUI.instance[self.character:getPlayerNum() + 1] = nil;
     end
     if ISFitnessUI.instance and ISFitnessUI.instance[self.character:getPlayerNum() + 1] and ISFitnessUI.instance[self.character:getPlayerNum() + 1]:isVisible() then
       return;
@@ -793,6 +797,8 @@ function ISHealthPanel:onGainJoypadFocus(joypadData)
   ISPanel.onGainJoypadFocus(self, joypadData)
   if self.otherPlayer then
     self.parent.drawJoypadFocus = true
+  else
+    self:setISButtonForY(self.fitness)
   end
 end
 
@@ -833,6 +839,9 @@ function ISHealthPanel:onJoypadDown(button)
     if listItem then
       self:doBodyPartContextMenu(listItem.item.bodyPart, 50, 50)
     end
+  end
+  if button == Joypad.YButton then
+    self.fitness:forceClick()
   end
 end
 

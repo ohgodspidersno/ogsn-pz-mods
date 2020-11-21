@@ -262,16 +262,10 @@ end
 
 function ISButtonPrompt:stopAction()
   local playerObj = getSpecificPlayer(self.player)
-  playerObj:StopAllActionQueue()
+  stopDoingActionThatCanBeCancelled(playerObj)
 end
 
 function ISButtonPrompt:getBestAButtonAction(dir)
-
-  if UIManager.getSpeedControls() then
-    self:setAPrompt(nil, nil, nil);
-    return;
-  end
-
   if dir == nil then
     self:setAPrompt(nil, nil, nil);
   end
@@ -420,7 +414,7 @@ function ISButtonPrompt:testAButtonAction(dir)
       if part then
         if part:getDoor() and part:getInventoryItem() then
           local isHood = part:getId() == "EngineDoor"
-          local isTrunk = part:getId() == "TrunkDoor"
+          local isTrunk = part:getId() == "TrunkDoor" or part:getId() == "DoorRear"
           local seatForDoor = -1
           if not isHood and not isTrunk then
             for seat = 1, vehicle:getMaxPassengers() do
@@ -510,12 +504,6 @@ function ISButtonPrompt:doAButtonDoorOrWindowOrWindowFrame(dir, obj)
 end
 
 function ISButtonPrompt:getBestBButtonAction(dir)
-
-  if UIManager.getSpeedControls() then
-    self:setBPrompt(nil, nil, nil);
-    return;
-  end
-
   if dir == nil then
     self:setBPrompt(nil, nil, nil);
   end
@@ -685,12 +673,6 @@ function ISButtonPrompt:doBButtonDoorOrWindowOrWindowFrame(dir, obj)
 end
 
 function ISButtonPrompt:getBestYButtonAction(dir)
-
-  if UIManager.getSpeedControls() then
-    self:setYPrompt(nil, nil, nil);
-    return;
-  end
-
   if dir == nil then
     self:setYPrompt(nil, nil, nil);
   end
@@ -806,11 +788,6 @@ end
 
 
 function ISButtonPrompt:getBestXButtonAction(dir)
-  if UIManager.getSpeedControls() then
-    self:setXPrompt(nil, nil, nil);
-    return;
-  end
-
   if dir == nil then
     self:setXPrompt(nil, nil, nil);
   end
@@ -941,11 +918,6 @@ function ISButtonPrompt:getXButtonObjects(dir)
 end
 
 function ISButtonPrompt:getBestLBButtonAction(dir)
-  if UIManager.getSpeedControls() then
-    self:setLBPrompt(nil, nil, nil);
-    return;
-  end
-
   if getCell():getDrag(self.player) then
     self:setLBPrompt(getCell():getDrag(self.player):getLBPrompt(), nil, nil);
   elseif ISFirearmRadialMenu.getBestLBButtonAction(self) then
@@ -955,11 +927,6 @@ function ISButtonPrompt:getBestLBButtonAction(dir)
 end
 
 function ISButtonPrompt:getBestRBButtonAction(dir)
-  if UIManager.getSpeedControls() then
-    self:setRBPrompt(nil, nil, nil);
-    return;
-  end
-
   if getCell():getDrag(self.player) then
     self:setRBPrompt(getCell():getDrag(self.player):getRBPrompt(), nil, nil);
   elseif ISFirearmRadialMenu.getBestRBButtonAction(self) then

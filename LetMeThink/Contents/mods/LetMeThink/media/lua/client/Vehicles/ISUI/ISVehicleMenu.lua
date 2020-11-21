@@ -41,6 +41,7 @@ function ISVehicleMenu.OnFillWorldObjectContextMenu(player, context, worldobject
 end
 
 function ISVehicleMenu.showRadialMenu(playerObj)
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
   local vehicle = playerObj:getVehicle()
   if not vehicle then
     ISVehicleMenu.showRadialMenuOutside(playerObj)
@@ -268,7 +269,7 @@ function ISVehicleMenu.showRadialMenuOutside(playerObj)
   if vehicle then
     menu:addSlice(getText("ContextMenu_VehicleMechanics"), getTexture("media/ui/vehicles/vehicle_repair.png"), ISVehicleMenu.onMechanic, playerObj, vehicle)
 
-    if vehicle:getScript() and vehicle:getScript():getWheelCount() > 0 then
+    if vehicle:getScript() and vehicle:getScript():getPassengerCount() > 0 then
       menu:addSlice(getText("IGUI_EnterVehicle"), getTexture("media/ui/vehicles/vehicle_changeseats.png"), ISVehicleMenu.onShowSeatUI, playerObj, vehicle )
     end
 
@@ -277,7 +278,7 @@ function ISVehicleMenu.showRadialMenuOutside(playerObj)
     local doorPart = vehicle:getUseablePart(playerObj)
     if doorPart and doorPart:getDoor() and doorPart:getInventoryItem() then
       local isHood = doorPart:getId() == "EngineDoor"
-      local isTrunk = doorPart:getId() == "TrunkDoor"
+      local isTrunk = doorPart:getId() == "TrunkDoor" or doorPart:getId() == "DoorRear"
       if doorPart:getDoor():isOpen() then
         local label = "ContextMenu_Close_door"
         if isHood then label = "IGUI_CloseHood" end
@@ -311,6 +312,8 @@ function ISVehicleMenu.showRadialMenuOutside(playerObj)
         ISVehiclePartMenu.onSmashWindow, playerObj, part)
       end
     end
+
+    ISVehicleMenu.doTowingMenu(playerObj, vehicle, menu)
   end
 
   menu:setX(getPlayerScreenLeft(playerIndex) + getPlayerScreenWidth(playerIndex) / 2 - menu:getWidth() / 2)
@@ -320,6 +323,195 @@ function ISVehicleMenu.showRadialMenuOutside(playerObj)
     menu:setHideWhenButtonReleased(Joypad.DPadUp)
     setJoypadFocus(playerObj:getPlayerNum(), menu)
     playerObj:setJoypadIgnoreAimUntilCentered(true)
+  end
+end
+
+function ISVehicleMenu.doTowingMenu(playerObj, vehicle, menu)
+  if vehicle:getVehicleTowing() then
+    menu:addSlice(getText("ContextMenu_Vehicle_DetachTrailer"), getTexture("media/ui/ZoomOut.png"), ISVehicleMenu.onDetachTrailer, playerObj, vehicle, vehicle:getTowAttachmentSelf())
+    return
+  end
+  if vehicle:getVehicleTowedBy() then
+    menu:addSlice(getText("ContextMenu_Vehicle_DetachTrailer"), getTexture("media/ui/ZoomOut.png"), ISVehicleMenu.onDetachTrailer, playerObj, vehicle:getVehicleTowedBy(), vehicle:getVehicleTowedBy():getTowAttachmentSelf())
+    return
+  end
+
+  local attachmentA, attachmentB = "trailer", "trailer"
+  local vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  if vehicleB then
+    local aName = ISVehicleMenu.getVehicleDisplayName(vehicle)
+    local bName = ISVehicleMenu.getVehicleDisplayName(vehicleB)
+    local attachNameA = getText("IGUI_TrailerAttachName_" .. attachmentA)
+    local attachNameB = getText("IGUI_TrailerAttachName_" .. attachmentB)
+    local burntA = string.contains(vehicle:getScriptName(), "Burnt")
+    local trailerA = string.contains(vehicle:getScriptName(), "Trailer")
+    local trailerB = string.contains(vehicleB:getScriptName(), "Trailer")
+    local vehicleTowing = vehicle
+    if burntA or trailerA then
+      vehicleTowing = vehicleB
+    end
+    local text = getText("ContextMenu_Vehicle_AttachVehicle", aName, bName, attachNameA, attachNameB);
+    if trailerA or trailerB then
+      text = getText("ContextMenu_Vehicle_AttachTrailer");
+    end
+    menu:addSlice(text, getTexture("media/ui/ZoomIn.png"), ISVehicleMenu.onAttachTrailer, playerObj, vehicleTowing, attachmentA, attachmentB)
+    return
+  end
+
+  attachmentA, attachmentB = "trailerfront", "trailerfront"
+  vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  if vehicleB then
+    local aName = ISVehicleMenu.getVehicleDisplayName(vehicleB)
+    local bName = ISVehicleMenu.getVehicleDisplayName(vehicle)
+    local attachNameA = getText("IGUI_TrailerAttachName_" .. attachmentA)
+    local attachNameB = getText("IGUI_TrailerAttachName_" .. attachmentB)
+    local text = getText("ContextMenu_Vehicle_AttachVehicle", aName, bName, attachNameA, attachNameB);
+    menu:addSlice(text, getTexture("media/ui/ZoomIn.png"), ISVehicleMenu.onAttachTrailer, playerObj, vehicle, attachmentB, attachmentA)
+    return
+  end
+
+  attachmentA, attachmentB = "trailer", "trailerfront"
+  vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  if vehicleB then
+    local aName = ISVehicleMenu.getVehicleDisplayName(vehicle)
+    local bName = ISVehicleMenu.getVehicleDisplayName(vehicleB)
+    local attachNameA = getText("IGUI_TrailerAttachName_" .. attachmentA)
+    local attachNameB = getText("IGUI_TrailerAttachName_" .. attachmentB)
+    local attachName = getText("IGUI_TrailerAttachName_" .. attachmentA)
+    local text = getText("ContextMenu_Vehicle_AttachVehicle", aName, bName, attachNameA, attachNameB);
+    menu:addSlice(text, getTexture("media/ui/ZoomIn.png"), ISVehicleMenu.onAttachTrailer, playerObj, vehicle, attachmentA, attachmentB)
+    return
+  end
+
+  attachmentA, attachmentB = "trailerfront", "trailer"
+  vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  if vehicleB then
+    local aName = ISVehicleMenu.getVehicleDisplayName(vehicleB)
+    local bName = ISVehicleMenu.getVehicleDisplayName(vehicle)
+    local attachNameA = getText("IGUI_TrailerAttachName_" .. attachmentA)
+    local attachNameB = getText("IGUI_TrailerAttachName_" .. attachmentB)
+    local text = getText("ContextMenu_Vehicle_AttachVehicle", aName, bName, attachNameA, attachNameB);
+    menu:addSlice(text, getTexture("media/ui/ZoomIn.png"), ISVehicleMenu.onAttachTrailer, playerObj, vehicleB, attachmentB, attachmentA)
+    return
+  end
+end
+
+local TowMenu = {}
+
+function TowMenu.isBurnt(vehicle)
+  return string.contains(vehicle:getScriptName(), "Burnt")
+end
+
+function TowMenu.isTrailer(vehicle)
+  return string.contains(vehicle:getScriptName(), "Trailer")
+end
+
+function TowMenu.attachBurntToOther(playerObj, vehicle, menu)
+  local attachmentA, attachmentB = "trailer", "trailer"
+  local vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+
+  if not vehicleB then
+    attachmentA, attachmentB = "trailer", "trailerfront"
+    vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  end
+
+  if not vehicleB then
+    attachmentA, attachmentB = "trailerfront", "trailer"
+    vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  end
+
+  if not vehicleB then
+    attachmentA, attachmentB = "trailerfront", "trailerfront"
+    vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  end
+
+  if vehicleB then
+    if TowMenu.isBurnt(vehicleB) then
+      TowMenu.addOption(playerObj, menu, vehicle, vehicleB, attachmentA, attachmentB)
+    elseif TowMenu.isTrailer(vehicleB) then
+      TowMenu.addOption(playerObj, menu, vehicle, vehicleB, attachmentA, attachmentB)
+    else
+      TowMenu.addOption(playerObj, menu, vehicleB, vehicle, attachmentB, attachmentA)
+    end
+  end
+end
+
+function TowMenu.attachTrailerToOther(playerObj, vehicle, menu)
+  local attachmentA, attachmentB = "trailer", "trailer"
+  local vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+
+  if not vehicleB then
+    attachmentA, attachmentB = "trailer", "trailerfront"
+    vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  end
+
+  if vehicleB then
+    if TowMenu.isBurnt(vehicleB) then
+      TowMenu.addOption(playerObj, menu, vehicleB, vehicle, attachmentB, attachmentA)
+    elseif TowMenu.isTrailer(vehicleB) then
+      TowMenu.addOption(playerObj, menu, vehicle, vehicleB, attachmentA, attachmentB)
+    else
+      TowMenu.addOption(playerObj, menu, vehicleB, vehicle, attachmentB, attachmentA)
+    end
+  end
+end
+
+function TowMenu.attachVehicleToOther(playerObj, vehicle, menu)
+  local attachmentA, attachmentB = "trailer", "trailer"
+  local vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+
+  if not vehicleB then
+    attachmentA, attachmentB = "trailer", "trailerfront"
+    vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  end
+
+  if not vehicleB then
+    attachmentA, attachmentB = "trailerfront", "trailer"
+    vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  end
+
+  if not vehicleB then
+    attachmentA, attachmentB = "trailerfront", "trailerfront"
+    vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(vehicle:getSquare(), vehicle, attachmentA, attachmentB)
+  end
+
+  if vehicleB then
+    if TowMenu.isBurnt(vehicleB) then
+      TowMenu.addOption(playerObj, menu, vehicle, vehicleB, attachmentA, attachmentB)
+    elseif TowMenu.isTrailer(vehicleB) then
+      TowMenu.addOption(playerObj, menu, vehicle, vehicleB, attachmentA, attachmentB)
+    else
+      TowMenu.addOption(playerObj, menu, vehicle, vehicleB, attachmentA, attachmentB)
+    end
+  end
+end
+
+function TowMenu.addOption(playerObj, menu, vehicleA, vehicleB, attachmentA, attachmentB)
+  local aName = ISVehicleMenu.getVehicleDisplayName(vehicleA)
+  local bName = ISVehicleMenu.getVehicleDisplayName(vehicleB)
+  local text = getText("ContextMenu_Vehicle_AttachTrailer", bName, aName);
+  menu:addSlice(text, getTexture("media/ui/ZoomIn.png"), ISVehicleMenu.onAttachTrailer, playerObj, vehicleA, attachmentA, attachmentB)
+end
+
+function ISVehicleMenu.doTowingMenu(playerObj, vehicle, menu)
+  if vehicle:getVehicleTowing() then
+    local bName = ISVehicleMenu.getVehicleDisplayName(vehicle:getVehicleTowing())
+    menu:addSlice(getText("ContextMenu_Vehicle_DetachTrailer", bName), getTexture("media/ui/ZoomOut.png"), ISVehicleMenu.onDetachTrailer, playerObj, vehicle, vehicle:getTowAttachmentSelf())
+    return
+  end
+
+  if vehicle:getVehicleTowedBy() then
+    local aName = ISVehicleMenu.getVehicleDisplayName(vehicle)
+    menu:addSlice(getText("ContextMenu_Vehicle_DetachTrailer", aName), getTexture("media/ui/ZoomOut.png"), ISVehicleMenu.onDetachTrailer, playerObj, vehicle:getVehicleTowedBy(), vehicle:getVehicleTowedBy():getTowAttachmentSelf())
+    return
+  end
+
+  if TowMenu.isBurnt(vehicle) then
+    TowMenu.attachBurntToOther(playerObj, vehicle, menu)
+  elseif TowMenu.isTrailer(vehicle) then
+    TowMenu.attachTrailerToOther(playerObj, vehicle, menu)
+  else
+    TowMenu.attachVehicleToOther(playerObj, vehicle, menu)
   end
 end
 
@@ -422,6 +614,18 @@ function ISVehicleMenu.FillMenuOutsideVehicle(player, context, vehicle, test)
   end
 end
 
+function ISVehicleMenu.getVehicleDisplayName(vehicle)
+  local name = getText("IGUI_VehicleName" .. vehicle:getScript():getName())
+  if string.match(vehicle:getScript():getName(), "Burnt") then
+    local unburnt = string.gsub(vehicle:getScript():getName(), "Burnt", "")
+    if getTextOrNull("IGUI_VehicleName" .. unburnt) then
+      name = getText("IGUI_VehicleName" .. unburnt)
+    end
+    name = getText("IGUI_VehicleNameBurntCar", name)
+  end
+  return name
+end
+
 local function predicateBlowTorch(item)
   return item:getType() == "BlowTorch" and item:getDrainableUsesInt() >= 20
 end
@@ -487,6 +691,7 @@ end
 function ISVehicleMenu.onDebugSetScript(playerObj, vehicle, scriptName)
   vehicle:setScriptName(scriptName)
   vehicle:scriptReloaded()
+  vehicle:setSkinIndex(ZombRand(vehicle:getSkinCount()))
   vehicle:repair() -- so engine loudness/power/quality are recalculated
 end
 
@@ -1025,6 +1230,7 @@ function ISVehicleMenu.onExitAux(playerObj, seat)
 end
 
 function ISVehicleMenu.onShowSeatUI(playerObj, vehicle)
+  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
   local playerNum = playerObj:getPlayerNum()
   if not ISVehicleMenu.seatUI then
     ISVehicleMenu.seatUI = {}
@@ -1136,6 +1342,19 @@ end
 
 function ISVehicleMenu.onLightbar(playerObj)
   ISTimedActionQueue.add(ISLightbarUITimedAction:new(playerObj))
+end
+
+function ISVehicleMenu.onAttachTrailer(playerObj, vehicle, attachmentA, attachmentB)
+  local square = vehicle:getCurrentSquare()
+  local vehicleB = ISVehicleTrailerUtils.getTowableVehicleNear(square, vehicle, attachmentA, attachmentB)
+  if not vehicleB then return end
+  local nextAction = ISAttachTrailerToVehicle:new(playerObj, vehicle, vehicleB, attachmentA, attachmentB)
+  if not ISVehicleTrailerUtils.walkToTrailer(playerObj, vehicle, attachmentA, nextAction) then return end
+end
+
+function ISVehicleMenu.onDetachTrailer(playerObj, vehicle, attachmentA)
+  local nextAction = ISDetachTrailerFromVehicle:new(playerObj, vehicle, attachmentA)
+  if not ISVehicleTrailerUtils.walkToTrailer(playerObj, vehicle, attachmentA, nextAction) then return end
 end
 
 Events.OnFillWorldObjectContextMenu.Add(ISVehicleMenu.OnFillWorldObjectContextMenu)

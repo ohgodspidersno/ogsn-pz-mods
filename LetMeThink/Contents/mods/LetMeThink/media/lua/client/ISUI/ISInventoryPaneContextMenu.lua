@@ -2037,11 +2037,25 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
 
   ISInventoryPaneContextMenu.onWearItems = function(items, player)
     items = ISInventoryPane.getActualItems(items)
-    local typeDone = {}; -- we keep track of what type of clothes we already wear to avoid wearind 2 times the same type (click on a stack of socks, select wear and you'll wear them 1 by 1 otherwise)
+    local typeDone = {}; -- we keep track of what type of clothes we already wear to avoid wearing 2 times the same type (click on a stack of socks, select wear and you'll wear them 1 by 1 otherwise)
     for i, k in pairs(items) do
-      if not typeDone[k:getName()] then
+      if not typeDone[k:getType()] then
+        if k:getBodyLocation() == "Hat" or k:getBodyLocation() == "FullHat" then
+          local playerObj = getSpecificPlayer(player);
+          local wornItems = playerObj:getWornItems()
+          for j = 1, wornItems:size() do
+            local wornItem = wornItems:get(j - 1)
+            if (wornItem:getLocation() == "SweaterHat" or wornItem:getLocation() == "JacketHat") then
+              for i = 0, wornItem:getItem():getClothingItemExtraOption():size() - 1 do
+                if wornItem:getItem():getClothingItemExtraOption():get(i) == "DownHoodie" then
+                  ISInventoryPaneContextMenu.onClothingItemExtra(wornItem:getItem(), wornItem:getItem():getClothingItemExtra():get(i), playerObj);
+                end
+              end
+            end
+          end
+        end
         ISInventoryPaneContextMenu.wearItem(k, player)
-        typeDone[k:getName()] = true;
+        typeDone[k:getType()] = true;
       end
     end
   end
@@ -2162,9 +2176,12 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
 
   ISRecipeTooltip = CraftTooltip
 
-  function CraftTooltip:addText(x, y, text)
+  function CraftTooltip:addText(x, y, text, r, g, b)
+    r = r or 1
+    g = g or 1
+    b = b or 1
     local width = getTextManager():MeasureStringX(UIFont.Small, text)
-    table.insert(self.contents, { type = "text", x = x, y = y, width = width, height = FONT_HGT_SMALL, text = text })
+    table.insert(self.contents, { type = "text", x = x, y = y, width = width, height = FONT_HGT_SMALL, text = text, r = r, g = g, b = b })
   end
 
   function CraftTooltip:addImage(x, y, textureName)
@@ -2222,10 +2239,67 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
     return false
   end
 
+  function CraftTooltip:isWaterSource(item, count)
+    return instanceof(item, "DrainableComboItem") and item:isWaterSource() and item:getDrainableUsesInt() >= count
+  end
+
+  -- Duplicate of ISCraftingUI:getContainers()
+  function CraftTooltip:getContainers()
+    if not self.character then return end
+    self.playerNum = self.character:getPlayerNum()
+    -- get all the surrounding inventory of the player, gonna check for the item in them too
+    self.containerList = self.containerList or ArrayList.new()
+    self.containerList:clear()
+    for i, v in ipairs(getPlayerInventory(self.playerNum).inventoryPane.inventoryPage.backpacks) do
+      self.containerList:add(v.inventory)
+    end
+    for i, v in ipairs(getPlayerLoot(self.playerNum).inventoryPane.inventoryPage.backpacks) do
+      self.containerList:add(v.inventory)
+    end
+  end
+
+  -- Duplicate of ISCraftingUI:getAvailableItemsType()
+  function CraftTooltip:getAvailableItemsType()
+    local result = self.typesAvailable or {}
+    table.wipe(result)
+    local recipe = self.recipe
+    local items = RecipeManager.getAvailableItemsAll(recipe, self.character, self.containerList, nil, nil)
+    for i = 0, recipe:getSource():size() - 1 do
+      local source = recipe:getSource():get(i)
+      local sourceItemTypes = {}
+      for k = 1, source:getItems():size() do
+        local sourceFullType = source:getItems():get(k - 1)
+        sourceItemTypes[sourceFullType] = true
+      end
+      for x = 0, items:size() - 1 do
+        local item = items:get(x)
+        if sourceItemTypes["Water"] and self:isWaterSource(item, source:getCount()) then
+          result["Water"] = (result["Water"] or 0) + item:getDrainableUsesInt()
+        elseif sourceItemTypes[item:getFullType()] then
+          local count = 1
+          if not source:isDestroy() and item:IsDrainable() then
+            count = item:getDrainableUsesInt()
+          end
+          if not source:isDestroy() and instanceof(item, "Food") then
+            if source:getUse() > 0 then
+              count = -item:getHungerChange() * 100
+            end
+          end
+          result[item:getFullType()] = (result[item:getFullType()] or 0) + count
+        end
+      end
+    end
+    self.typesAvailable = result
+  end
+
   function CraftTooltip:layoutContents(x, y)
     if self.contents then
       return self.contentsWidth, self.contentsHeight
     end
+
+    self:getContainers()
+    self:getAvailableItemsType()
+
     self.contents = {}
     local marginLeft = 20
     local marginTop = 10
@@ -2287,6 +2361,7 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
       for k = 1, source:getItems():size() do
         local itemData = {}
         itemData.fullType = source:getItems():get(k - 1)
+        itemData.available = true
         local item = nil
         if itemData.fullType == "Water" then
           item = ISInventoryPaneContextMenu.getItemInstance("Base.WaterDrop")
@@ -2324,10 +2399,21 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
         else
           itemData.name = itemData.fullType
         end
+        local countAvailable = self.typesAvailable[itemData.fullType] or 0
+        if countAvailable < source:getCount() then
+          itemData.available = false
+          itemData.r = 0.54
+          itemData.g = 0.54
+          itemData.b = 0.54
+        end
         table.insert(itemDataList, itemData)
       end
 
-      table.sort(itemDataList, function(a, b) return not string.sort(a.name, b.name) end)
+      table.sort(itemDataList, function(a, b)
+        if a.available and not b.available then return true end
+        if not a.available and b.available then return false end
+        return not string.sort(a.name, b.name)
+      end)
 
       -- Hack for "Dismantle Digital Watch" and similar recipes.
       -- Recipe sources include both left-hand and right-hand versions of the same item.
@@ -2353,7 +2439,7 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
           self:addImage(x2, y1 + imageDY, itemData.texture)
           x2 = x2 + IMAGE_SIZE + 6
         end
-        self:addText(x2, y1 + textDY, itemData.name)
+        self:addText(x2, y1 + textDY, itemData.name, itemData.r, itemData.g, itemData.b)
         y1 = y1 + lineHeight
 
         if i == 10 and i < #itemDataList then
@@ -2379,7 +2465,7 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
       if v.type == "image" then
         self:drawTextureScaledAspect(v.texture, v.x, v.y, v.width, v.height, 1, 1, 1, 1)
       elseif v.type == "text" then
-        self:drawText(v.text, v.x, v.y, 1, 1, 1, 1, UIFont.Small)
+        self:drawText(v.text, v.x, v.y, v.r, v.g, v.b, 1, UIFont.Small)
       end
     end
     if false then
@@ -2437,6 +2523,7 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
         else
           local subOption = subMenuCraft:addOption(getText("ContextMenu_One"), selectedItem, ISInventoryPaneContextMenu.OnCraft, recipe, player, false);
           local tooltip = CraftTooltip.addToolTip();
+          tooltip.character = playerObj
           tooltip.recipe = recipe
           -- add it to our current option
           tooltip:setName(recipe:getName());
@@ -2480,6 +2567,7 @@ ISInventoryPaneContextMenu.onFix = function(brokenObject, player, fixing, fixer,
       end
       if subMenuCraft == nil and recipe:getNumberOfNeededItem() > 0 then
         local tooltip = CraftTooltip.addToolTip();
+        tooltip.character = playerObj
         tooltip.recipe = recipe
         -- add it to our current option
         tooltip:setName(recipe:getName());

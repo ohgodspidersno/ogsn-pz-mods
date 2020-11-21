@@ -528,7 +528,9 @@ function ISInventoryPane:transferItemsByWeight(items, container)
   self:sortItemsByType(items)
   self:sortItemsByWeight(items)
   for _, item in ipairs(items) do
-    if container:getType() == "floor" then
+    if not container:isItemAllowed(item) then
+      --
+    elseif container:getType() == "floor" then
       ISInventoryPaneContextMenu.dropItem(item, self.player)
     else
       ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), container))

@@ -226,7 +226,7 @@ function ISMenuContextWorld.new()
             end
         end
 
-		if playerObj:isAsleep() or UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return end
+		if playerObj:isAsleep() then return end
 
 		getCell():setDrag(nil, _playerNum);
 
