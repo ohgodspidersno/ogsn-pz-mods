@@ -1,4 +1,0 @@
-title=Flag a Book as Seen
-description=A way to quickly mark a particular book (e.g. Carpentry for Experts) as one that you've seen before.
-description=This way whenever you find new copies of it while looting, you'll know immediately that you already have a copy of it.
-preview=preview.png

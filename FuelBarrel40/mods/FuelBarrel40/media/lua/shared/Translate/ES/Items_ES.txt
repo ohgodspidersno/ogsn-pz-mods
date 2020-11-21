@@ -1,4 +1,0 @@
-Items_EN = {
-	DisplayName_Gas_Barrel		= "Barril Para Combustible",
-	DisplayName_Empty_Barrel	= "Barril Vacío",
-}

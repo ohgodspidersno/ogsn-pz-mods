@@ -1,4 +1,0 @@
-Items_RU = {
-	DisplayName_Gas_Barrel		= "Бочка с бензином",
-	DisplayName_Empty_Barrel	= "Пуcтая бочка",
-}

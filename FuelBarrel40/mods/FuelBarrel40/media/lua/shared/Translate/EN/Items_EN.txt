@@ -1,4 +1,0 @@
-Items_EN = {
-	DisplayName_Gas_Barrel		= "Gas Barrel",
-	DisplayName_Empty_Barrel	= "Empty Barrel",
-}
