@@ -318,7 +318,7 @@ module GidOrganizedFood
 		Time:60.0,
 		Category:Storage,
 		OnGiveXP:NoXP_OnGiveXP,
-		OnCreate:UnpackCoffeeOGSN,
+		OnCreate:Recipe.OnCreate.PackCoffeeOGSN,
 	}
 
 	recipe Pack Instant Coffee Mix
@@ -328,7 +328,7 @@ module GidOrganizedFood
 		Time:60.0,
 		Category:Storage,
 		OnGiveXP:NoXP_OnGiveXP,
-		OnCreate:PackCoffeeOGSN,
+		OnCreate:Recipe.OnCreate.PackCoffeeOGSN,
 	}
 
 	recipe Pack 12 Empty Wine Bottles
