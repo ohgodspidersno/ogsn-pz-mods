@@ -1,8 +1,8 @@
-require 'Items/SuburbsDistributions'
-SuburbsDistributions = SuburbsDistributions or {}
+require 'Items/Distributions'
+Distributions = Distributions or {}
 -- Zombie Male
-table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.PillsVitamins");
-table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.03);
+table.insert(Distributions["all"]["inventorymale"].items, "Base.PillsVitamins");
+table.insert(Distributions["all"]["inventorymale"].items, 0.03);
 -- Zombie Female
-table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, "Base.PillsVitamins");
-table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 0.03);
+table.insert(Distributions["all"]["inventoryfemale"].items, "Base.PillsVitamins");
+table.insert(Distributions["all"]["inventoryfemale"].items, 0.03);
