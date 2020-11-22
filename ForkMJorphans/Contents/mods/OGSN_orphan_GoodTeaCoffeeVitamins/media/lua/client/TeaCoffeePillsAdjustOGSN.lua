@@ -22,6 +22,8 @@ Adjust("Base.Coffee2","HungerChange","-2")
 Adjust("Base.Coffee2","FatigueChange","-25")
 Adjust("Base.Coffee2","UnhappyChange","15")
 Adjust("Base.Coffee2","ThirstChange","20")
+Adjust("Base.Coffee2","Type","Food")
+Adjust("Base.Coffee2","EvolvedRecipe","HotDrink:2")
 
 Adjust("Base.Mugfull","FatigueChange","-25")
 Adjust("Base.Mugfull","UnhappyChange","-20")

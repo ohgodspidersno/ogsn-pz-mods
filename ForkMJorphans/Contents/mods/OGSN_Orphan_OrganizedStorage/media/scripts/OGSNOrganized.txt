@@ -10,7 +10,7 @@ module GidOrganized
 	{
 		Weight			= 0.3,
 		Type			= Normal,
-		DisplayName		= 30-Count Bottle of Antibiotics,
+		DisplayName		= Bottle of 30 Antibiotics,
 		Icon			= OS30pkAntibiotics,
 	}
 
@@ -18,7 +18,7 @@ module GidOrganized
 	{
 		Weight			= 0.3,
 		Type			= Normal,
-		DisplayName		= 12-Pack of Adhesive Bandages,
+		DisplayName		= Pack of 12 Adhesive Bandages,
 		Icon			= OS12pkAdhesiveBandages,
 	}
 
@@ -26,7 +26,7 @@ module GidOrganized
 	{
 		Weight			= 0.3,
 		Type			= Normal,
-		DisplayName		= 9-Pack of Bandages,
+		DisplayName		= Pack of 9 Bandages,
 		Icon			= OS9pkBandages,
 	}
 
@@ -34,7 +34,7 @@ module GidOrganized
 	{
 		Weight			= 0.3,
 		Type			= Normal,
-		DisplayName		= 9-Pack of Sterile Bandages,
+		DisplayName		= Pack of 9 Sterile Bandages,
 		Icon			= OS9pkSterileBandages,
 	}
 
@@ -42,7 +42,7 @@ module GidOrganized
 	{
 		Weight			= 0.3,
 		Type			= Normal,
-		DisplayName		= 12-Count Box of Cotton Balls,
+		DisplayName		= Box of 12 Cotton Balls,
 		Icon			= OS12pkCottonBalls,
 	}
 
@@ -50,7 +50,7 @@ module GidOrganized
 	{
 		Weight			= 0.3,
 		Type			= Normal,
-		DisplayName		= 9-Pack of Dirty Bandages,
+		DisplayName		= Pack of 9 Dirty Bandages,
 		Icon			= OS9pkBandagesDirty,
 	}
 
@@ -59,7 +59,7 @@ module GidOrganized
 		Weight				= 0.6,
 		Type				= Normal,
 		UseWhileEquipped	= FALSE,
-		DisplayName			= 50-Count Bottle of Painkillers,
+		DisplayName			= Bottle of 50 Painkillers,
 		Icon				= OS50pkPainkillers,
 	}
 
@@ -68,7 +68,7 @@ module GidOrganized
 		Weight				= 0.6,
 		Type				= Normal,
 		UseWhileEquipped	= FALSE,
-		DisplayName			= 50-Count Bottle of Vitamins,
+		DisplayName			= Bottle of 50 Vitamins,
 		Icon				= OS50pkVitamins,
 	}
 
@@ -77,7 +77,7 @@ module GidOrganized
 		Weight				= 0.6,
 		Type				= Normal,
 		UseWhileEquipped	= FALSE,
-		DisplayName			= 50-Count Bottle of Beta Blockers,
+		DisplayName			= Bottle of 50 Beta Blockers,
 		Icon				= OS50pkBetaBlockers,
 	}
 
@@ -86,7 +86,7 @@ module GidOrganized
 		Weight				= 0.6,
 		Type				= Normal,
 		UseWhileEquipped	= FALSE,
-		DisplayName			= 50-Count Bottle of Antidepressants,
+		DisplayName			= Bottle of 50 Antidepressants,
 		Icon				= OS50pkAntidepressants,
 	}
 
@@ -95,7 +95,7 @@ module GidOrganized
 		Weight				= 0.6,
 		Type				= Normal,
 		UseWhileEquipped	= FALSE,
-		DisplayName			= 50-Count Bottle of Sleeping Pills,
+		DisplayName			= Bottle of 50 Sleeping Pills,
 		Icon				= OS50pkSleepingPills,
 	}
 
@@ -104,7 +104,7 @@ module GidOrganized
 		Weight				= 0.8,
 		Type				= Normal,
 		UseWhileEquipped	= FALSE,
-		DisplayName			= 4-Pack of Full Disinfectant Bottles,
+		DisplayName			= Pack of 4 Full Disinfectant Bottles,
 		Icon				= OS4pkDisinfectant,
 	}
 
@@ -113,7 +113,7 @@ module GidOrganized
 		Weight				= 0.9,
 		Type				= Normal,
 		UseWhileEquipped	= FALSE,
-		DisplayName			= 30-Count Box of Alcohol Wipes,
+		DisplayName			= Box of 30 Alcohol Wipes,
 		Icon				= OS30pkAlcoholWipes,
 	}
 

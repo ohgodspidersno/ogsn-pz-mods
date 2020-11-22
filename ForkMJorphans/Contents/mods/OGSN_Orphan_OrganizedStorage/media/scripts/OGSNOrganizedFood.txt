@@ -10,7 +10,7 @@ module GidOrganizedFood
 	{
 		Weight			= 1.5,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Diet Pop,
+		DisplayName		= Pack of 6 Diet Pop,
 		Icon			= OS6pkPopDiet,
 	}
 
@@ -18,7 +18,7 @@ module GidOrganizedFood
 	{
 		Weight			= 1.5,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Pop,
+		DisplayName		= Pack of 6 Pop,
 		Icon			= OS6pkPop,
 	}
 
@@ -26,7 +26,7 @@ module GidOrganizedFood
 	{
 		Weight			= 1.5,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Fizz Pop,
+		DisplayName		= Pack of 6 Fizz Pop,
 		Icon			= OS6pkFizz,
 	}
 
@@ -34,7 +34,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Soup,
+		DisplayName		= Pack of 6 Canned Soup,
 		Icon			= OS6pkCannedSoup,
 	}
 
@@ -42,7 +42,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Beans,
+		DisplayName		= Pack of 6 Canned Beans,
 		Icon			= OS6pkCannedBeans,
 	}
 
@@ -50,7 +50,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Bolognese,
+		DisplayName		= Pack of 6 Canned Bolognese,
 		Icon			= OS6pkCannedBolognese,
 	}
 
@@ -58,7 +58,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Carrots,
+		DisplayName		= Pack of 6 Canned Carrots,
 		Icon			= OS6pkCannedCarrots,
 	}
 
@@ -66,7 +66,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Chili,
+		DisplayName		= Pack of 6 Canned Chili,
 		Icon			= OS6pkCannedChili,
 	}
 
@@ -74,7 +74,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Corn,
+		DisplayName		= Pack of 6 Canned Corn,
 		Icon			= OS6pkCannedCorn,
 	}
 
@@ -82,7 +82,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Corned Beef,
+		DisplayName		= Pack of 6 Canned Corned Beef,
 		Icon			= OS6pkCannedCornedBeef,
 	}
 
@@ -90,7 +90,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Mushroom Soup,
+		DisplayName		= Pack of 6 Canned Mushroom Soup,
 		Icon			= OS6pkCannedMushSoup,
 	}
 
@@ -98,7 +98,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Peas,
+		DisplayName		= Pack of 6 Canned Peas,
 		Icon			= OS6pkCannedPeas,
 	}
 
@@ -106,7 +106,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Potato,
+		DisplayName		= Pack of 6 Canned Potato,
 		Icon			= OS6pkCannedPotato,
 	}
 
@@ -114,7 +114,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.4,
 		Type			= Normal,
-		DisplayName		= 6-Pack of Canned Tomato,
+		DisplayName		= Pack of 6 Canned Tomato,
 		Icon			= OS6pkCannedTomato,
 	}
 
@@ -122,14 +122,14 @@ module GidOrganizedFood
 	{
 		Weight			= 1.2,
 		Type			= Normal,
-		DisplayName		= 8-Pack of Canned Tuna,
+		DisplayName		= Pack of 8 Canned Tuna,
 		Icon			= OS8pkCannedTuna,
 	}
 	item OS4pkSardines
 	{
 		Weight			= 1.6,
 		Type			= Normal,
-		DisplayName		= 4-Pack of Canned Sardines,
+		DisplayName		= Pack of 4 Canned Sardines,
 		Icon			= OS4pkSardines,
 	}
 
@@ -137,7 +137,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2,
 		Type			= Normal,
-		DisplayName		= 4-Pack of Instant Coffee,
+		DisplayName		= Pack of Bulk Instant Coffee,
 		Icon			= OS4pkCoffee,
 	}
 
@@ -145,7 +145,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.2,
 		Type			= Normal,
-		DisplayName		= 12-Pack Case of Empty Wine Bottles,
+		DisplayName		= Case of 12 Empty Wine Bottles,
 		Icon			= OS12pkWineEmpty,
 	}
 
@@ -153,7 +153,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2.2,
 		Type			= Normal,
-		DisplayName		= 12-Pack Case of Empty Wine Bottles,
+		DisplayName		= Case of 12 Empty Wine Bottles,
 		Icon			= OS12pkWineEmpty,
 	}
 
@@ -161,7 +161,7 @@ module GidOrganizedFood
 	{
 		Weight			= 1.5,
 		Type			= Normal,
-		DisplayName		= 8-Pack Case of Empty Whiskey Bottles,
+		DisplayName		= Pack of 8 Empty Whiskey Bottles,
 		Icon			= OS8pkWhiskeyEmpty,
 	}
 
@@ -169,7 +169,7 @@ module GidOrganizedFood
 	{
 		Weight			= 1.2,
 		Type			= Normal,
-		DisplayName		= 24-Pack of Empty Water Bottles,
+		DisplayName		= Pack of Empty Water Bottles,
 		Icon			= OS24pkWaterBottleEmpty,
 	}
 
@@ -177,7 +177,7 @@ module GidOrganizedFood
 	{
 		Weight			= 9.6,
 		Type			= Normal,
-		DisplayName		= 24-Pack of Full Water Bottles,
+		DisplayName		= Pack of Full Water Bottles,
 		Icon			= OS24pkWaterBottleFull,
 	}
 
@@ -185,7 +185,7 @@ module GidOrganizedFood
 	{
 		Weight			= .8,
 		Type			= Normal,
-		DisplayName		= 4-Pack of Duct Dape,
+		DisplayName		= Pack of 4 Duct Dape,
 		Icon			= OS4pkDuctTape,
 	}
 
@@ -318,7 +318,6 @@ module GidOrganizedFood
 		Time:60.0,
 		Category:Storage,
 		OnGiveXP:NoXP_OnGiveXP,
-		OnCreate:UnpackCoffeeOGSN,
 	}
 
 	recipe Pack Instant Coffee Mix
@@ -328,7 +327,6 @@ module GidOrganizedFood
 		Time:60.0,
 		Category:Storage,
 		OnGiveXP:NoXP_OnGiveXP,
-		OnCreate:PackCoffeeOGSN,
 	}
 
 	recipe Pack 12 Empty Wine Bottles

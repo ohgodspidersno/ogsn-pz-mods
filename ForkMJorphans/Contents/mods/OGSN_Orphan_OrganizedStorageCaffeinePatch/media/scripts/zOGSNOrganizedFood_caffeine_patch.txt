@@ -1,0 +1,36 @@
+module GidOrganizedFood
+{
+imports
+{
+Base
+}
+
+item OS4pkCoffee
+{
+Weight = 0.5,
+Type = Normal,
+DisplayName	= Pack of Bulk Instant Coffee,
+Icon = OS4pkCoffee,
+}
+
+recipe Unpack Instant Coffee Mix
+{
+OS4pkCoffee,
+Result:Coffee2=20,
+Time:60.0,
+Category:Storage,
+OnGiveXP:NoXP_OnGiveXP,
+Override:true,
+}
+
+recipe Pack Instant Coffee Mix
+{
+Coffee2=200,
+Result:OS4pkCoffee,
+Time:60.0,
+Category:Storage,
+OnGiveXP:NoXP_OnGiveXP,
+Override:true,
+}
+
+}
