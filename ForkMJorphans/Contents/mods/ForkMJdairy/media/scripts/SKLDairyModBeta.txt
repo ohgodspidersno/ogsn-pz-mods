@@ -18,7 +18,7 @@ item Strainer
 	Type                = Normal,
 	DisplayName         = Strainer,
 	Icon                = Strainer,
-	Weight              = 0.5,	
+	Weight              = 0.5,
 	MetalValue          = 15,
 }
 
@@ -42,7 +42,7 @@ item MilkJar
 
 	DaysFresh           = 4,
 	DaysTotallyRotten   = 7,
-	
+
 	HungerChange        = -20,
 	ThirstChange        = -100,
 
@@ -50,13 +50,13 @@ item MilkJar
 	Carbohydrates       = 22,
 	Proteins            = 14,
 	Lipids              = 18,
-	
+
 	Packaged            = TRUE,
 	CantBeFrozen        = TRUE,
-	
+
 	CustomContextMenu   = Drink,
 	CustomEatSound      = PZ_DrinkingFromBottle,
-	
+
 	EvolvedRecipe       = HotDrink:2,
 	FoodType            = NoExplicit,
 }
@@ -71,7 +71,7 @@ item MilkWaterBottle
 
 	DaysFresh           = 4,
 	DaysTotallyRotten   = 7,
-	
+
 	HungerChange        = -20,
 	ThirstChange        = -100,
 
@@ -79,13 +79,13 @@ item MilkWaterBottle
 	Carbohydrates       = 22,
 	Proteins            = 14,
 	Lipids              = 18,
-	
+
 	Packaged            = TRUE,
 	CantBeFrozen        = TRUE,
-	
+
 	CustomContextMenu   = Drink,
 	CustomEatSound      = PZ_DrinkingFromBottle,
-	
+
 	EvolvedRecipe       = HotDrink:2,
 	FoodType            = NoExplicit,
 }
@@ -100,7 +100,7 @@ item MilkPopBottle
 
 	DaysFresh           = 4,
 	DaysTotallyRotten   = 7,
-	
+
 	HungerChange        = -20,
 	ThirstChange        = -100,
 
@@ -108,13 +108,13 @@ item MilkPopBottle
 	Carbohydrates       = 22,
 	Proteins            = 14,
 	Lipids              = 18,
-	
+
 	Packaged            = TRUE,
 	CantBeFrozen        = TRUE,
-	
+
 	CustomContextMenu   = Drink,
 	CustomEatSound      = PZ_DrinkingFromBottle,
-	
+
 	EvolvedRecipe       = HotDrink:2,
 	FoodType            = NoExplicit,
 }
@@ -126,18 +126,18 @@ item CheesePrep
 	Icon                = DairyPan,
 	ReplaceOnUse        = Saucepan,
 	Weight              = 1.0,
-	
+
 	DaysFresh           = 2,
 	DaysTotallyRotten   = 4,
-	
+
 	UnhappyChange       = 20,
 	HungerChange        = -20,
-	
+
 	Calories            = 320,
 	Carbohydrates       = 22,
 	Proteins            = 14,
 	Lipids              = 18,
-	
+
 	IsCookable          = TRUE,
 	DangerousUncooked   = TRUE,
 }
@@ -147,7 +147,7 @@ item YogurtCulture
 	Type                = Drainable,
 	DisplayName         = Yogurt Culture,
 	Icon                = YogurtCulture,
-	Weight              = 0.1,	
+	Weight              = 0.1,
 	UseDelta            = 0.2,
 	UseWhileEquipped    = FALSE,
 }
@@ -159,18 +159,18 @@ item YogurtPrep
 	Icon                = DairyPan,
 	ReplaceOnUse        = Saucepan,
 	Weight              = 1.0,
-	
+
 	DaysFresh           = 2,
 	DaysTotallyRotten   = 4,
-	
+
 	UnhappyChange       = 20,
 	HungerChange        = -20,
-	
+
 	Calories            = 320,
 	Carbohydrates       = 22,
 	Proteins            = 14,
 	Lipids              = 18,
-	
+
 	IsCookable          = TRUE,
 	DangerousUncooked   = TRUE,
 }
@@ -180,22 +180,22 @@ item YogurtJar
 	Type                = Food,
 	DisplayName         = Jar of Yogurt,
 	Icon                = YogurtJar,
-	ReplaceOnUse        = EmptyJar,	
+	ReplaceOnUse        = EmptyJar,
 	Weight              = 1.0,
-		
+
 	DaysFresh           = 4,
 	DaysTotallyRotten   = 7,
-	
+
 	HungerChange        = -20,
 
 	Calories            = 320,
 	Carbohydrates       = 22,
 	Proteins            = 14,
 	Lipids              = 18,
-	
+
 	Packaged            = TRUE,
 	CantBeFrozen        = TRUE,
-	
+
 	Spice               = TRUE,
 	EvolvedRecipe       = FruitSalad:2;Salad:2,
 	FoodType            = NoExplicit,
@@ -209,10 +209,10 @@ item Butter
 	DisplayName         = Butter,
 	Icon                = Butter,
 	Weight              = 0.2,
-	
+
 	HungerChange        = -20,
 	UnhappyChange       = 20,
-	
+
 	Calories            = 800,
 	Carbohydrates       = 0,
 	Proteins            = 0,
@@ -229,12 +229,12 @@ item Yoghurt
 	DisplayName         = Yogurt,
 	Icon                = Yoghurt,
 	Weight              = 0.3,
-	
+
 	DaysFresh           = 10,
 	DaysTotallyRotten   = 15,
-	
+
 	HungerChange        = -10,
-	
+
 	Calories            = 170,
 	Carbohydrates       = 33,
 	Proteins            = 5,
@@ -243,28 +243,28 @@ item Yoghurt
 	Spice               = TRUE,
 	EvolvedRecipe       = FruitSalad:2;Salad:2,
 	FoodType            = NoExplicit,
-	
+
 	Packaged            = TRUE,
 }
 
 /*========== NEW RECIPES ======================================================================*/
-	
+
 recipe Make Jar of Milk
 {
    EmptyJar,
    PowderedMilk,
    Water=10,
    Result:MilkJar,
-   Time:60.0,	
+   Time:60.0,
    Category:Cooking,
-   OnGiveXP:Give3CookingXP,
+   OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Empty Jar of Milk
 {
    MilkJar,
    Result:EmptyJar,
-   Time:30.0,	
+   Time:30.0,
    Category:Cooking,
 }
 
@@ -274,9 +274,9 @@ recipe Make Bottle of Milk
    PowderedMilk,
    Water=10,
    Result:MilkWaterBottle,
-   Time:60.0,	
+   Time:60.0,
    Category:Cooking,
-   OnGiveXP:Give3CookingXP,
+   OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Make Bottle of Milk
@@ -285,9 +285,9 @@ recipe Make Bottle of Milk
    PowderedMilk,
    Water=10,
    Result:MilkPopBottle,
-   Time:60.0,	
+   Time:60.0,
    Category:Cooking,
-   OnGiveXP:Give3CookingXP,
+   OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Make Butter
@@ -295,84 +295,84 @@ recipe Make Butter
 	NeedToBeLearn:TRUE,
 	MilkJar;20,
 	keep JarLid,
-	keep Strainer,		
+	keep Strainer,
 	Result:Butter,
 	Time:100.0,
 	Category:Cooking,
-	OnGiveXP:Give3CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Make Butter
 {
 	NeedToBeLearn:TRUE,
 	MilkWaterBottle;20,
-	keep Strainer,		
+	keep Strainer,
 	Result:Butter,
 	Time:100.0,
 	Category:Cooking,
-	OnGiveXP:Give3CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Make Butter
 {
 	NeedToBeLearn:TRUE,
 	MilkPopBottle;20,
-	keep Strainer,		
+	keep Strainer,
 	Result:Butter,
 	Time:100.0,
 	Category:Cooking,
-	OnGiveXP:Give3CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Prepare Cheese
 {
 	NeedToBeLearn:TRUE,
-	destroy Saucepan,		
+	destroy Saucepan,
 	MilkJar;20,
 	Vinegar=4,
 	Salt;2,
 	Result:CheesePrep,
 	Time:100.0,
-	Category:Cooking,	
-	OnGiveXP:Give3CookingXP,
+	Category:Cooking,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Prepare Cheese
 {
 	NeedToBeLearn:TRUE,
-	destroy Saucepan,		
+	destroy Saucepan,
 	MilkWaterBottle;20,
 	Vinegar=4,
 	Salt;2,
 	Result:CheesePrep,
 	Time:100.0,
-	Category:Cooking,	
-	OnGiveXP:Give3CookingXP,
+	Category:Cooking,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Prepare Cheese
 {
 	NeedToBeLearn:TRUE,
-	destroy Saucepan,		
+	destroy Saucepan,
 	MilkPopBottle;20,
 	Vinegar=4,
 	Salt;2,
 	Result:CheesePrep,
 	Time:100.0,
-	Category:Cooking,	
-	OnGiveXP:Give3CookingXP,
+	Category:Cooking,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
-recipe Make Cheese	
+recipe Make Cheese
 {
-	CheesePrep,	
+	CheesePrep,
 	keep Strainer,
 	Result:Cheese=3,
 	OnTest:DairyModIsCooked_TestIsValid,
 	OnCreate:DairyModReturnSaucePan_OnCreate,
-	Time:100.0,	
+	Time:100.0,
 	Category:Cooking,
-	OnGiveXP:Give3CookingXP,	
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Prepare Yogurt
@@ -383,8 +383,8 @@ recipe Prepare Yogurt
 	YogurtCulture,
 	Result:YogurtPrep,
 	Time:100.0,
-	Category:Cooking,	
-	OnGiveXP:Give3CookingXP,
+	Category:Cooking,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Prepare Yogurt
@@ -396,7 +396,7 @@ recipe Prepare Yogurt
 	Result:YogurtPrep,
 	Time:100.0,
 	Category:Cooking,
-	OnGiveXP:Give3CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Prepare Yogurt
@@ -408,7 +408,7 @@ recipe Prepare Yogurt
 	Result:YogurtPrep,
 	Time:100.0,
 	Category:Cooking,
-	OnGiveXP:Give3CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Make Yogurt
@@ -421,20 +421,20 @@ recipe Make Yogurt
 	OnTest:DairyModIsCooked_TestIsValid,
 	Time:100.0,
 	Category:Cooking,
-	OnGiveXP:Give3CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Empty Jar of Yogurt
 {
    YogurtJar,
    Result:EmptyJar,
-   Time:30.0,	
+   Time:30.0,
    Category:Cooking,
 }
 
 /*========== UPDATED RECIPES ==================================================================*/
 
-recipe Make Mildew Cure	
+recipe Make Mildew Cure
 {
 	MilkJar;20,
 	farming.GardeningSprayEmpty,
@@ -477,7 +477,7 @@ recipe Make Cake Batter
 	NeedToBeLearn:true,
 	Time:50.0,
 	Category:Cooking,
-	OnGiveXP:Give10CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking10,
 }
 
 recipe Make Cake Batter
@@ -493,7 +493,7 @@ recipe Make Cake Batter
 	NeedToBeLearn:true,
 	Time:50.0,
 	Category:Cooking,
-	OnGiveXP:Give10CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking10,
 }
 
 recipe Make Cake Batter
@@ -509,7 +509,7 @@ recipe Make Cake Batter
 	NeedToBeLearn:true,
 	Time:50.0,
 	Category:Cooking,
-	OnGiveXP:Give10CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking10,
 }
 
 recipe Make Bowl of Cereal
@@ -520,7 +520,7 @@ recipe Make Bowl of Cereal
 	Result:CerealBowl,
 	Time:20.0,
 	Category:Cooking,
-	OnGiveXP:Give3CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Make Bowl of Cereal
@@ -531,7 +531,7 @@ recipe Make Bowl of Cereal
 	Result:CerealBowl,
 	Time:20.0,
 	Category:Cooking,
-	OnGiveXP:Give3CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 recipe Make Bowl of Cereal
@@ -542,7 +542,7 @@ recipe Make Bowl of Cereal
 	Result:CerealBowl,
 	Time:20.0,
 	Category:Cooking,
-	OnGiveXP:Give3CookingXP,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 }
 
 }
