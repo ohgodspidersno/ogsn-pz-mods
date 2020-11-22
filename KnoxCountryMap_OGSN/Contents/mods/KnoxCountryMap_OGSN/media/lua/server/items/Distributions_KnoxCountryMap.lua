@@ -1,6 +1,9 @@
 require 'Items/Distributions'
+require 'Items/ProceduralDistributions'
 
 SuburbsDistributions = SuburbsDistributions or {}
+ProceduralDistributions = ProceduralDistributions or {}
+
 
 function stockIWBUMS()
   table.insert(SuburbsDistributions["zippeestore"]["shelvesmag"].items, "Base.KnoxCountryMap");

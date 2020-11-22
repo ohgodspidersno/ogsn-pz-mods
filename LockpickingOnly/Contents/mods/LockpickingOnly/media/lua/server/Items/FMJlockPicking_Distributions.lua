@@ -57,10 +57,10 @@ table.insert(SuburbsDistributions["garagestorage"]["other"].items, 0.2);
 table.insert(SuburbsDistributions["garagestorage"]["other"].items, "FMJ.LockPickingMag2");
 table.insert(SuburbsDistributions["garagestorage"]["other"].items, 0.2);
 
-table.insert(ProceduralDistributions.list["CrateHardware"].items, "FMJ.LockPickingMag");
-table.insert(ProceduralDistributions.list["CrateHardware"].items, 0.2);
-table.insert(ProceduralDistributions.list["CrateHardware"].items, "FMJ.LockPickingMag2");
-table.insert(ProceduralDistributions.list["CrateHardware"].items, 0.2);
+table.insert(ProceduralDistributions["list"]["CrateHardware"].items, "FMJ.LockPickingMag");
+table.insert(ProceduralDistributions["list"]["CrateHardware"].items, 0.2);
+table.insert(ProceduralDistributions["list"]["CrateHardware"].items, "FMJ.LockPickingMag2");
+table.insert(ProceduralDistributions["list"]["CrateHardware"].items, 0.2);
 
 table.insert(SuburbsDistributions["garage"]["metal_shelves"].items, "FMJ.LockPickingMag");
 table.insert(SuburbsDistributions["garage"]["metal_shelves"].items, 0.2);
@@ -100,13 +100,11 @@ table.insert(SuburbsDistributions["shed"]["other"].items, 2.5);
 table.insert(SuburbsDistributions["shed"]["other"].items, "FMJ.BobbyPin");
 table.insert(SuburbsDistributions["shed"]["other"].items, 2.5);
 
-table.insert(ProceduralDistributions.list["CrateHardware"].items, "FMJ.BobbyPin");
-table.insert(ProceduralDistributions.list["CrateHardware"].items, 2.5);
-table.insert(ProceduralDistributions.list["CrateHardware"].items, "FMJ.BobbyPin");
-table.insert(ProceduralDistributions.list["CrateHardware"].items, 2.5);
-
--- table.insert(SuburbsDistributions["garage"]["crate"].items, "FMJ.BobbyPin");
--- table.insert(SuburbsDistributions["garage"]["crate"].items, 2.5);
+-- Formerly ["garage"]["crate"] --
+table.insert(ProceduralDistributions["list"]["CrateHardware"].items, "FMJ.BobbyPin");
+table.insert(ProceduralDistributions["list"]["CrateHardware"].items, 2.5);
+table.insert(ProceduralDistributions["list"]["CrateHardware"].items, "FMJ.BobbyPin");
+table.insert(ProceduralDistributions["list"]["CrateHardware"].items, 2.5);
 
 table.insert(SuburbsDistributions["all"]["crate"].items, "FMJ.BobbyPin");
 table.insert(SuburbsDistributions["all"]["crate"].items, 2.5);
