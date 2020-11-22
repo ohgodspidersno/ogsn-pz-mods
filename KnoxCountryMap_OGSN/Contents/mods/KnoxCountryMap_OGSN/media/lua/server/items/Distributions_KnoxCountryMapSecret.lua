@@ -1,7 +1,9 @@
-require 'Vehicles/VehicleDistributions'
-require 'Items/Distributions';
+require 'Items/Distributions'
+require 'Items/ProceduralDistributions'
 
 SuburbsDistributions = SuburbsDistributions or {}
+ProceduralDistributions = ProceduralDistributions or {}
+
 
 -- Distributions
 table.insert(SuburbsDistributions['all']['desk'].items, 'Base.KnoxCountryMapSecret');

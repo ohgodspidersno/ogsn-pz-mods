@@ -1,9 +1,9 @@
-
-
-require"Items/Distributions";
-
+require 'Items/Distributions'
+require 'Items/ProceduralDistributions'
 
 SuburbsDistributions = SuburbsDistributions or {}
+ProceduralDistributions = ProceduralDistributions or {}
+
 -- Medical Packs
 
 table.insert(SuburbsDistributions["medicalstorage"]["counter"].items, "GidOrganized.OS12pkAdhesiveBandages");
@@ -111,10 +111,10 @@ table.insert(SuburbsDistributions["medicaloffice"]["counter"].items, 0.2);
 table.insert(SuburbsDistributions["shed"]["other"].items, "GidOrganizedFood.OS4pkDuctTape");
 table.insert(SuburbsDistributions["shed"]["other"].items, 1);
 
-table.insert(SuburbsDistributions["garagestorage"]["crate"].items, "GidOrganizedFood.OS4pkDuctTape");
-table.insert(SuburbsDistributions["garagestorage"]["crate"].items, 1);
-table.insert(SuburbsDistributions["garagestorage"]["other"].items, "GidOrganizedFood.OS4pkDuctTape");
-table.insert(SuburbsDistributions["garagestorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["garagestorage"]["crate"].items, "GidOrganizedFood.OS4pkDuctTape");
+-- table.insert(SuburbsDistributions["garagestorage"]["crate"].items, 1);
+-- table.insert(SuburbsDistributions["garagestorage"]["other"].items, "GidOrganizedFood.OS4pkDuctTape");
+-- table.insert(SuburbsDistributions["garagestorage"]["other"].items, 1);
 
 table.insert(SuburbsDistributions["toolstore"]["shelves"].items, "GidOrganizedFood.OS4pkDuctTape");
 table.insert(SuburbsDistributions["toolstore"]["shelves"].items, 1);
@@ -240,44 +240,44 @@ table.insert(SuburbsDistributions["grocery"]["counter"].items, 0.6);
 table.insert(SuburbsDistributions["grocery"]["counter"].items, "GidOrganizedFood.OS6pkFizz");
 table.insert(SuburbsDistributions["grocery"]["counter"].items, 0.6);
 
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedSoup");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedBeans");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedBolognese");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedCarrots");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedChili");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedCorn");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedCornedBeef");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedMushSoup");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedPeas");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedPotato");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedTomato");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS8pkCannedTuna");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS4pkSardines");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS4pkCoffee");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS24pkWaterBottleFull");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS8pkCannedTuna");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkPopDiet");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 0.6);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkPop");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 0.6);
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkFizz");
-table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 0.6);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedSoup");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedBeans");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedBolognese");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedCarrots");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedChili");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedCorn");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedCornedBeef");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedMushSoup");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedPeas");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedPotato");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkCannedTomato");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS8pkCannedTuna");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS4pkSardines");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS4pkCoffee");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS24pkWaterBottleFull");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS8pkCannedTuna");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 1);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkPopDiet");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 0.6);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkPop");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 0.6);
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, "GidOrganizedFood.OS6pkFizz");
+-- table.insert(SuburbsDistributions["grocerystorage"]["other"].items, 0.6);
 
 -- houses
 
