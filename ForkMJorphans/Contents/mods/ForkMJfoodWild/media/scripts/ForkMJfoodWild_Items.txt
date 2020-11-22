@@ -345,7 +345,7 @@ module FMJ {
 		Result: Omelettes,
 		Time:500.0,
 		Category:Cooking,
-		OnGiveXP: Give5CookingXP,
+		OnGiveXP: Recipe.OnGiveXP.Cooking5,
 	}
 	item PotatoPancakes {
 		Type= Food,
@@ -375,7 +375,7 @@ module FMJ {
 		Result: PotatoPancakes,
 		Time: 500.0,
 		Category: Cooking,
-		OnGiveXP: Give5CookingXP,
+		OnGiveXP: Recipe.OnGiveXP.Cooking5,
 	}
 		/*******************SURVIVAL*******************/
 	item RollUps {
