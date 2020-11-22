@@ -1,14 +1,14 @@
 require 'Vehicles/VehicleDistributions'
 require 'Items/Distributions';
 
-Distributions = Distributions or {}
+SuburbsDistributions = SuburbsDistributions or {}
 
 -- Distributions
-table.insert(Distributions['all']['desk'].items, 'Base.KnoxCountryMapSecret');
-table.insert(Distributions['all']['desk'].items, 0.0005);
+table.insert(SuburbsDistributions['all']['desk'].items, 'Base.KnoxCountryMapSecret');
+table.insert(SuburbsDistributions['all']['desk'].items, 0.0005);
 
-table.insert(Distributions['Bag_WeaponBag'].items, 'Base.KnoxCountryMapSecret');
-table.insert(Distributions['Bag_WeaponBag'].items, 1);
+table.insert(SuburbsDistributions['Bag_WeaponBag'].items, 'Base.KnoxCountryMapSecret');
+table.insert(SuburbsDistributions['Bag_WeaponBag'].items, 1);
 
 -- VehicleDistributions
 VehicleDistributions.GloveBoxSecretMapRare = VehicleDistributions.GloveBox

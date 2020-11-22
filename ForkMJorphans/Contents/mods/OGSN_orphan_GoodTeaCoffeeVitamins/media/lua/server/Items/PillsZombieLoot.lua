@@ -1,8 +1,9 @@
 require 'Items/Distributions'
-Distributions = Distributions or {}
+
+SuburbsDistributions = SuburbsDistributions or {}
 -- Zombie Male
-table.insert(Distributions["all"]["inventorymale"].items, "Base.PillsVitamins");
-table.insert(Distributions["all"]["inventorymale"].items, 0.03);
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.PillsVitamins");
+table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.03);
 -- Zombie Female
-table.insert(Distributions["all"]["inventoryfemale"].items, "Base.PillsVitamins");
-table.insert(Distributions["all"]["inventoryfemale"].items, 0.03);
+table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, "Base.PillsVitamins");
+table.insert(SuburbsDistributions["all"]["inventoryfemale"].items, 0.03);
