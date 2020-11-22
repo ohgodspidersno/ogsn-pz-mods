@@ -1,4 +1,5 @@
-require 'Items/SuburbsDistributions'
+require 'Items/Distributions'
+
 SuburbsDistributions = SuburbsDistributions or {}
 -- Zombie Male
 table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.PillsVitamins");

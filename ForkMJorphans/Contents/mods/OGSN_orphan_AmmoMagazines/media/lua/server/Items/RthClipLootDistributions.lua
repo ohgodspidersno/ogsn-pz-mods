@@ -1,5 +1,8 @@
-require 'Items/SuburbsDistributions'
+require 'Items/Distributions'
 require 'Items/ProceduralDistributions'
+
+ProceduralDistributions = ProceduralDistributions or {}
+SuburbsDistributions = SuburbsDistributions or {}
 
 --Crate farming (procedural)
 table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "308Clip");

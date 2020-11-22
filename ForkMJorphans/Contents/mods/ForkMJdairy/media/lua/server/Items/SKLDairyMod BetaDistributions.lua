@@ -1,5 +1,8 @@
-require 'Items/SuburbsDistributions'
+require 'Items/Distributions'
 require 'Items/ProceduralDistributions'
+
+ProceduralDistributions = ProceduralDistributions or {}
+SuburbsDistributions = SuburbsDistributions or {}
 
 -- Procedural Lists
 table.insert(ProceduralDistributions["list"]["FridgeOther"].items, "YogurtCulture");

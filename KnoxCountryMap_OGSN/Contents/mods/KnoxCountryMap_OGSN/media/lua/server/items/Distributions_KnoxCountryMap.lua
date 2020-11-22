@@ -1,4 +1,8 @@
-require 'Items/SuburbsDistributions'
+require 'Items/Distributions'
+require 'Items/ProceduralDistributions'
+
+SuburbsDistributions = SuburbsDistributions or {}
+ProceduralDistributions = ProceduralDistributions or {}
 
 
 function stockIWBUMS()
@@ -78,9 +82,9 @@ function stockClassic()
   table.insert(SuburbsDistributions["all"]["desk"].items, 0.1);
 end
 
-if string.match(getCore():getVersionNumber(), "IWBUMS")
+if string.match(getCore():getVersionNumber(), "41")
   then stockStuff = stockIWBUMS;
-  else stockStuff = stockClassic
+  else stockStuff = stockClassic;
 end;
 
 stockStuff()

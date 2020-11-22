@@ -1,5 +1,8 @@
-require 'Items/SuburbsDistributions'
+require 'Items/Distributions'
 require 'Items/ProceduralDistributions'
+
+ProceduralDistributions = ProceduralDistributions or {}
+SuburbsDistributions = SuburbsDistributions or {}
 
 table.insert(SuburbsDistributions["burgerkitchen"]["fridge"].items, "FMJ.PotatoPancakes");
 table.insert(SuburbsDistributions["burgerkitchen"]["fridge"].items, 4);
