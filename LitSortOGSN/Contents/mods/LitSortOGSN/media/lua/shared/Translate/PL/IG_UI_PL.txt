@@ -1,5 +1,5 @@
 IGUI_PL = {
 IGUI_PlayerText_FlaggedBook1 = "Zapamietam o tym.",
-IGUI_PlayerText_FlaggedBook2 = "Zapamietam ze przeczytalem ta jedna wczesniej.",
-IGUI_PlayerText_FlaggedBook3 = "Zrobilem z tego notatke.",
+IGUI_PlayerText_FlaggedBook2 = "Zapamietam, ze juz to widzialem.",
+IGUI_PlayerText_FlaggedBook3 = "Zanotowalem to sobie.",
 }

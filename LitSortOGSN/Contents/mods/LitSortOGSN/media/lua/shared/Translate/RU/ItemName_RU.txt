@@ -117,39 +117,37 @@ ItemName_Base.SmithingMag3 = "Журнал Кузнечного Дела Издание 3",
 ItemName_Base.SmithingMag4 = "Журнал Кузнечного Дела Издание 4",
 
 
-ItemName_Base.FarmingMag1 = "Журнал Фермера",
-ItemName_Base.HerbalistMag = "Журнал Травника",
-ItemName_Base.ElectronicsMag4 = "Журнал о генераторах",
-ItemName_Base.NutritionistMag = "Журнал Диетолога",
+ItemName_Base.FarmingMag1 = "Руководство Фермера",
+ItemName_Base.HerbalistMag = "Руководство Травника",
+ItemName_Base.ElectronicsMag4 = "Руководство о генераторах",
+ItemName_Base.NutritionistMag = "Руководство Диетолога",
+
+ItemName_Base.MechanicMag1 = "Автомобили Лейнса Руководство Издание 1: Стандартные модели"
+ItemName_Base.MechanicMag2 = "Автомобили Лэйнса Руководство Издание 2: Грузовые модели",
+ItemName_Base.MechanicMag3 = "Автомобили Лэйнса Руководство Издание 3: Спортивные модели",
+
+ItemName_Base.Book = "- Книга",
+ItemName_Base.Doodle = "- Рисунок",
+ItemName_filcher.ColoringBook = "- Книга-раскраска",
+ItemName_Base.ComicBook = "- Комикс",
+ItemName_filcher.Crosswords = "- Кроссворды",
+ItemName_Base.Magazine = "- Журнал",
+ItemName_filcher.MagazineX = "- Журнал порнографический",
+ItemName_Base.Newspaper = "- Газета",
+ItemName_filcher.NotesJokes = "- Книга с шутками",
+ItemName_filcher.Novel = "- Книга-новелла",
 
 
-ItemName_Base.MechanicMag1 = "Журнал 'Автомобили Лейнса' Издание 1: Стандартные модели"
-ItemName_Base.MechanicMag2 = "Журнал 'Автомобили Лэйнса' Издание 2: Грузовые модели",
-ItemName_Base.MechanicMag3 = "Журнал 'Автомобили Лэйнса' Издание 3: Спортивные модели",
+ItemName_Base.Note = "_Записка",
+ItemName_Base.Notebook = "_Пустой блокнот",
+ItemName_Base.Journal = "_Журнал",
+ItemName_Base.SheetPaper = "_Листок бумаги",
+ItemName_Base.SheetPaper2 = "_Листок бумаги",
 
 
-ItemName_Base.Book = "Книга",
-ItemName_Base.Doodle = "Рисунок",
-ItemName_filcher.ColoringBook = "Книга-раскраска",
-ItemName_Base.ComicBook = "Комикс",
-ItemName_filcher.Crosswords = "Кроссворды",
-ItemName_Base.Magazine = "Журнал",
-ItemName_filcher.MagazineX = "Журнал",
-ItemName_Base.Newspaper = "Газета",
-ItemName_filcher.NotesJokes = "Книга с шутками",
-ItemName_filcher.Novel = "Книга-новелла",
-
-
-ItemName_Base.Note = "Записка",
-ItemName_Base.Notebook = "Пустой блокнот",
-ItemName_Base.Journal = "Журнал",
-ItemName_Base.SheetPaper = "Листок бумаги",
-ItemName_Base.SheetPaper2 = "Листок бумаги",
-
-
-ItemName_filcher.GiftCard = "Подарочная открытка",
-ItemName_filcher.PostcardLocal = "Почтовая карточка",
-ItemName_filcher.PostcardOthers = "Почтовая карточка",
-ItemName_filcher.RippedPages = "Порванные страницы",
+ItemName_filcher.GiftCard = "-Подарочная открытка",
+ItemName_filcher.PostcardLocal = "-Почтовая карточка",
+ItemName_filcher.PostcardOthers = "-Почтовая карточка",
+ItemName_filcher.RippedPages = "-Порванные страницы",
 
 }
