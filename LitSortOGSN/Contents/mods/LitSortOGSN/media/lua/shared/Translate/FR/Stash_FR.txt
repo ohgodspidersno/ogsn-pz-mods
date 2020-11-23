@@ -1,5 +1,5 @@
 Stash_FR = {
-  Stash_AnnotedMap = " Carte - Annotee",
-  Stash_AnnotatedMap_Prefix = " Carte de",
+  Stash_AnnotedMap = ".Carte - Annotee",
+  Stash_AnnotatedMap_Prefix = ".Carte de",
   Stash_AnnotedMap_Suffix = " - Annotee",
 }

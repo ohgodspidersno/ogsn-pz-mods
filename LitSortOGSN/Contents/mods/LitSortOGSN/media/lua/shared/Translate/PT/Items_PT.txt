@@ -1,16 +1,16 @@
 Items_PT = {
 /************** MAPS **************/
-DisplayName_Knox_Country_Map = " Mapa do Pais Knox",
-DisplayName_Crumpled_Map = " Mapa do Pais Knox (Enrugado)",
-DisplayName_March_Ridge_Map = " Mapa de March Ridge",
-DisplayName_Muldraugh_Map = " Mapa de Muldraugh",
-DisplayName_Rosewood_Map = " Mapa de Rosewood",
-DisplayName_Westpoint_Map = " Mapa de Westpoint",
-DisplayName_Riverside_Map = " Mapa de Riverside",
+DisplayName_Knox_Country_Map = ".Mapa do Pais Knox",
+DisplayName_Crumpled_Map = ".Mapa do Pais Knox (Enrugado)",
+DisplayName_March_Ridge_Map = ".Mapa de March Ridge",
+DisplayName_Muldraugh_Map = ".Mapa de Muldraugh",
+DisplayName_Rosewood_Map = ".Mapa de Rosewood",
+DisplayName_Westpoint_Map = ".Mapa de Westpoint",
+DisplayName_Riverside_Map = ".Mapa de Riverside",
 
 /**** IMPROVED MAPS MOD ****/
-DisplayName_Crossroads_Mall_Map = " Mapa de Crossroads Mall",
-DisplayName_Dixie_Map = " Mapa de Dixie",
-DisplayName_Scenic_Grove_Map = " Mapa de Scenic Grove",
-DisplayName_Bedford_Falls_Map = " Mapa de Bedford Falls",
+DisplayName_Crossroads_Mall_Map = ".Mapa de Crossroads Mall",
+DisplayName_Dixie_Map = ".Mapa de Dixie",
+DisplayName_Scenic_Grove_Map = ".Mapa de Scenic Grove",
+DisplayName_Bedford_Falls_Map = ".Mapa de Bedford Falls",
 }
