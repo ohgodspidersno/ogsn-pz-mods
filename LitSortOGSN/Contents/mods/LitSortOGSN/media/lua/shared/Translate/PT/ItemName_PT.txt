@@ -1,20 +1,20 @@
 ItemName_PT = {
 
 /************** MAPS **************/
-ItemName_Base.KnoxCountryMap = ".Mapa do Pais Knox",
-ItemName_Base.KnoxCountryMapSecret = ".Mapa do Knox Country (Enrugado)",
-ItemName_Base.March_Ridge_Map = ".Mapa de March Ridge",
-ItemName_Base.Muldraugh_Map = ".Mapa de Muldraugh",
-ItemName_Base.Rosewood_Map = ".Mapa de Rosewood",
-ItemName_Base.Westpoint_Map = ".Mapa de Westpoint",
-ItemName_Base.Riverside_Map = ".Mapa de Riverside",
+ItemName_Base.KnoxCountryMap = "Mapa do Pais Knox",
+ItemName_Base.KnoxCountryMapSecret = "Mapa do Knox Country (Enrugado)",
+ItemName_Base.March_Ridge_Map = "Mapa de March Ridge",
+ItemName_Base.Muldraugh_Map = "Mapa de Muldraugh",
+ItemName_Base.Rosewood_Map = "Mapa de Rosewood",
+ItemName_Base.Westpoint_Map = "Mapa de Westpoint",
+ItemName_Base.Riverside_Map = "Mapa de Riverside",
 
 
 /**** IMPROVED MAPS MOD ****/
-ItemName_Base.CrossroadsMallMap = ".Mapa de Crossroads Mall",
-ItemName_Base.DixieMap = ".Mapa de Dixie"
-ItemName_Base.ScenicGroveMap = ".Mapa de Scenic Grove",
-ItemName_Base.BedfordMap = ".Mapa de Bedford Falls",
+ItemName_Base.CrossroadsMallMap = "Mapa de Crossroads Mall",
+ItemName_Base.DixieMap = "Mapa de Dixie"
+ItemName_Base.ScenicGroveMap = "Mapa de Scenic Grove",
+ItemName_Base.BedfordMap = "Mapa de Bedford Falls",
 
 /************** BOOKS **************/
 ItemName_Base.BookCarpentry1 = " Carpintaria Vol.1: Para Principiantes",
@@ -59,17 +59,17 @@ ItemName_Base.BookForaging3 = " Coletar Vol.3: Avancado",
 ItemName_Base.BookForaging4 = " Coletar Vol.4: Para especialistas",
 ItemName_Base.BookForaging5 = " Coletar Vol.5: Para professores",
 
-ItemName_Base.BookMechanic1 = " MecÃ¢nica Vol.1: Para Principiantes",
-ItemName_Base.BookMechanic2 = " MecÃ¢nica Vol.2: Intermediario",
-ItemName_Base.BookMechanic3 = " MecÃ¢nica Vol.3: Avancado",
-ItemName_Base.BookMechanic4 = " MecÃ¢nica Vol.4: Para especialistas",
-ItemName_Base.BookMechanic5 = " MecÃ¢nica Vol.5: Para professores",
+ItemName_Base.BookMechanic1 = " Mecânica Vol.1: Para Principiantes",
+ItemName_Base.BookMechanic2 = " Mecânica Vol.2: Intermediario",
+ItemName_Base.BookMechanic3 = " Mecânica Vol.3: Avancado",
+ItemName_Base.BookMechanic4 = " Mecânica Vol.4: Para especialistas",
+ItemName_Base.BookMechanic5 = " Mecânica Vol.5: Para professores",
 
-ItemName_Base.BookMetalWelding1 = " MetalÃºrgico Vol.1: Para Principiantes",
-ItemName_Base.BookMetalWelding2 = " MetalÃºrgico Vol.2: Intermediario",
-ItemName_Base.BookMetalWelding3 = " MetalÃºrgico Vol.3: Avancado",
-ItemName_Base.BookMetalWelding4 = " MetalÃºrgico Vol.4: Para especialistas",
-ItemName_Base.BookMetalWelding5 = " MetalÃºrgico Vol.5: Para professores",
+ItemName_Base.BookMetalWelding1 = " Metalúrgico Vol.1: Para Principiantes",
+ItemName_Base.BookMetalWelding2 = " Metalúrgico Vol.2: Intermediario",
+ItemName_Base.BookMetalWelding3 = " Metalúrgico Vol.3: Avancado",
+ItemName_Base.BookMetalWelding4 = " Metalúrgico Vol.4: Para especialistas",
+ItemName_Base.BookMetalWelding5 = " Metalúrgico Vol.5: Para professores",
 
 ItemName_Base.BookBlacksmith1 = " Ferreiro Vol.1: Para Principiantes",
 ItemName_Base.BookBlacksmith2 = " Ferreiro Vol.2: Intermediario",

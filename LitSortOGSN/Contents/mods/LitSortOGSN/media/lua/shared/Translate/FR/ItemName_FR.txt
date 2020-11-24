@@ -1,19 +1,19 @@
 ItemName_FR = {
 
 /************** MAPS **************/
-ItemName_Base.KnoxCountryMap = ".Carte de Knox Country",
-ItemName_Base.KnoxCountryMapSecret = ".Carte de Knox Country (Crumpled)",
-ItemName_Base.March_Ridge_Map = ".Carte de March Ridge",
-ItemName_Base.Muldraugh_Map = ".Carte de Muldraugh",
-ItemName_Base.Rosewood_Map = ".Carte de Rosewood",
-ItemName_Base.Westpoint_Map = ".Carte de Westpoint",
-ItemName_Base.Riverside_Map = ".Carte de Riverside",
+ItemName_Base.KnoxCountryMap = "Carte de Knox Country",
+ItemName_Base.KnoxCountryMapSecret = "Carte de Knox Country (Crumpled)",
+ItemName_Base.March_Ridge_Map = "Carte de March Ridge",
+ItemName_Base.Muldraugh_Map = "Carte de Muldraugh",
+ItemName_Base.Rosewood_Map = "Carte de Rosewood",
+ItemName_Base.Westpoint_Map = "Carte de Westpoint",
+ItemName_Base.Riverside_Map = "Carte de Riverside",
 
 /**** IMPROVED MAPS MOD ****/
-ItemName_Base.CrossroadsMallMap = ".Carte de Crossroads Mall",
-ItemName_Base.DixieMap = ".Carte de Dixie"
-ItemName_Base.ScenicGroveMap = ".Carte de Scenic Grove",
-ItemName_Base.BedfordMap = ".Carte de Bedford Falls",
+ItemName_Base.CrossroadsMallMap = "Carte de Crossroads Mall",
+ItemName_Base.DixieMap = "Carte de Dixie"
+ItemName_Base.ScenicGroveMap = "Carte de Scenic Grove",
+ItemName_Base.BedfordMap = "Carte de Bedford Falls",
 
 /************** BOOKS **************/
 ItemName_Base.BookCarpentry1 = " Menuiserie Vol.1: Debutant",
