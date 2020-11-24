@@ -1,5 +1,5 @@
-Stash_PL = {
-Stash_AnnotedMap = ".Mapa - z adnotacjami",
-Stash_AnnotatedMap_Prefix = ".Mapa",
-Stash_AnnotedMap_Suffix = "- z adnotacjami",
+Stash_EN = {
+Stash_AnnotedMap = "Mapa z adnotacjami",
+Stash_AnnotatedMap_Prefix = "Mapa"
+Stash_AnnotedMap_Suffix = "z adnotacjami"
 }

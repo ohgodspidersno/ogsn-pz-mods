@@ -1,15 +1,15 @@
 Items_PL = {
-DisplayName_Knox_Country_Map = ".Mapa Knox Country",
-DisplayName_Crumpled_Map = ".Mapa Knox Country (Pogniecona)",
-DisplayName_March_Ridge_Map = ".Mapa March Ridge",
-DisplayName_Muldraugh_Map = ".Mapa Muldraugh",
-DisplayName_Rosewood_Map = ".Mapa Rosewood",
-DisplayName_Westpoint_Map = ".Mapa Westpoint",
-DisplayName_Riverside_Map = ".Mapa Riverside",
+DisplayName_Knox_Country_Map = "Mapa Knox Country",
+DisplayName_Crumpled_Map = "Mapa Knox Country (Pogniecona)",
+DisplayName_March_Ridge_Map = "Mapa March Ridge",
+DisplayName_Muldraugh_Map = "Mapa Muldraugh",
+DisplayName_Rosewood_Map = "Mapa Rosewood",
+DisplayName_Westpoint_Map = "Mapa Westpoint",
+DisplayName_Riverside_Map = "Mapa Riverside",
 
 /**** IMPROVED MAPS MOD ****/
-DisplayName_Crossroads_Mall_Map = ".Mapa Crossroads Mall",
-DisplayName_Dixie_Map = ".Mapa Dixie",
-DisplayName_Scenic_Grove_Map = ".Mapa Scenic Grove",
-DisplayName_Bedford_Falls_Map = ".Mapa Bedford Falls",
+DisplayName_Crossroads_Mall_Map = "Mapa Crossroads Mall",
+DisplayName_Dixie_Map = "Mapa Dixie",
+DisplayName_Scenic_Grove_Map = "Mapa Scenic Grove",
+DisplayName_Bedford_Falls_Map = "Mapa Bedford Falls",
 }
