@@ -1,6 +1,6 @@
 version=1
 id=2079001985
-title=Orphanage for Abandoned Mods
+title=Orphanage for Abandoned Mods [41.47]
 description=[h1]They're not my kids but they have nowhere else to go[/h1]
 description=A collection of other people's mods that have been temporarily or permanently abandoned.
 description=These are re-uploads that I actively maintain. I keep them compatible with the latest IWBUMS branch, and also fix any bugs and mod conflicts I find.

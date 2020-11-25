@@ -1,6 +1,6 @@
 version=1
 id=2056238799
-title=Lockpicking! Just. Lockpicking. [41.46]
+title=Lockpicking! Just. Lockpicking. [41.47]
 description=[h1]Update[/h1]
 description=Replaces hairpins with actual lockpicks. Updates the loot tables so that they will be found in appropriate places.
 description=Lockpicks can now also be made with paperclips in addition to wire+blade. Increases the types of blade that can be used to turn wire into lockpicks.

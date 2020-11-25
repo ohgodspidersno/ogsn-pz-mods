@@ -1,6 +1,6 @@
 version=1
 id=2020740322
-title=Fashion Montage - Start with any outfit [41.46]
+title=Fashion Montage - Start with any outfit [41.47]
 description=[h1]Important: If you are seeing error messages[/h1]
 description=If you have used a mod that required you to manually update your FileGuidTable.xml file (like SWAT Pack) then you might see error messages popping up whenever the devs update the game.
 description=Fashion Montage is [i]not[/i] causing these errors, even though it is producing the messages. The errors are actually being caused by a FileGuidTable.xml that needs to be fixed.
@@ -22,7 +22,7 @@ description=Modders: This is fairly easy to do; check the lua/client/Definitions
 description=
 description=[h2]Important Notes[/h2]
 description=[list]
-description=[*] This is for the beta branch (IWBUMS version 41.46)
+description=[*] This is for the beta branch (IWBUMS version 41.47)
 description=[*] Compatible with all other mods, with one exception: Mods that add clothing items can cause issues if they are not kept up to date with the latest version of Project Zomboid. Make sure that the other mod is actively maintained, and make all necessary changes to FileGuidTable.xml that the other mod tells you to do.
 description=[/list]
 description=[h2]Troubleshooting[/h2]
