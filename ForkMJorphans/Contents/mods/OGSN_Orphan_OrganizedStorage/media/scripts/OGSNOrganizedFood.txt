@@ -137,7 +137,7 @@ module GidOrganizedFood
 	{
 		Weight			= 2,
 		Type			= Normal,
-		DisplayName		= Pack of Bulk Instant Coffee,
+		DisplayName		= Pack of 4 Instant Coffee,
 		Icon			= OS4pkCoffee,
 	}
 
@@ -198,7 +198,7 @@ module GidOrganizedFood
 		Result:OS6pkPopDiet,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Diet Pop Cans
@@ -208,7 +208,7 @@ module GidOrganizedFood
 		Result:Pop=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Pop Cans
@@ -218,7 +218,7 @@ module GidOrganizedFood
 		Result:OS6pkPop,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Pop Cans
@@ -228,7 +228,7 @@ module GidOrganizedFood
 		Result:Pop2=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Fizz Cans
@@ -238,7 +238,7 @@ module GidOrganizedFood
 		Result:OS6pkFizz,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Fizz Cans
@@ -248,7 +248,7 @@ module GidOrganizedFood
 		Result:Pop3=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Soups
@@ -258,7 +258,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedSoup,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Soups
@@ -268,7 +268,7 @@ module GidOrganizedFood
 		Result:TinnedSoup=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Beans
@@ -278,7 +278,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedBeans,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Beans
@@ -288,7 +288,7 @@ module GidOrganizedFood
 		Result:TinnedBeans=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 8 Canned Tuna
@@ -298,7 +298,7 @@ module GidOrganizedFood
 		Result:OS8pkCannedTuna,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 8 Canned Tuna
@@ -308,25 +308,25 @@ module GidOrganizedFood
 		Result:TunaTin=8,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
-	recipe Unpack Instant Coffee Mix
+	recipe Unpack 4 Instant Coffee Mix
 	{
 		OS4pkCoffee,
 		Result:Coffee2=4,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
-	recipe Pack Instant Coffee Mix
+	recipe Pack 4 Instant Coffee Mix
 	{
-		Coffee2=4,
+		Coffee2=100,
 		Result:OS4pkCoffee,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 12 Empty Wine Bottles
@@ -336,7 +336,7 @@ module GidOrganizedFood
 		Result:OS12pkWineEmpty,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 12 Empty Wine Bottles
@@ -346,7 +346,7 @@ module GidOrganizedFood
 		Result:WineEmpty=12,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 12 Empty Wine2 Bottles
@@ -356,7 +356,7 @@ module GidOrganizedFood
 		Result:OS12pkWineEmpty2,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 12 Empty Wine2 Bottles
@@ -366,7 +366,7 @@ module GidOrganizedFood
 		Result:WineEmpty2=12,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 8 Empty Whiskey Bottles
@@ -376,7 +376,7 @@ module GidOrganizedFood
 		Result:OS8pkWhiskeyEmpty,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 8 Empty Whiskey Bottles
@@ -386,7 +386,7 @@ module GidOrganizedFood
 		Result:WhiskeyEmpty=8,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 24 Empty Water Bottles
@@ -396,7 +396,7 @@ module GidOrganizedFood
 		Result:OS24pkWaterBottleEmpty,
 		Time:240.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 24 Empty Water Bottles
@@ -406,7 +406,7 @@ module GidOrganizedFood
 		Result:WaterBottleEmpty=24,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 24 Full Water Bottles
@@ -416,7 +416,7 @@ module GidOrganizedFood
 		Result:WaterBottleFull=24,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Fill Pack of Empty Water Bottles
@@ -427,7 +427,7 @@ module GidOrganizedFood
 		Result:OS24pkWaterBottleFull,
 		Time:960.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 4 Rolls of Duct Tape
@@ -437,7 +437,7 @@ module GidOrganizedFood
 		Result:OS4pkDuctTape,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 4 Rolls of Duct Tape
@@ -447,7 +447,7 @@ module GidOrganizedFood
 		Result:DuctTape=4,
 		Time:30.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Bolognese
@@ -457,7 +457,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedBolognese,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Bolognese
@@ -467,7 +467,7 @@ module GidOrganizedFood
 		Result:CannedBolognese=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Carrots
@@ -477,7 +477,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedCarrots,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Carrots
@@ -487,7 +487,7 @@ module GidOrganizedFood
 		Result:CannedCarrots2=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Chili
@@ -497,7 +497,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedChili,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Chili
@@ -507,7 +507,7 @@ module GidOrganizedFood
 		Result:CannedChili=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Corn
@@ -517,7 +517,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedCorn,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Corn
@@ -527,7 +527,7 @@ module GidOrganizedFood
 		Result:CannedCorn=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Mushroom Soup
@@ -537,7 +537,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedMushSoup,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Mushroom Soup
@@ -547,7 +547,7 @@ module GidOrganizedFood
 		Result:CannedMushroomSoup=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Peas
@@ -557,7 +557,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedPeas,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Peas
@@ -567,7 +567,7 @@ module GidOrganizedFood
 		Result:CannedPeas=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Potato
@@ -577,7 +577,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedPotato,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Potato
@@ -587,7 +587,7 @@ module GidOrganizedFood
 		Result:CannedPotato2=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Tomato
@@ -597,7 +597,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedTomato,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Tomato
@@ -607,7 +607,7 @@ module GidOrganizedFood
 		Result:CannedTomato2=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 4 Canned Sardines
@@ -617,7 +617,7 @@ module GidOrganizedFood
 		Result:OS4pkSardines,
 		Time:40.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 4 Sardines
@@ -627,7 +627,7 @@ module GidOrganizedFood
 		Result:CannedSardines=4,
 		Time:40.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 6 Canned Corned Beef
@@ -637,7 +637,7 @@ module GidOrganizedFood
 		Result:OS6pkCannedCornedBeef,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 6 Canned Corned Beef
@@ -647,7 +647,7 @@ module GidOrganizedFood
 		Result:CannedCornedBeef=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 }

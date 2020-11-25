@@ -126,7 +126,7 @@ module GidOrganized
 		Result:OS30pkAntibiotics,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 30 Antibiotics
@@ -136,7 +136,7 @@ module GidOrganized
 		Result:Antibiotics=30,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 9 Bandages
@@ -146,7 +146,7 @@ module GidOrganized
 		Result:OS9pkBandages,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 9 Bandages
@@ -156,7 +156,7 @@ module GidOrganized
 		Result:Bandage=9,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 9 Sterile Bandages
@@ -166,7 +166,7 @@ module GidOrganized
 		Result:OS9pkSterileBandages,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 9 Sterile Bandages
@@ -176,7 +176,7 @@ module GidOrganized
 		Result:AlcoholBandage=9,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 9 Dirty Bandages
@@ -186,7 +186,7 @@ module GidOrganized
 		Result:OS9pkBandagesDirty,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 9 Dirty Bandages
@@ -196,7 +196,7 @@ module GidOrganized
 		Result:BandageDirty=9,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 12 Cotton Balls
@@ -206,7 +206,7 @@ module GidOrganized
 		Result:OS12pkCottonBalls,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 12 Cotton Balls
@@ -216,7 +216,7 @@ module GidOrganized
 		Result:CottonBalls=12,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Pack 12 Adhesive Bandages
@@ -226,7 +226,7 @@ module GidOrganized
 		Result:OS12pkAdhesiveBandages,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 12 Adhesive Bandages
@@ -236,7 +236,7 @@ module GidOrganized
 		Result:Bandaid=12,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Bottle 50 Vitamins
@@ -246,7 +246,7 @@ module GidOrganized
 		Result:OS50pkVitamins,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unbottle 5x 10 Vitamins
@@ -256,7 +256,7 @@ module GidOrganized
 		Result:PillsVitamins=5,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Bottle 50 Painkillers
@@ -266,7 +266,7 @@ module GidOrganized
 		Result:OS50pkPainkillers,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unbottle 5x 10 Painkillers
@@ -276,7 +276,7 @@ module GidOrganized
 		Result:Pills=5,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Bottle 50 Beta Blockers
@@ -286,7 +286,7 @@ module GidOrganized
 		Result:OS50pkBetaBlockers,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unbottle 5x 10 Beta Blockers
@@ -296,7 +296,7 @@ module GidOrganized
 		Result:PillsBeta=5,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Bottle 50 Antidepressants
@@ -306,7 +306,7 @@ module GidOrganized
 		Result:OS50pkAntidepressants,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unbottle 5x 10 Antidepressants
@@ -316,7 +316,7 @@ module GidOrganized
 		Result:PillsAntiDep=5,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Bottle 50 Sleeping Tablets
@@ -326,7 +326,7 @@ module GidOrganized
 		Result:OS50pkSleepingPills,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unbottle 5x 10 Sleeping Tablets
@@ -336,7 +336,7 @@ module GidOrganized
 		Result:PillsSleepingTablets=5,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Combine to 4 Full Bottles of Disinfectant
@@ -346,7 +346,7 @@ module GidOrganized
 		Result:OS4pkDisinfectant,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Split to 4 Bottles
@@ -356,7 +356,7 @@ module GidOrganized
 		Result:Disinfectant=4,
 		Time:120.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Box 30 Alcohol Wipes
@@ -366,7 +366,7 @@ module GidOrganized
 		Result:OS30pkAlcoholWipes,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 	recipe Unpack 30 AlcoholWipes
@@ -376,7 +376,7 @@ module GidOrganized
 		Result:AlcoholWipes=6,
 		Time:60.0,
 		Category:Storage,
-		OnGiveXP:NoXP_OnGiveXP,
+		OnGiveXP:Recipe.OnGiveXP.None,
 	}
 
 }

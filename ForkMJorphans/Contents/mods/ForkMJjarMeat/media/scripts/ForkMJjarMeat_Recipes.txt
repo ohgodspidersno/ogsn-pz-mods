@@ -25,7 +25,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Pheasant Meats
 	{
@@ -47,7 +47,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Snake Meats
 	{
@@ -69,7 +69,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Chickens
 	{
@@ -91,7 +91,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Steaks
 	{
@@ -113,7 +113,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Frog Meats
 	{
@@ -136,7 +136,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 
 	recipe Make Jar of Meat Patties
@@ -159,7 +159,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Mutton Chops
 	{
@@ -181,7 +181,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Pork Chops
 	{
@@ -203,7 +203,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Rabbit Meats
 	{
@@ -225,7 +225,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Small Animal Meats
 	{
@@ -247,7 +247,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Small Bird Meats
 	{
@@ -269,7 +269,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 	recipe Make Jar of Salmons
 	{
@@ -291,6 +291,6 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
 	}
 }

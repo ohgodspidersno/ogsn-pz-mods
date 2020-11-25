@@ -60,7 +60,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
     }
 	recipe Make Jar of Wild Corns
 	{
@@ -83,7 +83,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
     }
 	recipe Make Jar of Wild Potatoes
 	{
@@ -106,7 +106,7 @@ module FMJ
 		Time: 30.0,
 		OnCreate: OpenCannedFood_OnCreate,
 		Category: Cooking,
-		OnGiveXP: NoXP_OnGiveXP,
+		OnGiveXP: Recipe.OnGiveXP.None,
     }
 /*******************CIGARRETS*******************/
 	recipe Make Roll Ups

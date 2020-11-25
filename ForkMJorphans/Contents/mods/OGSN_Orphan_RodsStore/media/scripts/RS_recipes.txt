@@ -5,7 +5,7 @@ recipe Assemble Plates
 {
 Plate=4,
 Result:PileOfPlates,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Time:90.0,
 Category:Cooking,
 }
@@ -14,7 +14,7 @@ recipe Unassemble Plates
 {
 PileOfPlates,
 Result:Plate=4,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Time:90.0,
 Category:Cooking,
 }
@@ -29,7 +29,7 @@ Water=2,
 Result:Plate,
 Time:250.0,
 Category:Cooking,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Sound:RS_WashingDishes,
 }
 
@@ -37,7 +37,7 @@ recipe Open Six Pack Beer
 {
 BeerSixPack1,
 Result:Beer1=6,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Time:100.0,
 Category:Cooking,
 }
@@ -46,7 +46,7 @@ recipe Open Six Pack Beer
 {
 BeerSixPack2,
 Result:Beer2=6,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Time:100.0,
 Category:Cooking,
 }
@@ -55,7 +55,7 @@ recipe Open Six Pack Beer
 {
 BeerSixPack3,
 Result:Beer3=6,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Time:100.0,
 Category:Cooking,
 }
@@ -66,7 +66,7 @@ keep Scissors/HuntingKnife/KitchenKnife/ButcherKnife/KnuckleKnife/PoliceKnife/Co
 MREBox,
 
 Result:MediumMREPackage=10,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Time:250.0,
 Category:Cooking,
 Sound:RS_Openboxcrate1,
@@ -77,7 +77,7 @@ recipe Open MRE Box
 keep Scissors/HuntingKnife/KitchenKnife/ButcherKnife/KnuckleKnife/PoliceKnife/CombatKnife/Machete,
 MREBox2,
 Result:MREPackage=10,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Time:250.0,
 Category:Cooking,
 Sound:RS_Openboxcrate1,
@@ -89,7 +89,7 @@ recipe Break Glass Panel
 keep Hammer/Sledgehammer/AxeStone/SharpedStone/Stone,
 GlassPanel,
 Result:ShardsOfBrokenGlass=3,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Sound:RS_GlassSmash,
 Time:60.0,
 Category:Carpentry,
@@ -100,7 +100,7 @@ recipe Make Improvised Shard Of Broken Glass Weapon
 ShardsOfBrokenGlass,
 Base.RippedSheets=2,
 Result:ImprovisedShardOfBrokenGlassWeapon,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Time:100.0,
 Category:Carpentry,
 }
@@ -118,7 +118,7 @@ recipe Open Plastic Ice Bag
 {
 Plasticicebag,
 Result:Icecubes=5,
-OnGiveXP:NoXP_OnGiveXP,
+OnGiveXP:Recipe.OnGiveXP.None,
 Time:90.0,
 Category:Cooking,
 Sound:RS_OpenIceBag,

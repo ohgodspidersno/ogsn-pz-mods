@@ -1,3 +1,0 @@
-ItemName_EN = {
-ItemName_GidOrganizedFood.OS4pkCoffee = "Pack of Bulk Instant Coffee",
-}
