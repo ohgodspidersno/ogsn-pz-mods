@@ -12,6 +12,8 @@ TweakItem("Base.Hat_BaseballCapRed","DisplayName","Baseball Cap");
 TweakItem("Base.Hat_BaseballCapRed_Reverse","DisplayName","Baseball Cap");
 TweakItem("Base.Hat_BaseballCapGreen","DisplayName","Baseball Cap");
 TweakItem("Base.Hat_BaseballCapGreen_Reverse","DisplayName","Baseball Cap");
+TweakItem("Base.Hat_BaseballCapArmy,","DisplayName","Baseball Cap Army");
+TweakItem("Base.Hat_BaseballCapArmy_Reverse,","DisplayName","Baseball Cap Army");
 TweakItem("Base.Hat_BaseballCapKY","DisplayName","Baseball Cap KY");
 TweakItem("Base.Hat_BaseballCapKY_Reverse","DisplayName","Baseball Cap KY");
 TweakItem("Base.Hat_BaseballCapKY_Red","DisplayName","Baseball Cap KY");
