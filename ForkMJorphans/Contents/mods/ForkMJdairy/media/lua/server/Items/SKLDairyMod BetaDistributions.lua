@@ -5,39 +5,39 @@ ProceduralDistributions = ProceduralDistributions or {}
 SuburbsDistributions = SuburbsDistributions or {}
 
 -- Procedural Lists
-table.insert(ProceduralDistributions["list"]["FridgeOther"].items, "YogurtCulture");
-table.insert(ProceduralDistributions["list"]["FridgeOther"].items, 2);
+-- table.insert(ProceduralDistributions["list"]["FridgeOther"].items, "YogurtCulture");
+-- table.insert(ProceduralDistributions["list"]["FridgeOther"].items, 2);
 
-table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].items, "YogurtCulture");
-table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].items, 2);
-table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].items, "PowderedMilk");
-table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].items, 3);
-table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].junk, "YogurtCulture");
-table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].junk, 2);
-table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].junk, "PowderedMilk");
-table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].junk, 3);
+-- table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].items, "YogurtCulture");
+-- table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].items, 2);
+-- table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].items, "PowderedMilk");
+-- table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].items, 3);
+-- table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].junk, "YogurtCulture");
+-- table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].junk, 2);
+-- table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].junk, "PowderedMilk");
+-- table.insert(ProceduralDistributions["list"]["GigamartBakingMisc"].junk, 3);
 
-table.insert(ProceduralDistributions["list"]["GigamartPots"].items, "Strainer");
-table.insert(ProceduralDistributions["list"]["GigamartPots"].items, 5);
-table.insert(ProceduralDistributions["list"]["GigamartPots"].junk, "Strainer");
-table.insert(ProceduralDistributions["list"]["GigamartPots"].junk, 2);
+-- table.insert(ProceduralDistributions["list"]["GigamartPots"].items, "Strainer");
+-- table.insert(ProceduralDistributions["list"]["GigamartPots"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["GigamartPots"].junk, "Strainer");
+-- table.insert(ProceduralDistributions["list"]["GigamartPots"].junk, 2);
 
-table.insert(ProceduralDistributions["list"]["KitchenPots"].items, "Strainer");
-table.insert(ProceduralDistributions["list"]["KitchenPots"].items, 5);
-table.insert(ProceduralDistributions["list"]["KitchenPots"].junk, "Strainer");
-table.insert(ProceduralDistributions["list"]["KitchenPots"].junk, 2);
+-- table.insert(ProceduralDistributions["list"]["KitchenPots"].items, "Strainer");
+-- table.insert(ProceduralDistributions["list"]["KitchenPots"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["KitchenPots"].junk, "Strainer");
+-- table.insert(ProceduralDistributions["list"]["KitchenPots"].junk, 2);
 
-table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].items, "PowderedMilk");
-table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].items, 3);
-table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].items, "YogurtCulture");
-table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].items, 2);
-table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].junk, "PowderedMilk");
-table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].junk, 2);
-table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].junk, "YogurtCulture");
-table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].junk, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].items, "PowderedMilk");
+-- table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].items, 3);
+-- table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].items, "YogurtCulture");
+-- table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].items, 2);
+-- table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].junk, "PowderedMilk");
+-- table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].junk, 2);
+-- table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].junk, "YogurtCulture");
+-- table.insert(ProceduralDistributions["list"]["KitchenBreakfast"].junk, 1);
 
-table.insert(ProceduralDistributions["list"]["KitchenBook"].items, "DairyCookingMag");
-table.insert(ProceduralDistributions["list"]["KitchenBook"].items, 0.1);
+-- table.insert(ProceduralDistributions["list"]["KitchenBook"].items, "DairyCookingMag");
+-- table.insert(ProceduralDistributions["list"]["KitchenBook"].items, 0.1);
 
 -- Burger Kitchen
 table.insert(SuburbsDistributions["burgerkitchen"]["counter"].items, "Strainer");

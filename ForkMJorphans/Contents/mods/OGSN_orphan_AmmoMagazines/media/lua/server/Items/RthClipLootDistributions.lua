@@ -5,33 +5,33 @@ ProceduralDistributions = ProceduralDistributions or {}
 SuburbsDistributions = SuburbsDistributions or {}
 
 --Crate farming (procedural)
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "308Clip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "308Clip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "223Clip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "223Clip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "44Clip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "45Clip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "44Clip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "45Clip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "9mmClip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "9mmClip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "308Clip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "308Clip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "223Clip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "223Clip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "44Clip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "45Clip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "44Clip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "45Clip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "9mmClip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, "9mmClip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].items, 5);
 
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, "308Clip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, "223Clip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, 5);
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, "9mmClip");
-table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, "308Clip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, "223Clip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, 5);
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, "9mmClip");
+-- table.insert(ProceduralDistributions["list"]["FirearmWeapons"].junk, 5);
 
 -- Police station
 table.insert(SuburbsDistributions["policestorage"]["locker"].items, "9mmClip");

@@ -112,18 +112,18 @@ table.insert(SuburbsDistributions["shed"]["other"].items, "GidOrganizedFood.OS4p
 table.insert(SuburbsDistributions["shed"]["other"].items, 1);
 
 -- Formerly ["garagestorage"]["crate"] --
-table.insert(ProceduralDistributions["list"]["CratePaint"].items, "GidOrganizedFood.OS4pkDuctTape")
-table.insert(ProceduralDistributions["list"]["CratePaint"].items, 1.0)
-table.insert(ProceduralDistributions["list"]["CrateFarming"].items, "GidOrganizedFood.OS4pkDuctTape")
-table.insert(ProceduralDistributions["list"]["CrateFarming"].items, 1.0)
-table.insert(ProceduralDistributions["list"]["CrateWoods"].items, "GidOrganizedFood.OS4pkDuctTape")
-table.insert(ProceduralDistributions["list"]["CrateWoods"].items, 1.0)
-table.insert(ProceduralDistributions["list"]["CrateHardware"].items, "GidOrganizedFood.OS4pkDuctTape")
-table.insert(ProceduralDistributions["list"]["CrateHardware"].items, 1.0)
-table.insert(ProceduralDistributions["list"]["CrateTools"].items, "GidOrganizedFood.OS4pkDuctTape")
-table.insert(ProceduralDistributions["list"]["CrateTools"].items, 1.0)
-table.insert(ProceduralDistributions["list"]["CrateMetal"].items, "GidOrganizedFood.OS4pkDuctTape")
-table.insert(ProceduralDistributions["list"]["CrateMetal"].items, 1.0)
+-- table.insert(ProceduralDistributions["list"]["CratePaint"].items, "GidOrganizedFood.OS4pkDuctTape")
+-- table.insert(ProceduralDistributions["list"]["CratePaint"].items, 1.0)
+-- table.insert(ProceduralDistributions["list"]["CrateFarming"].items, "GidOrganizedFood.OS4pkDuctTape")
+-- table.insert(ProceduralDistributions["list"]["CrateFarming"].items, 1.0)
+-- table.insert(ProceduralDistributions["list"]["CrateWoods"].items, "GidOrganizedFood.OS4pkDuctTape")
+-- table.insert(ProceduralDistributions["list"]["CrateWoods"].items, 1.0)
+-- table.insert(ProceduralDistributions["list"]["CrateHardware"].items, "GidOrganizedFood.OS4pkDuctTape")
+-- table.insert(ProceduralDistributions["list"]["CrateHardware"].items, 1.0)
+-- table.insert(ProceduralDistributions["list"]["CrateTools"].items, "GidOrganizedFood.OS4pkDuctTape")
+-- table.insert(ProceduralDistributions["list"]["CrateTools"].items, 1.0)
+-- table.insert(ProceduralDistributions["list"]["CrateMetal"].items, "GidOrganizedFood.OS4pkDuctTape")
+-- table.insert(ProceduralDistributions["list"]["CrateMetal"].items, 1.0)
 
 
 table.insert(SuburbsDistributions["toolstore"]["shelves"].items, "GidOrganizedFood.OS4pkDuctTape");
@@ -251,85 +251,85 @@ table.insert(SuburbsDistributions["grocery"]["counter"].items, "GidOrganizedFood
 table.insert(SuburbsDistributions["grocery"]["counter"].items, 0.6);
 
 -- Formerly ["gigamart"]["storage"] --
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedSoup");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedBeans");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedBolognese");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedCarrots");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedChili");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedCorn");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedCornedBeef");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedMushSoup");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedPeas");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedPotato");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedTomato");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS8pkCannedTuna");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS4pkSardines");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS8pkCannedTuna");
-table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartDryGoods"].items, "GidOrganizedFood.OS4pkCoffee");
-table.insert(ProceduralDistributions["list"]["GigamartDryGoods"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, "GidOrganizedFood.OS4pkCoffee");
-table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, 0.5);
-table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, "GidOrganizedFood.OS24pkWaterBottleFull");
-table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, 1);
-table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, "GidOrganizedFood.OS6pkPopDiet");
-table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, 0.6);
-table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, "GidOrganizedFood.OS6pkPop");
-table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, 0.6);
-table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, "GidOrganizedFood.OS6pkFizz");
-table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, 0.6);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedSoup");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedBeans");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedBolognese");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedCarrots");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedChili");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedCorn");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedCornedBeef");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedMushSoup");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedPeas");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedPotato");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS6pkCannedTomato");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS8pkCannedTuna");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS4pkSardines");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, "GidOrganizedFood.OS8pkCannedTuna");
+-- table.insert(ProceduralDistributions["list"]["GigamartCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartDryGoods"].items, "GidOrganizedFood.OS4pkCoffee");
+-- table.insert(ProceduralDistributions["list"]["GigamartDryGoods"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, "GidOrganizedFood.OS4pkCoffee");
+-- table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, 0.5);
+-- table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, "GidOrganizedFood.OS24pkWaterBottleFull");
+-- table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, "GidOrganizedFood.OS6pkPopDiet");
+-- table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, 0.6);
+-- table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, "GidOrganizedFood.OS6pkPop");
+-- table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, 0.6);
+-- table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, "GidOrganizedFood.OS6pkFizz");
+-- table.insert(ProceduralDistributions["list"]["GigamartBottles"].items, 0.6);
 
 -- Formerly ["kitchen"]["storage"] --
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedSoup");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedBeans");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedBolognese");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedCarrots");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedChili");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedCorn");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedCornedBeef");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedMushSoup");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedPeas");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedPotato");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedTomato");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS8pkCannedTuna");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS4pkSardines");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS8pkCannedTuna");
-table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenDryFood"].items, "GidOrganizedFood.OS4pkCoffee");
-table.insert(ProceduralDistributions["list"]["KitchenDryFood"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, "GidOrganizedFood.OS4pkCoffee");
-table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, 0.5);
-table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, "GidOrganizedFood.OS24pkWaterBottleFull");
-table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, 1);
-table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, "GidOrganizedFood.OS6pkPopDiet");
-table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, 0.6);
-table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, "GidOrganizedFood.OS6pkPop");
-table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, 0.6);
-table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, "GidOrganizedFood.OS6pkFizz");
-table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, 0.6);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedSoup");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedBeans");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedBolognese");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedCarrots");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedChili");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedCorn");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedCornedBeef");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedMushSoup");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedPeas");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedPotato");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS6pkCannedTomato");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS8pkCannedTuna");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS4pkSardines");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, "GidOrganizedFood.OS8pkCannedTuna");
+-- table.insert(ProceduralDistributions["list"]["KitchenCannedFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenDryFood"].items, "GidOrganizedFood.OS4pkCoffee");
+-- table.insert(ProceduralDistributions["list"]["KitchenDryFood"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, "GidOrganizedFood.OS4pkCoffee");
+-- table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, 0.5);
+-- table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, "GidOrganizedFood.OS24pkWaterBottleFull");
+-- table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, 1);
+-- table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, "GidOrganizedFood.OS6pkPopDiet");
+-- table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, 0.6);
+-- table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, "GidOrganizedFood.OS6pkPop");
+-- table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, 0.6);
+-- table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, "GidOrganizedFood.OS6pkFizz");
+-- table.insert(ProceduralDistributions["list"]["KitchenBottles"].items, 0.6);
