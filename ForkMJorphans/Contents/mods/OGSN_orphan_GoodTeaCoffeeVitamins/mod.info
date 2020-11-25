@@ -1,5 +1,7 @@
-name=OGSN Orphanage - Good Caffeine
+name=OGSN Orphanage - Good Tea and Pills (No coffee until 41.47)
 id=OGSN_orphan_GoodTeaCoffeeVitamins
-description=Tea bags and coffee bags spawn in larger batches. Tea and coffee have 25 fatigue reduction, vitamins 25 (4 doses). Zombies will have vitamins with 3% chance.
-description=Restored and updated version of Gid's Good Tea Coffee Vitamins
+description=IWBUMS 41.46 broke coffee. I've removed all coffee changes until it gets sorted.
+description=Tea bags spawn in larger batches. Tea and pills are more powerful, and zombies can drop pills.
+description=Based on Gid's Good Tea Coffee Vitamins
 poster=poster.png
+ 
