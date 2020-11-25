@@ -322,7 +322,7 @@ module GidOrganizedFood
 
 	recipe Pack 4 Instant Coffee Mix
 	{
-		Coffee2=100,
+		Coffee2=4,
 		Result:OS4pkCoffee,
 		Time:60.0,
 		Category:Storage,
