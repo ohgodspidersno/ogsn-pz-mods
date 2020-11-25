@@ -16,6 +16,17 @@ Adjust("Base.Teabag2","FatigueChange","-25")
 Adjust("Base.Teabag2","UnhappyChange","15")
 Adjust("Base.Teabag2","ThirstChange","20")
 
+-- v41.47 vanilla coffee2 values:
+-- HungerChange  = -30
+-- UnhappyChange = 20
+-- ThirstChange  = 60
+-- FatigueChange = -50
+
+Adjust("Base.Coffee2","HungerChange","-50")  -- ten uses not eight
+Adjust("Base.Coffee2","UnhappyChange","200")  -- eating any raw should be miserable
+Adjust("Base.Coffee2","ThirstChange","200")  -- eating any raw should be dangerous
+Adjust("Base.Coffee2","FatigueChange","-120") -- 1.5x strength of each shot from vanilla
+
 Adjust("Base.Mugfull","FatigueChange","-25")
 Adjust("Base.Mugfull","UnhappyChange","-20")
 Adjust("Base.Mugfull","StressChange","-50")

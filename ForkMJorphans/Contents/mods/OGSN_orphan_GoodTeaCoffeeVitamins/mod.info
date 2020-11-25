@@ -1,7 +1,6 @@
-name=OGSN Orphanage - Good Tea and Pills (No coffee until 41.47)
+name=OGSN Orphanage - Good Tea and Pills
 id=OGSN_orphan_GoodTeaCoffeeVitamins
-description=IWBUMS 41.46 broke coffee. I've removed all coffee changes until it gets sorted.
+description=Coffee is now 1.5x stronger, and each jar contains 10 uses instead of 8. Increases the dehydration and unhappiness of eating it raw, in order to encourage brewing it.
 description=Tea bags spawn in larger batches. Tea and pills are more powerful, and zombies can drop pills.
 description=Based on Gid's Good Tea Coffee Vitamins
 poster=poster.png
- 
