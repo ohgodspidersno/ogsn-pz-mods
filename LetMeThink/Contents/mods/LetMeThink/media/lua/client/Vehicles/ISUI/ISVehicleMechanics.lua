@@ -180,8 +180,6 @@ function ISVehicleMechanics:createChildren()
 end
 
 function ISVehicleMechanics:onListMouseDown(x, y)
-	if not getDebug() then return; end
-
 	self.parent.listbox.selected = 0;
 	self.parent.bodyworklist.selected = 0;
 
