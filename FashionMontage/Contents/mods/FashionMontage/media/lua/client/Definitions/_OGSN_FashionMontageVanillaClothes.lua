@@ -5,8 +5,56 @@ require "Definitions/_OGSN_FashionMontage"
 -- If you want to add new clothing, create a new .lua file using the
 -- template I have created in media/lua/client/Definitions/YourClothingModName_FashionMontage.lua
 
+local newBodyLocations = {
+"Hat",
+"TankTop",
+"Tshirt",
+"Shirt",
+"Socks",
+"Pants",
+"Skirt",
+"Dress",
+"Shoes",
+"Eyes",
+"LeftEye",
+"RightEye",
+"BeltExtra",
+"AmmoStrap",
+"Mask",
+"MaskEyes",
+"MaskFull",
+"Underwear",
+"FullHat",
+"Torso1Legs1",
+"Neck",
+"Hands",
+"Legs1",
+"Sweater",
+"Jacket",
+"FullSuit",
+"FullSuitHead",
+"FullTop",
+"BathRobe",
+"TorsoExtra",
+"Tail",
+"Back",
+"Scarf",
+"FannyPackFront",
+"Necklace",
+"Necklace_Long",
+"Nose",
+"LeftWrist",
+"RightWrist",
+"Right_RingFinger",
+"Left_RingFinger",
+"Right_MiddleFinger",
+"Left_MiddleFinger",
+"Ears",
+"EarTop",
+}
+
 local clothingLists = {
-      listHat = {
+      Hat = {
         "Base.Hat_Bandana",
         "Base.Hat_BandanaTied",
         "Base.Hat_BandanaTINT",
@@ -77,10 +125,10 @@ local clothingLists = {
         "Base.Hat_WinterHat",
         "Base.Hat_WoolyHat",
       },
-      listTankTop = {
+      TankTop = {
         "Base.Vest_DefaultTEXTURE_TINT",
       },
-      listTshirt = {
+      Tshirt = {
         -- "Base.Tshirt_DefaultTEXTURE",
         "Base.Tshirt_DefaultTEXTURE_TINT",
         "Base.Tshirt_WhiteTINT",
@@ -122,7 +170,7 @@ local clothingLists = {
         "Base.Tshirt_Profession_VeterenGreen",
         "Base.Tshirt_Profession_VeterenRed",
       },
-      listShirt = {
+      Shirt = {
         "Base.Shirt_FormalWhite",
         "Base.Shirt_Denim",
         "Base.Shirt_FormalWhite_ShortSleeve",
@@ -150,11 +198,11 @@ local clothingLists = {
         "Base.Shirt_Priest",
         "Base.Shirt_Workman",
       },
-      listSocks = {
+      Socks = {
         "Base.Socks_Ankle",
         "Base.Socks_Long",
       },
-      listPants = {
+      Pants = {
         "Base.Shorts_CamoGreenLong",
         "Base.Shorts_CamoUrbanLong",
         "Base.Shorts_LongDenim",
@@ -194,20 +242,20 @@ local clothingLists = {
         "Base.Trousers_Black",
         "Base.Trousers_NavyBlue",
       },
-      listSkirt = {
+      Skirt = {
         "Base.Skirt_Long",
         "Base.Skirt_Normal",
         "Base.Skirt_Knees",
         "Base.Skirt_Short",
       },
-      listDress = {
+      Dress = {
         "Base.Dress_Long",
         "Base.Dress_Normal",
         "Base.Dress_Knees",
         "Base.Dress_Short",
         "Base.HospitalGown",
       },
-      listShoes = {
+      Shoes = {
         -- "Base.Shoes_Black",
         -- "Base.Shoes_Brown",
         "Base.Shoes_Random",
@@ -222,7 +270,7 @@ local clothingLists = {
         "Base.Shoes_RidingBoots",
         "Base.Shoes_Slippers",
       },
-      listEyes = {
+      Eyes = {
         "Base.Glasses_Normal",
         "Base.Glasses_Reading",
         "Base.Glasses_SafetyGoggles",
@@ -233,21 +281,21 @@ local clothingLists = {
         "Base.Glasses_Aviators",
         "Base.Glasses",
       },
-      listLeftEye = {
+      LeftEye = {
         "Glasses_Eyepatch_Left",
       },
-      listRightEye = {
+      RightEye = {
         "Glasses_Eyepatch_Right",
       },
-      listBeltExtra = {
+      BeltExtra = {
         "Base.HolsterSimple",
         "Base.HolsterDouble",
       },
-      listAmmoStrap = {
+      AmmoStrap = {
         "Base.AmmoStrap_Bullets",
         "Base.AmmoStrap_Shells",
       },
-      listMask = {
+      Mask = {
         "Base.Hat_BalaclavaFull",
         "Base.Hat_BalaclavaFace",
         "Base.Hat_BandanaMask",
@@ -256,14 +304,14 @@ local clothingLists = {
         "Base.Hat_SurgicalMask_Blue",
         "Base.Hat_SurgicalMask_Green",
       },
-      listMaskEyes = {
+      MaskEyes = {
         "Base.Hat_GasMask",
         "Base.Hat_HockeyMask",
       },
-      listMaskFull = {
+      MaskFull = {
         "Base.WeldingMask",
       },
-      listUnderwear = {
+      Underwear = {
         "Base.Bikini_TINT",
         "Base.Bikini_Pattern01",
         "Base.SwimTrunks_Blue",
@@ -272,7 +320,7 @@ local clothingLists = {
         "Base.SwimTrunks_Yellow",
         "Base.Swimsuit_TINT",
       },
-      listFullHat = {
+      FullHat = {
         "Base.Hat_SPHhelmet",
         "Base.Hat_FootballHelmet",
         "Base.Hat_CrashHelmetFULL",
@@ -280,10 +328,10 @@ local clothingLists = {
         "Base.Hat_NBCmask",
         "Base.Hat_Spiffo",
       },
-      listTorso1Legs1 = {
+      Torso1Legs1 = {
         "Base.LongJohns",
       },
-      listNeck = {
+      Neck = {
         "Base.Tie_Full",
         "Base.Tie_Worn",
         "Base.Tie_BowTieFull",
@@ -295,7 +343,7 @@ local clothingLists = {
         "Base.Necklace_Choker_Amber",
         "Base.Necklace_Choker_Diamond",
       },
-      listHands = {
+      Hands = {
         "Base.Gloves_FingerlessGloves",
         "Base.Gloves_LeatherGloves",
         "Base.Gloves_LeatherGlovesBlack",
@@ -303,17 +351,17 @@ local clothingLists = {
         "Base.Gloves_WhiteTINT",
         "Base.Gloves_Surgical",
       },
-      listLegs1 = {
+      Legs1 = {
         "Base.LongJohns_Bottoms"
       },
-      listSweater = {
+      Sweater = {
         "Base.Jumper_DiamondPatternTINT",
         "Base.HoodieDOWN_WhiteTINT",
         "Base.Jumper_PoloNeck",
         "Base.Jumper_RoundNeck",
         "Base.Jumper_VNeck",
       },
-      listJacket = {
+      Jacket = {
         "Base.Jacket_WhiteTINT",
         "Base.Jacket_Black",
         "Base.JacketLong_Random",
@@ -335,7 +383,7 @@ local clothingLists = {
         "Base.WeddingJacket",
         "Base.Jacket_Varsity",
       },
-      listFullSuit = {
+      FullSuit = {
         "Base.Boilersuit",
         "Base.Boilersuit_BlueRed",
         "Base.Boilersuit_Flying",
@@ -344,16 +392,16 @@ local clothingLists = {
         "Base.SpiffoSuit",
         "Base.WeddingDress",
       },
-      listFullSuitHead = {
+      FullSuitHead = {
         "Base.HazmatSuit",
       },
-      listFullTop = {
+      FullTop = {
         "Base.Ghillie_Top",
       },
-      listBathRobe = {
+      BathRobe = {
         "Base.LongCoat_Bathrobe",
       },
-      listTorsoExtra = {
+      TorsoExtra = {
         "Base.Apron_Black",
         "Base.Apron_White",
         "Base.Apron_WhiteTEXTURE",
@@ -375,10 +423,10 @@ local clothingLists = {
         "Base.Vest_Hunting_Camo",
         "Base.Vest_Hunting_CamoGreen",
       },
-      listTail = {
+      Tail = {
         "Base.SpiffoTail",
       },
-      listBack = {
+      Back = {
         "Base.Bag_ALICEpack_Army",
         "Base.Bag_ALICEpack",
         "Base.Bag_BigHikingBag",
@@ -387,19 +435,19 @@ local clothingLists = {
         "Base.Bag_Schoolbag",
         "Base.Bag_Satchel",
       },
-      listScarf = {
+      Scarf = {
         "Base.Scarf_White",
         "Base.Scarf_StripeBlackWhite",
         "Base.Scarf_StripeBlueWhite",
         "Base.Scarf_StripeRedWhite",
       },
-      -- listFannyPackBack= {
+      -- FannyPackBack= {
       --   "Base.Bag_FannyPackBack",
       -- },
-      listFannyPackFront= {
+      FannyPackFront= {
         "Base.Bag_FannyPackFront",
       },
-      listNecklace = {
+      Necklace = {
         "Base.Necklace_DogTag",
         "Base.Necklace_Gold",
         "Base.Necklace_GoldRuby",
@@ -412,7 +460,7 @@ local clothingLists = {
         "Base.Necklace_YingYang",
         "Base.Necklace_Pearl",
       },
-      listNecklace_Long = {
+      Necklace_Long = {
         "Base.NecklaceLong_Gold",
         "Base.NecklaceLong_GoldDiamond",
         "Base.NecklaceLong_Silver",
@@ -421,13 +469,13 @@ local clothingLists = {
         "Base.NecklaceLong_SilverDiamond",
         "Base.NecklaceLong_Amber",
       },
-      listNose = {
+      Nose = {
         "Base.NoseRing_Gold",
         "Base.NoseRing_Silver",
         "Base.NoseStud_Gold",
         "Base.NoseStud_Silver",
       },
-      listLeftWrist = {
+      LeftWrist = {
         "Base.WristWatch_Left_ClassicBlack",
         "Base.WristWatch_Left_ClassicBrown",
         "Base.WristWatch_Left_ClassicMilitary",
@@ -441,7 +489,7 @@ local clothingLists = {
         "Base.Bracelet_ChainLeftSilver",
         "Base.Bracelet_LeftFriendshipTINT",
       },
-      listRightWrist = {
+      RightWrist = {
         "Base.WristWatch_Right_ClassicBlack",
         "Base.WristWatch_Right_ClassicBrown",
         "Base.WristWatch_Right_ClassicMilitary",
@@ -455,35 +503,35 @@ local clothingLists = {
         "Base.Bracelet_ChainRightSilver",
         "Base.Bracelet_RightFriendshipTINT",
       },
-      listRight_RingFinger = {
+      Right_RingFinger = {
         "Base.Ring_Right_RingFinger_Gold",
         "Base.Ring_Right_RingFinger_Silver",
         "Base.Ring_Right_RingFinger_SilverDiamond",
         "Base.Ring_Right_RingFinger_GoldRuby",
         "Base.Ring_Right_RingFinger_GoldDiamond",
       },
-      listLeft_RingFinger = {
+      Left_RingFinger = {
         "Base.Ring_Left_RingFinger_Gold",
         "Base.Ring_Left_RingFinger_Silver",
         "Base.Ring_Left_RingFinger_SilverDiamond",
         "Base.Ring_Left_RingFinger_GoldRuby",
         "Base.Ring_Left_RingFinger_GoldDiamond",
       },
-      listRight_MiddleFinger = {
+      Right_MiddleFinger = {
         "Base.Ring_Right_MiddleFinger_Gold",
         "Base.Ring_Right_MiddleFinger_Silver",
         "Base.Ring_Right_MiddleFinger_SilverDiamond",
         "Base.Ring_Right_MiddleFinger_GoldRuby",
         "Base.Ring_Right_MiddleFinger_GoldDiamond",
       },
-      listLeft_MiddleFinger = {
+      Left_MiddleFinger = {
         "Base.Ring_Left_MiddleFinger_Gold",
         "Base.Ring_Left_MiddleFinger_Silver",
         "Base.Ring_Left_MiddleFinger_SilverDiamond",
         "Base.Ring_Left_MiddleFinger_GoldRuby",
         "Base.Ring_Left_MiddleFinger_GoldDiamond",
       },
-      listEars = {
+      Ears = {
         "Base.Earring_LoopLrg_Gold",
         "Base.Earring_LoopLrg_Silver",
         "Base.Earring_LoopMed_Silver",
@@ -502,29 +550,30 @@ local clothingLists = {
         "Base.Earring_Dangly_Diamond",
         "Base.Earring_Dangly_Pearl",
       },
-      listEarTop = {
+      EarTop = {
         "Base.Earring_LoopSmall_Gold_Top",
         "Base.Earring_LoopSmall_Silver_Top",
       },
-      -- listSkeletonSuit = {},
-      -- listSlendermanSuit = {},
-      -- listTorso1 = {},
-      -- listShortSleeveShirt = {},
-      -- listLegs5 = {},
-      -- listShirtUntucked = {},
-      -- listBodyCostume = {},
-      -- listLeftHand = {},
-      -- listRightHand = {},
-      -- listBillboard = {},
-      -- listPupils = {},
-      -- listWig = {},
-      -- listBelt419 = {},
-      -- listBelt420 = {},
-      -- listTorsoRig = {},
-      -- listwaistbags = {},
-      -- listwaistbagsComplete = {},
-      -- listwaistbagsf = {},
-      -- listKneepads = {},
+      -- SkeletonSuit = {},
+      -- SlendermanSuit = {},
+      -- Torso1 = {},
+      -- ShortSleeveShirt = {},
+      -- Legs5 = {},
+      -- ShirtUntucked = {},
+      -- BodyCostume = {},
+      -- LeftHand = {},
+      -- RightHand = {},
+      -- Billboard = {},
+      -- Pupils = {},
+      -- Wig = {},
+      -- Belt419 = {},
+      -- Belt420 = {},
+      -- TorsoRig = {},
+      -- waistbags = {},
+      -- waistbagsComplete = {},
+      -- waistbagsf = {},
+      -- Kneepads = {},
 }
 
 _OGSN_FashionMontage.addClothing(clothingLists);
+_OGSN_FashionMontage.addBodyLocations(bodyLocations);

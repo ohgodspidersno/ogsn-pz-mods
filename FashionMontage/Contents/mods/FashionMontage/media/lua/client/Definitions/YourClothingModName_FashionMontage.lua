@@ -20,55 +20,66 @@ ClothingSelectionDefinitions = ClothingSelectionDefinitions
 
 local clothing = {
   -- these lists are named after the BodyLocation of the item
-  -- If your item's BodyLocation = Hat then put it in listHat
-  listHat = {
+  -- If your item's BodyLocation = Hat then put it in "Hat"
+  Hat = {
     -- "MyModule.MyNewHat",
   },
-  listTankTop = {},     -- Remember,
-  listTshirt = {},      -- if
-  listShirt = {},       -- your
-  listSocks = {},       -- item
-  listPants = {},       -- doesn't
-  listSkirt = {},       -- have
-  listDress = {},       -- a
-  listShoes = {},       -- unique
-  listEyes = {},        -- DisplayName
-  listLeftEye = {},
-  listRightEye = {},
-  listBeltExtra = {},   -- it
-  listAmmoStrap = {},
-  listMask = {},        -- will
-  listMaskEyes = {},    -- not
-  listUnderwear = {},   -- appear
-  listFullHat = {},     -- in
-  listTorso1Legs1 = {}, -- the
-  listNeck = {},        -- dropdowns
-  listHands = {},
-  listLegs1 = {},
-  listSweater = {},     -- Do
-  listJacket = {},      -- not
-  listFullSuit = {},    -- rename
-  listFullSuitHead = {},-- any
-  listFullTop = {},     -- functions
-  listBathRobe = {},    -- or
-  listTorsoExtra = {},  -- lists
-  listTail = {},        -- in
-  listBack = {},        -- this
-  listScarf = {},       -- file
-  listFannyPackFront = {},
-  -- listFannyPackBack = {},
-  listNecklace = {},
-  listNecklace_Long = {},
-  listNose = {},
-  listLeftWrist = {},
-  listRightWrist = {},
-  listRight_RingFinger = {},
-  listLeft_RingFinger = {},
-  listRight_MiddleFinger = {},
-  listLeft_MiddleFinger = {},
-  listEars = {},
-  listEarTop = {},
-  listMaskFull = {},
+  TankTop = {},     -- Remember,
+  Tshirt = {},      -- if
+  Shirt = {},       -- your
+  Socks = {},       -- item
+  Pants = {},       -- doesn't
+  Skirt = {},       -- have
+  Dress = {},       -- a
+  Shoes = {},       -- unique
+  Eyes = {},        -- DisplayName
+  LeftEye = {},
+  RightEye = {},
+  BeltExtra = {},   -- it
+  AmmoStrap = {},
+  Mask = {},        -- will
+  MaskEyes = {},    -- not
+  Underwear = {},   -- appear
+  FullHat = {},     -- in
+  Torso1Legs1 = {}, -- the
+  Neck = {},        -- dropdowns
+  Hands = {},
+  Legs1 = {},
+  Sweater = {},     -- Do
+  Jacket = {},      -- not
+  FullSuit = {},    -- rename
+  FullSuitHead = {},-- any
+  FullTop = {},     -- functions
+  BathRobe = {},    -- or
+  TorsoExtra = {},  -- lists
+  Tail = {},        -- in
+  Back = {},        -- this
+  Scarf = {},       -- file
+  FannyPackFront = {},
+  Necklace = {},
+  Necklace_Long = {},
+  Nose = {},
+  LeftWrist = {},
+  RightWrist = {},
+  Right_RingFinger = {},
+  Left_RingFinger = {},
+  Right_MiddleFinger = {},
+  Left_MiddleFinger = {},
+  Ears = {},
+  EarTop = {},
+  MaskFull = {},
+  -- If your mod adds new bodylocations, you can include its items here
+  -- as long as you also include the new bodyLocation's name
+  -- in the next array (see below)
+}
+
+local bodyLocations = {
+  -- if your mod adds brand new bodyLocations, list each of them here as strings
+  -- for example:
+  -- "KneePads",
+  -- "ThirdArm",
+  -- "SidewaysBaseballCap",
 }
 
 _OGSN_FashionMontage.addClothing(clothing);
+_OGSN_FashionMontage.addBodyLocations(bodyLocations);

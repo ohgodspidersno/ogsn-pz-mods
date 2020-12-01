@@ -6,866 +6,153 @@
 -- The other lua files in this folder add items to those dropdowns
 
 -- Create a blank slate of empty dropdowns for Male and Female
-ClothingSelectionDefinitions.default.Male.Hat = {}
-ClothingSelectionDefinitions.default.Male.Hat.items = {}
-ClothingSelectionDefinitions.default.Male.Hat.chance = 20
-ClothingSelectionDefinitions.default.Female.Hat = {}
-ClothingSelectionDefinitions.default.Female.Hat.items = {}
-ClothingSelectionDefinitions.default.Female.Hat.chance = 20
-ClothingSelectionDefinitions.default.Male.TankTop = {}
-ClothingSelectionDefinitions.default.Male.TankTop.items = {}
-ClothingSelectionDefinitions.default.Male.TankTop.chance = 20
-ClothingSelectionDefinitions.default.Female.TankTop = {}
-ClothingSelectionDefinitions.default.Female.TankTop.items = {}
-ClothingSelectionDefinitions.default.Female.TankTop.chance = 20
-ClothingSelectionDefinitions.default.Male.Tshirt = {}
-ClothingSelectionDefinitions.default.Male.Tshirt.items = {}
-ClothingSelectionDefinitions.default.Male.Tshirt.chance = 20
-ClothingSelectionDefinitions.default.Female.Tshirt = {}
-ClothingSelectionDefinitions.default.Female.Tshirt.items = {}
-ClothingSelectionDefinitions.default.Female.Tshirt.chance = 20
-ClothingSelectionDefinitions.default.Male.Shirt = {}
-ClothingSelectionDefinitions.default.Male.Shirt.items = {}
-ClothingSelectionDefinitions.default.Male.Shirt.chance = 20
-ClothingSelectionDefinitions.default.Female.Shirt = {}
-ClothingSelectionDefinitions.default.Female.Shirt.items = {}
-ClothingSelectionDefinitions.default.Female.Shirt.chance = 20
-ClothingSelectionDefinitions.default.Male.Socks = {}
-ClothingSelectionDefinitions.default.Male.Socks.items = {}
-ClothingSelectionDefinitions.default.Male.Socks.chance = 20
-ClothingSelectionDefinitions.default.Female.Socks = {}
-ClothingSelectionDefinitions.default.Female.Socks.items = {}
-ClothingSelectionDefinitions.default.Female.Socks.chance = 20
-ClothingSelectionDefinitions.default.Male.Pants = {}
-ClothingSelectionDefinitions.default.Male.Pants.items = {}
-ClothingSelectionDefinitions.default.Male.Pants.chance = 100
-ClothingSelectionDefinitions.default.Female.Pants = {}
-ClothingSelectionDefinitions.default.Female.Pants.items = {}
-ClothingSelectionDefinitions.default.Female.Pants.chance = 100
-ClothingSelectionDefinitions.default.Male.Skirt = {}
-ClothingSelectionDefinitions.default.Male.Skirt.items = {}
-ClothingSelectionDefinitions.default.Male.Skirt.chance = 0
-ClothingSelectionDefinitions.default.Female.Skirt = {}
-ClothingSelectionDefinitions.default.Female.Skirt.items = {}
-ClothingSelectionDefinitions.default.Female.Skirt.chance = 20
-ClothingSelectionDefinitions.default.Male.Dress = {}
-ClothingSelectionDefinitions.default.Male.Dress.items = {}
-ClothingSelectionDefinitions.default.Male.Dress.chance = 0
-ClothingSelectionDefinitions.default.Female.Dress = {}
-ClothingSelectionDefinitions.default.Female.Dress.items = {}
-ClothingSelectionDefinitions.default.Female.Dress.chance = 10
-ClothingSelectionDefinitions.default.Male.Shoes = {}
-ClothingSelectionDefinitions.default.Male.Shoes.items = {}
-ClothingSelectionDefinitions.default.Male.Shoes.chance = 90
-ClothingSelectionDefinitions.default.Female.Shoes = {}
-ClothingSelectionDefinitions.default.Female.Shoes.items = {}
-ClothingSelectionDefinitions.default.Female.Shoes.chance = 90
-ClothingSelectionDefinitions.default.Male.Eyes = {}
-ClothingSelectionDefinitions.default.Male.Eyes.items = {}
-ClothingSelectionDefinitions.default.Male.Eyes.chance = 20
-ClothingSelectionDefinitions.default.Female.Eyes = {}
-ClothingSelectionDefinitions.default.Female.Eyes.items = {}
-ClothingSelectionDefinitions.default.Female.Eyes.chance = 20
-ClothingSelectionDefinitions.default.Male.LeftEye = {}
-ClothingSelectionDefinitions.default.Male.LeftEye.items = {}
-ClothingSelectionDefinitions.default.Male.LeftEye.chance = 20
-ClothingSelectionDefinitions.default.Female.LeftEye = {}
-ClothingSelectionDefinitions.default.Female.LeftEye.items = {}
-ClothingSelectionDefinitions.default.Female.LeftEye.chance = 20
-ClothingSelectionDefinitions.default.Male.RightEye = {}
-ClothingSelectionDefinitions.default.Male.RightEye.items = {}
-ClothingSelectionDefinitions.default.Male.RightEye.chance = 20
-ClothingSelectionDefinitions.default.Female.RightEye = {}
-ClothingSelectionDefinitions.default.Female.RightEye.items = {}
-ClothingSelectionDefinitions.default.Female.RightEye.chance = 20
-ClothingSelectionDefinitions.default.Male.BeltExtra = {}
-ClothingSelectionDefinitions.default.Male.BeltExtra.items = {}
-ClothingSelectionDefinitions.default.Male.BeltExtra.chance = 0
-ClothingSelectionDefinitions.default.Female.BeltExtra = {}
-ClothingSelectionDefinitions.default.Female.BeltExtra.items = {}
-ClothingSelectionDefinitions.default.Female.BeltExtra.chance = 0
-ClothingSelectionDefinitions.default.Male.AmmoStrap = {}
-ClothingSelectionDefinitions.default.Male.AmmoStrap.items = {}
-ClothingSelectionDefinitions.default.Male.AmmoStrap.chance = 0
-ClothingSelectionDefinitions.default.Female.AmmoStrap = {}
-ClothingSelectionDefinitions.default.Female.AmmoStrap.items = {}
-ClothingSelectionDefinitions.default.Female.AmmoStrap.chance = 0
-ClothingSelectionDefinitions.default.Male.Mask = {}
-ClothingSelectionDefinitions.default.Male.Mask.items = {}
-ClothingSelectionDefinitions.default.Male.Mask.chance = 20
-ClothingSelectionDefinitions.default.Female.Mask = {}
-ClothingSelectionDefinitions.default.Female.Mask.items = {}
-ClothingSelectionDefinitions.default.Female.Mask.chance = 20
-ClothingSelectionDefinitions.default.Male.MaskEyes = {}
-ClothingSelectionDefinitions.default.Male.MaskEyes.items = {}
-ClothingSelectionDefinitions.default.Male.MaskEyes.chance = 5
-ClothingSelectionDefinitions.default.Female.MaskEyes = {}
-ClothingSelectionDefinitions.default.Female.MaskEyes.items = {}
-ClothingSelectionDefinitions.default.Female.MaskEyes.chance = 5
-ClothingSelectionDefinitions.default.Male.MaskFull = {}
-ClothingSelectionDefinitions.default.Male.MaskFull.items = {}
-ClothingSelectionDefinitions.default.Male.MaskFull.chance = 5
-ClothingSelectionDefinitions.default.Female.MaskFull = {}
-ClothingSelectionDefinitions.default.Female.MaskFull.items = {}
-ClothingSelectionDefinitions.default.Female.MaskFull.chance = 5
-ClothingSelectionDefinitions.default.Male.Underwear = {}
-ClothingSelectionDefinitions.default.Male.Underwear.items = {}
-ClothingSelectionDefinitions.default.Male.Underwear.chance = 5
-ClothingSelectionDefinitions.default.Female.Underwear = {}
-ClothingSelectionDefinitions.default.Female.Underwear.items = {}
-ClothingSelectionDefinitions.default.Female.Underwear.chance = 5
-ClothingSelectionDefinitions.default.Male.FullHat = {}
-ClothingSelectionDefinitions.default.Male.FullHat.items = {}
-ClothingSelectionDefinitions.default.Male.FullHat.chance = 10
-ClothingSelectionDefinitions.default.Female.FullHat = {}
-ClothingSelectionDefinitions.default.Female.FullHat.items = {}
-ClothingSelectionDefinitions.default.Female.FullHat.chance = 10
-ClothingSelectionDefinitions.default.Male.Torso1Legs1 = {}
-ClothingSelectionDefinitions.default.Male.Torso1Legs1.items = {}
-ClothingSelectionDefinitions.default.Male.Torso1Legs1.chance = 20
-ClothingSelectionDefinitions.default.Female.Torso1Legs1 = {}
-ClothingSelectionDefinitions.default.Female.Torso1Legs1.items = {}
-ClothingSelectionDefinitions.default.Female.Torso1Legs1.chance = 20
-ClothingSelectionDefinitions.default.Male.Neck = {}
-ClothingSelectionDefinitions.default.Male.Neck.items = {}
-ClothingSelectionDefinitions.default.Male.Neck.chance = 20
-ClothingSelectionDefinitions.default.Female.Neck = {}
-ClothingSelectionDefinitions.default.Female.Neck.items = {}
-ClothingSelectionDefinitions.default.Female.Neck.chance = 20
-ClothingSelectionDefinitions.default.Male.Hands = {}
-ClothingSelectionDefinitions.default.Male.Hands.items = {}
-ClothingSelectionDefinitions.default.Male.Hands.chance = 20
-ClothingSelectionDefinitions.default.Female.Hands = {}
-ClothingSelectionDefinitions.default.Female.Hands.items = {}
-ClothingSelectionDefinitions.default.Female.Hands.chance = 20
-ClothingSelectionDefinitions.default.Male.Legs1 = {}
-ClothingSelectionDefinitions.default.Male.Legs1.items = {}
-ClothingSelectionDefinitions.default.Male.Legs1.chance = 20
-ClothingSelectionDefinitions.default.Female.Legs1 = {}
-ClothingSelectionDefinitions.default.Female.Legs1.items = {}
-ClothingSelectionDefinitions.default.Female.Legs1.chance = 20
-ClothingSelectionDefinitions.default.Male.Sweater = {}
-ClothingSelectionDefinitions.default.Male.Sweater.items = {}
-ClothingSelectionDefinitions.default.Male.Sweater.chance = 20
-ClothingSelectionDefinitions.default.Female.Sweater = {}
-ClothingSelectionDefinitions.default.Female.Sweater.items = {}
-ClothingSelectionDefinitions.default.Female.Sweater.chance = 20
-ClothingSelectionDefinitions.default.Male.Jacket = {}
-ClothingSelectionDefinitions.default.Male.Jacket.items = {}
-ClothingSelectionDefinitions.default.Male.Jacket.chance = 20
-ClothingSelectionDefinitions.default.Female.Jacket = {}
-ClothingSelectionDefinitions.default.Female.Jacket.items = {}
-ClothingSelectionDefinitions.default.Female.Jacket.chance = 20
-ClothingSelectionDefinitions.default.Male.FullSuit = {}
-ClothingSelectionDefinitions.default.Male.FullSuit.items = {}
-ClothingSelectionDefinitions.default.Male.FullSuit.chance = 2
-ClothingSelectionDefinitions.default.Female.FullSuit = {}
-ClothingSelectionDefinitions.default.Female.FullSuit.items = {}
-ClothingSelectionDefinitions.default.Female.FullSuit.chance = 2
-ClothingSelectionDefinitions.default.Male.FullSuitHead = {}
-ClothingSelectionDefinitions.default.Male.FullSuitHead.items = {}
-ClothingSelectionDefinitions.default.Male.FullSuitHead.chance = 2
-ClothingSelectionDefinitions.default.Female.FullSuitHead = {}
-ClothingSelectionDefinitions.default.Female.FullSuitHead.items = {}
-ClothingSelectionDefinitions.default.Female.FullSuitHead.chance = 2
-ClothingSelectionDefinitions.default.Male.FullTop = {}
-ClothingSelectionDefinitions.default.Male.FullTop.items = {}
-ClothingSelectionDefinitions.default.Male.FullTop.chance = 2
-ClothingSelectionDefinitions.default.Female.FullTop = {}
-ClothingSelectionDefinitions.default.Female.FullTop.items = {}
-ClothingSelectionDefinitions.default.Female.FullTop.chance = 2
-ClothingSelectionDefinitions.default.Male.BathRobe = {}
-ClothingSelectionDefinitions.default.Male.BathRobe.items = {}
-ClothingSelectionDefinitions.default.Male.BathRobe.chance = 4
-ClothingSelectionDefinitions.default.Female.BathRobe = {}
-ClothingSelectionDefinitions.default.Female.BathRobe.items = {}
-ClothingSelectionDefinitions.default.Female.BathRobe.chance = 4
-ClothingSelectionDefinitions.default.Male.TorsoExtra = {}
-ClothingSelectionDefinitions.default.Male.TorsoExtra.items = {}
-ClothingSelectionDefinitions.default.Male.TorsoExtra.chance = 20
-ClothingSelectionDefinitions.default.Female.TorsoExtra = {}
-ClothingSelectionDefinitions.default.Female.TorsoExtra.items = {}
-ClothingSelectionDefinitions.default.Female.TorsoExtra.chance = 20
-ClothingSelectionDefinitions.default.Male.Tail = {}
-ClothingSelectionDefinitions.default.Male.Tail.items = {}
-ClothingSelectionDefinitions.default.Male.Tail.chance = 4
-ClothingSelectionDefinitions.default.Female.Tail = {}
-ClothingSelectionDefinitions.default.Female.Tail.items = {}
-ClothingSelectionDefinitions.default.Female.Tail.chance = 4
-ClothingSelectionDefinitions.default.Male.Back = {}
-ClothingSelectionDefinitions.default.Male.Back.items = {}
-ClothingSelectionDefinitions.default.Male.Back.chance = 0
-ClothingSelectionDefinitions.default.Female.Back = {}
-ClothingSelectionDefinitions.default.Female.Back.items = {}
-ClothingSelectionDefinitions.default.Female.Back.chance = 0
-ClothingSelectionDefinitions.default.Male.Scarf = {}
-ClothingSelectionDefinitions.default.Male.Scarf.items = {}
-ClothingSelectionDefinitions.default.Male.Scarf.chance = 15
-ClothingSelectionDefinitions.default.Female.Scarf = {}
-ClothingSelectionDefinitions.default.Female.Scarf.items = {}
-ClothingSelectionDefinitions.default.Female.Scarf.chance = 15
 
--- ClothingSelectionDefinitions.default.Male.FannyPackBack = {}
--- ClothingSelectionDefinitions.default.Male.FannyPackBack.items = {}
--- ClothingSelectionDefinitions.default.Male.FannyPackBack.chance = 0
--- ClothingSelectionDefinitions.default.Female.FannyPackBack = {}
--- ClothingSelectionDefinitions.default.Female.FannyPackBack.items = {}
--- ClothingSelectionDefinitions.default.Female.FannyPackBack.chance = 0
+local function merge_Old_New(old, new)
+  local last_index = #old
+  for k, v in pairs(new) do
+    if not old[v] then
+      old[last_index + k] = v
+    end
+  end;
+end
 
-ClothingSelectionDefinitions.default.Male.FannyPackFront = {}
-ClothingSelectionDefinitions.default.Male.FannyPackFront.items = {}
-ClothingSelectionDefinitions.default.Male.FannyPackFront.chance = 0
-ClothingSelectionDefinitions.default.Female.FannyPackFront = {}
-ClothingSelectionDefinitions.default.Female.FannyPackFront.items = {}
-ClothingSelectionDefinitions.default.Female.FannyPackFront.chance = 0
 
-ClothingSelectionDefinitions.default.Male.Necklace = {}
-ClothingSelectionDefinitions.default.Male.Necklace.items = {}
-ClothingSelectionDefinitions.default.Male.Necklace.chance = 0
-ClothingSelectionDefinitions.default.Female.Necklace = {}
-ClothingSelectionDefinitions.default.Female.Necklace.items = {}
-ClothingSelectionDefinitions.default.Female.Necklace.chance = 0
+allBodyLocations = allBodyLocations or {}
 
-ClothingSelectionDefinitions.default.Male.Necklace_Long = {}
-ClothingSelectionDefinitions.default.Male.Necklace_Long.items = {}
-ClothingSelectionDefinitions.default.Male.Necklace_Long.chance = 0
-ClothingSelectionDefinitions.default.Female.Necklace_Long = {}
-ClothingSelectionDefinitions.default.Female.Necklace_Long.items = {}
-ClothingSelectionDefinitions.default.Female.Necklace_Long.chance = 0
+local vanillaBodyLocations = {
+  "Hat",
+  "TankTop",
+  "Tshirt",
+  "Shirt",
+  "Socks",
+  "Pants",
+  "Skirt",
+  "Dress",
+  "Shoes",
+  "Eyes",
+  "LeftEye",
+  "RightEye",
+  "BeltExtra",
+  "AmmoStrap",
+  "Mask",
+  "MaskEyes",
+  "MaskFull",
+  "Underwear",
+  "FullHat",
+  "Torso1Legs1",
+  "Neck",
+  "Hands",
+  "Legs1",
+  "Sweater",
+  "Jacket",
+  "FullSuit",
+  "FullSuitHead",
+  "FullTop",
+  "BathRobe",
+  "TorsoExtra",
+  "Tail",
+  "Back",
+  "Scarf",
+  "FannyPackFront",
+  "Necklace",
+  "Necklace_Long",
+  "Nose",
+  "LeftWrist",
+  "RightWrist",
+  "Right_RingFinger",
+  "Left_RingFinger",
+  "Right_MiddleFinger",
+  "Left_MiddleFinger",
+  "Ears",
+  "EarTop",
+}
+local DTbodyLocations = {
+  "SkeletonSuit",
+  "SlendermanSuit",
+  "Torso1",
+  "ShortSleeveShirt",
+  "Legs5",
+  "ShirtUntucked",
+  "BodyCostume",
+  "Billboard",
+}
+local PLLbodyLocations = {
+  "Pupils",
+  "Wig",
+  "Belt419",
+  "Belt420",
+  "TorsoRig",
+  "waistbags",
+  "waistbagsComplete",
+  "waistbagsf",
+  "Kneepads",
+}
 
-ClothingSelectionDefinitions.default.Male.Nose = {}
-ClothingSelectionDefinitions.default.Male.Nose.items = {}
-ClothingSelectionDefinitions.default.Male.Nose.chance = 0
-ClothingSelectionDefinitions.default.Female.Nose = {}
-ClothingSelectionDefinitions.default.Female.Nose.items = {}
-ClothingSelectionDefinitions.default.Female.Nose.chance = 0
+local function addBodyLocations(bodyLocationList)
+  merge_Old_New = merge_Old_New
+  local bodyLocationList = bodyLocationList or {}
+  for k, v in pairs(bodyLocationList) do
+    ClothingSelectionDefinitions.default["Male"][v] = {}
+    ClothingSelectionDefinitions.default["Male"][v]["items"] = {}
+    ClothingSelectionDefinitions.default["Male"][v]["chance"] = 20
+    ClothingSelectionDefinitions.default["Female"][v] = {}
+    ClothingSelectionDefinitions.default["Female"][v]["items"] = {}
+    ClothingSelectionDefinitions.default["Female"][v]["chance"] = 20
+  end
+  merge_Old_New(allBodyLocations, bodyLocationList)
+end
 
-ClothingSelectionDefinitions.default.Male.LeftWrist = {}
-ClothingSelectionDefinitions.default.Male.LeftWrist.items = {}
-ClothingSelectionDefinitions.default.Male.LeftWrist.chance = 0
-ClothingSelectionDefinitions.default.Female.LeftWrist = {}
-ClothingSelectionDefinitions.default.Female.LeftWrist.items = {}
-ClothingSelectionDefinitions.default.Female.LeftWrist.chance = 0
-
-ClothingSelectionDefinitions.default.Male.RightWrist = {}
-ClothingSelectionDefinitions.default.Male.RightWrist.items = {}
-ClothingSelectionDefinitions.default.Male.RightWrist.chance = 0
-ClothingSelectionDefinitions.default.Female.RightWrist = {}
-ClothingSelectionDefinitions.default.Female.RightWrist.items = {}
-ClothingSelectionDefinitions.default.Female.RightWrist.chance = 0
-
-ClothingSelectionDefinitions.default.Male.Right_RingFinger = {}
-ClothingSelectionDefinitions.default.Male.Right_RingFinger.items = {}
-ClothingSelectionDefinitions.default.Male.Right_RingFinger.chance = 0
-ClothingSelectionDefinitions.default.Female.Right_RingFinger = {}
-ClothingSelectionDefinitions.default.Female.Right_RingFinger.items = {}
-ClothingSelectionDefinitions.default.Female.Right_RingFinger.chance = 0
-
-ClothingSelectionDefinitions.default.Male.Left_RingFinger = {}
-ClothingSelectionDefinitions.default.Male.Left_RingFinger.items = {}
-ClothingSelectionDefinitions.default.Male.Left_RingFinger.chance = 0
-ClothingSelectionDefinitions.default.Female.Left_RingFinger = {}
-ClothingSelectionDefinitions.default.Female.Left_RingFinger.items = {}
-ClothingSelectionDefinitions.default.Female.Left_RingFinger.chance = 0
-
-ClothingSelectionDefinitions.default.Male.Right_MiddleFinger = {}
-ClothingSelectionDefinitions.default.Male.Right_MiddleFinger.items = {}
-ClothingSelectionDefinitions.default.Male.Right_MiddleFinger.chance = 0
-ClothingSelectionDefinitions.default.Female.Right_MiddleFinger = {}
-ClothingSelectionDefinitions.default.Female.Right_MiddleFinger.items = {}
-ClothingSelectionDefinitions.default.Female.Right_MiddleFinger.chance = 0
-
-ClothingSelectionDefinitions.default.Male.Left_MiddleFinger = {}
-ClothingSelectionDefinitions.default.Male.Left_MiddleFinger.items = {}
-ClothingSelectionDefinitions.default.Male.Left_MiddleFinger.chance = 0
-ClothingSelectionDefinitions.default.Female.Left_MiddleFinger = {}
-ClothingSelectionDefinitions.default.Female.Left_MiddleFinger.items = {}
-ClothingSelectionDefinitions.default.Female.Left_MiddleFinger.chance = 0
-
-ClothingSelectionDefinitions.default.Male.Ears = {}
-ClothingSelectionDefinitions.default.Male.Ears.items = {}
-ClothingSelectionDefinitions.default.Male.Ears.chance = 0
-ClothingSelectionDefinitions.default.Female.Ears = {}
-ClothingSelectionDefinitions.default.Female.Ears.items = {}
-ClothingSelectionDefinitions.default.Female.Ears.chance = 0
-
-ClothingSelectionDefinitions.default.Male.EarTop = {}
-ClothingSelectionDefinitions.default.Male.EarTop.items = {}
-ClothingSelectionDefinitions.default.Male.EarTop.chance = 0
-ClothingSelectionDefinitions.default.Female.EarTop = {}
-ClothingSelectionDefinitions.default.Female.EarTop.items = {}
-ClothingSelectionDefinitions.default.Female.EarTop.chance = 0
+addBodyLocations(vanillaBodyLocations)
 
 if getActivatedMods():contains("DressingTime") then
-  ClothingSelectionDefinitions.default.Male.SkeletonSuit = {}
-  ClothingSelectionDefinitions.default.Male.SkeletonSuit.items = {}
-  ClothingSelectionDefinitions.default.Male.SkeletonSuit.chance = 0
-  ClothingSelectionDefinitions.default.Female.SkeletonSuit = {}
-  ClothingSelectionDefinitions.default.Female.SkeletonSuit.items = {}
-  ClothingSelectionDefinitions.default.Female.SkeletonSuit.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.SlendermanSuit = {}
-  ClothingSelectionDefinitions.default.Male.SlendermanSuit.items = {}
-  ClothingSelectionDefinitions.default.Male.SlendermanSuit.chance = 0
-  ClothingSelectionDefinitions.default.Female.SlendermanSuit = {}
-  ClothingSelectionDefinitions.default.Female.SlendermanSuit.items = {}
-  ClothingSelectionDefinitions.default.Female.SlendermanSuit.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.Torso1 = {}
-  ClothingSelectionDefinitions.default.Male.Torso1.items = {}
-  ClothingSelectionDefinitions.default.Male.Torso1.chance = 0
-  ClothingSelectionDefinitions.default.Female.Torso1 = {}
-  ClothingSelectionDefinitions.default.Female.Torso1.items = {}
-  ClothingSelectionDefinitions.default.Female.Torso1.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.ShortSleeveShirt = {}
-  ClothingSelectionDefinitions.default.Male.ShortSleeveShirt.items = {}
-  ClothingSelectionDefinitions.default.Male.ShortSleeveShirt.chance = 0
-  ClothingSelectionDefinitions.default.Female.ShortSleeveShirt = {}
-  ClothingSelectionDefinitions.default.Female.ShortSleeveShirt.items = {}
-  ClothingSelectionDefinitions.default.Female.ShortSleeveShirt.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.Legs5 = {}
-  ClothingSelectionDefinitions.default.Male.Legs5.items = {}
-  ClothingSelectionDefinitions.default.Male.Legs5.chance = 0
-  ClothingSelectionDefinitions.default.Female.Legs5 = {}
-  ClothingSelectionDefinitions.default.Female.Legs5.items = {}
-  ClothingSelectionDefinitions.default.Female.Legs5.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.ShirtUntucked = {}
-  ClothingSelectionDefinitions.default.Male.ShirtUntucked.items = {}
-  ClothingSelectionDefinitions.default.Male.ShirtUntucked.chance = 0
-  ClothingSelectionDefinitions.default.Female.ShirtUntucked = {}
-  ClothingSelectionDefinitions.default.Female.ShirtUntucked.items = {}
-  ClothingSelectionDefinitions.default.Female.ShirtUntucked.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.BodyCostume = {}
-  ClothingSelectionDefinitions.default.Male.BodyCostume.items = {}
-  ClothingSelectionDefinitions.default.Male.BodyCostume.chance = 0
-  ClothingSelectionDefinitions.default.Female.BodyCostume = {}
-  ClothingSelectionDefinitions.default.Female.BodyCostume.items = {}
-  ClothingSelectionDefinitions.default.Female.BodyCostume.chance = 0
-
-  -- ClothingSelectionDefinitions.default.Male.LeftHand = {}
-  -- ClothingSelectionDefinitions.default.Male.LeftHand.items = {}
-  -- ClothingSelectionDefinitions.default.Male.LeftHand.chance = 0
-  -- ClothingSelectionDefinitions.default.Female.LeftHand = {}
-  -- ClothingSelectionDefinitions.default.Female.LeftHand.items = {}
-  -- ClothingSelectionDefinitions.default.Female.LeftHand.chance = 0
-
-  -- ClothingSelectionDefinitions.default.Male.RightHand = {}
-  -- ClothingSelectionDefinitions.default.Male.RightHand.items = {}
-  -- ClothingSelectionDefinitions.default.Male.RightHand.chance = 0
-  -- ClothingSelectionDefinitions.default.Female.RightHand = {}
-  -- ClothingSelectionDefinitions.default.Female.RightHand.items = {}
-  -- ClothingSelectionDefinitions.default.Female.RightHand.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.Billboard = {}
-  ClothingSelectionDefinitions.default.Male.Billboard.items = {}
-  ClothingSelectionDefinitions.default.Male.Billboard.chance = 0
-  ClothingSelectionDefinitions.default.Female.Billboard = {}
-  ClothingSelectionDefinitions.default.Female.Billboard.items = {}
-  ClothingSelectionDefinitions.default.Female.Billboard.chance = 0
+  addBodyLocations(DTbodyLocations)
 end
-
 
 if getActivatedMods():contains("PLLoot") then
-  ClothingSelectionDefinitions.default.Male.Pupils = {}
-  ClothingSelectionDefinitions.default.Male.Pupils.items = {}
-  ClothingSelectionDefinitions.default.Male.Pupils.chance = 0
-  ClothingSelectionDefinitions.default.Female.Pupils = {}
-  ClothingSelectionDefinitions.default.Female.Pupils.items = {}
-  ClothingSelectionDefinitions.default.Female.Pupils.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.Wig = {}
-  ClothingSelectionDefinitions.default.Male.Wig.items = {}
-  ClothingSelectionDefinitions.default.Male.Wig.chance = 0
-  ClothingSelectionDefinitions.default.Female.Wig = {}
-  ClothingSelectionDefinitions.default.Female.Wig.items = {}
-  ClothingSelectionDefinitions.default.Female.Wig.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.Belt419 = {}
-  ClothingSelectionDefinitions.default.Male.Belt419.items = {}
-  ClothingSelectionDefinitions.default.Male.Belt419.chance = 0
-  ClothingSelectionDefinitions.default.Female.Belt419 = {}
-  ClothingSelectionDefinitions.default.Female.Belt419.items = {}
-  ClothingSelectionDefinitions.default.Female.Belt419.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.Belt420 = {}
-  ClothingSelectionDefinitions.default.Male.Belt420.items = {}
-  ClothingSelectionDefinitions.default.Male.Belt420.chance = 0
-  ClothingSelectionDefinitions.default.Female.Belt420 = {}
-  ClothingSelectionDefinitions.default.Female.Belt420.items = {}
-  ClothingSelectionDefinitions.default.Female.Belt420.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.TorsoRig = {}
-  ClothingSelectionDefinitions.default.Male.TorsoRig.items = {}
-  ClothingSelectionDefinitions.default.Male.TorsoRig.chance = 0
-  ClothingSelectionDefinitions.default.Female.TorsoRig = {}
-  ClothingSelectionDefinitions.default.Female.TorsoRig.items = {}
-  ClothingSelectionDefinitions.default.Female.TorsoRig.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.waistbags = {}
-  ClothingSelectionDefinitions.default.Male.waistbags.items = {}
-  ClothingSelectionDefinitions.default.Male.waistbags.chance = 0
-  ClothingSelectionDefinitions.default.Female.waistbags = {}
-  ClothingSelectionDefinitions.default.Female.waistbags.items = {}
-  ClothingSelectionDefinitions.default.Female.waistbags.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.waistbagsComplete = {}
-  ClothingSelectionDefinitions.default.Male.waistbagsComplete.items = {}
-  ClothingSelectionDefinitions.default.Male.waistbagsComplete.chance = 0
-  ClothingSelectionDefinitions.default.Female.waistbagsComplete = {}
-  ClothingSelectionDefinitions.default.Female.waistbagsComplete.items = {}
-  ClothingSelectionDefinitions.default.Female.waistbagsComplete.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.waistbagsf = {}
-  ClothingSelectionDefinitions.default.Male.waistbagsf.items = {}
-  ClothingSelectionDefinitions.default.Male.waistbagsf.chance = 0
-  ClothingSelectionDefinitions.default.Female.waistbagsf = {}
-  ClothingSelectionDefinitions.default.Female.waistbagsf.items = {}
-  ClothingSelectionDefinitions.default.Female.waistbagsf.chance = 0
-
-  ClothingSelectionDefinitions.default.Male.Kneepads = {}
-  ClothingSelectionDefinitions.default.Male.Kneepads.items = {}
-  ClothingSelectionDefinitions.default.Male.Kneepads.chance = 0
-  ClothingSelectionDefinitions.default.Female.Kneepads = {}
-  ClothingSelectionDefinitions.default.Female.Kneepads.items = {}
-  ClothingSelectionDefinitions.default.Female.Kneepads.chance = 0
+  addBodyLocations(PLLbodyLocations)
 end
-
 
 -- Make the default starting outfit something really basic and easy for the player to replace
 ClothingSelectionDefinitions.starting = {}
 ClothingSelectionDefinitions.starting.Male = {}
 ClothingSelectionDefinitions.starting.Female = {}
 
-ClothingSelectionDefinitions.starting.Male.Shoes = {chance=100, items = {"Base.Shoes_TrainerTINT"}}
-ClothingSelectionDefinitions.starting.Male.TankTop = {chance=100, items = {"Base.Vest_DefaultTEXTURE_TINT"}}
-ClothingSelectionDefinitions.starting.Male.Socks = {chance=100, items = {"Base.Socks_Ankle"}}
-ClothingSelectionDefinitions.starting.Male.Pants = {chance=100, items = {"Base.Trousers_WhiteTINT"}}
+ClothingSelectionDefinitions.starting.Male.Shoes = {chance = 100, items = {"Base.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Male.TankTop = {chance = 100, items = {"Base.Vest_DefaultTEXTURE_TINT"}}
+ClothingSelectionDefinitions.starting.Male.Socks = {chance = 100, items = {"Base.Socks_Ankle"}}
+ClothingSelectionDefinitions.starting.Male.Pants = {chance = 100, items = {"Base.Trousers_WhiteTINT"}}
 
-ClothingSelectionDefinitions.starting.Female.Shoes = {chance=100, items = {"Base.Shoes_TrainerTINT"}}
-ClothingSelectionDefinitions.starting.Female.TankTop = {chance=100, items = {"Base.Vest_DefaultTEXTURE_TINT"}}
-ClothingSelectionDefinitions.starting.Female.Socks = {chance=100, items = {"Base.Socks_Ankle"}}
-ClothingSelectionDefinitions.starting.Female.Pants = {chance=100, items = {"Base.Trousers_WhiteTINT"}}
+ClothingSelectionDefinitions.starting.Female.Shoes = {chance = 100, items = {"Base.Shoes_TrainerTINT"}}
+ClothingSelectionDefinitions.starting.Female.TankTop = {chance = 100, items = {"Base.Vest_DefaultTEXTURE_TINT"}}
+ClothingSelectionDefinitions.starting.Female.Socks = {chance = 100, items = {"Base.Socks_Ankle"}}
+ClothingSelectionDefinitions.starting.Female.Pants = {chance = 100, items = {"Base.Trousers_WhiteTINT"}}
 
 -- Define the function that will add lists of clothing, vanilla or modded, to the dropdowns
 local function addClothing(clothingLists)
+  merge_Old_New = merge_Old_New
+  local maleTable = ClothingSelectionDefinitions.default["Male"]
+  local femaleTable = ClothingSelectionDefinitions.default["Female"]
 
-    local function merge_Old_New(old,new)
-      local last_index = #old
-      for k,v in pairs(new) do old[last_index+k] = v end;
+  for k, v in pairs(clothingLists) do
+    print('in k,v in pairs clothingLists do')
+    print('k and v:')
+    local locationName = k
+    local locationItemsTable = v
+    print(k)
+    print(v)
+    print('#locationItemsTable')
+    print(#locationItemsTable)
+    if locationItemsTable and #locationItemsTable > 0 then
+      local maleItems = maleTable[locationName]["items"];
+      local femaleItems = femaleTable[locationName]["items"];
+      merge_Old_New(maleItems, locationItemsTable);
+      merge_Old_New(femaleItems, locationItemsTable);
     end
-
-    local maleTable = ClothingSelectionDefinitions.default.Male
-    local femaleTable = ClothingSelectionDefinitions.default.Female
-
-    if clothingLists["listHat"] then
-      local maleItems = maleTable.Hat.items;
-      local femaleItems = femaleTable.Hat.items;
-      merge_Old_New(maleItems,clothingLists.listHat);
-      merge_Old_New(femaleItems,clothingLists.listHat);
-    end
-    if clothingLists["listTankTop"] then
-      local maleItems = maleTable.TankTop.items;
-      local femaleItems = femaleTable.TankTop.items;
-      merge_Old_New(maleItems,clothingLists.listTankTop);
-      merge_Old_New(femaleItems,clothingLists.listTankTop);
-    end
-    if clothingLists["listTshirt"] then
-      local maleItems = maleTable.Tshirt.items;
-      local femaleItems = femaleTable.Tshirt.items;
-      merge_Old_New(maleItems,clothingLists.listTshirt);
-      merge_Old_New(femaleItems,clothingLists.listTshirt);
-    end
-    if clothingLists["listShirt"] then
-      local maleItems = maleTable.Shirt.items;
-      local femaleItems = femaleTable.Shirt.items;
-      merge_Old_New(maleItems,clothingLists.listShirt);
-      merge_Old_New(femaleItems,clothingLists.listShirt);
-    end
-    if clothingLists["listSocks"] then
-      local maleItems = maleTable.Socks.items;
-      local femaleItems = femaleTable.Socks.items;
-      merge_Old_New(maleItems,clothingLists.listSocks);
-      merge_Old_New(femaleItems,clothingLists.listSocks);
-    end
-    if clothingLists["listPants"] then
-      local maleItems = maleTable.Pants.items;
-      local femaleItems = femaleTable.Pants.items;
-      merge_Old_New(maleItems,clothingLists.listPants);
-      merge_Old_New(femaleItems,clothingLists.listPants);
-    end
-    if clothingLists["listSkirt"] then
-      local maleItems = maleTable.Skirt.items;
-      local femaleItems = femaleTable.Skirt.items;
-      merge_Old_New(maleItems,clothingLists.listSkirt);
-      merge_Old_New(femaleItems,clothingLists.listSkirt);
-    end
-    if clothingLists["listDress"] then
-      local maleItems = maleTable.Dress.items;
-      local femaleItems = femaleTable.Dress.items;
-      merge_Old_New(maleItems,clothingLists.listDress);
-      merge_Old_New(femaleItems,clothingLists.listDress);
-    end
-    if clothingLists["listShoes"] then
-      local maleItems = maleTable.Shoes.items;
-      local femaleItems = femaleTable.Shoes.items;
-      merge_Old_New(maleItems,clothingLists.listShoes);
-      merge_Old_New(femaleItems,clothingLists.listShoes);
-    end
-    if clothingLists["listEyes"] then
-      local maleItems = maleTable.Eyes.items;
-      local femaleItems = femaleTable.Eyes.items;
-      merge_Old_New(maleItems,clothingLists.listEyes);
-      merge_Old_New(femaleItems,clothingLists.listEyes);
-    end
-
-    if clothingLists["listLeftEye"] then
-      local maleItems = maleTable.LeftEye.items;
-      local femaleItems = femaleTable.LeftEye.items;
-      merge_Old_New(maleItems,clothingLists.listLeftEye);
-      merge_Old_New(femaleItems,clothingLists.listLeftEye);
-    end
-
-
-    if clothingLists["listRightEye"] then
-      local maleItems = maleTable.RightEye.items;
-      local femaleItems = femaleTable.RightEye.items;
-      merge_Old_New(maleItems,clothingLists.listRightEye);
-      merge_Old_New(femaleItems,clothingLists.listRightEye);
-    end
-
-    if clothingLists["listBeltExtra"] then
-      local maleItems = maleTable.BeltExtra.items;
-      local femaleItems = femaleTable.BeltExtra.items;
-      merge_Old_New(maleItems,clothingLists.listBeltExtra);
-      merge_Old_New(femaleItems,clothingLists.listBeltExtra);
-    end
-    if clothingLists["listAmmoStrap"] then
-      local maleItems = maleTable.AmmoStrap.items;
-      local femaleItems = femaleTable.AmmoStrap.items;
-      merge_Old_New(maleItems,clothingLists.listAmmoStrap);
-      merge_Old_New(femaleItems,clothingLists.listAmmoStrap);
-    end
-    if clothingLists["listMask"] then
-      local maleItems = maleTable.Mask.items;
-      local femaleItems = femaleTable.Mask.items;
-      merge_Old_New(maleItems,clothingLists.listMask);
-      merge_Old_New(femaleItems,clothingLists.listMask);
-    end
-    if clothingLists["listMaskEyes"] then
-      local maleItems = maleTable.MaskEyes.items;
-      local femaleItems = femaleTable.MaskEyes.items;
-      merge_Old_New(maleItems,clothingLists.listMaskEyes);
-      merge_Old_New(femaleItems,clothingLists.listMaskEyes);
-    end
-    if clothingLists["listMaskFull"] then
-      local maleItems = maleTable.MaskFull.items;
-      local femaleItems = femaleTable.MaskFull.items;
-      merge_Old_New(maleItems,clothingLists.listMaskFull);
-      merge_Old_New(femaleItems,clothingLists.listMaskFull);
-    end
-    if clothingLists["listUnderwear"] then
-      local maleItems = maleTable.Underwear.items;
-      local femaleItems = femaleTable.Underwear.items;
-      merge_Old_New(maleItems,clothingLists.listUnderwear);
-      merge_Old_New(femaleItems,clothingLists.listUnderwear);
-    end
-    if clothingLists["listFullHat"] then
-      local maleItems = maleTable.FullHat.items;
-      local femaleItems = femaleTable.FullHat.items;
-      merge_Old_New(maleItems,clothingLists.listFullHat);
-      merge_Old_New(femaleItems,clothingLists.listFullHat);
-    end
-    if clothingLists["listTorso1Legs1"] then
-      local maleItems = maleTable.Torso1Legs1.items;
-      local femaleItems = femaleTable.Torso1Legs1.items;
-      merge_Old_New(maleItems,clothingLists.listTorso1Legs1);
-      merge_Old_New(femaleItems,clothingLists.listTorso1Legs1);
-    end
-    if clothingLists["listNeck"] then
-      local maleItems = maleTable.Neck.items;
-      local femaleItems = femaleTable.Neck.items;
-      merge_Old_New(maleItems,clothingLists.listNeck);
-      merge_Old_New(femaleItems,clothingLists.listNeck);
-    end
-    if clothingLists["listHands"] then
-      local maleItems = maleTable.Hands.items;
-      local femaleItems = femaleTable.Hands.items;
-      merge_Old_New(maleItems,clothingLists.listHands);
-      merge_Old_New(femaleItems,clothingLists.listHands);
-    end
-    if clothingLists["listLegs1"] then
-      local maleItems = maleTable.Legs1.items;
-      local femaleItems = femaleTable.Legs1.items;
-      merge_Old_New(maleItems,clothingLists.listLegs1);
-      merge_Old_New(femaleItems,clothingLists.listLegs1);
-    end
-    if clothingLists["listSweater"] then
-      local maleItems = maleTable.Sweater.items;
-      local femaleItems = femaleTable.Sweater.items;
-      merge_Old_New(maleItems,clothingLists.listSweater);
-      merge_Old_New(femaleItems,clothingLists.listSweater);
-    end
-    if clothingLists["listJacket"] then
-      local maleItems = maleTable.Jacket.items;
-      local femaleItems = femaleTable.Jacket.items;
-      merge_Old_New(maleItems,clothingLists.listJacket);
-      merge_Old_New(femaleItems,clothingLists.listJacket);
-    end
-    if clothingLists["listFullSuit"] then
-      local maleItems = maleTable.FullSuit.items;
-      local femaleItems = femaleTable.FullSuit.items;
-      merge_Old_New(maleItems,clothingLists.listFullSuit);
-      merge_Old_New(femaleItems,clothingLists.listFullSuit);
-    end
-    if clothingLists["listFullSuitHead"] then
-      local maleItems = maleTable.FullSuitHead.items;
-      local femaleItems = femaleTable.FullSuitHead.items;
-      merge_Old_New(maleItems,clothingLists.listFullSuitHead);
-      merge_Old_New(femaleItems,clothingLists.listFullSuitHead);
-    end
-    if clothingLists["listFullTop"] then
-      local maleItems = maleTable.FullTop.items;
-      local femaleItems = femaleTable.FullTop.items;
-      merge_Old_New(maleItems,clothingLists.listFullTop);
-      merge_Old_New(femaleItems,clothingLists.listFullTop);
-    end
-    if clothingLists["listBathRobe"] then
-      local maleItems = maleTable.BathRobe.items;
-      local femaleItems = femaleTable.BathRobe.items;
-      merge_Old_New(maleItems,clothingLists.listBathRobe);
-      merge_Old_New(femaleItems,clothingLists.listBathRobe);
-    end
-    if clothingLists["listTorsoExtra"] then
-      local maleItems = maleTable.TorsoExtra.items;
-      local femaleItems = femaleTable.TorsoExtra.items;
-      merge_Old_New(maleItems,clothingLists.listTorsoExtra);
-      merge_Old_New(femaleItems,clothingLists.listTorsoExtra);
-    end
-    if clothingLists["listTail"] then
-      local maleItems = maleTable.Tail.items;
-      local femaleItems = femaleTable.Tail.items;
-      merge_Old_New(maleItems,clothingLists.listTail);
-      merge_Old_New(femaleItems,clothingLists.listTail);
-    end
-    if clothingLists["listBack"] then
-      local maleItems = maleTable.Back.items;
-      local femaleItems = femaleTable.Back.items;
-      merge_Old_New(maleItems,clothingLists.listBack);
-      merge_Old_New(femaleItems,clothingLists.listBack);
-    end
-    if clothingLists["listScarf"] then
-      local maleItems = maleTable.Scarf.items;
-      local femaleItems = femaleTable.Scarf.items;
-      merge_Old_New(maleItems,clothingLists.listScarf);
-      merge_Old_New(femaleItems,clothingLists.listScarf);
-    end
-    -- if clothingLists["listFannyPackBack"] then
-      -- local maleItems = maleTable.FannyPackBack.items;
-      -- local femaleItems = femaleTable.FannyPackBack.items;
-      -- merge_Old_New(maleItems,clothingLists.listFannyPackBack);
-      -- merge_Old_New(femaleItems,clothingLists.listFannyPackBack);
-    -- end
-    if clothingLists["listFannyPackFront"] then
-      local maleItems = maleTable.FannyPackFront.items;
-      local femaleItems = femaleTable.FannyPackFront.items;
-      merge_Old_New(maleItems,clothingLists.listFannyPackFront);
-      merge_Old_New(femaleItems,clothingLists.listFannyPackFront);
-    end
-    if clothingLists["listNecklace"] then
-      local maleItems = maleTable.Necklace.items;
-      local femaleItems = femaleTable.Necklace.items;
-      merge_Old_New(maleItems,clothingLists.listNecklace);
-      merge_Old_New(femaleItems,clothingLists.listNecklace);
-    end
-    if clothingLists["listNecklace_Long"] then
-      local maleItems = maleTable.Necklace_Long.items;
-      local femaleItems = femaleTable.Necklace_Long.items;
-      merge_Old_New(maleItems,clothingLists.listNecklace_Long);
-      merge_Old_New(femaleItems,clothingLists.listNecklace_Long);
-    end
-    if clothingLists["listNose"] then
-      local maleItems = maleTable.Nose.items;
-      local femaleItems = femaleTable.Nose.items;
-      merge_Old_New(maleItems,clothingLists.listNose);
-      merge_Old_New(femaleItems,clothingLists.listNose);
-    end
-
-    if clothingLists["listLeftWrist"] then
-      local maleItems = maleTable.LeftWrist.items;
-      local femaleItems = femaleTable.LeftWrist.items;
-      merge_Old_New(maleItems,clothingLists.listLeftWrist);
-      merge_Old_New(femaleItems,clothingLists.listLeftWrist);
-    end
-    if clothingLists["listRightWrist"] then
-      local maleItems = maleTable.RightWrist.items;
-      local femaleItems = femaleTable.RightWrist.items;
-      merge_Old_New(maleItems,clothingLists.listRightWrist);
-      merge_Old_New(femaleItems,clothingLists.listRightWrist);
-    end
-    if clothingLists["listRight_RingFinger"] then
-      local maleItems = maleTable.Right_RingFinger.items;
-      local femaleItems = femaleTable.Right_RingFinger.items;
-      merge_Old_New(maleItems,clothingLists.listRight_RingFinger);
-      merge_Old_New(femaleItems,clothingLists.listRight_RingFinger);
-    end
-    if clothingLists["listLeft_RingFinger"] then
-      local maleItems = maleTable.Left_RingFinger.items;
-      local femaleItems = femaleTable.Left_RingFinger.items;
-      merge_Old_New(maleItems,clothingLists.listLeft_RingFinger);
-      merge_Old_New(femaleItems,clothingLists.listLeft_RingFinger);
-    end
-    if clothingLists["listRight_MiddleFinger"] then
-      local maleItems = maleTable.Right_MiddleFinger.items;
-      local femaleItems = femaleTable.Right_MiddleFinger.items;
-      merge_Old_New(maleItems,clothingLists.listRight_MiddleFinger);
-      merge_Old_New(femaleItems,clothingLists.listRight_MiddleFinger);
-    end
-    if clothingLists["listLeft_MiddleFinger"] then
-      local maleItems = maleTable.Left_MiddleFinger.items;
-      local femaleItems = femaleTable.Left_MiddleFinger.items;
-      merge_Old_New(maleItems,clothingLists.listLeft_MiddleFinger);
-      merge_Old_New(femaleItems,clothingLists.listLeft_MiddleFinger);
-    end
-    if clothingLists["listEars"] then
-      local maleItems = maleTable.Ears.items;
-      local femaleItems = femaleTable.Ears.items;
-      merge_Old_New(maleItems,clothingLists.listEars);
-      merge_Old_New(femaleItems,clothingLists.listEars);
-    end
-    if clothingLists["listEarTop"] then
-      local maleItems = maleTable.EarTop.items;
-      local femaleItems = femaleTable.EarTop.items;
-      merge_Old_New(maleItems,clothingLists.listEarTop);
-      merge_Old_New(femaleItems,clothingLists.listEarTop);
-    end
-
-    -- Dressing Time stuff:
-    if getActivatedMods():contains("DressingTime") then
-      if clothingLists["listSkeletonSuit"] then
-        local maleItems = maleTable.SkeletonSuit.items;
-        local femaleItems = femaleTable.SkeletonSuit.items;
-        merge_Old_New(maleItems,closingLists.listSkeletonSuit);
-        merge_Old_New(femaleItems,closingLists.listSkeletonSuit);
-      end
-      if clothingLists["listSlendermanSuit"] then
-        local maleItems = maleTable.SlendermanSuit.items;
-        local femaleItems = femaleTable.SlendermanSuit.items;
-        merge_Old_New(maleItems,closingLists.listSlendermanSuit);
-        merge_Old_New(femaleItems,closingLists.listSlendermanSuit);
-      end
-      if clothingLists["listTorso1"] then
-        local maleItems = maleTable.Torso1.items;
-        local femaleItems = femaleTable.Torso1.items;
-        merge_Old_New(maleItems,closingLists.listTorso1);
-        merge_Old_New(femaleItems,closingLists.listTorso1);
-      end
-      if clothingLists["listShortSleeveShirt"] then
-        local maleItems = maleTable.ShortSleeveShirt.items;
-        local femaleItems = femaleTable.ShortSleeveShirt.items;
-        merge_Old_New(maleItems,closingLists.listShortSleeveShirt);
-        merge_Old_New(femaleItems,closingLists.listShortSleeveShirt);
-      end
-      if clothingLists["listLegs5"] then
-        local maleItems = maleTable.Legs5.items;
-        local femaleItems = femaleTable.Legs5.items;
-        merge_Old_New(maleItems,closingLists.listLegs5);
-        merge_Old_New(femaleItems,closingLists.listLegs5);
-      end
-      if clothingLists["listShirtUntucked"] then
-        local maleItems = maleTable.ShirtUntucked.items;
-        local femaleItems = femaleTable.ShirtUntucked.items;
-        merge_Old_New(maleItems,closingLists.listShirtUntucked);
-        merge_Old_New(femaleItems,closingLists.listShirtUntucked);
-      end
-      if clothingLists["listBodyCostume"] then
-        local maleItems = maleTable.BodyCostume.items;
-        local femaleItems = femaleTable.BodyCostume.items;
-        merge_Old_New(maleItems,closingLists.listBodyCostume);
-        merge_Old_New(femaleItems,closingLists.listBodyCostume);
-      end
-      if clothingLists["listLeftHand"] then
-        local maleItems = maleTable.LeftHand.items;
-        local femaleItems = femaleTable.LeftHand.items;
-        merge_Old_New(maleItems,closingLists.listLeftHand);
-        merge_Old_New(femaleItems,closingLists.listLeftHand);
-      end
-      if clothingLists["listRightHand"] then
-        local maleItems = maleTable.RightHand.items;
-        local femaleItems = femaleTable.RightHand.items;
-        merge_Old_New(maleItems,closingLists.listRightHand);
-        merge_Old_New(femaleItems,closingLists.listRightHand);
-      end
-      if clothingLists["listBillboard"] then
-        local maleItems = maleTable.Billboard.items;
-        local femaleItems = femaleTable.Billboard.items;
-        merge_Old_New(maleItems,closingLists.listBillboard);
-        merge_Old_New(femaleItems,closingLists.listBillboard);
-      end
-    end
-    -- Paw Low stuff:
-    if getActivatedMods():contains("PLLoot") then
-      if clothingLists["listPupils"] then
-        local maleItems = maleTable.Pupils.items;
-        local femaleItems = femaleTable.Pupils.items;
-        merge_Old_New(maleItems,closingLists.listPupils);
-        merge_Old_New(femaleItems,closingLists.listPupils);
-      end
-      if clothingLists["listWig"] then
-        local maleItems = maleTable.Wig.items;
-        local femaleItems = femaleTable.Wig.items;
-        merge_Old_New(maleItems,closingLists.listWig);
-        merge_Old_New(femaleItems,closingLists.listWig);
-      end
-      if clothingLists["listBelt419"] then
-        local maleItems = maleTable.Belt419.items;
-        local femaleItems = femaleTable.Belt419.items;
-        merge_Old_New(maleItems,closingLists.listBelt419);
-        merge_Old_New(femaleItems,closingLists.listBelt419);
-      end
-      if clothingLists["listBelt420"] then
-        local maleItems = maleTable.Belt420.items;
-        local femaleItems = femaleTable.Belt420.items;
-        merge_Old_New(maleItems,closingLists.listBelt420);
-        merge_Old_New(femaleItems,closingLists.listBelt420);
-      end
-      if clothingLists["listTorsoRig"] then
-        local maleItems = maleTable.TorsoRig.items;
-        local femaleItems = femaleTable.TorsoRig.items;
-        merge_Old_New(maleItems,closingLists.listTorsoRig);
-        merge_Old_New(femaleItems,closingLists.listTorsoRig);
-      end
-      if clothingLists["listwaistbags"] then
-        local maleItems = maleTable.waistbags.items;
-        local femaleItems = femaleTable.waistbags.items;
-        merge_Old_New(maleItems,closingLists.listwaistbags);
-        merge_Old_New(femaleItems,closingLists.listwaistbags);
-      end
-      if clothingLists["listwaistbagsComplete"] then
-        local maleItems = maleTable.waistbagsComplete.items;
-        local femaleItems = femaleTable.waistbagsComplete.items;
-        merge_Old_New(maleItems,closingLists.listwaistbagsComplete);
-        merge_Old_New(femaleItems,closingLists.listwaistbagsComplete);
-      end
-      if clothingLists["listwaistbagsf"] then
-        local maleItems = maleTable.waistbagsf.items;
-        local femaleItems = femaleTable.waistbagsf.items;
-        merge_Old_New(maleItems,closingLists.listwaistbagsf);
-        merge_Old_New(femaleItems,closingLists.listwaistbagsf);
-      end
-      if clothingLists["listKneepads"] then
-        local maleItems = maleTable.Kneepads.items;
-        local femaleItems = femaleTable.Kneepads.items;
-        merge_Old_New(maleItems,closingLists.listKneepads);
-        merge_Old_New(femaleItems,closingLists.listKneepads);
-      end
-    end
+  end
 end
 
 -- Make this function available to other lua files that will add clothing to the dropdowns
 _OGSN_FashionMontage = {}
+_OGSN_FashionMontage.addBodyLocations = addBodyLocations
 _OGSN_FashionMontage.addClothing = addClothing
 return _OGSN_FashionMontage
