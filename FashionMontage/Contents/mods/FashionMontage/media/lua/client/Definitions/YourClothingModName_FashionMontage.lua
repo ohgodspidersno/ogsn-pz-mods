@@ -81,5 +81,5 @@ local bodyLocations = {
   -- "SidewaysBaseballCap",
 }
 
-_OGSN_FashionMontage.addClothing(clothing);
+_OGSN_FashionMontage.addClothingItems(clothing);
 _OGSN_FashionMontage.addBodyLocations(bodyLocations);

@@ -5,54 +5,6 @@ require "Definitions/_OGSN_FashionMontage"
 -- If you want to add new clothing, create a new .lua file using the
 -- template I have created in media/lua/client/Definitions/YourClothingModName_FashionMontage.lua
 
-local newBodyLocations = {
-"Hat",
-"TankTop",
-"Tshirt",
-"Shirt",
-"Socks",
-"Pants",
-"Skirt",
-"Dress",
-"Shoes",
-"Eyes",
-"LeftEye",
-"RightEye",
-"BeltExtra",
-"AmmoStrap",
-"Mask",
-"MaskEyes",
-"MaskFull",
-"Underwear",
-"FullHat",
-"Torso1Legs1",
-"Neck",
-"Hands",
-"Legs1",
-"Sweater",
-"Jacket",
-"FullSuit",
-"FullSuitHead",
-"FullTop",
-"BathRobe",
-"TorsoExtra",
-"Tail",
-"Back",
-"Scarf",
-"FannyPackFront",
-"Necklace",
-"Necklace_Long",
-"Nose",
-"LeftWrist",
-"RightWrist",
-"Right_RingFinger",
-"Left_RingFinger",
-"Right_MiddleFinger",
-"Left_MiddleFinger",
-"Ears",
-"EarTop",
-}
-
 local clothingLists = {
       Hat = {
         "Base.Hat_Bandana",
@@ -575,5 +527,5 @@ local clothingLists = {
       -- Kneepads = {},
 }
 
-_OGSN_FashionMontage.addClothing(clothingLists);
+_OGSN_FashionMontage.addClothingItems(clothingLists);
 _OGSN_FashionMontage.addBodyLocations(bodyLocations);

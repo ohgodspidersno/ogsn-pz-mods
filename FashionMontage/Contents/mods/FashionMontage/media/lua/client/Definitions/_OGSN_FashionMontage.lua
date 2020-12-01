@@ -128,7 +128,7 @@ ClothingSelectionDefinitions.starting.Female.Socks = {chance = 100, items = {"Ba
 ClothingSelectionDefinitions.starting.Female.Pants = {chance = 100, items = {"Base.Trousers_WhiteTINT"}}
 
 -- Define the function that will add lists of clothing, vanilla or modded, to the dropdowns
-local function addClothing(clothingLists)
+local function addClothingItems(clothingLists)
   merge_Old_New = merge_Old_New
   local maleTable = ClothingSelectionDefinitions.default["Male"]
   local femaleTable = ClothingSelectionDefinitions.default["Female"]
@@ -152,7 +152,9 @@ local function addClothing(clothingLists)
 end
 
 -- Make this function available to other lua files that will add clothing to the dropdowns
-_OGSN_FashionMontage = {}
+require "Definitions/_OGSN_FashionMontageBackward"
+_OGSN_FashionMontage = _OGSN_FashionMontage or {}
 _OGSN_FashionMontage.addBodyLocations = addBodyLocations
-_OGSN_FashionMontage.addClothing = addClothing
+_OGSN_FashionMontage.addClothingItems = addClothingItems
+_OGSN_FashionMontage.addClothing = _OGSN_FashionMontageBackward.addClothing
 return _OGSN_FashionMontage
