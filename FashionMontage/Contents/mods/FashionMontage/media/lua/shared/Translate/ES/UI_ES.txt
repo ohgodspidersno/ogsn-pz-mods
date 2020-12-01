@@ -1,3 +1,4 @@
+-- Encode this file as Windows-1252
 UI_ES = {
 UI_ClothingType_Back = "Mochila",
 UI_ClothingType_FullHat = "Casco completo",

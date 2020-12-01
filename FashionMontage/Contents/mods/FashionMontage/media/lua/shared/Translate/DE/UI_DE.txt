@@ -1,3 +1,4 @@
+-- Encode this file as Windows-1252
 UI_DE = {
 UI_ClothingType_Back = "Rucksack",
 UI_ClothingType_FullHat = "Voller Helm",

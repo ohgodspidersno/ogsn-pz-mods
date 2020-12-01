@@ -1,3 +1,4 @@
+-- Encode this file as Windows-1251
 UI_RU = {
 UI_ClothingType_Back = "Рюкзак",
 UI_ClothingType_FullHat = "Полный шлем",

@@ -79,6 +79,12 @@ local bodyLocations = {
   -- "KneePads",
   -- "ThirdArm",
   -- "SidewaysBaseballCap",
+
+  -- IMPORTANT NOTE: If you add BodyLocations you'll also have to add a translation txt file
+  -- otherwise it will show up in the menu as UI_ClothingType_NewBodyLocationName
+  -- Please add it for as many languages as you can. Check out the lua/shared/Translate folder for reference
+
+  -- lua/shared/Translate/note_to_modders.txt will tell you which encoding to use for each language
 }
 
 _OGSN_FashionMontage.addClothingItems(clothing);

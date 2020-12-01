@@ -1,3 +1,4 @@
+-- Encode this file as UTF-8
 UI_JP = {
 UI_ClothingType_Back = "バックパック",
 UI_ClothingType_FullHat = "フルヘルメット",

@@ -2,4 +2,7 @@ name=Fashion Montage - Start with any outfit
 id=FashionMontage
 description=Now you can try on all the clothes you want at character gen, so spin up that Sixpence None the Richer album and prepare to get fabulous this armageddon.
 description=Flak armor and riot gear are so hot right now.
+description=
+description=If you have made a mod that adds new clothing items, please consider making it compatible with Fashion Montage.
+description=Please read the file "readme_if_you_are_a_modder.txt" in this mod's folder for more information.
 poster=poster.png
