@@ -69,7 +69,7 @@ local clothing = {
   EarTop = {},
   MaskFull = {},
   -- If your mod adds new bodylocations, you can include its items here
-  -- as long as you also include the new bodyLocation's name
+  -- as long as you also include the new BodyLocation's name
   -- in the next array (see below)
 }
 
@@ -82,4 +82,6 @@ local bodyLocations = {
 }
 
 _OGSN_FashionMontage.addClothingItems(clothing);
-_OGSN_FashionMontage.addBodyLocations(bodyLocations);
+if #bodyLocations > 0 then
+  _OGSN_FashionMontage.addBodyLocations(bodyLocations);
+end

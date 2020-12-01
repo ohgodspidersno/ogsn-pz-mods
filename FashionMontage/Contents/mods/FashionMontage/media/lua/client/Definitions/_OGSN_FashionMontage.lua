@@ -16,8 +16,25 @@ local function merge_Old_New(old, new)
   end;
 end
 
-
 allBodyLocations = allBodyLocations or {}
+
+local function addBodyLocations(bodyLocationList)
+  merge_Old_New = merge_Old_New
+  allBodyLocations = allBodyLocations or {}
+  local bodyLocationList = bodyLocationList or {}
+  if #bodyLocationList > 0 then
+    merge_Old_New(allBodyLocations, bodyLocationList)
+    for k, v in pairs(bodyLocationList) do
+      ClothingSelectionDefinitions.default["Male"][v] = {}
+      ClothingSelectionDefinitions.default["Male"][v]["items"] = {}
+      ClothingSelectionDefinitions.default["Male"][v]["chance"] = 20
+      ClothingSelectionDefinitions.default["Female"][v] = {}
+      ClothingSelectionDefinitions.default["Female"][v]["items"] = {}
+      ClothingSelectionDefinitions.default["Female"][v]["chance"] = 20
+    end
+  end
+end
+
 
 local vanillaBodyLocations = {
   "Hat",
@@ -66,51 +83,37 @@ local vanillaBodyLocations = {
   "Ears",
   "EarTop",
 }
-local DTbodyLocations = {
-  "SkeletonSuit",
-  "SlendermanSuit",
-  "Torso1",
-  "ShortSleeveShirt",
-  "Legs5",
-  "ShirtUntucked",
-  "BodyCostume",
-  "Billboard",
-}
-local PLLbodyLocations = {
-  "Pupils",
-  "Wig",
-  "Belt419",
-  "Belt420",
-  "TorsoRig",
-  "waistbags",
-  "waistbagsComplete",
-  "waistbagsf",
-  "Kneepads",
-}
-
-local function addBodyLocations(bodyLocationList)
-  merge_Old_New = merge_Old_New
-  local bodyLocationList = bodyLocationList or {}
-  for k, v in pairs(bodyLocationList) do
-    ClothingSelectionDefinitions.default["Male"][v] = {}
-    ClothingSelectionDefinitions.default["Male"][v]["items"] = {}
-    ClothingSelectionDefinitions.default["Male"][v]["chance"] = 20
-    ClothingSelectionDefinitions.default["Female"][v] = {}
-    ClothingSelectionDefinitions.default["Female"][v]["items"] = {}
-    ClothingSelectionDefinitions.default["Female"][v]["chance"] = 20
-  end
-  merge_Old_New(allBodyLocations, bodyLocationList)
-end
-
 addBodyLocations(vanillaBodyLocations)
 
-if getActivatedMods():contains("DressingTime") then
-  addBodyLocations(DTbodyLocations)
-end
-
-if getActivatedMods():contains("PLLoot") then
-  addBodyLocations(PLLbodyLocations)
-end
+-- Debug testing for DressingTime and PLLoot
+-- if getActivatedMods():contains("DressingTime") then
+--   local DTbodyLocations = {
+--     "SkeletonSuit",
+--     "SlendermanSuit",
+--     "Torso1",
+--     "ShortSleeveShirt",
+--     "Legs5",
+--     "ShirtUntucked",
+--     "BodyCostume",
+--     "Billboard",
+--   }
+--   addBodyLocations(DTbodyLocations)
+-- end
+--
+-- if getActivatedMods():contains("PLLoot") then
+--   local PLLbodyLocations = {
+--     "Pupils",
+--     "Wig",
+--     "Belt419",
+--     "Belt420",
+--     "TorsoRig",
+--     "waistbags",
+--     "waistbagsComplete",
+--     "waistbagsf",
+--     "Kneepads",
+--   }
+--   addBodyLocations(PLLbodyLocations)
+-- end
 
 -- Make the default starting outfit something really basic and easy for the player to replace
 ClothingSelectionDefinitions.starting = {}
@@ -134,14 +137,14 @@ local function addClothingItems(clothingLists)
   local femaleTable = ClothingSelectionDefinitions.default["Female"]
 
   for k, v in pairs(clothingLists) do
-    print('in k,v in pairs clothingLists do')
-    print('k and v:')
     local locationName = k
     local locationItemsTable = v
-    print(k)
-    print(v)
-    print('#locationItemsTable')
-    print(#locationItemsTable)
+    -- print('in k,v in pairs clothingLists do')
+    -- print('k and v:')
+    -- print(k)
+    -- print(v)
+    -- print('#locationItemsTable')
+    -- print(#locationItemsTable)
     if locationItemsTable and #locationItemsTable > 0 then
       local maleItems = maleTable[locationName]["items"];
       local femaleItems = femaleTable[locationName]["items"];

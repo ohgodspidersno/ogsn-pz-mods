@@ -5,7 +5,7 @@ require "Definitions/_OGSN_FashionMontage"
 -- If you want to add new clothing, create a new .lua file using the
 -- template I have created in media/lua/client/Definitions/YourClothingModName_FashionMontage.lua
 
-local clothingLists = {
+local clothing = {
       Hat = {
         "Base.Hat_Bandana",
         "Base.Hat_BandanaTied",
@@ -527,5 +527,17 @@ local clothingLists = {
       -- Kneepads = {},
 }
 
-_OGSN_FashionMontage.addClothingItems(clothingLists);
-_OGSN_FashionMontage.addBodyLocations(bodyLocations);
+local bodyLocations = {
+-- Modders, if your mod adds new modded BodyLocations, list them here as strings, e.g.
+-- "KneePads",
+-- "SidewaysBaseballCap",
+
+-- If you only use vanilla BodyLocations then you don't have to put
+-- anything here.
+-- The vanilla bodyLocations are already added by the main lua file.
+}
+
+_OGSN_FashionMontage.addClothingItems(clothing);
+if #bodyLocations > 0 then
+  _OGSN_FashionMontage.addBodyLocations(bodyLocations);
+end
