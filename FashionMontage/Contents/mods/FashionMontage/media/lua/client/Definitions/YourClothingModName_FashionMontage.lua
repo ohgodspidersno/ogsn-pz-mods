@@ -87,7 +87,8 @@ local bodyLocations = {
   -- lua/shared/Translate/note_to_modders.txt will tell you which encoding to use for each language
 }
 
-_OGSN_FashionMontage.addClothingItems(clothing);
 if #bodyLocations > 0 then
   _OGSN_FashionMontage.addBodyLocations(bodyLocations);
 end
+
+_OGSN_FashionMontage.addClothingItems(clothing);
