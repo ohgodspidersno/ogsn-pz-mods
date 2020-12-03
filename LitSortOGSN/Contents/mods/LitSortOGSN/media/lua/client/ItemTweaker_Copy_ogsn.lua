@@ -29,6 +29,16 @@ function TweakItem(itemName, itemProperty, propertyValue)
 	TweakItemData[itemName][itemProperty] = propertyValue;
 end
 
+-- this function adds to the existing value instead of replacing it entirely
+function TweakItemAdditive(itemName, itemProperty, propertyValue)
+	if not TweakItemData[itemName] then
+		TweakItemData[itemName] = {};
+	end
+	local old_property = TweakItemData[itemName][itemProperty]
+	local new_property = old_property.. ";"..propertyValue
+	TweakItemData[itemName][itemProperty] = new_property;
+end
+
 Events.OnGameBoot.Add(ItemTweaker.tweakItems)
 
 
