@@ -3,8 +3,8 @@
 --***********************************************************
 
 require "ISUI/ISRadialMenu"
-
-ISFirearmRadialMenu = ISBaseObject:derive("ISFirearmRadialMenu")
+require "ISUI/ISBackButtonWheel"
+ISFirearmRadialMenu = ISFirearmRadialMenu or ISBaseObject:derive("ISFirearmRadialMenu")
 
 -----
 
@@ -480,3 +480,5 @@ local function OnGameStart()
 end
 
 Events.OnGameStart.Add(OnGameStart)
+
+return ISFirearmRadialMenu

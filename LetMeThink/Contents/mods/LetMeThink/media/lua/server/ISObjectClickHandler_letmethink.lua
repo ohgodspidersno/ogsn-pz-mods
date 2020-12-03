@@ -1,4 +1,5 @@
-ISObjectClickHandler = {}
+require "ISObjectClickHandler"
+ISObjectClickHandler = ISObjectClickHandler or {}
 
 ISObjectClickHandler.doRDoubleClick = function (object, x, y)
 
@@ -368,3 +369,5 @@ Events.OnObjectLeftMouseButtonUp.Add(ISObjectClickHandler.onObjectLeftMouseButto
 Events.OnObjectLeftMouseButtonDown.Add(ISObjectClickHandler.onObjectLeftMouseButtonDown);
 Events.OnObjectRightMouseButtonUp.Add(ISObjectClickHandler.onObjectRightMouseButtonUp);
 Events.OnObjectRightMouseButtonDown.Add(ISObjectClickHandler.onObjectRightMouseButtonDown);
+
+return ISObjectClickHandler

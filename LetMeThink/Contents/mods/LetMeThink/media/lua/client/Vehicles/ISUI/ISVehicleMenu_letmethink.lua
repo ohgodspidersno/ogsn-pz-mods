@@ -1,8 +1,8 @@
 --***********************************************************
 --**                    THE INDIE STONE                    **
 --***********************************************************
-
-ISVehicleMenu = {}
+require "Vehicles/ISUI/ISVehicleMenu"
+ISVehicleMenu = ISVehicleMenu or {}
 
 function ISVehicleMenu.OnFillWorldObjectContextMenu(player, context, worldobjects, test)
 	local playerObj = getSpecificPlayer(player)
@@ -1360,3 +1360,5 @@ end
 Events.OnFillWorldObjectContextMenu.Add(ISVehicleMenu.OnFillWorldObjectContextMenu)
 Events.OnKeyPressed.Add(ISVehicleMenu.onKeyPressed);
 Events.OnKeyStartPressed.Add(ISVehicleMenu.onKeyStartPressed);
+
+return ISVehicleMenu

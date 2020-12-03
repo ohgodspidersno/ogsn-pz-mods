@@ -5,8 +5,8 @@
 -- Time: 11:06
 -- To change this template use File | Settings | File Templates.
 --
-
-ISVehicleMechanics = ISCollapsableWindow:derive("ISVehicleMechanics");
+require "Vehicles/ISUI/ISVehicleMechanics"
+ISVehicleMechanics = ISVehicleMechanics or ISCollapsableWindow:derive("ISVehicleMechanics");
 ISVehicleMechanics.alphaOverlay = 1;
 ISVehicleMechanics.alphaOverlayInc = true;
 ISVehicleMechanics.tooltip = nil;
@@ -1461,3 +1461,5 @@ ISVehicleMechanics.OnMechanicActionDone = function(chr, success, vehicleId, part
 end
 
 Events.OnMechanicActionDone.Add(ISVehicleMechanics.OnMechanicActionDone);
+
+return ISVehicleMechanics

@@ -3,8 +3,8 @@
 --**				  Author: turbotutone				   **
 --***********************************************************
 require "ISUI/ISPanel"
-
-ISSineWaveDisplay = ISPanel:derive("ISSineWaveDisplay");
+require "RadioCom/ISUIRadio/ISSineWaveDisplay"
+ISSineWaveDisplay = ISSineWaveDisplay or ISPanel:derive("ISSineWaveDisplay");
 
 function ISSineWaveDisplay:initialise()
     ISPanel.initialise(self)
@@ -160,3 +160,5 @@ function ISSineWaveDisplay:new (x, y, width, height)
     o.isOn = true;
     return o
 end
+
+return ISSineWaveDisplay

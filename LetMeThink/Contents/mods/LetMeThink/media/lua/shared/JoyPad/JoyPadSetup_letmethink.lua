@@ -1,4 +1,5 @@
-JoypadState = {}
+require "JoyPad/JoyPadSetup"
+JoypadState = JoypadState or {}
 JoypadState.count = 0
 JoypadState.players = {}
 JoypadState.joypads = {}
@@ -828,3 +829,5 @@ Events.OnRenderTick.Add(onJoypadRenderTick);
 Events.OnGameStart.Add(JoypadState.onGameStart);
 --Events.OnPlayerDeath.Add(JoypadState.onPlayerDeath);
 Events.OnCoopJoinFailed.Add(JoypadState.onCoopJoinFailed)
+
+return JoypadState

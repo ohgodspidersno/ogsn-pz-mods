@@ -1,6 +1,6 @@
 require "ISUI/ISUIElement"
-
-ISButtonPrompt = ISUIElement:derive("ISButtonPrompt");
+require "ISUI/ISBackButtonWheel"
+ISButtonPrompt = ISButtonPrompt or ISUIElement:derive("ISButtonPrompt");
 
 
 --************************************************************************--
@@ -1050,3 +1050,5 @@ function ISButtonPrompt:new (player)
   --  o:setYPrompt("Loot");
     return o
 end
+
+return ISButtonPrompt

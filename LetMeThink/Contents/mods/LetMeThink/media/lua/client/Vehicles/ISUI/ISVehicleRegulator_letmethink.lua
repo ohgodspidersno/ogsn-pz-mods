@@ -1,8 +1,8 @@
 --***********************************************************
 --**                    THE INDIE STONE                    **
 --***********************************************************
-
-ISVehicleRegulator = {}
+require "Vehicles/ISUI/ISVehicleRegulator"
+ISVehicleRegulator = ISVehicleRegulator or {}
 ISVehicleRegulator.xPressed = {}
 ISVehicleRegulator.changedSpeed = {}
 
@@ -70,3 +70,5 @@ function ISVehicleRegulator.onJoypadReleaseX(joypadData)
 
 	vehicle:setRegulator(not vehicle:isRegulator())
 end
+
+return ISVehicleRegulator

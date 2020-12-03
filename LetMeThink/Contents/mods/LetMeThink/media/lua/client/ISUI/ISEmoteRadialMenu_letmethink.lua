@@ -3,8 +3,8 @@
 --***********************************************************
 
 require "ISUI/ISRadialMenu"
-
-ISEmoteRadialMenu = ISBaseObject:derive("ISEmoteRadialMenu")
+require "ISUI/ISBackButtonWheel"
+ISEmoteRadialMenu = ISEmoteRadialMenu or ISBaseObject:derive("ISEmoteRadialMenu")
 
 function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.defaultMenu = {};
@@ -275,3 +275,5 @@ local function OnGameStart()
 end
 
 Events.OnGameStart.Add(OnGameStart)
+
+return ISEmoteRadialMenu

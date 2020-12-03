@@ -1,6 +1,7 @@
 require "ISUI/ISPanelJoypad"
+require "XpSystem/ISUI/ISHealthPanel"
 
-ISHealthPanel = ISPanelJoypad:derive("ISHealthPanel");
+ISHealthPanel = ISHealthPanel or ISPanelJoypad:derive("ISHealthPanel");
 ISHealthPanel.cheat = false or getDebug();
 
 local PAD_BOTTOM = 8
@@ -1781,3 +1782,5 @@ function ISHealthPanel:dropItemsOnBodyPart(bodyPart, items)
         end
     end
 end
+
+return ISHealthPanel

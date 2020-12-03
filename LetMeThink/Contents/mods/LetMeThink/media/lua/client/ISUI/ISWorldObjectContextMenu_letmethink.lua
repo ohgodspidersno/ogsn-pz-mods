@@ -1,4 +1,5 @@
-ISWorldObjectContextMenu = {}
+require "ISUI/ISWorldObjectContextMenu"
+ISWorldObjectContextMenu = ISWorldObjectContextMenu or {}
 ISWorldObjectContextMenu.fetchSquares = {}
 ISWorldObjectContextMenu.tooltipPool = {}
 ISWorldObjectContextMenu.tooltipsUsed = {}
@@ -3696,3 +3697,5 @@ end
 ISWorldObjectContextMenu.onSitOnGround = function(player)
 	getSpecificPlayer(player):reportEvent("EventSitOnGround");
 end
+
+return ISWorldObjectContextMenu

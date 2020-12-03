@@ -3,8 +3,8 @@
 --***********************************************************
 
 require "ISUI/ISToolTip"
-
-ISInventoryPaneContextMenu = {}
+require "ISUI/ISInventoryPaneContextMenu"
+ISInventoryPaneContextMenu = ISInventoryPaneContextMenu or {}
 ISInventoryPaneContextMenu.tooltipPool = {}
 ISInventoryPaneContextMenu.tooltipsUsed = {}
 
@@ -3270,3 +3270,5 @@ ISInventoryPaneContextMenu.onClothingItemExtra = function(item, extra, playerObj
     ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
     ISTimedActionQueue.add(ISClothingExtraAction:new(playerObj, item, extra))
 end
+
+return ISInventoryPaneContextMenu

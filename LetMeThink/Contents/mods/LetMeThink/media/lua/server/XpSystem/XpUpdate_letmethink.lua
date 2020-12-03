@@ -2,8 +2,8 @@
 --**                    ROBERT JOHNSON                     **
 --**       Here we gonna handle all the xp add/lose        **
 --***********************************************************
-
-xpUpdate = {};
+require "XpSystem/XpUpdate"
+xpUpdate = xpUpdate or {};
 xpUpdate.characterInfo = nil;
 -- timer to see how much time since last strength xp gain, if it's too long we start losing xp
 
@@ -356,3 +356,5 @@ Events.LevelPerk.Add(xpUpdate.levelPerk);
 Events.OnNewGame.Add(xpUpdate.onNewGame);
 
 Events.OnGameStart.Add(xpUpdate.OnGameStart);
+
+return xpUpdate

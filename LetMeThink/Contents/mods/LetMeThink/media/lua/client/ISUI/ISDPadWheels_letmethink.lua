@@ -3,8 +3,8 @@
 --***********************************************************
 
 require "ISBaseObject"
-
-ISDPadWheels = {}
+require "ISUI/ISBackButtonWheel"
+ISDPadWheels = ISDPadWheels or {}
 
 local function isEquippedOrAttached(playerObj, item)
 	return playerObj:isEquipped(item) or playerObj:isAttachedItem(item)
@@ -99,3 +99,5 @@ end
 function ISDPadWheels.onShout(playerObj)
 	playerObj:Callout()
 end
+
+return ISDPadWheels

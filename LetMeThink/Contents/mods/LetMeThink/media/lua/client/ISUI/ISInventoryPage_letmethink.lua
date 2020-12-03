@@ -11,8 +11,8 @@ require "ISUI/ISMouseDrag"
 require "ISUI/ISLayoutManager"
 
 require "defines"
-
-ISInventoryPage = ISPanel:derive("ISInventoryPage");
+require "ISUI/ISInventoryPage"
+ISInventoryPage = ISInventoryPage or ISPanel:derive("ISInventoryPage");
 
 ISInventoryPage.bagSoundDelay = 5
 ISInventoryPage.bagSoundTime = 0
@@ -1664,3 +1664,5 @@ Events.OnContainerUpdate.Add(ISInventoryPage.OnContainerUpdate)
 --Events.OnCreateUI.Add(testInventory);
 
 Events.OnGameStart.Add(ISInventoryPage.ongamestart);
+
+return ISInventoryPage

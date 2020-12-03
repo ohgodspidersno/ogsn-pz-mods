@@ -4,9 +4,10 @@
 -- To change this template use File | Settings | File Templates.
 --
 
+require 'Hotbar/ISHotbar'
 require "ISUI/ISPanelJoypad"
 
-ISHotbar = ISPanelJoypad:derive("ISHotbar");
+ISHotbar = ISHotbar or ISPanelJoypad:derive("ISHotbar");
 local FONT_HGT_SMALL = getTextManager():getFontHeight(UIFont.Small)
 
 --************************************************************************--
@@ -797,3 +798,5 @@ local function OnGameStart()
 end
 
 Events.OnGameStart.Add(OnGameStart);
+
+return ISHotbar

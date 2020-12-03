@@ -3,8 +3,8 @@
 --***********************************************************
 
 require "ISUI/ISRadialMenu"
-
-ISBackButtonWheel = ISRadialMenu:derive("ISBackButtonWheel")
+require "ISUI/ISBackButtonWheel"
+ISBackButtonWheel = ISBackButtonWheel or ISRadialMenu:derive("ISBackButtonWheel")
 
 function ISBackButtonWheel:center()
 	local x = getPlayerScreenLeft(self.playerNum)
@@ -157,3 +157,5 @@ function ISBackButtonWheel:new(playerNum)
 	o:setHideWhenButtonReleased(Joypad.Back)
 	return o
 end
+
+return ISBackButtonWheel

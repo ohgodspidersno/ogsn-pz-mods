@@ -7,10 +7,10 @@ require "ISUI/ISButton"
 require "ISUI/ISMouseDrag"
 require "TimedActions/ISTimedActionQueue"
 require "TimedActions/ISEatFoodAction"
+require "ISUI/ISInventoryPane"
 
 
-
-ISInventoryPane = ISPanel:derive("ISInventoryPane");
+ISInventoryPane = ISInventoryPane or ISPanel:derive("ISInventoryPane");
 
 
 --************************************************************************--
@@ -2201,3 +2201,5 @@ function ISInventoryPane:new (x, y, width, height, inventory, zoom)
     o.favoriteStar = getTexture("media/ui/FavoriteStar.png");
    return o
 end
+
+return ISInventoryPane
