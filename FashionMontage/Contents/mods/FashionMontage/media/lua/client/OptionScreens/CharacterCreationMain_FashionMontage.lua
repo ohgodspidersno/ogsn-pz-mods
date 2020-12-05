@@ -4,24 +4,23 @@ CharacterCreationMain = CharacterCreationMain or {}
 local doClothingCombo_original = CharacterCreationMain.doClothingCombo
 local updateSelectedClothingCombo_original = CharacterCreationMain.updateSelectedClothingCombo
 
-function CharacterCreationMain:getNewDropdownNameOGSN(item, ...)
-  print('in getNewDropdownNameOGSN')
-  print('item')
-  print(item) -- Item{Module: Base, Name:Earring_LoopSmall_Silver_Top, Type:Clothing}
-  local displayName = item:getDisplayName()
-  print('displayName')
-  print(displayName) -- Small Silver Looped Earrings (Top)
-  print('weaponSprite')
-  local weaponSprite = item:getWeaponSprite() or "nil";
-  print(weaponSprite) -- "nil" or whatever; expected and similar to displayName response
+function CharacterCreationMain:getNewDropdownNameOGSN(itemName, ...)
+  -- itemName ==> Base.Earring_LoopSmall_Silver_Top
+  -- item ==> Item{Module: Base, Name:Earring_LoopSmall_Silver_Top, Type:Clothing}
+  -- displayName ==> Small Silver Looped Earrings (Top)
+  -- weaponSprite ==> "nil" or whatever; expected and similar to displayName response
+  local item = ScriptManager.instance:FindItem(itemName)
+  local translationName = getText("UI_"..itemName) -- Not assigned by vanilla code, if this is here it's because of this mod. Use this.
+  local weaponSprite = item:getWeaponSprite() or "nil"; -- First implementation
+  local displayName = item:getDisplayName() -- The normal translated name, might not be formatted to look unique and good in long dropdown list
   local dropdownName = "";
-  if weaponSprite ~= "nil" then
+  if translationName then
+    dropdownName = translationName;
+  else if weaponSprite ~= "nil" then
     dropdownName = weaponSprite;
   else
     dropdownName = displayName;
   end
-  print('dropdownName')
-  print(dropdownName) -- works fine
   return dropdownName
 end
 
@@ -48,8 +47,8 @@ function CharacterCreationMain:updateSelectedClothingCombo(...)
         local currentItemType = currentItem:getType() -- Base
         local currentItemModule = currentItem:getModule() -- AmmoStrap_Bullets
         local currentItemName = currentItemModule .. '.' .. currentItemType -- Base.AmmoStrap_Bullets
-        local item = ScriptManager.instance:FindItem(currentItemName)
-        local dropdownName = self:getNewDropdownNameOGSN(item);
+        -- local item = ScriptManager.instance:FindItem(currentItemName)
+        local dropdownName = self:getNewDropdownNameOGSN(currentItemName);
         -- combo.options ==>  -- table 0x3400725251
         for j, v in ipairs(combo.options) do
           -- j  ==>  2
@@ -114,7 +113,7 @@ function CharacterCreationMain:doClothingCombo(definition, erasePrevious, ...)
       local item = ScriptManager.instance:FindItem(clothing)
       print(item) -- Item{Module: Base, Name:Earring_Pearl, Type:Clothing}
       print('about to try to define its dropdown name using getNewDropdownNameOGSN ')
-      local dropdownName = self:getNewDropdownNameOGSN(item, ...)
+      local dropdownName = self:getNewDropdownNameOGSN(currentItemName, ...)
       print('just left getNewDropdownNameOGSN was testing item:')
       print(item)
       print('its dropdownName is:')
