@@ -4,26 +4,27 @@ CharacterCreationMain = CharacterCreationMain or {}
 local doClothingCombo_original = CharacterCreationMain.doClothingCombo
 local updateSelectedClothingCombo_original = CharacterCreationMain.updateSelectedClothingCombo
 
-function CharacterCreationMain:getNewDropdownNameOGSN(itemName, ...)
-  -- itemName ==> Base.Earring_LoopSmall_Silver_Top
-  -- item ==> Item{Module: Base, Name:Earring_LoopSmall_Silver_Top, Type:Clothing}
-  -- displayName ==> Small Silver Looped Earrings (Top)
-  -- weaponSprite ==> "nil" or whatever; expected and similar to displayName response
+function CharacterCreationMain:getNewDropdownNameOGSN(itemName)
+  -- itemName is Base.Earring_LoopSmall_Silver_Top
+  -- item is Item{Module: Base, Name:Earring_LoopSmall_Silver_Top, Type:Clothing}
+  -- displayName is Small Silver Looped Earrings (Top)
+  -- weaponSprite is "nil" or whatever; expected and similar to displayName response
   local item = ScriptManager.instance:FindItem(itemName)
-  local translationName = getText("UI_"..itemName) -- Not assigned by vanilla code, if this is here it's because of this mod. Use this.
-  print('translationName')
-  print(translationName)
+  local fetchName = "UI_"..itemName
+  local translationName = getText(fetchName)
+  -- print('translationName')
+  -- print(translationName)
   local weaponSprite = item:getWeaponSprite() or "nil"; -- First implementation
-  local displayName = item:getDisplayName() -- The normal translated name, might not be formatted to look unique and good in long dropdown list
+  local displayName = item:getDisplayName() -- The normal translated name
   local dropdownName = "";
-    if translationName then
-      dropdownName = translationName;
+  if translationName ~= "nil" and translationName ~= fetchName then
+    dropdownName = translationName;
     else if weaponSprite ~= "nil" then
-      dropdownName = weaponSprite;
+      dropdownName = displayName .. " - " .. weaponSprite;
     else
-        dropdownName = displayName;
+      dropdownName = displayName;
     end
-  return dropdownName
+    return dropdownName
   end
 end
 
@@ -107,20 +108,20 @@ end
       print(combo)
       print('combo')
       for j, clothing in ipairs(profTable.items) do
-        print('in for j, clothing in ipairs(profTable.items) do')
-        print('j')
-        print(j) -- 12
-        print('clothing')
-        print(clothing) --  Base.Earring_Pearl
-        print('item')
-        local item = ScriptManager.instance:FindItem(clothing)
-        print(item) -- Item{Module: Base, Name:Earring_Pearl, Type:Clothing}
-        print('about to try to define its dropdown name using getNewDropdownNameOGSN ')
-        local dropdownName = self:getNewDropdownNameOGSN(currentItemName, ...)
-        print('just left getNewDropdownNameOGSN was testing item:')
-        print(item)
-        print('its dropdownName is:')
-        print(dropdownName)
+        -- print('in for j, clothing in ipairs(profTable.items) do')
+        -- print('j')
+        -- print(j) -- 12
+        -- print('clothing')
+        -- print(clothing) --  Base.Earring_Pearl
+        -- print('item')
+        -- local item = ScriptManager.instance:FindItem(clothing)
+        -- print(item) -- Item{Module: Base, Name:Earring_Pearl, Type:Clothing}
+        -- print('about to try to define its dropdown name using getNewDropdownNameOGSN ')
+        local dropdownName = self:getNewDropdownNameOGSN(clothing)
+        -- print('just left getNewDropdownNameOGSN was testing item:')
+        -- print(item)
+        -- print('its dropdownName is:')
+        -- print(dropdownName)
         if not combo:contains(dropdownName) then
           combo:addOptionWithData(dropdownName, clothing)
         end
