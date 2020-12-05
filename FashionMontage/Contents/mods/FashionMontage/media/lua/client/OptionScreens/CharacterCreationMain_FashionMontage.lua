@@ -9,15 +9,23 @@ function CharacterCreationMain:getNewDropdownNameOGSN(itemName)
   -- item is Item{Module: Base, Name:Earring_LoopSmall_Silver_Top, Type:Clothing}
   -- displayName is Small Silver Looped Earrings (Top)
   -- weaponSprite is "nil" or whatever; expected and similar to displayName response
+  print('getting new dropdown name, current name is ')
+  print()
+  print('item')
   local item = ScriptManager.instance:FindItem(itemName)
-  local fetchName = "UI_"..itemName
-  local translationName = getText(fetchName)
-  -- print('translationName')
-  -- print(translationName)
+  print(item)
+  local translationFetchName = "UI_"..itemName
+  print('translationName')
+  local translationName = getText(translationFetchName)
+  print(translationName)
+  print('weaponSprite')
   local weaponSprite = item:getWeaponSprite() or "nil"; -- First implementation
+  print(weaponSprite)
+  print('displayName')
   local displayName = item:getDisplayName() -- The normal translated name
+  print(displayName)
   local dropdownName = "";
-  if translationName ~= "nil" and translationName ~= fetchName then
+  if translationName ~= translationFetchName then
     dropdownName = translationName;
     else if weaponSprite ~= "nil" then
       dropdownName = displayName .. " - " .. weaponSprite;
