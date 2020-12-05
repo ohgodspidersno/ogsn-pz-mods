@@ -1,0 +1,30 @@
+require("ItemTweaker_Copy_ogsn");
+-- TweakItem("Module.ItemName","AttributeName","New Attribute Value");
+
+-- Some of these aren't necessary but I will do them all anyway
+TweakItem("Base.Shirt_FormalWhite","WeaponSprite","Shirt");
+TweakItem("Base.Shirt_Denim","WeaponSprite","Shirt - Denim");
+TweakItem("Base.Shirt_FormalWhite_ShortSleeve","WeaponSprite","Shirt - Short Sleeve");
+TweakItem("Base.Shirt_CamoDesert","WeaponSprite","Army Camo - Desert");
+TweakItem("Base.Shirt_CamoGreen","WeaponSprite","Army Camo - Forest");
+TweakItem("Base.Shirt_CamoUrban","WeaponSprite","Army Camo - Urban");
+TweakItem("Base.Shirt_Baseball_KY","WeaponSprite","Baseball Shirt - Kentucky");
+TweakItem("Base.Shirt_Baseball_Rangers","WeaponSprite","Baseball Shirt - Riverside Rangers");
+TweakItem("Base.Shirt_Baseball_Z","WeaponSprite","Baseball Shirt - Z Hurricanes");
+TweakItem("Base.Shirt_HawaiianTINT","WeaponSprite","Hawaiian Shirt");
+TweakItem("Base.Shirt_HawaiianRed","WeaponSprite","Hawaiian Shirt - Red");
+TweakItem("Base.Shirt_Jockey01","WeaponSprite","Jockey Silks #1");
+TweakItem("Base.Shirt_Jockey02","WeaponSprite","Jockey Silks #2");
+TweakItem("Base.Shirt_Jockey03","WeaponSprite","Jockey Silks #3");
+TweakItem("Base.Shirt_Jockey04","WeaponSprite","Jockey Silks #4");
+TweakItem("Base.Shirt_Jockey05","WeaponSprite","Jockey Silks #5");
+TweakItem("Base.Shirt_Jockey06","WeaponSprite","Jockey Silks #6");
+TweakItem("Base.Shirt_Lumberjack","WeaponSprite","Lumberjack Shirt");
+TweakItem("Base.Shirt_Scrubs","WeaponSprite","Medical Scrubs");
+TweakItem("Base.Shirt_Ranger","WeaponSprite","Park Ranger Shirt");
+TweakItem("Base.Shirt_OfficerWhite","WeaponSprite","Police Shirt");
+TweakItem("Base.Shirt_PoliceBlue","WeaponSprite","Police Trooper Shirt");
+TweakItem("Base.Shirt_PoliceGrey","WeaponSprite","Police Deputy Shirt");
+TweakItem("Base.Shirt_PrisonGuard","WeaponSprite","Prison Guard Shirt");
+TweakItem("Base.Shirt_Priest","WeaponSprite","Priest Shirt");
+TweakItem("Base.Shirt_Workman","WeaponSprite","Workman Shirt");

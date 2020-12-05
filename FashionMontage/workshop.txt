@@ -1,6 +1,12 @@
 version=1
 id=2020740322
 title=Fashion Montage - Start with any outfit [41.47]
+description=[h1]Huge Modded Clothing Support Update[/h1]
+description=[url=https://steamcommunity.com/profiles/76561198182908886/myworkshopfiles/?appid=108600]Soul Filcher[/url] and I have teamed up to help make modded clothing integration as seamless as possible.
+description=While working together, he came up with a pretty brilliant solution to an issue that I've had for awhile. You know how the mod renames everything to stuff like "TShirt - Fossoil"? Well we don't have to do that anymore because Soul Filcher is the man.
+description=
+description=If you or anyone you know is the author of a clothing mod, please check out the readme files in the mod folder for more information on how Fashion Montage compatibility can work for you.
+description=
 description=[h1]Important: If you are seeing error messages[/h1]
 description=If you are using a mod that adds new clothing items, there is a good chance that the error is originating from that other mod.
 description=Fashion Montage loads up all clothing assets at once, so if there are any bugs anywhere they will trigger.
