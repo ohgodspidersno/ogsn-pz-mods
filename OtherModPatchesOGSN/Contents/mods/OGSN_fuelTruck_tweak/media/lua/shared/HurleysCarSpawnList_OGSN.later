@@ -1,0 +1,37 @@
+
+if VehicleZoneDistribution then -- check if the table exists for backwards compatibility
+-- Parking Lots, common parking lots with cars, used most (stores etc)
+VehicleZoneDistribution.parkingstall.vehicles["Base.tanker"] = {index = -1, spawnChance = 1};
+
+
+
+-- Trailer parks, the god damn ghetto
+
+
+
+-- Bad vehicles, used for the poor :(
+
+
+-- Medium Vehicles, Used in actual normal neighbourhoods
+
+
+
+-- Good vehicles, for good looking houses
+
+
+
+-- Sport vehicles, sometimes good.
+
+
+
+-- junkyard, junk. Also used for random car crashes.
+VehicleZoneDistribution.junkyard.vehicles["Base.tanker"] = {index = -1, spawnChance = 1};
+
+
+
+-- Traffic jam, used for burnt, or hardcoded traffic jams + events.
+VehicleZoneDistribution.trafficjamw.vehicles["Base.tanker"] = {index = -1, spawnChance = 1};
+
+
+
+end

@@ -1,0 +1,6 @@
+name=OGSN Patches - Fuel Tanker Spawn Rate Boost
+description=I've never encountered a fuel truck after using Hurley's Fuel Tanker mod for several months.
+description=This increases the spawn rate so that you can reliably encounter a few of them every game.
+poster=poster.png
+id=OGSN_fuelTanker_tweak
+require=FuelTanker
