@@ -277,7 +277,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     if evorecipe then
         ISInventoryPaneContextMenu.doEvorecipeMenu(context, items, player, evorecipe, baseItem, containerList);
     end
-
+    
     if(isInPlayerInventory and loot.inventory ~= nil and loot.inventory:getType() ~= "floor" ) and playerObj:getJoypadBind() == -1 then
         if ISInventoryPaneContextMenu.isAnyAllowed(loot.inventory, items) and not ISInventoryPaneContextMenu.isAllFav(items) then
             local label = loot.title and getText("ContextMenu_PutInContainer", loot.title) or getText("ContextMenu_Put_in_Container")
@@ -538,7 +538,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
             context:addOption(getText("ContextMenu_TrapControllerReset"), remoteController, ISInventoryPaneContextMenu.OnResetRemoteControlID, player);
         end
     end
-
+    
     if isHandWeapon and instanceof(isHandWeapon, "HandWeapon") and isHandWeapon:getFireModePossibilities() and isHandWeapon:getFireModePossibilities():size() > 1 then
         ISInventoryPaneContextMenu.doChangeFireModeMenu(playerObj, isHandWeapon, context);
     end
@@ -548,7 +548,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
         magazine = nil
         bullet = nil
     end
-
+    
     if magazine and isInPlayerInventory then
         ISInventoryPaneContextMenu.doReloadMenuForMagazine(playerObj, magazine, context);
         ISInventoryPaneContextMenu.doMagazineMenu(playerObj, magazine, context);
@@ -642,11 +642,13 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
 		ISInventoryPaneContextMenu.addDynamicalContextMenu(itemsCraft[1], context, recipe, player, containerList);
     end
 	if canBeActivated ~= nil and (not instanceof(canBeActivated, "Drainable") or canBeActivated:getUsedDelta() > 0) then
-		local txt = getText("ContextMenu_Turn_On");
-		if canBeActivated:isActivated() then
-			txt = getText("ContextMenu_Turn_Off");
-		end
-		context:addOption(txt, canBeActivated, ISInventoryPaneContextMenu.onActivateItem, player);
+        if (canBeActivated:getType() ~= "CandleLit") then
+            local txt = getText("ContextMenu_Turn_On");
+            if canBeActivated:isActivated() then
+                txt = getText("ContextMenu_Turn_Off");
+            end
+            context:addOption(txt, canBeActivated, ISInventoryPaneContextMenu.onActivateItem, player);
+        end
 	end
 	if isAllBandage then
         ISInventoryPaneContextMenu.doBandageMenu(context, items, player);
@@ -718,7 +720,7 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
     if clothingRecipe then
         ISInventoryPaneContextMenu.doClothingRecipeMenu(playerObj, clothingRecipe, items, context);
     end
-
+    
     ISHotbar.doMenuFromInventory(player, testItem, context);
 
     -- use the event (as you would 'OnTick' etc) to add items to context menu without mod conflicts.
@@ -756,7 +758,7 @@ end
 
 function ISInventoryPaneContextMenu.doStoveMenu(context, playerNum)
     local loot = getPlayerLoot(playerNum)
-
+    
     -- Microwave, Stove, ClothingWasher, ClothingDryer
     if loot.toggleStove:isVisible() then
         context:addOption(loot.toggleStove.title, loot, ISInventoryPage.toggleStove)
@@ -791,7 +793,7 @@ function ISInventoryPaneContextMenu.doLiteratureMenu(context, items, player)
         readOption.toolTip = tooltip;
     end
 end
-
+    
 function ISInventoryPaneContextMenu.doBandageMenu(context, items, player)
     -- we get all the damaged body part
     local bodyPartDamaged = ISInventoryPaneContextMenu.haveDamagePart(player);
@@ -895,7 +897,7 @@ ISInventoryPaneContextMenu.doClothingPatchMenu = function(player, clothing, cont
     if not clothing:getFabricType() then
         return;
     end
-
+    
 
     -- you need thread and needle
     local thread = playerObj:getInventory():getItemFromType("Thread", true, true);
@@ -915,7 +917,7 @@ ISInventoryPaneContextMenu.doClothingPatchMenu = function(player, clothing, cont
     local patchOption = context:addOption(getText("ContextMenu_Patch"));
     local subMenuPatch = context:getNew(context);
     context:addSubMenu(patchOption, subMenuPatch);
-
+    
     -- we first gonna display repair, then upgrade then remove patches
     local repairOption = subMenuPatch:addOption(getText("ContextMenu_PatchHole"));
     local subMenuRepair = context:getNew(subMenuPatch);
@@ -924,11 +926,11 @@ ISInventoryPaneContextMenu.doClothingPatchMenu = function(player, clothing, cont
     local upgradeOption = subMenuPatch:addOption(getText("ContextMenu_AddPadding"));
     local subMenuUpgrade = context:getNew(subMenuPatch);
     subMenuPatch:addSubMenu(upgradeOption, subMenuUpgrade);
-
+    
     local removeOption = subMenuPatch:addOption(getText("ContextMenu_RemovePatch"));
     local subMenuRemove = context:getNew(subMenuPatch);
     subMenuPatch:addSubMenu(removeOption, subMenuRemove);
-
+    
     local coveredParts = clothing:getCoveredParts();
     for i=0, coveredParts:size() - 1 do
         local part = coveredParts:get(i);
@@ -939,7 +941,7 @@ ISInventoryPaneContextMenu.doClothingPatchMenu = function(player, clothing, cont
         if hole and hole > 0 then
             subMenuToUse = subMenuRepair;
         end
-
+    
         -- removing patch
         local removePatch;
         local patch = clothing:getPatchType(part);
@@ -953,7 +955,7 @@ ISInventoryPaneContextMenu.doClothingPatchMenu = function(player, clothing, cont
             local partOption = subMenuToUse:addOption(text);
             local subMenuPart = context:getNew(subMenuToUse);
             subMenuToUse:addSubMenu(partOption, subMenuPart);
-
+        
             if fabric1 then
                 local option = subMenuPart:addOption(fabric1:getDisplayName(), playerObj, ISInventoryPaneContextMenu.repairClothing, clothing, part, fabric1, thread, needle)
                 local tooltip = ISInventoryPaneContextMenu.addToolTip();
@@ -995,7 +997,7 @@ ISInventoryPaneContextMenu.doClothingPatchMenu = function(player, clothing, cont
         tooltip.description = getText("Tooltip_NothingToRepair");
         repairOption.toolTip = tooltip;
     end
-
+    
     if #subMenuRemove.options == 0 then
         removeOption.subOption = nil;
         removeOption.notAvailable = true;
@@ -1003,7 +1005,7 @@ ISInventoryPaneContextMenu.doClothingPatchMenu = function(player, clothing, cont
         tooltip.description = getText("Tooltip_NothingToRemove");
         removeOption.toolTip = tooltip;
     end
-
+    
     if #subMenuUpgrade.options == 0 then
         upgradeOption.subOption = nil;
         upgradeOption.notAvailable = true;
@@ -1020,7 +1022,7 @@ ISInventoryPaneContextMenu.removePatch = function(player, clothing, part, needle
     if luautils.haveToBeTransfered(player, clothing) then
         ISTimedActionQueue.add(ISInventoryTransferAction:new(player, clothing, clothing:getContainer(), player:getInventory()))
     end
-
+    
     ISTimedActionQueue.add(ISRemovePatch:new(player, clothing, part, needle));
 end
 
@@ -1041,7 +1043,7 @@ ISInventoryPaneContextMenu.repairClothing = function(player, clothing, part, fab
     if luautils.haveToBeTransfered(player, clothing) then
         ISTimedActionQueue.add(ISInventoryTransferAction:new(player, clothing, clothing:getContainer(), player:getInventory()))
     end
-
+    
     ISTimedActionQueue.add(ISRepairClothing:new(player, clothing, part, fabric, thread, needle));
 end
 
@@ -1082,7 +1084,7 @@ ISInventoryPaneContextMenu.doWearClothingTooltip = function(playerObj, newItem, 
 	if #replaceItems == 0 and newBiteDefense == 0 and newScratchDefense == 0 and previousBiteDefense == 0 and previousScratchDefense == 0 then
 		return nil
 	end
-
+	
 	local tooltip = ISInventoryPaneContextMenu.addToolTip();
 	tooltip.maxLineWidth = 1000
 
@@ -1118,7 +1120,7 @@ ISInventoryPaneContextMenu.doWearClothingTooltip = function(playerObj, newItem, 
 			newBiteDefense - previousBiteDefense);
 		tooltip.description = tooltip.description .. text;
 	end
-
+	
 	-- scratch defense
 	if newScratchDefense > 0 or previousScratchDefense > 0 then
 		local r,g,b = 0,1,0;
@@ -1327,7 +1329,7 @@ ISInventoryPaneContextMenu.doMagazineMenu = function(playerObj, magazine, contex
             context:addOption(getText("ContextMenu_InsertBulletsInMagazine", ammoCount), playerObj, ISInventoryPaneContextMenu.onLoadBulletsInMagazine, magazine, ammoCount);
         end
     end
-
+    
     if magazine:getCurrentAmmoCount() > 0 then
         context:addOption(getText("ContextMenu_UnloadMagazine"), playerObj, ISInventoryPaneContextMenu.onUnloadBulletsFromMagazine, magazine);
     end
@@ -1676,7 +1678,7 @@ ISInventoryPaneContextMenu.buildFixingMenu = function(brokenObject, player, fixi
         end
         local subOption = ISInventoryPaneContextMenu.addFixerSubOption(brokenObject, player, fixing, fixer, subMenuFix, vehiclePart);
         local add = "";
-
+    
         if fixer:getNumberOfUse() > 1 then
             add = "="..fixer:getNumberOfUse();
         end
@@ -2188,8 +2190,16 @@ function CraftTooltip:addText(x, y, text, r, g, b)
 	r = r or 1
 	g = g or 1
 	b = b or 1
+
+	local numLines = 1
+	local p = string.find(text, "\n")
+	while p do
+		numLines = numLines + 1
+		p = string.find(text, "\n", p + 4)
+	end
+
 	local width = getTextManager():MeasureStringX(UIFont.Small, text)
-	table.insert(self.contents, { type = "text", x = x, y = y, width = width, height = FONT_HGT_SMALL, text = text, r = r, g = g, b = b })
+	table.insert(self.contents, { type = "text", x = x, y = y, width = width, height = FONT_HGT_SMALL * numLines, text = text, r = r, g = g, b = b })
 end
 
 function CraftTooltip:addImage(x, y, textureName)
@@ -2307,7 +2317,7 @@ function CraftTooltip:layoutContents(x, y)
 
 	self:getContainers()
 	self:getAvailableItemsType()
-
+	
 	self.contents = {}
 	local marginLeft = 20
 	local marginTop = 10
@@ -2452,9 +2462,16 @@ function CraftTooltip:layoutContents(x, y)
 
 			if i == 10 and i < #itemDataList then
 				self:addText(x2, y1 + textDY, getText("Tooltip_AndNMore", #itemDataList - i))
+				y1 = y1 + lineHeight
 				break
 			end
 		end
+	end
+
+	if self.recipe:getTooltip() then
+		local x1 = x + marginLeft
+		local tooltip = getText(self.recipe:getTooltip())
+		self:addText(x1, y1 + 8, tooltip)
 	end
 
 	self.contentsX = x
@@ -2539,7 +2556,7 @@ ISInventoryPaneContextMenu.addDynamicalContextMenu = function(selectedItem, cont
                     tooltip:setTexture(resultItem:getTexture():getName());
                 end
                 subOption.toolTip = tooltip;
-
+            
                 if numberOfTimes > 1 then
                     subOption = subMenuCraft:addOption(getText("ContextMenu_AllWithCount", numberOfTimes), selectedItem, ISInventoryPaneContextMenu.OnCraft, recipe, player, true);
                 else
@@ -3129,7 +3146,7 @@ function ISInventoryPaneContextMenu.doEvorecipeMenu(context, items, player, evor
         end
         local subMenuRecipe = context:getNew(context);
         context:addSubMenu(subOption, subMenuRecipe);
-
+        
         for i,v in pairs(catList) do
             if getText("ContextMenu_FoodType_"..i) ~= "ContextMenu_FoodType_"..i then
                 local txt = getText("ContextMenu_FromRandom", getText("ContextMenu_FoodType_"..i));
@@ -3178,7 +3195,7 @@ ISInventoryPaneContextMenu.doMakeUpMenu = function(context, makeup, playerObj)
     if playerObj:getInventory():contains("Mirror") then
         mirror = true;
     end
-
+     
     -- check for world mirror
     if not mirror then
         for x=playerObj:getCurrentSquare():getX() - 1, playerObj:getCurrentSquare():getX() + 2 do
@@ -3206,7 +3223,7 @@ ISInventoryPaneContextMenu.doMakeUpMenu = function(context, makeup, playerObj)
             end
         end
     end
-
+    
     if not mirror then
         local tooltip = ISInventoryPaneContextMenu.addToolTip();
         option.notAvailable = true;

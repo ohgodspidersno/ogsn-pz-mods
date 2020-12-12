@@ -81,7 +81,7 @@ function ISInventoryPage:createChildren()
         self.lootAll.backgroundColorMouseOver.a = 0.7;
         self:addChild(self.lootAll);
         self.lootAll:setVisible(false);
-
+        
         self.removeAll = ISButton:new(self.lootAll:getRight() + 16, 0, 50, lootButtonHeight, getText("IGUI_invpage_RemoveAll"), self, ISInventoryPage.removeAll);
         self.removeAll:initialise();
         self.removeAll.borderColor.a = 0.0;
@@ -330,7 +330,7 @@ function ISInventoryPage:isRemoveButtonVisible()
 end
 
 function ISInventoryPage:update()
-
+	
     if self.coloredInv and (self.inventory ~= self.coloredInv or self.isCollapsed) then
         if self.coloredInv:getParent() then
             self.coloredInv:getParent():setHighlighted(false)
@@ -349,7 +349,7 @@ function ISInventoryPage:update()
             self.coloredInv = self.inventory;
         end
 	end
-
+	
     if (ISMouseDrag.dragging ~= nil and #ISMouseDrag.dragging > 0) or self.pin then
         self.collapseCounter = 0;
         if isClient() and self.isCollapsed then
@@ -495,7 +495,7 @@ function ISInventoryPage:prerender()
 	else
 		self:drawTextRight(roundedWeight .. "", self.width - 20, 0, 1,1,1,1);
     end
-
+    
 	local weightWid = getTextManager():MeasureStringX(UIFont.Small, "99.99 / 99")
 	weightWid = math.max(90, weightWid)
     self.transferAll:setX(self.pinButton:getX() - weightWid - getTextManager():MeasureStringX(UIFont.Small, getText("IGUI_invpage_Transfer_all")));
@@ -504,7 +504,7 @@ function ISInventoryPage:prerender()
     elseif not "Tutorial" == getCore():getGameMode() then
         self.transferAll:setVisible(true)
     end
-
+    
     if self.title and not self.onCharacter then
         local fontHgt = getTextManager():getFontHeight(self.font)
         self:drawTextRight(self.title, self.width - 20 - weightWid, (titleBarHeight - fontHgt) / 2, 1,1,1,1);
@@ -512,7 +512,7 @@ function ISInventoryPage:prerender()
 
     -- self:drawRectBorder(self:getWidth()-32, 15, 32, self:getHeight()-16-6, self.borderColor.a, self.borderColor.r, self.borderColor.g, self.borderColor.b);
     self:setStencilRect(0,0,self.width+1, height);
-
+    
     if ISInventoryPage.renderDirty then
         ISInventoryPage.renderDirty = false;
         ISInventoryPage.dirtyUI();
@@ -625,7 +625,7 @@ end
 function ISInventoryPage:onJoypadDown(button)
     ISContextMenu.globalPlayerContext = self.player;
     local playerObj = getSpecificPlayer(self.player)
-
+    
     if button == Joypad.AButton then
         self.inventoryPane:doContextOnJoypadSelected();
     end
@@ -766,7 +766,7 @@ function ISInventoryPage:render()
 end
 function ISInventoryPage:selectContainer(button)
 	local playerObj = getSpecificPlayer(self.player)
-	if ISMouseDrag.dragging ~= nil then
+	if self.player == 0 and ISMouseDrag.dragging ~= nil then
 		if getCore():getGameMode() == "Tutorial" then
 			return;
 		end
@@ -1459,7 +1459,7 @@ function ISInventoryPage:new (x, y, width, height, inventory, onCharacter, zoom)
     o.contrunk = getTexture("media/ui/Container_TruckBed.png");
     o.clothingdryer = getTexture("media/ui/Container_ClothingDryer.png")
     o.clothingwasher = getTexture("media/ui/Container_ClothingWasher.png")
-
+    
     o.conDefault = o.conShelf;
     o.highlightColors = {r=0.98,g=0.56,b=0.11};
 
