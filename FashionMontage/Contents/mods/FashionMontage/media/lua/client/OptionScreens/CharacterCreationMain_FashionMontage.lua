@@ -2,75 +2,14 @@ require "OptionScreens/CharacterCreationMain"
 
 CharacterCreationMain = CharacterCreationMain or {}
 local doClothingCombo_original = CharacterCreationMain.doClothingCombo
-local updateSelectedClothingCombo_original = CharacterCreationMain.updateSelectedClothingCombo
 
-function CharacterCreationMain:getNewDropdownNameOGSN(item, ...)
-  print('in getNewDropdownNameOGSN')
-  print('item')
-  print(item) -- Item{Module: Base, Name:Earring_LoopSmall_Silver_Top, Type:Clothing}
-  local displayName = item:getDisplayName()
-  print('displayName')
-  print(displayName) -- Small Silver Looped Earrings (Top)
-  print('weaponSprite')
-  local weaponSprite = item:getWeaponSprite() or "nil";
-  print(weaponSprite) -- "nil" or whatever; expected and similar to displayName response
-  local dropdownName = "";
-  if weaponSprite ~= "nil" then
-    dropdownName = weaponSprite;
-  else
-    dropdownName = displayName;
-  end
-  print('dropdownName')
-  print(dropdownName) -- works fine
-  return dropdownName
-end
 
-function CharacterCreationMain:updateSelectedClothingCombo(...)
-  print('in updateSelectedClothingCombo')
-  local desc = MainScreen.instance.desc;
-  print('desc')
-  print(desc)
-  if self.clothingCombo then
-    print("self.clothingCombo")
-    print(self.clothingCombo)
-    for i, combo in pairs(self.clothingCombo) do
-      print("in for i, combo in pairs(self.clothingCombo) do")
-      print("i")
-      print(i)
-      print('combo')
-      print(combo)  -- table 0x555493789
-      combo.selected = 1;
-      self.clothingColorBtn[combo.bodyLocation]:setVisible(false);
-      self.clothingTextureCombo[combo.bodyLocation]:setVisible(false);
-      local currentItem = desc:getWornItem(combo.bodyLocation);
-      if currentItem then
-        -- currentItem ==> Clothing{ clothingItemName="AmmoStrap_Bullets" }
-        local currentItemType = currentItem:getType() -- Base
-        local currentItemModule = currentItem:getModule() -- AmmoStrap_Bullets
-        local currentItemName = currentItemModule .. '.' .. currentItemType -- Base.AmmoStrap_Bullets
-        local item = ScriptManager.instance:FindItem(currentItemName)
-        local dropdownName = self:getNewDropdownNameOGSN(item);
-        -- combo.options ==>  -- table 0x3400725251
-        for j, v in ipairs(combo.options) do
-          -- j  ==>  2
-          -- v ==> table 0x2100484251
-          -- v.text ==> Socks
-          if v.text == dropdownName then
-            combo.selected = j;
-            break
-          end
-        end
-        self:updateColorButton(combo.bodyLocation, currentItem);
-        self:updateClothingTextureCombo(combo.bodyLocation, currentItem);
-      end
-    end
-  end
-end
 
 function CharacterCreationMain:doClothingCombo(definition, erasePrevious, ...)
-  print('in doClothingCombo')
+
   if not self.clothingPanel then return; end
 
+  -- reinit all combos
   if erasePrevious then
     if self.clothingCombo then
       for i, v in pairs(self.clothingCombo) do
@@ -87,6 +26,7 @@ function CharacterCreationMain:doClothingCombo(definition, erasePrevious, ...)
     self.yOffset = self.originalYOffset;
   end
 
+  -- create new combo or populate existing one (for when having specific profession clothing)
   local desc = MainScreen.instance.desc;
   for bodyLocation, profTable in pairs(definition) do
     local combo = nil;
@@ -102,42 +42,44 @@ function CharacterCreationMain:doClothingCombo(definition, erasePrevious, ...)
       combo.options = {}
       combo:addOptionWithData(getText("UI_characreation_clothing_none"), nil)
     end
-    print(combo)
-    print('combo')
+
     for j, clothing in ipairs(profTable.items) do
-      print('in for j, clothing in ipairs(profTable.items) do')
-      print('j')
-      print(j) -- 12
-      print('clothing')
-      print(clothing) --  Base.Earring_Pearl
-      print('item')
       local item = ScriptManager.instance:FindItem(clothing)
-      print(item) -- Item{Module: Base, Name:Earring_Pearl, Type:Clothing}
-      print('about to try to define its dropdown name using getNewDropdownNameOGSN ')
-      local dropdownName = self:getNewDropdownNameOGSN(item, ...)
-      print('just left getNewDropdownNameOGSN was testing item:')
-      print(item)
-      print('its dropdownName is:')
-      print(dropdownName)
-      if not combo:contains(dropdownName) then
-        combo:addOptionWithData(dropdownName, clothing)
+      local displayName = item:getDisplayName()
+      -- some clothing are president in default list AND profession list, so we can force a specific clothing in profession we already have
+      if not combo:contains(displayName) then
+        combo:addOptionWithData(displayName, clothing)
+      else
+        unique = false
+        suffix = 2
+        while not unique do
+          -- filename = "checkbook"
+          -- filename = filename .. ".tmp"
+          newDisplayName = displayName .. '_' .. tostring(suffix)
+          if not combo:contains(newDisplayName) then
+            combo:addOptionWithData(newDisplayName, clothing)
+            unique = true
+          else
+            suffix = suffix + 1
+          end
+          -- displayName
+        end
+
       end
     end
   end
 
-  print('about to call updateSelectedClothingCombo (from within doClothingCombo)')
-  self:updateSelectedClothingCombo();
+    self:updateSelectedClothingCombo();
 
-  self.clothingPanel:setScrollChildren(true)
-  self.clothingPanel:setScrollHeight(self.yOffset)
-  self.clothingPanel:addScrollBars()
+    self.clothingPanel:setScrollChildren(true)
+    self.clothingPanel:setScrollHeight(self.yOffset)
+    self.clothingPanel:addScrollBars()
 
-  self.colorPicker = ISColorPicker:new(0, 0, {h = 1, s = 0.6, b = 0.9});
-  self.colorPicker:initialise()
-  self.colorPicker.keepOnScreen = true
-  self.colorPicker.pickedTarget = self
-  self.colorPicker.resetFocusTo = self.clothingPanel
-end
+    self.colorPicker = ISColorPicker:new(0, 0, {h = 1, s = 0.6, b = 0.9});
+    self.colorPicker:initialise()
+    self.colorPicker.keepOnScreen = true
+    self.colorPicker.pickedTarget = self
+    self.colorPicker.resetFocusTo = self.clothingPanel
+  end
 
-
-return CharacterCreationMain
+  return CharacterCreationMain

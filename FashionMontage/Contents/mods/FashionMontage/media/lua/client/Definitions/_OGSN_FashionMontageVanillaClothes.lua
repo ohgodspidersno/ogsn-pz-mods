@@ -123,7 +123,8 @@ local clothing = {
         "Base.Tshirt_Profession_VeterenRed",
       },
       Shirt = {
-        "Base.Shirt_FormalWhite",
+        -- "Base.Shirt_FormalWhite",
+        "Base.Shirt_Formal",
         "Base.Shirt_Denim",
         "Base.Shirt_FormalWhite_ShortSleeve",
         "Base.Shirt_CamoDesert",

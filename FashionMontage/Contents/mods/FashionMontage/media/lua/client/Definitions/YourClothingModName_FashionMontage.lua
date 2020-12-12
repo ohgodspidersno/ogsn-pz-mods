@@ -4,33 +4,7 @@
 
 -- INSTRUCTIONS - ADDING YOUR ITEMS --
 -- Add each of your items to the list that corresponds to its BodyLocation
-
--- INSTRUCTIONS - HOW THE ITEM IS NAMED IN DROPDOWN MENU
--- WARNING: An item's dropdown menu name MUST BE UNIQUE (not shared by any other item already added to the dropdown menu) or it will not be added to the menu!!!
-
--- How to assign its dropdown menu name:
--- In your script file, assign it a parameter "WeaponSprite" with a string value.
--- Whatever you choose will be how it shows up in the dropdown menu.
--- Once in-game, the item will have its normal DisplayName
-
-
--- example:
--- ## media/scripts/modded_clothing_items.txt ## --
---
--- item TitaniumGreaves {
---   ...
---   DisplayName = Titanium Greaves,
---   WeaponSprite = Armor - Greaves (Titanium)[SickMods]
---   ...
--- }
-
--- This item in game will be called
---        "Titanium Greaves"
--- But in its character gen dropdown menu it will be called
---        "Armor - Greaves (Titanium)[SickMods]"
-
--- If WeaponSprite is not defined, it will try its normal DisplayName (DisplayName is sampled AFTER it has been changed by lua/shared/Translation/ files)
-
+-- If it does not have a unique DisplayName it will not appear in the dropdown
 
 
 -- This ensures the player won't get any error messages if they aren't using Fashion Montage
