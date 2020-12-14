@@ -41,3 +41,15 @@ ISInventoryPage.onKeyPressed = function(key)
         getPlayerLoot(0):setVisible(getPlayerInventory(0):getIsVisible());
 	end
 end
+
+
+function ISInventoryPage:toggleStove()
+	if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+		return
+	end
+
+	local object = self.inventoryPane.inventory:getParent()
+	if not object then return end
+	local className = object:getObjectName()
+	TurnOnOff[className].toggle(object)
+end
