@@ -27,7 +27,7 @@ function ISMenuContextWorld.new()
             contextData.squares                 = {};
         end
     end
-
+	
 	function self.init()
         self.reset();
 		self.loadElements( ISWorldMenuElements );
@@ -43,7 +43,7 @@ function ISMenuContextWorld.new()
 --            return;
 --        end
         local playerObj = getSpecificPlayer(_playerNum);
-        if playerObj:isDead() or playerObj:isAsleep() then return end
+        if playerObj:isDead() or playerObj:isAsleep() or UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return end
         self.reset(_playerNum);
         local context;
         if not _test then
@@ -93,7 +93,7 @@ function ISMenuContextWorld.new()
         end
 
         if _test then return false end
-
+	
 		if context.numOptions == 1 then
 			context:setVisible(false);
         end
@@ -155,7 +155,7 @@ function ISMenuContextWorld.new()
             end
         end
     end
-
+	
 	return self;
 end
 

@@ -167,8 +167,8 @@ function onJoypadPressButton(joypadIndex, joypadData, button)
         end
         return
     end
-
-    if not joypadData.activeWhilePaused and UIManager.getSpeedControls() and button ~= Joypad.Start and button ~= Joypad.Back then
+    
+    if not joypadData.activeWhilePaused and UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 and button ~= Joypad.Start and button ~= Joypad.Back then
         return;
     end
 
@@ -262,7 +262,7 @@ function onJoypadPressButton(joypadIndex, joypadData, button)
             joypadData.focus = inv;
 	        justOpened = true;
         end
-
+		
 		if getSpecificPlayer(joypadData.player):isAsleep() then
 			justOpened = false;
         end
@@ -363,7 +363,7 @@ function setJoypadFocus(playerID, control)
         else
             noise("prev: nil");
         end
-
+    
         joypadData.prevprevfocus = joypadData.prevfocus;
         joypadData.prevfocus = joypadData.focus;
     end
@@ -437,12 +437,12 @@ function updateJoypadFocus(joypadData)
         joypadData.lastfocus = joypadData.focus;
 
         if joypadData.focus == nil and getPlayerData(joypadData.player) then
-
+    
             if JoypadState.disableControllerPrompt then
                 joypadData.lastfocus = joypadData.focus;
                 return;
             end
-
+            
             local buts = getButtonPrompts(joypadData.player);
 
             if buts ~= nil then
@@ -457,7 +457,7 @@ function updateJoypadFocus(joypadData)
     else
         joypadData.lastfocus = joypadData.focus;
     end
-
+    
     if JoypadState.disableMovement then
         setPlayerMovementActive(joypadData.player, false);
     end
@@ -579,7 +579,7 @@ function onJoypadRenderTick(ticks)
 			v.down = true
 			v.dtdown = t - v.timedown
 			v.dtprocdown = t - v.timedownproc
-		else
+		else 
 			v.timedown = 0
 			v.down = false
 		end
@@ -588,7 +588,7 @@ function onJoypadRenderTick(ticks)
 			v.up = true
 			v.dtup = t - v.timeup
 			v.dtprocup = t - v.timeupproc
-		else
+		else 
 			v.timeup = 0
 			v.up = false
 		end
@@ -601,7 +601,7 @@ function onJoypadRenderTick(ticks)
             v.left = true
             v.dtleft = t - v.timeleft
             v.dtprocleft = t - v.timeleftproc
-        else
+        else 
             v.timeleft = 0
             v.left = false
         end
@@ -614,11 +614,11 @@ function onJoypadRenderTick(ticks)
             v.right = true
             v.dtright = t - v.timeright
             v.dtprocright = t - v.timerightproc
-        else
+        else 
             v.timeright = 0
             v.right = false
         end
-
+		
 		--print("DEBUG: v.down="..tostring(v.down).." v.dtdown="..tostring(v.dtdown).." v.timedown="..tostring(v.timedown).." v.dtprocdown="..tostring(v.dtprocdown))
 		--print("DEBUG: v.up="..tostring(v.up).." v.dtup="..tostring(v.dtup).." v.timeup="..tostring(v.timeup).." v.dtprocup="..tostring(v.dtprocup))
         if v.down and v.dtprocdown>300 then

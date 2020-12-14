@@ -149,10 +149,10 @@ function ISButtonPrompt:interact(worldobjects)
     if playerObj:getVehicle() then
         return
     end
-
+    
     worldobjects = self:getXButtonObjects(nil)
     if not worldobjects then return end
-
+    
     local s = getSpecificPlayer(self.player):getCurrentSquare();
     local x = isoToScreenX(self.player, s:getX(), s:getY(), s:getZ());
     local y = isoToScreenY(self.player, s:getX(), s:getY(), s:getZ());
@@ -266,6 +266,12 @@ function ISButtonPrompt:stopAction()
 end
 
 function ISButtonPrompt:getBestAButtonAction(dir)
+
+    if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+        self:setAPrompt(nil, nil, nil);
+        return;
+    end
+
     if dir == nil then
         self:setAPrompt(nil, nil, nil);
     end
@@ -275,7 +281,7 @@ function ISButtonPrompt:getBestAButtonAction(dir)
     end
 
     local playerObj = getSpecificPlayer(self.player)
-
+    
     if playerObj:getIgnoreMovement() or playerObj:isAsleep() then return end
 
     local vehicle = playerObj:getVehicle()
@@ -358,7 +364,7 @@ function ISButtonPrompt:testAButtonAction(dir)
             self:doAButtonDoorOrWindowOrWindowFrame(dir, obj)
         end
     end
-
+        
     if self.aPrompt == nil and square1:getRoom() then
         if (SandboxVars.ElecShutModifier > -1 and getGameTime():getNightsSurvived() < SandboxVars.ElecShutModifier) or square1:haveElectricity() then
             -- Light switch on the player's square
@@ -504,6 +510,12 @@ function ISButtonPrompt:doAButtonDoorOrWindowOrWindowFrame(dir, obj)
 end
 
 function ISButtonPrompt:getBestBButtonAction(dir)
+
+    if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+        self:setBPrompt(nil, nil, nil);
+        return;
+    end
+
     if dir == nil then
         self:setBPrompt(nil, nil, nil);
     end
@@ -604,7 +616,7 @@ end
 function ISButtonPrompt:testBButtonAction(dir)
 
     if self.bPrompt then return end
-
+    
     local playerObj = getSpecificPlayer(self.player)
 
     local obj = playerObj:getContextDoorOrWindowOrWindowFrame(dir)
@@ -673,6 +685,12 @@ function ISButtonPrompt:doBButtonDoorOrWindowOrWindowFrame(dir, obj)
 end
 
 function ISButtonPrompt:getBestYButtonAction(dir)
+
+    if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+        self:setYPrompt(nil, nil, nil);
+        return;
+    end
+
     if dir == nil then
         self:setYPrompt(nil, nil, nil);
     end
@@ -788,6 +806,11 @@ end
 
 
 function ISButtonPrompt:getBestXButtonAction(dir)
+    if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+        self:setXPrompt(nil, nil, nil);
+        return;
+    end
+
     if dir == nil then
         self:setXPrompt(nil, nil, nil);
     end
@@ -918,6 +941,11 @@ function ISButtonPrompt:getXButtonObjects(dir)
 end
 
 function ISButtonPrompt:getBestLBButtonAction(dir)
+    if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+        self:setLBPrompt(nil, nil, nil);
+        return;
+    end
+
     if getCell():getDrag(self.player) then
         self:setLBPrompt(getCell():getDrag(self.player):getLBPrompt(), nil, nil);
     elseif ISFirearmRadialMenu.getBestLBButtonAction(self) then
@@ -927,6 +955,11 @@ function ISButtonPrompt:getBestLBButtonAction(dir)
 end
 
 function ISButtonPrompt:getBestRBButtonAction(dir)
+    if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+        self:setRBPrompt(nil, nil, nil);
+        return;
+    end
+
     if getCell():getDrag(self.player) then
         self:setRBPrompt(getCell():getDrag(self.player):getRBPrompt(), nil, nil);
     elseif ISFirearmRadialMenu.getBestRBButtonAction(self) then
@@ -1050,3 +1083,4 @@ function ISButtonPrompt:new (player)
   --  o:setYPrompt("Loot");
     return o
 end
+

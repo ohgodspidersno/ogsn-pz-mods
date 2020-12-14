@@ -135,7 +135,7 @@ function ISHealthPanel:createChildren()
     self.healthPanel:instantiate()
     self.healthPanel:setVisible(true)
     self:addChild(self.healthPanel)
-
+    
     self.listbox = ISHealthBodyPartListBox:new(180 - 15, 59, self.width - (180 - 15), self.height);
     self.listbox:initialise();
     self.listbox:instantiate();
@@ -157,7 +157,7 @@ function ISHealthPanel:createChildren()
 --    self.bodyPartPanel:overrideNodeTexture( BodyPartType.Torso_Upper, "media/ui/BodyParts/bps_node_big", "media/ui/BodyParts/bps_node_big_outline" );
 --    self.bodyPartPanel:setColorScheme(self.colorScheme);
     self:addChild(self.bodyPartPanel);
-
+    
     self.fitness = ISButton:new(self.healthPanel.x + 165, self.healthPanel.y, 100, 20, getText("ContextMenu_Fitness"), self, ISNewHealthPanel.onClick);
     self.fitness.internal = "FITNESS";
     self.fitness.anchorTop = false
@@ -169,7 +169,7 @@ function ISHealthPanel:createChildren()
     if getCore():getGameMode() == "Tutorial" then
         self.fitness:setVisible(false);
     end
-
+    
 --    print "instant";
 
 end
@@ -183,6 +183,10 @@ function ISHealthPanel:setVisible(visible)
 end
 
 function ISHealthBodyPartListBox:onRightMouseUp(x, y)
+    if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+        if not getDebug() then return end
+    end
+
     local row = self:rowAt(x, y)
     if row < 1 or row > #self.items then return end
     self.selected = row
@@ -366,7 +370,7 @@ function ISHealthPanel:render()
 
     local fontHgt = getTextManager():getFontHeight(UIFont.Small);
     local y = self.healthPanel.y;
-
+    
     self.fitness:setY(y);
 
     y = y + 30;
@@ -900,7 +904,7 @@ end
 function HealthPanelAction:perform()
 --    print(self.handler.Type .. "["..tostring(self.handler).. "].perform()")
     self.handler:perform(self, self.args[1], self.args[2], self.args[3], self.args[4], self.args[5], self.args[6], self.args[7], self.args[8])
-
+    
     -- needed to remove from queue / start next.
     ISBaseTimedAction.perform(self)
 end
@@ -1658,7 +1662,7 @@ function ISHealthPanel:doBodyPartContextMenu(bodyPart, x, y)
     table.insert(handlers, HRemoveSplint:new(self, bodyPart))
     table.insert(handlers, HRemoveBullet:new(self, bodyPart))
     table.insert(handlers, HCleanBurn:new(self, bodyPart))
-
+    
     local containers = ISInventoryPaneContextMenu.getContainers(self.otherPlayer or self.character)
     for i=1,containers:size() do
         local container = containers:get(i-1)
@@ -1729,7 +1733,7 @@ function ISHealthPanel:doBodyPartContextMenu(bodyPart, x, y)
         updateJoypadFocus(JoypadState.players[playerNum+1])
     end
 end
-
+    
 -- check what anim nodes to play depending on where you bandage yourself
 function ISHealthPanel.getBandageType(bodyPart)
     if bodyPart:getType() == BodyPartType.Head or bodyPart:getType() == BodyPartType.Neck then

@@ -116,7 +116,7 @@ end
 -- if we press the toggle skill panel key we gonna display the character info screen
 xpUpdate.displayCharacterInfo = function(key)
 	local playerObj = getSpecificPlayer(0)
-	if not playerObj or playerObj:isDead() then
+	if getGameSpeed() == 0 or not playerObj or playerObj:isDead() then
 		return;
 	end
 	if not getPlayerData(0) then return end
@@ -318,7 +318,7 @@ xpUpdate.onNewGame = function(playerObj, square)
         playerObj:getInventory():AddItem("Base.WaterBottleFull");
         playerObj:getInventory():AddItem("Base.Crisps");
 	end
-
+	
 	playerObj:getFitness():init();
 end
 

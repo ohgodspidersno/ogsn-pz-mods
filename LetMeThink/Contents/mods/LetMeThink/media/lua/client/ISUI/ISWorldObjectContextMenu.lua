@@ -387,6 +387,11 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
 		local context = Tutorial1.createWorldContextMenu(player, worldobjects, x ,y);
 		return context;
 	end
+	-- if the game is paused, we don't show the world context menu
+	if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+		return;
+	end
+
 	local playerObj = getSpecificPlayer(player)
 	local playerInv = playerObj:getInventory()
 	if playerObj:isAsleep() then return end

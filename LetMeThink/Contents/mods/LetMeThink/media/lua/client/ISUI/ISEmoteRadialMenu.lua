@@ -50,7 +50,7 @@ function ISEmoteRadialMenu:init()
 
 	ISEmoteRadialMenu.defaultMenu["shout"] = {};
 	ISEmoteRadialMenu.defaultMenu["shout"].name = getText("IGUI_Emote_Shout");
-
+	
 	-- some anims can have variant, we'll pick one randomly in this list
 	ISEmoteRadialMenu.variants = {};
 	ISEmoteRadialMenu.variants["wavehi"] = {"wavehi", "wavehi02", "wavebye"};
@@ -58,7 +58,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.variants["stop"] = {"stop", "stop02"};
 	ISEmoteRadialMenu.variants["clap"] = {"clap", "clap02"};
 	ISEmoteRadialMenu.variants["salute"] = {"saluteformal", "salutecasual"};
-
+	
 	ISEmoteRadialMenu.icons = {};
 	ISEmoteRadialMenu.icons["friendly"] = getTexture("media/ui/emotes/thumbsup.png");
 	ISEmoteRadialMenu.icons["hostile"] = getTexture("media/ui/emotes/thumbsdown.png");
@@ -91,7 +91,7 @@ function ISEmoteRadialMenu:init()
 	ISEmoteRadialMenu.icons["wavehi"] = getTexture("media/ui/emotes/wavehello.png");
 	ISEmoteRadialMenu.icons["yes"] = getTexture("media/ui/emotes/yes.png");
 	ISEmoteRadialMenu.icons["signalok"] = getTexture("media/ui/emotes/yes.png");
-
+	
 	ISEmoteRadialMenu.menu = ISEmoteRadialMenu.defaultMenu;
 end
 
@@ -116,15 +116,15 @@ end
 
 function ISEmoteRadialMenu:center()
 	local menu = getPlayerRadialMenu(self.playerNum)
-
+	
 	local x = getPlayerScreenLeft(self.playerNum)
 	local y = getPlayerScreenTop(self.playerNum)
 	local w = getPlayerScreenWidth(self.playerNum)
 	local h = getPlayerScreenHeight(self.playerNum)
-
+	
 	x = x + w / 2
 	y = y + h / 2
-
+	
 	menu:setX(x - menu:getWidth() / 2)
 	menu:setY(y - menu:getHeight() / 2)
 end
@@ -189,6 +189,9 @@ STATE[4] = {}
 
 function ISEmoteRadialMenu.checkKey(key)
 	if not (key == getCore():getKey("Emote") or key == getCore():getKey("Shout")) then
+		return false
+	end
+	if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
 		return false
 	end
 	local playerObj = getSpecificPlayer(0)
@@ -261,7 +264,7 @@ function ISEmoteRadialMenu.onKeyReleased(key)
 		end
 		return
 	end
-
+	
 	local delay = 450
 	if (getTimestampMs() - STATE[1].keyPressedMS < delay) and key == getCore():getKey("Shout") and not playerObj:getVehicle() then
 		playerObj:Callout(true);

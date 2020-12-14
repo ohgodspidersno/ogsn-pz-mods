@@ -21,11 +21,17 @@ end
 
 function ISBackButtonWheel:addCommands()
 	local playerObj = getSpecificPlayer(self.playerNum)
-
+	
 	self:center()
 
 	self:clear()
 
+	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+
+	if isPaused then
+		self:addSlice(nil, nil, nil)
+		self:addSlice(nil, nil, nil)
+	else
 		if not ISBackButtonWheel.disablePlayerInfo then
 			self:addSlice(getText("IGUI_BackButton_PlayerInfo"), getTexture("media/ui/Heart2_On.png"), self.onCommand, self, "PlayerInfo")
 		else
@@ -36,6 +42,7 @@ function ISBackButtonWheel:addCommands()
 		else
 			self:addSlice(nil, nil, nil)
 		end
+	end
 
 	if getCore():isZoomEnabled() and not getCore():getAutoZoom(self.playerNum) then
 		if ISBackButtonWheel.disableZoomIn then
@@ -55,7 +62,7 @@ function ISBackButtonWheel:addCommands()
 			else
 				self:addSlice(getText("UI_optionscreen_binding_Pause"), getTexture("media/ui/Time_Pause_Off.png"), self.onCommand, self, "Pause")
 			end
-
+	
 			local multiplier = getGameTime():getTrueMultiplier()
 			if multiplier == 1 or multiplier == 40 then
 				self:addSlice(getText("IGUI_BackButton_FF1"), getTexture("media/ui/Time_FFwd1_Off.png"), self.onCommand, self, "FastForward")
@@ -78,8 +85,8 @@ function ISBackButtonWheel:addCommands()
 			self:addSlice(getText("IGUI_BackButton_Zoom", getCore():getNextZoom(self.playerNum, 1) * 100), getTexture("media/ui/ZoomOut.png"), self.onCommand, self, "ZoomPlus")
 		end
 	end
-
-	if not playerObj:getVehicle() and not ISBackButtonWheel.disableMoveable then
+	
+	if not isPaused and not playerObj:getVehicle() and not ISBackButtonWheel.disableMoveable then
 		self:addSlice(getText("IGUI_BackButton_Movable"), getTexture("media/ui/Furniture_Off2.png"), self.onCommand, self, "MoveFurniture")
 	else
 		self:addSlice(nil, nil, nil)
@@ -103,16 +110,18 @@ end
 
 function ISBackButtonWheel:onCommand(command)
 	local focus = nil
+	local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
+
 	local playerObj = getSpecificPlayer(self.playerNum)
 
-	if command == "PlayerInfo" then
+	if command == "PlayerInfo" and not isPaused then
 		getPlayerInfoPanel(self.playerNum):setVisible(true)
 		getPlayerInfoPanel(self.playerNum):addToUIManager()
 		focus = getPlayerInfoPanel(self.playerNum).panel:getActiveView()
-	elseif command == "Crafting" then
+	elseif command == "Crafting" and not isPaused then
 		getPlayerCraftingUI(self.playerNum):setVisible(true)
 		focus = getPlayerCraftingUI(self.playerNum)
-	elseif command == "MoveFurniture" then
+	elseif command == "MoveFurniture" and not isPaused then
 		local mo = ISMoveableCursor:new(getSpecificPlayer(self.playerNum));
 		getCell():setDrag(mo, mo.player);
 	elseif command == "ZoomPlus" and not getCore():getAutoZoom(self.playerNum) then
@@ -157,3 +166,4 @@ function ISBackButtonWheel:new(playerNum)
 	o:setHideWhenButtonReleased(Joypad.Back)
 	return o
 end
+

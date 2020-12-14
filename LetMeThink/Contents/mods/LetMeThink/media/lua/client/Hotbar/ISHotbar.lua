@@ -59,13 +59,13 @@ function ISHotbar:render()
 		if item then
 			local tex = item:getTexture()
 			self:drawTexture(tex, slotX + (tex:getWidth() / 2), (self.height - tex:getHeight()) / 2, 1, 1, 1, 1)
-
+			
 			local n = math.floor(((item:getCondition() / item:getConditionMax()) * 5));
-
+			
 			if(item:getCondition() > 0 and n == 0) then
 				n = 1;
 			end
-
+			
 			self:drawTexture(self.qualityStars[n], slotX + self.slotWidth - 15, self.margins + 3,1,1,1,1);
 
 			if item:isEquipped() then
@@ -98,18 +98,22 @@ function ISHotbar:getSlotDefReplacement(slot)
 end
 
 function ISHotbar:doMenu(slotIndex)
+	if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+		return;
+	end
+
 	local slot = self.availableSlot[slotIndex];
 	local slotDef = slot.def;
 	local context = ISContextMenu.get(self.playerNum, getMouseX(), getMouseY());
 	local found = false;
-
+	
 	-- first check for remove
 	if self.attachedItems[slotIndex] then
 		context = ISInventoryPaneContextMenu.createMenu(self.chr:getPlayerNum(), true, {self.attachedItems[slotIndex]}, getMouseX(), getMouseY());
 --		context:addOptionOnTop("Remove " .. self.attachedItems[slotIndex]:getDisplayName(), self, ISHotbar.removeItem, self.attachedItems[slotIndex], true);
 		found = true;
 	end
-
+	
 	local subMenuAttach;
 	-- fetch all items in our inventory to check what can be added there
 	for i=0, self.chr:getInventory():getItems():size()-1 do
@@ -137,7 +141,7 @@ function ISHotbar:doMenu(slotIndex)
 			end
 		end
 	end
-
+	
 	if not found then
 		local option = context:addOption(getText("ContextMenu_NoWeaponsAvailable"));
 		option.notAvailable = true;
@@ -156,7 +160,7 @@ function ISHotbar.doMenuFromInventory(playerNum, item, context)
 		local subOption = context:addOptionOnTop(getText("ContextMenu_Attach"), nil);
 		local subMenuAttach = context:getNew(context);
 		context:addSubMenu(subOption, subMenuAttach);
-
+		
 		local found = false;
 		for slotIndex, slot in pairs(self.availableSlot) do
 			local slotDef = slot.def;
@@ -177,7 +181,7 @@ function ISHotbar.doMenuFromInventory(playerNum, item, context)
 							tooltip.description = tooltip.description .. getText("Tooltip_ReplaceWornItems") .. " <LINE> <INDENT:20> "
 							tooltip.description = tooltip.description .. self.attachedItems[slotIndex]:getDisplayName()
 							option.toolTip = tooltip
-						end
+						end 
 						found = true;
 					end
 				end
@@ -264,7 +268,7 @@ function ISHotbar:onRightMouseUp(x, y)
 	if clickedSlot >= #self.availableSlot then
 		clickedSlot = #self.availableSlot - 1;
 	end
-
+	
 	clickedSlot = clickedSlot + 1;
 
 	self:doMenu(clickedSlot);
@@ -313,7 +317,7 @@ function ISHotbar:removeItem(item, doAnim)
 		item:setAttachedSlot(-1);
 		item:setAttachedSlotType(nil);
 		item:setAttachedToModel(nil);
-
+		
 		self:reloadIcons();
 	end
 end
@@ -353,7 +357,7 @@ function ISHotbar:attachItem (item, slot, slotIndex, slotDef, doAnim)
 		item:setAttachedSlot(slotIndex);
 		item:setAttachedSlotType(slotDef.type);
 		item:setAttachedToModel(slot);
-
+		
 		self:reloadIcons();
 	end
 end
@@ -407,7 +411,7 @@ function ISHotbar:refresh()
 	elseif self:compareWornItems() then
 		refresh = true;
 	end
-
+	
 	if not refresh then
 		return;
 	end
@@ -420,10 +424,10 @@ function ISHotbar:refresh()
 	-- always have a back attachment
 	local slotDef = self:getSlotDef("Back");
 	newSlots[1] = {slotType = slotDef.type, name = slotDef.name, def = slotDef};
-
+	
 	self.replacements = {};
 	table.wipe(self.wornItems)
-
+	
 	-- check to add new availableSlot if we have new equipped clothing that gives some
 	-- we first do this so we keep our order in hotkeys (equipping new emplacement will make them goes on last position)
 	for i=0, self.chr:getWornItems():size()-1 do
@@ -488,10 +492,10 @@ function ISHotbar:refresh()
 				self.availableSlot[i] = nil;
 			end
 		end
-
+		
 		self:savePosition();
 	end
-
+	
 	newSlots = {};
 	-- now we redo our correct order
 	local currentIndex = 1;
@@ -499,9 +503,9 @@ function ISHotbar:refresh()
 		newSlots[currentIndex] = v;
 		currentIndex = currentIndex + 1;
 	end
-
+	
 	self.availableSlot = newSlots;
-
+	
 	-- we re attach out items, if we added a bag for example, we need to redo the correct attachment
 	for i, item in pairs(self.attachedItems) do
 		local slot = self.availableSlot[item:getAttachedSlot()];
@@ -513,7 +517,7 @@ function ISHotbar:refresh()
 			self:attachItem(item, slotDef.attachments[item:getAttachmentType()], slotIndex, self:getSlotDef(slot.slotType), false);
 		end
 	end
-
+	
 	local width = #self.availableSlot * self.slotWidth;
 	width = width + (#self.availableSlot - 1) * 2;
 	self:setWidth(width + 10);
@@ -536,7 +540,7 @@ end
 
 function ISHotbar:equipItem(item)
 	ISInventoryPaneContextMenu.transferIfNeeded(self.chr, item)
-
+	
 	local equip = true;
 	if self.chr:getPrimaryHandItem() == item then
 		ISTimedActionQueue.add(ISUnequipAction:new(self.chr, item, 20));
@@ -546,7 +550,7 @@ function ISHotbar:equipItem(item)
 		ISTimedActionQueue.add(ISUnequipAction:new(self.chr, item, 20));
 		equip = false;
 	end
-
+	
 	if equip then
 		local primary = self.chr:getPrimaryHandItem()
 		if primary and self:isInHotbar(primary) then
@@ -558,7 +562,7 @@ function ISHotbar:equipItem(item)
 		end
 		ISTimedActionQueue.add(ISEquipWeaponAction:new(self.chr, item, 20, true, item:isTwoHandWeapon()));
 	end
-
+	
 	self.chr:getInventory():setDrawDirty(true);
 	getPlayerData(self.chr:getPlayerNum()).playerInventory:refreshBackpacks();
 --	self:refresh();
@@ -627,6 +631,9 @@ ISHotbar.onKeyStartPressed = function(key)
 	if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
 		return
 	end
+	if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
+		return
+	end
 	if JoypadState.players[1] then
 		return
 	end
@@ -648,6 +655,9 @@ ISHotbar.onKeyPressed = function(key)
 	if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
 		return
 	end
+	if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
+		return
+	end
 	if JoypadState.players[1] then
 		return
 	end
@@ -664,7 +674,7 @@ ISHotbar.onKeyPressed = function(key)
 	if playerObj:isAttacking() then
 		return;
 	end
-
+	
 	-- don't do hotkey if you're doing action
 	local queue = ISTimedActionQueue.queues[playerObj];
 	if queue and #queue.queue > 0 then
@@ -686,6 +696,9 @@ end
 ISHotbar.onKeyKeepPressed = function(key)
 	local playerObj = getSpecificPlayer(0)
 	if not getPlayerHotbar(0) or not playerObj or playerObj:isDead() then
+		return
+	end
+	if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
 		return
 	end
 	if JoypadState.players[1] then
@@ -713,7 +726,7 @@ ISHotbar.onKeyKeepPressed = function(key)
 		for i=1,inv:size() do
 			local item = inv:get(i-1)
 			if self:isItemAttached(item) then
-
+				
 			elseif item:getAttachmentType() and item:getCondition() > 0 and self.replacements[item:getAttachmentType()] ~= "null" then
 				local slot = self.availableSlot[slotToCheck]
 				local slotDef = slot.def
@@ -797,3 +810,4 @@ local function OnGameStart()
 end
 
 Events.OnGameStart.Add(OnGameStart);
+

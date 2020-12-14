@@ -365,7 +365,9 @@ function ISInventoryPane:doButtons(y)
     self.contextButton2:setVisible(false);
     self.contextButton3:setVisible(false);
 
-	if getPlayerContextMenu(self.player):isAnyVisible() or getSpecificPlayer(self.player):isAsleep() then
+	if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 or
+			getPlayerContextMenu(self.player):isAnyVisible() or
+			getSpecificPlayer(self.player):isAsleep() then
 		return
 	end
 
@@ -579,7 +581,7 @@ function ISInventoryPane:transferItemsByWeight(items, container)
 	end
 	for _,item in ipairs(items) do
 		if not container:isItemAllowed(item) then
-			--
+			-- 
 		elseif container:getType() == "floor" then
 			ISInventoryPaneContextMenu.dropItem(item, self.player)
 		else
@@ -1060,6 +1062,10 @@ function ISInventoryPane:doContextOnJoypadSelected()
 	if JoypadState.disableInvInteraction then
 		return;
 	end
+	if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+		return;
+	end
+
     local playerObj = getSpecificPlayer(self.player)
     if playerObj:isAsleep() then return end
 
@@ -1089,7 +1095,7 @@ function ISInventoryPane:doContextOnJoypadSelected()
             end
         end
     end
-
+	
 	local menu = nil;
 	if getCore():getGameMode() == "Tutorial" then
 		menu = Tutorial1.createInventoryContextMenu(self.player, isInInv, contextMenuItems, self:getAbsoluteX()+64, self:getAbsoluteY()+8+(self.joyselection*self.itemHgt)+self:getYScroll());
@@ -1108,7 +1114,7 @@ function ISInventoryPane:onRightMouseUp(x, y)
 	if self.player ~= 0 then return end
 
     local isInInv = self.inventory:isInCharacterInventory(getSpecificPlayer(self.player))
-
+    
     if #self.items == 0 then
         local menu = ISInventoryPaneContextMenu.createMenuNoItems(self.player, not isInInv, self:getAbsoluteX()+x, self:getAbsoluteY()+y+self:getYScroll())
         if menu then
@@ -1341,7 +1347,7 @@ end
 function ISInventoryPane:update()
 
     local playerObj = getSpecificPlayer(self.player)
-
+    
     if self.doController then
         --print("do controller!")
         table.wipe(self.selected)
@@ -1631,7 +1637,7 @@ function ISInventoryPane:refreshContainer()
 
     --print("Preparing to sort inv items");
     table.sort(self.itemslist, self.itemSortFunc );
-
+    
     -- Adding the first item in list additionally at front as a dummy at the start, to be used in the details view as a header.
     for k, v in ipairs(self.itemslist) do
         local item = v.items[1];
@@ -1640,7 +1646,7 @@ function ISInventoryPane:refreshContainer()
 
     self:restoreSelection(selected);
     table.wipe(selected);
-
+    
     self:updateScrollbars();
     self.inventory:setDrawDirty(false);
 
@@ -1663,7 +1669,7 @@ function ISInventoryPane:renderdetails(doDragged)
             self:refreshContainer()
         end
     end
-
+    
     local player = getSpecificPlayer(self.player)
 
     if not doDragged then
@@ -2074,7 +2080,7 @@ function ISInventoryPane:drawItemDetails(item, y, xoff, yoff, red)
 				fgBar.r = 0.6
 				fgBar.g = 0.0
 				fgBar.b = 0.0
-			end
+			end	
 			self:drawText(s, 40 + 30 + xoff, top + (self.itemHgt - self.fontHgt) / 2, fgText.a, fgText.r, fgText.g, fgText.b, self.font);
 			if item:isBurnt() then return end
 			local textWid = getTextManager():MeasureStringX(self.font, s)
@@ -2135,7 +2141,7 @@ function ISInventoryPane:onInventoryFontChanged()
 	self.fontHgt = getTextManager():getFontFromEnum(self.font):getLineHeight()
 	self.itemHgt = math.ceil(math.max(18, self.fontHgt) * self.zoom)
     self.texScale = math.min(32, (self.itemHgt - 2)) / 32
-
+    
     self.contextButton1:setFont(self.font)
     self.contextButton2:setFont(self.font)
     self.contextButton3:setFont(self.font)

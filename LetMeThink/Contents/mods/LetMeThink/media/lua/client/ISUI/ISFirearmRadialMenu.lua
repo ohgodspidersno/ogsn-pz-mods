@@ -393,6 +393,9 @@ function ISFirearmRadialMenu.checkKey(key)
 	if key ~= getCore():getKey("ReloadWeapon") then
 		return false
 	end
+	if UIManager.getSpeedControls() and (UIManager.getSpeedControls():getCurrentGameSpeed() == 0) then
+		return false
+	end
 	local playerObj = getSpecificPlayer(0)
 	if not playerObj or playerObj:isDead() then
 		return false
@@ -480,3 +483,4 @@ local function OnGameStart()
 end
 
 Events.OnGameStart.Add(OnGameStart)
+
