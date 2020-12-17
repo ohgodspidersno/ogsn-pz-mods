@@ -7,12 +7,12 @@
 -- end
 
 require 'Context/ISMenuContextWorld'
-ISMenuContextWorld_original = ISMenuContextWorld
+local new_original = ISMenuContextWorld.new
 
-function ISMenuContextWorld.new()
-  local self = ISMenuContextWorld_original.new();
-  self.createMenu_original = self.createMenu
-  function self.createMenu_new( _playerNum, _object, _objects, _x, _y, _test )
+function ISMenuContextWorld.new(...)
+  local self = new_original(...);
+  self.o_cm = self.createMenu
+  function self.n_cm( _playerNum, _object, _objects, _x, _y, _test )
     print('In the modded version')
     local playerObj = getSpecificPlayer(_playerNum);
     if playerObj:isDead() or playerObj:isAsleep() then return end
@@ -71,11 +71,12 @@ function ISMenuContextWorld.new()
     end
     return context;
   end
-  function self.createMenu( _playerNum, _object, _objects, _x, _y, _test )
+
+  function self.createMenu(...)
     if UIManager.getSpeedControls():getCurrentGameSpeed() ~= 0 then
-        self.createMenu_original( _playerNum, _object, _objects, _x, _y, _test )
+        self.o_cm(...)
     else
-        self.createMenu_new( _playerNum, _object, _objects, _x, _y, _test )
+        self.n_cm(...)
     end
   end
 end
