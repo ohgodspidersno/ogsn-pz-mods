@@ -1,14 +1,13 @@
 require 'Context/ISMenuContextWorld'
--- ISMenuContextWorldOGSN = ISMenuContextWorld:derive("ISMenuContextWorldOGSN");
-ISMenuContextWorld = ISMenuContextWorld or {}
-ISMenuContextWorld_createMenu = ISMenuContextWorld.createMenu -- original function
 
-local function createMenu( _playerNum, _object, _objects, _x, _y, _test )
-  print('In new version of ISMenuContextWorld.createMenu, testing to see if paused...')
-  if UIManager.getSpeedControls():getCurrentGameSpeed() ~= 0 then
-  print('Game is not paused so mod is not needed. Attempting to do vanilla version of ISMenuContextWorld_createMenu instead...')
-  ISMenuContextWorld_createMenu( _playerNum, _object, _objects, _x, _y, _test ) end
-  print('Game is paused so now proceeding with modded code!')
+-- create impostor object
+ISMenuContextWorldOGSN = {}
+-- teach it the original object's "createMenu" skill
+ISMenuContextWorldOGSN.originalCreateMenu = ISMenuContextWorld.createMenu
+
+-- teach it it's own new skill called "newCreateMenu"
+-- in this case it's basically the same as the original except it doesn't check if it's paused
+ISMenuContextWorldOGSN.newCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
   local playerObj = getSpecificPlayer(_playerNum);
   if playerObj:isDead() or playerObj:isAsleep() then return end
   self.reset(_playerNum);
@@ -67,5 +66,13 @@ local function createMenu( _playerNum, _object, _objects, _x, _y, _test )
   return context;
 end
 
-ISMenuContextWorld.createMenu = createMenu
-return ISMenuContextWorld
+-- Now we tell the original object to rewrite its creatMenu skill...
+ISMenuContextWorld.createMenu( _playerNum, _object, _objects, _x, _y, _test )
+    -- if it's paused we tell it to let the impostor do our new modified version
+    if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+      ISMenuContextWorldOGSN.newCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
+    -- otherwise we tell it to let the impostor do the original version
+    else
+      ISMenuContextWorldOGSN.originalCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
+    end
+end
