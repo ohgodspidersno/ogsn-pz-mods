@@ -1,5 +1,5 @@
 require 'Context/ISMenuContextWorld'
-ISMenuContextWorldOGSN = {} -- create impostor object
+ISMenuContextWorldOGSN = ISMenuContextWorld -- create impostor object
 ISMenuContextWorldOGSN.originalCreateMenu = ISMenuContextWorld.createMenu -- teach it the original object's "createMenu" skill
 
 function ISMenuContextWorldOGSN.newCreateMenu( _playerNum, _object, _objects, _x, _y, _test )-- teach it it's own new skill called "newCreateMenu"
