@@ -1,10 +1,13 @@
-function self.createMenu( _playerNum, _object, _objects, _x, _y, _test )
-  --        if getCore():getGameMode() == "Tutorial" then
-  --            Tutorial1.createWorldContextMenu(_playerNum, _objects, _x, _y);
-  --            return;
-  --        end
+require 'Context/ISMenuContextWorld'
+-- ISMenuContextWorldOGSN = ISMenuContextWorld:derive("ISMenuContextWorldOGSN");
+ISMenuContextWorld = ISMenuContextWorld or {}
+ISMenuContextWorld_createMenu = ISMenuContextWorld.createMenu -- original function
+
+local function createMenu( _playerNum, _object, _objects, _x, _y, _test )
+  if UIManager.getSpeedControls():getCurrentGameSpeed() ~= 0
+  then return ISMenuContextWorld_createMenu( _playerNum, _object, _objects, _x, _y, _test ) else
   local playerObj = getSpecificPlayer(_playerNum);
-  if playerObj:isDead() or playerObj:isAsleep() or UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return end
+  if playerObj:isDead() or playerObj:isAsleep() then return end
   self.reset(_playerNum);
   local context;
   if not _test then
@@ -60,3 +63,6 @@ function self.createMenu( _playerNum, _object, _objects, _x, _y, _test )
   end
   return context;
 end
+
+ISMenuContextWorld.createMenu = createMenu
+-- return ISMenuContextWorld
