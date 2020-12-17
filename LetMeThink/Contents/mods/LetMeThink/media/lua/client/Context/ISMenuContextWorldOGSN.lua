@@ -2,8 +2,8 @@ require 'Context/ISMenuContextWorld'
 
 local ISMenuContextWorldOGSN = ISMenuContextWorld
 
+ISMenuContextWorldOGSN.originalNew = ISMenuContextWorldOGSN.new
 ISMenuContextWorldOGSN.originalCreateMenu = ISMenuContextWorldOGSN.createMenu
-
 function ISMenuContextWorldOGSN.newCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
   print('In the modded version')
   local playerObj = getSpecificPlayer(_playerNum);
@@ -64,12 +64,16 @@ function ISMenuContextWorldOGSN.newCreateMenu( _playerNum, _object, _objects, _x
   return context;
 end
 
-function ISMenuContextWorldOGSN.createMenu( _playerNum, _object, _objects, _x, _y, _test )
-  if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-    self.newCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
-  else
-    self.originalCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
-  end
+function ISMenuContextWorldOGSN.new()
+    local self = ISMenuContextWorldOGSN.originalNew();
+    function self.createMenu( _playerNum, _object, _objects, _x, _y, _test )
+        if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+            newCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
+        else
+            originalCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
+        end
+    end
 end
+
 
 ISMenuContextWorld = ISMenuContextWorldOGSN
