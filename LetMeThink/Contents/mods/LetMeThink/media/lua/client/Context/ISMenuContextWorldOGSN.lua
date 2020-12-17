@@ -7,7 +7,7 @@ local function createMenu( _playerNum, _object, _objects, _x, _y, _test )
   print('In new version of ISMenuContextWorld.createMenu, testing to see if paused...')
   if UIManager.getSpeedControls():getCurrentGameSpeed() ~= 0 then
   print('Game is not paused so mod is not needed. Attempting to do vanilla version of ISMenuContextWorld_createMenu instead...')
-  return ISMenuContextWorld_createMenu( _playerNum, _object, _objects, _x, _y, _test ) end
+  ISMenuContextWorld_createMenu( _playerNum, _object, _objects, _x, _y, _test ) end
   print('Game is paused so now proceeding with modded code!')
   local playerObj = getSpecificPlayer(_playerNum);
   if playerObj:isDead() or playerObj:isAsleep() then return end
