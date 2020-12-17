@@ -62,20 +62,20 @@ function ISVehicleMechanics:initParts()
 				currentCat.cat = category;
 				self.vehiclePart[category] = currentCat;
 			end
-			
+
 			local newPart = {};
 			newPart.name = getText("IGUI_VehiclePart" .. part:getId());
 			newPart.part = part;
 			table.insert(currentCat.parts, newPart);
-			
+
 			generalCondition = generalCondition + part:getCondition();
 			totalPart = totalPart + 1;
 		end
 	end
-	
+
 	local scrollbarWidth = self.listbox.vscroll:getWidth()
 	local maxWidth = (800 - self.xCarTexOffset - 10 - 20) / 2
-	
+
 	for i,v in pairs(self.vehiclePart) do
 		local cat = {};
 		cat.name = v.name;
@@ -90,13 +90,13 @@ function ISVehicleMechanics:initParts()
 			maxWidth = math.max(maxWidth, width + scrollbarWidth + 2)
 		end
 	end
-	
+
 	self.listWidth = maxWidth
 	self:updateLayout()
-	
+
 	self.generalCondition = round(generalCondition / totalPart, 2);
 	self.generalCondRGB = self:getConditionRGB(self.generalCondition);
-	
+
 	self.leftListHasFocus = true
 	self.leftListSelection = 1
 	self.rightListSelection = 1
@@ -143,7 +143,7 @@ function ISVehicleMechanics:createChildren()
 
 	local rh = self.resizable and self:resizeWidgetHeight() or 0
 	local y = self:titleBarHeight() + 10 + 5 + FONT_HGT_MEDIUM + FONT_HGT_SMALL * (5 + 1) + 10
-	
+
 	self.listbox = ISScrollingListBox:new(self.xCarTexOffset, y, 220, self.height - rh - 10 - y);
 	self.listbox:initialise();
 	self.listbox:instantiate();
@@ -159,7 +159,7 @@ function ISVehicleMechanics:createChildren()
 	self.listbox.onMouseDown = ISVehicleMechanics.onListMouseDown;
 	self.listbox.parent = self;
 	self:addChild(self.listbox);
-	
+
 	self.bodyworklist = ISScrollingListBox:new(self.xCarTexOffset + self.listbox.width + 20, y, 220, self.height - rh - 10 - y);
 	self.bodyworklist:initialise();
 	self.bodyworklist:instantiate();
@@ -175,16 +175,14 @@ function ISVehicleMechanics:createChildren()
 	self.bodyworklist.onMouseDown = ISVehicleMechanics.onListMouseDown;
 	self.bodyworklist.parent = self;
 	self:addChild(self.bodyworklist);
-	
+
 	self:initParts();
 end
 
 function ISVehicleMechanics:onListMouseDown(x, y)
-	if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 and not getDebug() then return; end
-	
 	self.parent.listbox.selected = 0;
 	self.parent.bodyworklist.selected = 0;
-	
+
 	local row = self:rowAt(x, y)
 	if row < 1 or row > #self.items then return end
 	if not self.items[row].item.cat then
@@ -202,12 +200,10 @@ function ISVehicleMechanics:onListRightMouseUp(x, y)
 end
 
 function ISVehicleMechanics:doPartContextMenu(part, x,y)
-	if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return; end
-	
 	local playerObj = getSpecificPlayer(self.playerNum);
 	self.context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
 	local option;
-	
+
 	if part:getItemType() and not part:getItemType():isEmpty() then
 		if part:getInventoryItem() then
 			local fixingList = FixingManager.getFixes(part:getInventoryItem());
@@ -219,7 +215,7 @@ function ISVehicleMechanics:doPartContextMenu(part, x,y)
 					ISInventoryPaneContextMenu.buildFixingMenu(part:getInventoryItem(), playerObj:getPlayerNum(), fixingList:get(i), fixOption, subMenuFix, part)
 				end
 			end
-			
+
 			if part:getTable("uninstall") then
 				option = self.context:addOption(getText("IGUI_Uninstall"), playerObj, ISVehiclePartMenu.onUninstallPart, part)
 				self:doMenuTooltip(part, option, "uninstall");
@@ -260,7 +256,7 @@ function ISVehicleMechanics:doPartContextMenu(part, x,y)
 			end
 		end
 	end
-	
+
 	if part:getWindow() and (not part:getItemType() or part:getInventoryItem()) then
 		local window = part:getWindow()
 		if window:isOpenable() and not window:isDestroyed() and playerObj:getVehicle() then
@@ -274,7 +270,7 @@ function ISVehicleMechanics:doPartContextMenu(part, x,y)
 			option = self.context:addOption(getText("ContextMenu_Smash_window"), playerObj, ISVehiclePartMenu.onSmashWindow, part)
 		end
 	end
-	
+
 	if part:isContainer() and part:getContainerContentType() == "Air" and part:getInventoryItem() then
 		option = self.context:addOption(getText("IGUI_InflateTire"), playerObj, ISVehiclePartMenu.onInflateTire, part)
 		if part:getContainerContentAmount() >= part:getContainerCapacity() + 5 then
@@ -309,7 +305,7 @@ function ISVehicleMechanics:doPartContextMenu(part, x,y)
 		tooltip.description = condInfo;
 		option.toolTip = tooltip;
 	end
-	
+
 	if part:getId() == "Engine" and not VehicleUtils.RequiredKeyNotFound(part, self.chr) then
 		if part:getCondition() > 10 and self.chr:getPerkLevel(Perks.Mechanics) >= part:getVehicle():getScript():getEngineRepairLevel() and self.chr:getInventory():contains("Wrench") then
 			option = self.context:addOption(getText("IGUI_TakeEngineParts"), playerObj, ISVehicleMechanics.onTakeEngineParts, part);
@@ -382,9 +378,9 @@ function ISVehicleMechanics:doPartContextMenu(part, x,y)
 			self.context:addOption("DBG: ISVehicleMechanics.cheat=true", playerObj, ISVehicleMechanics.onCheatToggle)
 		end
 	end
-	
+
 	if self.context.numOptions == 1 then self.context:setVisible(false) end
-	
+
 	if JoypadState.players[self.playerNum+1] and self.context:getIsVisible() then
 		self.context.mouseOver = 1
 		self.context.origin = self
@@ -397,19 +393,19 @@ function ISVehicleMechanics.onRepairEngine(playerObj, part)
 	if playerObj:getVehicle() then
 		ISVehicleMenu.onExit(playerObj)
 	end
-	
+
 	local typeToItem = VehicleUtils.getItems(playerObj:getPlayerNum())
 	local item = typeToItem["Base.Wrench"][1]
 	ISVehiclePartMenu.toPlayerInventory(playerObj, item)
-	
+
 	ISTimedActionQueue.add(ISPathFindAction:pathToVehicleArea(playerObj, part:getVehicle(), part:getArea()))
-	
+
 	local engineCover = nil
 	local doorPart = part:getVehicle():getPartById("EngineDoor")
 	if doorPart and doorPart:getDoor() and doorPart:getInventoryItem() and not doorPart:getDoor():isOpen() then
 		engineCover = doorPart
 	end
-	
+
 	local time = 300;
 	if engineCover then
 		-- The hood is magically unlocked if any door/window is broken/open/uninstalled.
@@ -429,19 +425,19 @@ function ISVehicleMechanics.onTakeEngineParts(playerObj, part)
 	if playerObj:getVehicle() then
 		ISVehicleMenu.onExit(playerObj)
 	end
-	
+
 	local typeToItem = VehicleUtils.getItems(playerObj:getPlayerNum())
 	local item = typeToItem["Base.Wrench"][1]
 	ISVehiclePartMenu.toPlayerInventory(playerObj, item)
-	
+
 	ISTimedActionQueue.add(ISPathFindAction:pathToVehicleArea(playerObj, part:getVehicle(), part:getArea()))
-	
+
 	local engineCover = nil
 	local doorPart = part:getVehicle():getPartById("EngineDoor")
 	if doorPart and doorPart:getDoor() and not doorPart:getDoor():isOpen() then
 		engineCover = doorPart
 	end
-	
+
 	local time = 300;
 	if engineCover then
 		-- The hood is magically unlocked if any door/window is broken/open/uninstalled.
@@ -467,15 +463,15 @@ function ISVehicleMechanics.onConfigHeadlight(playerObj, part, dir)
 	if playerObj:getVehicle() then
 		ISVehicleMenu.onExit(playerObj)
 	end
-	
+
 	ISTimedActionQueue.add(ISPathFindAction:pathToVehicleArea(playerObj, part:getVehicle(), part:getArea()))
-	
+
 	local engineCover = nil
 	local doorPart = part:getVehicle():getPartById("EngineDoor")
 	if doorPart and doorPart:getDoor() and not doorPart:getDoor():isOpen() then
 		engineCover = doorPart
 	end
-	
+
 	local time = 300;
 	if engineCover then
 		if engineCover:getDoor():isLocked() and VehicleUtils.RequiredKeyNotFound(part, playerObj) then
@@ -594,7 +590,7 @@ function ISVehicleMechanics:doMenuTooltip(part, option, lua, name)
 	tooltip.description = getText("Tooltip_craft_Needs") .. " : <LINE>";
 	option.toolTip = tooltip;
 	local keyvalues = part:getTable(lua);
-	
+
 	-- repair engines tooltip
 	if lua == "takeengineparts" then
 		local rgb = " <RGB:1,1,1>";
@@ -616,7 +612,7 @@ function ISVehicleMechanics:doMenuTooltip(part, option, lua, name)
 		else
 			tooltip.description = tooltip.description .. " <RGB:1,1,1>" .. item:getDisplayName() .. " 1/1 <LINE>";
 		end
-		
+
 		tooltip.description = tooltip.description .. " <RGB:1,0,0> " .. getText("Tooltip_vehicle_TakeEnginePartsWarning");
 	end
 	if lua == "repairengine" then
@@ -667,7 +663,7 @@ function ISVehicleMechanics:doMenuTooltip(part, option, lua, name)
 	if VehicleUtils.RequiredKeyNotFound(part, self.chr) then
 		tooltip.description = tooltip.description .. " <RGB:1,0,0> " .. getText("Tooltip_vehicle_keyRequired") .. " <LINE>";
 	end
-	
+
 	if not keyvalues then return; end
 	--	if not part:getInventoryItem() then return; end
 	if not part:getItemType() then return; end
@@ -763,7 +759,7 @@ function ISVehicleMechanics:doDrawItem(y, item, alt)
 			self:drawRect(0, y, self:getWidth(), item.height, 0.05, 1.0, 1.0, 1.0);
 		end
 	end
-	
+
 	if item.item.cat then
 		self:drawText(item.item.name, 0, y, self.parent.partCatRGB.r, self.parent.partCatRGB.g, self.parent.partCatRGB.b, self.parent.partCatRGB.a, UIFont.Medium);
 		y = y + 5;
@@ -779,7 +775,7 @@ function ISVehicleMechanics:doDrawItem(y, item, alt)
 			self:drawText(" (" .. condition .. "%)", getTextManager():MeasureStringX(UIFont.Small, item.item.name) + 22, y, condRGB.r, condRGB.g, condRGB.b, self.parent.partRGB.a, UIFont.Small)
 		end
 	end
-	
+
 	return y + self.itemheight;
 end
 
@@ -917,7 +913,6 @@ function ISVehicleMechanics:onRightMouseUp(x, y)
 		self:selectPart(part)
 		self:doPartContextMenu(part, x, y)
 	elseif ISVehicleMechanics.cheat or playerObj:getAccessLevel() ~= "None" then
-		if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return; end
 		self.context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
 		if self.vehicle:getScript() and self.vehicle:getScript():getWheelCount() > 0 then
 			if self.vehicle:getPartById("Engine") then
@@ -1024,12 +1019,12 @@ end
 function ISVehicleMechanics:render()
 	ISCollapsableWindow.render(self)
 	if self.isCollapsed then return end
-	
+
 	self:checkEngineFull();
 	local fgBar = {r=0.1, g=0.5, b=0.1, a=0.5}
 	--	self:drawTexture(self.texVehicle, 20, 50, 1);
 	self:renderCarOverlay();
-	
+
 	-- car info rect
 	local x = self.xCarTexOffset;
 	local y = self:titleBarHeight() + 10;
@@ -1080,7 +1075,7 @@ function ISVehicleMechanics:render()
 		y = y + lineHgt;
 		progress = true;
 	end
-	
+
 	if not progress and self.flashTimer > 0 then
 		local progressY = 30 + rectHgt - lineHgt - 4
 		self.flashTimer = self.flashTimer - 1
@@ -1100,12 +1095,12 @@ function ISVehicleMechanics:render()
 		end
 		y = y + lineHgt;
 	end
-	
+
 	-- list of parts
 	x = self.xCarTexOffset;
 	y = 140;
 	--	self:drawText("Parts:", x, y, self.partCatRGB.r, self.partCatRGB.g, self.partCatRGB.b, self.partCatRGB.a, UIFont.Medium);
-	
+
 	local selectedPart;
 	if self.listbox.items[self.listbox.selected] then
 		selectedPart = self.listbox.items[self.listbox.selected].item.part;
@@ -1113,7 +1108,7 @@ function ISVehicleMechanics:render()
 		selectedPart = self.bodyworklist.items[self.bodyworklist.selected].item.part;
 	end
 	if selectedPart then self:renderPartDetail(selectedPart); end
-	
+
 	if self.drawJoypadFocus and self.leftListHasFocus then
 		local ui = self.listbox
 		self:drawRectBorder(ui:getX(), ui:getY(), ui:getWidth(), ui:getHeight(), 0.4, 0.2, 1.0, 1.0);
@@ -1185,7 +1180,7 @@ function ISVehicleMechanics:renderPartDetail(part)
 			y = y + lineHgt;
 		end
 	end
-	
+
 	local door = part:getDoor();
 	if door then
 		local txt = getText("UI_Yes");
@@ -1237,7 +1232,7 @@ function ISVehicleMechanics:renderPartDetail(part)
 	--				y = y + lineHgt;
 	--			end
 	--		end
-	
+
 	--		functionName = part:getLuaFunction("checkOperate")
 	--		if functionName then
 	--			local check = VehicleUtils.callLua(functionName, self.vehicle, part)
@@ -1272,28 +1267,28 @@ function ISVehicleMechanics:setVisible(bVisible, joypadData)
 	if self.javaObject == nil then
 		self:instantiate();
 	end
-	
+
 	self:setEnabled(bVisible);
-	
+
 	self.javaObject:setVisible(bVisible);
 	if self.visibleTarget and self.visibleFunction then
 		self.visibleFunction(self.visibleTarget, self);
 	end
-	
+
 	if self.vehicle then
 		self.vehicle:setActiveInBullet(bVisible);
 		self.vehicle:setMechanicUIOpen(bVisible);
 	end
-	
+
 	if self.tooltip then
 		self.tooltip:setVisible(false);
 	end
-	
+
 	if bVisible and joypadData then
 		joypadData.focus = self
 		updateJoypadFocus(joypadData)
 	end
-	
+
 	if self.usedHood then
 		if not bVisible then
 			if self.chr and self.vehicle and self.vehicle:isInArea(self.usedHood:getArea(), self.chr) then
@@ -1311,7 +1306,7 @@ end
 function ISVehicleMechanics:close()
 	self:setVisible(false)
 	self:setEnabled(false);
-	
+
 	self:removeFromUIManager()
 	if JoypadState.players[self.playerNum+1] then
 		setJoypadFocus(self.playerNum, nil)
@@ -1452,13 +1447,13 @@ ISVehicleMechanics.OnMechanicActionDone = function(chr, success, vehicleId, part
 			chr:addMechanicsItem(itemId .. vehicle:getMechanicalID() .. "0", part, getGameTime():getCalender():getTimeInMillis());
 		end
 	end
-	
+
 	local ui = getPlayerMechanicsUI(chr:getPlayerNum());
 	if ui and ui:isReallyVisible() then
 		if success then ui:startFlashGreen()
 		else ui:startFlashRed() end
 	end
-	
+
 	-- Give some exp if you fail
 	if not success then
 		chr:getXp():AddXP(Perks.Mechanics, 1);
