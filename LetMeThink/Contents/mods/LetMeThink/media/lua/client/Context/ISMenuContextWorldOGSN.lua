@@ -72,11 +72,12 @@ function ISMenuContextWorld.new(...)
     return context;
   end
 
+  local this = self
   function self.createMenu(...)
     if UIManager.getSpeedControls():getCurrentGameSpeed() ~= 0 then
-        self.o_cm(...)
+        this.o_cm(...)
     else
-        self.n_cm(...)
+        this.n_cm(...)
     end
   end
 end
