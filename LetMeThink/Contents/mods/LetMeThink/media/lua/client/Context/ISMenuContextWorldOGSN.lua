@@ -1,9 +1,11 @@
 require 'Context/ISMenuContextWorld'
-ISMenuContextWorldOGSN = ISMenuContextWorld -- create impostor object
-ISMenuContextWorldOGSN.originalCreateMenu = ISMenuContextWorld.createMenu -- teach it the original object's "createMenu" skill
 
-function ISMenuContextWorldOGSN.newCreateMenu( _playerNum, _object, _objects, _x, _y, _test )-- teach it it's own new skill called "newCreateMenu"
-  print('In the modded version') -- in this case it's basically the same as the original except it doesn't check if it's paused
+local ISMenuContextWorldOGSN = ISMenuContextWorld
+
+ISMenuContextWorldOGSN.originalCreateMenu = ISMenuContextWorldOGSN.createMenu
+
+function ISMenuContextWorldOGSN.newCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
+  print('In the modded version')
   local playerObj = getSpecificPlayer(_playerNum);
   if playerObj:isDead() or playerObj:isAsleep() then return end
   self.reset(_playerNum);
@@ -62,10 +64,12 @@ function ISMenuContextWorldOGSN.newCreateMenu( _playerNum, _object, _objects, _x
   return context;
 end
 
-ISMenuContextWorld.createMenu( _playerNum, _object, _objects, _x, _y, _test ) -- Now we tell the original object to rewrite its creatMenu skill...
-
-if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-  ISMenuContextWorldOGSN.newCreateMenu( _playerNum, _object, _objects, _x, _y, _test ) -- if it's paused we tell it to let the impostor do our new modified version
-else
-  ISMenuContextWorldOGSN.originalCreateMenu( _playerNum, _object, _objects, _x, _y, _test ) -- otherwise we tell it to let the impostor do the original version
+function ISMenuContextWorldOGSN.createMenu( _playerNum, _object, _objects, _x, _y, _test )
+  if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
+    self.newCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
+  else
+    self.originalCreateMenu( _playerNum, _object, _objects, _x, _y, _test )
+  end
 end
+
+ISMenuContextWorld = ISMenuContextWorldOGSN
