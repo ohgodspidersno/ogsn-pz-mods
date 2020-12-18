@@ -8,7 +8,7 @@ module Base {
 
         Result:SpearBreadKnife,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -22,7 +22,7 @@ module Base {
 
         Result:SpearButterKnife,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -34,7 +34,7 @@ module Base {
 
         Result:SpearFork,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -46,7 +46,7 @@ module Base {
 
         Result:SpearLetterOpener,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -58,7 +58,7 @@ module Base {
 
         Result:SpearScalpel,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -70,7 +70,7 @@ module Base {
 
         Result:SpearSpoon,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -82,7 +82,7 @@ module Base {
 
         Result:SpearScissors,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -94,7 +94,7 @@ module Base {
 
         Result:SpearHandFork,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -106,7 +106,7 @@ module Base {
 
         Result:SpearScrewdriver,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -118,7 +118,7 @@ module Base {
 
         Result:SpearKnife,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -130,7 +130,7 @@ module Base {
 
         Result:SpearHuntingKnife,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -142,7 +142,7 @@ module Base {
 
         Result:SpearMachete,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -154,7 +154,7 @@ module Base {
 
         Result:SpearIcePick,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 }

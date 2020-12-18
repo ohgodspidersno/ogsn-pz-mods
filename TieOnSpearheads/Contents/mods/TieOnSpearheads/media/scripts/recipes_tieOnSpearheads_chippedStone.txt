@@ -8,7 +8,7 @@ module Base {
 
         Result:SpearChippedStone,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -20,7 +20,7 @@ module Base {
 
         Result:SpearChippedStone,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
@@ -32,7 +32,7 @@ module Base {
 
         Result:SpearChippedStone,
         Time:100.0,
-        OnCreate:UpgradeSpear_OnCreate,
+        OnCreate:Recipe.OnCreate.UpgradeSpear,
         Category:Survivalist,
     }
 
