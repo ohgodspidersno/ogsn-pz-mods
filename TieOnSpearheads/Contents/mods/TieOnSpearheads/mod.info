@@ -1,4 +1,5 @@
 name=Spears: Twine and Leather Binding, Chipped Stone Spearheads
 id=TieOnSpearheads
 description=Attach spearheads using twine or leather strips. Also, use chipped stones as spearheads!
+description=Fixes vanilla game's math error that unfairly caps the durability of spears at 50%
 poster=poster.png

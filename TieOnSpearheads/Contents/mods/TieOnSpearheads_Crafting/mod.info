@@ -1,0 +1,13 @@
+name=Spears: Crafting Bugfixes [Beta]
+id=TieOnSpearheads_Crafting
+description=A set of more significant changes to how crafted spears' stats are calculated
+description=- Fixes vanilla game's math error that unfairly caps the durability of spears at 50% (the main Spears mod also fixes this error)
+description=- Handy trait is now factored into the spearmaking calculations, essentially boosting your woodworking level in all calculations
+description=- High woodworking skill now also boosts spear damage, and boosts its maximum durability
+description=- Twine, leather strips, and duct tape are each factored into calculations differently from one another
+description=    - Duct tape provides a flat bonus, ideal for characters with low crafting levels
+description=    - Twine provides a bonus that scales with crafting skill, ideal for high level crafting characters
+description=    - Leather strips, being abundant and easy to find, offer no bonus
+description=- The quality of spearhead has a bigger impact on the quality of your spear than in the vanilla code. For instance, machete spearheads will now outperform scissor spearheads to the same degree that machetes outperform scissors.
+require=TieOnSpearheads
+poster=poster.png

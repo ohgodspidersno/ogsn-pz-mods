@@ -1,8 +1,23 @@
 version=1
 id=2036922754
 title=Spears: Twine and Leather Binding, Chipped Stone Spearheads
-description=[h1]Update: Chipped Stone Model![/h1]
-description=MrDanny made an awesome unique model for the chipped stone spear!
+description=[h1]Update: Bugfix and Optional Improvements to Vanilla Calculation of Spear Quality[/h1]
+description=[list]
+description=[*] Mod now fixes vanilla game's math error that unfairly caps the durability of spears at 50%
+description=[*] Optional submod has been added, with more significant changes[Beta version, so expect bugs, and please report any you find!]
+description=[list]
+description=[*] Handy trait is now factored into the spearmaking calculations, essentially boosting your woodworking level in all calculations
+description=[*] In addition to higher durability, high woodworking skill now also boosts maximum durability.
+description=[*] Very high woodworking skill boosts maximum damage
+description=[*] Twine, leather strips, and duct tape are each factored into calculations differently from one another
+description=[list]
+description=[*] Duct tape provides a flat bonus, ideal for characters with low crafting levels
+description=[*] Twine provides a bonus that scales with crafting skill, ideal for high level crafting characters
+description=[*] Leather strips, being abundant and easy to find, offer no bonus
+description=[/list]
+description= The quality of spearhead has a bigger impact on the quality of your spear than in the vanilla code. For instance, machete spearheads will now outperform scissor spearheads to the same degree that machetes outperform scissors.
+description=[/list]
+description=[/list]
 description=
 description=[h1]Because Cavemen Didn't Have Duct Tape[/h1]
 description=You can now also attach spearheads using leather or twine.
@@ -52,6 +67,8 @@ description=[*]Русский
 description=[*]한국어
 description=[/list]
 description=
+description=[h2]Credits:[/h2]
+description=Chipped stone spearhead model was created by Steam player MrDanny
 description=Poster art created using "Spear" Icon by Anthony Ledoux from [url=www.thenounproject.com]The Noun Project[/url].
 description=
 description=[h1]If you enjoy this mod please like and favorite[/h1]
@@ -61,6 +78,6 @@ description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
 description=
-description=Tags:B41,Weapons,Tweak,Realistic
-tags=Build 41;Weapons;Tweak;Realistic
+description=Tags:B41,Models,Items,Weapons,Bugfix,Tweak,Realistic
+tags=Build 41;Models;Items;Weapons;Bugfix;Tweak;Realistic
 visibility=public
