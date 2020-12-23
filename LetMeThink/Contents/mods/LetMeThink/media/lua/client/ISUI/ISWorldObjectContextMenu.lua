@@ -517,7 +517,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
         if test == true then return true; end
         context:addOption(getText("ContextMenu_RemoveCombinationPadlock"), worldobjects, ISWorldObjectContextMenu.onRemoveDigitalPadlock, player, digitalPadlockedThump);
 	end
-	
+
 	if canBeWaterPiped then
 		if test == true then return true; end
 		local name = getMoveableDisplayName(canBeWaterPiped) or "";
@@ -531,7 +531,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
 			option.toolTip = tooltip;
 		end
 	end
-		
+
 
     -- get back the key on the lock
 --    if door and doorKeyId and door:haveKey() and not playerObj:getSquare():Is(IsoFlagType.exterior) then
@@ -583,7 +583,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
             end
         end
 	end
-	
+
     -- Fishing
     if canFish then
         if test == true then return true; end
@@ -1099,7 +1099,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
 			end
 		end
 	end
-    
+
     -- broken glass interaction
 --    if brokenGlass and playerObj:getClothingItem_Hands() then
 	if brokenGlass then
@@ -1417,7 +1417,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
         if test == true then return true; end
         context:addOption(getText("ContextMenu_Walk_to"), worldobjects, ISWorldObjectContextMenu.onWalkTo, item, player);
 	end
-	
+
 	-- RJ: Moved to health panel
 --	local doFitness = true;
 --	if ISFitnessUI.instance and ISFitnessUI.instance[player+1] and ISFitnessUI.instance[player+1]:isVisible() then
@@ -1426,7 +1426,7 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
 --	if doFitness then
 --		local option = context:addOption(getText("ContextMenu_Fitness"), worldobjects, ISWorldObjectContextMenu.onFitness, playerObj);
 --	end
-    
+
     if not playerObj:getVehicle() and not playerObj:isSitOnGround() then
         if test == true then return true; end
         context:addOption(getText("ContextMenu_SitGround"), player, ISWorldObjectContextMenu.onSitOnGround);
@@ -2119,7 +2119,10 @@ end
 
 function ISWorldObjectContextMenu.onConfirmSleep(this, button, player, bed)
 	if button.internal == "YES" then
+
 		local playerObj = getSpecificPlayer(player)
+		playerObj:setVariable("ExerciseStarted", false);
+		playerObj:setVariable("ExerciseEnded", true);
 		ISTimedActionQueue.clear(playerObj)
 		if bed then
 			if AdjacentFreeTileFinder.isTileOrAdjacent(playerObj:getCurrentSquare(), bed:getSquare()) then
@@ -2709,7 +2712,7 @@ ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
         local item = barList:get(i)
 		table.insert(soapList, item)
 	end
-    
+
     local bottleList = playerInv:getItemsFromType("CleaningLiquid2", true)
     for i=0, bottleList:size() - 1 do
         local item = bottleList:get(i)
@@ -2727,7 +2730,7 @@ ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
 			table.insert(washList, item)
 		end
 	end
-	
+
 
     local weaponInventory = playerInv:getItemsFromCategory("Weapon")
     for i=0, weaponInventory:size() - 1 do
@@ -2739,7 +2742,7 @@ ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
             table.insert(washList, item)
         end
 	end
-	
+
 	local clothingInventory = playerInv:getItemsFromCategory("Container")
 	for i=0, clothingInventory:size() - 1 do
 		local item = clothingInventory:get(i)
@@ -2755,7 +2758,7 @@ ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
 		local mainOption = context:addOption(getText("ContextMenu_Wash"), nil, nil);
 		local mainSubMenu = ISContextMenu:getNew(context)
 		context:addSubMenu(mainOption, mainSubMenu)
-	
+
 --		if #soapList < 1 then
 --			mainOption.notAvailable = true;
 --			local tooltip = ISWorldObjectContextMenu.addToolTip();
@@ -2766,7 +2769,7 @@ ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
 
 		local soapRemaining = ISWashClothing.GetSoapRemaining(soapList)
 		local waterRemaining = sink:getWaterAmount()
-	
+
 		if washYourself then
 			local soapRequired = ISWashYourself.GetRequiredSoap(playerObj)
 			local waterRequired = ISWashYourself.GetRequiredWater(playerObj)
@@ -2783,7 +2786,7 @@ ISWorldObjectContextMenu.doWashClothingMenu = function(sink, player, context)
 				option.notAvailable = true
 			end
 		end
-		
+
 		if washEquipment then
 			if #washList > 1 then
 				local soapRequired = 0
@@ -2840,7 +2843,7 @@ ISWorldObjectContextMenu.onWashClothing = function(playerObj, sink, soapList, wa
 		washList = {};
 		table.insert(washList, singleClothing);
 	end
-    
+
 	for i,item in ipairs(washList) do
 		local bloodAmount = 0
 		local dirtAmount = 0
@@ -2866,7 +2869,7 @@ ISWorldObjectContextMenu.onWashYourself = function(playerObj, sink, soapList)
 	if not sink:getSquare() or not luautils.walkAdj(playerObj, sink:getSquare(), true) then
 		return
 	end
-	
+
 	ISTimedActionQueue.add(ISWashYourself:new(playerObj, sink, soapList));
 end
 
@@ -3705,4 +3708,3 @@ end
 ISWorldObjectContextMenu.onSitOnGround = function(player)
 	getSpecificPlayer(player):reportEvent("EventSitOnGround");
 end
-

@@ -935,25 +935,37 @@ function BaseHandler:isInjured()
 end
 
 function BaseHandler:checkItems()
-    local items = {}
     for k,v in pairs(self.items) do
-        items[k] = {}
+        table.wipe(v)
     end
-    self.items = items
 
     local containers = ISInventoryPaneContextMenu.getContainers(self:getDoctor())
+    local done = {}
+    local childContainers = {}
     for i=1,containers:size() do
         local container = containers:get(i-1)
-        for j=1,container:getItems():size() do
-            local item = container:getItems():get(j-1)
-            if instanceof(item, "InventoryContainer") then
-                for k=1,item:getItemContainer():getItems():size() do
-                    local item2 = item:getItemContainer():getItems():get(k-1)
-                    self:checkItem(item2)
-                end
-            else
-                self:checkItem(item)
+        done[container] = true
+        table.wipe(childContainers)
+        self:checkContainerItems(container, childContainers)
+        for _,container2 in ipairs(childContainers) do
+            if not done[container2] then
+                done[container2] = true
+                self:checkContainerItems(container2, nil)
             end
+        end
+    end
+end
+
+function BaseHandler:checkContainerItems(container, childContainers)
+    local containerItems = container:getItems()
+    for i=1,containerItems:size() do
+        local item = containerItems:get(i-1)
+        if item:IsInventoryContainer() then
+            if childContainers then
+                table.insert(childContainers, item:getInventory())
+            end
+        else
+            self:checkItem(item)
         end
     end
 end
@@ -1640,6 +1652,40 @@ end
 
 -----
 
+function ISHealthPanel:checkItems(handlers)
+    local containers = ISInventoryPaneContextMenu.getContainers(self:getDoctor())
+    local done = {}
+    local childContainers = {}
+    for i=1,containers:size() do
+        local container = containers:get(i-1)
+        done[container] = true
+        table.wipe(childContainers)
+        self:checkContainerItems(container, childContainers, handlers)
+        for _,container2 in ipairs(childContainers) do
+            if not done[container2] then
+                done[container2] = true
+                self:checkContainerItems(container, nil, handlers)
+            end
+        end
+    end
+end
+
+function ISHealthPanel:checkContainerItems(container, childContainers, handlers)
+    local containerItems = container:getItems()
+    for i=1,containerItems:size() do
+        local item = containerItems:get(i-1)
+        if item:IsInventoryContainer() then
+            if childContainers then
+                table.insert(childContainers, item:getInventory())
+            end
+        else
+            for _,handler in ipairs(handlers) do
+                handler:checkItem(item)
+            end
+        end
+    end
+end
+
 function ISHealthPanel:doBodyPartContextMenu(bodyPart, x, y)
     local playerNum = self.otherPlayer and self.otherPlayer:getPlayerNum() or self.character:getPlayerNum()
     local context = ISContextMenu.get(playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY());
@@ -1659,23 +1705,7 @@ function ISHealthPanel:doBodyPartContextMenu(bodyPart, x, y)
     table.insert(handlers, HRemoveBullet:new(self, bodyPart))
     table.insert(handlers, HCleanBurn:new(self, bodyPart))
 
-    local containers = ISInventoryPaneContextMenu.getContainers(self.otherPlayer or self.character)
-    for i=1,containers:size() do
-        local container = containers:get(i-1)
-        for j=1,container:getItems():size() do
-            local item = container:getItems():get(j-1)
-            for _,handler in ipairs(handlers) do
-                if instanceof(item, "InventoryContainer") then
-                    for k=1,item:getItemContainer():getItems():size() do
-                        local item2 = item:getItemContainer():getItems():get(k-1)
-                        handler:checkItem(item2)
-                    end
-                else
-                    handler:checkItem(item)
-                end
-            end
-        end
-    end
+    self:checkItems(handlers)
 
     for _,handler in ipairs(handlers) do
         handler:addToMenu(context)
