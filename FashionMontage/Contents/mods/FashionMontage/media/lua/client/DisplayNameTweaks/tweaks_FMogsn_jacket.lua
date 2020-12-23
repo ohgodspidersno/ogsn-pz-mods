@@ -19,6 +19,6 @@ TweakItem("Base.PonchoGreenDOWN","DisplayName","Poncho - Green");
 TweakItem("Base.PonchoYellowDOWN","DisplayName","Poncho - Yellow");
 TweakItem("Base.JacketLong_Santa","DisplayName","Santa Coat - Red");
 TweakItem("Base.JacketLong_SantaGreen","DisplayName","Santa Coat - Green");
-TweakItem("Base.Suit_Jacket","DisplayName","Suit Jacket");
+TweakItem("Base.Suit_JacketTINT","DisplayName","Suit Jacket");
 TweakItem("Base.WeddingJacket","DisplayName","Tuxedo Jacket");
 TweakItem("Base.Jacket_Varsity","DisplayName","Varsity Jacket");

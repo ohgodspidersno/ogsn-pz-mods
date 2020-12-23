@@ -4,7 +4,7 @@ require("ItemTweaker_Copy_ogsn");
 -- Some of these aren't necessary but I will do them all anyway
 TweakItem("Base.Shirt_FormalWhite","DisplayName","Shirt");
 TweakItem("Base.Shirt_Denim","DisplayName","Shirt - Denim");
-TweakItem("Base.Shirt_FormalWhite_ShortSleeve","DisplayName","Shirt - Short Sleeve");
+TweakItem("Base.Shirt_FormalWhite_ShortSleeveTINT","DisplayName","Shirt - Short Sleeve");
 TweakItem("Base.Shirt_CamoDesert","DisplayName","Army Camo - Desert");
 TweakItem("Base.Shirt_CamoGreen","DisplayName","Army Camo - Forest");
 TweakItem("Base.Shirt_CamoUrban","DisplayName","Army Camo - Urban");

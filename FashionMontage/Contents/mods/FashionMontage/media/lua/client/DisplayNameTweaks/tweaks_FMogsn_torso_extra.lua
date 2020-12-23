@@ -14,7 +14,7 @@ TweakItem("Base.Vest_BulletPolice","DisplayName","Bulletproof Vest - Law Enforce
 TweakItem("Base.Vest_BulletArmy","DisplayName","Bulletproof Vest - Military");
 TweakItem("Base.Jumper_TankTopDiamondTINT","DisplayName","Sweater Vest - Diamond-pattern");
 TweakItem("Base.Jumper_TankTopTINT","DisplayName","Sweater Vest - V-Neck");
-TweakItem("Base.Vest_Waistcoat","DisplayName","Waistcoat");
+TweakItem("Base.Vest_WaistcoatTINT","DisplayName","Waistcoat");
 TweakItem("Base.Vest_Waistcoat_GigaMart","DisplayName","Waistcoat - GigaMart");
 TweakItem("Base.Vest_Foreman","DisplayName","Vest - Foreman");
 TweakItem("Base.Vest_HighViz","DisplayName","Vest - High Visibility");
