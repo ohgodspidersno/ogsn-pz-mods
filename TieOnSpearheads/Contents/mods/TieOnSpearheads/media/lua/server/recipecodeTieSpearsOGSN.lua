@@ -1,9 +1,11 @@
+require 'math'
 Recipe = Recipe or {}
 Recipe.OnCreate = Recipe.OnCreate or {}
 
 function Recipe.OnCreate.UpgradeSpear(items, result, player, selectedItem)
     -- Get the stats of the original spear, spearhead, and binding
     local binding, oHP, oMaxHP, oHPpercent, spearheadHP, spearheadMaxHP, spearheadHPpercent;
+
     for i=0,items:size() - 1 do
         local item = items:get(i);
         local type = item:getType();
@@ -15,39 +17,54 @@ function Recipe.OnCreate.UpgradeSpear(items, result, player, selectedItem)
         end
         -- binding used
         binding = type if type=="DuctTape" or type=="Twine" or type=="LeatherStrips" else end
-        -- spearhead's stats and condition
+        -- spearhead's condition
         if instanceof (item, "HandWeapon") and type ~= "SpearCrafted" and type ~= "LongSpear" and type ~= "ShovelSpear" and type ~= "Shovel2Spear" and type ~= "SpearShovel" and type ~= "SpearShovel2" then
           spearheadHP = item:getCondition();
           spearheadMaxHP = item:getConditionMax();
           spearheadHPpercent = spearheadHP/spearheadMaxHP;
         elseif type == "SharpedStone" then
-          spearheadHPpercent = (ZombRand(7,11)*2)/20
+          spearheadHPpercent = (ZombRand(7,11)+ZombRand(7,11))/20 -- rolls twice, takes average, divides by ten to get percentage
         end
     end
 
-    -- get final quality modifiers from player stats and chance
-    local skillLevel = player:getPerkLevel(Perks.Woodwork);
-    local skillModHP = skillLevel/5 -- woodworking improves condition, maxing at lvl 5
-    local skillModDMG = (skillLevel%5) -- woodworking lvls 6-10 improve damage, too
-    local chanceDelta = ZombRand(-1,1);
+    -- get stat modifiers from player's woodworking skill and binding used
+    local skillLevel, rBindingBonus;
+    skillLevel = player:getPerkLevel(Perks.Woodwork);
+    if binding == "DuctTape" or binding == "Twine" then rBindingBonus = 1  else rBindingBonus = 0 end;
 
-    -- get the product's base stats
-    local rMaxHP = result:getConditionMax();
-    local rMinDmg = result:getMinDamage();
-    local rMaxDmg = result:getMaxDamage();
-    local rName = result:getDisplayName();
+    -- calculate modifier deltas
+    local skillModDMG, skillModHP;
+    skillModHP = math.min( math.floor((skillLevel+1)/2), 3) -- woodworking improves condition, maxing at +3 at lvl 5
+    if skillLevel > 6 then skillModDMG = math.min( math.floor((skillLevel-4)/2),3 ) else skillModDMG = 0  end -- after that it improves damage maxing at +3 at lvl 6
 
-    -- define the final modified stats of the resulting spear
-    local rHP, rMinDmgNew, rMaxDmgNew, rNameNew
+    -- get the result item's original stats
+    local rMaxHP, rMinDmg, rMaxDmg, rName;
+    rMaxHP = result:getConditionMax();
+    rMinDmg = result:getMinDamage();
+    rMaxDmg = result:getMaxDamage();
+    rName = result:getDisplayName();
 
-    -----------------------------
-    --- do calculations here ----
-    -----------------------------
+    -- apply the modifier deltas to get new modified stats for the result item
+    local rMaxHPnew, rMaxDmgnew, rMinDmgNew;
+    rMaxHPnew = rMaxHP + skillModHP + rBindingBonus
+    rMaxDmgnew = rMaxDmg + skillModDMG
+    rMinDmgNew = rMinDmg + rBindingBonus
 
-    result:setCondition(rHP)
-    result:setMinDamage(rMinDmgNew)
-    result:setMaxDamage(rMaxNew)
-    result:setDisplayName(rNameNew)
+    -- calculate the result item's current HP
+    local rHPpercent, rHP;
+    rHPpercent = (oHPpercent +spearheadHPpercent)/2;
+    rHP = math.min(rMaxHP*rHPpercent,rMaxHP);
+
+    -- define a new name based on the modified statistics (doesn't do anything yet)
+    local rNameNew;
+    rNameNew = rName;
+
+    -- assign the new stats to the result item
+    result:setConditionMax(rMaxHPnew);
+    result:setCondition(rHP);
+    result:setMinDamage(rMinDmgNew);
+    result:setMaxDamage(rMaxDmgnew);
+    result:setDisplayName(rNameNew);
 end
 
 UpgradeSpear_OnCreate = Recipe.OnCreate.UpgradeSpear
