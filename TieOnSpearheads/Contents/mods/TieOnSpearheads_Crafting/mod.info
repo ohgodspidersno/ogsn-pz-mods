@@ -1,0 +1,4 @@
+name=Spears: Crafting Bugfixes
+id=TieOnSpearheads_Crafting
+description=Fixes bug in code that determines repair condition of newly upgraded spears. The vanilla code has a mathematical error that always sets it too low, especially for characters with high woodworking ability.
+poster=poster.png
