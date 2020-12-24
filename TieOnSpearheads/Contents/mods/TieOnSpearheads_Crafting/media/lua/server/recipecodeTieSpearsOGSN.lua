@@ -35,8 +35,8 @@ function Recipe.OnCreate.UpgradeSpear(items, result, player, selectedItem)
 
     -- calculate modifier deltas
     local skillModDMG, skillModHP;
-    skillModHP = math.min( math.floor((skillLevel+handyBonus+1)/2), 3) -- woodworking improves condition, maxing at +3 at lvl 5
-    if skillLevel > 6 then skillModDMG = math.min( math.floor((skillLevel+handyBonus-4)/2),3 ) else skillModDMG = 0  end -- after that it improves damage maxing at +3 at lvl 6
+    skillModHP = math.min( math.floor((skillLevel+handyBonus+1)/2), (3+handyBonus)) -- woodworking improves condition, maxing at +3 at lvl 5 (+4 with handy)
+    if skillLevel > 5 then skillModDMG = math.min( math.floor((skillLevel+handyBonus-4)/2),(3+handyBonus) ) else skillModDMG = 0  end -- after that it improves damage maxing at +3 at lvl 6
 
     -- get the result item's original stats
     local rMaxHP, rMinDmg, rMaxDmg, rName;
