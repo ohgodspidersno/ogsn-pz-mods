@@ -28,14 +28,15 @@ function Recipe.OnCreate.UpgradeSpear(items, result, player, selectedItem)
     end
 
     -- get stat modifiers from player's woodworking skill and binding used
-    local skillLevel, rBindingBonus;
+    local skillLevel, rBindingBonus, handyBonus;
     skillLevel = player:getPerkLevel(Perks.Woodwork);
+    if playerObj:HasTrait("Handy") then handyBonus = 1 else handyBonus = 0 end;
     if binding == "DuctTape" or binding == "Twine" then rBindingBonus = 1  else rBindingBonus = 0 end;
 
     -- calculate modifier deltas
     local skillModDMG, skillModHP;
-    skillModHP = math.min( math.floor((skillLevel+1)/2), 3) -- woodworking improves condition, maxing at +3 at lvl 5
-    if skillLevel > 6 then skillModDMG = math.min( math.floor((skillLevel-4)/2),3 ) else skillModDMG = 0  end -- after that it improves damage maxing at +3 at lvl 6
+    skillModHP = math.min( math.floor((skillLevel+handyBonus+1)/2), 3) -- woodworking improves condition, maxing at +3 at lvl 5
+    if skillLevel > 6 then skillModDMG = math.min( math.floor((skillLevel+handyBonus-4)/2),3 ) else skillModDMG = 0  end -- after that it improves damage maxing at +3 at lvl 6
 
     -- get the result item's original stats
     local rMaxHP, rMinDmg, rMaxDmg, rName;
