@@ -2049,7 +2049,7 @@ ISInventoryPaneContextMenu.onWearItems = function(items, player)
     items = ISInventoryPane.getActualItems(items)
     local typeDone = {}; -- we keep track of what type of clothes we already wear to avoid wearing 2 times the same type (click on a stack of socks, select wear and you'll wear them 1 by 1 otherwise)
     for i,k in pairs(items) do
-        if not typeDone[k:getType()] then
+        if not typeDone[k:getBodyLocation()] then
             if k:getBodyLocation() == "Hat" or k:getBodyLocation() == "FullHat" then
                 local playerObj = getSpecificPlayer(player);
                 local wornItems = playerObj:getWornItems()
@@ -2065,7 +2065,7 @@ ISInventoryPaneContextMenu.onWearItems = function(items, player)
                 end
             end
             ISInventoryPaneContextMenu.wearItem(k, player)
-            typeDone[k:getType()] = true;
+            typeDone[k:getBodyLocation()] = true;
         end
     end
 end

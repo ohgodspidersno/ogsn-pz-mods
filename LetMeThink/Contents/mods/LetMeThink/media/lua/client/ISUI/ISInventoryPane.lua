@@ -848,6 +848,40 @@ function ISInventoryPane.getActualItems(items)
 	return ret
 end
 
+function ISInventoryPane:doContextualDblClick(item)
+	local playerObj = getSpecificPlayer(self.player);
+	if instanceof(item, "HandWeapon") then
+		if playerObj:isHandItem(item) then
+			ISInventoryPaneContextMenu.unequipItem(item, self.player);
+		elseif item:getCondition() > 0 then
+			ISInventoryPaneContextMenu.equipWeapon(item, true, item:isTwoHandWeapon(), self.player);
+		end
+	end
+	if instanceof(item, "Clothing") then
+		if playerObj:isEquipped(item) then
+			ISInventoryPaneContextMenu.onUnEquip({item}, self.player);
+		else
+			ISInventoryPaneContextMenu.onWearItems({item}, self.player);
+		end
+	end
+	if instanceof(item, "InventoryContainer") and item:canBeEquipped() ~= nil and item:canBeEquipped() ~= "" then
+		if playerObj:isEquipped(item) then
+			ISInventoryPaneContextMenu.onUnEquip({item}, self.player);
+		else
+			ISInventoryPaneContextMenu.onWearItems({item}, self.player);
+		end
+	elseif instanceof (item, "InventoryContainer") and item:getItemReplacementSecondHand() ~= nil then
+		if playerObj:isEquipped(item) then
+			ISInventoryPaneContextMenu.onUnEquip({item}, self.player);
+		else
+			ISInventoryPaneContextMenu.equipWeapon(item, false, false, self.player);
+		end
+	end
+	if instanceof(item, "Food") then
+		ISInventoryPaneContextMenu.onEatItems({item}, 1, self.player);
+	end
+end
+
 function ISInventoryPane:onMouseDoubleClick(x, y)
 	if not isShiftKeyDown() and self.items and self.mouseOverOption and self.previousMouseUp == self.mouseOverOption then
 		if getCore():getGameMode() == "Tutorial" then
@@ -881,13 +915,9 @@ function ISInventoryPane:onMouseDoubleClick(x, y)
 							doWalk = false
 						end
 						ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, v, v:getContainer(), playerInv))
-					elseif k ~= 1 and v:getContainer() == playerInv and instanceof(v, "HandWeapon") then
+					elseif k ~= 1 and v:getContainer() == playerInv then
 						local tItem = v;
-						if playerObj:isHandItem(tItem) then
-							ISInventoryPaneContextMenu.unequipItem(tItem, self.player);
-						else
-							ISInventoryPaneContextMenu.equipWeapon(tItem, true, tItem:isTwoHandWeapon(), self.player);
-						end
+						self:doContextualDblClick(tItem);
 						break
 					end
 				end
@@ -898,12 +928,8 @@ function ISInventoryPane:onMouseDoubleClick(x, y)
 			elseif luautils.walkToContainer(item:getContainer(), self.player) then
 				ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), playerInv))
 			end
-		elseif item and item:getContainer() == playerInv and instanceof(item, "HandWeapon") then
-			if playerObj:isHandItem(item) then
-				ISInventoryPaneContextMenu.unequipItem(item, self.player);
-			else
-				ISInventoryPaneContextMenu.equipWeapon(item, true, item:isTwoHandWeapon(), self.player);
-			end
+		elseif item and item:getContainer() == playerInv then -- double click do some basic action, equip weapon/wear clothing...
+			self:doContextualDblClick(item);
 		end
 		self.previousMouseUp = nil;
 	end
