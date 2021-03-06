@@ -16,7 +16,7 @@ function Recipe.OnCreate.UpgradeSpear(items, result, player, selectedItem)
             oHPpercent = oHP/oMaxHP;
         end
         -- binding used
-        binding = type if type=="DuctTape" or type=="Twine" or type=="LeatherStrips" else end
+        if type=="DuctTape" or type=="Twine" or type=="LeatherStrips" then binding = type end
         -- spearhead's condition
         if instanceof (item, "HandWeapon") and type ~= "SpearCrafted" and type ~= "LongSpear" and type ~= "ShovelSpear" and type ~= "Shovel2Spear" and type ~= "SpearShovel" and type ~= "SpearShovel2" then
           spearheadHP = item:getCondition();
