@@ -1,0 +1,35 @@
+Every language has a required encoding
+If you don't know how to change an encoding, then you can get around it
+by removing all non-English special characters. That includes accented letters.
+
+
+UTF-8 Languages:
+  English (EN)
+  Chinese (CN)
+  Estonian (EE)
+  Japanese (JP)
+
+Windows-1252 Languages:
+  Afrikaans (AF)
+  Arabic (AR)
+  Danish (DA)
+  German (DE)
+  Spanish (ES)
+  French (FR)
+  Hungarian (HU)
+  Italian (IT)
+  Dutch (NL)
+  Norwegian (NO)
+  Portuguese (PT)
+  Brazilian Portuguese (PTBR)
+  Thai (TH)
+
+Windows-1250 Languages:
+  Polish (PL)
+  Czech (CS)
+
+Other Languages:
+  Chinese (CH) uses Big-5
+  Russian (RU) uses Windows-1251
+  Turkish(TR) uses Windows-1254
+  Korean (KO) uses UTF-16 BE

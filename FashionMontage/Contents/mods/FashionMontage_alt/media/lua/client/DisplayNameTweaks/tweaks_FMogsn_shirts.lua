@@ -1,0 +1,30 @@
+require("ItemTweaker_Copy_ogsn");
+-- TweakItem("Module.ItemName","AttributeName","New Attribute Value");
+
+-- Some of these aren't necessary but I will do them all anyway
+TweakItem("Base.Shirt_FormalWhite","DisplayName","Shirt");
+TweakItem("Base.Shirt_Denim","DisplayName","Shirt - Denim");
+TweakItem("Base.Shirt_FormalWhite_ShortSleeveTINT","DisplayName","Shirt - Short Sleeve");
+TweakItem("Base.Shirt_CamoDesert","DisplayName","Army Camo - Desert");
+TweakItem("Base.Shirt_CamoGreen","DisplayName","Army Camo - Forest");
+TweakItem("Base.Shirt_CamoUrban","DisplayName","Army Camo - Urban");
+TweakItem("Base.Shirt_Baseball_KY","DisplayName","Baseball Shirt - Kentucky");
+TweakItem("Base.Shirt_Baseball_Rangers","DisplayName","Baseball Shirt - Riverside Rangers");
+TweakItem("Base.Shirt_Baseball_Z","DisplayName","Baseball Shirt - Z Hurricanes");
+TweakItem("Base.Shirt_HawaiianTINT","DisplayName","Hawaiian Shirt");
+TweakItem("Base.Shirt_HawaiianRed","DisplayName","Hawaiian Shirt - Red");
+TweakItem("Base.Shirt_Jockey01","DisplayName","Jockey Silks #1");
+TweakItem("Base.Shirt_Jockey02","DisplayName","Jockey Silks #2");
+TweakItem("Base.Shirt_Jockey03","DisplayName","Jockey Silks #3");
+TweakItem("Base.Shirt_Jockey04","DisplayName","Jockey Silks #4");
+TweakItem("Base.Shirt_Jockey05","DisplayName","Jockey Silks #5");
+TweakItem("Base.Shirt_Jockey06","DisplayName","Jockey Silks #6");
+TweakItem("Base.Shirt_Lumberjack","DisplayName","Lumberjack Shirt");
+TweakItem("Base.Shirt_Scrubs","DisplayName","Medical Scrubs");
+TweakItem("Base.Shirt_Ranger","DisplayName","Park Ranger Shirt");
+TweakItem("Base.Shirt_OfficerWhite","DisplayName","Police Shirt");
+TweakItem("Base.Shirt_PoliceBlue","DisplayName","Police Trooper Shirt");
+TweakItem("Base.Shirt_PoliceGrey","DisplayName","Police Deputy Shirt");
+TweakItem("Base.Shirt_PrisonGuard","DisplayName","Prison Guard Shirt");
+TweakItem("Base.Shirt_Priest","DisplayName","Priest Shirt");
+TweakItem("Base.Shirt_Workman","DisplayName","Workman Shirt");
