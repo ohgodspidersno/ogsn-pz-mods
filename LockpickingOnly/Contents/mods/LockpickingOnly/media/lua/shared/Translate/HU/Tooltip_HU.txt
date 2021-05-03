@@ -1,0 +1,7 @@
+Eszköztipp_HU = {
+  Tooltip_BobbyPin_FMJ = "Zárszedõ és csavarhúzó használható <br> zárak kiválasztására, ha rendelkezik lakatos készségekkel",
+  Tooltip_LockPickingMag_FMJ = "Tanulja meg, hogyan válasszon zárakat egy lakatcsavar és csavarhúzó segítségével, <br> és hogyan készítsen zárpálcákat gemkapcsokkal vagy vezetékkel",
+  Tooltip_LockPickingMag2_FMJ = "Tanulja meg, hogyan kell elpusztítani a zárakat feszítõvas segítségével",
+  Tooltip_Screwdriver_FMJ = "Csavarhúzóval és lockpick-kel lehet <br> felvenni a zárakat, ha rendelkezik lakatos készségekkel",
+  Tooltip_Crowbar_FMJ = "A zárak megsemmisítésére használható, <br> ha rendelkezik lakatos készségekkel",
+}

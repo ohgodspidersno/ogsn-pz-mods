@@ -1,0 +1,18 @@
+UI_HU = {
+UI_trait_nimblefingers = "Lakatos",
+UI_trait_nimblefingersDesc = "A zárak szedésének és feltörésének ismeretével kezdõdik. <br> Gyorsabb lockpicking. Nagyobb esélyek a zár kinyitására.",
+UI_Text_locklevel_veryeasy = "Nagyon könnyû",
+UI_Text_locklevel_easy = "Egyszerû",
+UI_Text_locklevel_medium = "Átlagos",
+UI_Text_locklevel_hard = "Nehéz",
+UI_Text_locklevel_veryhard = "Nagyon nehéz",
+UI_Text_locklevel_willbreak = "Megszakadt",
+UI_Text_brokenLockModal = "Nem választhat törött zárat.",
+UI_Text_contextBreakDoorLock = "Lezárás megsemmisítése",
+UI_Text_contextPickDoorLock = "Pick Lock",
+UI_Text_contextBreakWindowLock = "Lezárás megsemmisítése",
+UI_Text_BobbyStuck = "A fenébe! A hajtû beragadt!",
+UI_Text_BobbyBroken = "A fenébe! Eltörtem a hajtût!",
+UI_trait_BurglarDesc = "Képesek vezetékes jármûvekre. Megtörhetik és kiválthatják a zárakat. Kevesebb az esély az ablak reteszének betörésére.",
+UI_profdesc_burglar = "Képesek vezetékes jármûvekre. Megtörhetik és kiválthatják a zárakat. Kevesebb az esély az ablak reteszének betörésére.",
+}

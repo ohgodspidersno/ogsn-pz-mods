@@ -1,6 +1,6 @@
 ItemName_CH = {
 ItemName_FMJ.BobbyPin = "鎖器",
 ItemName_FMJ.BobbyPinRaw = "髮夾",
-ItemName_FMJ.LockPickingMag = "開鎖手冊, Vol. 1",
-ItemName_FMJ.LockPickingMag2 = "開鎖手冊, Vol. 2",
+ItemName_FMJ.LockPickingMag = "開鎖雜誌 1",
+ItemName_FMJ.LockPickingMag2 = "開鎖雜誌 2",
 }

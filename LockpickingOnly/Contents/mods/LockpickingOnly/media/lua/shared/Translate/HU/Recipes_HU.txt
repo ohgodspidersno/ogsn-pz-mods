@@ -1,0 +1,4 @@
+Recipes_HU = {
+  Recipe_Create_Hairpin = "Hozzon létre zárfeltörés",
+  Recipe_Create_Lockpick = "Hozzon létre zárfeltörés",
+}

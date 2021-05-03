@@ -1,0 +1,4 @@
+ItemName_HU = {
+ItemName_FMJ.BobbyPin = "Zárfeltörés"
+ItemName_FMJ.BobbyPinRaw = "Hajtû",
+}
