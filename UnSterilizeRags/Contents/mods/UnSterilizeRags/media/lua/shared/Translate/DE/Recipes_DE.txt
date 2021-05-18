@@ -1,0 +1,3 @@
+Recipes_DE {
+Downgrade_Sterilized_Rag_To_Ripped_Sheet  =  "Sterilisierten Lappen zu Stofffetzen umändern",
+}
