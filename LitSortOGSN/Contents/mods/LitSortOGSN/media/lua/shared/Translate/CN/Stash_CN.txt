@@ -1,0 +1,5 @@
+Stash_CN = {
+Stash_AnnotedMap = " 注释过的地图",
+Stash_AnnotatedMap_Prefix = " 的地图"
+Stash_AnnotedMap_Suffix = "被注释过的"
+}

@@ -1,0 +1,179 @@
+ItemName_EN = {
+
+/************** MAPS **************/
+ItemName_Base.KnoxCountryMap = " Knox Country的地图",
+ItemName_Base.KnoxCountryMapSecret = " Knox Country的地图(破旧的)",
+ItemName_Base.March_Ridge_Map = " March Ridge的地图",
+ItemName_Base.Muldraugh_Map = " Muldraugh的地图",
+ItemName_Base.Rosewood_Map = " Rosewood的地图",
+ItemName_Base.Westpoint_Map = " Westpoint的地图",
+ItemName_Base.Riverside_Map = " Riverside的地图",
+
+/**** IMPROVED MAPS MOD ****/
+ItemName_Base.CrossroadsMallMap = " Crossroads Mall的地图",
+ItemName_Base.DixieMap = " Dixie的地图",
+ItemName_Base.ScenicGroveMap = " Scenic Grove的地图",
+ItemName_Base.BedfordMap = " Bedford Falls的地图",
+
+/************** BOOKS **************/
+ItemName_Base.BookCarpentry1 = " 木工 Vol.1: 初级",
+ItemName_Base.BookCarpentry2 = " 木工 Vol.2: 中级",
+ItemName_Base.BookCarpentry3 = " 木工 Vol.3: 高级",
+ItemName_Base.BookCarpentry4 = " 木工 Vol.4: 专家",
+ItemName_Base.BookCarpentry5 = " 木工 Vol.5: 大师",
+
+ItemName_Base.BookCooking1 = " 烹饪 Vol.1: 初级",
+ItemName_Base.BookCooking2 = " 烹饪 Vol.2: 中级",
+ItemName_Base.BookCooking3 = " 烹饪 Vol.3: 高级",
+ItemName_Base.BookCooking4 = " 烹饪 Vol.4: 专家",
+ItemName_Base.BookCooking5 = " 烹饪 Vol.5: 大师",
+
+ItemName_Base.BookElectrician1 = " 电工 Vol.1: 初级",
+ItemName_Base.BookElectrician2 = " 电工 Vol.2: 中级",
+ItemName_Base.BookElectrician3 = " 电工 Vol.3: 高级",
+ItemName_Base.BookElectrician4 = " 电工 Vol.4: 专家",
+ItemName_Base.BookElectrician5 = " 电工 Vol.5: 大师",
+
+ItemName_Base.BookFarming1 = " 种植 Vol.1: 初级",
+ItemName_Base.BookFarming2 = " 种植 Vol.2: 中级",
+ItemName_Base.BookFarming3 = " 种植 Vol.3: 高级",
+ItemName_Base.BookFarming4 = " 种植 Vol.4: 专家",
+ItemName_Base.BookFarming5 = " 种植 Vol.5: 大师",
+
+ItemName_Base.BookFishing1 = " 钓鱼 Vol.1: 初级",
+ItemName_Base.BookFishing2 = " 钓鱼 Vol.2: 中级",
+ItemName_Base.BookFishing3 = " 钓鱼 Vol.3: 高级",
+ItemName_Base.BookFishing4 = " 钓鱼 Vol.4: 专家",
+ItemName_Base.BookFishing5 = " 钓鱼 Vol.5: 大师",
+
+ItemName_Base.BookFirstAid1 = " 急救 Vol.1: 初级",
+ItemName_Base.BookFirstAid2 = " 急救 Vol.2: 中级",
+ItemName_Base.BookFirstAid3 = " 急救 Vol.3: 高级",
+ItemName_Base.BookFirstAid4 = " 急救 Vol.4: 专家",
+ItemName_Base.BookFirstAid5 = " 急救 Vol.5: 大师",
+
+ItemName_Base.BookForaging1 = " 采集 Vol.1: 初级",
+ItemName_Base.BookForaging2 = " 采集 Vol.2: 中级",
+ItemName_Base.BookForaging3 = " 采集 Vol.3: 高级",
+ItemName_Base.BookForaging4 = " 采集 Vol.4: 专家",
+ItemName_Base.BookForaging5 = " 采集 Vol.5: 大师",
+
+ItemName_Base.BookMechanic1 = " 机械 Vol.1: 初级",
+ItemName_Base.BookMechanic2 = " 机械 Vol.2: 中级",
+ItemName_Base.BookMechanic3 = " 机械 Vol.3: 高级",
+ItemName_Base.BookMechanic4 = " 机械 Vol.4: 专家",
+ItemName_Base.BookMechanic5 = " 机械 Vol.5: 大师",
+
+ItemName_Base.BookMetalWelding1 = " 金工 Vol.1: 初级",
+ItemName_Base.BookMetalWelding2 = " 金工 Vol.2: 中级",
+ItemName_Base.BookMetalWelding3 = " 金工 Vol.3: 高级",
+ItemName_Base.BookMetalWelding4 = " 金工 Vol.4: 专家",
+ItemName_Base.BookMetalWelding5 = " 金工 Vol.5: 大师",
+
+ItemName_Base.BookBlacksmith1 = " 锻造 Vol.1: 初级",
+ItemName_Base.BookBlacksmith2 = " 锻造 Vol.2: 中级",
+ItemName_Base.BookBlacksmith3 = " 锻造 Vol.3: 高级",
+ItemName_Base.BookBlacksmith4 = " 锻造 Vol.4: 专家",
+ItemName_Base.BookBlacksmith5 = " 锻造 Vol.5: 大师",
+
+ItemName_Base.BookTailoring1 = " 裁缝 Vol.1: 初级",
+ItemName_Base.BookTailoring2 = " 裁缝 Vol.2: 中级",
+ItemName_Base.BookTailoring3 = " 裁缝 Vol.3: 高级",
+ItemName_Base.BookTailoring4 = " 裁缝 Vol.4: 专家",
+ItemName_Base.BookTailoring5 = " 裁缝 Vol.5: 大师",
+
+ItemName_Base.BookTrapping1 = " 陷阱 Vol.1: 初级",
+ItemName_Base.BookTrapping2 = " 陷阱 Vol.2: 中级",
+ItemName_Base.BookTrapping3 = " 陷阱 Vol.3: 高级",
+ItemName_Base.BookTrapping4 = " 陷阱 Vol.4: 专家",
+ItemName_Base.BookTrapping5 = " 陷阱 Vol.5: 大师",
+
+/************** RECIPE MAGS **************/
+ItemName_Base.FishingMag1 = " 垂钓大全 Vol. 1",
+ItemName_Base.FishingMag2 = " 垂钓大全 Vol. 2",
+ItemName_Base.ElectronicsMag1 = " 电工杂志 Vol. 1",
+ItemName_Base.ElectronicsMag2 = " 电工杂志 Vol. 2",
+ItemName_Base.ElectronicsMag3 = " 电工杂志 Vol. 3",
+ItemName_Base.ElectronicsMag5 = " 电工杂志 Vol. 4",
+ItemName_Base.EngineerMagazine1 = " 工程师杂志 Vol. 1",
+ItemName_Base.EngineerMagazine2 = " 工程师杂志 Vol. 2",
+ItemName_FlameTrapMag.FlameTrapMagazine = " 工程师杂志 Vol. 3",
+ItemName_Base.CookingMag1 = " 好主厨杂志 Vol. 1",
+ItemName_Base.CookingMag2 = " 好主厨杂志 Vol. 2",
+ItemName_Base.DairyCookingMag = " 好主厨杂志 Vol. 3",
+ItemName_filcher.SFCookingMag1 = " 好主厨杂志 Vol. 4",
+ItemName_filcher.SFCookingMag2 = " 好主厨杂志 Vol. 5",
+ItemName_filcher.SFCookingMag3 = " 好主厨杂志 Vol. 6",
+ItemName_Radio.RadioMag1 = " 无线电技术 Vol. 1",
+ItemName_Radio.RadioMag2 = " 无线电技术 Vol. 2",
+ItemName_Radio.RadioMag3 = " 无线电技术 Vol. 3",
+ItemName_Base.HuntingMag1 = " 捕猎杂志 Vol. 1",
+ItemName_Base.HuntingMag2 = " 捕猎杂志 Vol. 2",
+ItemName_Base.HuntingMag3 = " 捕猎杂志 Vol. 3",
+ItemName_FMJ.LockPickingMag = " 锁匠手册 Vol. 1",
+ItemName_FMJ.LockPickingMag2 = " 锁匠手册 Vol. 2",
+ItemName_Base.MetalworkMag1 = " 金工交流杂志 Vol. 1",
+ItemName_Base.MetalworkMag2 = " 金工交流杂志 Vol. 2",
+ItemName_Base.MetalworkMag3 = " 金工交流杂志 Vol. 3",
+ItemName_Base.MetalworkMag4 = " 金工交流杂志 Vol. 4",
+ItemName_Base.SmithingMag1 = " 锻造指南 Vol. 1",
+ItemName_Base.SmithingMag2 = " 锻造指南 Vol. 2",
+ItemName_Base.SmithingMag3 = " 锻造指南 Vol. 3",
+ItemName_Base.SmithingMag4 = " 锻造指南 Vol. 4",
+
+/************** SKILL MAGS **************/
+ItemName_filcher.SFCookingGuide = " Complete Cooking Guide",
+ItemName_Base.FarmingMag1 = " 种植年鉴",
+ItemName_Base.HerbalistMag = " 药科植物图鉴",
+ItemName_Base.ElectronicsMag4 = " 发电机使用指北",
+ItemName_Base.NutritionistMag = " 营养师手册",
+
+/************** AUTO MAGS **************/
+ItemName_Base.MechanicMag1 = " 莱恩汽车 Vol. 1: 基础型号",
+ItemName_Base.MechanicMag2 = " 莱恩汽车 Vol. 2: 商业款",
+ItemName_Base.MechanicMag3 = " 莱恩汽车 Vol. 3: 高性能型",
+
+/************** ENTERTAINMENT **************/
+ItemName_Base.Book = " 书",
+ItemName_Base.Doodle = " 涂鸦",
+ItemName_filcher.ColoringBook = " 涂鸦册",
+ItemName_Base.ComicBook = " 漫画书",
+ItemName_filcher.Crosswords = " 数独板",
+ItemName_Base.Magazine = " 杂志",
+ItemName_filcher.MagazineX = " 杂志",
+ItemName_Base.Newspaper = " 报纸",
+ItemName_filcher.NotesJokes = " 笑林广记",
+ItemName_filcher.Novel = " 小说",
+
+/************** WRITING **************/
+ItemName_Base.Note = " 记事本",
+ItemName_Base.Notebook = " 空的记事本",
+ItemName_Base.Journal = " 日记",
+ItemName_Base.SheetPaper = " 一张纸",
+ItemName_Base.SheetPaper2 = " 一张纸",
+
+/************** NO FUNCTION **************/
+ItemName_filcher.GiftCard = " 礼品卡",
+ItemName_filcher.PostcardLocal = " 明信片",
+ItemName_filcher.PostcardOthers = " 明信片",
+ItemName_filcher.RippedPages = " 撕开的纸",
+
+}
+
+/** These are in alphabetical order **/
+/** Horizontal Tab: >	<             **/
+/** Normal Space: > <               **/
+/** En quad: > <                    **/
+/** En Space: > <                   **/
+/** Em Quad: > <                    **/
+/** Em Space: > <                   **/
+/** Thick Space: > <                **/
+/** Mid Space: > <                  **/
+/** Sixth Space: > <                **/
+/** Figure Space: > <               **/
+/** Punctuation Space: > <          **/
+/** Thin Space: > <                 **/
+/** Hair Space: > <                 **/
+/** Narrow No-Break Space: > <      **/
+/** Medium Mathematical Space: > <  **/
+/** Ideographic Space: >　<          **/

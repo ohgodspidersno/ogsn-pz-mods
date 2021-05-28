@@ -1,0 +1,3 @@
+Recipes_ES {
+Downgrade_Sterilized_Rag_To_Ripped_Sheet  =  "Degradar el paño esterilizado a una hoja rasgada",
+}
