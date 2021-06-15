@@ -1,4 +1,4 @@
-ItemName_EN = {
+ItemName_CN = {
 
 /************** MAPS **************/
 ItemName_Base.KnoxCountryMap = " 诺克斯县的地图",
@@ -10,10 +10,10 @@ ItemName_Base.Westpoint_Map = " 西点的地图",
 ItemName_Base.Riverside_Map = " 河畔镇的地图",
 
 /**** IMPROVED MAPS MOD ****/
-ItemName_Base.CrossroadsMallMap = " Crossroads Mall的地图",
-ItemName_Base.DixieMap = " Dixie的地图",
-ItemName_Base.ScenicGroveMap = " Scenic Grove的地图",
-ItemName_Base.BedfordMap = " Bedford Falls的地图",
+ItemName_Base.CrossroadsMallMap = " Crossroads Mall 的地图",
+ItemName_Base.DixieMap = " Dixie 的地图",
+ItemName_Base.ScenicGroveMap = " Scenic Grove 的地图",
+ItemName_Base.BedfordMap = " Bedford Falls 的地图",
 
 /************** BOOKS **************/
 ItemName_Base.BookCarpentry1 = " 木工 Vol.1: 初级",

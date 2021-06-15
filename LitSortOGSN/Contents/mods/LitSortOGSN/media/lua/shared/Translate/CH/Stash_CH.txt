@@ -1,0 +1,5 @@
+Stash_CH = {
+Stash_AnnotedMap = " 註解的地圖",
+Stash_AnnotatedMap_Prefix = " 的地圖"
+Stash_AnnotedMap_Suffix = "被註解的"
+}

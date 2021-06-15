@@ -1,0 +1,15 @@
+Items_CH = {
+DisplayName_Knox_Country_Map = " Knox Country 的地圖",
+DisplayName_Crumpled_Map = " Knox Country 的地圖(破舊 的)",
+DisplayName_March_Ridge_Map = " March Ridge 的地圖",
+DisplayName_Muldraugh_Map = " Muldraugh 的地圖",
+DisplayName_Rosewood_Map = " Rosewood 的地圖",
+DisplayName_Westpoint_Map = " Westpoint 的地圖",
+DisplayName_Riverside_Map = " Riverside 的地圖",
+
+/**** IMPROVED MAPS MOD ****/
+DisplayName_Crossroads_Mall_Map = " Crossroads Mall 的地圖",
+DisplayName_Dixie_Map = " Dixie 的地圖",
+DisplayName_Scenic_Grove_Map = " Scenic Grove 的地圖",
+DisplayName_Bedford_Falls_Map = " Bedford Falls 的地圖",
+}

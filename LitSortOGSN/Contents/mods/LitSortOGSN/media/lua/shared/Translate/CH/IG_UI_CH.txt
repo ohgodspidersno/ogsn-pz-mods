@@ -1,0 +1,5 @@
+IGUI_CH = {
+IGUI_PlayerText_FlaggedBook1 = "我會將它記錄起來",
+IGUI_PlayerText_FlaggedBook2 = "我記得我之前看過這",
+IGUI_PlayerText_FlaggedBook3 = "我已經記錄了",
+}
