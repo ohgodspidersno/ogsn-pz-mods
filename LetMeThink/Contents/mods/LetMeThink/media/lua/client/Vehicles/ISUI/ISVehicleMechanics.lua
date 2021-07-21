@@ -180,7 +180,6 @@ function ISVehicleMechanics:createChildren()
 end
 
 function ISVehicleMechanics:onListMouseDown(x, y)
-  if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 and not getDebug() then return; end
 
   self.parent.listbox.selected = 0;
   self.parent.bodyworklist.selected = 0;
@@ -202,7 +201,6 @@ function ISVehicleMechanics:onListRightMouseUp(x, y)
 end
 
 function ISVehicleMechanics:doPartContextMenu(part, x, y)
-  if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return; end
 
   local playerObj = getSpecificPlayer(self.playerNum);
   self.context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
@@ -925,7 +923,6 @@ function ISVehicleMechanics:onRightMouseUp(x, y)
     self:selectPart(part)
     self:doPartContextMenu(part, x, y)
   elseif ISVehicleMechanics.cheat or playerObj:getAccessLevel() ~= "None" then
-    if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return; end
     self.context = ISContextMenu.get(self.playerNum, x + self:getAbsoluteX(), y + self:getAbsoluteY())
     if self.vehicle:getScript() and self.vehicle:getScript():getWheelCount() > 0 then
       if self.vehicle:getPartById("Engine") then

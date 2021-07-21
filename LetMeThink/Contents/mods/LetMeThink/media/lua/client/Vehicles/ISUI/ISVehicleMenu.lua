@@ -41,9 +41,6 @@ function ISVehicleMenu.OnFillWorldObjectContextMenu(player, context, worldobject
 end
 
 function ISVehicleMenu.showRadialMenu(playerObj)
-  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-  if isPaused then return end
-
   local vehicle = playerObj:getVehicle()
   if not vehicle then
     ISVehicleMenu.showRadialMenuOutside(playerObj)
@@ -1266,9 +1263,6 @@ function ISVehicleMenu.onExitAux(playerObj, seat)
 end
 
 function ISVehicleMenu.onShowSeatUI(playerObj, vehicle)
-  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-  if isPaused then return end
-
   local playerNum = playerObj:getPlayerNum()
   if not ISVehicleMenu.seatUI then
     ISVehicleMenu.seatUI = {}

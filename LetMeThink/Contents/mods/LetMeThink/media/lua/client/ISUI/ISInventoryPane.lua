@@ -418,8 +418,7 @@ function ISInventoryPane:doButtons(y)
   self.contextButton2:setVisible(false);
   self.contextButton3:setVisible(false);
 
-  if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 or
-  getPlayerContextMenu(self.player):isAnyVisible() or
+  if getPlayerContextMenu(self.player):isAnyVisible() or
   getSpecificPlayer(self.player):isAsleep() then
     return
   end
@@ -1151,8 +1150,6 @@ function ISInventoryPane:doContextOnJoypadSelected()
 if JoypadState.disableInvInteraction then
 return;
 end
-if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-return;
 end
 
 local playerObj = getSpecificPlayer(self.player)

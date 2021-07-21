@@ -171,9 +171,6 @@ function ISObjectClickHandler.doClickWindow(object, playerNum, playerObj)
 end
 
 function ISObjectClickHandler.doClickSpecificObject(object, playerNum, playerObj)
-  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-  if isPaused then return false end
-
   if not playerObj or playerObj:isDead() then return false end
 
   if not playerObj:getCurrentSquare() then return false end
@@ -213,8 +210,7 @@ ISObjectClickHandler.doClick = function (object, x, y)
   local playerNum = 0
   local playerObj = getSpecificPlayer(playerNum)
 
-  local isPaused = UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0
-  if getCore():getGameMode() ~= "Tutorial" and not isPaused and instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
+  if getCore():getGameMode() ~= "Tutorial" and instanceof(object, "IsoWaveSignal") and playerObj:isAlive() and not playerObj:IsAiming() and
   playerObj:getCurrentSquare() and object:getSquare() and
   playerObj:DistToSquared(object:getX() + 0.5, object:getY() + 0.5) < 1.5 * 1.5 and
   not playerObj:getCurrentSquare():isSomethingTo(object:getSquare()) then

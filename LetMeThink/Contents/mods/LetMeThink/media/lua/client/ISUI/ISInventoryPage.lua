@@ -237,10 +237,6 @@ local TurnOnOff = {
 }
 
 function ISInventoryPage:toggleStove()
-  if UIManager.getSpeedControls() and UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-    return
-  end
-
   local object = self.inventoryPane.inventory:getParent()
   if not object then return end
   local className = object:getObjectName()
@@ -1556,7 +1552,7 @@ function ISInventoryPage.loadWeight(inv)
   end
 
   ISInventoryPage.onKeyPressed = function(key)
-    if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getGameSpeed() > 0 and getPlayerInventory(0) and getCore():getGameMode() ~= "Tutorial" then
+    if key == getCore():getKey("Toggle Inventory") and getSpecificPlayer(0) and getPlayerInventory(0) and getCore():getGameMode() ~= "Tutorial" then
       getPlayerInventory(0):setVisible(not getPlayerInventory(0):getIsVisible());
       getPlayerLoot(0):setVisible(getPlayerInventory(0):getIsVisible());
     end

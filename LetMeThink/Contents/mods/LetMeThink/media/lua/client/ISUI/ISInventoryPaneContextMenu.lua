@@ -20,11 +20,6 @@ ISInventoryPaneContextMenu.createMenu = function(player, isInPlayerInventory, it
   end
   if ISInventoryPaneContextMenu.dontCreateMenu then return; end
 
-  -- if the game is paused, we don't show the item context menu
-  if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then
-    return;
-  end
-
   -- items is a list that could container either InventoryItem objects, OR a table with a list of InventoryItem objects in .items
   -- Also there is a duplicate entry first in the list, so ignore that.
 
@@ -737,8 +732,6 @@ end
 ISInventoryPaneContextMenu.createMenuNoItems = function(playerNum, isLoot, x, y)
 
   if ISInventoryPaneContextMenu.dontCreateMenu then return end
-
-  if UIManager.getSpeedControls():getCurrentGameSpeed() == 0 then return end
 
   local playerObj = getSpecificPlayer(playerNum)
 
