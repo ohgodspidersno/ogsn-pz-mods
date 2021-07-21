@@ -1150,7 +1150,6 @@ function ISInventoryPane:doContextOnJoypadSelected()
 if JoypadState.disableInvInteraction then
 return;
 end
-end
 
 local playerObj = getSpecificPlayer(self.player)
 if playerObj:isAsleep() then return end
