@@ -1,11 +1,20 @@
 require 'Items/Distributions'
 require 'Items/ProceduralDistributions'
 
+--[[
+ORIGINAL DISTRO CODE BY OH GOD SPIDERS NO (https://steamcommunity.com/id/OhGodSpidersNo)
+
+COMMENTS AND CODE MODIFICATIONS BY PARANOID&AFRAID
+--]]
+
 SuburbsDistributions = SuburbsDistributions or {}
 ProceduralDistributions = ProceduralDistributions or {}
 
+-- Reinsert maps into the "MagazineRackMaps" and MagzineRackMixed" ProcDistro tables.
 
 function stockIWBUMS()
+
+--[[ Nonapplicable due to all magazines and maps being pushed into the aforementioned loot tables.
   table.insert(SuburbsDistributions["zippeestore"]["shelvesmag"].items, "Base.KnoxCountryMap");
   table.insert(SuburbsDistributions["zippeestore"]["shelvesmag"].items, 1);
 
@@ -23,7 +32,16 @@ function stockIWBUMS()
 
   table.insert(SuburbsDistributions["gigamart"]["shelvesmag"].items, "Base.KnoxCountryMap");
   table.insert(SuburbsDistributions["gigamart"]["shelvesmag"].items, 1);
+--]]
 
+  -- Reinserted map into the appropriate distro tables.
+  table.insert(ProceduralDistributions["list"]["MagazineRackMaps"].items, "Base.KnoxCountryMap");
+  table.insert(ProceduralDistributions["list"]["MagazineRackMaps"].items, 1);
+
+  table.insert(ProceduralDistributions["list"]["MagazineRackMixed"].items, "Base.KnoxCountryMap");
+  table.insert(ProceduralDistributions["list"]["MagazineRackMixed"].items, 1);
+
+  -- Everything else should be fine.
   table.insert(SuburbsDistributions["all"]["inventorymale"].items, "Base.KnoxCountryMap");
   table.insert(SuburbsDistributions["all"]["inventorymale"].items, 0.1);
 
