@@ -1,19 +1,19 @@
 require("ItemTweaker_Copy_ogsn");
 
-TweakItem("Base.PastaPan","DaysFresh","2");
-TweakItem("Base.PastaPan","DaysTotallyRotten","4");
+OGSNTweakItem("Base.PastaPan","DaysFresh","2");
+OGSNTweakItem("Base.PastaPan","DaysTotallyRotten","4");
 
-TweakItem("Base.RicePan","DaysFresh","2");
-TweakItem("Base.RicePan","DaysTotallyRotten","4");
+OGSNTweakItem("Base.RicePan","DaysFresh","2");
+OGSNTweakItem("Base.RicePan","DaysTotallyRotten","4");
 
-TweakItem("Base.PastaPot","DaysFresh","2");
-TweakItem("Base.PastaPot","DaysTotallyRotten","4");
+OGSNTweakItem("Base.PastaPot","DaysFresh","2");
+OGSNTweakItem("Base.PastaPot","DaysTotallyRotten","4");
 
-TweakItem("Base.RicePot","DaysFresh","2");
-TweakItem("Base.RicePot","DaysTotallyRotten","4");
+OGSNTweakItem("Base.RicePot","DaysFresh","2");
+OGSNTweakItem("Base.RicePot","DaysTotallyRotten","4");
 
-TweakItem("Base.RiceBowl","DaysFresh","2");
-TweakItem("Base.RiceBowl","DaysTotallyRotten","4");
+OGSNTweakItem("Base.RiceBowl","DaysFresh","2");
+OGSNTweakItem("Base.RiceBowl","DaysTotallyRotten","4");
 
-TweakItem("Base.PastaBowl","DaysFresh","2");
-TweakItem("Base.PastaBowl","DaysTotallyRotten","4");
+OGSNTweakItem("Base.PastaBowl","DaysFresh","2");
+OGSNTweakItem("Base.PastaBowl","DaysTotallyRotten","4");

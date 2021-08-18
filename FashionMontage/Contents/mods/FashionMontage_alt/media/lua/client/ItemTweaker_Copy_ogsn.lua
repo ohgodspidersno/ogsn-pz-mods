@@ -4,14 +4,14 @@
 
 -- DarkSlayerEX's Item Tweaker Core: an API for tweaking existing items without redefining them entirely.
 --Initializes the tables needed for the code to run
-if not ItemTweaker then  ItemTweaker = {} end
-if not TweakItem then  TweakItem = {} end
-if not TweakItemData then  TweakItemData = {} end
+if not ogsnItemTweaker then  ogsnItemTweaker = {} end
+if not OGSNTweakItem then  OGSNTweakItem = {} end
+if not OGSNTweakItemData then  OGSNTweakItemData = {} end
 
---Prep code to make the changes to all item in the TweakItemData table.
-function ItemTweaker.tweakItems()
+--Prep code to make the changes to all item in the OGSNTweakItemData table.
+function ogsnItemTweaker.tweakItems()
 	local item;
-	for k,v in pairs(TweakItemData) do
+	for k,v in pairs(OGSNTweakItemData) do
 		for t,y in pairs(v) do
 			item = ScriptManager.instance:getItem(k);
 			if item ~= nil then
@@ -22,14 +22,14 @@ function ItemTweaker.tweakItems()
 	end
 end
 
-function TweakItem(itemName, itemProperty, propertyValue)
-	if not TweakItemData[itemName] then
-		TweakItemData[itemName] = {};
+function OGSNTweakItem(itemName, itemProperty, propertyValue)
+	if not OGSNTweakItemData[itemName] then
+		OGSNTweakItemData[itemName] = {};
 	end
-	TweakItemData[itemName][itemProperty] = propertyValue;
+	OGSNTweakItemData[itemName][itemProperty] = propertyValue;
 end
 
-Events.OnGameBoot.Add(ItemTweaker.tweakItems)
+Events.OnGameBoot.Add(ogsnItemTweaker.tweakItems)
 
 
 --[[
@@ -45,18 +45,18 @@ You can make compatibility patches, allowing tweaks to only be applied under the
 Examples:
 
 
-		TweakItemData["MyMod.MyItem"] = { ["DisplayCategory"] = "Weapon" };
+		OGSNTweakItemData["MyMod.MyItem"] = { ["DisplayCategory"] = "Weapon" };
 
 		if getActivatedMods():contains("CustomCategories") then
-			TweakItemData["MyMod.MyItem"] = { ["DisplayCategory"] = "BluntWeapon" };
+			OGSNTweakItemData["MyMod.MyItem"] = { ["DisplayCategory"] = "BluntWeapon" };
 		end
 
 and
 
-		TweakItemData["MyMod.Book"] = { ["Weight"] = "0.8" };
+		OGSNTweakItemData["MyMod.Book"] = { ["Weight"] = "0.8" };
 
 		if getActivatedMods():contains("WeightlessBooks") then
-			TweakItemData["MyMod.Book"] = { ["Weight"] = "0" };
+			OGSNTweakItemData["MyMod.Book"] = { ["Weight"] = "0" };
 		end
 
 ]]

@@ -1,70 +1,70 @@
--- if getActivatedMods():contains("ItemTweakerAPI") then
+-- if getActivatedMods():contains("ogsnItemTweakerAPI") then
 require("ItemTweaker_Copy_ogsn");
 -- else return end
 if getActivatedMods():contains("flametrapmagazine") then
-  TweakItem("FlameTrapMag.FlameTrapMagazine","Icon","magazine_Engineer_02");
+  OGSNTweakItem("FlameTrapMag.FlameTrapMagazine","Icon","magazine_Engineer_02");
 end
 
-TweakItem("Base.FishingMag1","Icon","magazine_Fish_01");
-TweakItem("Base.FishingMag2","Icon","magazine_Fish_02");
-TweakItem("Base.ElectronicsMag1","Icon","magazine_Electric_01");
-TweakItem("Base.ElectronicsMag2","Icon","magazine_Electric_02");
-TweakItem("Base.ElectronicsMag3","Icon","magazine_Electric_03");
-TweakItem("Base.ElectronicsMag5","Icon","magazine_Electric_04"); -- not a mistake, the player thinks this is 4
-TweakItem("Base.EngineerMagazine1","Icon","magazine_Engineer_01");
-TweakItem("Base.EngineerMagazine2","Icon","magazine_Engineer_02");
-TweakItem("Base.CookingMag1","Icon","magazine_Cook_01");
-TweakItem("Base.CookingMag2","Icon","magazine_Cook_02");
-TweakItem("Base.DairyCookingMag","Icon","magazine_Cook_03");
-TweakItem("Radio.RadioMag1","Icon","magazine_Radio_01");
-TweakItem("Radio.RadioMag2","Icon","magazine_Radio_02");
-TweakItem("Radio.RadioMag3","Icon","magazine_Radio_03");
-TweakItem("Base.HuntingMag1","Icon","magazine_Hunt_01");
-TweakItem("Base.HuntingMag2","Icon","magazine_Hunt_02");
-TweakItem("Base.HuntingMag3","Icon","magazine_Hunt_03");
-TweakItem("Base.MetalworkMag1","Icon","magazine_Metal_01");
-TweakItem("Base.MetalworkMag2","Icon","magazine_Metal_02");
-TweakItem("Base.MetalworkMag3","Icon","magazine_Metal_03");
-TweakItem("Base.MetalworkMag4","Icon","magazine_Metal_04");
-TweakItem("Base.SmithingMag1","Icon","magazine_Smith_01");
-TweakItem("Base.SmithingMag2","Icon","magazine_Smith_02");
-TweakItem("Base.SmithingMag3","Icon","magazine_Smith_03");
-TweakItem("Base.SmithingMag4","Icon","magazine_Smith_04");
-TweakItem("Base.FarmingMag1","Icon","magazine_Guide_01");
-TweakItem("Base.HerbalistMag","Icon","magazine_Guide_02");
-TweakItem("Base.ElectronicsMag4","Icon","magazine_Guide_03");
-TweakItem("Base.NutritionistMag","Icon","magazine_Guide_04");
-TweakItem("Base.MechanicMag1","Icon","magazine_Mechanic_01");
-TweakItem("Base.MechanicMag2","Icon","magazine_Mechanic_02");
-TweakItem("Base.MechanicMag3","Icon","magazine_Mechanic_03");
-TweakItem("Base.Journal","Icon","journalBlue");
-TweakItem("Base.Notebook","Weight","0.1");
+OGSNTweakItem("Base.FishingMag1","Icon","magazine_Fish_01");
+OGSNTweakItem("Base.FishingMag2","Icon","magazine_Fish_02");
+OGSNTweakItem("Base.ElectronicsMag1","Icon","magazine_Electric_01");
+OGSNTweakItem("Base.ElectronicsMag2","Icon","magazine_Electric_02");
+OGSNTweakItem("Base.ElectronicsMag3","Icon","magazine_Electric_03");
+OGSNTweakItem("Base.ElectronicsMag5","Icon","magazine_Electric_04"); -- not a mistake, the player thinks this is 4
+OGSNTweakItem("Base.EngineerMagazine1","Icon","magazine_Engineer_01");
+OGSNTweakItem("Base.EngineerMagazine2","Icon","magazine_Engineer_02");
+OGSNTweakItem("Base.CookingMag1","Icon","magazine_Cook_01");
+OGSNTweakItem("Base.CookingMag2","Icon","magazine_Cook_02");
+OGSNTweakItem("Base.DairyCookingMag","Icon","magazine_Cook_03");
+OGSNTweakItem("Radio.RadioMag1","Icon","magazine_Radio_01");
+OGSNTweakItem("Radio.RadioMag2","Icon","magazine_Radio_02");
+OGSNTweakItem("Radio.RadioMag3","Icon","magazine_Radio_03");
+OGSNTweakItem("Base.HuntingMag1","Icon","magazine_Hunt_01");
+OGSNTweakItem("Base.HuntingMag2","Icon","magazine_Hunt_02");
+OGSNTweakItem("Base.HuntingMag3","Icon","magazine_Hunt_03");
+OGSNTweakItem("Base.MetalworkMag1","Icon","magazine_Metal_01");
+OGSNTweakItem("Base.MetalworkMag2","Icon","magazine_Metal_02");
+OGSNTweakItem("Base.MetalworkMag3","Icon","magazine_Metal_03");
+OGSNTweakItem("Base.MetalworkMag4","Icon","magazine_Metal_04");
+OGSNTweakItem("Base.SmithingMag1","Icon","magazine_Smith_01");
+OGSNTweakItem("Base.SmithingMag2","Icon","magazine_Smith_02");
+OGSNTweakItem("Base.SmithingMag3","Icon","magazine_Smith_03");
+OGSNTweakItem("Base.SmithingMag4","Icon","magazine_Smith_04");
+OGSNTweakItem("Base.FarmingMag1","Icon","magazine_Guide_01");
+OGSNTweakItem("Base.HerbalistMag","Icon","magazine_Guide_02");
+OGSNTweakItem("Base.ElectronicsMag4","Icon","magazine_Guide_03");
+OGSNTweakItem("Base.NutritionistMag","Icon","magazine_Guide_04");
+OGSNTweakItem("Base.MechanicMag1","Icon","magazine_Mechanic_01");
+OGSNTweakItem("Base.MechanicMag2","Icon","magazine_Mechanic_02");
+OGSNTweakItem("Base.MechanicMag3","Icon","magazine_Mechanic_03");
+OGSNTweakItem("Base.Journal","Icon","journalBlue");
+OGSNTweakItem("Base.Notebook","Weight","0.1");
 
-TweakItem("filcher.SFCookingMag1","Icon","magazine_Cook_04");
-TweakItem("filcher.SFCookingMag2","Icon","magazine_Cook_05");
-TweakItem("filcher.SFCookingMag3","Icon","magazine_Cook_06");
+OGSNTweakItem("filcher.SFCookingMag1","Icon","magazine_Cook_04");
+OGSNTweakItem("filcher.SFCookingMag2","Icon","magazine_Cook_05");
+OGSNTweakItem("filcher.SFCookingMag3","Icon","magazine_Cook_06");
 
--- TweakItem("Base.Book","Icon","________ICONNAME__");
--- TweakItem("Base.Doodle","Icon","________ICONNAME__");
--- TweakItem("Base.ComicBook","Icon","________ICONNAME__");
--- TweakItem("Base.Magazine","Icon","________ICONNAME__");
--- TweakItem("Base.Newspaper","Icon","________ICONNAME__");
--- TweakItem("Base.Note","Icon","________ICONNAME__");
--- TweakItem("Base.Notebook","Icon","________ICONNAME__");
--- TweakItem("Base.SheetPaper","Icon","________ICONNAME__");
--- TweakItem("Base.SheetPaper2","Icon","________ICONNAME__");
+-- OGSNTweakItem("Base.Book","Icon","________ICONNAME__");
+-- OGSNTweakItem("Base.Doodle","Icon","________ICONNAME__");
+-- OGSNTweakItem("Base.ComicBook","Icon","________ICONNAME__");
+-- OGSNTweakItem("Base.Magazine","Icon","________ICONNAME__");
+-- OGSNTweakItem("Base.Newspaper","Icon","________ICONNAME__");
+-- OGSNTweakItem("Base.Note","Icon","________ICONNAME__");
+-- OGSNTweakItem("Base.Notebook","Icon","________ICONNAME__");
+-- OGSNTweakItem("Base.SheetPaper","Icon","________ICONNAME__");
+-- OGSNTweakItem("Base.SheetPaper2","Icon","________ICONNAME__");
 
---   TweakItem("filcher.RippedPages","Type","Normal")
--- TweakItem("filcher.ColoringBook","Icon","________ICONNAME__");
--- TweakItem("filcher.Crosswords","Icon","________ICONNAME__");
--- TweakItem("filcher.MagazineX","Icon","________ICONNAME__");
--- TweakItem("filcher.NotesJokes","Icon","________ICONNAME__");
--- TweakItem("filcher.Novel","Icon","________ICONNAME__");
--- TweakItem("filcher.GiftCard","Icon","________ICONNAME__");
--- TweakItem("filcher.PostcardLocal","Icon","________ICONNAME__");
--- TweakItem("filcher.PostcardOthers","Icon","________ICONNAME__");
--- TweakItem("filcher.RippedPages","Icon","________ICONNAME__");
+--   OGSNTweakItem("filcher.RippedPages","Type","Normal")
+-- OGSNTweakItem("filcher.ColoringBook","Icon","________ICONNAME__");
+-- OGSNTweakItem("filcher.Crosswords","Icon","________ICONNAME__");
+-- OGSNTweakItem("filcher.MagazineX","Icon","________ICONNAME__");
+-- OGSNTweakItem("filcher.NotesJokes","Icon","________ICONNAME__");
+-- OGSNTweakItem("filcher.Novel","Icon","________ICONNAME__");
+-- OGSNTweakItem("filcher.GiftCard","Icon","________ICONNAME__");
+-- OGSNTweakItem("filcher.PostcardLocal","Icon","________ICONNAME__");
+-- OGSNTweakItem("filcher.PostcardOthers","Icon","________ICONNAME__");
+-- OGSNTweakItem("filcher.RippedPages","Icon","________ICONNAME__");
 
 
--- TweakItem("FMJ.LockPickingMag","Icon","________ICONNAME__");
--- TweakItem("FMJ.LockPickingMag2","Icon","________ICONNAME__");
+-- OGSNTweakItem("FMJ.LockPickingMag","Icon","________ICONNAME__");
+-- OGSNTweakItem("FMJ.LockPickingMag2","Icon","________ICONNAME__");
