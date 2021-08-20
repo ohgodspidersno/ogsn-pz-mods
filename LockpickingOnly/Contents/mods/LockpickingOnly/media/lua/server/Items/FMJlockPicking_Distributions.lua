@@ -46,13 +46,13 @@ Every magazine shelf now generates its loot from the ProcDistro lua,
 so by adding the lockpicking mags to the relevent tables, it should be able to cover most bases.
 --]]
 table.insert(ProceduralDistributions["list"]["MagazineRackMixed"].items, "FMJ.LockPickingMag");
-table.insert(ProceduralDistributions["list"]["MagazineRackMixed".items, 0.2);
+table.insert(ProceduralDistributions["list"]["MagazineRackMixed"].items, 0.2);
 table.insert(ProceduralDistributions["list"]["MagazineRackMixed"].items, "FMJ.LockPickingMag2");
-table.insert(ProceduralDistributions["list"]["MagazineRackMixed".items, 0.2);
+table.insert(ProceduralDistributions["list"]["MagazineRackMixed"].items, 0.2);
 table.insert(ProceduralDistributions["list"]["MagazineRackMixed"].items, "FMJ.LockPickingMag");
-table.insert(ProceduralDistributions["list"]["MagazineRackMixed".items, 0.2);
+table.insert(ProceduralDistributions["list"]["MagazineRackMixed"].items, 0.2);
 table.insert(ProceduralDistributions["list"]["MagazineRackMixed"].items, "FMJ.LockPickingMag2");
-table.insert(ProceduralDistributions["list"]["MagazineRackMixed".items, 0.2);
+table.insert(ProceduralDistributions["list"]["MagazineRackMixed"].items, 0.2);
 
 -- Most of the "all" entries are untouched.
 table.insert(SuburbsDistributions["all"]["postbox"].items, "FMJ.LockPickingMag");
