@@ -1,6 +1,6 @@
 version=1
 id=2020740322
-title=Fashion Montage - Start with any outfit [41.50]
+title=Fashion Montage - Start with any outfit [41.54]
 description=[h1]Huge Modded Clothing Support Update[/h1]
 description=[url=https://steamcommunity.com/profiles/76561198182908886/myworkshopfiles/?appid=108600]Soul Filcher[/url] and I have teamed up to help make modded clothing integration as seamless as possible.
 description=While working together, he came up with a pretty brilliant solution to an issue that I've had for awhile. You know how the mod renames everything to stuff like "TShirt - Fossoil"? Well we don't have to do that anymore because Soul Filcher is the man.
@@ -46,6 +46,6 @@ description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
 description=
-description=Tags:B41,Interface,Clothing,Framework,Realistic
-tags=Build 41;Interface;Clothing;Framework;Realistic
+description=Tags:B41,Clothing/Armor,Framework,Interface,Realistic,Silly/Fun
+tags=Build 41;Clothing/Armor;Framework;Interface;Realistic;Silly/Fun
 visibility=public
