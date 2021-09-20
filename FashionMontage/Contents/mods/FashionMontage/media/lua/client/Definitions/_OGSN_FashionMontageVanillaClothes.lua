@@ -385,6 +385,7 @@ local clothing = {
         "Base.Bag_BigHikingBag",
         "Base.Bag_NormalHikingBag",
         "Base.Bag_DuffelBagTINT",
+        "Base.Bag_GolfBag",
         "Base.Bag_Schoolbag",
         "Base.Bag_Satchel",
       },
