@@ -13,7 +13,7 @@ OGSNTweakItem("Base.BookElectrician1","Icon","book_rice_Electrician1");
 OGSNTweakItem("Base.BookElectrician2","Icon","book_rice_Electrician2");
 OGSNTweakItem("Base.BookElectrician3","Icon","book_rice_Electrician3");
 OGSNTweakItem("Base.BookElectrician4","Icon","book_rice_Electrician4");
-OGSNTweakItem("Base.BookElectrician5","Icon","book_rice_Electrician4");
+OGSNTweakItem("Base.BookElectrician5","Icon","book_rice_Electrician5");
 OGSNTweakItem("Base.BookFarming1","Icon","book_rice_Farming1");
 OGSNTweakItem("Base.BookFarming2","Icon","book_rice_Farming2");
 OGSNTweakItem("Base.BookFarming3","Icon","book_rice_Farming3");
