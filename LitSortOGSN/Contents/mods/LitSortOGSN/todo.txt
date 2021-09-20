@@ -1,0 +1,475 @@
+"MoreTraits"
+item MedicalMag1
+DisplayName	=	The Medical Magazine Vol. 1,
+Icon	=	MagazineBlacksmith1,
+
+
+item MedicalMag2
+DisplayName	=	The Medical Magazine Vol. 2,
+Icon	=	MagazineBlacksmith2,
+
+
+item MedicalMag3
+DisplayName	=	The Medical Magazine Vol. 3,
+Icon	=	MagazineBlacksmith3,
+
+
+item MedicalMag4
+DisplayName	=	The Medical Magazine Vol. 4,
+Icon	=	MagazineBlacksmith4,
+
+
+item AntiqueMag1
+DisplayName	=	Antique Collector's Weekly Vol. 1,
+Icon	=	MagazineBlacksmith1,
+
+
+item AntiqueMag2
+Type	=	Literature,
+DisplayName	=	Antique Collector's Weekly Vol. 2,
+
+
+item AntiqueMag3
+DisplayName	=	Antique Collector's Weekly Vol. 3,
+Icon	=	MagazineBlacksmith3,
+
+
+-----
+"SoulFilchersDrivingTime"
+
+item SFMechanicMag4
+DisplayName	=	Laines Auto Manual - Motorcycle Models,
+Icon	=	SFCarMag,
+
+
+----
+"SoulFilchersLearningTime"
+
+item BookMaintenance1
+DisplayName	=	Maintenance for Beginners,
+Icon	=	BookViolet,
+
+item BookMaintenance2
+DisplayName	=	Maintenance for Intermediates,
+Icon	=	BookViolet,
+
+item BookMaintenance3
+DisplayName	=	Advanced Maintenance,
+Icon	=	BookViolet,
+
+item BookMaintenance4
+DisplayName	=	Expert Maintenance,
+Icon	=	BookViolet,
+
+item BookMaintenance5
+DisplayName	=	Master Maintenance,
+Icon	=	BookViolet,
+
+item SFGuideCooking
+DisplayName	=	Complete Cooking Guide,
+Icon	=	SFBookCook,
+
+item SFGuideEletronics
+DisplayName	=	Complete Eletronics Guide,
+Icon	=	SFBookElectric,
+
+item SFGuideEngineering
+DisplayName	=	Complete Engineering Guide,
+Icon	=	SFBookEngine,
+
+item SFGuideFishing
+DisplayName	=	Complete Fishing Guide,
+Icon	=	SFBookFish,
+
+item SFGuideMechanics
+DisplayName	=	Complete Mechanics Guide,
+Icon	=	SFBookCars,
+
+item SFGuideMetalworking
+DisplayName	=	Complete Metalworking Guide,
+Icon	=	SFBookMetal,
+
+item SFGuideRadio
+DisplayName	=	Complete Radio Guide,
+Icon	=	SFBookRadio,
+
+item SFGuideTrapping
+DisplayName	=	Complete Trapping Guide,
+Icon	=	SFBookTrap,
+
+item FarmingNotes1
+DisplayName	=	Notes On Curing Plants,
+Icon	=	SFNotesFarm1,
+
+item FarmingNotes2
+DisplayName	=	Notes On Homemade Flour,
+Icon	=	SFNotesFarm2,
+
+item FarmingNotes3
+DisplayName	=	Notes On Homemade Sugar,
+Icon	=	SFNotesFarm2,
+
+item FishingNotes1
+DisplayName	=	Notes On Fishing Rods,
+Icon	=	SFNotesFish1,
+
+item FishingNotes2
+DisplayName	=	Notes On Fishing Nets,
+Icon	=	SFNotesFish2,
+
+item HuntingNotes1
+DisplayName	=	Notes On Snare Traps,
+Icon	=	SFNotesHunt1,
+
+item HuntingNotes2
+DisplayName	=	Notes On Wooden Traps,
+Icon	=	SFNotesHunt2,
+
+item HuntingNotes3
+DisplayName	=	Notes On Varied Traps,
+Icon	=	SFNotesHunt3,
+
+item HerbalistNotes
+DisplayName	=	Notes On Herbs,
+Icon	=	SFNotesHerbs,
+
+item MetalworkNotes1
+DisplayName	=	Notes On Metal Walls,
+Icon	=	SFNotesWeld1,
+
+item MetalworkNotes2
+DisplayName	=	Notes On Metal Crates,
+Icon	=	SFNotesWeld2,
+
+item MetalworkNotes3
+DisplayName	=	Notes On Metal Fences,
+Icon	=	SFNotesWeld3,
+
+item MetalworkNotes4
+DisplayName	=	Notes On Metal Sheets,
+Icon	=	SFNotesWeld4,
+
+item CookingNotes1
+DisplayName	=	Notes On Cakes And Pies,
+Icon	=	SFNotesCook1,
+
+item CookingNotes2
+DisplayName	=	Notes On Bread,
+Icon	=	SFNotesCook2,
+
+item SFCookingNotes1
+DisplayName	=	Notes On Corndogs,
+Icon		=	SFNotesCook3,
+
+item ElectronicsNotes1
+DisplayName	=	Notes On Remote Controllers,
+Icon	=	SFNotesElect1,
+
+item ElectronicsNotes2
+DisplayName	=	Notes On Timers,
+Icon	=	SFNotesElect2,
+
+item ElectronicsNotes3
+DisplayName	=	Notes On Motion Sensors,
+Icon	=	SFNotesElect3,
+
+item ElectronicsNotes4
+DisplayName	=	Notes On Using Generators,
+Icon	=	SFNotesElect4,
+
+item ElectronicsNotes5
+DisplayName	=	Notes On Remote Triggers,
+Icon	=	SFNotesElect5,
+
+item EngineerNotes1
+DisplayName	=	Notes On Noise Makers,
+Icon	=	SFNotesEng1,
+
+item EngineerNotes2
+DisplayName	=	Notes On Smoke Bombs,
+Icon	=	SFNotesEng2,
+
+item EngineerNotes3
+DisplayName	=	Notes On Aerosol Bombs,
+Icon	=	SFNotesEng3,
+
+item EngineerNotes4
+DisplayName	=	Notes On Flame Bombs,
+Icon	=	SFNotesEng4,
+
+item EngineerNotes5
+DisplayName	=	Notes On Pipe Bombs,
+Icon	=	SFNotesEng1,
+
+item MechanicNotes1
+DisplayName	=	Notes On Standard Car Models,
+Icon	=	SFNotesMechanic1,
+
+item MechanicNotes2
+DisplayName	=	Notes On Commercial Car Models,
+Icon	=	SFNotesMechanic2,
+
+item MechanicNotes3
+DisplayName	=	Notes On Performance Car Models,
+Icon	=	SFNotesMechanic3,
+
+item RadioNotes1
+DisplayName	=	Notes On Radios,
+Icon	=	SFNotesRadio1,
+
+item RadioNotes2
+DisplayName	=	Notes On Walkie Talkies,
+Icon	=	SFNotesRadio2,
+
+item RadioNotes3
+DisplayName	=	Notes On HAM Radios,
+Icon	=	SFNotesRadio3,
+
+item SmithingNotes1
+DisplayName	=	Notes On Making Kitchen Utensils,
+Icon	=	SFNotesSmith1,
+
+item SmithingNotes2
+DisplayName	=	Notes On Making Tools,
+Icon	=	SFNotesSmith2,
+
+item SmithingNotes3
+DisplayName	=	The Smithing Magazine Vol.3,
+Icon	=	SFNotesSmith1,
+
+item SmithingNotes4
+DisplayName	=	Notes On Making Bullets,
+Icon	=	SFNotesSmith1,
+
+item SmithingNotes5
+DisplayName	=	Notes On Making Blacksmith Tools,
+Icon	=	SFNotesSmith2,
+
+-----
+"SoulFilchersScavengingTime"
+
+item BookScavenging1
+DisplayName	=	Scavenging for Beginners,
+Icon	=	BookYellow,
+
+item BookScavenging2
+DisplayName	=	Scavenging for Intermediates,
+Icon	=	BookYellow,
+
+item BookScavenging3
+DisplayName	=	Advanced Scavenging,
+Icon	=	BookYellow,
+
+item BookScavenging4
+DisplayName	=	Expert Scavenging,
+Icon	=	BookYellow,
+
+item BookScavenging5
+DisplayName	=	Master Scavenging,
+Icon	=	BookYellow,
+
+item SFLetterToYou
+DisplayName	=	Letter to You,
+Icon	=	SFWrittenLetter,
+
+------
+"CookingTime"
+
+item SFCookingMag1
+DisplayName	=	Good Cooking Magazine,
+Icon		=	SFCookingMag1,
+
+item SFCookingMag2
+DisplayName	=	Good Cooking Magazine,
+Icon		=	SFCookMag2,
+
+item SFCookingMag3
+DisplayName	=	Good Cooking Magazine,
+Icon		=	SFCookMag3,
+
+item SFCookingGuide
+DisplayName	=	Complete Cooking Guide,
+Icon	=	SFBookCook,
+
+
+-----
+"FarmingTime"
+
+item SFBookFarm
+DisplayName	=	Complete Farming Guide,
+Icon	=	SFBookFlour,
+
+item SFBookFarm
+DisplayName	=	Complete Farming Guide,
+Icon	=	SFBookFlour,
+
+item SFFarmMag2
+DisplayName	=	The Farming Magazine 2,
+Icon	=	SFFarmMag2,
+
+item SFFarmMag3
+DisplayName	=	The Farming Magazine 3,
+Icon	=	SFFarmMag3,
+
+
+------
+"TheNutritionist"
+item NutritionistMag
+DisplayName		= The Nutritionist,
+Icon			= MagazineFood,
+
+-----
+"improvedbuildmenu41-1" or "improvedbuildmenu41-2"
+item MetalworkMag4
+Type	=	Literature,
+DisplayName	=	The Metalwork Magazine Vol. 4,
+
+----
+"ExtraSkillsExample41"
+
+item BookSleeping1
+DisplayName	=	Sleeping for Beginners,
+Icon	=	Book9,
+
+item BookSleeping2
+DisplayName	=	Sleeping for Intermediates,
+Icon	=	Book9,
+
+item BookSleeping3
+DisplayName	=	Advanced Sleeping,
+Icon	=	Book9,
+
+item BookSleeping4
+DisplayName	=	Expert Sleeping,
+Icon	=	Book9,
+
+item BookSleeping5
+DisplayName	=	Master Sleeping,
+Icon	=	Book9,
+
+---
+"MilitaryUsedCarSkins"
+item IntelFolder
+DisplayName = Folder With Intel,
+Icon			= intel_folder_1,
+
+--------
+"RelaxingTime"
+
+item ColoringBook
+DisplayName	=	Coloring Book,
+Icon		=	ColoringBook,
+
+item Crosswords
+DisplayName	=	Crosswords,
+Icon		=	Crosswords,
+
+item GiftCard
+DisplayName	=	Gift Card,
+Icon		=	SFGiftCard,
+
+item SFLetterToYou
+DisplayName	=	Letter to You,
+Icon	=	SFWrittenLetter,
+
+item NotesJokes
+DisplayName	=	Notes on Rhyming Jokes,
+Icon		=	SFNotesJokes,
+
+item Novel
+DisplayName	=	Novel,
+Icon		=	Novel1,
+
+item PostcardLocal
+DisplayName	=	Postcard,
+Icon		=	Postcard,
+
+item PostcardOthers
+DisplayName	=	Postcard,
+Icon		=	Postcard,
+
+item RippedPages
+DisplayName	=	Ripped Pages,
+Icon	=	Paper,
+
+
+-----
+"PaintYourRide"
+item VehiclePaintingMag1
+DisplayName = Autostyle Magazine - Vehicle Painting Vol. 1,
+Icon = VehiclePaintingMag1,
+
+item VehiclePaintingMag2
+DisplayName = Autostyle Magazine - Vehicle Painting Vol. 2,
+Icon = VehiclePaintingMag2,
+
+-----
+"PZCF_hobbies"
+item PZCF_HobbyMagazine1
+DisplayName	=	Hobby Magazine Vol. 1,
+      Icon	=	PZCF_hobby_mag1,
+item PZCF_HobbyMagazine2
+      DisplayName	=	Hobby Magazine Vol. 2,
+      Icon	=	PZCF_hobby_mag2,
+item PZCF_HobbyMagazine3
+DisplayName	=	Hobby Magazine Vol. 3,
+Icon	=	PZCF_hobby_mag3,
+
+
+
+----
+"BuildingTime"
+item BookMasonry1
+DisplayName	=	Masonry for Beginners,
+Icon	=	BookBrick,
+
+item BookMasonry2
+DisplayName	=	Masonry for Intermediates,
+Icon	=	BookBrick,
+
+item BookMasonry3
+DisplayName	=	Advanced Masonry,
+Icon	=	BookBrick,
+
+item BookMasonry4
+DisplayName	=	Expert Masonry,
+Icon	=	BookBrick,
+
+item BookMasonry5
+DisplayName	=	Master Masonry,
+Icon	=	BookBrick,
+
+item SFMasonMag
+DisplayName	=	Masonry Magazine,
+Icon	=	SFMasonMag,
+
+item SFMetalworkMag5
+DisplayName	=	The Metalwork Magazine Vol.5,
+Icon	=	SFWeldMag5,
+
+-----
+
+item BoatMag
+DisplayName	=	Repair Your Boats Magazine,
+Icon	=	MagazineBoatMechanics,
+item SwimMag
+DisplayName	=	Swimming Times Magazine,
+Icon	=	MagazineFish,
+
+---
+
+item SFCookingMag1
+Type		=	Literature,
+DisplayName	=	Good Cooking Magazine,
+
+item SFCookingMag2
+DisplayName	=	Good Cooking Magazine,
+Icon		=	SFCookMag2,
+
+item SFCookingMag3
+DisplayName	=	Good Cooking Magazine,
+Icon		=	SFCookMag3,
+
+item SFCookingGuide
+DisplayName	=	Complete Cooking Guide,
+Icon	=	SFBookCook,
