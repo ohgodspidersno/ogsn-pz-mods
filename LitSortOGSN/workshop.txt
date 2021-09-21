@@ -35,6 +35,6 @@ description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
 description=
-description=Tags:B41,B40,Interface,Items,Books,Literature,Tweak,Framework,Lang,Translation,Language,Realistic
-tags=Build 41;Build 40;Interface;Items;Literature;Tweak;Framework;Language;Realistic
+description=Tags:B40,B41,Framework,Interface,Items,Books,Literature,Realistic
+tags=Build 40;Build 41;Framework;Interface;Items;Literature;Realistic
 visibility=public
