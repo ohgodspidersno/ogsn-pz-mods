@@ -1,6 +1,6 @@
 version=1
 id=2079001985
-title=Orphanage for Abandoned Mods [41.47]
+title=Orphanage for Abandoned Mods [41.54]
 description=[h1]Update: Coffee Works![/h1]
 description=The devs just dropped build 41.47 which fixed the problems with coffee that were in 41.46
 description=I have also made all adjustments necessary to these mods to make them work nicely:
@@ -46,6 +46,6 @@ description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
 description=
-description=Tags:B41,Items,Food,Health,Medical,Traits,Tweak
-tags=Build 41;Items;Food;Medical;Traits;Tweak
+description=Tags:B41,Food,Items,Traits
+tags=Build 41;Food;Items;Traits
 visibility=public

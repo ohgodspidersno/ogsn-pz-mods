@@ -26,6 +26,6 @@ description=[img=]https://i.imgur.com/p7Fv1Z6.gif[/img]
 description=
 description=[img=]https://i.imgur.com/jEczML7.png[/img]
 description=
-description=Tags:B41,B40,Interface,Items,Tweak,Realistic
-tags=Build 41;Build 40;Interface;Items;Tweak;Realistic
+description=Tags:B40,B41,Interface,Items,Realistic
+tags=Build 40;Build 41;Interface;Items;Realistic
 visibility=public
