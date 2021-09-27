@@ -2,7 +2,7 @@ module Base {
 
   item SpearChippedStone
   {
-    MaxRange	=	1.45,
+    MaxRange	=	1.4,
     WeaponSprite	=	SpearChippedStone,
     MinAngle	=	0.8,
     Type	=	Weapon,
@@ -10,7 +10,7 @@ module Base {
     KnockBackOnNoDeath	=	FALSE,
     SwingAmountBeforeImpact	=	0.02,
     Categories	=	Improvised;Spear,
-    ConditionLowerChanceOneIn	=	8,
+    ConditionLowerChanceOneIn	=	4,
     Weight	=	1.5,
     SplatNumber	=	1,
     PushBackMod	=	0.3,
@@ -27,7 +27,6 @@ module Base {
     Icon	=	SpearChippedStone,
     RunAnim	=	Run_Weapon2,
     IdleAnim	=	Idle_Weapon2,
-    BreakSound  =   BreakWoodItem,
     TreeDamage  =   0,
     TwoHandWeapon = TRUE,
     CriticalChance	=	30,
@@ -36,9 +35,13 @@ module Base {
     MaxDamage	=	1.6,
     DamageCategory = Slash,
     DamageMakeHole = TRUE,
-    HitFloorSound	=	BladeHit,
-    ImpactSound	=	BladeHit,
-    HitSound	=	BladeHit,
-    AttachmentType = Shovel,
+    BreakSound  =   SpearKnifeBreak,
+    HitFloorSound	=	SpearKnifeHit,
+    ImpactSound	=	SpearKnifeHit,
+    DoorHitSound = SpearKnifeHit,
+    HitSound	=	SpearKnifeHit,
+    SwingSound	=	SpearKnifeSwing,
+AttachmentType = Shovel,
+    Tags = FishingSpear,
   }
 }
