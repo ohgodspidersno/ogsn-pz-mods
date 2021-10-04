@@ -230,6 +230,12 @@ end
 
 function ISHotbar:update()
 
+	local moodleUI = UIManager.getMoodleUI(self.playerNum)
+	if not self:isVisible() and moodleUI and moodleUI:isVisible() and not JoypadState.players[self.playerNum+1] then
+		-- Controller unplugged
+		self:setVisible(true)
+	end
+
 	if self.needsRefresh then
 		self:refresh()
 	end

@@ -1713,20 +1713,17 @@ end
 
 ISInventoryPaneContextMenu.onAddItemInEvoRecipe = function(recipe, baseItem, usedItem, player)
     local playerObj = getSpecificPlayer(player);
-    local previousInvItem = {};
+    local returnToContainer = {};
     if not playerObj:getInventory():contains(usedItem) then -- take the item if it's not in our inventory
         ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, usedItem,usedItem:getContainer(), playerObj:getInventory(), nil));
-        previousInvItem[usedItem] = usedItem:getContainer();
+        table.insert(returnToContainer, usedItem);
     end
     if not playerObj:getInventory():contains(baseItem) then -- take the base item if it's not in our inventory
         ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, baseItem, baseItem:getContainer(), playerObj:getInventory(), nil));
+        table.insert(returnToContainer, baseItem);
     end
-    ISTimedActionQueue.add(ISAddItemInRecipe:new(getSpecificPlayer(player), recipe, baseItem, usedItem, (70 - getSpecificPlayer(player):getPerkLevel(Perks.Cooking))));
-    for i,v in pairs(previousInvItem) do
---        if playerObj:getInventory():contains(i) then
-            ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, usedItem, playerObj:getInventory(), v, nil));
---        end
-    end
+    ISTimedActionQueue.add(ISAddItemInRecipe:new(playerObj, recipe, baseItem, usedItem, (70 - playerObj:getPerkLevel(Perks.Cooking))));
+    ISCraftingUI.ReturnItemsToOriginalContainer(playerObj, returnToContainer)
 end
 
 ISInventoryPaneContextMenu.buildFixingMenu = function(brokenObject, player, fixing, fixOption, subMenuFix, vehiclePart)
@@ -2691,14 +2688,13 @@ ISInventoryPaneContextMenu.OnCraft = function(selectedItem, recipe, player, all)
 		container = playerObj:getInventory()
 	end
 	local items = RecipeManager.getAvailableItemsNeeded(recipe, playerObj, containers, selectedItem, nil)
-    local previousInvItem = {}; -- keep track of items we moved to put them back to their original container
+	local returnToContainer = {}; -- keep track of items we moved to put them back to their original container
 	if not recipe:isCanBeDoneFromFloor() then
 		for i=1,items:size() do
 			local item = items:get(i-1)
-
 			if item:getContainer() ~= playerObj:getInventory() then
-                previousInvItem[item] = item:getContainer();
 				ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, item, item:getContainer(), playerObj:getInventory(), nil))
+				table.insert(returnToContainer, item)
 			end
 		end
 	end
@@ -2723,9 +2719,7 @@ ISInventoryPaneContextMenu.OnCraft = function(selectedItem, recipe, player, all)
 	ISTimedActionQueue.add(action)
 
     -- add back their item to their original container
-    for i,v in pairs(previousInvItem) do
-        ISTimedActionQueue.add(ISInventoryTransferAction:new(playerObj, i, playerObj:getInventory(), i:getContainer(), nil))
-    end
+    ISCraftingUI.ReturnItemsToOriginalContainer(playerObj, returnToContainer)
 end
 
 ISInventoryPaneContextMenu.OnCraftComplete = function(completedAction, recipe, playerObj, container, containers, selectedItem)
@@ -2736,6 +2730,7 @@ ISInventoryPaneContextMenu.OnCraftComplete = function(completedAction, recipe, p
         return;
     end
 	local previousAction = completedAction
+	local returnToContainer = {}
 	if not recipe:isCanBeDoneFromFloor() then
 		for i=1,items:size() do
 			local item = items:get(i-1)
@@ -2745,12 +2740,14 @@ ISInventoryPaneContextMenu.OnCraftComplete = function(completedAction, recipe, p
 					ISTimedActionQueue.addAfter(previousAction, action)
 					previousAction = action
 				end
+				table.insert(returnToContainer, item)
 			end
 		end
 	end
 	local action = ISCraftAction:new(playerObj, items:get(0), recipe:getTimeToMake(), recipe, container, containers)
 	action:setOnComplete(ISInventoryPaneContextMenu.OnCraftComplete, action, recipe, playerObj, container, containers)
     ISTimedActionQueue.addAfter(previousAction, action)
+    ISCraftingUI.ReturnItemsToOriginalContainer(playerObj, returnToContainer)
 end
 
 ISInventoryPaneContextMenu.eatItem = function(item, percentage, player)

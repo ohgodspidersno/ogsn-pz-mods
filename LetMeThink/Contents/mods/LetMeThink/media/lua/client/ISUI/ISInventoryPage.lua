@@ -415,6 +415,11 @@ function ISInventoryPage:setBlinkingContainer(blinking, containerType)
 	end
 end
 
+function ISInventoryPage:setForceSelectedContainer(container)
+	self.forceSelectedContainer = container
+	self.forceSelectedContainerTime = getTimestampMs() + 1000
+end
+
 --************************************************************************--
 --** ISInventoryPage:prerender
 --**
@@ -778,37 +783,36 @@ end
 function ISInventoryPage:selectContainer(button)
 	local playerObj = getSpecificPlayer(self.player)
 	if self.player == 0 and ISMouseDrag.dragging ~= nil then
-		if getCore():getGameMode() == "Tutorial" then
-			return;
-		end
-		if self:canPutIn() then
-			local doWalk = true
-			local items = {}
-			local dragging = ISInventoryPane.getActualItems(ISMouseDrag.dragging)
-			for i,v in ipairs(dragging) do
-				local transfer = v:getContainer() and not button.inventory:isInside(v)
-				if v:isFavorite() and not button.inventory:isInCharacterInventory(playerObj) then
-					transfer = false
-				end
-				if not button.inventory:isItemAllowed(v) then
-					transfer = false
-				end
-				if transfer then
-					-- only walk for the first item
-					if doWalk then
-						if not luautils.walkToContainer(button.inventory, self.player) then
-							break
-						end
-						doWalk = false
-					end
-					table.insert(items, v)
-				end
-			end
-			self.inventoryPane:transferItemsByWeight(items, button.inventory)
-			self.inventoryPane.selected = {};
-			getPlayerLoot(self.player).inventoryPane.selected = {};
-            getPlayerInventory(self.player).inventoryPane.selected = {};
-		end
+		if getCore():getGameMode() ~= "Tutorial" then
+            if self:canPutIn() then
+                local doWalk = true
+                local items = {}
+                local dragging = ISInventoryPane.getActualItems(ISMouseDrag.dragging)
+                for i,v in ipairs(dragging) do
+                    local transfer = v:getContainer() and not button.inventory:isInside(v)
+                    if v:isFavorite() and not button.inventory:isInCharacterInventory(playerObj) then
+                        transfer = false
+                    end
+                    if not button.inventory:isItemAllowed(v) then
+                        transfer = false
+                    end
+                    if transfer then
+                        -- only walk for the first item
+                        if doWalk then
+                            if not luautils.walkToContainer(button.inventory, self.player) then
+                                break
+                            end
+                            doWalk = false
+                        end
+                        table.insert(items, v)
+                    end
+                end
+                self.inventoryPane:transferItemsByWeight(items, button.inventory)
+                self.inventoryPane.selected = {};
+                getPlayerLoot(self.player).inventoryPane.selected = {};
+                getPlayerInventory(self.player).inventoryPane.selected = {};
+            end
+        end
 
         if ISMouseDrag.draggingFocus then
             ISMouseDrag.draggingFocus:onMouseUp(0,0);
@@ -1391,6 +1395,24 @@ function ISInventoryPage:refreshBackpacks()
 			end
 		elseif self.inventoryPane.lastinventory ~= nil then
 			self.inventoryPane.inventory = self.inventoryPane.lastinventory
+		end
+	end
+
+	-- ISInventoryTransferAction sometimes turns the player to face a container.
+	-- Which container is selected changes as the player changes direction.
+	-- Although ISInventoryTransferAction forces a container to be selected,
+	-- sometimes the action completes before the player finishes turning.
+	if self.forceSelectedContainer then
+		if self.forceSelectedContainerTime > getTimestampMs() then
+			for _,containerButton in ipairs(self.backpacks) do
+				if containerButton.inventory == self.forceSelectedContainer then
+					self.inventoryPane.inventory = containerButton.inventory
+					self.capacity = containerButton.capacity
+					break
+				end
+			end
+		else
+			self.forceSelectedContainer = nil
 		end
 	end
 

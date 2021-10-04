@@ -1015,42 +1015,41 @@ function ISInventoryPane:onMouseUp(x, y)
         self:selectIndex(self.mouseOverOption);
     end
 
-	if ISMouseDrag.dragging ~= nil and ISMouseDrag.draggingFocus ~= self and ISMouseDrag.draggingFocus ~= nil then
-		if getCore():getGameMode() == "Tutorial" then
-			return;
-		end
-		if self:canPutIn() then
-			local doWalk = true
-			local items = {}
-			local dragging = ISInventoryPane.getActualItems(ISMouseDrag.dragging)
-			for i,v in ipairs(dragging) do
-				local transfer = v:getContainer() and not self.inventory:isInside(v)
-				if v:isFavorite() and not self.inventory:isInCharacterInventory(playerObj) then
-					transfer = false
-				end
-				if transfer then
-					-- only walk for the first item
-					if doWalk then
-						if not luautils.walkToContainer(self.inventory, self.player) then
-							break
-						end
-						doWalk = false
-					end
-					table.insert(items, v)
-				end
-			end
-			self:transferItemsByWeight(items, self.inventory)
-			self.selected = {};
-			getPlayerLoot(self.player).inventoryPane.selected = {};
-			getPlayerInventory(self.player).inventoryPane.selected = {};
-		end
-		if ISMouseDrag.draggingFocus then
-			ISMouseDrag.draggingFocus:onMouseUp(0,0);
-		end
-		ISMouseDrag.draggingFocus = nil;
-		ISMouseDrag.dragging = nil;
-		return;
-	end
+    if ISMouseDrag.dragging ~= nil and ISMouseDrag.draggingFocus ~= self and ISMouseDrag.draggingFocus ~= nil then
+        if getCore():getGameMode() ~= "Tutorial" then
+            if self:canPutIn() then
+                local doWalk = true
+                local items = {}
+                local dragging = ISInventoryPane.getActualItems(ISMouseDrag.dragging)
+                for i,v in ipairs(dragging) do
+                    local transfer = v:getContainer() and not self.inventory:isInside(v)
+                    if v:isFavorite() and not self.inventory:isInCharacterInventory(playerObj) then
+                        transfer = false
+                    end
+                    if transfer then
+                        -- only walk for the first item
+                        if doWalk then
+                            if not luautils.walkToContainer(self.inventory, self.player) then
+                                break
+                            end
+                            doWalk = false
+                        end
+                        table.insert(items, v)
+                    end
+                end
+                self:transferItemsByWeight(items, self.inventory)
+                self.selected = {};
+                getPlayerLoot(self.player).inventoryPane.selected = {};
+                getPlayerInventory(self.player).inventoryPane.selected = {};
+            end
+        end
+        if ISMouseDrag.draggingFocus then
+            ISMouseDrag.draggingFocus:onMouseUp(0,0);
+        end
+        ISMouseDrag.draggingFocus = nil;
+        ISMouseDrag.dragging = nil;
+        return;
+    end
 
 	self.dragging = nil;
 	self.draggedItems:reset();
@@ -1333,7 +1332,6 @@ function ISInventoryPane:doContextOnJoypadSelected()
 	if JoypadState.disableInvInteraction then
 		return;
 	end
-
     local playerObj = getSpecificPlayer(self.player)
     if playerObj:isAsleep() then return end
 
@@ -1669,6 +1667,11 @@ function ISInventoryPane:update()
     -- have already had a chance to accept the drag.
     if ISMouseDrag.dragging ~= nil and ISMouseDrag.draggingFocus == self and not isMouseButtonDown(0) then
 		if getCore():getGameMode() == "Tutorial" then
+            if ISMouseDrag.draggingFocus then
+                ISMouseDrag.draggingFocus:onMouseUp(0,0);
+            end
+            ISMouseDrag.draggingFocus = nil;
+            ISMouseDrag.dragging = nil;
 			return;
 		end
         local dragContainsMovables = false;

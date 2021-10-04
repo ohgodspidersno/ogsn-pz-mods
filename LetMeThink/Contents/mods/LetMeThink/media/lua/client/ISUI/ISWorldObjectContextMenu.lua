@@ -713,7 +713,9 @@ ISWorldObjectContextMenu.createMenu = function(player, worldobjects, x, y, test)
 		end
 	end
 
-	if bed and not ISWorldObjectContextMenu.isSomethingTo(bed, player) and (playerObj:getStats():getEndurance() < 1) then
+	if tent then
+		-- See ISCampingMenu.  Avoid duplicate Rest option when clicking on a tent.
+	elseif bed and not ISWorldObjectContextMenu.isSomethingTo(bed, player) and (playerObj:getStats():getEndurance() < 1) then
 		if test == true then return true; end
 		context:addOption(getText("ContextMenu_Rest"), bed, ISWorldObjectContextMenu.onRest, player);
 	end
@@ -3080,6 +3082,7 @@ function CleanBandages.onCleanOne(playerObj, type, waterObject, recipe)
 	local playerInv = playerObj:getInventory()
 	local item = playerInv:getFirstTypeRecurse(type)
 	if not item then return end
+	ISInventoryPaneContextMenu.transferIfNeeded(playerObj, item)
 	if not luautils.walkAdj(playerObj, waterObject:getSquare(), true) then return end
 	ISTimedActionQueue.add(ISCleanBandage:new(playerObj, item, waterObject, recipe))
 end
