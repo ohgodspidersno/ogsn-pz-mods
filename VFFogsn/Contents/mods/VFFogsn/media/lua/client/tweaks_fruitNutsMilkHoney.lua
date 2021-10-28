@@ -18,8 +18,8 @@ OGSNTweakItem("Base.Grapes","EvolvedRecipe","Cake:15;Salad:15;FruitSalad:15;Oatm
 OGSNTweakItem("Base.Orange","EvolvedRecipe","Cake:8;FruitSalad:8;OatmealEvolved:8");
 OGSNTweakItem("Base.Apple","EvolvedRecipe","Cake:8;Salad:8;FruitSalad:8;OatmealEvolved:8");
 OGSNTweakItem("Base.Banana","EvolvedRecipe","Cake:10;FruitSalad:10;OatmealEvolved:10");
-OGSNTweakItem("Base.Milk","EvolvedRecipe","HotDrink:2;OatmealEvolved:2");
-OGSNTweakItem("farming.Milk","EvolvedRecipe","HotDrink:2;OatmealEvolved:2");
+OGSNTweakItem("Base.Milk","EvolvedRecipe","HotDrink:2;HotDrinkRed:2;HotDrinkWhite:2;HotDrinkSpiffo:2;OatmealEvolved:2");
+OGSNTweakItem("farming.Milk","EvolvedRecipe","HotDrink:2;HotDrinkRed:2;HotDrinkWhite:2;HotDrinkSpiffo:2;OatmealEvolved:2");
 OGSNTweakItem("Base.Butter","EvolvedRecipe","Sandwich:5;Stir fry Griddle Pan:5;Stir fry:5;Roasted Vegetables:5;PastaPot:5;PastaPan:5;OatmealEvolved:5");
 OGSNTweakItem("Base.Peanuts","EvolvedRecipe","RicePot:8;RicePan:8;Salad:8;FruitSalad:8;OatmealEvolved:8");
 OGSNTweakItem("Base.Honey","EvolvedRecipe","Cake:5;Sandwich:5;Salad:5;Roasted Vegetables:5;Stir fry Griddle Pan:5;Stir fry:5;HotDrink:5;OatmealEvolved:5");

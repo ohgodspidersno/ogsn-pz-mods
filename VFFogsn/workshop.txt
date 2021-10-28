@@ -1,6 +1,6 @@
 version=1
 id=2072147750
-title=Vanilla Food Fixes [41.47]
+title=Vanilla Food Fixes [41.56]
 description=[h1]A collection of lightweight, common sense fixes to food items and recipes.[/h1]
 description=
 description=[url=https://steamcommunity.com/workshop/filedetails/discussion/2072147750/2264691117426430081/][u]Don't like pictures? Click here for written description[/u][/url]
@@ -29,6 +29,6 @@ description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=20354478
 description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029510281][img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791167035/FA78B1D4BE8F79E6C4ECD7CA50EC4B7BED2E9021/[/img][/url]
 description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2029398775][img]https://steamuserimages-a.akamaihd.net/ugc/1018320153791168507/59E7D362D1317AFAEA68C2437981825130168101/[/img][/url]
 description=
-description=Tags:B41,Food,Bugfix,Tweak
-tags=Build 41;Food;Bugfix;Tweak
+description=Tags:B41,Food
+tags=Build 41;Food
 visibility=public

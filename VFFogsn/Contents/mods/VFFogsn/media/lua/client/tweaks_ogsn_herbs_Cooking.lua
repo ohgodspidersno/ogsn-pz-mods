@@ -1,8 +1,8 @@
 require("ItemTweaker_Copy_ogsn");
 
 -- VANILLA ITEMS
-OGSNTweakItem("Base.Sugar","EvolvedRecipe","HotDrink:1;CommonMallowTeaEvolved:1;LemonGrassTeaEvolved:1;BlackSageTeaEvolved:1;GinsengTeaEvolved:1;EnergizingTeaEvolved:1;MedicinalTeaEvolved:1");
-OGSNTweakItem("Base.Milk","EvolvedRecipe","HotDrink:2;CommonMallowTeaEvolved:2;LemonGrassTeaEvolved:2;BlackSageTeaEvolved:2;GinsengTeaEvolved:2;EnergizingTeaEvolved:2;MedicinalTeaEvolved:2");
+OGSNTweakItem("Base.Sugar","EvolvedRecipe","HotDrink:1;HotDrinkRed:1;HotDrinkWhite:1;HotDrinkSpiffo:1;CommonMallowTeaEvolved:1;LemonGrassTeaEvolved:1;BlackSageTeaEvolved:1;GinsengTeaEvolved:1;EnergizingTeaEvolved:1;MedicinalTeaEvolved:1");
+OGSNTweakItem("Base.Milk","EvolvedRecipe","HotDrink:2;HotDrinkRed:2;HotDrinkWhite:2;HotDrinkSpiffo:2;CommonMallowTeaEvolved:2;LemonGrassTeaEvolved:2;BlackSageTeaEvolved:2;GinsengTeaEvolved:2;EnergizingTeaEvolved:2;MedicinalTeaEvolved:2");
 OGSNTweakItem("Base.Honey","EvolvedRecipe","HotDrink:5;CommonMallowTeaEvolved:5;LemonGrassTeaEvolved:5;BlackSageTeaEvolved:5;GinsengTeaEvolved:5;EnergizingTeaEvolved:5;MedicinalTeaEvolved:5");
 
 -- MEDICINAL HERBS
@@ -44,21 +44,21 @@ OGSNTweakItem("Base.Ginseng","OnCooked","CookRawHerbOGSN");
 
 -- FOOD HERBS
 OGSNTweakItem("Base.Rosehips","FoodType","Herbal");
-OGSNTweakItem("Base.Rosehips","EvolvedRecipe","Soup:3;Stew:3;Pie:3;Cake:3;Stir fry:3;Stir fry Griddle Pan:3;Roasted Vegetables:3;Burger:3;Salad:3;PastaPan:3;RicePan:3;PastaPot:3;RicePot:3;HotDrink:3;CommonMallowTeaEvolved:3;LemonGrassTeaEvolved:3;BlackSageTeaEvolved:3;GinsengTeaEvolved:3;EnergizingTeaEvolved:3;MedicinalTeaEvolved:3");
+OGSNTweakItem("Base.Rosehips","EvolvedRecipe","Soup:3;Stew:3;Pie:3;Cake:3;Stir fry:3;Stir fry Griddle Pan:3;Roasted Vegetables:3;Burger:3;Salad:3;PastaPan:3;RicePan:3;PastaPot:3;RicePot:3;HotDrink:3;HotDrinkRed:3;HotDrinkWhite:3;HotDrinkSpiffo:3;CommonMallowTeaEvolved:3;LemonGrassTeaEvolved:3;BlackSageTeaEvolved:3;GinsengTeaEvolved:3;EnergizingTeaEvolved:3;MedicinalTeaEvolved:3");
 OGSNTweakItem("Base.Rosehips","IsCookable","True");
 OGSNTweakItem("Base.Rosehips","MinutesToCook","120");
 OGSNTweakItem("Base.Rosehips","MinutesToBurn","150");
 OGSNTweakItem("Base.Rosehips","OnCooked","CookRawHerbOGSN");
 
 OGSNTweakItem("Base.GrapeLeaves","FoodType","Herbal");
-OGSNTweakItem("Base.GrapeLeaves","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Burger:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowTeaEvolved:2;LemonGrassTeaEvolved:2;BlackSageTeaEvolved:2;GinsengTeaEvolved:2;EnergizingTeaEvolved:2;MedicinalTeaEvolved:2");
+OGSNTweakItem("Base.GrapeLeaves","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Burger:2;Salad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;HotDrinkRed:2;HotDrinkWhite:2;HotDrinkSpiffo:2;CommonMallowTeaEvolved:2;LemonGrassTeaEvolved:2;BlackSageTeaEvolved:2;GinsengTeaEvolved:2;EnergizingTeaEvolved:2;MedicinalTeaEvolved:2");
 OGSNTweakItem("Base.GrapeLeaves","IsCookable","True");
 OGSNTweakItem("Base.GrapeLeaves","MinutesToCook","120");
 OGSNTweakItem("Base.GrapeLeaves","MinutesToBurn","150");
 OGSNTweakItem("Base.GrapeLeaves","OnCooked","CookRawHerbOGSN");
 
 OGSNTweakItem("Base.Violets","FoodType","Herbal");
-OGSNTweakItem("Base.Violets","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;FruitSalad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;CommonMallowTeaEvolved:2;LemonGrassTeaEvolved:2;BlackSageTeaEvolved:2;GinsengTeaEvolved:2;EnergizingTeaEvolved:2;MedicinalTeaEvolved:2");
+OGSNTweakItem("Base.Violets","EvolvedRecipe","Soup:2;Stew:2;Pie:2;Cake:2;Stir fry:2;Stir fry Griddle Pan:2;Roasted Vegetables:2;Salad:2;FruitSalad:2;PastaPan:2;RicePan:2;PastaPot:2;RicePot:2;HotDrink:2;HotDrinkRed:2;HotDrinkWhite:2;HotDrinkSpiffo:2;CommonMallowTeaEvolved:2;LemonGrassTeaEvolved:2;BlackSageTeaEvolved:2;GinsengTeaEvolved:2;EnergizingTeaEvolved:2;MedicinalTeaEvolved:2");
 OGSNTweakItem("Base.Violets","IsCookable","True");
 OGSNTweakItem("Base.Violets","MinutesToCook","120");
 OGSNTweakItem("Base.Violets","MinutesToBurn","150");
