@@ -27,5 +27,5 @@ OGSNTweakItem("Base.Modjeska","EvolvedRecipe","Salad:10;FruitSalad:10;OatmealEvo
 OGSNTweakItem("Base.Ham","EvolvedRecipe","Sandwich:10;Burger:10;Salad:10;RicePot:10;RicePan:10;PastaPot:10;PastaPan:10;Stir fry:10;Stir fry Griddle Pan:10");
 
 if getActivatedMods():contains("AAApoc") then
-    OGSNTweakItem("Base.AAAVanillaExtract","EvolvedRecipe", "Soup:1;Stew:1;Pie:1;Stir fry Griddle Pan:1;Stir fry:1;Burger:1;Salad:1;Roasted Vegetables:1;RicePot:1;RicePan:1;PastaPot:1;PastaPan:1;OatmealEvolved:1");
+    OGSNTweakItem("AAApoc.AAAVanillaExtract","EvolvedRecipe", "Soup:1;Stew:1;Pie:1;Stir fry Griddle Pan:1;Stir fry:1;Burger:1;Salad:1;Roasted Vegetables:1;RicePot:1;RicePan:1;PastaPot:1;PastaPan:1;OatmealEvolved:1");
 else end
